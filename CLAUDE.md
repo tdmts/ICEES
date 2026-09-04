@@ -73,7 +73,7 @@ rather than a copy, and a shared engine makes every course's bug every course's 
 | Lesopnames | none | 3 Panopto recordings |
 | Guided steps | already one page per topic | 25 command pages per lab, **grouped on import** |
 | Spiekblad | none | one per grouped lab |
-| Export quirks | `- Copy` duplicates, another course's files | `rCode` casing, an `embedded/` second copy, lesopnames outside the manifest |
+| Export quirks | `- Copy` duplicates, another course's files | `rCode` casing, an `embedded/` second copy, a stray lesopnames folder |
 
 **The guided steps are grouped, not carried over one to one.** Brightspace gives Linux Basis 25
 pages, one per command, each a title and three lines. That is a reading order for a person who
@@ -262,12 +262,14 @@ Four things about this export that DeN's did not have, and every one of them fai
   as "skipped" rather than staged. **Five assignments, gone, with one line in the summary saying a
   link was not understood.** The regex now carries `re.I`. This is the one change to the importer
   beyond rewritten DeN strings.
-- **The three lesopnames are in no `<item>` at all.** `migration/lesopnames/` holds `Demontage`,
-  `Assemblage` and `BIOS`, each a Panopto iframe, and their topic ids (9399246, 9399249, 9399251)
-  interleave with the pages of Labo Assemblage: each recording sat directly before the page it
-  belongs to. The manifest does not mention them, so the import drops all three and says nothing.
-  They have to be placed by hand. This does not weaken the manifest rule: a missing topic is
-  something you go and look for, a file listing carrying three courses' leftovers is not.
+- **The three lesopnames are in the export twice, and the manifest keeps the right copy.**
+  `migration/lesopnames/` holds `Demontage`, `Assemblage` and `BIOS`, each a bare Panopto iframe,
+  and no `<item>` references any of them. That looks like content the manifest walk loses, and it
+  is not: the same three recordings are embedded in the three pages the manifest *does* carry
+  (`Demontage`, `Assemblage`, `BIOS/UEFI omgeving openen`), on the same three Panopto ids
+  (`df19b7cf`, `d2e5a5cb`, `2d82f06b`). The standalone files are the leftover, the pages are the
+  course. Check the ids before concluding either way; the id is the only thing that says whether
+  two files are the same recording.
 - **`embedded/` is a second, better copy of Labo Embedded Systems.** It appears as its own top-level
   org unit ("Labo: embedded systems", lowercase) and holds eleven pages that were rewritten by hand:
   clean `<div class="container">` markup instead of the chamilo wrapper, no `&nbsp;` padding, and in

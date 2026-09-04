@@ -22,11 +22,11 @@ tree that is a second, older copy of the Embedded Systems module, and images tha
 belong to no page. Walking <organizations> skips all of that for free, so do not
 be tempted to add a scan over the zip listing.
 
-The one thing that costs is that the manifest is not complete either. This export
-has three Panopto lesopnames under migration/lesopnames/ that appear in no
-<item> at all, so they have to be placed by hand. See CLAUDE.md, "Where the
-content comes from". A missing topic is a thing you go and look for; a file
-listing that carries three courses' leftovers is not.
+What a manifest walk drops is worth checking rather than assuming. This export
+has three Panopto lesopnames under migration/lesopnames/ that appear in no <item>
+at all, which reads as content lost; the same three recordings turn out to be
+embedded in the three pages the manifest does carry, on the same Panopto ids.
+Compare the ids, not the filenames.
 
 The filenames in the package say nothing either. Every Doelstellingen,
 Studiemateriaal and Evaluatie topic of the six labs is stored under that same
