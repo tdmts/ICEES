@@ -61,34 +61,43 @@ schrijven.
 - **Volledige code** in een voorbeeld, geen fragmenten, behalve waar de opdracht juist vraagt om een
   fragment aan te vullen.
 
-**En de rem boven de hele lijst.** Alle tweeentwintig patronen hieronder zijn ontkennend: ze zeggen
-wat weg mag. Je kan er dus aan alle tweeentwintig tegelijk voldoen door minder te zeggen, en niets
+**En de rem boven de hele lijst.** Alle zestien patronen hieronder zijn ontkennend: ze zeggen
+wat weg mag. Je kan er dus aan alle zestien tegelijk voldoen door minder te zeggen, en niets
 in die lijst houdt dat tegen. Dat gebeurde bij de lead van Labo Assemblage: "volledig uit elkaar"
 werd "openhalen", "tot hij opstart" werd "tot hij draait", en de installatie van het
 besturingssysteem viel helemaal weg, terwijl de zin bij elke stap beter scoorde op de patronen.
 
 Leg daarom elke herschreven zin naast de oude met een vraag: **welk feit staat er niet meer?**
 Ontbreekt er een, dan is de herschrijving fout, hoeveel patronen ze ook oplost. Patroon 15 en 17
-dragen die rem al voor zichzelf; dit is dezelfde rem voor de andere twintig.
+dragen die rem al voor zichzelf; dit is dezelfde rem voor de andere veertien.
 
 ## Wat eruit gaat
 
-Tweeëntwintig patronen. Geen enkel patroon is op zich fout: het probleem is dat ze allemaal samen, op
-elke pagina, van uitleg een voordracht maken. Patroon 1 tot 11 gaan over opsmuk, 12 en 13 over
-woordkeuze, 14 en 15 kwamen er later bij (allebei opsmuk). De nummers liggen vast, ook al loopt de
-indeling daardoor niet meer netjes door.
+Zestien patronen. Geen enkel patroon is op zich fout: het probleem is dat ze allemaal samen, op elke
+pagina, van uitleg een voordracht maken. Patroon 1 tot 10 gaan over opsmuk, 12 en 13 over
+woordkeuze, 14 en 15 kwamen er later bij (allebei opsmuk).
 
-Patroon 16 en 17 zitten een niveau hoger: ze gaan niet over een zin maar over de vorm van een alinea,
-en daarom overleeft elke zin afzonderlijk de andere vijftien.
+Patroon 16 en 17 zitten een niveau hoger: ze gaan niet over een zin maar over de vorm van een
+alinea, en daarom overleeft elke zin afzonderlijk de andere veertien.
 
-Patroon 18 en 19 staan nog een niveau hoger en zijn in deze repo geschreven: ze gaan niet over de
-vorm maar over het onderwerp. Ze horen bij elkaar, want ze zijn de twee sporen die een beslissing van
-de docent op de pagina achterlaat: de uitleg waarom (18) en het voorschrift dat eruit volgt (19).
+Patroon 18 en 20 staan nog een niveau hoger en zijn in deze repo geschreven: ze gaan niet over de
+vorm maar over het onderwerp. 18 gaat over wat de student niet weet omdat hij niet bij het gesprek
+was, 20 over wat hij niet weet omdat hij die bladzijde nog niet gezien heeft.
 
-Patroon 20 en 21 kwamen uit de eerste stijlronde van dit vak en gaan over wat de lezer op dat punt al
-weet: een woord dat hij nog niet gezien heeft (20), en een uitleg bij iets wat hij allang doorheeft
-(21). Patroon 22 komt uit dezelfde ronde en staat ernaast: niet wat de lezer al weet, maar of het
-woord dat er staat het ding wel benoemt.
+**Het waren er tweeëntwintig.** Zes gingen op in een ander patroon zonder dat er een toets verdween,
+omdat ze in de praktijk telkens dezelfde vraag stelden. **De nummers van de overblijvende zestien
+liggen vast**, ook al loopt de reeks daardoor met gaten, want een patroon wordt op zijn nummer
+geciteerd ("patroon 6") en dat geldt ook in `tdmts/DeN` en `tdmts/Microcontrollers`, waar dit
+document vandaan komt. Wie een oud nummer tegenkomt, vindt het hier terug:
+
+| Was | Staat nu in | Waarom |
+|---|---|---|
+| 4, de dubbele punt | 3 | Allebei een aankondiging van een pointe in plaats van de pointe |
+| 8, de verplichte tegenhanger | 16 | Een vierde vorm van hetzelfde: de lezer vertellen hoe hij het moet wegen |
+| 11, het verkleinwoord | 12 | 11 verwees zelf naar 12, en zijn hele grond was het register |
+| 19, het voorschrift | 18 | 19 zei zelf: "Dit patroon en patroon 18 komen uit dezelfde bron" |
+| 21, de glosse te veel | 13 | 21 zei zelf: "De toets is dezelfde als bij patroon 13, met een groter voorwerp" |
+| 22, het algemenere woord | 20 | Allebei het woord gemeten aan wat de lezer op dat punt heeft |
 
 ### 1. Geen slotzin die moet blijven hangen
 
@@ -116,25 +125,23 @@ Drie parallelle **stellingen** als betoogfiguur.
 Een opsomming van drie concrete dingen ("USB, Ethernet en SATA") mag wel. Dat is een lijst en geen
 figuur.
 
-### 3. Geen retorische vraag als overgang
+### 3. Geen aankondiging van een pointe
 
-Zet de bewering neer.
+Zet de bewering neer. De retorische vraag en de dubbele punt zijn twee manieren om te melden dat er
+iets komt in plaats van het te zeggen. Dit was patroon 3 en 4.
 
 > **Voor:** Waarom? Omdat de compiler slim is, en die slimheid hier tegen je werkt.
 >
 > **Na:** De reden zit in de compiler, die de variabele in de processor bijhoudt in plaats van hem
 > telkens opnieuw uit het geheugen te halen.
 
-Een echte vraag **aan** de student mag wel, want daar hoort een antwoord bij: "Is de input /RE
-active low of active high?"
-
-### 4. Geen dubbele punt als aankondiging van een pointe
-
 > **Voor:** Serieel betekent: achter elkaar.
 >
 > **Na:** Serieel betekent dat de bits achter elkaar over één draad gaan.
 
-Een dubbele punt voor een opsomming, een tabel of een codevoorbeeld is gewoon interpunctie en blijft.
+Twee uitzonderingen, allebei echt. Een vraag **aan** de student mag, want daar hoort een antwoord
+bij: "Is de input /RE active low of active high?" En een dubbele punt voor een opsomming, een tabel
+of een codevoorbeeld is gewoon interpunctie en blijft.
 
 ### 5. Geen korte zin voor het effect
 
@@ -183,17 +190,6 @@ ongewijzigd wanneer de tekst verandert, want andere pagina's linken ernaar.
 "De switch beslist" en "de transceiver luistert" mogen als vakjargon, want zo heet het echt; "de
 switch weet niet goed wat hij ermee moet" is patroon 7.
 
-### 8. Geen verplichte tegenhanger
-
-Niet elke bewering hoeft haar nuance mee. Zet die er alleen bij wanneer de student de afweging echt
-zelf moet maken, en dan als informatie en niet als evenwicht.
-
-> **Voor:** Seriële communicatie is trager dan parallel. Al wordt dat natuurlijk ruimschoots
-> gecompenseerd, en in de praktijk valt het dus wel mee.
->
-> **Na:** Seriële communicatie is per bit trager dan parallel, maar haalt door hogere klokfrequenties
-> in de praktijk meer doorvoer.
-
 ### 9. Geen vaste openingsformule
 
 "Hier lees je...", "Op deze pagina zie je..." Elke lead die op dezelfde manier begint, maakt de
@@ -221,28 +217,11 @@ laten landen.
 Een vetgedrukte **deelzin** valt hier ook onder. De grens ligt niet bij hele zinnen: vet komt om een
 woord, een term, een pinnaam of een getal, nooit om een zinsdeel.
 
-### 11. Geen verkleinwoorden als opsmuk
-
-Een verkleinwoord dat een technisch onderdeel gezellig moet maken, klinkt aanstellerig. Noem het ding
-bij zijn naam.
-
-> **Voor:** Zoek naar het tekeningetje van het IC met acht pootjes en de namen ernaast.
->
-> **Na:** Zoek naar de tekening van het IC met acht aansluitingen en de namen ernaast.
-
-De uitzondering, en die is echt: **een verkleinwoord dat de gangbare vakterm is, blijft.** De
-buitenste **pootjes** van een potentiometer heten zo, en een `ezelsbruggetje` heet niet anders. Ook
-vaste uitdrukkingen ("tussen haakjes", "een beetje") zijn geen opsmuk. De vraag is niet of er een
-verkleinvorm staat, maar of er een gewoon woord bestaat dat hetzelfde zegt.
-
-Het Nederlands van Nederland gebruikt verkleinwoorden veel vrijer als verzachter dan dat van
-Vlaanderen ("een vraagje", "een momentje"), dus een Vlaamse lezer leest die vorm sneller als
-aanstellerij dan als vriendelijkheid. Zie ook patroon 12.
-
-### 12. Belgisch-Nederlands, geen Noord-Nederlandse woordkeuze
+### 12. Vlaamse woordkeuze, en geen verkleinwoord als verzachter
 
 De studenten zijn Vlaams, en de cursus is dat ook. Schrijf dus **Nederlands zoals het in Vlaanderen
-geschreven wordt**, en vermijd woorden die typisch Noord-Nederlands aanvoelen.
+geschreven wordt**, en vermijd woorden die typisch Noord-Nederlands aanvoelen. Dit was patroon 11 en
+12: het verkleinwoord als verzachter hoort hier omdat het diezelfde grens raakt.
 
 > **Voor:** Met `map()` kun je een waarde van het ene bereik omzetten naar een ander.
 >
@@ -271,9 +250,26 @@ wordt in Vlaanderen even goed gebruikt (het is er wel vaak een van patroon 13). 
 best" is Belgisch en niet Noord-Nederlands. Meet voor je een woord aan de lijst toevoegt of het in
 deze repo wel is wat je denkt dat het is.
 
-### 13. Geen vulwoorden
+**Het verkleinwoord als verzachter.** Het Nederlands van Nederland gebruikt die vorm veel vrijer dan
+dat van Vlaanderen ("een vraagje", "een momentje"), dus een Vlaamse lezer leest hem sneller als
+aanstellerij dan als vriendelijkheid. Een verkleinwoord dat een technisch onderdeel gezellig moet
+maken, noem je bij zijn naam.
 
-Een bijwoord dat niets toevoegt aan de zin, laat je weg.
+> **Voor:** Zoek naar het tekeningetje van het IC met acht pootjes en de namen ernaast.
+>
+> **Na:** Zoek naar de tekening van het IC met acht aansluitingen en de namen ernaast.
+
+De uitzondering, en die is echt: **een verkleinwoord dat de gangbare vakterm is, blijft.** De
+buitenste **pootjes** van een potentiometer heten zo, en een `ezelsbruggetje` heet niet anders. Ook
+vaste uitdrukkingen ("tussen haakjes", "een beetje") zijn geen opsmuk. De vraag is niet of er een
+verkleinvorm staat, maar of er een gewoon woord bestaat dat hetzelfde zegt.
+
+### 13. Geen vulling, van een bijwoord tot een hele bijzin
+
+Wat niets toevoegt aan de zin, laat je weg. Dit was patroon 13 en 21: het bijwoord en de bijstelling
+zijn hetzelfde probleem op een andere schaal, en de toets is voor allebei dezelfde.
+
+**Het bijwoord.**
 
 > **Voor:** Parallelle communicatie. Dat maakt het zeer complex, want je moet niet alleen je code
 > aanpassen maar ook je schakeling.
@@ -289,6 +285,24 @@ Hier staat met opzet **geen woordenlijst**. De toets is één vraag: verliest de
 het bijwoord schrapt? `gewoon` en `precies` zijn de lastigste twee, want die betekenen vaak wel iets
 ("een gewone digitale uitgang", "precies even breed") en zijn toch vaak vulling. Die vragen een
 lezer.
+
+**De bijstelling die het vanzelfsprekende uitlegt**, het vroegere patroon 21. Een bijzin die niets
+toevoegt aan het woord ervoor, gaat weg, ook wanneer de buren in de lijst er wel een hebben.
+
+> **Voor:** Een computer met scherm en toetsenbord, het toestel dat je uit elkaar haalt
+>
+> **Na:** Een computer met scherm en toetsenbord
+
+Dat labo heet Assemblage en gaat over een computer uit elkaar halen; welk toestel dat is, was de
+vraag niet, en de bijstelling is er niet eens waar, want het scherm en het toetsenbord haal je niet
+uit elkaar. De twee regels eronder, "Een laptop, om je antwoorden in te vullen" en "Een smartphone,
+om de foto's te nemen", verdienen hun bijzin wel: daar is niet vanzelfsprekend waarom je ze moet
+meebrengen. Dat is wat de fout veroorzaakt. Het eerste item stond kaal tussen items met een bijzin
+en kreeg er een om de vorm, niet om de inhoud.
+
+Ook zo: "Download het voor je begint" onder een knop die "Opdracht downloaden" heet, en een blurb
+die "De gegevens van de processor die in dit labo op tafel ligt" zegt op een kaart die al Processor
+heet.
 
 ### 14. Geen terzijde als knipoog
 
@@ -335,10 +349,21 @@ Een alinea zegt wat er gebeurt. Ze zegt er niet bij hoe erg, hoe belangrijk of h
 > **Na:** Zonder afsluitweerstand weerkaatst het signaal aan het uiteinde van de lijn en stoort het
 > zichzelf. De ontvanger leest dan bits die de zender niet gestuurd heeft.
 
-Het oordeel komt in drie vormen, en alle drie gaan ze weg. **De rangschikking:** "Dit is de
+Het oordeel komt in vier vormen, en alle vier gaan ze weg. **De rangschikking:** "Dit is de
 gevaarlijkste van de drie", "die test is geen luxe". **De aankondiging:** "Twee dingen zijn de moeite
 om apart te bekijken", die alleen zegt dat er iets komt en het meteen weegt. **De slotwaardering:**
-een zin die het feit uit de vorige zin nog eens beoordeelt in plaats van het te zeggen.
+een zin die het feit uit de vorige zin nog eens beoordeelt in plaats van het te zeggen. **De
+tegenhanger**, het vroegere patroon 8: niet elke bewering hoeft haar nuance mee, en wie ze er uit
+evenwicht bij zet, weegt opnieuw voor de lezer.
+
+> **Voor:** Seriële communicatie is trager dan parallel. Al wordt dat natuurlijk ruimschoots
+> gecompenseerd, en in de praktijk valt het dus wel mee.
+>
+> **Na:** Seriële communicatie is per bit trager dan parallel, maar haalt door hogere klokfrequenties
+> in de praktijk meer doorvoer.
+
+Zet een nuance er alleen bij wanneer de student de afweging echt zelf moet maken, en dan als
+informatie en niet als evenwicht.
 
 De toets: schrap het waarderende zinsdeel. Staat het feit er dan nog, dan was het een oordeel.
 
@@ -380,7 +405,7 @@ bronnen hierboven de stof aantoonbaar behandelt**, en de verwijzing komt ervoor 
 dat niet aanwijzen, dan is inkorten geen stijlingreep. Nieuwe stof korter maken valt hier nooit
 onder.
 
-### 18. De student was niet bij het gesprek
+### 18. De student was niet bij het gesprek, en erft er wel de voorschriften van
 
 Schrijf over het vak, nooit over de cursus als bouwwerk. Twee soorten zinnen sluipen hier binnen, en
 ze hebben dezelfde oorzaak: ze bestaan door een gesprek waar de lezer niet bij was.
@@ -404,8 +429,8 @@ argument.
 > **Na:** Vul dit document in terwijl je werkt.
 
 Let op wat er in dat voorbeeld overblijft. Schrap je alleen de verantwoording, dan houd je "bewaar
-het op je OneDrive" over, en dat is een voorschrift dat uit hetzelfde gesprek komt. Zie patroon 19:
-de twee treden bijna altijd samen op, en de tweede is de makkelijkste om te missen.
+het op je OneDrive" over, en dat is een voorschrift dat uit hetzelfde gesprek komt. Zie het derde
+spoor hieronder: de twee treden bijna altijd samen op, en de tweede is de makkelijkste om te missen.
 
 Zulke zinnen ontstaan op het moment dat je iets verandert of beslist, en klinken dan volkomen
 logisch. Let dus vooral op wat je schrijft tijdens een verbouwing, en op de woorden die erbij horen:
@@ -420,10 +445,9 @@ of een component hoort er wel bij, en een reden die iets **technisch** verklaart
 pull-up op, anders zweeft de ingang" is geen verantwoording maar leerstof. De scheidslijn ligt niet
 tussen instructie en reden, maar tussen een reden over het vak en een reden over de cursus.
 
-### 19. Alleen de instructies die bij de opdracht horen
-
-Zeg wat je van de student nodig hebt, niet hoe hij zijn werk organiseert. Waar hij zijn bestand
-bewaart, in welke map, met welke naam, op welk toestel: dat is zijn zaak.
+**Het derde spoor is het voorschrift**, het vroegere patroon 19. Zeg wat je van de student nodig
+hebt, niet hoe hij zijn werk organiseert. Waar hij zijn bestand bewaart, in welke map, met welke
+naam, op welk toestel: dat is zijn zaak.
 
 > **Voor:** Vul dit document in terwijl je werkt en bewaar het op je OneDrive.
 >
@@ -435,21 +459,24 @@ het nergens aan. "Laat je schakeling controleren voor je verder gaat" blijft, wa
 werkvorm van het labo. "Zet je naam bovenaan" blijft, als je die naam nodig hebt om te verbeteren.
 "Bewaar het op je OneDrive" gaat weg, want of hij dat doet zien wij nooit.
 
-Dit patroon en patroon 18 komen uit dezelfde bron. Een keuze die wij maken, laat twee sporen na op
-de pagina: de uitleg waarom (18) en het voorschrift dat eruit volgt (19). De eerste valt op, want die
-klinkt defensief. De tweede klinkt als een gewone instructie en blijft daardoor staan, ook nadat de
-uitleg geschrapt is. Kom je een zin uit 18 tegen, kijk dan meteen naar de zin ernaast.
+Dit is waarom de twee in één patroon staan. Een keuze die wij maken laat twee sporen na op de
+pagina: de uitleg waarom en het voorschrift dat eruit volgt. De eerste valt op, want die klinkt
+defensief. De tweede klinkt als een gewone instructie en blijft daardoor staan, ook nadat de uitleg
+geschrapt is. Kom je de ene tegen, kijk dan meteen naar de zin ernaast.
 
 Er is een randgeval: een voorschrift over de werkwijze **wordt** onze zaak zodra het de evaluatie
 raakt. In een labo waar twee studenten samen één opstelling delen, is "spreek af wie zendt en wie
 ontvangt" wél een instructie, want het bepaalt wat elk van beiden kan tonen. De vraag is niet of het
 over zijn werkwijze gaat, maar of wij het merken.
 
-### 20. Geen woord voor het bestaat
+### 20. Geen woord dat de lezer nog niet heeft
 
-Een term gebruik je pas nadat de student hem gezien heeft, en de volgorde die telt is die van het
-Orion-menu: Inleiding, Theorie, Opdracht. Wat de theoriepagina's uitleggen, is op de hub nog
-onbekend.
+Een term gebruik je pas nadat de student hem gezien heeft, en waar er al een woord voor het ding
+bestaat, is dat het woord. Dit was patroon 20 en 22: het eerste gaat over een naam die er nog niet
+is, het tweede over een naam die er wel is en die je passeert.
+
+**Een term komt na zijn uitleg.** De volgorde die telt is die van het Orion-menu: Inleiding,
+Theorie, Opdracht. Wat de theoriepagina's uitleggen, is op de hub nog onbekend.
 
 > **Voor:** Daarna werk je in de firmware op het moederbord: wat ze van de hardware ziet, waar ze
 > haar instellingen bewaart en in welke volgorde ze een opstartbare schijf zoekt.
@@ -459,44 +486,11 @@ onbekend.
 
 `firmware` stond drie keer op de twee pagina's die een student als eerste opent, en wordt uitgelegd
 op de vijfde theoriepagina van dat labo. `BIOS` en `UEFI` staan wel in de titel van het labo, in het
-Orion-menu en in de naam van de opdracht, dus die woorden heeft hij al gezien.
+Orion-menu en in de naam van de opdracht, dus die woorden heeft hij al gezien. Een lijst met
+doelstellingen is de uitzondering, want die belooft juist wat hij nog niet kent.
 
-Dit ontstaat doordat je een hub schrijft wanneer de hele module al in je hoofd zit. Het vocabulaire
-van de laatste theoriepagina voelt dan als gedeelde grond, en dat is het alleen met jezelf. Dezelfde
-oorzaak als patroon 18, met een ander voorwerp: 18 gaat over de geschiedenis van het materiaal, dit
-over het vocabulaire. Patroon 17 regelt wat je uit een ander labo mag veronderstellen en zegt niets
-over de volgorde binnen een labo, dus dit zit in het gat tussen die twee.
-
-De toets: staat het woord eerder in dezelfde reeks, of in de titel van het labo of van het
-menu-item? Zo niet, gebruik de naam die de student wel kent, of leg het ter plekke uit in een halve
-zin. Een lijst met doelstellingen is de uitzondering, want die belooft juist wat hij nog niet kent.
-
-### 21. Geen glosse die het vanzelfsprekende uitlegt
-
-Een bijstelling of een bijzin die niets toevoegt aan het woord ervoor, laat je weg. Ook wanneer de
-buren in de lijst er wel een hebben.
-
-> **Voor:** Een computer met scherm en toetsenbord, het toestel dat je uit elkaar haalt
->
-> **Na:** Een computer met scherm en toetsenbord
-
-Dat labo heet Assemblage en gaat over een computer uit elkaar halen; welk toestel dat is, was de
-vraag niet, en de bijstelling is er niet eens waar, want het scherm en het toetsenbord haal je niet
-uit elkaar. De twee regels eronder, "Een laptop, om je antwoorden in te vullen" en "Een smartphone,
-om de foto's te nemen", verdienen hun bijzin wel: daar is niet vanzelfsprekend waarom je ze moet
-meebrengen. Dat is wat de fout veroorzaakt. Het eerste item stond kaal tussen items met een bijzin
-en kreeg er een om de vorm, niet om de inhoud.
-
-Ook zo: "Download het voor je begint" onder een knop die "Opdracht downloaden" heet, en een blurb
-die "De gegevens van de processor die in dit labo op tafel ligt" zegt op een kaart die al Processor
-heet.
-
-De toets is dezelfde als bij patroon 13, met een groter voorwerp: schrap de bijstelling en kijk of
-de lezer iets kwijt is. 13 gaat over een bijwoord, dit over een hele bijzin.
-
-### 22. Geen algemener woord dan je hebt
-
-Staat er een naam voor het ding, gebruik die.
+**En geen algemener woord dan je hebt**, het vroegere patroon 22. Staat er een naam voor het ding,
+gebruik die.
 
 > **Voor:** Je haalt het toestel uit elkaar, fotografeert elk onderdeel en vult van elk component de
 > specificaties in.
@@ -506,21 +500,27 @@ Staat er een naam voor het ding, gebruik die.
 
 Die ene zin had drie woorden voor twee dingen: `toestel` voor de computer, en `component` naast
 `onderdeel` voor hetzelfde. Zo komt het algemenere woord meestal binnen, om herhaling te vermijden,
-en die herhaling stoort de schrijver meer dan de lezer.
+en die herhaling stoort de schrijver meer dan de lezer. Ook zo: "de lijst waarin de firmware zoekt
+naar iets om van op te starten", terwijl `opstartbare code` twee alinea's hoger staat, en "Bij een
+processor kijk je naar vier dingen", waar het om vier gegevens gaat.
 
-Ook zo: "de lijst waarin de firmware zoekt naar iets om van op te starten", terwijl `opstartbare
-code` twee alinea's hoger staat, en "Bij een processor kijk je naar vier dingen", waar het om vier
-gegevens gaat.
+Twee dingen die deze helft uitdrukkelijk toelaat. **Een naam die eenmaal gevallen is, mag daarna
+korter:** `het bord` na `het moederbord`, `de omgeving` na `de BIOS- of UEFI-omgeving`. Dat is geen
+algemener woord maar dezelfde naam, verkort. En **wanneer het generieke woord meer dekt, is het het
+juiste woord:** de opstartvolgorde en het bootmenu tonen een schijf, een stick of een netwerkkaart,
+en `toestel` is wat die drie samen dekt. Een kolomkop `Aspect` boven een partitietabelformaat, een
+groottegrens en een bedieningswijze is om dezelfde reden juist.
 
-**Een naam die eenmaal gevallen is, mag daarna korter.** `het bord` na `het moederbord`, `de
-omgeving` na `de BIOS- of UEFI-omgeving`. Dat is geen algemener woord maar dezelfde naam, verkort.
+**Waar dit vandaan komt.** Je schrijft een hub wanneer de hele module al in je hoofd zit, dus het
+vocabulaire van de laatste theoriepagina voelt als gedeelde grond, en dat is het alleen met jezelf.
+Dezelfde oorzaak als patroon 18, met een ander voorwerp: 18 gaat over de geschiedenis van het
+materiaal, dit over het vocabulaire. Patroon 17 regelt wat je uit een ander labo mag veronderstellen
+en zegt niets over de volgorde binnen een labo, dus dit zat in het gat tussen die twee.
 
-De uitzondering, en die is echt: **wanneer het generieke woord meer dekt, is het het juiste woord.**
-De opstartvolgorde en het bootmenu tonen een schijf, een stick of een netwerkkaart, en `toestel` is
-wat die drie samen dekt. Een kolomkop `Aspect` boven een partitietabelformaat, een groottegrens en
-een bedieningswijze is om dezelfde reden juist.
+De toets, twee vragen. Staat het woord eerder in dezelfde reeks, of in de titel van het labo of van
+het menu-item? En: bestaat er in deze tekst al een woord voor precies dit ding? Zo ja, dan is dat
+het woord.
 
-De toets: bestaat er in deze tekst al een woord voor precies dit ding? Zo ja, dan is dat het woord.
 
 ## Spelling en notatie
 
@@ -575,26 +575,27 @@ Bij twijfel over een alinea, drie vragen:
 3. **Staat het interessantste stuk in de hoofdzin?** Als je beste voorbeeld tussen haakjes of achter
    een dubbele punt staat, staat het op de verkeerde plaats.
 
-En sinds patroon 18 en 19 nog twee, voor alles wat je schrijft terwijl je aan de repo verbouwt:
+En sinds patroon 18 nog twee, voor alles wat je schrijft terwijl je aan de repo verbouwt:
 
 4. **Zou deze zin er ook staan als de cursus altijd al zo geweest was?** Zo niet, dan gaat ze over
-   ons werk en niet over het vak (patroon 18).
-5. **Merken wij het als hij dit niet doet?** Zo niet, dan is het geen instructie maar bemoeienis
-   (patroon 19).
+   ons werk en niet over het vak.
+5. **Merken wij het als hij dit niet doet?** Zo niet, dan is het geen instructie maar bemoeienis.
 
-En sinds patroon 20 en 21 nog twee, voor elke pagina die vroeg in een reeks staat:
+En sinds patroon 20 nog twee, voor elk woord dat je op een pagina vroeg in een reeks zet:
 
 6. **Staat dit woord eerder in de reeks, of in de titel van het labo?** Zo niet, gebruik de naam die
-   de student wel kent (patroon 20).
-7. **Wat weet de lezer meer na deze bijstelling?** Niets, dan gaat ze weg (patroon 21).
+   de student wel kent.
+7. **Bestaat er in deze tekst al een woord voor precies dit ding?** Zo ja, dan is dat het woord.
 
-En bij elk zelfstandig naamwoord dat een categorie noemt in plaats van een ding:
+En na elke herschrijving, want de zeven hierboven zeggen alleen wat weg mag:
 
-8. **Bestaat er in deze tekst al een woord voor precies dit ding?** Zo ja, dan is dat het woord
-   (patroon 22).
+8. **Welk feit staat er niet meer?** Ontbreekt er een, dan is de herschrijving fout, hoeveel
+   patronen ze ook oplost.
 
 ## Het ijkpunt
 
 Labo Assemblage en beide pagina's onder `Algemeen/` kregen op 4 september 2026 een volledige
 stijlronde. Die diff is het ijkpunt: hij toont wat de patronen 9, 16 en 18 in de praktijk wegnemen,
-en hoe kort een `lead` daarna staat. Leg hem ernaast voor je aan een nieuwe module begint.
+en hoe kort een `lead` daarna staat. Hij toont ook de fout uit vraag 8, want de lead van
+`overview.html` is in die ronde een keer te ver ingekort en daarna hersteld. Leg hem ernaast voor je
+aan een nieuwe module begint.
