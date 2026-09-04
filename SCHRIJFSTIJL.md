@@ -61,6 +61,16 @@ schrijven.
 - **Volledige code** in een voorbeeld, geen fragmenten, behalve waar de opdracht juist vraagt om een
   fragment aan te vullen.
 
+**En de rem boven de hele lijst.** Alle tweeentwintig patronen hieronder zijn ontkennend: ze zeggen
+wat weg mag. Je kan er dus aan alle tweeentwintig tegelijk voldoen door minder te zeggen, en niets
+in die lijst houdt dat tegen. Dat gebeurde bij de lead van Labo Assemblage: "volledig uit elkaar"
+werd "openhalen", "tot hij opstart" werd "tot hij draait", en de installatie van het
+besturingssysteem viel helemaal weg, terwijl de zin bij elke stap beter scoorde op de patronen.
+
+Leg daarom elke herschreven zin naast de oude met een vraag: **welk feit staat er niet meer?**
+Ontbreekt er een, dan is de herschrijving fout, hoeveel patronen ze ook oplost. Patroon 15 en 17
+dragen die rem al voor zichzelf; dit is dezelfde rem voor de andere twintig.
+
 ## Wat eruit gaat
 
 Tweeëntwintig patronen. Geen enkel patroon is op zich fout: het probleem is dat ze allemaal samen, op
