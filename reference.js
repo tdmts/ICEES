@@ -81,19 +81,19 @@ window.LAB_REFERENCE = {
                     {
                         id: 'demontage',
                         name: 'Demontage',
-                        blurb: 'De volgorde van buiten naar binnen, en waarom de koeler een kwartslag draait voor hij loskomt.',
+                        blurb: 'De volgorde van buiten naar binnen, en hoe je de koeler en de processor van de socket krijgt.',
                         href: 'Demontage.html'
                     },
                     {
                         id: 'assemblage',
                         name: 'Assemblage',
-                        blurb: 'Dezelfde weg terug, met de processor en het geheugen op het bord voor het in de kast gaat.',
+                        blurb: 'De omgekeerde volgorde, met de processor, de koelpasta en het geheugen op het bord voor het in de kast gaat.',
                         href: 'Assemblage.html'
                     },
                     {
                         id: 'bios-uefi',
                         name: 'BIOS en UEFI',
-                        blurb: 'De firmware die draait voor er een besturingssysteem is: de POST, de opstartvolgorde en het bootmenu.',
+                        blurb: 'Wat de firmware doet voor er een besturingssysteem is: de POST, de opstartvolgorde en het bootmenu.',
                         href: 'BiosUefi.html'
                     }
                 ]
