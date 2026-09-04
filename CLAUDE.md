@@ -231,6 +231,58 @@ of sentence you write while migrating).
 Filenames are **PascalCase Dutch nouns**: `Partitietabel.html`, `Opdracht.html`. The exceptions are
 the two hub filenames, `overview.html` and `reference.html`, which the engines match on.
 
+## The six modules
+
+Approved on 4 September 2026, together with the assignment split below. These names are settled: a
+module id is the folder name in lower case and it is also in the `localStorage` key, so renaming one
+wipes the read-flags of every student who has already been in it.
+
+| Folder | Theory pages | Spiekblad |
+|---|---|---|
+| `Labo/Assemblage/` | Veiligheid, Componenten, Demontage, Assemblage, BiosUefi | no |
+| `Labo/Virtualiseren/` | WatIsVirtualisatie, VirtueleMachineAanmaken, InstallatieUbuntu, SchijfEnGeheugen, GuestAdditions | no |
+| `Labo/Partitioneren/` | Partitietabellen, GPartedStarten, PrimairePartities, ExtendedEnLogisch, GptPartities | yes |
+| `Labo/LinuxBasis/` | LinuxEnDistributies, DeTerminal, Navigeren, MappenEnBestanden, ZoekenEnBekijken, ProcessenEnRechten, Archieven | yes |
+| `Labo/LinuxGeavanceerd/` | GebruikersEnGroepen, Rechten, SoftwareUitDeRepository, SoftwareBuitenDeRepository, Docker | yes |
+| `Labo/EmbeddedSystems/` | WatIsEenEmbeddedSystem, RaspberryPiInstalleren, PiOpHetNetwerk, AlsHetNietLukt, CodesysInstalleren, CodesysProject, Docker, NodeRed, MqttBroker | yes |
+
+Linux Basis is the one that shows what grouping means: 22 command pages become 7 subjects.
+`Navigeren` is pwd, ls and cd; `MappenEnBestanden` is mkdir, vi/nano, three cp pages, two mv pages
+and two rm pages; `ZoekenEnBekijken` is find, more and du; `ProcessenEnRechten` is ps, sudo and the
+two shutdown pages. The two labs without a spiekblad are the two with no commands in them: Assemblage
+is hardware and Virtualiseren is a GUI. Partitioneren is a GUI too, and its spiekblad is a table of
+partition kinds and their limits rather than of commands, which is the thing a student there keeps
+looking up.
+
+**One submission is one folder and one Orion menu entry.** Three of the six labs hand in more than
+once, and each dropbox gets its own `Opdracht.html` with its own verslag docx, the way
+`Labo/ManagedSwitch/` does in DeN. A module with several assignments therefore has more than four
+menu entries, and `Theorie/` stays a sibling of all of them because the theory is what they share.
+
+```
+Labo/Assemblage/Inventaris/Opdracht.html          Labo/LinuxGeavanceerd/Chmod/Opdracht.html
+Labo/Assemblage/BiosUefi/Opdracht.html            Labo/LinuxGeavanceerd/Chown/Opdracht.html
+Labo/Assemblage/InstallatieOs/Opdracht.html       Labo/LinuxGeavanceerd/Chgrp/Opdracht.html
+Labo/EmbeddedSystems/InfoRaspberryPi/Opdracht.html
+Labo/EmbeddedSystems/CodesysDemonstratie/Opdracht.html
+```
+
+Two consequences DeN paid for and this repo inherits, both of which failed silently there: a page is
+matched on its **resolved path** and not on its filename, so two `Opdracht.html` in one module cannot
+answer to each other's manifest entry, and the **manifest decides what is in the reading sequence,
+not the folder**, so a page outside `Theorie/` still gets a forward link and a read-flag when
+`reference.js` lists it. Both are covered by `scripts/check-nav.js` and by nothing else.
+
+`InfoRaspberryPi` reads like a page and is a real assignment: the student fills in the hostname,
+the username and the `os-release` of the image he just built, and hands that in. It is a dropbox in
+Brightspace for exactly that reason.
+
+**`Algemeen/Planning.html` and `Algemeen/Evaluatie.html` are both coming**, and both are blocked on
+input rather than on a decision: the schedule of the labs and the theory, and the weights (theory
+against the labs, and what each part contributes inside a lab). Ask for those before writing the
+first `overview.html`, because rule 9 sends every hub to these two pages and a hub written without
+them will quietly restate a count it does not own.
+
 ## Where the content comes from
 
 The Brightspace export (`D2LExport_15211_OON-PBAEM-206743-2627_20269402`) holds the current course:
@@ -305,7 +357,11 @@ sends neither `X-Frame-Options` nor a `frame-ancestors` policy, so nothing block
 itself, and `Embed.aspx` redirects to `EmbedLogin.aspx` for a session. The risk is the session, not
 the frame: the chain is Orion → our page on `tdmts.github.io` → Panopto, so the cookie is a
 third-party cookie two levels deep, and Panopto's own `p3p` header says as much. That is fine in
-Chrome today and blocked outright in Safari and Firefox. A link with `target="_blank"` to
-`Viewer.aspx?id=<id>` avoids the question entirely and is what a PDF already gets, for the same
-reason: a 720×405 player inside the narrow Orion iframe is unreadable either way. Decide by trying
-the embed once a page exists; until then the link is the safe form.
+Chrome today and blocked outright in Safari and Firefox.
+
+**So a lesopname is a link, not an embed**: `target="_blank"` to `Viewer.aspx?id=<id>`, the same
+treatment a PDF already gets and for a second reason that holds regardless of cookies, which is that
+a 720×405 player inside the narrow Orion iframe is unreadable. The three ids are `df19b7cf-8390-41c1-81fd-b1e800a1cb6a`
+(Demontage), `d2e5a5cb-ce88-4a1d-91fb-b1e800a47a0e` (Assemblage) and
+`2d82f06b-33e4-4c62-a685-b1e800a68d7d` (BIOS/UEFI). Never carry the `Embed.aspx` iframe across from
+the Brightspace page: it renders as an empty frame under Safari's ITP with nothing failing.

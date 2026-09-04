@@ -51,8 +51,9 @@
  * houdt terwijl hij de opdracht maakt. Dat spiekblad staat in de
  * theoriereeks, want het hoort bij het menu-item Theorie.
  *
- * Nog leeg: de modules worden aangemaakt zodra de mapnamen en de groepering
- * vastliggen. Zie CLAUDE.md, "Where the content comes from".
+ * Nog leeg. De zes mapnamen en de groepering liggen wel vast: zie CLAUDE.md,
+ * "The six modules". Drie labo's hebben meer dan een indiening, en die hebben
+ * dus meer dan een Opdracht.html en meer dan vier reeksen.
  */
 window.LAB_REFERENCE = {
 };
