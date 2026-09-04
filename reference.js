@@ -105,31 +105,31 @@ window.LAB_REFERENCE = {
                     {
                         id: 'datasheet-moederbord',
                         name: 'Moederbord',
-                        blurb: 'De handleiding van het moederbord dat in dit labo op tafel ligt, met de layout van het bord en zijn connectoren.',
+                        blurb: 'De layout van het bord, de connectoren en de tabellen met sockets, slots en poorten.',
                         href: '../../../datasheets/mb-manual-a520m-s2h-e-1301.pdf'
                     },
                     {
                         id: 'datasheet-processor',
                         name: 'Processor',
-                        blurb: 'De gegevens van de processor die in dit labo op tafel ligt.',
+                        blurb: 'Modelnummer, aantal cores, kloksnelheid, cachegeheugens en energieverbruik.',
                         href: '../../../datasheets/amd-ryzen-3-4300g-socket-am4-processor-unlocked-wraith-stealth-boxed.pdf'
                     },
                     {
                         id: 'datasheet-geheugen',
                         name: 'Werkgeheugen',
-                        blurb: 'De gegevens van de geheugenmodule die in dit labo op tafel ligt.',
+                        blurb: 'Generatie, capaciteit, standaardsnelheid en spanning van de geheugenmodule.',
                         href: '../../../datasheets/gskill-aegis-8gb.pdf'
                     },
                     {
                         id: 'datasheet-ssd',
                         name: 'SSD',
-                        blurb: 'De gegevens van de SSD die in dit labo op tafel ligt.',
+                        blurb: 'Capaciteit, protocol, vormfactor en lees- en schrijfsnelheid.',
                         href: '../../../datasheets/ssd-intern-25-top.pdf'
                     },
                     {
                         id: 'datasheet-voeding',
                         name: 'Voeding',
-                        blurb: 'De gegevens van de voeding die in dit labo op tafel ligt, met haar vermogen en haar uitgangsspanningen.',
+                        blurb: 'Vermogen, rendement en de uitgangsspanningen die de voeding levert.',
                         href: '../../../datasheets/ds-shp-bronze-en-07.pdf'
                     }
                 ]

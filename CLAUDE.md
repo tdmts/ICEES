@@ -221,6 +221,12 @@ lab, because the labs are independent modules and you do not know which ones a s
 **patroon 18** (a page never refers to the history of the course material itself, which is precisely
 the kind of sentence you write while migrating).
 
+**Patroon 20 and 21 were written here**, out of the first style round, and both are about what the
+reader knows at that point in the reeks. 20: a term is used only after the student has met it, and
+the order that counts is the Orion menu, so a hub may not use the vocabulary of a theory page.
+21: an apposition that explains the obvious goes, even when its neighbours in the list have one.
+Both are the kind of sentence you write once the whole module is in your head.
+
 Labo Assemblage and both `Algemeen/` pages had a full style round on 4 September 2026, and its diff
 is the reference for what counts as factual here. The examples inside `SCHRIJFSTIJL.md` itself still
 name DeN pages.

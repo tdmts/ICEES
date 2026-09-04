@@ -63,7 +63,7 @@ schrijven.
 
 ## Wat eruit gaat
 
-Negentien patronen. Geen enkel patroon is op zich fout: het probleem is dat ze allemaal samen, op
+Eenentwintig patronen. Geen enkel patroon is op zich fout: het probleem is dat ze allemaal samen, op
 elke pagina, van uitleg een voordracht maken. Patroon 1 tot 11 gaan over opsmuk, 12 en 13 over
 woordkeuze, 14 en 15 kwamen er later bij (allebei opsmuk). De nummers liggen vast, ook al loopt de
 indeling daardoor niet meer netjes door.
@@ -74,6 +74,10 @@ en daarom overleeft elke zin afzonderlijk de andere vijftien.
 Patroon 18 en 19 staan nog een niveau hoger en zijn in deze repo geschreven: ze gaan niet over de
 vorm maar over het onderwerp. Ze horen bij elkaar, want ze zijn de twee sporen die een beslissing van
 de docent op de pagina achterlaat: de uitleg waarom (18) en het voorschrift dat eruit volgt (19).
+
+Patroon 20 en 21 kwamen uit de eerste stijlronde van dit vak en gaan over wat de lezer op dat punt al
+weet: een woord dat hij nog niet gezien heeft (20), en een uitleg bij iets wat hij allang doorheeft
+(21).
 
 ### 1. Geen slotzin die moet blijven hangen
 
@@ -430,6 +434,55 @@ raakt. In een labo waar twee studenten samen één opstelling delen, is "spreek 
 ontvangt" wél een instructie, want het bepaalt wat elk van beiden kan tonen. De vraag is niet of het
 over zijn werkwijze gaat, maar of wij het merken.
 
+### 20. Geen woord voor het bestaat
+
+Een term gebruik je pas nadat de student hem gezien heeft, en de volgorde die telt is die van het
+Orion-menu: Inleiding, Theorie, Opdracht. Wat de theoriepagina's uitleggen, is op de hub nog
+onbekend.
+
+> **Voor:** Daarna werk je in de firmware op het moederbord: wat ze van de hardware ziet, waar ze
+> haar instellingen bewaart en in welke volgorde ze een opstartbare schijf zoekt.
+>
+> **Na:** Daarna ga je de BIOS- of UEFI-omgeving in: wat ze over de hardware zegt, waar ze haar
+> instellingen bewaart en in welke volgorde ze een opstartbare schijf zoekt.
+
+`firmware` stond drie keer op de twee pagina's die een student als eerste opent, en wordt uitgelegd
+op de vijfde theoriepagina van dat labo. `BIOS` en `UEFI` staan wel in de titel van het labo, in het
+Orion-menu en in de naam van de opdracht, dus die woorden heeft hij al gezien.
+
+Dit ontstaat doordat je een hub schrijft wanneer de hele module al in je hoofd zit. Het vocabulaire
+van de laatste theoriepagina voelt dan als gedeelde grond, en dat is het alleen met jezelf. Dezelfde
+oorzaak als patroon 18, met een ander voorwerp: 18 gaat over de geschiedenis van het materiaal, dit
+over het vocabulaire. Patroon 17 regelt wat je uit een ander labo mag veronderstellen en zegt niets
+over de volgorde binnen een labo, dus dit zit in het gat tussen die twee.
+
+De toets: staat het woord eerder in dezelfde reeks, of in de titel van het labo of van het
+menu-item? Zo niet, gebruik de naam die de student wel kent, of leg het ter plekke uit in een halve
+zin. Een lijst met doelstellingen is de uitzondering, want die belooft juist wat hij nog niet kent.
+
+### 21. Geen glosse die het vanzelfsprekende uitlegt
+
+Een bijstelling of een bijzin die niets toevoegt aan het woord ervoor, laat je weg. Ook wanneer de
+buren in de lijst er wel een hebben.
+
+> **Voor:** Een computer met scherm en toetsenbord, het toestel dat je uit elkaar haalt
+>
+> **Na:** Een computer met scherm en toetsenbord
+
+Dat labo heet Assemblage en gaat over een computer uit elkaar halen; welk toestel dat is, was de
+vraag niet, en de bijstelling is er niet eens waar, want het scherm en het toetsenbord haal je niet
+uit elkaar. De twee regels eronder, "Een laptop, om je antwoorden in te vullen" en "Een smartphone,
+om de foto's te nemen", verdienen hun bijzin wel: daar is niet vanzelfsprekend waarom je ze moet
+meebrengen. Dat is wat de fout veroorzaakt. Het eerste item stond kaal tussen items met een bijzin
+en kreeg er een om de vorm, niet om de inhoud.
+
+Ook zo: "Download het voor je begint" onder een knop die "Opdracht downloaden" heet, en een blurb
+die "De gegevens van de processor die in dit labo op tafel ligt" zegt op een kaart die al Processor
+heet.
+
+De toets is dezelfde als bij patroon 13, met een groter voorwerp: schrap de bijstelling en kijk of
+de lezer iets kwijt is. 13 gaat over een bijwoord, dit over een hele bijzin.
+
 ## Spelling en notatie
 
 ### `led`, niet `LED`
@@ -489,6 +542,12 @@ En sinds patroon 18 en 19 nog twee, voor alles wat je schrijft terwijl je aan de
    ons werk en niet over het vak (patroon 18).
 5. **Merken wij het als hij dit niet doet?** Zo niet, dan is het geen instructie maar bemoeienis
    (patroon 19).
+
+En sinds patroon 20 en 21 nog twee, voor elke pagina die vroeg in een reeks staat:
+
+6. **Staat dit woord eerder in de reeks, of in de titel van het labo?** Zo niet, gebruik de naam die
+   de student wel kent (patroon 20).
+7. **Wat weet de lezer meer na deze bijstelling?** Niets, dan gaat ze weg (patroon 21).
 
 ## Het ijkpunt
 
