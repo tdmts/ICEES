@@ -18,14 +18,18 @@ Basis, Linux Geavanceerd, Embedded Systems. Beside them a theory track (a syllab
 prints) and a lecture track (six hoorcolleges, of which five have a deck).
 
 **One of the six modules is written.** `Labo/Assemblage/` holds its hub, its five theory pages and
-its three `Opdracht.html`, and `Algemeen/` holds both pages that every hub links to.
-`check-content.py` and `check-nav.js` are both green with no warnings. The other five modules are
-still only staged in `_incoming/`.
+its three `Opdracht.html`; `Algemeen/` holds both pages that every hub links to. `check-content.py`
+and `check-nav.js` are both green with no warnings. The other five modules are staged in
+`_incoming/`.
+
+No build system and no test suite: you edit HTML/CSS/JS directly. `scripts/` holds eight Python
+scripts, of which `check-content.py` and `import-brightspace.py` are stdlib only, plus one Node
+script, `check-nav.js`, which needs `jsdom` and is the only reason a `node_modules/` may exist here.
 
 ## De indeling in Orion, en waarom niets zijwaarts linkt
 
-Identical to DeN, and its `CLAUDE.md` carries the full reasoning. The short version, because every
-rule below hangs off it:
+Identical to DeN, whose `CLAUDE.md` carries the full reasoning. Every rule below hangs off this
+table:
 
 | Menu-item | Pagina |
 |---|---|
@@ -34,36 +38,27 @@ rule below hangs off it:
 | Opdracht | `Labo/<Naam>/Opdracht.html` |
 | Verslag indienen | a Brightspace dropbox, no page of ours |
 
-A lab is four Orion topics, not one. **That menu does not move when the iframe does.** Navigating
-downward inside an entry is fine and the menu is merely coarser than where you are; navigating
-sideways to another entry leaves the menu pointing at a page the student is not reading. So
-**nothing in this site links sideways inside the iframe**: you either name the entry and drop the
-link, or you open it with `target="_blank"`. Rule 10 of the content check fails a same-frame link
-between two entries.
+A lab is four Orion topics, not one, and that menu does not move when the iframe does. Navigating
+downward inside an entry is fine: the menu is then coarser than where you are, not wrong.
+Navigating sideways leaves the menu pointing at a page the student is not reading. So **nothing in
+this site links sideways inside the iframe**: you either name the entry and drop the link, or open
+it with `target="_blank"`. Rule 10 of the content check fails a same-frame link between two entries.
 
 `reeks` in [reference.js](reference.js) is the machine-readable version of that table. One reeks is
-one menu entry, and every engine stays inside it. A page at the top of a reeks gets no nav row at
-all: there is nothing above an Orion entry that this site may send you to.
-
-No build system and no test suite. You edit HTML/CSS/JS directly. `scripts/` holds the tooling:
-eight Python scripts, of which `check-content.py` and `import-brightspace.py` are stdlib only, plus
-one Node script, `check-nav.js`, which needs `jsdom` and is the only reason a `node_modules/` may
-exist here.
+one menu entry, and every engine stays inside it. A page at the top of a reeks gets no nav row:
+there is nothing above an Orion entry that this site may send you to.
 
 ## Relation to tdmts/DeN
 
-This repo was started from DeN and everything it shares with it was **copied, not shared**: the four
-engines and the eight scripts are byte-for-byte copies with the DeN-specific strings rewritten.
+This repo was started from DeN, and everything it shares with it was **copied, not shared**: the
+four engines and the eight scripts are byte-for-byte copies with the DeN-specific strings rewritten.
 Read DeN's `CLAUDE.md` for the reasoning behind any shared part; read this section before you copy
 anything across, in either direction.
 
-**Whether the engines should live in a repo of their own is still open, and deliberately so.** DeN's
-own note says the question becomes answerable once ICEES exists and there are two real diffs to
-compare. That is now true for the first time, but comparing a day-zero repo against a finished one
-compares the copy against itself: every difference so far is a rewritten string, not a design
-choice. The question gets decided once ICEES has its six modules and the three courses lie side by
-side, and not before. Two things already argue against a naive merge: `back-link.js` resolves its
-sibling manifest off `document.currentScript.src`, so moving it to a shared origin is a rewrite
+**Whether the engines should live in a repo of their own is still open.** It gets decided once ICEES
+has its six modules and the three courses lie side by side: today every difference is a rewritten
+string, not a design choice. Two things already argue against a naive merge. `back-link.js` resolves
+its sibling manifest off `document.currentScript.src`, so moving it to a shared origin is a rewrite
 rather than a copy, and a shared engine makes every course's bug every course's bug.
 
 | | DeN | ICEES |
@@ -77,18 +72,17 @@ rather than a copy, and a shared engine makes every course's bug every course's 
 | Export quirks | `- Copy` duplicates, another course's files | `rCode` casing, an `embedded/` second copy, a stray lesopnames folder |
 
 **The guided steps are grouped, not carried over one to one.** Brightspace gives Linux Basis 25
-pages, one per command, each a title and three lines. That is a reading order for a person who
-already knows what he is looking for and a wall for a person who does not. They become roughly six
-theory pages by subject. This is the one structural difference from DeN that touches every lab, and
-it is why the page split gets approved before anything is written.
+pages, one per command, each a title and three lines. They become roughly six theory pages by
+subject. This is the one structural difference from DeN that touches every lab, and it is why the
+page split gets approved before anything is written.
 
 **A grouped lab gets a `Spiekblad.html`**: every command of that lab in one table, which the student
 keeps beside him while he works through the opdracht. Grouping by subject is right for reading and
 wrong for looking something up, and the spiekblad is what pays for it. It sits in the theory reeks,
 because it belongs to the menu entry Theorie.
 
-**What was kept identical on purpose,** so the engines stay mergeable: the `window.LAB_REFERENCE`
-global, the `reference.js` filename, the `reference.html` hub filename, and the
+**Kept identical on purpose,** so the engines stay mergeable: the `window.LAB_REFERENCE` global, the
+`reference.js` filename, the `reference.html` hub filename, and the
 `msDashboard:{labId}:theory:{topicId}` storage key.
 
 **The copied engines still carry DeN examples in their comments** (`RS485`, `ManagedSwitch`). Those
@@ -146,13 +140,13 @@ and the Orion link 404s with nothing here failing.
 <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
 ```
 
-Never copy or edit them here. A styling bug is reported there, not worked around here.
-`tdmts/OrionContent/template.html` renders every component with its exact markup: read it before
-authoring rather than reproducing markup from memory.
+Never copy or edit them here; a styling bug is reported there. `tdmts/OrionContent/template.html`
+renders every component with its exact markup: read it before authoring rather than reproducing
+markup from memory.
 
 ## The engines
 
-Copies of DeN's, and its `CLAUDE.md` documents each one in full. What they are:
+Copies of DeN's, whose `CLAUDE.md` documents each one in full.
 
 - [reference.js](reference.js) → `window.LAB_REFERENCE.<module>` — the single source of truth for
   every theory list. A page is added here, not in another page's HTML.
@@ -212,9 +206,8 @@ one, or touch `back-link.js` or `reference.js`.
 
 **One rule was changed on the way over from DeN, and it is the only one.** An empty manifest and a
 broken manifest both parse to zero modules, and DeN failed on both with "geen enkele module
-gevonden". That conflates two different things, and on a day-zero repo it fails on the true one. The
-error is kept for a manifest that does not parse, because rules 2 and 3 hang off that parse and a
-broken regex would make every check under it vacuously green; a `window.LAB_REFERENCE` that is
+gevonden". A manifest that does not parse still fails, because rules 2 and 3 hang off that parse and
+a broken regex would make every check under it vacuously green; a `window.LAB_REFERENCE` that is
 literally `{}` is a warning instead. Both branches were verified by putting a broken manifest back.
 
 ## Prose style
@@ -223,11 +216,14 @@ literally `{}` is a warning instead. Both branches were verified by putting a br
 Dutch reads. All content in Dutch, students addressed with **`je`**. No em-dashes, which is the one
 style rule the check enforces.
 
-Its examples still name DeN pages, because this course has not had a style round yet. Two patterns
-carry over exactly and are worth naming: **patroon 17** (a page may not rely on another lab, because
-the labs are independent modules and you do not know which ones a student has done) and **patroon
-18** (a page never refers to the history of the course material itself, which is precisely the kind
-of sentence you write while migrating).
+Two patterns carry over exactly and are worth naming: **patroon 17** (a page may not rely on another
+lab, because the labs are independent modules and you do not know which ones a student has done) and
+**patroon 18** (a page never refers to the history of the course material itself, which is precisely
+the kind of sentence you write while migrating).
+
+Labo Assemblage and both `Algemeen/` pages had a full style round on 4 September 2026, and its diff
+is the reference for what counts as factual here. The examples inside `SCHRIJFSTIJL.md` itself still
+name DeN pages.
 
 Filenames are **PascalCase Dutch nouns**: `Partitietabel.html`, `Opdracht.html`. The exceptions are
 the two hub filenames, `overview.html` and `reference.html`, which the engines match on.
@@ -247,13 +243,12 @@ wipes the read-flags of every student who has already been in it.
 | `Labo/LinuxGeavanceerd/` | GebruikersEnGroepen, Rechten, SoftwareUitDeRepository, SoftwareBuitenDeRepository, Docker | yes |
 | `Labo/EmbeddedSystems/` | WatIsEenEmbeddedSystem, RaspberryPiInstalleren, PiOpHetNetwerk, AlsHetNietLukt, CodesysInstalleren, CodesysProject, Docker, NodeRed, MqttBroker | yes |
 
-Linux Basis is the one that shows what grouping means: 22 command pages become 7 subjects.
-`Navigeren` is pwd, ls and cd; `MappenEnBestanden` is mkdir, vi/nano, three cp pages, two mv pages
-and two rm pages; `ZoekenEnBekijken` is find, more and du; `ProcessenEnRechten` is ps, sudo and the
-two shutdown pages. The two labs without a spiekblad are the two with no commands in them: Assemblage
-is hardware and Virtualiseren is a GUI. Partitioneren is a GUI too, and its spiekblad is a table of
-partition kinds and their limits rather than of commands, which is the thing a student there keeps
-looking up.
+Linux Basis shows what grouping means: 22 command pages become 7 subjects. `Navigeren` is pwd, ls
+and cd; `MappenEnBestanden` is mkdir, vi/nano, three cp pages, two mv pages and two rm pages;
+`ZoekenEnBekijken` is find, more and du; `ProcessenEnRechten` is ps, sudo and the two shutdown
+pages. The two labs without a spiekblad are the two with no commands in them: Assemblage is hardware
+and Virtualiseren is a GUI. Partitioneren is a GUI too, and its spiekblad is a table of partition
+kinds and their limits rather than of commands, which is what a student there keeps looking up.
 
 **One submission is one folder and one Orion menu entry.** Three of the six labs hand in more than
 once, and each dropbox gets its own `Opdracht.html` with its own verslag docx, the way
@@ -291,13 +286,13 @@ evaluation and never a percentage.
   leftover. What the other programmes do with that lab is still open.
 - **The planning is per student**, so `Planning.html` carries no timetable. It says where a student
   finds his own, and it holds the two deadlines that are the same for everyone (demonstrate by the
-  last lab session, tests open until the end of the semester). It is deliberately short rather than
-  a placeholder, so nothing on it has to be removed when a timetable does appear.
+  last lab session, tests open until the end of the semester). It is deliberately short rather
+  than a placeholder.
 
-Two things on `Evaluatie.html` were carried over from the export and are **not** confirmed: the
-couplings that say Partitioneren needs Virtualiseren first, and that the Linux tests wait until both
-Linux labs are done. They sit under evaluation and not on a theory page, so patroon 17 is intact
-either way, but check them before the Linux modules are written.
+Two couplings came out of the export and were never confirmed: that Partitioneren is made on the VM
+from Virtualiseren, and that the Linux tests wait until both Linux labs are done. Neither is on a
+page any more; the first was removed from `Evaluatie.html` in the style round of 4 September 2026.
+Check both before the Linux modules are written.
 
 The table on `Evaluatie.html` links only the labs that exist. Add the link when a module lands: rule
 1 fails on a link to a page that is not there yet, which is what keeps that table honest.
@@ -328,19 +323,17 @@ Four things about this export that DeN's did not have, and every one of them fai
 
 - **`rCode` is capitalised on some quicklinks and not others.** D2L writes `rcode=` on a topic made
   in the editor and `rCode=` on one that came out of a Course Copy, in one and the same manifest.
-  DeN's `QUICKLINK_RE` was case-sensitive, so it matched 6 of this export's 16 quicklinks and the
+  DeN's `QUICKLINK_RE` was case-sensitive, so it matched 6 of this export's 16 quicklinks, and the
   five dropboxes among the other ten (virtualiseren, Linux basis, chmod, chown, chgrp) were reported
-  as "skipped" rather than staged. **Five assignments, gone, with one line in the summary saying a
-  link was not understood.** The regex now carries `re.I`. This is the one change to the importer
-  beyond rewritten DeN strings.
+  as "skipped" rather than staged, with one line in the summary saying a link was not understood.
+  The regex now carries `re.I`. This is the one change to the importer beyond rewritten DeN strings.
 - **The three lesopnames are in the export twice, and the manifest keeps the right copy.**
   `migration/lesopnames/` holds `Demontage`, `Assemblage` and `BIOS`, each a bare Panopto iframe,
-  and no `<item>` references any of them. That looks like content the manifest walk loses, and it
-  is not: the same three recordings are embedded in the three pages the manifest *does* carry
-  (`Demontage`, `Assemblage`, `BIOS/UEFI omgeving openen`), on the same three Panopto ids
-  (`df19b7cf`, `d2e5a5cb`, `2d82f06b`). The standalone files are the leftover, the pages are the
-  course. Check the ids before concluding either way; the id is the only thing that says whether
-  two files are the same recording.
+  and no `<item>` references any of them. The same three recordings are embedded in the three pages
+  the manifest *does* carry (`Demontage`, `Assemblage`, `BIOS/UEFI omgeving openen`), on the same
+  three Panopto ids (`df19b7cf`, `d2e5a5cb`, `2d82f06b`). The standalone files are the leftover, the
+  pages are the course. Check the ids before concluding either way; the id is the only thing that
+  says whether two files are the same recording.
 - **`embedded/` is a second, better copy of Labo Embedded Systems.** It appears as its own top-level
   org unit ("Labo: embedded systems", lowercase) and holds eleven pages that were rewritten by hand:
   clean `<div class="container">` markup instead of the chamilo wrapper, no `&nbsp;` padding, and in
@@ -367,8 +360,7 @@ The docx are on disk at
 `~/OneDrive - Hogeschool Gent/EDU/2025-2026/Industriële computers en embedded systems/Labo/`, one
 folder per lab, each opgave beside its `- oplossing` twin. **Read the opgave, never the oplossing**:
 the solutions are assessed work and stay on Brightspace. That folder is where the `<!-- verslag -->`
-block of an `Opdracht.html` comes from, so open it before writing one, or you will invent an
-assignment that already exists.
+block of an `Opdracht.html` comes from, so open it before writing one.
 
 `--fetch-remote` is the one flag that touches the network. Several pages hotlink their screenshots
 to `chamilo-downloads.hogent.be`, the platform this course lived on before Brightspace, through URLs
@@ -393,8 +385,9 @@ third-party cookie two levels deep, and Panopto's own `p3p` header says as much.
 Chrome today and blocked outright in Safari and Firefox.
 
 **So a lesopname is a link, not an embed**: `target="_blank"` to `Viewer.aspx?id=<id>`, the same
-treatment a PDF already gets and for a second reason that holds regardless of cookies, which is that
-a 720×405 player inside the narrow Orion iframe is unreadable. The three ids are `df19b7cf-8390-41c1-81fd-b1e800a1cb6a`
-(Demontage), `d2e5a5cb-ce88-4a1d-91fb-b1e800a47a0e` (Assemblage) and
-`2d82f06b-33e4-4c62-a685-b1e800a68d7d` (BIOS/UEFI). Never carry the `Embed.aspx` iframe across from
-the Brightspace page: it renders as an empty frame under Safari's ITP with nothing failing.
+treatment a PDF already gets, and for a second reason that holds regardless of cookies, which is
+that a 720×405 player inside the narrow Orion iframe is unreadable. The three ids are
+`df19b7cf-8390-41c1-81fd-b1e800a1cb6a` (Demontage), `d2e5a5cb-ce88-4a1d-91fb-b1e800a47a0e`
+(Assemblage) and `2d82f06b-33e4-4c62-a685-b1e800a68d7d` (BIOS/UEFI). Never carry the `Embed.aspx`
+iframe across from the Brightspace page: it renders as an empty frame under Safari's ITP with
+nothing failing.

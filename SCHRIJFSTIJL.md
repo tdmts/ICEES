@@ -8,13 +8,12 @@ technische vraag en hoort bij [`scripts/check-content.py`](scripts/check-content
 genoeg uitlegt is een didactische vraag, en die heeft in deze repo nog geen eigen protocol.
 
 **Waar het geldt: overal waar een student meeleest.** Lopende tekst, koppen en kadertitels, de
-`lead`, `alt`-teksten, `figcaption`s, en de `name` en `blurb` in [`reference.js`](reference.js). De
-site hoort als één stem te klinken, en een blurb op een theoriekaart is even goed tekst als een
-alinea.
+`lead`, `alt`-teksten, `figcaption`s, en de `name` en `blurb` in [`reference.js`](reference.js). Een
+blurb op een theoriekaart is even goed tekst als een alinea.
 
 **Ook in het verslag.** De opdracht staat in een `<!-- verslag -->` blok in `Opdracht.html` en
-`scripts/export-verslag.py` maakt daar de docx van. Die tekst is dus gewone paginatekst en valt
-hier volledig onder, ook al leest de student ze in Word.
+`scripts/export-verslag.py` maakt daar de docx van. Die tekst valt hier volledig onder, ook al leest
+de student ze in Word.
 
 **Waar het niet geldt: de documentatie van de repo zelf.** Dit bestand en CLAUDE.md zijn
 werkmateriaal voor wie hier schrijft. De patroontitels hieronder zijn zelf werkwoordloos en
@@ -24,25 +23,16 @@ ontkennend, en dat blijft zo: ze zijn de naam van een regel en worden ook zo gec
 werkwoord: dat is geen stijl. Verzamel ze en leg ze apart voor, zodat de diff van een stijlronde één
 soort wijziging bevat.
 
-## Waar dit document vandaan komt
+**Er is geen script.** `scripts/check-content.py` dwingt één stijlregel af, de em-dash, als onderdeel
+van regel 5. Er is geen `--audit` en geen `--fix`. Alles hieronder is een leesregel, en dat is een
+bewuste keuze: de meeste van deze patronen hebben woorden nodig die ook volkomen legitiem
+voorkomen, en een woordenlijst zou vooral goede zinnen afkeuren.
 
-Het is overgenomen uit `tdmts/Microcontrollers`, waar het geschreven is tegen een tekst met een heel
-ander probleem: die was *opgevoerd*, met een pointe per alinea. **De tekst van dit vak heeft dat
-probleem niet.** Ze komt uit een Brightspace-export en uit Word-documenten, is over meerdere jaren
-gegroeid, en is vooral zakelijk tot kaal. Wat er wél in zit: een grapje hier en daar, een emoji, een
-terzijde dat niets uitlegt, en de gewone slijtage van tekst die nooit in één keer herlezen is.
-
-Dat betekent twee dingen. De patronen 1 tot 10 zullen hier minder vaak aanslaan dan in de repo waar
-ze vandaan komen, en dat is geen reden om ze te schrappen: ze slaan wél aan zodra er nieuwe tekst bij
-geschreven wordt, en dat is precies het moment waarop ze nodig zijn. En de voorbeelden hieronder
-komen deels nog uit die andere repo, omdat de tekst van dit vak nog geen enkele stijlronde gehad
-heeft. Waar deze repo zelf al een echt voorbeeld levert, staat dat er; de rest wordt vervangen
-naarmate er hier doorlopen gebeuren.
-
-**Deze repo automatiseert bijna niets hiervan.** `scripts/check-content.py` dwingt één stijlregel af,
-de em-dash, als onderdeel van regel 5. Er is geen `--audit` en geen `--fix`. Alles hieronder is dus
-een leesregel, en dat is een bewuste keuze: de meeste van deze patronen hebben woorden nodig die ook
-volkomen legitiem voorkomen, en een woordenlijst zou vooral goede zinnen afkeuren.
+Het document komt uit `tdmts/Microcontrollers` en een deel van de voorbeelden hieronder komt daar
+nog vandaan. De tekst van dít vak had een ander probleem: ze komt uit een Brightspace-export en uit
+Word-documenten, en was vooral zakelijk tot kaal, met hier en daar een grapje, een emoji of een
+terzijde dat niets uitlegt. De patronen 1 tot 10 slaan dus vooral aan op tekst die hier nieuw
+geschreven wordt, en dat is precies het moment waarop ze nodig zijn.
 
 ## Wat blijft
 
@@ -82,9 +72,8 @@ Patroon 16 en 17 zitten een niveau hoger: ze gaan niet over een zin maar over de
 en daarom overleeft elke zin afzonderlijk de andere vijftien.
 
 Patroon 18 en 19 staan nog een niveau hoger en zijn in deze repo geschreven: ze gaan niet over de
-vorm maar over het onderwerp. Een zin die door 1 tot 17 komt, kan nog altijd over de verkeerde zaak
-gaan. Ze horen bij elkaar, want ze zijn de twee sporen die een beslissing van de docent op de pagina
-achterlaat: de uitleg waarom (18) en het voorschrift dat eruit volgt (19).
+vorm maar over het onderwerp. Ze horen bij elkaar, want ze zijn de twee sporen die een beslissing van
+de docent op de pagina achterlaat: de uitleg waarom (18) en het voorschrift dat eruit volgt (19).
 
 ### 1. Geen slotzin die moet blijven hangen
 
@@ -121,8 +110,8 @@ Zet de bewering neer.
 > **Na:** De reden zit in de compiler, die de variabele in de processor bijhoudt in plaats van hem
 > telkens opnieuw uit het geheugen te halen.
 
-Een echte vraag **aan** de student mag natuurlijk wel, want daar hoort een antwoord bij: "Is de
-input /RE active low of active high?"
+Een echte vraag **aan** de student mag wel, want daar hoort een antwoord bij: "Is de input /RE
+active low of active high?"
 
 ### 4. Geen dubbele punt als aankondiging van een pointe
 
@@ -141,14 +130,14 @@ Een dubbele punt voor een opsomming, een tabel of een codevoorbeeld is gewoon in
 Ook zo: "Zonder uitzondering.", "Terecht.", "Eén draad." Voeg ze samen met de zin ervoor of laat ze
 weg.
 
-De toets is de persoonsvorm. Een zin zonder werkwoord ("Eentje maar.", "Terecht.") gaat weg of gaat
-op in de zin ervoor; een korte zin mét persoonsvorm blijft, ook wanneer hij nadruk legt. Hier zijn
-geen uitzonderingen op, want dan wordt het opnieuw een oordeel. Een vaste aankondiging die je wil
-houden, krijgt gewoon een werkwoord: "Nog een denkoefening." wordt "Denk hier eerst zelf na."
+De toets is de persoonsvorm. Een zin zonder werkwoord gaat weg of gaat op in de zin ervoor; een korte
+zin mét persoonsvorm blijft, ook wanneer hij nadruk legt. Hier zijn geen uitzonderingen op, want dan
+wordt het opnieuw een oordeel. Een vaste aankondiging die je wil houden, krijgt gewoon een werkwoord:
+"Nog een denkoefening." wordt "Denk hier eerst zelf na."
 
 **Alleen in lopende tekst.** Koppen, kadertitels, `alt`-teksten, `figcaption`s en blurbs zijn van
 nature naamwoordgroepen ("Het probleem", "Voordelen", "Oplossing"). Daar is een fragment de normale
-vorm en geen effectbejag.
+vorm.
 
 ### 6. Geen ontkennende opening
 
@@ -176,9 +165,8 @@ ongewijzigd wanneer de tekst verandert, want andere pagina's linken ernaar.
 > **Na:** Wanneer de compiler ziet dat je steeds dezelfde variabele uitleest, houdt hij die waarde
 > bij in de processor omdat er in je `loop()` niets aan verandert.
 
-In dit vak ligt dit dichterbij dan het lijkt: een bus, een switch en een transceiver krijgen snel
-menselijke werkwoorden. "De switch beslist" en "de transceiver luistert" mogen als vakjargon, want zo
-heet het echt; "de switch weet niet goed wat hij ermee moet" is patroon 7.
+"De switch beslist" en "de transceiver luistert" mogen als vakjargon, want zo heet het echt; "de
+switch weet niet goed wat hij ermee moet" is patroon 7.
 
 ### 8. Geen verplichte tegenhanger
 
@@ -197,9 +185,8 @@ zelf moet maken, en dan als informatie en niet als evenwicht.
 volgende voorspelbaar. Zeg waar de pagina over gaat in de vorm die bij díe pagina past, en soms is
 dat gewoon de eerste feitelijke zin van het onderwerp.
 
-Dit geldt ook voor `overview.html` en `reference.html`. Hun `lead` is de verleiding om boilerplate te
-worden, en zes labo's met dezelfde openingszin is precies waar dit patroon over gaat. Elk overzicht
-krijgt een `lead` die bij dát labo past.
+Dit geldt ook voor `overview.html` en `reference.html`. Zes labo's met dezelfde openingszin is
+precies waar dit patroon over gaat, dus elk overzicht krijgt een `lead` die bij dát labo past.
 
 De `lead` van `Opdracht.html` verdient extra aandacht: die staat ook op de eerste bladzijde van het
 verslag, en is voor veel studenten de eerste zin die ze van het labo lezen. Regel 8 van
@@ -233,10 +220,9 @@ buitenste **pootjes** van een potentiometer heten zo, en een `ezelsbruggetje` he
 vaste uitdrukkingen ("tussen haakjes", "een beetje") zijn geen opsmuk. De vraag is niet of er een
 verkleinvorm staat, maar of er een gewoon woord bestaat dat hetzelfde zegt.
 
-Dat deze vorm juist hier stoort, heeft een taalkundige grond. Het Nederlands van Nederland gebruikt
-verkleinwoorden veel vrijer als verzachter dan het Nederlands van Vlaanderen ("een vraagje", "een
-momentje"). Wie in Vlaanderen lesgeeft, leest die vorm dus sneller als aanstellerij dan als
-vriendelijkheid. Zie ook patroon 12.
+Het Nederlands van Nederland gebruikt verkleinwoorden veel vrijer als verzachter dan dat van
+Vlaanderen ("een vraagje", "een momentje"), dus een Vlaamse lezer leest die vorm sneller als
+aanstellerij dan als vriendelijkheid. Zie ook patroon 12.
 
 ### 12. Belgisch-Nederlands, geen Noord-Nederlandse woordkeuze
 
@@ -266,9 +252,9 @@ voorkomt, gaat weg: "deftig" voor behoorlijk, "een pak beter", "vijs", "kuisen",
 Liever een Belgicisme dan een Hollandisme.
 
 Ten tweede: er zijn woorden die alleen Noord-Nederlands *lijken*. `netjes` is gewoon Nederlands en
-wordt in Vlaanderen even goed gebruikt, dus dat is geen regionale fout (het is er wel vaak een van
-patroon 13). `best` in "je neemt best" is Belgisch en niet Noord-Nederlands. Meet voor je een woord
-aan de lijst toevoegt of het in deze repo wel is wat je denkt dat het is.
+wordt in Vlaanderen even goed gebruikt (het is er wel vaak een van patroon 13). `best` in "je neemt
+best" is Belgisch en niet Noord-Nederlands. Meet voor je een woord aan de lijst toevoegt of het in
+deze repo wel is wat je denkt dat het is.
 
 ### 13. Geen vulwoorden
 
@@ -301,10 +287,8 @@ Een grapje tussen haakjes dat niets uitlegt, gaat weg. Een emoji ook.
 > **Na:** Dat betrouwbaar laten werken is niet eenvoudig. Probeer het gerust eens uit. De oplossing
 > is om in plaats van losse bits meer betekenisvolle commando's door te sturen.
 
-Dat voorbeeld komt uit de oorspronkelijke opgave van labo RS485 en is bij het omzetten al geschrapt.
 Dezelfde grond als patroon 1: het staat er om te charmeren en niet om te informeren. Een terzijde dat
-wél iets zegt, is geen knipoog en blijft, al staat het meestal beter in de hoofdzin (zie de proef
-hieronder).
+wél iets zegt, is geen knipoog en blijft, al staat het meestal beter in de hoofdzin.
 
 Informele opmaak is iets anders dan een knipoog. `TLDR:` boven een samenvatting kondigt aan wat er
 komt en blijft dus staan.
@@ -350,7 +334,7 @@ verplaatsing: het gewicht gaat de mededeling in.
 
 Een waarschuwing is geen oordeel. "Sluit niets aan voor je schema gecontroleerd is" is een instructie
 en blijft, ook in een `warning`-kader. "Dit is de gevaarlijkste fout van de drie" is een rangschikking
-en gaat weg. En één keer per pagina mag een echte klemtoon: het probleem is de herhaling, want een
+en gaat weg. Eén keer per pagina mag een echte klemtoon: het probleem is de herhaling, want een
 tekst die alles weegt, weegt niets meer.
 
 ### 17. Bekend materiaal krijgt minder plaats, maar reken niet op een ander labo
@@ -358,7 +342,7 @@ tekst die alles weegt, weegt niets meer.
 Alles even diep uitleggen is zelf een vorm van opvoering. Wat de student aantoonbaar al gezien heeft,
 krijgt één regel en een verwijzing; het nieuwe krijgt de ruimte.
 
-**En hier wijkt dit vak af van de repo waar dit document vandaan komt.** Bij Microcontrollers bouwen
+**Hier wijkt dit vak af van de repo waar dit document vandaan komt.** Bij Microcontrollers bouwen
 labo 0 tot 7 op elkaar voort, dus daar mag een pagina rekenen op het vorige labo. **Hier niet.** De
 labo's zijn onafhankelijke modules en de groepen roteren erdoor, dus je weet niet welke labo's een
 student al gedaan heeft, en zelfs niet in welke volgorde. Een zin als "zoals je in het labo over
@@ -369,8 +353,8 @@ Waar je wél op mag rekenen, en dat is de hele lijst:
 1. **De theorietrack**, de hoorcolleges en de syllabus. Die loopt wel in volgorde en gaat aan de
    labo's vooraf.
 2. **Een eerdere theoriepagina van hetzelfde labo.** Binnen een module ligt de volgorde vast in
-   `reference.js`, en de hub toont ze in die volgorde. `DifferentialSignaling.html` mag dus rekenen
-   op `SingleEndedSignaling.html`, en doet dat ook.
+   `reference.js`, en de hub toont ze in die volgorde. `Demontage.html` mag dus rekenen op
+   `Veiligheid.html`, en doet dat ook.
 3. **Een eerdere schakeling van dezelfde opdracht.** Schakeling 6 mag rekenen op schakeling 5.
 
 Moet een labo iets uit een ander labo hebben, dan hoort die stof in de theorietrack of in de
@@ -387,8 +371,7 @@ Schrijf over het vak, nooit over de cursus als bouwwerk. Twee soorten zinnen slu
 ze hebben dezelfde oorzaak: ze bestaan door een gesprek waar de lezer niet bij was.
 
 **De geschiedenis van het materiaal.** Wat vroeger ergens anders stond, wat verplaatst is, wat er
-nieuw bij komt. Een student die dit vak voor het eerst doet heeft geen vorige versie gezien, en kan
-zo'n zin dus alleen lezen als een raadsel.
+nieuw bij komt. Een student die dit vak voor het eerst doet heeft geen vorige versie gezien.
 
 > **Voor:** De theorie blijft wel op de site staan. De zes theoriepagina's en de zelftest lees je op
 > het scherm.
@@ -397,8 +380,7 @@ zo'n zin dus alleen lezen als een raadsel.
 
 **De verantwoording van een keuze.** Waarom het een document is en geen invulveld, waarom het een PDF
 is en geen pagina: dat is een afweging van de docent. De student heeft de instructie nodig, niet het
-argument. Geef je hem het argument toch, dan lees je als iemand die zich verdedigt tegen een bezwaar
-dat hij niet gemaakt heeft.
+argument.
 
 > **Voor:** Vul dit document in terwijl je werkt en bewaar het op je OneDrive. Zo blijft het bewaard
 > als je computer crasht of als je van pc wisselt, en kan je eraan verder werken wanneer je
@@ -410,16 +392,13 @@ Let op wat er in dat voorbeeld overblijft. Schrap je alleen de verantwoording, d
 het op je OneDrive" over, en dat is een voorschrift dat uit hetzelfde gesprek komt. Zie patroon 19:
 de twee treden bijna altijd samen op, en de tweede is de makkelijkste om te missen.
 
-Het verraderlijke is dat zulke zinnen ontstaan op het moment dat je iets verandert of beslist, en dan
-volkomen logisch klinken: het argument ligt vers op tafel en je schrijft het mee op. Een dag later
-zijn het de enige zinnen op de pagina die niemand kan plaatsen. Let dus vooral op wat je schrijft
-tijdens een verbouwing, en op de woorden die erbij horen: *blijft wel*, *staat nu*, *voortaan*,
-*vanaf dit jaar*, *zoals vroeger*, en elke *zo blijft*, *zodat je* of *dan kan je* die uitlegt waarom
-de opdracht is zoals ze is.
+Zulke zinnen ontstaan op het moment dat je iets verandert of beslist, en klinken dan volkomen
+logisch. Let dus vooral op wat je schrijft tijdens een verbouwing, en op de woorden die erbij horen:
+*blijft wel*, *staat nu*, *voortaan*, *vanaf dit jaar*, *zoals vroeger*, en elke *zo blijft*, *zodat
+je* of *dan kan je* die uitlegt waarom de opdracht is zoals ze is.
 
-Dit is een leesregel, geen scriptregel, en dat is een bewuste keuze: de woorden hierboven komen ook
-volkomen legitiem voor. "Vroeger was parallel populair" op de pagina over seriële communicatie gaat
-over de techniek, niet over de cursus, en een woordenlijst kan dat verschil niet zien.
+Dit is een leesregel en geen scriptregel: die woorden komen ook volkomen legitiem voor. "Vroeger was
+parallel populair" op de pagina over seriële communicatie gaat over de techniek, niet over de cursus.
 
 De uitzondering is de vakinhoud zelf, en die is ruim. De geschiedenis van een standaard, een techniek
 of een component hoort er wel bij, en een reden die iets **technisch** verklaart ook: "zet er een
@@ -446,10 +425,10 @@ de pagina: de uitleg waarom (18) en het voorschrift dat eruit volgt (19). De eer
 klinkt defensief. De tweede klinkt als een gewone instructie en blijft daardoor staan, ook nadat de
 uitleg geschrapt is. Kom je een zin uit 18 tegen, kijk dan meteen naar de zin ernaast.
 
-Er is een randgeval, en dat is waar deze regel misgaat: een voorschrift over de werkwijze **wordt**
-onze zaak zodra het de evaluatie raakt. In een labo waar twee studenten samen één opstelling delen,
-is "spreek af wie zendt en wie ontvangt" wél een instructie, want het bepaalt wat elk van beiden
-kan tonen. De vraag is niet of het over zijn werkwijze gaat, maar of wij het merken.
+Er is een randgeval: een voorschrift over de werkwijze **wordt** onze zaak zodra het de evaluatie
+raakt. In een labo waar twee studenten samen één opstelling delen, is "spreek af wie zendt en wie
+ontvangt" wél een instructie, want het bepaalt wat elk van beiden kan tonen. De vraag is niet of het
+over zijn werkwijze gaat, maar of wij het merken.
 
 ## Spelling en notatie
 
@@ -462,10 +441,9 @@ begint.
 >
 > **Na:** De led hoort te branden als je de D-lijn van de zender hoog zet.
 
-In code blijft alles zoals het is. `pinLED1` is een naam die de student overtypt, en in labo RS485 is
-`"LED1"` de boodschap die over de bus gaat (`mySerial.println("LED1")`), dus daar is de kapitaal
-gegeven. Schrijft een pagina de afkorting ooit voluit, dan blijft `LED` staan in "LED staat voor
-Light Emitting Diode".
+In code blijft alles zoals het is. `pinLED1` is een naam die de student overtypt, en waar `"LED1"`
+een boodschap is die over een bus gaat, is de kapitaal gegeven. Schrijft een pagina de afkorting ooit
+voluit, dan blijft `LED` staan in "LED staat voor Light Emitting Diode".
 
 ### De naam van een standaard houdt zijn streepje, een mapnaam niet
 
@@ -475,8 +453,7 @@ In de lopende tekst schrijf je de standaard zoals de standaard zichzelf schrijft
 "Labo RS485".
 
 Dat is dezelfde scheiding als bij `led` tegenover `pinLED`: proza volgt de taal, een identifier volgt
-wat een pad en een sleutel kunnen dragen. Zonder die afspraak staan beide vormen door elkaar op één
-pagina, wat vandaag al bijna gebeurde.
+wat een pad en een sleutel kunnen dragen.
 
 ### Toestelinvoer en toestelantwoord blijven letterlijk
 
@@ -513,8 +490,8 @@ En sinds patroon 18 en 19 nog twee, voor alles wat je schrijft terwijl je aan de
 5. **Merken wij het als hij dit niet doet?** Zo niet, dan is het geen instructie maar bemoeienis
    (patroon 19).
 
-**Er is nog geen ijkpunt.** Bij Microcontrollers is er één pagina die volledig volgens dit document
-herschreven is en die je naast haar vorige versie kan leggen. Hier heeft nog geen enkele pagina een
-volledige stijlronde gehad: de theoriepagina's van labo RS485 komen uit de Brightspace-export en zijn
-bij het omzetten alleen op de duidelijkste punten aangepast. `Labo/RS485/Theorie/WatIsRS485.html` is
-de kandidaat, want die is kort en staat het dichtst bij wat de andere labo's nodig gaan hebben.
+## Het ijkpunt
+
+Labo Assemblage en beide pagina's onder `Algemeen/` kregen op 4 september 2026 een volledige
+stijlronde. Die diff is het ijkpunt: hij toont wat de patronen 9, 16 en 18 in de praktijk wegnemen,
+en hoe kort een `lead` daarna staat. Leg hem ernaast voor je aan een nieuwe module begint.
