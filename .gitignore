@@ -1,0 +1,20 @@
+.claude/settings.local.json
+
+# Ruwe Brightspace-topics, klaargezet door scripts/import-brightspace.py en per
+# pagina omgezet met orion-convert. Wordt nooit gepubliceerd; de omgezette
+# pagina onder Labo/<Naam>/ wel.
+_incoming/
+
+# PDF-exports van scripts/export-pdf.py. Afgeleid materiaal: de pagina onder
+# Labo/<Naam>/ is het origineel, de PDF maak je opnieuw wanneer je er een
+# nodig hebt.
+_export/
+
+# jsdom, de enige afhankelijkheid in de repo, en alleen nodig als je
+# scripts/check-nav.js draait. Zie de kop van dat bestand. Niets anders hangt
+# ervan af, dus dit blijft een lege map voor wie hem nooit installeert.
+node_modules/
+
+# Bytecode van de scripts onder scripts/. Wordt vanzelf opnieuw gemaakt en
+# Pages serveert alleen wat getrackt is, dus dit hoort er niet bij.
+__pycache__/
