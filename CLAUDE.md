@@ -17,7 +17,7 @@ Six labs, each an independent module: Assemblage + BIOS/UEFI, Virtualiseren, Par
 Basis, Linux Geavanceerd, Embedded Systems. Beside them a theory track (a syllabus the student
 prints) and a lecture track (six hoorcolleges, of which five have a deck).
 
-**One of the six modules is written.** `Labo/Assemblage/` holds its hub, its five theory pages and
+**One of the six modules is written.** `Labo/Assemblage/` holds its hub, its three theory pages and
 its three `Opdracht.html`; `Algemeen/` holds both pages that every hub links to. `check-content.py`
 and `check-nav.js` are both green with no warnings. The other five modules are staged in
 `_incoming/`.
@@ -247,7 +247,7 @@ wipes the read-flags of every student who has already been in it.
 
 | Folder | Theory pages | Spiekblad |
 |---|---|---|
-| `Labo/Assemblage/` | Veiligheid, Componenten, Demontage, Assemblage, BiosUefi | no |
+| `Labo/Assemblage/` | Veiligheid, Componenten, BiosUefi | no |
 | `Labo/Virtualiseren/` | WatIsVirtualisatie, VirtueleMachineAanmaken, InstallatieUbuntu, SchijfEnGeheugen, GuestAdditions | no |
 | `Labo/Partitioneren/` | Partitietabellen, GPartedStarten, PrimairePartities, ExtendedEnLogisch, GptPartities | yes |
 | `Labo/LinuxBasis/` | LinuxEnDistributies, DeTerminal, Navigeren, MappenEnBestanden, ZoekenEnBekijken, ProcessenEnRechten, Archieven | yes |
@@ -402,3 +402,39 @@ that a 720×405 player inside the narrow Orion iframe is unreadable. The three i
 (Assemblage) and `2d82f06b-33e4-4c62-a685-b1e800a68d7d` (BIOS/UEFI). Never carry the `Embed.aspx`
 iframe across from the Brightspace page: it renders as an empty frame under Safari's ITP with
 nothing failing.
+
+**A lesopname hangs on the opdracht, not on the theory.** It shows the work being done, so it
+belongs beside the assignment that has the student do it, and a theory page that names a recording
+sends him to a menu entry he is not in. Corrected on 4 September 2026: the three ids sat on
+`Theorie/Demontage.html`, `Theorie/Assemblage.html` and `Theorie/BiosUefi.html`, and they now sit on
+`Inventaris/Opdracht.html` (demontage and assemblage) and `BiosUefi/Opdracht.html` (BIOS/UEFI). Do
+the same for the remaining modules.
+
+**A theory page whose subject is a procedure the recording shows does not survive that move.**
+`Theorie/Demontage.html` and `Theorie/Assemblage.html` were both a numbered list of the same steps
+the opname demonstrates, so they were deleted rather than trimmed, and Assemblage's theory reeks is
+now Veiligheid, Componenten, BiosUefi. `Theorie/BiosUefi.html` stayed: what it carries (BIOS against
+UEFI, the POST, MBR against GPT, and the difference between the opstartvolgorde and the bootmenu) is
+in no recording, and `BiosUefi/Opdracht.html` asks about that last one by name. The test to apply to
+the other five modules is that one, not "did a recording move away from here".
+
+What moved off those two pages rather than being dropped: photographing the front-panel cables
+before they come off and the walk-through of the connections before a lecturer is called, both to
+`Inventaris/Opdracht.html`, and `CPU_FAN` and dual channel to `Theorie/Componenten.html`. What went
+with the pages: the two ordered lists of steps, the pea of koelpasta, the notch in a memory module,
+the AM4 lever, and how you seat a processor in its socket, which is the one below.
+
+**The processor stays in its socket and the cooler stays on it.** Demontage stops at the
+motherboard. The opgave only ever implied this, in one line of the inventaris docx ("de ventilator
+en koelvin mag je er op laten"), and this repo had turned that into its opposite: the deleted
+`Theorie/Demontage.html` told the student to take the cooler off and lift the processor out, and
+`Theorie/Veiligheid.html` explained how to hold a loose processor. Corrected on 4 September 2026 by
+the lecturer. It is now a rule in two places, because a student in the Opdracht entry has not
+necessarily read the Theorie entry: an info-box on `Theorie/Veiligheid.html`, where the labo
+afspraken live, and one on `Inventaris/Opdracht.html`, beside the photo of the processor. The two
+reasons are the koelpasta that lifts the processor with the cooler and the AM4 pins that bend under
+a finger; both are in the Veiligheid box.
+
+Restored in the same pass: each of the three verslag blocks says again that the photo with the
+studentenkaart is the proof the opdracht was made in the lab. The original docx said so beside
+every one of the three, and all three had lost it.

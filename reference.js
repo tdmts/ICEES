@@ -79,18 +79,6 @@ window.LAB_REFERENCE = {
                         href: 'Componenten.html'
                     },
                     {
-                        id: 'demontage',
-                        name: 'Demontage',
-                        blurb: 'De volgorde van buiten naar binnen, en hoe je de koeler en de processor van de socket krijgt.',
-                        href: 'Demontage.html'
-                    },
-                    {
-                        id: 'assemblage',
-                        name: 'Assemblage',
-                        blurb: 'De omgekeerde volgorde, met de processor, de koelpasta en het geheugen op het bord voor het in de kast gaat.',
-                        href: 'Assemblage.html'
-                    },
-                    {
                         id: 'bios-uefi',
                         name: 'BIOS en UEFI',
                         blurb: 'Wat de firmware doet voor er een besturingssysteem is: de POST, de opstartvolgorde en het bootmenu.',

@@ -126,6 +126,17 @@
             processor zelf en werkt de beeldaansluiting op het moederbord. Heeft de processor die niet, dan blijft het
             scherm zwart tot er een grafische kaart in het x16-slot zit.</p>
 
+        <p>Op de processor zit een koeler die de warmte afvoert die het energieverbruik hierboven aangeeft. De
+            ventilator van die koeler hangt aan een eigen aansluiting op het moederbord, die met
+            <code>CPU_FAN</code> aangeduid staat.</p>
+
+        <div class="info-box">
+            <div class="info-title remark">Draait de ventilator van de processor niet, dan legt het bord de computer stil</div>
+            <p>Het moederbord meet het toerental op de <code>CPU_FAN</code>-aansluiting. Krijgt het daar geen
+                signaal, dan zet het de computer na enkele seconden weer uit: een processor zonder koeling loopt in
+                die tijd al te warm.</p>
+        </div>
+
         <h2 id="werkgeheugen">Het werkgeheugen</h2>
 
         <p>Het werkgeheugen, of RAM, houdt vast waar de processor op dit moment mee bezig is. Het is leeg zodra de
@@ -164,6 +175,11 @@
                 </tbody>
             </table>
         </div>
+
+        <p>Staan er vier DIMM-slots op het bord en zet je er twee modules in, dan bepaalt de handleiding van het
+            moederbord welke twee slots je daarvoor gebruikt. Meestal zijn dat het tweede en het vierde, geteld
+            vanaf de processor. Zo spreekt de processor de twee modules in <strong>dual channel</strong> aan en
+            verdubbelt de breedte waarmee hij het geheugen bereikt.</p>
 
         <div class="info-box">
             <div class="info-title tip">De standaardsnelheid verschilt van de snelheid op de verpakking</div>

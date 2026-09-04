@@ -393,8 +393,8 @@ Waar je wél op mag rekenen, en dat is de hele lijst:
 1. **De theorietrack**, de hoorcolleges en de syllabus. Die loopt wel in volgorde en gaat aan de
    labo's vooraf.
 2. **Een eerdere theoriepagina van hetzelfde labo.** Binnen een module ligt de volgorde vast in
-   `reference.js`, en de hub toont ze in die volgorde. `Demontage.html` mag dus rekenen op
-   `Veiligheid.html`, en doet dat ook.
+   `reference.js`, en de hub toont ze in die volgorde. `BiosUefi.html` mag dus rekenen op
+   `Componenten.html`, en doet dat ook.
 3. **Een eerdere schakeling van dezelfde opdracht.** Schakeling 6 mag rekenen op schakeling 5.
 
 Moet een labo iets uit een ander labo hebben, dan hoort die stof in de theorietrack of in de
