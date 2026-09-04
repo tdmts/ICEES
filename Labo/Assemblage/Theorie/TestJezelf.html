@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test jezelf</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Test jezelf</h1>
+
+        <p>Beantwoord elke vraag eerst zelf en klap daarna pas het antwoord open. Bij elk antwoord staat op welke
+            theoriepagina het uitgelegd wordt, dus lees die opnieuw wanneer je ernaast zat. Er wordt niets
+            bijgehouden en er staat geen punt op.</p>
+
+        <h2 id="vragen">Vragen</h2>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>1. Waarom mag de voedingskabel er niet inzitten terwijl je binnenin de kast
+                        werkt?</strong></p>
+                <ol type="a">
+                    <li>De ventilatoren kunnen aanslaan zodra je een connector aanraakt</li>
+                    <li>Ook met de computer uit staat er spanning op de condensatoren in de voeding, en krijgt het
+                        moederbord via de standby-lijn nog 5 V</li>
+                    <li>Het werkgeheugen wist zich pas nadat de kabel eruit is</li>
+                    <li>De knoopcelbatterij loopt leeg zolang de kast openstaat</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord b.</strong> Een connector die je onder die spanning insteekt of uittrekt, kan de
+                    aansluiting op het moederbord beschadigen. De netspanning gaat er pas weer op nadat een lector je
+                    werk gecontroleerd heeft, en sluit je ze toch eerder aan, dan is je score voor dit labo 0. Zie <a
+                        href="Veiligheid.html">Veiligheid, orde en netheid</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>2. Wat doe je vlak voor je een moederbord of een geheugenmodule vastneemt?</strong></p>
+                <ol type="a">
+                    <li>Je wrijft je handen droog aan een doek</li>
+                    <li>Je legt het onderdeel eerst even op de tafel</li>
+                    <li>Je raakt het metaal van de kast aan</li>
+                    <li>Je haalt de knoopcelbatterij uit het bord</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord c.</strong> De statische lading die je op een droge dag opbouwt, is genoeg om een
+                    chip te beschadigen zonder dat je er iets van ziet. Neem de printplaat daarna vast aan de randen,
+                    met je vingers weg van de connectoren en de contactvlakken. Zie <a
+                        href="Veiligheid.html">Veiligheid, orde en netheid</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>3. Wat zijn de afmetingen van een Micro-ATX-moederbord?</strong></p>
+                <ol type="a">
+                    <li>305 &times; 244 mm</li>
+                    <li>170 &times; 170 mm</li>
+                    <li>325 &times; 266 mm</li>
+                    <li>244 &times; 244 mm</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord d.</strong> Micro-ATX is even breed als ATX en korter, met minder PCI
+                    Express-slots. Antwoord a is ATX, antwoord b is Mini-ITX en antwoord c is BTX. Het bord van dit
+                    labo, de Gigabyte A520M S2H, is een Micro-ATX-bord. Zie <a href="Componenten.html">De componenten
+                        van een pc</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>4. Je hebt een moederbord in ATX en een kast die voor Micro-ATX gemaakt is. Past
+                        dat?</strong></p>
+                <ol type="a">
+                    <li>Ja, want de schroefgaten van de twee vormfactoren vallen samen</li>
+                    <li>Ja, zolang de voeding ook in ATX is</li>
+                    <li>Nee, want een ATX-bord is langer dan de ruimte in een Micro-ATX-kast</li>
+                    <li>Nee, want ATX en Micro-ATX gebruiken een andere socket</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord c.</strong> Omgekeerd werkt het wel: een kast die voor ATX gemaakt is, neemt ook
+                    een Micro-ATX-bord op, want de schroefgaten van Micro-ATX vallen samen met een deel van die van
+                    ATX. Antwoord d verwart twee dingen: de vormfactor gaat over de afmetingen en de schroefgaten, de
+                    socket over welke processor erop past. Zie <a href="Componenten.html">De componenten van een
+                        pc</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>5. Wat bepaalt welke processors op een bepaald moederbord passen?</strong></p>
+                <ol type="a">
+                    <li>De chipset</li>
+                    <li>De vormfactor</li>
+                    <li>De socket</li>
+                    <li>Het aantal DIMM-slots</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord c.</strong> De socket is de aansluiting waar de processor in gaat; op het bord van
+                    dit labo staat <code>Socket AM4</code> ernaast gedrukt. De chipset uit antwoord a regelt het
+                    verkeer tussen de processor en de rest van het bord, en bepaalt mee hoeveel USB-poorten en
+                    SATA-poorten er zijn. Zie <a href="Componenten.html">De componenten van een pc</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>6. Je hebt een netwerkkaart met een x1-aansluiting, en op het bord is alleen het
+                        x16-slot nog vrij. Past ze daarin?</strong></p>
+                <ol type="a">
+                    <li>Ja, een kaart past in een slot dat even breed of breder is dan de kaart zelf</li>
+                    <li>Nee, de kaart en het slot moeten even breed zijn</li>
+                    <li>Nee, het x16-slot aanvaardt alleen een grafische kaart</li>
+                    <li>Ja, maar alleen zolang er geen grafische kaart in het bord zit</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord a.</strong> Dat het x16-slot voor een grafische kaart bedoeld is, is de gewoonte
+                    en geen voorwaarde. Omgekeerd gaat het niet: een grafische kaart met een x16-aansluiting past niet
+                    in een x1-slot. Het getal achter de x is het aantal lanes. Zie <a href="Componenten.html">De
+                        componenten van een pc</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>7. Waaraan herken je een USB 3-poort aan de achterkant van het bord?</strong></p>
+                <ol type="a">
+                    <li>Aan de negen contacten en het blauwe binnenstuk</li>
+                    <li>Aan de vier contacten en het zwarte binnenstuk</li>
+                    <li>Aan de zes pinnen in een ronde connector</li>
+                    <li>Aan de kleur van de jack, zoals bij de geluidsaansluitingen</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord a.</strong> Antwoord b beschrijft een USB 2-poort en antwoord c de PS/2-poort voor
+                    een toetsenbord of een muis. Het bord van dit labo heeft zes USB-poorten aan de achterkant: twee
+                    USB 2-poorten bij de PS/2-poort en vier blauwe USB 3-poorten. Zie <a href="Componenten.html">De
+                        componenten van een pc</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>8. Het lampje in de netwerkpoort van dit bord brandt groen. Wat krijg je?</strong></p>
+                <ol type="a">
+                    <li>1 Gbps</li>
+                    <li>100 Mbps</li>
+                    <li>10 Mbps</li>
+                    <li>Een verbinding zonder verkeer erop</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord b.</strong> Oranje is 1 Gbps, groen is 100 Mbps en uit is 10 Mbps. Dit bord haalt
+                    1 Gbps, dus groen betekent dat je minder krijgt dan het bord aankan: wat er in de handleiding
+                    staat, is wat het bord kan, en wat het lampje zegt, is wat je werkelijk hebt. Zie <a
+                        href="Componenten.html">De componenten van een pc</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>9. Wat zegt het TDP van een processor?</strong></p>
+                <ol type="a">
+                    <li>Hoeveel klokpulsen hij per seconde haalt</li>
+                    <li>Hoeveel cores er naast elkaar werken</li>
+                    <li>Hoeveel vermogen de voeding minstens moet leveren</li>
+                    <li>Hoeveel warmte de koeling moet kunnen afvoeren</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord d.</strong> Het staat in watt, net als het vermogen van een voeding, en daar komt
+                    de verwarring in antwoord c vandaan: het TDP is een eis aan de koeling en niet aan de voeding. De
+                    kloksnelheid uit antwoord a staat in GHz. Zie <a href="Componenten.html">De componenten van een
+                        pc</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>10. Welk cachegeheugen wordt door alle cores van de processor gedeeld?</strong></p>
+                <ol type="a">
+                    <li>L1</li>
+                    <li>L2</li>
+                    <li>L3</li>
+                    <li>Het werkgeheugen</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord c.</strong> L1 is het kleinste en het snelste en zit per core, L2 is groter. Het
+                    werkgeheugen uit antwoord d wordt wel door alle cores gedeeld, maar het zit niet in de processor
+                    en het is dus geen cache. Zie <a href="Componenten.html">De componenten van een pc</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>11. Je zet een computer aan. De ventilatoren draaien, maar het scherm blijft zwart. Wat
+                        kan de oorzaak zijn?</strong></p>
+                <ol type="a">
+                    <li>De knoopcelbatterij is leeg</li>
+                    <li>Het bord meet geen toerental op de <code>CPU_FAN</code>-aansluiting</li>
+                    <li>De twee geheugenmodules staan niet in dual channel</li>
+                    <li>De processor heeft geen ingebouwde grafische kaart en er zit geen kaart in het x16-slot</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord d.</strong> Heeft de processor er wel een, dan komt het beeld van de processor
+                    zelf en werkt de beeldaansluiting op het moederbord. De drie andere antwoorden geven een ander
+                    symptoom: een lege batterij geeft standaardinstellingen en een verkeerde datum, dual channel kost
+                    breedte naar het geheugen en geen beeld, en antwoord b wordt door de vraag zelf uitgesloten, want
+                    de ventilatoren draaien. Zie <a href="Componenten.html">De componenten van een pc</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>12. Wat doet het moederbord wanneer het geen toerental meet op de
+                        <code>CPU_FAN</code>-aansluiting?</strong></p>
+                <ol type="a">
+                    <li>Het laat de andere ventilatoren sneller draaien</li>
+                    <li>Het start op en toont een waarschuwing op het scherm</li>
+                    <li>Het zet de computer na enkele seconden weer uit</li>
+                    <li>Het schakelt de ingebouwde grafische kaart van de processor uit</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord c.</strong> Een processor zonder koeling loopt in die enkele seconden al te warm,
+                    dus het bord grijpt in voor er iets stukgaat. Hang je de ventilator van de koeler aan een andere
+                    aansluiting, dan lijkt de computer defect terwijl er niets aan scheelt. Zie <a
+                        href="Componenten.html">De componenten van een pc</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>13. Je zet de computer uit. Wat is er weg?</strong></p>
+                <ol type="a">
+                    <li>Wat er in het werkgeheugen stond</li>
+                    <li>Wat er op de SSD stond</li>
+                    <li>De instellingen in het CMOS-geheugen</li>
+                    <li>Zowel het werkgeheugen als de SSD</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord a.</strong> Het werkgeheugen houdt vast waar de processor op dit moment mee bezig
+                    is, en het is leeg zodra de spanning wegvalt. Daarin verschilt het van de opslag, die je bestanden
+                    vasthoudt ook wanneer de computer uitstaat. De instellingen uit antwoord c blijven staan zolang de
+                    knoopcelbatterij het CMOS-geheugen voedt. Zie <a href="Componenten.html">De componenten van een
+                        pc</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>14. Waarom past een DDR4-module niet in een DDR5-slot?</strong></p>
+                <ol type="a">
+                    <li>Een DDR5-module is breder</li>
+                    <li>De inkeping in de contactstrip zit bij elke generatie elders</li>
+                    <li>De twee generaties werken op dezelfde spanning en op een andere snelheid</li>
+                    <li>Een DDR4-module draagt geen profiel dat je in de BIOS kan aanzetten</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord b.</strong> Die inkeping werkt in beide richtingen: een DDR5-module gaat evenmin
+                    in een DDR4-slot. De spanning uit antwoord c verschilt trouwens wel, van 1,5 V bij DDR3 over 1,2 V
+                    bij DDR4 naar 1,1 V bij DDR5. Zie <a href="Componenten.html">De componenten van een pc</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>15. Wat levert het op wanneer twee geheugenmodules in dual channel staan?</strong></p>
+                <ol type="a">
+                    <li>De capaciteit van beide modules wordt opgeteld</li>
+                    <li>De modules lopen op de snelheid die op de verpakking staat</li>
+                    <li>De breedte waarmee de processor het geheugen bereikt, verdubbelt</li>
+                    <li>Het bord aanvaardt daarna ook modules van een andere generatie</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord c.</strong> Welke twee slots je daarvoor gebruikt, staat in de handleiding van het
+                    moederbord; bij vier slots zijn dat meestal het tweede en het vierde, geteld vanaf de processor.
+                    De optelling uit antwoord a gebeurt sowieso, ook wanneer de modules verkeerd staan, en antwoord b
+                    is het geheugenprofiel dat je in de BIOS aanzet. Zie <a href="Componenten.html">De componenten van
+                        een pc</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>16. Waarom haalt een SATA-SSD niet meer dan ongeveer 550 MB/s?</strong></p>
+                <ol type="a">
+                    <li>Het flashgeheugen zelf kan niet sneller</li>
+                    <li>SATA III haalt 6 Gbit/s, en daar loopt de schijf tegenaan</li>
+                    <li>De leeskop moet zich eerst naar de juiste plaats verplaatsen</li>
+                    <li>De voedingskabel van de schijf laat niet meer toe</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord b.</strong> De grens zit in het protocol en niet in de schijf: NVMe loopt over PCI
+                    Express en heeft die grens niet, waardoor een M.2-SSD er een veelvoud van haalt. Antwoord c geldt
+                    voor een mechanische harde schijf, die daardoor rond 100 tot 200 MB/s blijft. Zie <a
+                        href="Componenten.html">De componenten van een pc</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>17. Bij welke belasting werkt een voeding het effici&euml;ntst?</strong></p>
+                <ol type="a">
+                    <li>Zo dicht mogelijk bij haar nominale vermogen</li>
+                    <li>Zo laag mogelijk</li>
+                    <li>Het rendement is over het hele bereik hetzelfde</li>
+                    <li>Rond de helft van haar nominale vermogen</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord d.</strong> Het rendement zegt hoeveel van het opgenomen vermogen er aan de
+                    uitgang overblijft; de rest wordt warmte. Een voeding die veel zwaarder is dan de machine ooit
+                    vraagt, draait dus permanent onder haar beste punt. De keurmerken 80 PLUS Bronze, Silver en Gold
+                    leggen op dat rendement een ondergrens. Zie <a href="Componenten.html">De componenten van een
+                        pc</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>18. Wat controleert de POST?</strong></p>
+                <ol type="a">
+                    <li>Of de processor, het geheugen en de verplichte onderdelen aanwezig zijn en reageren</li>
+                    <li>Of de handtekening van de bootloader klopt</li>
+                    <li>Of de datum en het uur nog kloppen</li>
+                    <li>Of er op elk toestel in de opstartvolgorde opstartbare code staat</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord a.</strong> POST staat voor Power-On Self-Test en is de eerste stap bij elke
+                    start. Antwoord b is Secure Boot, dat alleen bij UEFI bestaat, en antwoord d komt pas daarna aan
+                    bod, nadat de firmware haar instellingen uit het CMOS-geheugen gelezen heeft. Zie <a
+                        href="BiosUefi.html">BIOS en UEFI</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>19. Waarom geeft een moederbord een reeks pieptonen wanneer de POST vastloopt?</strong></p>
+                <ol type="a">
+                    <li>Omdat de fout dan bij de geluidskaart ligt</li>
+                    <li>Omdat er op dat moment nog geen beeld is om een boodschap op te tonen</li>
+                    <li>Omdat de ventilatoren nog niet draaien</li>
+                    <li>Omdat de knoopcelbatterij leeg is</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord b.</strong> Wat elke reeks betekent, staat in de handleiding van het moederbord.
+                    Sommige borden tonen daarnaast een cijfercode op een display op het bord zelf. Zie <a
+                        href="BiosUefi.html">BIOS en UEFI</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>20. Je start eenmalig van een USB-stick op via het bootmenu. Waarvan start de computer bij
+                        de volgende start op?</strong></p>
+                <ol type="a">
+                    <li>Opnieuw van de stick, tot je die eruit haalt</li>
+                    <li>Van niets, want het bootmenu verschijnt opnieuw</li>
+                    <li>Van de interne schijf, en de opstartvolgorde is gewist</li>
+                    <li>Van het toestel dat bovenaan de opgeslagen opstartvolgorde staat</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord d.</strong> Daarin zit het verschil tussen de twee. Het bootmenu roep je met een
+                    aparte toets op en je keuze geldt voor die ene start; de opstartvolgorde is de lijst die bewaard
+                    blijft, en die pas je aan wanneer je van de stick wil blijven starten. Zie <a
+                        href="BiosUefi.html">BIOS en UEFI</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>21. Je hebt een opstartbare USB-stick gemaakt, maar hij staat niet in de lijst. Waar kijk
+                        je?</strong></p>
+                <ol type="a">
+                    <li>Of de stick bovenaan de opstartvolgorde staat</li>
+                    <li>Of de stick in een blauwe USB 3-poort zit</li>
+                    <li>Of het geheugenprofiel in de BIOS aan staat</li>
+                    <li>Of Secure Boot aan staat en of de compatibiliteitsmodus voor het oude BIOS ingeschakeld moet
+                        zijn</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord d.</strong> Antwoord a helpt niet, want een toestel dat de firmware niet ziet, kan
+                    je ook niet in de volgorde zetten. Staat de stick er wel, dan verschijnt hij soms twee keer,
+                    eenmaal met en eenmaal zonder het voorvoegsel <code>UEFI:</code>; dat zijn twee manieren om van
+                    dezelfde stick te starten en geen twee sticks. Zie <a href="BiosUefi.html">BIOS en UEFI</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>22. Welke partitietabel hoort bij het klassieke BIOS, en tot hoe groot mag de
+                        opstartschijf daarmee zijn?</strong></p>
+                <ol type="a">
+                    <li>GPT, tot 2 TB</li>
+                    <li>GPT, ruim boven 2 TB</li>
+                    <li>MBR, tot 2 TB</li>
+                    <li>MBR, ruim boven 2 TB</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord c.</strong> UEFI werkt met GPT en komt ruim boven die 2 TB uit; daarnaast kan het
+                    via een compatibiliteitsmodus ook nog met MBR overweg. Zie <a href="BiosUefi.html">BIOS en
+                        UEFI</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>23. Waarvoor dient de knoopcelbatterij op het moederbord?</strong></p>
+                <ol type="a">
+                    <li>Ze voedt het geheugen met de BIOS-instellingen en de klok die de tijd bijhoudt</li>
+                    <li>Ze houdt het werkgeheugen gevuld terwijl de computer uitstaat</li>
+                    <li>Ze levert de standby-lijn van 5 V</li>
+                    <li>Ze voedt de ventilator van de processor tijdens de POST</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord a.</strong> Meestal is dat een CR2032. Is ze leeg, dan start de computer met de
+                    standaardinstellingen op en klopt de datum niet meer. De standby-lijn uit antwoord c komt uit de
+                    voeding, en die staat er alleen zolang de stekker in het stopcontact zit. Zie <a
+                        href="BiosUefi.html">BIOS en UEFI</a>.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

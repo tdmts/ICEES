@@ -247,7 +247,7 @@ wipes the read-flags of every student who has already been in it.
 
 | Folder | Theory pages | Spiekblad |
 |---|---|---|
-| `Labo/Assemblage/` | Veiligheid, Componenten, BiosUefi | no |
+| `Labo/Assemblage/` | Veiligheid, Componenten, BiosUefi, TestJezelf | no |
 | `Labo/Virtualiseren/` | WatIsVirtualisatie, VirtueleMachineAanmaken, InstallatieUbuntu, SchijfEnGeheugen, GuestAdditions | no |
 | `Labo/Partitioneren/` | Partitietabellen, GPartedStarten, PrimairePartities, ExtendedEnLogisch, GptPartities | yes |
 | `Labo/LinuxBasis/` | LinuxEnDistributies, DeTerminal, Navigeren, MappenEnBestanden, ZoekenEnBekijken, ProcessenEnRechten, Archieven | yes |
@@ -260,6 +260,26 @@ and cd; `MappenEnBestanden` is mkdir, vi/nano, three cp pages, two mv pages and 
 pages. The two labs without a spiekblad are the two with no commands in them: Assemblage is hardware
 and Virtualiseren is a GUI. Partitioneren is a GUI too, and its spiekblad is a table of partition
 kinds and their limits rather than of commands, which is what a student there keeps looking up.
+
+**Every lab closes its theory reeks with a `TestJezelf.html`**, added to Assemblage on 4 September
+2026 and to be written for the other five. It is a category `Zelftest` in the `theorie` reeks, not
+one of its own: the zelftest is the last step of the theory, so the last theory page pages into it
+and the nav row reads "Theorie 4 / 4". A reeks of its own would put it behind a button nobody
+clicks.
+
+**It is multiple choice only, and that is the point.** Every lab is assessed with a Brightspace test
+that is meerkeuze met giscorrectie, so a zelftest in another form prepares for a test that does not
+exist. The distractors are the misreadings the theory pages already correct (that the chipset
+decides which processor fits, that dual channel adds the capacities together), so a wrong answer
+sends the student back to a paragraph rather than to the whole page. Each answer therefore ends in
+"Zie &lt;a href&gt;", which is a link inside the same reeks and so allowed by rule 10.
+
+**The answer letter is written by hand**, in the `spoiler-container` markup DeN's four labo
+zelftests use, and not through `oplossingen.js`. That is a deliberate choice and the trade-off is
+real: `oplossingen.js` counts the letter off the position of `class="juist"`, so reordering two
+options can never produce a wrong answer, while a written "Antwoord c." can. It is also the only
+mechanism the syllabus may use, and rule 14 checks nothing outside `Theorie/Syllabus/`. If you
+reorder the options of a labo zelftest, the letter is yours to fix.
 
 **One submission is one folder and one Orion menu entry.** Three of the six labs hand in more than
 once, and each dropbox gets its own `Opdracht.html` with its own verslag docx, the way

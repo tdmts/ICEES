@@ -29,8 +29,14 @@
  * daar loopt niets naartoe: het Orion-menu verspringt niet mee met de iframe,
  * dus zo'n sprong laat het menu een pagina aanwijzen die de student niet leest.
  *
+ * De zelftest van een labo draagt daarom dezelfde reeks als de theorie: hij
+ * gaat over de pagina's ervoor en is de laatste stap ervan, dus de student komt
+ * er met "Volgende" vanzelf uit. Een eigen reeks zou hem achter een knop
+ * verstoppen die niemand aanklikt.
+ *
  * De naam die de student op de knop ziet is de naam van de EERSTE categorie
- * van de reeks.
+ * van de reeks. Daarom staat er op de zelftest van Assemblage "Theorie 4 / 4"
+ * en niet "Zelftest 1 / 1": hij is de vierde stap van de theorie.
  *
  * Een categorie met alleen documenten (Datasheets, Handleidingen, Software)
  * draagt de reeks waar ze bij hoort, en dat is de theorie: die documenten
@@ -83,6 +89,18 @@ window.LAB_REFERENCE = {
                         name: 'BIOS en UEFI',
                         blurb: 'Wat de firmware doet voor er een besturingssysteem is: de POST, de opstartvolgorde en het bootmenu.',
                         href: 'BiosUefi.html'
+                    }
+                ]
+            },
+            {
+                name: 'Zelftest',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'test-jezelf-assemblage',
+                        name: 'Test jezelf',
+                        blurb: 'Meerkeuzevragen over de drie pagina\'s hierboven, in dezelfde vorm als de test in Orion. Bij elk antwoord staat waar je het kan nalezen.',
+                        href: 'TestJezelf.html'
                     }
                 ]
             },
