@@ -225,7 +225,9 @@ the kind of sentence you write while migrating).
 reader knows at that point in the reeks. 20: a term is used only after the student has met it, and
 the order that counts is the Orion menu, so a hub may not use the vocabulary of a theory page.
 21: an apposition that explains the obvious goes, even when its neighbours in the list have one.
-Both are the kind of sentence you write once the whole module is in your head.
+22: no word broader than the one the text already has, so `toestel` becomes `de computer` and
+`component` becomes `onderdeel`, with an exception where the broad word genuinely covers more.
+All three are the kind of sentence you write once the whole module is in your head.
 
 Labo Assemblage and both `Algemeen/` pages had a full style round on 4 September 2026, and its diff
 is the reference for what counts as factual here. The examples inside `SCHRIJFSTIJL.md` itself still

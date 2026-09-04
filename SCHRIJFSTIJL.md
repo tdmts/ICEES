@@ -63,7 +63,7 @@ schrijven.
 
 ## Wat eruit gaat
 
-Eenentwintig patronen. Geen enkel patroon is op zich fout: het probleem is dat ze allemaal samen, op
+Tweeëntwintig patronen. Geen enkel patroon is op zich fout: het probleem is dat ze allemaal samen, op
 elke pagina, van uitleg een voordracht maken. Patroon 1 tot 11 gaan over opsmuk, 12 en 13 over
 woordkeuze, 14 en 15 kwamen er later bij (allebei opsmuk). De nummers liggen vast, ook al loopt de
 indeling daardoor niet meer netjes door.
@@ -77,7 +77,8 @@ de docent op de pagina achterlaat: de uitleg waarom (18) en het voorschrift dat 
 
 Patroon 20 en 21 kwamen uit de eerste stijlronde van dit vak en gaan over wat de lezer op dat punt al
 weet: een woord dat hij nog niet gezien heeft (20), en een uitleg bij iets wat hij allang doorheeft
-(21).
+(21). Patroon 22 komt uit dezelfde ronde en staat ernaast: niet wat de lezer al weet, maar of het
+woord dat er staat het ding wel benoemt.
 
 ### 1. Geen slotzin die moet blijven hangen
 
@@ -483,6 +484,34 @@ heet.
 De toets is dezelfde als bij patroon 13, met een groter voorwerp: schrap de bijstelling en kijk of
 de lezer iets kwijt is. 13 gaat over een bijwoord, dit over een hele bijzin.
 
+### 22. Geen algemener woord dan je hebt
+
+Staat er een naam voor het ding, gebruik die.
+
+> **Voor:** Je haalt het toestel uit elkaar, fotografeert elk onderdeel en vult van elk component de
+> specificaties in.
+>
+> **Na:** Je haalt de computer uit elkaar, fotografeert elk onderdeel en vult de specificaties ervan
+> in.
+
+Die ene zin had drie woorden voor twee dingen: `toestel` voor de computer, en `component` naast
+`onderdeel` voor hetzelfde. Zo komt het algemenere woord meestal binnen, om herhaling te vermijden,
+en die herhaling stoort de schrijver meer dan de lezer.
+
+Ook zo: "de lijst waarin de firmware zoekt naar iets om van op te starten", terwijl `opstartbare
+code` twee alinea's hoger staat, en "Bij een processor kijk je naar vier dingen", waar het om vier
+gegevens gaat.
+
+**Een naam die eenmaal gevallen is, mag daarna korter.** `het bord` na `het moederbord`, `de
+omgeving` na `de BIOS- of UEFI-omgeving`. Dat is geen algemener woord maar dezelfde naam, verkort.
+
+De uitzondering, en die is echt: **wanneer het generieke woord meer dekt, is het het juiste woord.**
+De opstartvolgorde en het bootmenu tonen een schijf, een stick of een netwerkkaart, en `toestel` is
+wat die drie samen dekt. Een kolomkop `Aspect` boven een partitietabelformaat, een groottegrens en
+een bedieningswijze is om dezelfde reden juist.
+
+De toets: bestaat er in deze tekst al een woord voor precies dit ding? Zo ja, dan is dat het woord.
+
 ## Spelling en notatie
 
 ### `led`, niet `LED`
@@ -548,6 +577,11 @@ En sinds patroon 20 en 21 nog twee, voor elke pagina die vroeg in een reeks staa
 6. **Staat dit woord eerder in de reeks, of in de titel van het labo?** Zo niet, gebruik de naam die
    de student wel kent (patroon 20).
 7. **Wat weet de lezer meer na deze bijstelling?** Niets, dan gaat ze weg (patroon 21).
+
+En bij elk zelfstandig naamwoord dat een categorie noemt in plaats van een ding:
+
+8. **Bestaat er in deze tekst al een woord voor precies dit ding?** Zo ja, dan is dat het woord
+   (patroon 22).
 
 ## Het ijkpunt
 
