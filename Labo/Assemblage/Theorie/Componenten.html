@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De componenten van een pc</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>De componenten van een pc</h1>
+
+        <p>Een desktop bestaat uit een handvol onderdelen die elk hun eigen maat, aansluiting en snelheid hebben. Op
+            deze pagina staat per onderdeel waar je naar kijkt en in welke eenheid het uitgedrukt wordt, zodat je de
+            specificaties van het toestel op je tafel kan lezen en met elkaar kan vergelijken.</p>
+
+        <h2 id="vormfactor">De kast en de vormfactor</h2>
+
+        <p>De vormfactor is de afspraak over de afmetingen van een moederbord en over waar de schroefgaten en de
+            aansluitingen zitten. Ze bepaalt welk moederbord in welke kast past, en ook welke voeding erbij hoort.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De vormfactoren die je in dit labo tegenkomt</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Vormfactor</th>
+                        <th>Afmetingen</th>
+                        <th>Waar je ze vindt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ATX</td>
+                        <td class="text-nowrap">305 &times; 244 mm</td>
+                        <td>De standaardmaat voor een desktop, met plaats voor de meeste uitbreidingskaarten</td>
+                    </tr>
+                    <tr>
+                        <td>Micro-ATX</td>
+                        <td class="text-nowrap">244 &times; 244 mm</td>
+                        <td>Even breed als ATX en korter, met minder PCI Express-slots</td>
+                    </tr>
+                    <tr>
+                        <td>Mini-ITX</td>
+                        <td class="text-nowrap">170 &times; 170 mm</td>
+                        <td>De kleinste courante maat, met &eacute;&eacute;n uitbreidingsslot</td>
+                    </tr>
+                    <tr>
+                        <td>BTX</td>
+                        <td class="text-nowrap">325 &times; 266 mm</td>
+                        <td>Een oudere vormfactor van Intel, bedoeld voor een betere luchtstroom, die je vandaag
+                            zelden nog aantreft</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Een kast die voor ATX gemaakt is, neemt ook de kleinere borden op: de schroefgaten van Micro-ATX vallen
+            samen met een deel van die van ATX. Omgekeerd werkt het niet, want een ATX-bord is langer dan de ruimte in
+            een Micro-ATX-kast.</p>
+
+        <h2 id="moederbord">Het moederbord</h2>
+
+        <p>Het moederbord verbindt alle onderdelen met elkaar. Wat je erover moet weten, zit in vier groepen.</p>
+
+        <h3>De socket en de chipset</h3>
+
+        <p>De <strong>socket</strong> is de aansluiting waar de processor in gaat, en ze bepaalt welke processors op
+            dit bord passen. AM4 en AM5 zijn sockets van AMD, LGA1200 en LGA1700 die van Intel. De
+            <strong>chipset</strong> is de chip die het verkeer tussen de processor en de rest van het bord regelt.
+            Ze bepaalt mee hoeveel USB-poorten en SATA-poorten er zijn en of je de processor mag overklokken.</p>
+
+        <h3>Het geheugen en de opslag</h3>
+
+        <p>De <strong>DIMM-slots</strong> nemen de geheugenmodules op. Hoeveel er zijn en hoeveel GB het bord in
+            totaal aankan, staat in de handleiding van het moederbord. De <strong>SATA-poorten</strong> nemen een
+            harde schijf of een 2,5-duims SSD op, en een <strong>M.2-aansluiting</strong> neemt een SSD op die plat
+            op het bord ligt.</p>
+
+        <h3>De uitbreidingsslots</h3>
+
+        <p>PCI Express bestaat in verschillende breedtes, en het getal achter de x is het aantal lanes. Een
+            <strong>x16</strong>-slot is het langste en is bedoeld voor een grafische kaart; een
+            <strong>x1</strong>-slot is kort en neemt een netwerkkaart, een geluidskaart of een uitbreiding met extra
+            USB-poorten op. Een kaart past in een slot dat even breed of breder is dan de kaart zelf.</p>
+
+        <h3>De aansluitingen aan de achterkant</h3>
+
+        <ul>
+            <li><strong>USB.</strong> Een USB 2-poort heeft vier contacten en een zwart of wit binnenstuk; een USB
+                3-poort heeft er negen en is aan zijn blauwe binnenstuk te herkennen.</li>
+            <li><strong>Beeld.</strong> VGA, ook D-SUB genoemd, is analoog en heeft vijftien pinnen in drie rijen.
+                DVI, DisplayPort en HDMI zijn digitaal.</li>
+            <li><strong>Netwerk.</strong> Een RJ-45-poort, waarvan de snelheid 100 Mbps, 1 Gbps of meer is. Wat een
+                bord haalt, staat in de handleiding.</li>
+            <li><strong>PS/2.</strong> Een ronde connector met zes pinnen, voor een toetsenbord of een muis. Waar er
+                twee zijn, is de paarse voor het toetsenbord en de groene voor de muis.</li>
+        </ul>
+
+        <div class="info-box">
+            <div class="info-title remark">De knoopcelbatterij houdt de instellingen vast</div>
+            <p>Op het bord zit een platte batterij, meestal een CR2032. Ze voedt het geheugen waarin de
+                BIOS-instellingen staan en de klok die de tijd bijhoudt terwijl de computer van het net los is. Is ze
+                leeg, dan start de computer met de standaardinstellingen op en klopt de datum niet meer.</p>
+        </div>
+
+        <h2 id="processor">De processor</h2>
+
+        <p>Bij een processor kijk je naar vier dingen.</p>
+
+        <ul>
+            <li>Het aantal <strong>cores</strong>, dus het aantal rekenkernen die naast elkaar werken. Vier tot acht
+                is vandaag gebruikelijk in een desktop.</li>
+            <li>De <strong>kloksnelheid</strong> in GHz, het aantal klokpulsen per seconde. Een moderne
+                desktopprocessor zit rond 3 tot 5 GHz, en het hoogste getal is meestal de boostsnelheid die hij kort
+                haalt.</li>
+            <li>Het <strong>cachegeheugen</strong>, klein en snel geheugen in de processor zelf. L1 is het kleinste en
+                het snelste en zit per core, L2 is groter, en L3 wordt door alle cores gedeeld.</li>
+            <li>Het <strong>energieverbruik</strong> in watt, vaak TDP genoemd. Dat getal zegt hoeveel warmte de
+                koeling moet kunnen afvoeren.</li>
+        </ul>
+
+        <p>Sommige processors hebben een <strong>ingebouwde grafische kaart</strong>. Dan komt het beeld van de
+            processor zelf en werkt de beeldaansluiting op het moederbord. Heeft de processor die niet, dan blijft het
+            scherm zwart tot er een grafische kaart in het x16-slot zit.</p>
+
+        <h2 id="werkgeheugen">Het werkgeheugen</h2>
+
+        <p>Het werkgeheugen, of RAM, houdt vast waar de processor op dit moment mee bezig is. Het is leeg zodra de
+            spanning wegvalt, en daarin verschilt het van de opslag.</p>
+
+        <p>De generatie staat als DDR met een cijfer erachter: DDR3, DDR4 of DDR5. Elke generatie heeft een eigen
+            inkeping in de contactstrip, dus een DDR4-module past in een DDR5-slot noch omgekeerd. Naast de generatie
+            kijk je naar de capaciteit in GB, de snelheid in MT/s en de spanning.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De courante geheugengeneraties</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Generatie</th>
+                        <th>Spanning</th>
+                        <th>Snelheid</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>DDR3</td>
+                        <td class="text-nowrap">1,5 V</td>
+                        <td>800 tot 2133 MT/s</td>
+                    </tr>
+                    <tr>
+                        <td>DDR4</td>
+                        <td class="text-nowrap">1,2 V</td>
+                        <td>2133 tot 3200 MT/s volgens de standaard, hoger met een profiel uit de BIOS</td>
+                    </tr>
+                    <tr>
+                        <td>DDR5</td>
+                        <td class="text-nowrap">1,1 V</td>
+                        <td>4800 MT/s en hoger</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-box">
+            <div class="info-title tip">De standaardsnelheid verschilt van de snelheid op de verpakking</div>
+            <p>Een module die als 3600 MT/s verkocht wordt, start op aan de standaardsnelheid van zijn generatie. De
+                hogere snelheid zit in een profiel dat in de module opgeslagen is, en dat zet je in de BIOS aan.</p>
+        </div>
+
+        <h2 id="opslag">De opslag</h2>
+
+        <p>Opslag houdt je bestanden vast ook wanneer de computer uitstaat. Er zijn twee technieken.</p>
+
+        <ul>
+            <li>Een <strong>mechanische harde schijf</strong> schrijft magnetisch op draaiende schijven, met een
+                leeskop die zich naar de juiste plaats verplaatst. Die verplaatsing kost tijd, en daarom haalt zo'n
+                schijf ongeveer 100 tot 200 MB/s.</li>
+            <li>Een <strong>SSD</strong> heeft geen bewegende delen en schrijft in flashgeheugen. Er is geen zoektijd,
+                dus een bestand openen gaat merkbaar sneller.</li>
+        </ul>
+
+        <p>Het protocol waarmee de schijf aan het moederbord hangt, bepaalt mee de snelheid. SATA III haalt 6 Gbit/s,
+            wat in de praktijk op ongeveer 550 MB/s neerkomt en waar een SATA-SSD tegenaan loopt. NVMe loopt over PCI
+            Express en heeft die grens niet, waardoor een M.2-SSD een veelvoud daarvan haalt.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Vormfactor, protocol en aansluiting</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Vormfactor</th>
+                        <th>Protocol</th>
+                        <th>Aansluiting</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3,5 duim</td>
+                        <td>SATA</td>
+                        <td>Datakabel en voedingskabel, in een houder in de kast</td>
+                    </tr>
+                    <tr>
+                        <td>2,5 duim</td>
+                        <td>SATA</td>
+                        <td>Datakabel en voedingskabel, in een houder in de kast</td>
+                    </tr>
+                    <tr>
+                        <td>M.2</td>
+                        <td>SATA of NVMe</td>
+                        <td>Rechtstreeks in het M.2-slot, met &eacute;&eacute;n schroef vast</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-box">
+            <div class="info-title remark">Twee M.2-SSD's met dezelfde maat spreken een ander protocol</div>
+            <p>Of een M.2-kaartje SATA of NVMe is, lees je af aan de inkepingen in de contactstrip. Welk van de twee
+                een M.2-slot aanvaardt, staat in de handleiding van het moederbord.</p>
+        </div>
+
+        <p>Een <strong>hybride schijf</strong> zet een kleine hoeveelheid flashgeheugen voor een mechanische schijf en
+            houdt daarin bij wat je het vaakst opvraagt. IDE en PATA zijn de oudere aansluitingen, met een brede
+            lintkabel, die je nog op afgedankte toestellen terugvindt.</p>
+
+        <h2 id="voeding">De voeding</h2>
+
+        <p>De voeding zet de 230 V van het net om in de gelijkspanningen die de onderdelen nodig hebben. Ze levert
+            +3,3 V, +5 V en +12 V, en daarnaast een lijn van &minus;12 V en een standby-lijn van +5 V die blijft
+            staan zolang de stekker in het stopcontact zit.</p>
+
+        <p>Het <strong>vermogen</strong> in watt zegt hoeveel de voeding samen kan leveren. Het
+            <strong>rendement</strong> zegt hoeveel van het opgenomen vermogen er aan de uitgang overblijft; de rest
+            wordt warmte. De keurmerken 80 PLUS Bronze, Silver en Gold leggen daar een ondergrens op, en een voeding
+            werkt op zijn effici&euml;ntst rond de helft van zijn nominale belasting.</p>
+
+        <div class="info-box">
+            <div class="info-title tip">Een voeding kies je ruimer dan wat je vandaag verbruikt</div>
+            <p>Ligt je verbruik rond de helft van het vermogen, dan zit je in het gebied waar het rendement het
+                hoogst is en houd je marge over om er later een grafische kaart bij te zetten.</p>
+        </div>
+
+        <h2 id="datasheets">Waar de specificaties staan</h2>
+
+        <p>Van de componenten in dit labo staan de gegevens in de handleiding of de productfiche van de fabrikant. Je
+            vindt ze op de theoriehub, onder de datasheets, en je hebt ze nodig zodra een gegeven niet op het
+            onderdeel zelf staat.</p>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

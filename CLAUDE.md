@@ -17,9 +17,10 @@ Six labs, each an independent module: Assemblage + BIOS/UEFI, Virtualiseren, Par
 Basis, Linux Geavanceerd, Embedded Systems. Beside them a theory track (a syllabus the student
 prints) and a lecture track (six hoorcolleges, of which five have a deck).
 
-**This repo is at day zero.** The skeleton, the engines and the tooling are in place and the
-Brightspace export is staged in `_incoming/`; no page under `Labo/` exists yet. `check-content.py`
-is green with one warning saying exactly that, and the warning disappears with the first module.
+**One of the six modules is written.** `Labo/Assemblage/` holds its hub, its five theory pages and
+its three `Opdracht.html`, and `Algemeen/` holds both pages that every hub links to.
+`check-content.py` and `check-nav.js` are both green with no warnings. The other five modules are
+still only staged in `_incoming/`.
 
 ## De indeling in Orion, en waarom niets zijwaarts linkt
 
@@ -277,11 +278,29 @@ not the folder**, so a page outside `Theorie/` still gets a forward link and a r
 the username and the `os-release` of the image he just built, and hands that in. It is a dropbox in
 Brightspace for exactly that reason.
 
-**`Algemeen/Planning.html` and `Algemeen/Evaluatie.html` are both coming**, and both are blocked on
-input rather than on a decision: the schedule of the labs and the theory, and the weights (theory
-against the labs, and what each part contributes inside a lab). Ask for those before writing the
-first `overview.html`, because rule 9 sends every hub to these two pages and a hub written without
-them will quietly restate a count it does not own.
+**`Algemeen/Planning.html` and `Algemeen/Evaluatie.html` both exist**, and they carry four decisions
+taken on 4 September 2026. Rule 9 sends every hub to them, so a hub may name the *form* of an
+evaluation and never a percentage.
+
+- **The final mark is 40% theory and 60% labs.** That is the denominator; the percentages on
+  `Evaluatie.html` are within one lab.
+- **Virtualiseren and Partitioneren produce one mark**, 50% for the opdracht and 50% for the test,
+  and the test covers both labs. The export contradicted itself here (Virtualiseren said 30/70), and
+  50/50 is the one that holds.
+- **Embedded Systems is assessed for 2 AUTO only.** The red warning in the export is current, not a
+  leftover. What the other programmes do with that lab is still open.
+- **The planning is per student**, so `Planning.html` carries no timetable. It says where a student
+  finds his own, and it holds the two deadlines that are the same for everyone (demonstrate by the
+  last lab session, tests open until the end of the semester). It is deliberately short rather than
+  a placeholder, so nothing on it has to be removed when a timetable does appear.
+
+Two things on `Evaluatie.html` were carried over from the export and are **not** confirmed: the
+couplings that say Partitioneren needs Virtualiseren first, and that the Linux tests wait until both
+Linux labs are done. They sit under evaluation and not on a theory page, so patroon 17 is intact
+either way, but check them before the Linux modules are written.
+
+The table on `Evaluatie.html` links only the labs that exist. Add the link when a module lands: rule
+1 fails on a link to a page that is not there yet, which is what keeps that table honest.
 
 ## Where the content comes from
 
@@ -336,6 +355,20 @@ Four things about this export that DeN's did not have, and every one of them fai
   chmod, chown and chgrp pages, so they most likely belong to the docx attached to those three
   dropboxes rather than to a topic. The importer only writes what a page actually references, so
   `img/` holds 230 files and not 281; the rest stay in the export.
+
+**The assignments themselves are not in the export, and nothing says so.** A dropbox in
+`dropbox_d2l.xml` carries its opgave as an `<attachment_set>`, and for eight of the eleven that is a
+SharePoint `<link>` to a docx on the lecturer's own OneDrive, not a file in the zip. The staged page
+in `_incoming/` then reads "Vertrek vanaf de opgave die je op deze pagina kan downloaden" with no
+document anywhere near it. Only chmod, chown and chgrp ship a real file, under
+`_attachment_dropbox/196` to `198`.
+
+The docx are on disk at
+`~/OneDrive - Hogeschool Gent/EDU/2025-2026/Industriële computers en embedded systems/Labo/`, one
+folder per lab, each opgave beside its `- oplossing` twin. **Read the opgave, never the oplossing**:
+the solutions are assessed work and stay on Brightspace. That folder is where the `<!-- verslag -->`
+block of an `Opdracht.html` comes from, so open it before writing one, or you will invent an
+assignment that already exists.
 
 `--fetch-remote` is the one flag that touches the network. Several pages hotlink their screenshots
 to `chamilo-downloads.hogent.be`, the platform this course lived on before Brightspace, through URLs

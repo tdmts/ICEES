@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIOS en UEFI</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>BIOS en UEFI</h1>
+
+        <p>Wanneer je op de aan-uitknop duwt, staat er nog geen besturingssysteem in het geheugen. Wat de computer op
+            dat moment uitvoert, is firmware die in een chip op het moederbord zit. Die firmware test de hardware,
+            zoekt een schijf waarop een besturingssysteem staat en geeft de controle daaraan door.</p>
+
+        <h2 id="bios-en-uefi">Twee namen voor dezelfde taak</h2>
+
+        <p><strong>BIOS</strong> staat voor Basic Input/Output System en is de oorspronkelijke vorm, uit het begin van
+            de jaren tachtig. <strong>UEFI</strong>, Unified Extensible Firmware Interface, is de opvolger en zit
+            vandaag op elk nieuw moederbord. In de omgang worden de twee namen door elkaar gebruikt, en veel
+            fabrikanten schrijven zelf BIOS op een scherm dat in werkelijkheid UEFI is.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Waarin UEFI van het klassieke BIOS verschilt</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Aspect</th>
+                        <th>BIOS</th>
+                        <th>UEFI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Partitietabel</td>
+                        <td>MBR</td>
+                        <td>GPT, en MBR via een compatibiliteitsmodus</td>
+                    </tr>
+                    <tr>
+                        <td>Grootte van de opstartschijf</td>
+                        <td class="text-nowrap">Tot 2 TB</td>
+                        <td>Ruim daarboven</td>
+                    </tr>
+                    <tr>
+                        <td>Bediening</td>
+                        <td>Tekstscherm, met het toetsenbord</td>
+                        <td>Grafisch scherm, met muis en toetsenbord</td>
+                    </tr>
+                    <tr>
+                        <td>Controle op de opstartcode</td>
+                        <td>Geen</td>
+                        <td>Secure Boot controleert de handtekening van de bootloader</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="post">Wat er gebeurt bij het opstarten</h2>
+
+        <p>De firmware doorloopt bij elke start dezelfde reeks stappen.</p>
+
+        <ol>
+            <li>De <strong>POST</strong>, de Power-On Self-Test, kijkt na of de processor, het geheugen en de
+                verplichte onderdelen aanwezig zijn en reageren.</li>
+            <li>De firmware leest de instellingen die in het CMOS-geheugen bewaard zijn, gevoed door de
+                knoopcelbatterij op het moederbord.</li>
+            <li>Ze doorloopt de opstartvolgorde en zoekt op elk toestel in die lijst naar opstartbare code.</li>
+            <li>Vindt ze die, dan laadt ze de bootloader in het geheugen en geeft ze de controle door aan het
+                besturingssysteem.</li>
+        </ol>
+
+        <div class="info-box">
+            <div class="info-title remark">De piepjes bij het opstarten zijn een foutcode</div>
+            <p>Loopt de POST vast, dan is er nog geen beeld om een boodschap op te tonen. Daarom geeft het moederbord
+                een reeks pieptonen, en soms een cijfercode op een display op het bord zelf. Wat elke reeks betekent,
+                staat in de handleiding van het moederbord.</p>
+        </div>
+
+        <h2 id="omgeving">In de omgeving geraken</h2>
+
+        <p>Om de instellingen te zien, druk je vlak na het inschakelen op een toets. Welke toets dat is, verschilt per
+            fabrikant, en het scherm zegt het meestal zelf in de eerste seconden. Staat het er niet, dan vind je het
+            in de handleiding van het moederbord.</p>
+
+        <p>De meeste UEFI-omgevingen openen in een eenvoudige weergave, waarin je de temperatuur, de geplaatste
+            schijven en de opstartvolgorde ziet. De volledige instellingen zitten in een uitgebreide weergave, en er
+            is een aparte toets om daarnaar over te schakelen.</p>
+
+        <div class="download-container">
+            <a href="https://hogent.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2d82f06b-33e4-4c62-a685-b1e800a68d7d"
+                target="_blank" rel="noopener">Lesopname BIOS en UEFI openen</a>
+            <ul>
+                <li>De opname opent in een nieuw venster en vraagt je HOGENT-aanmelding.</li>
+            </ul>
+        </div>
+
+        <h2 id="opstartvolgorde">De opstartvolgorde en het bootmenu</h2>
+
+        <p>De <strong>opstartvolgorde</strong> is de lijst waarin de firmware zoekt naar iets om van op te starten.
+            Staat de interne schijf bovenaan, dan start je gewone besturingssysteem op. Zet je een USB-stick
+            erboven, dan start de computer daarvan, en dat heb je nodig om een besturingssysteem te installeren.</p>
+
+        <p>Naast die vaste lijst is er een <strong>bootmenu</strong>. Dat roep je met een aparte toets op tijdens het
+            opstarten, en het toont de aanwezige toestellen zodat je er eenmalig een van kiest. De opgeslagen
+            volgorde blijft daarbij ongewijzigd, dus de volgende start verloopt weer zoals ingesteld.</p>
+
+        <div class="info-box">
+            <div class="info-title tip">Een stick die niet in de lijst staat, is meestal een kwestie van modus</div>
+            <p>Een UEFI-omgeving toont een opstartbare stick soms twee keer: eenmaal met en eenmaal zonder het
+                voorvoegsel <code>UEFI:</code>. Dat zijn twee manieren om van dezelfde stick te starten. Staat de
+                stick er helemaal niet, kijk dan of Secure Boot aan staat en of de compatibiliteitsmodus voor het
+                oude BIOS ingeschakeld moet zijn.</p>
+        </div>
+
+        <h2 id="instellingen">Wat je er verder terugvindt</h2>
+
+        <ul>
+            <li>De <strong>hardware die het bord ziet</strong>: het model van de processor, hoeveel geheugen er
+                geplaatst is en aan welke snelheid, en welke schijven op de SATA- en M.2-aansluitingen hangen.</li>
+            <li>De <strong>datum en het uur</strong>, die de klok op het moederbord bijhoudt.</li>
+            <li>Het <strong>geheugenprofiel</strong>, waarmee je de modules op hun verkochte snelheid laat lopen in
+                plaats van op de standaardsnelheid van hun generatie.</li>
+            <li>De <strong>temperaturen en de ventilatorsnelheden</strong>, die je hier afleest zonder dat er een
+                besturingssysteem draait.</li>
+        </ul>
+
+        <div class="info-box">
+            <div class="info-title warning">Verlaat de omgeving bewust</div>
+            <p>Er zijn twee manieren om weg te gaan: opslaan en herstarten, of afsluiten zonder op te slaan. Twijfel
+                je over een instelling die je aangeraakt hebt, kies dan de tweede. Elk bord heeft daarnaast een optie
+                om alles op de fabrieksinstellingen terug te zetten.</p>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

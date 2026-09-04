@@ -12,8 +12,12 @@ _export/
 
 # jsdom, de enige afhankelijkheid in de repo, en alleen nodig als je
 # scripts/check-nav.js draait. Zie de kop van dat bestand. Niets anders hangt
-# ervan af, dus dit blijft een lege map voor wie hem nooit installeert.
+# ervan af, dus dit blijft een lege map voor wie hem nooit installeert. De twee
+# bestanden die npm install ernaast aanmaakt horen om dezelfde reden niet in
+# git: een clean checkout hoort niets te moeten installeren.
 node_modules/
+package.json
+package-lock.json
 
 # Bytecode van de scripts onder scripts/. Wordt vanzelf opnieuw gemaakt en
 # Pages serveert alleen wat getrackt is, dus dit hoort er niet bij.

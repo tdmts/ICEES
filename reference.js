@@ -51,9 +51,89 @@
  * houdt terwijl hij de opdracht maakt. Dat spiekblad staat in de
  * theoriereeks, want het hoort bij het menu-item Theorie.
  *
- * Nog leeg. De zes mapnamen en de groepering liggen wel vast: zie CLAUDE.md,
- * "The six modules". Drie labo's hebben meer dan een indiening, en die hebben
- * dus meer dan een Opdracht.html en meer dan vier reeksen.
+ * Labo Assemblage staat erin. De vijf overige mapnamen en hun groepering
+ * liggen vast: zie CLAUDE.md, "The six modules". Drie labo's hebben meer dan
+ * een indiening, en die hebben dus meer dan een Opdracht.html en meer dan vier
+ * reeksen. Bij Assemblage zijn dat Inventaris, BiosUefi en InstallatieOs: elk
+ * daarvan is een eigen menu-item met een eigen leesvolgorde van een pagina, en
+ * daarom staat geen van de drie hieronder. Wat hier staat is de theoriereeks.
  */
 window.LAB_REFERENCE = {
+    assemblage: {
+        name: 'Labo Assemblage + BIOS/UEFI',
+        categories: [
+            {
+                name: 'Theorie',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'veiligheid',
+                        name: 'Veiligheid, orde en netheid',
+                        blurb: 'Waarom je zonder netspanning werkt, hoe je een printplaat vastneemt, en wat er van je werkplek verwacht wordt.',
+                        href: 'Veiligheid.html'
+                    },
+                    {
+                        id: 'componenten',
+                        name: 'De componenten van een pc',
+                        blurb: 'Vormfactor, socket, geheugengeneratie, opslagprotocol en voedingsrendement: waar je naar kijkt en in welke eenheid het staat.',
+                        href: 'Componenten.html'
+                    },
+                    {
+                        id: 'demontage',
+                        name: 'Demontage',
+                        blurb: 'De volgorde van buiten naar binnen, en waarom de koeler een kwartslag draait voor hij loskomt.',
+                        href: 'Demontage.html'
+                    },
+                    {
+                        id: 'assemblage',
+                        name: 'Assemblage',
+                        blurb: 'Dezelfde weg terug, met de processor en het geheugen op het bord voor het in de kast gaat.',
+                        href: 'Assemblage.html'
+                    },
+                    {
+                        id: 'bios-uefi',
+                        name: 'BIOS en UEFI',
+                        blurb: 'De firmware die draait voor er een besturingssysteem is: de POST, de opstartvolgorde en het bootmenu.',
+                        href: 'BiosUefi.html'
+                    }
+                ]
+            },
+            {
+                name: 'Datasheets',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'datasheet-moederbord',
+                        name: 'Moederbord',
+                        blurb: 'De handleiding van het moederbord dat in dit labo op tafel ligt, met de layout van het bord en zijn connectoren.',
+                        href: '../../../datasheets/mb-manual-a520m-s2h-e-1301.pdf'
+                    },
+                    {
+                        id: 'datasheet-processor',
+                        name: 'Processor',
+                        blurb: 'De gegevens van de processor die in dit labo op tafel ligt.',
+                        href: '../../../datasheets/amd-ryzen-3-4300g-socket-am4-processor-unlocked-wraith-stealth-boxed.pdf'
+                    },
+                    {
+                        id: 'datasheet-geheugen',
+                        name: 'Werkgeheugen',
+                        blurb: 'De gegevens van de geheugenmodule die in dit labo op tafel ligt.',
+                        href: '../../../datasheets/gskill-aegis-8gb.pdf'
+                    },
+                    {
+                        id: 'datasheet-ssd',
+                        name: 'SSD',
+                        blurb: 'De gegevens van de SSD die in dit labo op tafel ligt.',
+                        href: '../../../datasheets/ssd-intern-25-top.pdf'
+                    },
+                    {
+                        id: 'datasheet-voeding',
+                        name: 'Voeding',
+                        blurb: 'De gegevens van de voeding die in dit labo op tafel ligt, met haar vermogen en haar uitgangsspanningen.',
+                        href: '../../../datasheets/ds-shp-bronze-en-07.pdf'
+                    }
+                ]
+            }
+        ]
+    }
 };

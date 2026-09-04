@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht Inventaris</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Opdracht Inventaris</h1>
+
+        <p class="lead">Je haalt de computer op je tafel open en maakt van elk onderdeel een inventaris: een foto,
+            het merk en het model, en de specificaties die erbij horen. Wat op het onderdeel zelf staat lees je af,
+            en de rest zoek je op in de datasheet van de fabrikant.</p>
+
+        <div class="download-container">
+            <a href="../../../downloads/Labo-Assemblage-Inventaris-verslag.docx">Opdracht downloaden</a>
+            <ul>
+                <li>De volledige opdracht staat in dit document, met ruimte voor je antwoorden en je foto's.</li>
+                <li>Download het voor je begint.</li>
+                <li>Je dient het in via de opdracht op Orion.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <div class="info-title warning">De foto's neem je in het labo</div>
+            <p>De gegevens kan je achteraf nog opzoeken, de foto's van de losse onderdelen niet. Zorg dat je van elk
+                component een bruikbare foto hebt voor je de computer weer dichtmaakt.</p>
+        </div>
+
+        <!-- verslag
+        De volledige opdracht staat hieronder en komt via scripts/export-verslag.py in het
+        verslagsjabloon terecht. Ze staat bewust niet op de pagina: de student werkt in het
+        document, en dezelfde opdracht op twee plaatsen laat hem twijfelen waar hij moet
+        antwoorden. Wijzig hier, draai daarna het script, en commit de docx mee.
+
+        <p>Vul de inventaris hieronder aan. Waar je uit een reeks mogelijkheden kiest, schrijf je op wat van
+            toepassing is. Weet je iets niet, kijk dan bij de theorie van dit labo of in de datasheet van het
+            onderdeel.</p>
+
+        <p>Je hoeft de vragen niet allemaal tijdens het labo op te lossen; achteraf aanvullen kan. Wat je zeker in het
+            labo moet doen, is van elk onderdeel een foto nemen.</p>
+
+        <div class="verslag-kader" data-verslag="Foto van de opengemaakte computer, samen met je studentenkaart"></div>
+
+        <h2>Kast</h2>
+
+        <ol class="vragen">
+            <li class="screenshot">Neem een foto van de kast en plak die hieronder.</li>
+            <li>Met welke vormfactoren van moederborden is deze kast compatibel? Kies uit: Mini-ITX, Micro-ATX, ATX,
+                BTX.</li>
+            <li>Wat zijn de afmetingen van een ATX-moederbord?
+                <table class="verslag-tabel">
+                    <thead>
+                        <tr>
+                            <th>Afmeting</th>
+                            <th>Jouw antwoord</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Lengte</td><td></td></tr>
+                        <tr><td>Breedte</td><td></td></tr>
+                    </tbody>
+                </table>
+            </li>
+        </ol>
+
+        <h2>Moederbord</h2>
+
+        <ol class="vragen">
+            <li class="screenshot">Neem een foto van het moederbord en plak die hieronder.</li>
+            <li>Vul de gegevens van het moederbord aan.
+                <table class="verslag-tabel">
+                    <thead>
+                        <tr>
+                            <th>Gegeven</th>
+                            <th>Jouw antwoord</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Merk</td><td></td></tr>
+                        <tr><td>Model</td><td></td></tr>
+                        <tr><td>Processorsocket</td><td></td></tr>
+                        <tr><td>Chipset</td><td></td></tr>
+                        <tr><td>Aantal DIMM-slots</td><td></td></tr>
+                        <tr><td>Maximale totale capaciteit RAM</td><td></td></tr>
+                        <tr><td>Aantal SATA III-poorten</td><td></td></tr>
+                        <tr><td>Aantal M.2-aansluitingen</td><td></td></tr>
+                        <tr><td>Aantal PCI Express x1-slots</td><td></td></tr>
+                        <tr><td>Aantal PCI Express x16-slots</td><td></td></tr>
+                        <tr><td>Aantal USB 2-poorten</td><td></td></tr>
+                        <tr><td>Aantal USB 3-poorten</td><td></td></tr>
+                        <tr><td>Vormfactor</td><td></td></tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>Hoe kan je een USB 2-poort en een USB 3-poort visueel van elkaar onderscheiden?</li>
+            <li>Wat is de snelheid van de netwerkkaart? Kies uit: 10 Mbps, 100 Mbps, 1 Gbps.</li>
+            <li>Op welke manieren kan je een scherm aansluiten? Kies uit: VGA (D-SUB), DVI, DisplayPort, HDMI.</li>
+            <li>Welke apparaten kan je aansluiten op de PS/2-connector?</li>
+        </ol>
+
+        <h2>Processor</h2>
+
+        <ol class="vragen">
+            <li class="screenshot">Neem een foto van het moederbord met de processor in beeld. De ventilator en het
+                koelblok mogen erop blijven.</li>
+            <li>Vul de gegevens van de processor aan.
+                <table class="verslag-tabel">
+                    <thead>
+                        <tr>
+                            <th>Gegeven</th>
+                            <th>Jouw antwoord</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Merk</td><td></td></tr>
+                        <tr><td>Model</td><td></td></tr>
+                        <tr><td>Aantal cores</td><td></td></tr>
+                        <tr><td>Kloksnelheid</td><td></td></tr>
+                        <tr><td>L1-cache</td><td></td></tr>
+                        <tr><td>L2-cache</td><td></td></tr>
+                        <tr><td>L3-cache</td><td></td></tr>
+                        <tr><td>Compatibel werkgeheugen (DDR, DDR2, DDR3, DDR4 of DDR5)</td><td></td></tr>
+                        <tr><td>Ingebouwde grafische kaart (ja of nee)</td><td></td></tr>
+                        <tr><td>Energieverbruik</td><td></td></tr>
+                    </tbody>
+                </table>
+            </li>
+        </ol>
+
+        <h2>Werkgeheugen</h2>
+
+        <ol class="vragen">
+            <li class="screenshot">Neem een foto van het werkgeheugen en plak die hieronder.</li>
+            <li>Vul de gegevens van het werkgeheugen aan.
+                <table class="verslag-tabel">
+                    <thead>
+                        <tr>
+                            <th>Gegeven</th>
+                            <th>Jouw antwoord</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Merk</td><td></td></tr>
+                        <tr><td>Model</td><td></td></tr>
+                        <tr><td>Type (DDR, DDR2, DDR3, DDR4 of DDR5)</td><td></td></tr>
+                        <tr><td>Capaciteit</td><td></td></tr>
+                        <tr><td>Snelheid (standaard)</td><td></td></tr>
+                        <tr><td>Spanning (standaard)</td><td></td></tr>
+                        <tr><td>Maximaal te installeren op dit moederbord</td><td></td></tr>
+                    </tbody>
+                </table>
+            </li>
+        </ol>
+
+        <h2>Harde schijf</h2>
+
+        <ol class="vragen">
+            <li class="screenshot">Neem een foto van de harde schijf en plak die hieronder.</li>
+            <li>Vul de gegevens van de harde schijf aan.
+                <table class="verslag-tabel">
+                    <thead>
+                        <tr>
+                            <th>Gegeven</th>
+                            <th>Jouw antwoord</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Merk</td><td></td></tr>
+                        <tr><td>Capaciteit</td><td></td></tr>
+                        <tr><td>Type (mechanisch, SSD of hybride)</td><td></td></tr>
+                        <tr><td>Protocol (IDE, PATA, SATA I, SATA II, SATA III of NVMe)</td><td></td></tr>
+                        <tr><td>Vormfactor (2,5 duim, 3,5 duim of M.2)</td><td></td></tr>
+                        <tr><td>Leessnelheid</td><td></td></tr>
+                        <tr><td>Schrijfsnelheid</td><td></td></tr>
+                    </tbody>
+                </table>
+            </li>
+        </ol>
+
+        <h2>Voeding</h2>
+
+        <ol class="vragen">
+            <li class="screenshot">Neem een foto van de voeding en plak die hieronder.</li>
+            <li>Vul de gegevens van de voeding aan.
+                <table class="verslag-tabel">
+                    <thead>
+                        <tr>
+                            <th>Gegeven</th>
+                            <th>Jouw antwoord</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Merk</td><td></td></tr>
+                        <tr><td>Model</td><td></td></tr>
+                        <tr><td>Vermogen</td><td></td></tr>
+                        <tr><td>Vormfactor (Micro-ATX, ATX of BTX)</td><td></td></tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>Onder welke belasting, in procent, werkt de voeding op haar efficiëntst?</li>
+            <li>Welke uitgangsspanningen levert de voeding? Kies uit: -12 V, 1,5 V, 3,3 V, 5 V, 9 V, 12 V, 18 V,
+                24 V.</li>
+        </ol>
+        -->
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>
