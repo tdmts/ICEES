@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Additions</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Guest Additions</h1>
+
+        <p>Guest Additions installeer je in de draaiende Ubuntu, en daarna schaalt het scherm mee met het venster
+            en deel je één klembord tussen je host en je guest. De installatie loopt drie keer: twee keer stopt ze
+            met een foutmelding over software die nog ontbreekt. Wat Guest Additions oplost en waarom het onderweg
+            gebouwd moet worden, staat op
+            <a href="Theorie/SoftwareInDeGuest.html#guest-additions" target="_blank" rel="noopener">Software in de
+                guest</a>.</p>
+
+        <h2 id="installeren">De installatie</h2>
+
+        <ol>
+            <li>
+                <p>Kies in het menu van de virtuele machine <strong>Apparaten &rarr; Invoegen Guest Additions CD
+                        image</strong>. VirtualBox legt dan een virtuele cd in het station van de guest.</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/installatie-guest-additions-image-9399320.png" class="img-fluid"
+                        alt="Het menu Apparaten van VirtualBox, met de optie om de Guest Additions cd in te voegen">
+                </figure>
+            </li>
+            <li>
+                <p>In Ubuntu verschijnt er een schijfpictogram. Klik het open.</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/installatie-guest-additions-image-9399321.png" class="img-fluid"
+                        alt="Het bureaublad van Ubuntu met het pictogram van de ingevoegde cd">
+                </figure>
+            </li>
+            <li>
+                <p>Klik op <strong>Run software</strong>. Gebeurt er niets, klik dan met de rechtermuisknop op
+                    <code>autorun.sh</code> en kies <strong>Run as program</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/installatie-guest-additions-image-9399322.png" class="img-fluid"
+                        alt="De inhoud van de Guest Additions cd, met de knop Run software">
+                </figure>
+            </li>
+        </ol>
+
+        <h2 id="ontbrekende-pakketten">De pakketten die ontbreken</h2>
+
+        <p>De installatie stopt met een foutmelding die zegt welke programma's ze mist.</p>
+
+        <figure class="figure-zoom" style="max-width: 460px">
+            <img src="../../img/installatie-guest-additions-image-9399323.png" class="img-fluid"
+                alt="De foutmelding die zegt dat bzip2 en tar ontbreken">
+            <figcaption class="figure-caption">De melding noemt de programma's die ontbreken</figcaption>
+        </figure>
+
+        <p>Open in Ubuntu een terminalvenster.</p>
+
+        <figure class="figure-zoom" style="max-width: 520px">
+            <img src="../../img/installatie-guest-additions-image-9399324.png" class="img-fluid"
+                alt="Ubuntu met een geopend terminalvenster">
+            <figcaption class="figure-caption">Het terminalvenster staat in de programmalijst</figcaption>
+        </figure>
+
+        <p>De eerste melding gaat over <code>bzip2</code> en <code>tar</code>. Installeer ze:</p>
+
+        <div class="code-wrapper language-bash linenumbers">
+            <pre><code class="language-bash">sudo apt install bzip2 tar</code></pre>
+        </div>
+
+        <div class="info-box">
+            <div class="info-title warning">Een commando is hoofdlettergevoelig</div>
+            <p>Tik het exact over, met dezelfde spaties en dezelfde streepjes. <code>Sudo</code> is een ander
+                commando dan <code>sudo</code>, en Linux zegt dan dat het het niet kent.</p>
+        </div>
+
+        <figure class="figure-zoom" style="max-width: 520px">
+            <img src="../../img/installatie-guest-additions-image-9399325.png" class="img-fluid"
+                alt="Het commando sudo apt install bzip2, ingetikt in de terminal">
+            <figcaption class="figure-caption">Het commando vraagt eerst het wachtwoord van je gebruiker
+            </figcaption>
+        </figure>
+
+        <figure class="figure-zoom" style="max-width: 520px">
+            <img src="../../img/installatie-guest-additions-image-9399326.png" class="img-fluid"
+                alt="De terminal na een geslaagde installatie van het pakket">
+            <figcaption class="figure-caption">Het pakket is binnengehaald en uitgepakt</figcaption>
+        </figure>
+
+        <p>Voer de installer opnieuw uit. Er verschijnt een hoop tekst en daarna een tweede foutmelding, deze keer
+            over de programma's waarmee de stuurprogramma's gebouwd worden.</p>
+
+        <figure class="figure-zoom" style="max-width: 460px">
+            <img src="../../img/installatie-guest-additions-image-9399327.png" class="img-fluid"
+                alt="De tweede foutmelding, over ontbrekende bouwprogramma's">
+            <figcaption class="figure-caption">De tweede melding noemt gcc, make en perl</figcaption>
+        </figure>
+
+        <p>Installeer die drie in één keer:</p>
+
+        <div class="code-wrapper language-bash linenumbers">
+            <pre><code class="language-bash">sudo apt install gcc make perl</code></pre>
+        </div>
+
+        <h2 id="herstarten">Herstarten</h2>
+
+        <p>Voer de installer een derde keer uit. Nu loopt hij door tot het einde.</p>
+
+        <figure class="figure-zoom" style="max-width: 460px">
+            <img src="../../img/installatie-guest-additions-image-9399328.png" class="img-fluid"
+                alt="Het venster dat meldt dat de installatie van Guest Additions geslaagd is">
+            <figcaption class="figure-caption">De installatie is klaar en vraagt om te herstarten</figcaption>
+        </figure>
+
+        <p>De stuurprogramma's worden pas geladen wanneer de guest opnieuw opstart. Herstart hem vanuit de
+            terminal:</p>
+
+        <div class="code-wrapper language-bash linenumbers">
+            <pre><code class="language-bash">sudo reboot</code></pre>
+        </div>
+
+        <figure class="figure-zoom" style="max-width: 520px">
+            <img src="../../img/installatie-guest-additions-image-9399329.png" class="img-fluid"
+                alt="Het commando sudo reboot, ingetikt in de terminal van de virtuele machine">
+            <figcaption class="figure-caption">Na dit commando start de virtuele machine opnieuw op</figcaption>
+        </figure>
+
+        <p>Na het herstarten schaalt het bureaublad mee wanneer je het venster groter maakt, en werkt knippen en
+            plakken tussen je host en je guest.</p>
+    </div>
+
+    <script src="../../reference.js"></script>
+    <script src="../../back-link.js"></script>
+</body>
+
+</html>

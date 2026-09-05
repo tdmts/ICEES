@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software in de guest</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Software in de guest</h1>
+
+        <p>Twee keuzes die je tijdens en na de installatie van Ubuntu maakt, gaan over software die er niet
+            standaard bij zit: de proprietary software die het installatieprogramma je aanbiedt, en de Guest
+            Additions die de guest bij de nagebootste hardware van VirtualBox helpen.</p>
+
+        <h2 id="proprietary">Proprietary software</h2>
+
+        <p>Ubuntu is vrije software: de broncode ligt open, je mag ze lezen, aanpassen en verder verspreiden. Het
+            grootste deel van wat je bij de installatie binnenhaalt, werkt zo.</p>
+
+        <p>Proprietary software is het tegenovergestelde. De maker houdt de broncode voor zichzelf en je gebruikt
+            het programma onder zijn voorwaarden. Bij een verse Ubuntu gaat het vooral om twee dingen:</p>
+
+        <ul>
+            <li><strong>Stuurprogramma's</strong> van fabrikanten die de werking van hun hardware niet publiek
+                maken. De bekendste zijn die voor grafische kaarten van NVIDIA en voor sommige wifikaarten.</li>
+            <li><strong>Codecs</strong>, de stukjes software die video en audio decoderen. Een aantal
+                veelgebruikte formaten zit achter patenten en mag daardoor niet zomaar in een vrije distributie
+                meegeleverd worden.</li>
+        </ul>
+
+        <p>Het installatieprogramma vraagt daarom apart of je die software mee wil. Zet je het aan, dan werkt je
+            hardware zoals de fabrikant het bedoeld heeft en spelen je mediabestanden af. Laat je het uit, dan
+            blijft je installatie volledig vrije software, wat sommige organisaties van hun machines eisen, en dan
+            werkt bepaalde hardware trager of niet, en blijft een filmpje soms zwart. In dit labo zet je het aan.
+        </p>
+
+        <h2 id="guest-additions">Guest Additions</h2>
+
+        <p>De guest ziet de nagebootste hardware van VirtualBox en niets van je laptop. Hij weet dus niet welke
+            schermresolutie er mogelijk is, en hij heeft geen weg naar het klembord van je host. Daardoor draait
+            een verse Ubuntu in een venster met een vaste, kleine resolutie, en kan je geen tekst van de ene naar
+            de andere kant kopiëren.</p>
+
+        <p>Guest Additions is een verzameling stuurprogramma's en hulpprogramma's die je in de guest installeert en
+            die dat gat dicht. Na de installatie schaalt het bureaublad mee wanneer je het venster groter maakt,
+            deel je één klembord tussen host en guest, beweegt de muis vlot van het ene naar het andere, en kan je
+            een map van je host in de guest laten verschijnen.</p>
+
+        <h3>Waarom het gecompileerd wordt</h3>
+
+        <p>Een deel van Guest Additions is een kernelmodule: code die in de kern van Linux zelf draait, naast de
+            stuurprogramma's die er al in zitten. Zo'n module past bij precies één kernelversie, en er zijn er te
+            veel om ze allemaal kant-en-klaar mee te leveren. De installer bouwt de module daarom ter plaatse, uit
+            broncode, voor de kernel die op jouw Ubuntu draait.</p>
+
+        <p>Daar heeft hij gereedschap voor nodig dat op een verse Ubuntu niet staat, want een gewone gebruiker
+            compileert niets.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Wat de installer bijgeïnstalleerd wil zien</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Pakket</th>
+                        <th>Waarvoor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>bzip2</code></td>
+                        <td>De ingepakte broncode uitpakken</td>
+                    </tr>
+                    <tr>
+                        <td><code>tar</code></td>
+                        <td>Het archief eromheen openen</td>
+                    </tr>
+                    <tr>
+                        <td><code>gcc</code></td>
+                        <td>De C-compiler die de module bouwt</td>
+                    </tr>
+                    <tr>
+                        <td><code>make</code></td>
+                        <td>Het programma dat die bouw in de juiste volgorde uitvoert</td>
+                    </tr>
+                    <tr>
+                        <td><code>perl</code></td>
+                        <td>De scripts die de installer onderweg gebruikt</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>De installer noemt in zijn foutmelding telkens wat hij mist, dus je leest daar af wat je nog moet
+            binnenhalen. Je installeert die pakketten met <code>sudo apt install</code>, gevolgd door hun namen.
+        </p>
+
+        <div class="info-box">
+            <div class="info-title warning">De module hoort bij één kernelversie</div>
+            <p>Krijgt je Ubuntu later een nieuwe kernel, dan past de gebouwde module daar niet meer bij en valt de
+                schaalbare resolutie weg. Je lost dat op door Guest Additions opnieuw te installeren, en dan is het
+                gereedschap er al.</p>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

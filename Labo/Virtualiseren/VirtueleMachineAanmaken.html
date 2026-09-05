@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Een virtuele machine aanmaken</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Een virtuele machine aanmaken</h1>
+
+        <p>De wizard van VirtualBox legt je vier schermen voor. Neem de instellingen hieronder over; wat elk van
+            die keuzes betekent, staat bij Theorie.</p>
+
+        <div class="info-box">
+            <div class="info-title warning">Sluit VirtualBox eerst volledig af</div>
+            <p>Heb je het Extension Pack net geïnstalleerd, sluit VirtualBox dan af en open het opnieuw. Anders
+                werkt het programma verder met wat het bij het opstarten geladen heeft.</p>
+        </div>
+
+        <p>Open VirtualBox en klik op <strong>Nieuw</strong>.</p>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../img/een-virtuele-machine-maken-image-9399288.png" class="img-fluid"
+                alt="Het hoofdvenster van VirtualBox met de knop Nieuw in de werkbalk">
+            <figcaption class="figure-caption">De knop Nieuw staat in de werkbalk bovenaan</figcaption>
+        </figure>
+
+        <h2 id="besturingssysteem">Scherm 1: besturingssysteem</h2>
+
+        <ul>
+            <li><strong>Naam:</strong> Ubuntu</li>
+            <li><strong>ISO-image:</strong> laat leeg</li>
+            <li><strong>Type:</strong> Linux</li>
+            <li><strong>Versie:</strong> Ubuntu (64-bit)</li>
+        </ul>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../img/een-virtuele-machine-maken-image-9399289.png" class="img-fluid"
+                alt="Het eerste scherm van de wizard, met velden voor naam, ISO-image, type en versie">
+            <figcaption class="figure-caption">De naam die je hier geeft, wordt ook de naam van de map op je
+                schijf</figcaption>
+        </figure>
+
+        <div class="info-box">
+            <div class="info-title warning">Staat er alleen een 32-bitversie in de lijst</div>
+            <p>Dan staat de virtualisatie-instelling van je processor uit in de firmware van je laptop. Zet ze aan
+                (ze heet VT-x bij Intel, AMD-V of SVM bij AMD), en zet in Windows eventueel Hyper-V uit. Vraag de
+                lector om hulp als je er niet uit raakt. De uitleg staat op
+                <a href="Theorie/VirtueleHardware.html#virtualisatie" target="_blank" rel="noopener">Virtuele
+                    hardware</a>.</p>
+        </div>
+
+        <h2 id="geheugen-processor">Scherm 2: werkgeheugen en processoren</h2>
+
+        <ul>
+            <li><strong>Basisgeheugen:</strong> minstens 2048 MB, en liefst 4096 of 8192 MB</li>
+            <li><strong>Processoren:</strong> 1 of meer</li>
+            <li><strong>EFI:</strong> aan</li>
+        </ul>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../img/een-virtuele-machine-maken-image-9399290.png" class="img-fluid"
+                alt="Het tweede scherm, met schuifregelaars voor basisgeheugen en processoren en een vinkje voor EFI">
+            <figcaption class="figure-caption">Blijf met de schuifregelaar binnen het groene deel</figcaption>
+        </figure>
+
+        <p>Hoeveel geheugen je hier het best geeft, en waarom dat meer uitmaakt dan het aantal processoren, staat
+            op <a href="Theorie/SchijfEnGeheugen.html" target="_blank" rel="noopener">Schijf en geheugen</a>.
+            Waarvoor het vinkje EFI dient, staat op
+            <a href="Theorie/VirtueleHardware.html#efi" target="_blank" rel="noopener">Virtuele hardware</a>.</p>
+
+        <h2 id="harde-schijf">Scherm 3: de harde schijf</h2>
+
+        <p>Geef de virtuele harde schijf een locatie en een grootte. Het vinkje eronder kiest tussen dynamische en
+            statische allocatie.</p>
+
+        <div class="info-box">
+            <div class="info-title remark">Neem minstens 25 GB voor de virtuele harde schijf</div>
+            <p>Ubuntu zelf neemt ongeveer 15 GB in, en daar komt nog bij wat je in de labo's installeert. Die grens
+                ligt vast zodra de machine gemaakt is, dus dit is de enige instelling die je achteraf niet meer kan
+                veranderen.</p>
+        </div>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../img/een-virtuele-machine-maken-image-9399291.png" class="img-fluid"
+                alt="Het derde scherm, met de grootte van de virtuele harde schijf en het vinkje voor pre-alloceren">
+            <figcaption class="figure-caption">Het verschil tussen de twee manieren van alloceren staat op
+                <a href="Theorie/SchijfEnGeheugen.html#allocatie" target="_blank" rel="noopener">Schijf en
+                    geheugen</a></figcaption>
+        </figure>
+
+        <h2 id="samenvatting">Scherm 4: de samenvatting</h2>
+
+        <p>Loop het overzicht na voor je op Voltooien klikt.</p>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../img/een-virtuele-machine-maken-image-9399292.png" class="img-fluid"
+                alt="Het laatste scherm van de wizard, met alle gekozen instellingen onder elkaar">
+            <figcaption class="figure-caption">Alle instellingen samen, vlak voor de machine gemaakt
+                wordt</figcaption>
+        </figure>
+
+        <h2 id="starten">De machine starten</h2>
+
+        <ol>
+            <li>
+                <p>Selecteer de machine in de lijst en klik op de groene startknop.</p>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../img/een-virtuele-machine-starten-image-9399294.png" class="img-fluid"
+                        alt="Het hoofdvenster van VirtualBox met de virtuele machine geselecteerd en de startknop">
+                </figure>
+            </li>
+            <li>
+                <p>De machine vindt niets om van op te starten en vraagt een schijfbestand. Klap het lijstje open
+                    en kies <strong>Andere</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/een-virtuele-machine-starten-image-9399295.png" class="img-fluid"
+                        alt="Het venster dat om een schijfbestand vraagt, met het lijstje opengeklapt">
+                </figure>
+            </li>
+            <li>
+                <p>Zoek het Ubuntu-bestand op dat je gedownload hebt, met de extensie <code>.iso</code>.</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/een-virtuele-machine-starten-image-9399296.png" class="img-fluid"
+                        alt="De Verkenner, geopend in de map met het gedownloade Ubuntu-iso-bestand">
+                </figure>
+            </li>
+            <li>
+                <p>Klik op <strong>Mount</strong> en probeer opnieuw op te starten.</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/een-virtuele-machine-starten-image-9399297.png" class="img-fluid"
+                        alt="Hetzelfde venster, nu met het gekozen iso-bestand en de knop Mount">
+                </figure>
+            </li>
+            <li>
+                <p>Geef de machine wat tijd. Uiteindelijk vraagt Ubuntu of je het wil uitproberen of installeren.
+                    Rechtsboven brengt Volgende je naar de installatiewizard, maar dat is voor straks: lees eerst
+                    de rest van deze pagina.</p>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../img/een-virtuele-machine-starten-image-9399298.png" class="img-fluid"
+                        alt="Het eerste scherm van het Ubuntu-installatieprogramma in de virtuele machine">
+                </figure>
+            </li>
+        </ol>
+
+        <p>Wat een ISO-bestand is en waarom je machine ervan opstart, staat op
+            <a href="Theorie/VirtueleHardware.html#iso" target="_blank" rel="noopener">Virtuele hardware</a>.</p>
+
+        <div class="info-box">
+            <div class="info-title warning">Krijg je foutmeldingen tijdens het opstarten</div>
+            <p>Sluit de virtuele machine af en geef haar meer werkgeheugen. Te weinig geheugen is de meest
+                voorkomende reden waarom het installatieprogramma niet tot bij dat scherm geraakt.</p>
+        </div>
+
+        <h2 id="werkgeheugen">Het werkgeheugen aanpassen</h2>
+
+        <p>Draait je machine traag, dan geef je haar meer werkgeheugen. Zet haar daarvoor eerst uit.</p>
+
+        <ol>
+            <li>
+                <p>Selecteer de machine in het hoofdvenster en klik op <strong>Instellingen</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../img/werkgeheugen-aanpassen-2-image-9399316.png" class="img-fluid"
+                        alt="Het hoofdvenster van VirtualBox met de knop Instellingen in de werkbalk">
+                </figure>
+            </li>
+            <li>
+                <p>Kijk hoeveel geheugen je host nog over heeft. Druk op <kbd>CTRL</kbd> + <kbd>ALT</kbd> +
+                    <kbd>DEL</kbd>, open Taakbeheer en ga naar het tabblad Prestaties.</p>
+                <figure class="figure-zoom" style="max-width: 500px">
+                    <img src="../../img/werkgeheugen-aanpassen-2-image-9399317.png" class="img-fluid"
+                        alt="Het tabblad Prestaties van Taakbeheer, met het geheugengebruik van Windows">
+                </figure>
+            </li>
+            <li>
+                <p>Ga naar het tabblad <strong>Systeem</strong> en verschuif het basisgeheugen.</p>
+                <figure class="figure-zoom" style="max-width: 500px">
+                    <img src="../../img/werkgeheugen-aanpassen-2-image-9399318.png" class="img-fluid"
+                        alt="Het tabblad Systeem in de instellingen, met de schuifregelaar voor het basisgeheugen">
+                </figure>
+            </li>
+            <li>
+                <p>Klik op <strong>OK</strong> en start de machine opnieuw op.</p>
+            </li>
+        </ol>
+
+        <h2 id="stoppen">De machine stoppen</h2>
+
+        <p>Sluit het venster van de virtuele machine en kies wat er moet gebeuren. Voor een pauze neem je
+            <strong>de staat van de machine opslaan</strong>, en om ze echt uit te zetten
+            <strong>het shutdownsignaal sturen</strong>. Wat de derde keuze doet en wanneer je ze gebruikt, staat op
+            <a href="Theorie/VirtueleHardware.html#stoppen" target="_blank" rel="noopener">Virtuele hardware</a>.
+        </p>
+
+        <p>Reageert de guest niet meer, sluit hem dan van binnenuit af. Open een terminalvenster in de virtuele
+            machine.</p>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../img/een-virtuele-machine-uitzetten-of-onderbreken-image-9399332.png" class="img-fluid"
+                alt="Ubuntu in de virtuele machine met een geopend terminalvenster">
+            <figcaption class="figure-caption">Een terminalvenster in de draaiende Ubuntu</figcaption>
+        </figure>
+
+        <p>Voer het afsluitcommando uit:</p>
+
+        <div class="code-wrapper language-bash linenumbers">
+            <pre><code class="language-bash">sudo shutdown now</code></pre>
+        </div>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../img/een-virtuele-machine-uitzetten-of-onderbreken-image-9399333.png" class="img-fluid"
+                alt="Het commando sudo shutdown now, ingetikt in de terminal van de virtuele machine">
+            <figcaption class="figure-caption">Het commando vraagt eerst je wachtwoord</figcaption>
+        </figure>
+    </div>
+
+    <script src="../../reference.js"></script>
+    <script src="../../back-link.js"></script>
+</body>
+
+</html>

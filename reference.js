@@ -57,12 +57,13 @@
  * houdt terwijl hij de opdracht maakt. Dat spiekblad staat in de
  * theoriereeks, want het hoort bij het menu-item Theorie.
  *
- * Labo Assemblage staat erin. De vijf overige mapnamen en hun groepering
- * liggen vast: zie CLAUDE.md, "The six modules". Drie labo's hebben meer dan
- * een indiening, en die hebben dus meer dan een Opdracht.html en meer dan vier
- * reeksen. Bij Assemblage zijn dat Inventaris, BiosUefi en InstallatieOs: elk
- * daarvan is een eigen menu-item met een eigen leesvolgorde van een pagina, en
- * daarom staat geen van de drie hieronder. Wat hier staat is de theoriereeks.
+ * Labo Assemblage en Labo Virtualiseren staan erin. De vier overige mapnamen
+ * en hun groepering liggen vast: zie CLAUDE.md, "The six modules". Drie labo's
+ * hebben meer dan een indiening, en die hebben dus meer dan een Opdracht.html
+ * en meer dan vier reeksen. Bij Assemblage zijn dat Inventaris, BiosUefi en
+ * InstallatieOs: elk daarvan is een eigen menu-item met een eigen leesvolgorde
+ * van een pagina, en daarom staat geen van de drie hieronder. Wat hier staat is
+ * de theoriereeks.
  */
 window.LAB_REFERENCE = {
     assemblage: {
@@ -137,6 +138,83 @@ window.LAB_REFERENCE = {
                         name: 'Voeding',
                         blurb: 'Vermogen, rendement en de uitgangsspanningen die de voeding levert.',
                         href: '../../../datasheets/ds-shp-bronze-en-07.pdf'
+                    }
+                ]
+            }
+        ]
+    },
+    virtualiseren: {
+        name: 'Labo Virtualiseren',
+        categories: [
+            {
+                name: 'Theorie',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'wat-is-virtualisatie',
+                        name: 'Wat is virtualisatie',
+                        blurb: 'Host en guest, waarom een bedrijf zijn servers virtualiseert, wat het aan snelheid kost, en waarin een container verschilt van een virtuele machine.',
+                        href: 'WatIsVirtualisatie.html'
+                    },
+                    {
+                        id: 'virtuele-hardware',
+                        name: 'Virtuele hardware',
+                        blurb: 'Wat VirtualBox nabootst en wat je daarvan zelf instelt: de virtualisatie-uitbreiding van je processor, EFI, het ISO-bestand en de drie manieren om de machine te stoppen.',
+                        href: 'VirtueleHardware.html'
+                    },
+                    {
+                        id: 'schijf-en-geheugen',
+                        name: 'Schijf en geheugen',
+                        blurb: 'Statische tegenover dynamische allocatie, en waarom werkgeheugen meer voor de snelheid van je machine doet dan een extra processor.',
+                        href: 'SchijfEnGeheugen.html'
+                    },
+                    {
+                        id: 'software-in-de-guest',
+                        name: 'Software in de guest',
+                        blurb: 'Proprietary software en de afweging om ze mee te installeren, en Guest Additions: wat het oplost en waarom het op je eigen kernel gebouwd wordt.',
+                        href: 'SoftwareInDeGuest.html'
+                    }
+                ]
+            },
+            {
+                name: 'Zelftest',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'test-jezelf-virtualiseren',
+                        name: 'Test jezelf',
+                        blurb: 'Meerkeuzevragen over de vier pagina\'s hierboven, in dezelfde vorm als de test in Orion. Bij elk antwoord staat waar je het kan nalezen.',
+                        href: 'TestJezelf.html'
+                    }
+                ]
+            },
+            {
+                name: 'Opdracht',
+                reeks: 'opdracht',
+                topics: [
+                    {
+                        id: 'opdracht-virtualiseren',
+                        name: 'De opdracht',
+                        blurb: 'Wat je maakt en indient, en het document waarin je je antwoorden invult.',
+                        href: '../Opdracht.html'
+                    },
+                    {
+                        id: 'virtuele-machine-aanmaken',
+                        name: 'Een virtuele machine aanmaken',
+                        blurb: 'De vier schermen van de wizard, het ISO-bestand waarvan je opstart, het werkgeheugen bijstellen en de machine weer stoppen.',
+                        href: '../VirtueleMachineAanmaken.html'
+                    },
+                    {
+                        id: 'installatie-ubuntu',
+                        name: 'Installatie Ubuntu',
+                        blurb: 'De twaalf schermen van het installatieprogramma, met bij elk de keuze die je in dit labo neemt.',
+                        href: '../InstallatieUbuntu.html'
+                    },
+                    {
+                        id: 'guest-additions',
+                        name: 'Guest Additions installeren',
+                        blurb: 'De installatie in drie pogingen, en de pakketten die je tussendoor bijhaalt om de twee foutmeldingen op te lossen.',
+                        href: '../GuestAdditions.html'
                     }
                 ]
             }

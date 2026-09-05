@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installatie Ubuntu</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Installatie Ubuntu</h1>
+
+        <p>De installatie van Ubuntu is een reeks schermen waarin je telkens één keuze maakt. Neem de keuzes
+            hieronder over: ze zorgen ervoor dat de uitleg in de labo's over Linux overeenkomt met wat jij op je
+            scherm ziet. Het installatieprogramma spreekt Engels, ook wanneer je Ubuntu daarna in het Nederlands
+            gebruikt.</p>
+
+        <div class="info-box">
+            <div class="info-title remark">De installatie duurt een halfuur tot een uur</div>
+            <p>Ze schrijft in die tijd een paar gigabyte naar de virtuele harde schijf. Laat de virtuele machine
+                draaien terwijl je verder leest.</p>
+        </div>
+
+        <h2 id="stappen">De schermen, in volgorde</h2>
+
+        <ol>
+            <li>
+                <p><strong>Language:</strong> English</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/installatie-ubuntu-image-9399300.png" class="img-fluid"
+                        alt="Het scherm waarin je de taal van het installatieprogramma kiest">
+                </figure>
+            </li>
+            <li>
+                <p><strong>Accessibility:</strong> klik op Next zonder iets aan te zetten</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/installatie-ubuntu-image-9399301.png" class="img-fluid"
+                        alt="Het scherm met de toegankelijkheidsopties van het installatieprogramma">
+                </figure>
+            </li>
+            <li>
+                <p><strong>Keyboard layout:</strong> Belgian. België heeft een eigen toetsenbordindeling, en kies je
+                    hier de verkeerde, dan staan later je leestekens en je cijfers ergens anders dan op je
+                    toetsenbord.</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/installatie-ubuntu-image-9399302.png" class="img-fluid"
+                        alt="Het scherm waarin je de toetsenbordindeling kiest, met Belgian in de lijst">
+                </figure>
+            </li>
+            <li>
+                <p><strong>Connect to the Internet:</strong> use wired connection</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/installatie-ubuntu-image-9399303.png" class="img-fluid"
+                        alt="Het scherm met de netwerkopties tijdens de installatie">
+                </figure>
+            </li>
+            <li>
+                <p><strong>What do you want to do with Ubuntu:</strong> install Ubuntu</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/installatie-ubuntu-image-9399304.png" class="img-fluid"
+                        alt="De keuze tussen Ubuntu uitproberen en Ubuntu installeren">
+                </figure>
+            </li>
+            <li>
+                <p><strong>How would you like to install Ubuntu:</strong> interactive installation</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/installatie-ubuntu-image-9399305.png" class="img-fluid"
+                        alt="De keuze tussen een interactieve en een geautomatiseerde installatie">
+                </figure>
+            </li>
+            <li>
+                <p><strong>What apps would you like to start with:</strong> laat de standaardkeuze staan</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/installatie-ubuntu-image-9399306.png" class="img-fluid"
+                        alt="De keuze tussen een uitgebreide en een minimale set programma's">
+                </figure>
+            </li>
+            <li>
+                <p><strong>Install recommended proprietary software:</strong> zet dit aan. Wat proprietary
+                    software is en wat de afweging is om ze al dan niet te installeren, staat op
+                    <a href="Theorie/SoftwareInDeGuest.html#proprietary" target="_blank" rel="noopener">Software in
+                        de guest</a>.</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/installatie-ubuntu-image-9399307.png" class="img-fluid"
+                        alt="Het scherm dat vraagt of je proprietary software mee wil installeren">
+                </figure>
+            </li>
+            <li>
+                <p><strong>How do you want to install Ubuntu:</strong> erase disk and install Ubuntu. Die schijf is
+                    de virtuele harde schijf, en die is leeg; de Windows op je laptop staat er los van.</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/installatie-ubuntu-image-9399308.png" class="img-fluid"
+                        alt="De keuze om de schijf te wissen en Ubuntu te installeren">
+                </figure>
+            </li>
+            <li>
+                <p><strong>Create your account.</strong> Neem de gegevens hieronder letterlijk over.</p>
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered align-middle">
+                        <caption class="table-caption">De gegevens van je account</caption>
+                        <thead class="table-header-custom">
+                            <tr>
+                                <th>Veld</th>
+                                <th>Wat je invult</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Your name</td>
+                                <td>elm</td>
+                            </tr>
+                            <tr>
+                                <td>Your computer's name</td>
+                                <td>elm-VirtualBox</td>
+                            </tr>
+                            <tr>
+                                <td>Your username</td>
+                                <td>elm</td>
+                            </tr>
+                            <tr>
+                                <td>Your password</td>
+                                <td>mle</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="info-box">
+                    <div class="info-title warning">Kies je een andere gebruikersnaam, dan wijkt de uitleg af</div>
+                    <p>De schermafdrukken en de commando's in dit labo en in de labo's over Linux tonen de gebruiker
+                        <code>elm</code>. En vergeet je je wachtwoord, dan is Ubuntu opnieuw installeren de enige
+                        weg terug.</p>
+                </div>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/installatie-ubuntu-image-9399309.png" class="img-fluid"
+                        alt="Het scherm waarin je naam, computernaam, gebruikersnaam en wachtwoord invult">
+                </figure>
+            </li>
+            <li>
+                <p><strong>Select your timezone:</strong> Brussels</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/installatie-ubuntu-image-9399310.png" class="img-fluid"
+                        alt="Het scherm waarin je de tijdzone kiest, met een wereldkaart">
+                </figure>
+            </li>
+            <li>
+                <p><strong>Ready to install:</strong> loop het overzicht na en start de installatie</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/installatie-ubuntu-image-9399311.png" class="img-fluid"
+                        alt="Het overzicht van alle keuzes, vlak voor de installatie begint">
+                </figure>
+            </li>
+        </ol>
+
+        <h2 id="daarna">Na de installatie</h2>
+
+        <p>Ubuntu vraagt op het einde om de installatiemedia te verwijderen en op Enter te duwen. VirtualBox haalt
+            het ISO-bestand zelf uit het virtuele station, dus je duwt gewoon op Enter en de machine start opnieuw
+            op, deze keer van de virtuele harde schijf.</p>
+
+        <p>Je Ubuntu draait dan, maar in een klein venster en zonder gedeeld klembord met je laptop. Dat lost
+            <a href="GuestAdditions.html">Guest Additions</a> op, en dat is de volgende stap van deze opdracht.</p>
+    </div>
+
+    <script src="../../reference.js"></script>
+    <script src="../../back-link.js"></script>
+</body>
+
+</html>

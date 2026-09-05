@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schijf en geheugen</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Schijf en geheugen</h1>
+
+        <p>Twee instellingen uit de wizard bepalen hoe vlot je virtuele machine werkt en hoeveel plaats ze op je
+            laptop inneemt: de manier waarop haar harde schijf plaats reserveert, en de hoeveelheid werkgeheugen
+            die ze krijgt. De eerste ligt vast zodra de machine gemaakt is, de tweede pas je achteraf nog aan.</p>
+
+        <h2 id="allocatie">Statische en dynamische allocatie</h2>
+
+        <p>De virtuele harde schijf is een bestand op de schijf van je laptop. Bij het aanmaken kies je met het
+            vinkje <strong>Pre-alloceren volledige grootte</strong> hoe dat bestand groeit.</p>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../../img/een-virtuele-machine-maken-image-9399291.png" class="img-fluid"
+                alt="Het scherm met de grootte van de virtuele harde schijf en het vinkje voor pre-alloceren">
+            <figcaption class="figure-caption">Staat het vinkje uit, dan werkt de schijf dynamisch</figcaption>
+        </figure>
+
+        <h3>Statisch: het vinkje aan</h3>
+
+        <p>Het bestand krijgt meteen zijn volledige grootte. Maak je een schijf van 25 GB, dan is er op je laptop
+            vanaf dat moment 25 GB weg, ook al staat er nog niets in. De machine hoeft tijdens het werken nooit
+            plaats bij te vragen, dus ze reageert sneller, en het bestand ligt in één stuk op de schijf in plaats
+            van verspreid over vrije plekken.</p>
+
+        <h3>Dynamisch: het vinkje uit</h3>
+
+        <p>Het bestand begint klein en groeit mee met wat de guest erop schrijft. Een schijf van 25 GB waar 10 GB
+            op staat, neemt op je laptop ongeveer 10 GB in. Je gebruikt dus alleen de plaats die je echt nodig
+            hebt, wat past waar schijfruimte schaars is. De prijs is dat het bestand zichzelf moet uitbreiden
+            terwijl de machine draait, en dat het daardoor verspreid over de schijf komt te liggen.</p>
+
+        <div class="info-box">
+            <div class="info-title warning">De maximumgrootte ligt in beide gevallen vast</div>
+            <p>Ook een dynamische schijf kan nooit groter worden dan wat je bij het aanmaken opgegeven hebt. Kies
+                je 25 GB, dan past er nooit meer dan 25 GB in, hoeveel plaats er op je laptop ook vrij is.</p>
+        </div>
+
+        <h2 id="werkgeheugen">Werkgeheugen</h2>
+
+        <p>Bij het aanmaken van de machine heb je het basisgeheugen ingesteld. Het absolute minimum voor Ubuntu is
+            ongeveer 2 GB.</p>
+
+        <p>Wil je je virtuele machine sneller laten werken, dan levert meer werkgeheugen doorgaans meer op dan een
+            extra processor. Het werkgeheugen bevat de gegevens en de instructies waar de processor op dat moment
+            aan werkt. Is er te weinig van, dan schrijft het besturingssysteem een deel daarvan tijdelijk naar de
+            harde schijf en haalt het terug zodra het weer nodig is. Elke keer dat dat gebeurt, wacht de processor
+            op de schijf, en een schijf is een veelvoud trager dan geheugen.</p>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../../img/een-virtuele-machine-maken-image-9399290.png" class="img-fluid"
+                alt="Het scherm van de wizard met de schuifregelaar voor het basisgeheugen">
+            <figcaption class="figure-caption">Het basisgeheugen zoals je het bij het aanmaken instelt</figcaption>
+        </figure>
+
+        <h3>Hoeveel je mag weggeven</h3>
+
+        <p>Je host moet blijven draaien terwijl de guest werkt, dus je kan hem niet leegmaken. Geef hoogstens de
+            helft tot drie kwart van je totale werkgeheugen weg, en kijk eerst hoeveel je host er zelf van gebruikt.
+            Onder Windows lees je dat af in Taakbeheer, op het tabblad Prestaties. Een laptop met 32 GB waarvan de
+            helft in gebruik is, geeft er vlot 8 GB aan een virtuele machine.</p>
+
+        <p>De schuifregelaar in VirtualBox toont die grens met een kleur: tot waar hij groen is, blijft er genoeg
+            voor je host over.</p>
+
+        <div class="info-box">
+            <div class="info-title warning">Het basisgeheugen ligt vast zolang de machine draait</div>
+            <p>Je past het aan in de instellingen van een machine die uitstaat. Hoe je haar stopt, staat op
+                <a href="VirtueleHardware.html#stoppen">Virtuele hardware</a>. Ook een installatie die al bezig is
+                mag je hiervoor onderbreken: opnieuw beginnen met meer geheugen gaat vaak sneller dan wachten op een
+                machine die te weinig heeft.</p>
+        </div>
+
+        <p>Het aantal processoren ligt om dezelfde reden vast tijdens het draaien. De grootte van de virtuele harde
+            schijf is de enige van de drie die je achteraf niet meer verandert.</p>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

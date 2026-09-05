@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtuele hardware</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Virtuele hardware</h1>
+
+        <p>De guest denkt dat hij een computer voor zich heeft, en die computer bestaat uit software. VirtualBox
+            bootst een processor na, een hoeveelheid werkgeheugen, een harde schijf, een netwerkkaart, een
+            grafische kaart en een dvd-station, en het besturingssysteem in de guest praat daarmee zoals het met
+            echte onderdelen zou praten. Op deze pagina staat wat je van die nagebootste hardware zelf instelt.</p>
+
+        <h2 id="virtualisatie">Een 64-bitguest en de instelling in je processor</h2>
+
+        <p>Een processor kan de guest twee kanten op helpen. Zonder hulp moet VirtualBox elke instructie van de
+            guest zelf vertalen, en dat is traag. Elke recente processor heeft daarom een uitbreiding die de guest
+            zijn instructies rechtstreeks laat uitvoeren, met de hardware die bewaakt dat hij niet buiten zijn
+            virtuele machine komt. Bij Intel heet die uitbreiding VT-x, bij AMD heet ze AMD-V of SVM.</p>
+
+        <p>Die uitbreiding staat in de firmware van je laptop en kan er uit staan. Merk je dat pas in VirtualBox,
+            dan is dat aan één ding te zien: bij Versie zijn alleen de 32-bitbesturingssystemen te kiezen. Zet de
+            instelling aan in de firmware van je laptop, en zet in Windows eventueel Hyper-V uit, want twee
+            programma's kunnen niet tegelijk over die uitbreiding beschikken.</p>
+
+        <h2 id="efi">EFI, de firmware van je virtuele machine</h2>
+
+        <p>Ook een virtuele machine heeft firmware nodig: software die draait voor er een besturingssysteem is, die
+            de nagebootste hardware klaarzet en daarna zoekt waarvan ze kan opstarten. VirtualBox biedt daar twee
+            vormen voor, en met het vinkje <strong>EFI</strong> kies je welke.</p>
+
+        <div class="info-box">
+            <div class="info-title remark">EFI staat voor Extensible Firmware Interface</div>
+            <p>Het is de opvolger van het BIOS, de firmware die pc's sinds de jaren tachtig gebruikten. De
+                gestandaardiseerde versie ervan heet UEFI, met de U van Unified, en in de praktijk worden beide
+                namen door elkaar gebruikt.</p>
+        </div>
+
+        <p>Wat EFI beter doet dan een BIOS: het start van schijven die groter zijn dan 2 TB, het houdt zelf een
+            lijst van opstartbare besturingssystemen bij in plaats van alleen een volgorde van toestellen, en het
+            heeft een grafische interface waarin je de muis kan gebruiken. Op een fysieke computer die je vandaag
+            koopt zit altijd EFI.</p>
+
+        <p>In dit labo zet je het vinkje aan, omdat recente Ubuntu-versies ervan uitgaan dat ze op EFI opstarten.
+            Laat je het uit, dan start de machine met een nagebootst BIOS en kan de installatie halverwege
+            stilvallen.</p>
+
+        <h2 id="iso">Het ISO-bestand als virtuele dvd</h2>
+
+        <p>Een pas aangemaakte virtuele machine heeft een lege harde schijf, dus haar firmware vindt niets om van
+            op te starten. Ze heeft installatiemedia nodig, en dat is bij een virtuele machine een bestand.</p>
+
+        <p>Een ISO-bestand is de volledige inhoud van een cd, een dvd of een USB-stick in één bestand, met het
+            bestandssysteem erin en niet alleen de bestanden. De naam komt van ISO 9660, de standaard voor het
+            bestandssysteem van een cd. Wie Ubuntu downloadt, krijgt zo'n bestand, en wie het op een fysieke
+            computer wil installeren, schrijft het eerst naar een USB-stick.</p>
+
+        <p>Bij een virtuele machine hoeft dat niet. Je koppelt het bestand aan het nagebootste dvd-station, en dat
+            koppelen heet <strong>mounten</strong>. Vanaf dat moment ziet de guest een dvd in zijn station, en
+            start de firmware daarvan op omdat de harde schijf niets te bieden heeft.</p>
+
+        <h2 id="stoppen">De machine stoppen</h2>
+
+        <p>Sluit je het venster van een draaiende virtuele machine, dan vraagt VirtualBox wat er met de machine
+            moet gebeuren. De drie keuzes doen iets anders met wat er op dat moment in het werkgeheugen staat.</p>
+
+        <figure class="figure-zoom" style="max-width: 460px">
+            <img src="../../../img/een-virtuele-machine-uitzetten-of-onderbreken-image-9399331.png"
+                class="img-fluid" alt="Het dialoogvenster met de drie manieren om een virtuele machine te stoppen">
+            <figcaption class="figure-caption">De drie keuzes bij het sluiten van het venster</figcaption>
+        </figure>
+
+        <ul>
+            <li><strong>De staat van de machine opslaan.</strong> Het werkgeheugen van de guest gaat naar een
+                bestand en de machine wordt bevroren. Start je haar later opnieuw, dan gaat ze verder waar je
+                gebleven was, met dezelfde vensters open. Het besturingssysteem merkt er niets van, want voor hem
+                is er geen tijd verstreken.</li>
+            <li><strong>Het shutdownsignaal sturen.</strong> VirtualBox stuurt de guest hetzelfde signaal dat een
+                fysieke computer krijgt wanneer je op de aan-uitknop duwt. De guest sluit dan zijn programma's,
+                schrijft zijn bestanden weg en zet zichzelf uit. Dit is de gewone manier om te stoppen.</li>
+            <li><strong>De machine uitzetten.</strong> De virtuele stekker gaat eruit, zoals wanneer je de
+                aan-uitknop van een fysieke computer ingedrukt houdt. Wat nog in het werkgeheugen staat, gaat
+                verloren, en een bestand dat halverwege weggeschreven werd, blijft halfaf achter.</li>
+        </ul>
+
+        <p>Reageert de guest niet meer op het shutdownsignaal, dan is er nog een weg voor je de stekker uittrekt:
+            hem van binnenuit afsluiten met het commando <code>sudo shutdown now</code> in een terminalvenster.</p>
+
+        <div class="info-box">
+            <div class="info-title warning">Zet de machine uit voor je haar instellingen aanpast</div>
+            <p>Het werkgeheugen en het aantal processoren van een draaiende machine liggen vast. Hoeveel geheugen
+                je haar het best geeft, staat op <a href="SchijfEnGeheugen.html">Schijf en geheugen</a>.</p>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

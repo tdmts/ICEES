@@ -17,9 +17,10 @@ Six labs, each an independent module: Assemblage + BIOS/UEFI, Virtualiseren, Par
 Basis, Linux Geavanceerd, Embedded Systems. Beside them a theory track (a syllabus the student
 prints) and a lecture track (six hoorcolleges, of which five have a deck).
 
-**One of the six modules is written.** `Labo/Assemblage/` holds its hub, its three theory pages and
-its three `Opdracht.html`; `Algemeen/` holds both pages that every hub links to. `check-content.py`
-and `check-nav.js` are both green with no warnings. The other five modules are staged in
+**Two of the six modules are written.** `Labo/Assemblage/` holds its hub, its three theory pages and
+its three `Opdracht.html`; `Labo/Virtualiseren/` holds its hub, four theory pages, a zelftest, one
+`Opdracht.html` and the three stappenplan pages that hang under it; `Algemeen/` holds both pages that every hub links to. `check-content.py`
+and `check-nav.js` are both green with no warnings. The other four modules are staged in
 `_incoming/`.
 
 No build system and no test suite: you edit HTML/CSS/JS directly. `scripts/` holds eight Python
@@ -248,7 +249,7 @@ wipes the read-flags of every student who has already been in it.
 | Folder | Theory pages | Spiekblad |
 |---|---|---|
 | `Labo/Assemblage/` | Veiligheid, Componenten, BiosUefi, TestJezelf | no |
-| `Labo/Virtualiseren/` | WatIsVirtualisatie, VirtueleMachineAanmaken, InstallatieUbuntu, SchijfEnGeheugen, GuestAdditions | no |
+| `Labo/Virtualiseren/` | WatIsVirtualisatie, VirtueleHardware, SchijfEnGeheugen, SoftwareInDeGuest, TestJezelf | no |
 | `Labo/Partitioneren/` | Partitietabellen, GPartedStarten, PrimairePartities, ExtendedEnLogisch, GptPartities | yes |
 | `Labo/LinuxBasis/` | LinuxEnDistributies, DeTerminal, Navigeren, MappenEnBestanden, ZoekenEnBekijken, ProcessenEnRechten, Archieven | yes |
 | `Labo/LinuxGeavanceerd/` | GebruikersEnGroepen, Rechten, SoftwareUitDeRepository, SoftwareBuitenDeRepository, Docker | yes |
@@ -388,10 +389,16 @@ document anywhere near it. Only chmod, chown and chgrp ship a real file, under
 `_attachment_dropbox/196` to `198`.
 
 The docx are on disk at
-`~/OneDrive - Hogeschool Gent/EDU/2025-2026/Industriële computers en embedded systems/Labo/`, one
-folder per lab, each opgave beside its `- oplossing` twin. **Read the opgave, never the oplossing**:
-the solutions are assessed work and stay on Brightspace. That folder is where the `<!-- verslag -->`
-block of an `Opdracht.html` comes from, so open it before writing one.
+`~/OneDrive - Hogeschool Gent/EDU/2026-2027/Industriële computers en embedded systems/Labo/`, one
+folder per lab (`Labo 1 Assemblage BIOS UEFI` to `Labo 6 Embedded systems`), each holding the opgave
+and nothing else. That folder is where the `<!-- verslag -->` block of an `Opdracht.html` comes from,
+so open it before writing one. **`Labo 5` and `Labo 6` are empty**, so the opgaven of Linux
+Geavanceerd and Embedded Systems still have to come from somewhere.
+
+The **2025-2026** folder beside it is the previous academic year, it is incomplete (it has no
+Virtualiseren folder at all), and every opgave in it sits beside its `- oplossing` twin. Use it only
+where 2026-2027 has nothing, and **read the opgave, never the oplossing**: the solutions are assessed
+work and stay on Brightspace.
 
 `--fetch-remote` is the one flag that touches the network. Several pages hotlink their screenshots
 to `chamilo-downloads.hogent.be`, the platform this course lived on before Brightspace, through URLs
@@ -458,3 +465,66 @@ a finger; both are in the Veiligheid box.
 Restored in the same pass: each of the three verslag blocks says again that the photo with the
 studentenkaart is the proof the opdracht was made in the lab. The original docx said so beside
 every one of the three, and all three had lost it.
+
+## Labo Virtualiseren, written 4 September 2026
+
+**The theory reeks holds begrippen, the opdracht reeks holds the click-through**, and that split is
+the one thing to carry to the other four modules. The approved table named five theory pages, three
+of which turned out to be a numbered list of the steps the student performs (the wizard of
+VirtualBox, the twelve Ubuntu-installatieschermen, the Guest Additions installer). That is exactly
+what got `Theorie/Demontage.html` and `Theorie/Assemblage.html` deleted in Assemblage, and the same
+test applies where no lesopname exists to move the procedure to.
+
+So the walkthrough did not disappear, it moved menu entries. What came off it and stayed behind is
+the *why*, on two pages written for it: `Theorie/VirtueleHardware.html` (de
+virtualisatie-uitbreiding van de processor, EFI, het ISO-bestand, de drie manieren om te stoppen) and
+`Theorie/SoftwareInDeGuest.html` (proprietary software, en waarom Guest Additions op je eigen kernel
+gebouwd wordt). Those two carry the three questions the verslag asks, so the zelftest keeps citing
+theory pages only, and no answer in it links sideways.
+
+```
+Theorie (reeks theorie)          Opdracht (reeks opdracht)
+  Theorie/reference.html           Opdracht.html          <- root of the reeks
+  WatIsVirtualisatie                 VirtueleMachineAanmaken.html
+  VirtueleHardware                   InstallatieUbuntu.html
+  SchijfEnGeheugen                   GuestAdditions.html
+  SoftwareInDeGuest
+  TestJezelf
+```
+
+**The three stappenplan pages sit loose in the module folder, and that is not cosmetic.**
+`topic_van()` in `check-content.py` reads the Orion entry off the *path*: a page in a subfolder
+answers to that folder's name, and what lies loose in the module folder is the opdracht. A folder
+`Opdracht/` beside `Opdracht.html` therefore reads as two different menu entries (`Opdracht` against
+`opdracht`) and rule 10 would fail on any link between them, while they are one entry. DeN's
+`ManagedSwitch/PacketTracer/` escapes that only because its `Opdracht.html` lives *inside* the
+folder, which is what a lab with two submissions needs and this one does not.
+
+**A stappenplan page links to theory with `target="_blank"`**, which is what rule 10 leaves open and
+what DeN already does for its Packet Tracer exercises: je kijkt het na terwijl je bezig bent. There
+are five such links and they all point at an `id` on a theory page.
+
+`WatIsVirtualisatie.html` **has no source in the export.** The three doelstellingen it answers (why
+virtualisation saves money, two programs that run a VM, one advantage and one disadvantage) are
+covered by the syllabus chapters *Server*, *Virtual machines* and *Containers*, and the page was
+written from those. When that chapter is imported into `Theorie/Syllabus/`, the two texts will say
+the same thing twice, in the two tracks, and that is what patroon 17 asks for: a labo may lean on the
+theory track but may not send the student there.
+
+**Host and guest are swapped in the source material, in two places.** The staged
+`022-werkgeheugen-aanpassen-2.html` writes "de host computer (= VM)" and "de guest computer (=
+fysieke machine)", and a kernpunt in the syllabus Word says "op één fysieke guest machine kan je
+meerdere virtuele host machines draaien". The host is the physical machine and the guest runs on it;
+both pages here say so. Fix the kernpunt when that chapter is imported, because `import-syllabus.py`
+translates formatting and never words.
+
+**The opdracht is one dropbox and one docx**, so `Labo/Virtualiseren/Opdracht.html` sits directly
+under the module. Unlike the three Assemblage verslagen, that docx asks for **no photo and no
+screenshot**: it is two invultabellen (versienummers, and the parameters of the VM) and three open
+questions (EFI, `.iso`, proprietary software). The proof that the work was done is the demonstration
+in the lab, which `Algemeen/Evaluatie.html` already carries, so nothing here invents a foto met
+studentenkaart the way Assemblage has one. One question was added that the docx does not have:
+motiveer de gekozen waarden, because doelstelling 5 asks for exactly that.
+
+`Algemeen/Evaluatie.html` now links the word Virtualiseren in the row "Virtualiseren en
+Partitioneren". The other half of that row gets its link when `Labo/Partitioneren/` lands.
