@@ -15,8 +15,7 @@
 
         <p>Een virtuele machine is een programma dat de werking van een echte computer nabootst. De processor, het
             werkgeheugen, de harde schijf, de netwerkkaart en de USB-poorten worden in software nagemaakt, en een
-            besturingssysteem dat je erop installeert gedraagt zich net zoals op een computer van metaal en
-            plastic.</p>
+            besturingssysteem dat je erop installeert gedraagt zich net zoals op een fysieke computer.</p>
 
         <h2 id="server">Waarom het bij servers begon</h2>
 
@@ -40,7 +39,7 @@
             computer hebben.</p>
 
         <div class="info-box">
-            <div class="info-title remark">De host is de machine van metaal, de guest draait erop</div>
+            <div class="info-title remark">De host is de machine, de guest draait erop</div>
             <ul>
                 <li>Het <strong>hostbesturingssysteem</strong> staat op de fysieke computer. In dit labo is dat de
                     Windows op je laptop.</li>
@@ -55,7 +54,7 @@
             host of op een andere guest: een guest die vastloopt of die je met een virus besmet, laat de rest
             ongemoeid.</p>
 
-        <h2 id="voordelen">Wat het oplevert en wat het kost</h2>
+        <h2 id="voordelen">De voor- en nadelen</h2>
 
         <p>Het belangrijkste voordeel is economisch. Door te virtualiseren laat je verschillende computersystemen
             op dezelfde hardware draaien, en bespaar je op aankoop, onderhoud, plaats in het rack en energie. Waar
@@ -112,11 +111,7 @@
             </table>
         </div>
 
-        <p>De eerste drie installeer je op een computer die al een besturingssysteem heeft. Proxmox VE en de
-            servervarianten van VMware zetten zichzelf op de kale hardware, zonder host eronder, en dat scheelt
-            precies de laag die de virtuele machines vertraagt.</p>
-
-        <h2 id="containers">Containers</h2>
+        <h2 id="containers">Wat is een container?</h2>
 
         <p>Een container schermt een programma af van de rest van de machine, net zoals een virtuele machine dat
             doet, maar met dit verschil: alle containers op een machine delen hetzelfde besturingssysteem. Dat
