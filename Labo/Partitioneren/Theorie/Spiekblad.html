@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiekblad</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Spiekblad</h1>
+
+        <p>De grenzen en de namen uit de twee theoriepagina's, in vier tabellen. Houd deze pagina open in een tweede
+            venster terwijl je in GParted werkt.</p>
+
+        <h2 id="partitietabellen">De twee partitietabellen</h2>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">MBR tegenover GPT</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Aspect</th>
+                        <th>MBR</th>
+                        <th>GPT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Naam in GParted</td>
+                        <td>msdos</td>
+                        <td>gpt</td>
+                    </tr>
+                    <tr>
+                        <td>Hoort bij</td>
+                        <td>BIOS</td>
+                        <td>UEFI</td>
+                    </tr>
+                    <tr>
+                        <td>Waar de tabel staat</td>
+                        <td>De eerste sector, 512 bytes, waarvan 64 bytes tabel</td>
+                        <td>Een kop vooraan met een lijst erachter, en een reservekopie achteraan</td>
+                    </tr>
+                    <tr>
+                        <td>Aantal partities</td>
+                        <td>4 tabelplaatsen, met logische partities in een extended</td>
+                        <td>128</td>
+                    </tr>
+                    <tr>
+                        <td>Soorten partities</td>
+                        <td>Primair, extended, logisch</td>
+                        <td>Alleen primair</td>
+                    </tr>
+                    <tr>
+                        <td>Breedte van een sectoradres</td>
+                        <td>32 bits</td>
+                        <td>64 bits</td>
+                    </tr>
+                    <tr>
+                        <td>Maximale schijfgrootte</td>
+                        <td class="text-nowrap">2 TB</td>
+                        <td>Geen grens die je in de praktijk raakt</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="partitiesoorten">De drie partitiesoorten in MBR</h2>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Primair, extended en logisch</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Soort</th>
+                        <th>Hoeveel</th>
+                        <th>Waarvoor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Primair</td>
+                        <td class="text-nowrap">4, of 3 naast een extended</td>
+                        <td>Een bestandssysteem met data of een besturingssysteem. Windows start hiervan op.</td>
+                    </tr>
+                    <tr>
+                        <td>Extended</td>
+                        <td class="text-nowrap">Hoogstens 1</td>
+                        <td>Een houder voor logische partities. Draagt zelf geen bestandssysteem en neemt een van de
+                            vier tabelplaatsen in.</td>
+                    </tr>
+                    <tr>
+                        <td>Logisch</td>
+                        <td class="text-nowrap">Onbeperkt</td>
+                        <td>Hetzelfde als een primaire partitie, maar binnen de extended. Linux start hier ook van
+                            op.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="namen">Schijf- en partitienamen in Linux</h2>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Wat GParted in de eerste kolom toont</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Naam</th>
+                        <th>Wat het is</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/dev/sda</code></td>
+                        <td>De eerste schijf. De volgende zijn <code>/dev/sdb</code>, <code>/dev/sdc</code>, en zo
+                            verder.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/dev/sda1</code> tot <code>/dev/sda4</code></td>
+                        <td>De vier tabelplaatsen van een MBR-tabel: de primaire partities en de extended.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/dev/sda5</code> en hoger</td>
+                        <td>De logische partities binnen de extended, ook wanneer er maar één primaire partitie voor
+                            staat.</td>
+                    </tr>
+                    <tr>
+                        <td>ongebruikt</td>
+                        <td>Ruimte die aan geen enkele partitie toebehoort.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="bestandssystemen">De bestandssystemen</h2>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Waar elk bestandssysteem voor dient en waar het ophoudt</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Bestandssysteem</th>
+                        <th>Besturingssysteem</th>
+                        <th>Max. partitie</th>
+                        <th>Max. bestand</th>
+                        <th>Journaal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>FAT32</td>
+                        <td>Windows, Linux, macOS</td>
+                        <td class="text-nowrap">2 TB</td>
+                        <td class="text-nowrap">4 GB</td>
+                        <td>Nee</td>
+                    </tr>
+                    <tr>
+                        <td>exFAT</td>
+                        <td>Windows, Linux, macOS</td>
+                        <td>Geen grens die je in de praktijk raakt</td>
+                        <td>Geen grens die je in de praktijk raakt</td>
+                        <td>Nee</td>
+                    </tr>
+                    <tr>
+                        <td>NTFS</td>
+                        <td>Windows</td>
+                        <td class="text-nowrap">256 TB (2 TB met MBR)</td>
+                        <td class="text-nowrap">256 TB</td>
+                        <td>Ja</td>
+                    </tr>
+                    <tr>
+                        <td>ext4</td>
+                        <td>Linux</td>
+                        <td class="text-nowrap">1 EiB (2 TB met MBR)</td>
+                        <td class="text-nowrap">16 TB</td>
+                        <td>Ja</td>
+                    </tr>
+                    <tr>
+                        <td>linux-swap</td>
+                        <td>Linux</td>
+                        <td>Wisselruimte voor het werkgeheugen, geen bestanden</td>
+                        <td>Geen</td>
+                        <td>Nee</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-box">
+            <div class="info-title tip">Sector, cluster en slack</div>
+            <p>Een sector is 512 bytes. Een cluster is een groep sectoren onder één adres, standaard 4 kB bij het
+                formatteren. Een bestand krijgt altijd hele clusters, dus wat er in het laatste cluster overblijft is
+                slack en gaat verloren.</p>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

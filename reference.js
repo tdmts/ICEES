@@ -219,5 +219,88 @@ window.LAB_REFERENCE = {
                 ]
             }
         ]
+    },
+    partitioneren: {
+        name: 'Labo Partitioneren',
+        categories: [
+            {
+                name: 'Theorie',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'partitietabellen',
+                        name: 'Partitietabellen',
+                        blurb: 'Waarom je een schijf verdeelt, waar die verdeling bijgehouden wordt, en wat MBR met zijn vier tabelplaatsen anders doet dan GPT met zijn honderdachtentwintig.',
+                        href: 'Partitietabellen.html'
+                    },
+                    {
+                        id: 'bestandssystemen',
+                        name: 'Bestandssystemen',
+                        blurb: 'Wat formatteren toevoegt aan partitioneren, hoe sectoren tot clusters gegroepeerd worden, waar een journaal voor dient, en welk bestandssysteem waar past.',
+                        href: 'Bestandssystemen.html'
+                    }
+                ]
+            },
+            {
+                name: 'Spiekblad',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'spiekblad-partitioneren',
+                        name: 'Spiekblad',
+                        blurb: 'De partitiesoorten, de schijfnamen van Linux en de grenzen van elk bestandssysteem, in vier tabellen om naast je scherm te houden.',
+                        href: 'Spiekblad.html'
+                    }
+                ]
+            },
+            {
+                name: 'Zelftest',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'test-jezelf-partitioneren',
+                        name: 'Test jezelf',
+                        blurb: 'Meerkeuzevragen over de twee theoriepagina\'s, in dezelfde vorm als de test in Orion. Bij elk antwoord staat waar je het kan nalezen.',
+                        href: 'TestJezelf.html'
+                    }
+                ]
+            },
+            {
+                name: 'Opdracht',
+                reeks: 'opdracht',
+                topics: [
+                    {
+                        id: 'opdracht-partitioneren',
+                        name: 'De opdracht',
+                        blurb: 'Wat je maakt en indient, en het document waarin je je antwoorden invult.',
+                        href: '../Opdracht.html'
+                    },
+                    {
+                        id: 'oefenmachine',
+                        name: 'De oefenmachine opzetten',
+                        blurb: 'Een virtuele machine met twee lege schijven van 10 GB, die van het GParted-bestand opstart, en wat je in het venster van GParted ziet staan.',
+                        href: '../Oefenmachine.html'
+                    },
+                    {
+                        id: 'mbr-partities',
+                        name: 'Primaire partities in een MBR-tabel',
+                        blurb: 'De tabel aanmaken als msdos, vier primaire partities erin zetten, en de groottes bijstellen wanneer de plaats niet volstaat.',
+                        href: '../MbrPartities.html'
+                    },
+                    {
+                        id: 'extended-en-logisch',
+                        name: 'Extended en logische partities',
+                        blurb: 'Waar GParted stopt bij vier primaire partities, en hoe je de schijf opnieuw indeelt met een uitgebreide partitie en drie logische erin.',
+                        href: '../ExtendedEnLogisch.html'
+                    },
+                    {
+                        id: 'gpt-partities',
+                        name: 'GPT-partities',
+                        blurb: 'Dezelfde oefening op de tweede schijf, met een GPT-partitietabel en vijf partities die allemaal primair zijn.',
+                        href: '../GptPartities.html'
+                    }
+                ]
+            }
+        ]
     }
 };

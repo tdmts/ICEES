@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partitietabellen</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Partitietabellen</h1>
+
+        <p>Een harde schijf die je uit de doos haalt is één aaneengesloten stuk opslagruimte. Voor een
+            besturingssysteem er iets op kwijt kan, moet die ruimte verdeeld zijn in partities, en moet er ergens op
+            de schijf staan hoe die verdeling eruitziet. Die lijst heet de partitietabel, en er zijn twee formaten in
+            gebruik: MBR en GPT.</p>
+
+        <h2 id="partitioneren">Partitioneren</h2>
+
+        <p>Een <strong>partitie</strong> is een stuk aaneengesloten opslagruimte op een schijf of een USB-stick. Wie
+            partitioneert, verdeelt één fysiek opslagmedium in stukken die het besturingssysteem elk als een aparte
+            schijf behandelt. Op een medium dat je gebruikt staat altijd minstens één partitie.</p>
+
+        <p>Er zijn twee redenen om er meer dan één te maken. De eerste is het besturingssysteem en de data uit elkaar
+            houden: staat je data op een eigen partitie, dan kan je de systeempartitie formatteren en het
+            besturingssysteem opnieuw installeren zonder aan je bestanden te komen. De tweede is meerdere
+            besturingssystemen naast elkaar zetten. Elk daarvan heeft zijn eigen partitie nodig, en vaak zelfs
+            meerdere.</p>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../../img/partitioneren-schijfbeheer-windows.png" class="img-fluid"
+                alt="Schijfbeheer in Windows met een schijf die verdeeld is in System Reserved, C: en DATA">
+            <figcaption class="figure-caption">Eén schijf van 232 GB in Schijfbeheer, verdeeld in drie partities.
+                System Reserved heeft geen stationsletter en is voor de gebruiker onzichtbaar.</figcaption>
+        </figure>
+
+        <h2 id="partitietabel">De partitietabel</h2>
+
+        <p>De partitietabel staat vooraan op de schijf en somt op waar elke partitie begint, hoe groot ze is en van
+            welk type ze is. De firmware van je computer leest die tabel om te weten waarvan ze kan opstarten, en het
+            besturingssysteem leest ze om te weten welke opslagruimte het aan de gebruiker kan aanbieden.</p>
+
+        <p>Een schijf draagt één partitietabel, in één van beide formaten. Overschakelen van het ene naar het andere
+            formaat betekent dat je de tabel opnieuw aanmaakt, en daarmee verdwijnt de verwijzing naar alles wat erop
+            stond.</p>
+
+        <div class="info-box">
+            <div class="info-title warning">Een nieuwe partitietabel maakt onvindbaar wat erop stond</div>
+            <p>De data zelf blijft nog even in de sectoren staan, maar niets weet nog waar een bestand begint of
+                eindigt. Kijk dus na op welke schijf je bezig bent voor je een partitietabel aanmaakt.</p>
+        </div>
+
+        <h2 id="mbr">MBR</h2>
+
+        <p>Het <strong>Master Boot Record</strong> is de eerste sector van de schijf, 512 bytes groot. Daarvan zijn
+            440 bytes voorbehouden voor opstartcode en 64 bytes voor de partitietabel. In die 64 bytes passen vier
+            beschrijvingen van 16 bytes, en dat is de bekendste grens van dit formaat: <strong>vier
+                partities</strong>, niet meer.</p>
+
+        <figure class="figure-zoom" style="max-width: 620px">
+            <img src="../../../img/partitioneren-mbr-indeling.svg" class="img-fluid"
+                alt="De eerste sector van 512 bytes, verdeeld in 440 bytes opstartcode en 64 bytes partitietabel, met die 64 bytes uitvergroot tot vier ingangen van 16 bytes">
+            <figcaption class="figure-caption">De overige 8 bytes van de sector zijn een handtekening waaraan de
+                firmware ziet dat er een geldig Master Boot Record staat.</figcaption>
+        </figure>
+
+        <p>Een tweede grens zit in de manier waarop een sector geadresseerd wordt. MBR gebruikt daarvoor 32 bits, dus
+            2<sup>32</sup> sectoren van 512 bytes, en dat komt neer op ongeveer 2 TB. Een schijf die groter is, kan je
+            met MBR niet volledig indelen.</p>
+
+        <p>MBR hoort bij het opstarten via BIOS. De opstartcode in die eerste sector verwijst naar de bootloader, en
+            de bootloader start het besturingssysteem.</p>
+
+        <p>In GParted heet dit formaat <strong>msdos</strong>.</p>
+
+        <h3 id="primair-extended-logisch">Primair, extended en logisch</h3>
+
+        <p>Om met vier tabelplaatsen toch meer dan vier partities te maken, bestaat er een omweg. Eén van de vier
+            plaatsen krijgt het type <strong>extended</strong>. Zo'n uitgebreide partitie draagt zelf geen
+            bestandssysteem: ze is een houder waarin je <strong>logische</strong> partities aanmaakt, en die worden
+            in de partitie zelf bijgehouden in plaats van in de tabel van 64 bytes. Het aantal logische partities is
+            daardoor niet beperkt tot vier.</p>
+
+        <p>Op één schijf heb je dus twee mogelijke indelingen:</p>
+
+        <ul>
+            <li>Vier <strong>primaire</strong> partities</li>
+            <li>Drie primaire partities, één <strong>extended</strong> partitie, en daarin zoveel
+                <strong>logische</strong> partities als je nodig hebt</li>
+        </ul>
+
+        <figure class="figure-zoom" style="max-width: 620px">
+            <img src="../../../img/partitioneren-primair-extended-logisch.svg" class="img-fluid"
+                alt="Drie primaire partities die elk een tabelplaats innemen, naast een extended partitie op de vierde plaats met daarin drie logische partities">
+            <figcaption class="figure-caption">Elke primaire partitie draagt een bestandssysteem, de extended niet
+            </figcaption>
+        </figure>
+
+        <p>De tweede indeling kost je een primaire partitie, want de extended neemt er een tabelplaats van in. Er is
+            ook hoogstens één extended partitie per schijf.</p>
+
+        <div class="info-box">
+            <div class="info-title remark">Windows start van een primaire partitie, Linux ook van een logische</div>
+            <p>Zet Windows dus in een primaire partitie. Een Linux-distributie start ook op wanneer ze in een
+                logische partitie staat, dus die zet je in de extended partitie wanneer je plaats tekort komt.</p>
+        </div>
+
+        <h2 id="gpt">GPT</h2>
+
+        <p>De <strong>GUID Partition Table</strong> is het formaat dat bij UEFI hoort. In plaats van één sector
+            vooraan gebruikt GPT een kop met daarachter een lijst met plaats voor 128 partities, en die lijst staat
+            een tweede keer achteraan op de schijf als reservekopie. Een sectoradres is hier 64 bits breed, waardoor
+            de grens van 2 TB wegvalt.</p>
+
+        <figure class="figure-zoom" style="max-width: 620px">
+            <img src="../../../img/partitioneren-gpt-indeling.svg" class="img-fluid"
+                alt="Een schijf met vooraan een beschermende MBR, de GPT-kop en de lijst met partities, dan de partities zelf, en achteraan een reservekopie van de lijst en de kop">
+            <figcaption class="figure-caption">De beschermende MBR vooraan zorgt dat oudere software de schijf als
+                bezet ziet in plaats van als leeg</figcaption>
+        </figure>
+
+        <p>Het onderscheid tussen primair, extended en logisch bestaat in GPT niet. Elke partitie in de lijst is
+            gelijkwaardig, en GParted noemt ze allemaal primair. De omweg met een extended partitie heeft hier geen
+            reden van bestaan: je maakt de partitie die je nodig hebt, tot de lijst vol is.</p>
+
+        <p>Een computer met UEFI-firmware heeft op de opstartschijf een aparte <strong>EFI-partitie</strong> staan.
+            Daarop staat een programma met de extensie <code>.efi</code> dat het besturingssysteem verder inlaadt. Bij
+            Windows is dat een van de systeemgereserveerde partities die je in Schijfbeheer zonder stationsletter ziet
+            staan.</p>
+
+        <div class="info-box">
+            <div class="info-title tip">Welk formaat je kiest</div>
+            <p>Voor een schijf in een computer van vandaag is dat GPT: de firmware is UEFI, de schijf is mogelijk
+                groter dan 2 TB en het aantal partities ligt niet vast op vier. MBR gebruik je waar het moet,
+                bijvoorbeeld voor een medium dat ook op een ouder toestel met BIOS moet werken.</p>
+        </div>
+
+        <h2 id="schijfnamen">Hoe Linux een schijf en een partitie noemt</h2>
+
+        <p>GParted draait op Linux, dus je ziet er de Linux-benamingen. De eerste schijf heet <code>/dev/sda</code>,
+            de tweede <code>/dev/sdb</code>, de derde <code>/dev/sdc</code>, en zo verder. De <code>s</code> komt van
+            de SCSI-interface, uit te spreken als scuzzie, waarmee Linux zowel PATA/IDE- als SATA-apparaten
+            aanspreekt.</p>
+
+        <p>De partities op een schijf krijgen een nummer achter die naam: <code>/dev/sda1</code>,
+            <code>/dev/sda2</code>. Bij een MBR-tabel zijn de nummers 1 tot 4 voorbehouden voor de vier tabelplaatsen,
+            dus voor de primaire partities en de extended. De logische partities beginnen daarom bij
+            <code>/dev/sda5</code>, ook wanneer er maar één primaire partitie voor staat.</p>
+
+        <figure class="figure-zoom" style="max-width: 620px">
+            <img src="../../../img/partitioneren-partitienummers.svg" class="img-fluid"
+                alt="Een schijf met /dev/sda1 en /dev/sda2 primair, /dev/sda3 als extended, en daarin /dev/sda5, /dev/sda6 en /dev/sda7 logisch">
+            <figcaption class="figure-caption">Een gat in de nummering betekent dus dat er een tabelplaats vrij
+                is</figcaption>
+        </figure>
+
+        <div class="info-box">
+            <div class="info-title remark">De naam verschijnt pas nadat je toegepast hebt</div>
+            <p>GParted verzamelt je wijzigingen en voert ze pas uit wanneer je op Apply klikt. Tot dan staat er bij
+                een nieuwe partitie nog geen nummer.</p>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

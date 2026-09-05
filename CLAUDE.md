@@ -17,10 +17,12 @@ Six labs, each an independent module: Assemblage + BIOS/UEFI, Virtualiseren, Par
 Basis, Linux Geavanceerd, Embedded Systems. Beside them a theory track (a syllabus the student
 prints) and a lecture track (six hoorcolleges, of which five have a deck).
 
-**Two of the six modules are written.** `Labo/Assemblage/` holds its hub, its three theory pages and
+**Three of the six modules are written.** `Labo/Assemblage/` holds its hub, its three theory pages and
 its three `Opdracht.html`; `Labo/Virtualiseren/` holds its hub, four theory pages, a zelftest, one
-`Opdracht.html` and the three stappenplan pages that hang under it; `Algemeen/` holds both pages that every hub links to. `check-content.py`
-and `check-nav.js` are both green with no warnings. The other four modules are staged in
+`Opdracht.html` and the three stappenplan pages that hang under it; `Labo/Partitioneren/` holds its
+hub, two theory pages, a spiekblad, a zelftest, one `Opdracht.html` and the four stappenplan pages
+that hang under it; `Algemeen/` holds both pages that every hub links to. `check-content.py`
+and `check-nav.js` are both green with no warnings. The other three modules are staged in
 `_incoming/`.
 
 No build system and no test suite: you edit HTML/CSS/JS directly. `scripts/` holds eight Python
@@ -118,7 +120,9 @@ an order that does not exist, and renaming a folder would break links and wipe `
 match in DeN.
 
 - `img/` — self-hosted images, descriptive filenames. Never hotlink Brightspace
-  (`/content/enforced/...`): those paths break every academic year.
+  (`/content/enforced/...`): those paths break every academic year. Drawn diagrams are `.svg` here
+  and are referenced from an `<img>` like any other picture; see "Labo Partitioneren" for how they
+  are drawn and why they get rendered before they are trusted.
 - `datasheets/` — self-hosted PDFs a page links to. Currently the five component datasheets of
   Labo Assemblage (moederbord, processor, geheugen, SSD, voeding). Same reason: a vendor URL dies
   mid-semester.
@@ -250,7 +254,7 @@ wipes the read-flags of every student who has already been in it.
 |---|---|---|
 | `Labo/Assemblage/` | Veiligheid, Componenten, BiosUefi, TestJezelf | no |
 | `Labo/Virtualiseren/` | WatIsVirtualisatie, VirtueleHardware, SchijfEnGeheugen, SoftwareInDeGuest, TestJezelf | no |
-| `Labo/Partitioneren/` | Partitietabellen, GPartedStarten, PrimairePartities, ExtendedEnLogisch, GptPartities | yes |
+| `Labo/Partitioneren/` | Partitietabellen, Bestandssystemen, Spiekblad, TestJezelf | yes |
 | `Labo/LinuxBasis/` | LinuxEnDistributies, DeTerminal, Navigeren, MappenEnBestanden, ZoekenEnBekijken, ProcessenEnRechten, Archieven | yes |
 | `Labo/LinuxGeavanceerd/` | GebruikersEnGroepen, Rechten, SoftwareUitDeRepository, SoftwareBuitenDeRepository, Docker | yes |
 | `Labo/EmbeddedSystems/` | WatIsEenEmbeddedSystem, RaspberryPiInstalleren, PiOpHetNetwerk, AlsHetNietLukt, CodesysInstalleren, CodesysProject, Docker, NodeRed, MqttBroker | yes |
@@ -321,13 +325,20 @@ evaluation and never a percentage.
   last lab session, tests open until the end of the semester). It is deliberately short rather
   than a placeholder.
 
-Two couplings came out of the export and were never confirmed: that Partitioneren is made on the VM
-from Virtualiseren, and that the Linux tests wait until both Linux labs are done. Neither is on a
-page any more; the first was removed from `Evaluatie.html` in the style round of 4 September 2026.
-Check both before the Linux modules are written.
+Two couplings came out of the export and were never confirmed. **The first is now confirmed by the
+opgave itself**: `Opdracht partitioneren.docx` opens with "Tijdens het labo Virtualiseren heb je
+Ubuntu Linux geïnstalleerd op een Virtuele machine. Alle opdrachten die je nu moet uitvoeren gebeuren
+op die Virtuele Ubuntu machine", so the graded work of Partitioneren needs the machine that
+Virtualiseren builds. That is a hard dependency between two modules the students rotate through
+independently, and **it is the one place where this repo breaks patroon 17 on purpose**, because the
+opgave leaves no other reading. Both `Labo/Partitioneren/overview.html` and its `Opdracht.html` name
+labo Virtualiseren once, as a material requirement and not as assumed knowledge. Whether the two
+labs are always scheduled back to back is a question for the lecturer, not for the pages. The
+second coupling, that the Linux tests wait until both Linux labs are done, is still unchecked.
 
 The table on `Evaluatie.html` links only the labs that exist. Add the link when a module lands: rule
-1 fails on a link to a page that is not there yet, which is what keeps that table honest.
+1 fails on a link to a page that is not there yet, which is what keeps that table honest. The row
+"Virtualiseren en Partitioneren" now links both halves.
 
 ## Where the content comes from
 
@@ -527,4 +538,98 @@ studentenkaart the way Assemblage has one. One question was added that the docx 
 motiveer de gekozen waarden, because doelstelling 5 asks for exactly that.
 
 `Algemeen/Evaluatie.html` now links the word Virtualiseren in the row "Virtualiseren en
-Partitioneren". The other half of that row gets its link when `Labo/Partitioneren/` lands.
+Partitioneren". The other half of that row got its link when `Labo/Partitioneren/` landed.
+
+## Labo Partitioneren, written 5 September 2026
+
+Same split as Virtualiseren, and this is now the second module to confirm it: **the theory reeks
+holds begrippen, the opdracht reeks holds the click-through.** Four of the five approved theory
+names (`GPartedStarten`, `PrimairePartities`, `ExtendedEnLogisch`, `GptPartities`) were a numbered
+list of steps the student performs in GParted, so they moved to the opdracht reeks as stappenplan
+pages. What came off them and stayed behind is the why.
+
+```
+Theorie (reeks theorie)          Opdracht (reeks opdracht)
+  Theorie/reference.html           Opdracht.html          <- root of the reeks
+  Partitietabellen                   Oefenmachine.html
+  Bestandssystemen                   MbrPartities.html
+  Spiekblad                          ExtendedEnLogisch.html
+  TestJezelf                         GptPartities.html
+```
+
+**Two theory pages, not one.** The approved table named `Partitietabellen` and nothing about
+bestandssystemen, and doelstellingen 1 and 3 (sector, cluster, journaal, two filesystems for Windows
+and two for Linux) then had no page to live on. `Bestandssystemen.html` was written from syllabus
+chapter 6, which covers all of it; the two texts will say the same thing twice once that chapter is
+imported, and that is what patroon 17 asks for. `Partitietabellen.html` carries what the syllabus
+does *not* have: the four tabelplaatsen of MBR, the extended/logical detour, the 128 entries of GPT
+and the `/dev/sdaN` numbering. Chapter 6 mentions the primary/logical/extended distinction in one
+kernpunt and never explains it.
+
+**The spiekblad is four tables and no commands.** Partitioneren is a GUI, so what a student keeps
+looking up is MBR against GPT, the three partition kinds and their limits, the Linux disk and
+partition names, and the maximum partition and file size of each filesystem. It sits between the
+theory pages and the zelftest in the theorie reeks, so the zelftest stays the last step.
+
+**The stappenplan is an exercise, and the graded opdracht is somewhere else.** The four pages under
+the opdracht reeks work on an oefenmachine with two empty 10 GB disks that boots straight from
+GParted Live, and nothing on it is handed in. The docx works on the Ubuntu machine from labo
+Virtualiseren: shrink the root partition by 500 MB, add a FAT32 partition named after the student,
+boot back into Ubuntu and find it. Four screenshots, no photo, no studentenkaart; the proof is the
+demonstration in the lab, the same as Virtualiseren.
+
+**Two questions were added that the docx does not have**, both for doelstelling 4 (een verantwoorde
+keuze maken wat betreft de partitietabel en het bestandssysteem): which partition table the Ubuntu
+disk carries and how you see that in GParted, and why FAT32 works here and what limit you accept
+with it. Without them nothing in the module asks the student to justify a choice.
+
+**GParted runs in Dutch in this lab** (taal Dutch 06, mode 0), so the pages use the words on the
+screen: `ongebruikt` and not unallocated, `Uitgebreide partitie` and not extended in the dialog.
+The theory page names the thing `extended`, because that is how the partition type is called
+everywhere else.
+
+**The two theory pages carry eight figures, and five of them are drawn here.** The abstract claims on
+these pages (512 bytes split into 440 + 64, four ingangen of 16 bytes, an extended partition holding
+logical ones, the jump from `sda3` to `sda5`, eight sectors under one cluster address, a write
+passing through the journal) had no picture anywhere, so they became SVG files in `img/`, prefixed
+`partitioneren-`. **This is the repo's first SVG**, and it works because `figure-zoom` only needs an
+`<img>`; `check-content.py` does not care about the extension. They use the OrionCSS palette
+(`#004d40` primary, `#222` body, `#e0e7e5`/`#b2dfdb` fills) and a `Segoe UI, Helvetica, Arial,
+sans-serif` stack, because an SVG inside an `<img>` is isolated and reaches neither the site's CSS
+nor a webfont. OrionCSS has no dark mode, so they are drawn on white.
+
+**Render an SVG before you believe it.** Nothing here does layout, so overlapping text fails
+silently in the file and only shows on screen. Two of the five had a label sitting under a leader
+line or on top of a hatch pattern. Headless Edge is enough and needs no install:
+
+```
+& "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless --disable-gpu `
+  --window-size=740,360 --screenshot=out.png "file:///<pad>/img/<naam>.svg"
+```
+
+The same command with `--virtual-time-budget=6000` and a tall window screenshots a whole page,
+OrionCSS and `back-link.js` included.
+
+**Three figures come out of the syllabus Word**, extracted from `word/media/` and copied to `img/`
+as `partitioneren-schijfbeheer-windows.png` (image47, Schijfbeheer met System Reserved, C: en DATA),
+`partitioneren-fragmentatie.png` (image48) and `partitioneren-first-worst-best-fit.png` (image49).
+When syllabus chapter 6 is imported, `import-syllabus.py` writes its own copies as
+`img/syllabus-06-*.png`, so those three pictures will be in `img/` twice under different names. That
+is deliberate: the two tracks are independent and a labo page may not depend on a syllabus page
+existing. **Four other images in that chapter are unusable** and were left behind: image51 is a
+screenshot of a YouTube player with its chrome, image93 carries a `©2000 How Stuff Works` watermark,
+image46 is a product photo of an SSD, and image50 is a screenshot with the same problem as image51.
+Check the watermark before you copy a picture out of the Word.
+
+**Wikimedia Commons was considered and not used.** `File:GUID Partition Table Scheme.svg` is the
+obvious candidate and it is CC BY-SA 2.5: usable, but it labels its blocks in English with LBA
+offsets, which is a level of detail this page does not carry, and share-alike puts an obligation on
+a course site for a diagram we can draw in Dutch in twenty lines. Where a picture has to match a
+paragraph word for word, drawing it wins; that is also what `Where the content comes from` already
+says about the three unresolved third-party refs.
+
+**The screenshots were read before they were described.** The source pages say "NTFS" where the
+image shows `/dev/sda1 ntfs Windows OS` next to `/dev/sda2 fat32 Data`, and the GPT screenshot of
+`gpt-partities-aanmaken` has `/dev/sda` in its title bar while the text says to work on
+`/dev/sdb`. Open the PNG before writing a figcaption; three of the eight captions here would have
+been wrong otherwise.

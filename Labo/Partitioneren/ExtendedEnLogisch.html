@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extended en logische partities</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Extended en logische partities</h1>
+
+        <p>Op <code>/dev/sda</code> staan vier primaire partities en er is nog ongebruikte ruimte over. Je gaat na
+            waarom je daar niets meer in kwijt kan, en deelt de schijf daarna opnieuw in met een extended partitie.</p>
+
+        <h2 id="de-grens">De grens van vier</h2>
+
+        <p>Selecteer de ongebruikte ruimte en probeer er een nieuwe partitie in te maken. GParted meldt dat het niet
+            meer dan vier primaire partities kan aanmaken.</p>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../img/extended-en-logische-partities-aanmaken-image-9399423.png" class="img-fluid"
+                alt="De foutmelding van GParted dat het niet mogelijk is om meer dan 4 primaire partities aan te maken">
+            <figcaption class="figure-caption">De melding wijst zelf de uitweg aan: eerst een uitgebreide partitie
+            </figcaption>
+        </figure>
+
+        <p>De MBR-partitietabel is 64 bytes groot en bevat vier beschrijvingen van 16 bytes, en die vier zijn bezet.
+            De uitleg staat op
+            <a href="Theorie/Partitietabellen.html#mbr" target="_blank" rel="noopener">Partitietabellen</a>.</p>
+
+        <h2 id="de-oplossing">Een extended partitie met logische partities erin</h2>
+
+        <p>Eén van de vier plaatsen krijgt het type <strong>extended</strong>, in GParted <strong>Uitgebreide
+                partitie</strong>. Zo'n partitie draagt zelf geen bestandssysteem: ze is een houder waarin je
+            <strong>logische</strong> partities aanmaakt, en daarvan is het aantal niet beperkt.</p>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../img/extended-en-logische-partities-aanmaken-image-9399424.png" class="img-fluid"
+                alt="Schema met drie primaire partities C, D en E naast een uitgebreide partitie met daarin de logische partities F, G en H">
+            <figcaption class="figure-caption">Wat het besturingssysteem toont: drie primaire partities en drie
+                logische, die samen in de uitgebreide zitten</figcaption>
+        </figure>
+
+        <p>Je hebt vijf partities nodig: twee voor Windows, twee voor Linux en een vijfde om iets in uit te
+            proberen. Met vier primaire lukt dat niet, met drie primaire, één extended en drie logische wel.</p>
+
+        <h2 id="opnieuw-indelen">De schijf opnieuw indelen</h2>
+
+        <ol>
+            <li>Verwijder de twee primaire Linux-partities, <code>/dev/sda3</code> en <code>/dev/sda4</code>.</li>
+            <li>Maak in de vrijgekomen ruimte een <strong>uitgebreide partitie</strong> die de hele rest van de
+                schijf beslaat.</li>
+            <li>Maak daarbinnen drie <strong>logische partities</strong>: een van ongeveer 2 GB in ext4 voor het
+                Linux-besturingssysteem, een van ongeveer 1 GB in linux-swap, en een van ongeveer 1 GB in ext4 om
+                mee te testen.</li>
+            <li>Klik op <strong>Apply</strong>.</li>
+        </ol>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../img/extended-en-logische-partities-aanmaken-image-9399425.png" class="img-fluid"
+                alt="De partitietabel met sda1, sda2, de extended sda3 en daarin sda5, sda6 en sda7">
+            <figcaption class="figure-caption">De logische partities beginnen bij <code>/dev/sda5</code>, want 1 tot 4
+                blijven voorbehouden voor de tabelplaatsen</figcaption>
+        </figure>
+
+        <h2 id="wissen">Een logische partitie wissen</h2>
+
+        <p>De testpartitie heeft haar werk gedaan en de Linux-partitie mag groter. Binnen de extended partitie kan je
+            die ruimte doorschuiven.</p>
+
+        <ol>
+            <li>Verwijder de partitie met het label <strong>Test</strong>.</li>
+            <li>Vergroot de partitie met het label <strong>Linux OS</strong> met <strong>Grootte wijzigen /
+                    Verplaatsen</strong>.</li>
+            <li>Klik op <strong>Apply</strong> en vergelijk het resultaat met de afbeelding.</li>
+        </ol>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../img/logische-partitie-wissen-image-9399429.png" class="img-fluid"
+                alt="De partitietabel na het wissen van de testpartitie, met sda5 vergroot tot 2,93 GiB">
+            <figcaption class="figure-caption"><code>/dev/sda5</code> heeft de ruimte van de gewiste partitie
+                opgenomen</figcaption>
+        </figure>
+    </div>
+
+    <script src="../../reference.js"></script>
+    <script src="../../back-link.js"></script>
+</body>
+
+</html>

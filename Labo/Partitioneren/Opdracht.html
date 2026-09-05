@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht Partitioneren</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Opdracht Partitioneren</h1>
+
+        <p class="lead">Je oefent met GParted op een virtuele machine met twee lege schijven, en deelt die in volgens
+            beide partitietabellen. Daarna herschik je met datzelfde programma de schijf van een machine waar Ubuntu
+            Linux op staat: je maakt plaats vrij achter de bestaande partitie en zet er een partitie bij die je
+            achteraf in Ubuntu terugvindt.</p>
+
+        <div class="download-container">
+            <a href="../../downloads/Labo-Partitioneren-verslag.docx">Opdracht downloaden</a>
+            <ul>
+                <li>De volledige opdracht staat in dit document, met ruimte voor je antwoorden en je screenshots.
+                </li>
+                <li>Je dient het in via de opdracht op Orion, en dat mag zo vaak als je wil.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <div class="info-title warning">Twee virtuele machines, en het werk gebeurt niet op dezelfde</div>
+            <p>De oefeningen op de pagina's hierna maak je op een oefenmachine met twee lege schijven, waar je niets
+                aan kan bederven. De opdracht in het document maak je op een virtuele machine waarop Ubuntu Linux
+                geïnstalleerd staat, dezelfde die in het labo Virtualiseren gemaakt wordt.</p>
+        </div>
+
+        <h2 id="stappenplan">Het stappenplan</h2>
+
+        <p>Op de vier pagina's hierna staat scherm per scherm wat je aanklikt: eerst de oefenmachine met haar twee
+            schijven, dan de primaire partities in een MBR-tabel, daarna de extended partitie met logische partities
+            erin, en tot slot dezelfde oefening met GPT. Wat de begrippen betekenen die je onderweg tegenkomt, staat
+            bij Theorie. <strong>Klik rechtsboven op Volgende om te beginnen.</strong></p>
+
+
+        <!-- verslag
+        Van dit blok maakt scripts/export-verslag.py het verslagsjabloon. Wijzig hier, draai
+        daarna het script, en commit de docx mee.
+
+        <p>Deze opdracht maak je op de virtuele machine waarop Ubuntu Linux staat, en niet op de oefenmachine met de
+            twee lege schijven. Vul dit document aan terwijl je werkt.</p>
+
+        <h2>GParted opstarten</h2>
+
+        <p>Zorg ervoor dat de Ubuntu-machine opstart van GParted en niet van Ubuntu. Zet daarvoor de optie (U)EFI uit
+            en kies het GParted-bestand met de extensie .iso als schijfbestand.</p>
+
+        <ol class="vragen">
+            <li class="screenshot">Controleer of je de bestaande partities van de Ubuntu-machine in GParted ziet
+                staan. Neem er een screenshot van en plak die hieronder.</li>
+        </ol>
+
+        <h2>De root partitie verkleinen</h2>
+
+        <ol class="vragen">
+            <li class="screenshot">Verklein de bestaande root partitie met ongeveer 500 MB, zodat de vrije ruimte
+                rechts van de partitie komt te staan. Neem er een screenshot van en plak die hieronder.</li>
+        </ol>
+
+        <h2>Een nieuwe partitie aanmaken</h2>
+
+        <ol class="vragen">
+            <li class="screenshot">Maak in de vrijgekomen ruimte een nieuwe partitie aan met het bestandssysteem
+                FAT32. Geef ze als partitienaam en als label de eerste zeven letters van je familienaam gevolgd door
+                de eerste letter van je voornaam, dus bijvoorbeeld DEMETST, en houd het op hoogstens acht letters.
+                Neem er een screenshot van en plak die hieronder.</li>
+        </ol>
+
+        <h2>Terug naar Ubuntu</h2>
+
+        <p>Sluit GParted af en zorg ervoor dat de machine weer van Ubuntu opstart in plaats van van GParted. Zet
+            (U)EFI terug aan als je dat daarnet uitgezet hebt.</p>
+
+        <ol class="vragen">
+            <li class="screenshot">Zoek je nieuwe FAT32-partitie op in de bestandsverkenner van Ubuntu. Neem er een
+                screenshot van en plak die hieronder.</li>
+        </ol>
+
+        <h2>Wat je gekozen hebt</h2>
+
+        <ol class="vragen">
+            <li>Draagt de schijf van je Ubuntu-machine een MBR- of een GPT-partitietabel? Waaraan zie je dat in
+                GParted?</li>
+            <li>Waarom is FAT32 hier een bruikbare keuze, en welke beperking neem je er mee op de koop toe?</li>
+        </ol>
+
+        <h2>Controle</h2>
+
+        <p>Laat dit controleren door de lector tijdens het labo.</p>
+        -->
+    </div>
+
+    <script src="../../reference.js"></script>
+    <script src="../../back-link.js"></script>
+</body>
+
+</html>

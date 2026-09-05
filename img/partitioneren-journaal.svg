@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" width="720" height="280"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">De weg die een schrijfopdracht aflegt via het journaal</title>
+    <rect width="720" height="280" fill="#ffffff" />
+
+    <defs>
+        <marker id="pijl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#004d40" />
+        </marker>
+    </defs>
+
+    <!-- werkgeheugen -->
+    <rect x="40" y="60" width="150" height="70" fill="#e0e7e5" stroke="#9bb0ac" />
+    <text x="115" y="92" font-size="14" fill="#222" text-anchor="middle">werkgeheugen</text>
+    <text x="115" y="112" font-size="12" fill="#555" text-anchor="middle">het bestand dat je bewerkt</text>
+
+    <!-- pijl 1 -->
+    <path d="M196 95 L262 95" stroke="#004d40" stroke-width="2" fill="none" marker-end="url(#pijl)" />
+    <text x="229" y="84" font-size="12" fill="#004d40" text-anchor="middle">1</text>
+
+    <!-- journaal -->
+    <rect x="270" y="60" width="170" height="70" fill="#b2dfdb" stroke="#004d40" stroke-width="2" />
+    <text x="355" y="88" font-size="14" fill="#00332b" text-anchor="middle">journaal</text>
+    <text x="355" y="107" font-size="12" fill="#33564f" text-anchor="middle">één aaneengesloten stuk</text>
+    <g fill="#004d40">
+        <rect x="286" y="114" width="28" height="8" />
+        <rect x="316" y="114" width="28" height="8" />
+        <rect x="346" y="114" width="28" height="8" />
+        <rect x="376" y="114" width="28" height="8" />
+    </g>
+
+    <!-- pijl 2 -->
+    <path d="M446 95 L512 95" stroke="#004d40" stroke-width="2" fill="none" marker-end="url(#pijl)" />
+    <text x="479" y="84" font-size="12" fill="#004d40" text-anchor="middle">2</text>
+
+    <!-- uiteindelijke plaats -->
+    <rect x="520" y="60" width="160" height="70" fill="#f5f7f7" stroke="#9bb0ac" />
+    <text x="600" y="88" font-size="14" fill="#222" text-anchor="middle">de schijf</text>
+    <text x="600" y="107" font-size="12" fill="#555" text-anchor="middle">verspreid over sectoren</text>
+    <g fill="#9bb0ac">
+        <rect x="532" y="114" width="20" height="8" />
+        <rect x="566" y="114" width="20" height="8" />
+        <rect x="594" y="114" width="20" height="8" />
+        <rect x="640" y="114" width="20" height="8" />
+    </g>
+
+    <text x="40" y="176" font-size="13" fill="#222"><tspan font-weight="600">1.</tspan> Het schrijven gaat naar het
+        journaal, waar alles achter elkaar staat, en is daardoor snel klaar.</text>
+    <text x="40" y="200" font-size="13" fill="#222"><tspan font-weight="600">2.</tspan> Zodra de schijf even niets te
+        doen heeft, komen de gegevens op hun uiteindelijke plaats terecht.</text>
+
+    <path d="M40 220 L680 220" stroke="#e9ecef" stroke-width="1" />
+
+    <text x="40" y="246" font-size="13" fill="#c0392b">Valt de stroom uit tussen 1 en 2, dan ziet het
+        bestandssysteem bij het opstarten dat het journaal</text>
+    <text x="40" y="266" font-size="13" fill="#c0392b">en het bestand niet overeenkomen, en werkt het de bewerking
+        alsnog af.</text>
+</svg>

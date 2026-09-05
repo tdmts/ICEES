@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestandssystemen</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Bestandssystemen</h1>
+
+        <p>Met een partitie alleen kan een besturingssysteem nog niets. Het moet ook weten op welke plaatsen een
+            bestand staat, en die boekhouding zit in het bestandssysteem waarin je de partitie formatteert. Welk
+            bestandssysteem je kiest, bepaalt op welk besturingssysteem de partitie bruikbaar is, hoe groot ze mag
+            zijn en hoe groot één bestand erin mag zijn.</p>
+
+        <h2 id="formatteren">Formatteren</h2>
+
+        <p>Vergelijk een bestandssysteem met de inhoudstafel van een boek. In de inhoudstafel staat op welke bladzijde
+            een hoofdstuk begint; in een bestandssysteem staat op welke sectoren een bestand staat. Formatteren is die
+            inhoudstafel aanleggen, en het is wat er na het partitioneren nog moet gebeuren voor je een partitie kan
+            gebruiken.</p>
+
+        <p>Hoe meer bestanden er op een schijf staan, hoe meer plaatsen die inhoudstafel moet kunnen aanduiden. Het
+            aantal bits dat een bestandssysteem voor zo'n adres gebruikt, bepaalt dus meteen hoe groot een partitie
+            en een bestand mogen worden. Met 8 bits adressering en sectoren van 512 bytes kom je aan
+            2<sup>8</sup> × 512 bytes, ofwel 131 072 bytes, en verder geraak je niet.</p>
+
+        <h2 id="sector-en-cluster">Sector en cluster</h2>
+
+        <p>Een <strong>sector</strong> is de kleinste eenheid waarin een schijf zijn gegevens bewaart, klassiek 512
+            bytes groot. Het bestandssysteem adresseert die sectoren niet stuk voor stuk: het groepeert ze in
+            <strong>clusters</strong> en geeft één adres aan zo'n groep.</p>
+
+        <p>Koppel je acht sectoren aan één adres, dan dekt dezelfde adresruimte acht keer zo veel schijf, en wordt de
+            maximale partitiegrootte acht keer groter. De prijs betaal je bij kleine bestanden. Een cluster is de
+            kleinste hoeveelheid die aan één bestand toegewezen wordt, dus een bestand van 412 bytes in een cluster
+            van 64 kB laat bijna 64 kB ongebruikt. Die verloren ruimte heet <strong>slack</strong>.</p>
+
+        <figure class="figure-zoom" style="max-width: 620px">
+            <img src="../../../img/partitioneren-cluster-en-slack.svg" class="img-fluid"
+                alt="Acht sectoren van 512 bytes die samen één cluster vormen, en daaronder een bestand van 412 bytes dat een heel cluster inneemt waarvan de rest slack is">
+            <figcaption class="figure-caption">Grotere clusters vergroten de partitie die je kan adresseren en
+                vergroten tegelijk de slack</figcaption>
+        </figure>
+
+        <p>Bij het formatteren geef je de clustergrootte op. De standaardwaarde is 4096 bytes, ofwel 4 kB. Heb je veel
+            kleine bestanden, dan kies je kleiner; heb je vooral grote bestanden, dan kies je groter.</p>
+
+        <h2 id="fragmentatie">Fragmentatie</h2>
+
+        <p>Wanneer een bestand groeit terwijl er achter zijn laatste cluster al iets anders staat, komt de rest ergens
+            anders op de schijf terecht. Zo raakt een bestand verspreid over de schijf, en dat heet
+            <strong>fragmentatie</strong>. Bij een klassieke harde schijf met een draaiende platter moet de arm zich
+            dan per stuk opnieuw positioneren, en elke herpositionering kost seek time en rotational latency. Bij een
+            SSD staan er geen onderdelen te bewegen en levert defragmenteren dus niets op.</p>
+
+        <figure class="figure-zoom" style="max-width: 420px">
+            <img src="../../../img/partitioneren-fragmentatie.png" class="img-fluid"
+                alt="Drie bestanden achter elkaar op een schijf, waarna het middelste gewist wordt en een groter nieuw bestand in twee stukken in de vrijgekomen gaten terechtkomt">
+            <figcaption class="figure-caption">Het nieuwe bestand past niet in het gat dat het gewiste bestand
+                achterliet, dus komt het in twee stukken op de schijf</figcaption>
+        </figure>
+
+        <p>Hoeveel last een bestandssysteem van fragmentatie heeft, hangt af van waar het een nieuw bestand neerzet.
+            FAT gebruikt <strong>first fit</strong> en neemt het eerste vrije blok dat het tegenkomt, wat snel tot
+            veel versnippering leidt. <strong>Best fit</strong> zoekt het blok waar het minst ruimte overblijft, en
+            loopt vast zodra bestanden groeien. <strong>Worst fit</strong> neemt het grootste vrije blok, zodat een
+            bestand plaats heeft om te groeien, en fragmenteert daardoor het minst. De ext-bestandssystemen van Linux
+            werken zo, en daarom is defragmenteren daar in de praktijk overbodig.</p>
+
+        <figure class="figure-zoom" style="max-width: 520px">
+            <img src="../../../img/partitioneren-first-worst-best-fit.png" class="img-fluid"
+                alt="Vier vrije blokken van verschillende grootte, met pijlen die aanduiden welk blok first fit, worst fit en best fit kiezen voor een bestand van 150 MB">
+            <figcaption class="figure-caption">Hetzelfde bestand van 150 MB komt bij elk algoritme in een ander vrij
+                blok terecht</figcaption>
+        </figure>
+
+        <h2 id="journaal">Het journaal</h2>
+
+        <p>Een bestandssysteem met een <strong>journaal</strong> houdt een aaneengesloten stuk schijfruimte vrij waar
+            een schrijfopdracht eerst naartoe gaat. Dat heeft twee functies.</p>
+
+        <ul>
+            <li>Het schrijven zelf gaat sneller, want in dat stuk staat alles achter elkaar. Zodra de schijf even niets
+                te doen heeft, kopieert het bestandssysteem de gegevens naar hun uiteindelijke plaats.</li>
+            <li>Het journaal werkt als een logboek. Valt de stroom uit nadat er naar het journaal geschreven is maar
+                voor het bestand bijgewerkt was, dan ziet het bestandssysteem bij het opstarten dat de twee niet
+                overeenkomen en zet het de bewerking alsnog af.</li>
+        </ul>
+
+        <figure class="figure-zoom" style="max-width: 620px">
+            <img src="../../../img/partitioneren-journaal.svg" class="img-fluid"
+                alt="Een schrijfopdracht die van het werkgeheugen naar het journaal gaat en daarna van het journaal naar zijn uiteindelijke plaats op de schijf">
+            <figcaption class="figure-caption">Het bestand passeert twee keer: eerst naar het journaal, daarna naar
+                zijn plaats op de schijf</figcaption>
+        </figure>
+
+        <p>NTFS en ext4 hebben zo'n journaal, FAT32 niet.</p>
+
+        <h2 id="de-bestandssystemen">De bestandssystemen die je tegenkomt</h2>
+
+        <h3>FAT32</h3>
+
+        <p>FAT staat voor <strong>File Allocation Table</strong>, de tabel waarin dit bestandssysteem bijhoudt waar
+            elk bestand fysiek staat. Microsoft bracht FAT32 in 1996 uit met Windows 95, als opvolger van FAT16.
+            Windows, Linux en macOS lezen en schrijven het alledrie, en daarom staat het nog altijd op USB-sticks en
+            SD-kaarten. Een partitie mag tot 2 TB groot zijn en een bestand tot 4 GB, en dat laatste is de reden
+            waarom een schijf in een computer er niet meer mee geformatteerd wordt.</p>
+
+        <h3>exFAT</h3>
+
+        <p>exFAT is de opvolger van FAT32 voor verwisselbare media. De grens van 4 GB per bestand valt er weg, zodat
+            een filmbestand of een schijfimage er wel op past, en Windows, Linux en macOS gaan er ook mee om. Een
+            journaal heeft het niet.</p>
+
+        <h3>NTFS</h3>
+
+        <p>NTFS staat voor <strong>New Technology File System</strong> en is wat Windows op zijn eigen schijven
+            gebruikt. Het heeft een grote adresruimte, waardoor er veel bestanden in passen die elk ook groot mogen
+            zijn, en het heeft een journaal. Een partitie gaat tot 256 TB, of tot 2 TB wanneer de schijf een
+            MBR-partitietabel draagt.</p>
+
+        <h3>ext4</h3>
+
+        <p>ext4 is sinds 2009 het standaardbestandssysteem van de meeste Linux-distributies. Het legt de bestanden die
+            bij het opstarten nodig zijn bij elkaar, het reserveert vooraf grote blokken zodat bestanden kunnen groeien
+            zonder te fragmenteren, en het heeft een journaal. Een partitie gaat tot 1 EiB, of tot 2 TB met een
+            MBR-partitietabel, en een bestand tot 16 TB. Zijn voorgangers ext2 en ext3 kom je nog tegen op oudere
+            systemen; ext2 heeft geen journaal, ext3 wel.</p>
+
+        <h3>linux-swap</h3>
+
+        <p>Een <strong>swap</strong>-partitie bevat geen bestanden. Ze is de schijfruimte waar Linux gegevens
+            neerzet waar op dat moment geen plaats meer voor is in het werkgeheugen, en waar het ze weer vandaan haalt
+            zodra ze nodig zijn. Windows doet hetzelfde in een bestand in plaats van in een partitie:
+            <code>pagefile.sys</code> op de systeemschijf.</p>
+
+        <h2 id="kiezen">Welk bestandssysteem je kiest</h2>
+
+        <p>Het besturingssysteem dat op de partitie komt, bepaalt de keuze het sterkst: Windows op NTFS, een
+            Linux-distributie op ext4, met daarnaast een linux-swap-partitie. Gaat het om een partitie die op meerdere
+            besturingssystemen gelezen moet worden, dan kies je FAT32 zolang je bestanden onder 4 GB blijven en anders
+            exFAT. De maximale partitie- en bestandsgrootte van het gekozen bestandssysteem zijn de tweede
+            afweging.</p>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

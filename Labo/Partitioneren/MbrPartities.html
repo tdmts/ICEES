@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primaire partities in een MBR-tabel</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Primaire partities in een MBR-tabel</h1>
+
+        <p>Op <code>/dev/sda</code> maak je een MBR-partitietabel en vult die met vier primaire partities: twee voor
+            Windows en twee voor Linux. Onderweg wijzig je de groottes, want de plaats die je in het begin verdeelt
+            blijkt verderop niet te volstaan.</p>
+
+        <h2 id="tabel-aanmaken">De partitietabel aanmaken</h2>
+
+        <ol>
+            <li>
+                <p>Controleer dat <code>/dev/sda</code> geselecteerd is en kies in het menu <strong>Schijf</strong>
+                    voor <strong>Partitietabel aanmaken</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../img/een-mbr-partitietabel-aanmaken-image-9399410.png" class="img-fluid"
+                        alt="Het menu Schijf van GParted, opengeklapt met de keuze Partitietabel aanmaken">
+                </figure>
+            </li>
+            <li>
+                <p>Kies als partitietabeltype <strong>msdos</strong> en klik op <strong>Apply</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/een-mbr-partitietabel-aanmaken-image-9399411.png" class="img-fluid"
+                        alt="Het venster waarin je het partitietabeltype kiest, met msdos geselecteerd">
+                    <figcaption class="figure-caption">msdos is de naam die GParted aan MBR geeft</figcaption>
+                </figure>
+            </li>
+        </ol>
+
+        <p>De schijf draagt nu een MBR-partitietabel, met vier tabelplaatsen. Wat je daar precies mee kan, staat op
+            <a href="Theorie/Partitietabellen.html#mbr" target="_blank" rel="noopener">Partitietabellen</a>.</p>
+
+        <h2 id="twee-partities">Twee primaire partities voor Windows</h2>
+
+        <p>Maak twee primaire partities na met dezelfde volgorde en dezelfde bestandssystemen als hieronder: een van
+            ongeveer <strong>8 GB</strong> in <strong>ntfs</strong> voor het besturingssysteem, en een van ongeveer
+            <strong>2 GB</strong> in <strong>fat32</strong> voor de data. Het label mag je zelf kiezen.</p>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../img/primaire-partitie-maken-image-9399413.png" class="img-fluid"
+                alt="De partitietabel in GParted met /dev/sda1 in ntfs en /dev/sda2 in fat32">
+            <figcaption class="figure-caption">De kolom Bestandssysteem toont waarin elke partitie geformatteerd is
+            </figcaption>
+        </figure>
+
+        <div class="info-box">
+            <div class="info-title remark">De partitienaam verschijnt na Apply</div>
+            <p>Zolang je wijzigingen in de wachtrij staan, is de kolom met <code>/dev/sda1</code> en
+                <code>/dev/sda2</code> nog leeg. GParted vult ze in zodra het de bewerkingen uitgevoerd heeft.</p>
+        </div>
+
+        <h2 id="verkleinen">De partities verkleinen</h2>
+
+        <p>Er moet nog een besturingssysteem bij, en de acht gigabyte van de eerste partitie laten daar te weinig
+            ruimte voor over. Bestaande partities verklein je met <strong>Grootte wijzigen / Verplaatsen</strong>.</p>
+
+        <ol>
+            <li>Breng de eerste partitie terug tot ongeveer <strong>4 GB</strong> en houd de tweede op
+                <strong>2 GB</strong>.</li>
+            <li>Klik op <strong>Apply</strong>.</li>
+        </ol>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../img/primaire-partities-wijzigen-image-9399417.png" class="img-fluid"
+                alt="De partitietabel na het verkleinen, met twee partities en ongebruikte ruimte erachter">
+            <figcaption class="figure-caption">Achter de twee partities staat nu ongeveer 4 GB ongebruikt
+            </figcaption>
+        </figure>
+
+        <h2 id="linux-partities">Twee primaire partities voor Linux</h2>
+
+        <p>In de vrijgekomen ruimte komen de twee partities die een Linux-installatie nodig heeft: één voor het
+            besturingssysteem zelf in <strong>ext4</strong>, en één voor de wisselruimte in
+            <strong>linux-swap</strong>.</p>
+
+        <ol>
+            <li>Maak een primaire partitie van ongeveer <strong>2 GB</strong> in ext4.</li>
+            <li>Maak een primaire partitie van ongeveer <strong>1 GB</strong> in linux-swap, en laat tussen beide
+                wat ruimte vrij.</li>
+        </ol>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../img/extra-partities-toevoegen-image-9399419.png" class="img-fluid"
+                alt="De partitietabel met vier primaire partities in ntfs, fat32, ext4 en linux-swap, met ongebruikte ruimte tussen de laatste twee">
+            <figcaption class="figure-caption">De vier groottes komen ongeveer neer op 4 GB, 2 GB, 2 GB en 1 GB, met
+                1 GB ongebruikt ertussen</figcaption>
+        </figure>
+
+        <div class="info-box">
+            <div class="info-title tip">Wat linux-swap doet</div>
+            <p>Het is de schijfruimte waar Linux gegevens neerzet waar op dat moment geen plaats meer voor is in het
+                werkgeheugen. Windows doet hetzelfde in een bestand, <code>pagefile.sys</code>. De uitleg staat op
+                <a href="Theorie/Bestandssystemen.html#de-bestandssystemen" target="_blank"
+                    rel="noopener">Bestandssystemen</a>.</p>
+        </div>
+
+        <p>De vier tabelplaatsen zijn nu bezet, en de ruimte die je tussen de laatste twee partities vrijgelaten hebt
+            blijft ongebruikt. Op de volgende pagina zie je waarom, en wat je eraan doet.</p>
+    </div>
+
+    <script src="../../reference.js"></script>
+    <script src="../../back-link.js"></script>
+</body>
+
+</html>

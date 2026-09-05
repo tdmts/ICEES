@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT-partities</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>GPT-partities</h1>
+
+        <p>De tweede schijf van je oefenmachine is nog leeg. Daarop maak je een GPT-partitietabel, en je gaat na wat
+            er verandert aan de partities die je erin kan maken.</p>
+
+        <h2 id="tabel-aanmaken">Een GPT-partitietabel aanmaken</h2>
+
+        <ol>
+            <li>
+                <p>Kies <code>/dev/sdb</code> in de keuzelijst rechtsboven.</p>
+            </li>
+            <li>
+                <p>Kies in het menu <strong>Schijf</strong> voor <strong>Partitietabel aanmaken</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../img/een-gpt-partitietabel-aanmaken-image-9399433.png" class="img-fluid"
+                        alt="Het menu Schijf van GParted, opengeklapt met de keuze Partitietabel aanmaken">
+                </figure>
+            </li>
+            <li>
+                <p>Kies als partitietabeltype <strong>gpt</strong> en bevestig.</p>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../img/een-gpt-partitietabel-aanmaken-image-9399434.png" class="img-fluid"
+                        alt="Het venster met de waarschuwing dat alle gegevens gewist worden, en de keuzelijst met gpt geselecteerd">
+                    <figcaption class="figure-caption">De waarschuwing die erbij staat geldt voor elke nieuwe
+                        partitietabel</figcaption>
+                </figure>
+            </li>
+        </ol>
+
+        <div class="info-box">
+            <div class="info-title warning">Kijk na of je op <code>/dev/sdb</code> bezig bent</div>
+            <p>De titelbalk van het venster noemt de schijf waarop de bewerking gebeurt. Staat er
+                <code>/dev/sda</code>, dan gooi je het werk van de vorige twee pagina's weg.</p>
+        </div>
+
+        <h2 id="partities-maken">Vijf partities maken</h2>
+
+        <p>Maak op <code>/dev/sdb</code> vijf partities van elk ongeveer <strong>2 GB</strong>. Kijk bij het aanmaken
+            naar de lijst <strong>Aanmaken als</strong>.</p>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../img/gpt-partities-aanmaken-image-9399436.png" class="img-fluid"
+                alt="Het venster Nieuwe partitie aanmaken, met in de lijst Aanmaken als alleen Primaire partitie beschikbaar">
+            <figcaption class="figure-caption">Logische partitie en Uitgebreide partitie staan er grijs bij
+            </figcaption>
+        </figure>
+
+        <p>Er komt geen waarschuwing bij de vijfde, en de twee andere soorten blijven de hele tijd onbruikbaar. In
+            GPT is er maar één soort partitie, en er passen er 128 in de lijst. Waarom dat zo is, staat op
+            <a href="Theorie/Partitietabellen.html#gpt" target="_blank" rel="noopener">Partitietabellen</a>.</p>
+
+        <p>Daarmee heb je met beide partitietabellen gewerkt. De opdracht die je indient gebeurt op een andere
+            machine en staat in het document dat je op <a href="Opdracht.html">Opdracht Partitioneren</a>
+            downloadt.</p>
+    </div>
+
+    <script src="../../reference.js"></script>
+    <script src="../../back-link.js"></script>
+</body>
+
+</html>

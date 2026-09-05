@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De oefenmachine opzetten</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>De oefenmachine opzetten</h1>
+
+        <p>Je oefent op een virtuele machine met twee lege schijven, zodat je kan partitioneren zonder ergens data
+            kwijt te spelen. Op die machine komt geen besturingssysteem: ze start rechtstreeks op van het GParted
+            Live-bestand dat je gedownload hebt.</p>
+
+        <h2 id="vm-aanmaken">De virtuele machine aanmaken</h2>
+
+        <ol>
+            <li>
+                <p>Open VirtualBox en klik op <strong>Nieuw</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../img/nieuwe-vm-aanmaken-image-9399392.png" class="img-fluid"
+                        alt="Het hoofdvenster van VirtualBox met de knop Nieuw in de werkbalk">
+                </figure>
+            </li>
+            <li>
+                <p>Geef de machine een naam waaraan je ze herkent, bijvoorbeeld Partitioneren, en stel in:</p>
+                <ul>
+                    <li><strong>Basisgeheugen:</strong> minstens 2048 MB, en liefst meer</li>
+                    <li><strong>Processoren:</strong> 1</li>
+                    <li><strong>EFI:</strong> aan</li>
+                </ul>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../img/nieuwe-vm-aanmaken-image-9399393.png" class="img-fluid"
+                        alt="Het scherm met de naam van de machine, het basisgeheugen, de processoren en het vinkje EFI">
+                </figure>
+            </li>
+            <li>
+                <p>Geef de virtuele harde schijf een grootte van <strong>10 GB</strong>. Het vinkje voor
+                    pre-alloceren mag aan of uit staan.</p>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../img/nieuwe-vm-aanmaken-image-9399394.png" class="img-fluid"
+                        alt="Het scherm met de grootte van de virtuele harde schijf en het vinkje voor pre-alloceren">
+                </figure>
+                <div class="info-box">
+                    <div class="info-title warning">Houd het op 10 GB</div>
+                    <p>De partitiegroottes verderop zijn op die 10 GB afgestemd. Neem je een andere schijf, dan komen
+                        de afbeeldingen niet meer overeen met wat je ziet.</p>
+                </div>
+            </li>
+            <li>
+                <p>Klik op Voltooien. Start de machine nog niet op.</p>
+            </li>
+        </ol>
+
+        <h2 id="tweede-schijf">Een tweede schijf toevoegen</h2>
+
+        <p>De tweede schijf krijgt verderop een GPT-partitietabel, terwijl de eerste er een van MBR houdt. Zo kan je
+            beide formaten naast elkaar bekijken.</p>
+
+        <ol>
+            <li>
+                <p>Selecteer de machine en klik op <strong>Instellingen</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../img/nieuwe-vm-aanmaken-image-9399395.png" class="img-fluid"
+                        alt="Het hoofdvenster van VirtualBox met de knop Instellingen in de werkbalk">
+                </figure>
+            </li>
+            <li>
+                <p>Ga naar <strong>Storage</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../img/nieuwe-vm-aanmaken-image-9399396.png" class="img-fluid"
+                        alt="Het onderdeel Storage in de instellingen, met de controller en de bestaande schijf">
+                </figure>
+            </li>
+            <li>
+                <p>Klik op het pictogram om een harde schijf toe te voegen.</p>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../img/nieuwe-vm-aanmaken-image-9399397.png" class="img-fluid"
+                        alt="Dezelfde lijst met het pictogram om een harde schijf toe te voegen aangeduid">
+                </figure>
+            </li>
+            <li>
+                <p>Kies <strong>Create</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/nieuwe-vm-aanmaken-image-9399398.png" class="img-fluid"
+                        alt="Het venster dat vraagt of je een bestaande schijf kiest of een nieuwe aanmaakt">
+                </figure>
+            </li>
+            <li>
+                <p>Laat het schijftype op VDI staan.</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/nieuwe-vm-aanmaken-image-9399399.png" class="img-fluid"
+                        alt="Het venster met de keuze van het schijftype">
+                </figure>
+            </li>
+            <li>
+                <p>Stel de grootte in op <strong>10 GB</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/nieuwe-vm-aanmaken-image-9399400.png" class="img-fluid"
+                        alt="Het venster waarin je de grootte van de nieuwe schijf instelt">
+                </figure>
+            </li>
+            <li>
+                <p>Bevestig, en klik daarna op <strong>Choose</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 520px">
+                    <img src="../../img/nieuwe-vm-aanmaken-image-9399401.png" class="img-fluid"
+                        alt="Het venster waarin je de zopas aangemaakte schijf bevestigt">
+                </figure>
+            </li>
+            <li>
+                <p>Kijk na of er nu twee schijven van 10 GB onder de controller hangen.</p>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../img/nieuwe-vm-aanmaken-image-9399402.png" class="img-fluid"
+                        alt="Het onderdeel Storage met twee virtuele harde schijven van 10 GB onder de controller">
+                </figure>
+            </li>
+        </ol>
+
+        <h2 id="gparted-starten">GParted Live opstarten</h2>
+
+        <ol>
+            <li>
+                <p>Start de machine. Ze vindt niets om van op te starten en vraagt een schijfbestand: klap het
+                    lijstje open, kies <strong>Andere</strong> en zoek het GParted-bestand met de extensie
+                    <code>.iso</code> op. Klik op <strong>Mount</strong> en probeer opnieuw.</p>
+            </li>
+            <li>
+                <p>GParted Live toont een menu. Neem de bovenste keuze, waarbij de instellingen ongewijzigd
+                    blijven.</p>
+            </li>
+            <li>
+                <p>Bij de keuze van het toetsenbord neem je <strong>Don't touch keymap</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../img/gparted-live-opstarten-image-9399404.png" class="img-fluid"
+                        alt="Het scherm van GParted Live waarin je de keymap kiest">
+                    <figcaption class="figure-caption">Don't touch keymap staat bovenaan de lijst</figcaption>
+                </figure>
+            </li>
+            <li>
+                <p>Kies als taal <strong>Dutch 06</strong> en als mode <strong>0</strong>.</p>
+            </li>
+            <li>
+                <p>GParted start op en toont de eerste schijf.</p>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../img/gparted-live-opstarten-image-9399405.png" class="img-fluid"
+                        alt="Het hoofdscherm van GParted met een lege schijf">
+                    <figcaption class="figure-caption">Op je eigen scherm staat er nog niets in het overzicht
+                    </figcaption>
+                </figure>
+            </li>
+        </ol>
+
+        <h2 id="wat-je-ziet">Wat GParted toont</h2>
+
+        <p>GParted toont de partitietabel van één schijf tegelijk. Rechtsboven staat een keuzelijst waarmee je van
+            schijf wisselt, en daar staan nu <code>/dev/sda</code> en <code>/dev/sdb</code> in.</p>
+
+        <figure class="figure-zoom" style="max-width: 560px">
+            <img src="../../img/de-partitietabel-weergeven-image-9399408.png" class="img-fluid"
+                alt="Het venster van GParted met de balk bovenaan, de tabel eronder en de keuzelijst met schijven rechtsboven">
+            <figcaption class="figure-caption">De balk bovenaan en de tabel eronder tonen dezelfde indeling
+            </figcaption>
+        </figure>
+
+        <p>Beide schijven staan volledig als <strong>ongebruikt</strong> te boek: ze zijn nieuw en er staat nog geen
+            partitietabel op. Waar de namen <code>/dev/sda</code> en <code>/dev/sdb</code> vandaan komen, staat op
+            <a href="Theorie/Partitietabellen.html#schijfnamen" target="_blank" rel="noopener">Partitietabellen</a>.
+        </p>
+
+        <div class="info-box">
+            <div class="info-title warning">Werk op de juiste schijf</div>
+            <p>Kijk voor elke bewerking na welke schijf er in de keuzelijst rechtsboven staat. De oefeningen hierna
+                gebeuren op <code>/dev/sda</code>, behalve de laatste, die op <code>/dev/sdb</code> gebeurt.</p>
+        </div>
+    </div>
+
+    <script src="../../reference.js"></script>
+    <script src="../../back-link.js"></script>
+</body>
+
+</html>
