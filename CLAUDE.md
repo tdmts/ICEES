@@ -310,7 +310,7 @@ the username and the `os-release` of the image he just built, and hands that in.
 Brightspace for exactly that reason.
 
 **`Algemeen/Planning.html` and `Algemeen/Evaluatie.html` both exist**, and they carry four decisions
-taken on 4 September 2026. Rule 9 sends every hub to them, so a hub may name the *form* of an
+taken on 4 September 2026 and three more on 6 September 2026. Rule 9 sends every hub to them, so a hub may name the *form* of an
 evaluation and never a percentage.
 
 - **The final mark is 40% theory and 60% labs.** That is the denominator; the percentages on
@@ -320,10 +320,24 @@ evaluation and never a percentage.
   50/50 is the one that holds.
 - **Embedded Systems is assessed for 2 AUTO only.** The red warning in the export is current, not a
   leftover. What the other programmes do with that lab is still open.
-- **The planning is per student**, so `Planning.html` carries no timetable. It says where a student
-  finds his own, and it holds the two deadlines that are the same for everyone (demonstrate by the
-  last lab session, tests open until the end of the semester). It is deliberately short rather
-  than a placeholder.
+- **The planning is per student**, so `Planning.html` carries no timetable and no dates. It names the
+  document that does, `PlanningLabo20262027`, and nothing more: that document is visible in the Orion
+  content tree, it gets no link (its URL changes every time the lecturer replaces it) and **no copy
+  here**, because it lists students by name, carries a `Pronouns` column, and everything under
+  `tdmts.github.io` is public. What the page does carry is the campus rule and what a deadline moment
+  is: you come to have your work checked, not to work on it. Corrected on 6 September 2026 against
+  the document itself. The two deadlines the page used to hold (demonstrate by the last lab session,
+  tests open until the end of the semester) are gone, because the document is what counts; the test
+  grens moved to `Evaluatie.html`, which now says a test is taken by the deadline of that lab.
+  Reading the document also settled that `(campus)` beside a lab there means the session happens on
+  campus, not that the lab must be made there: only Assemblage + BIOS/UEFI must.
+- **Linux Basis and Linux Geavanceerd produce one mark**, one test over both labs, the same shape as
+  Virtualiseren and Partitioneren. Decided 6 September 2026, so `Evaluatie.html` holds one row for
+  the two labs.
+- **A test is not described as open boek.** Decided 6 September 2026, and the reason is one-way:
+  loosening a rule later is possible, tightening it is not. The phrase stood on four pages
+  (`Evaluatie.html` twice, the evaluatiebox of Virtualiseren and of Partitioneren) plus Assemblage,
+  and it is gone from all of them. `_incoming/` may still carry it, so do not copy it back in.
 
 Two couplings came out of the export and were never confirmed. **The first is now confirmed by the
 opgave itself**: `Opdracht partitioneren.docx` opens with "Tijdens het labo Virtualiseren heb je
@@ -333,8 +347,10 @@ Virtualiseren builds. That is a hard dependency between two modules the students
 independently, and **it is the one place where this repo breaks patroon 17 on purpose**, because the
 opgave leaves no other reading. Both `Labo/Partitioneren/overview.html` and its `Opdracht.html` name
 labo Virtualiseren once, as a material requirement and not as assumed knowledge. Whether the two
-labs are always scheduled back to back is a question for the lecturer, not for the pages. The
-second coupling, that the Linux tests wait until both Linux labs are done, is still unchecked.
+labs are always scheduled back to back is a question for the lecturer, not for the pages. **The
+second coupling is now confirmed too**, by `PlanningLabo20262027` and by the lecturer: every student
+in that document has one shared "Deadline Linux Basis + Geavanceerd" in the last lab session, and one
+test covers both labs.
 
 The table on `Evaluatie.html` links only the labs that exist. Add the link when a module lands: rule
 1 fails on a link to a page that is not there yet, which is what keeps that table honest. The row
