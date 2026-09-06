@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 290" width="720" height="290"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">Hoe een bestand in twee stukken op de schijf terechtkomt</title>
+    <rect width="720" height="290" fill="#ffffff" />
+
+    <!-- stap 1: drie bestanden achter elkaar -->
+    <text x="40" y="28" font-size="13" fill="#555">1. Drie bestanden staan achter elkaar, daarachter is de schijf
+        vrij</text>
+
+    <rect x="40" y="36" width="160" height="40" fill="#e0e7e5" stroke="#9bb0ac" />
+    <text x="120" y="53" font-size="13" fill="#222" text-anchor="middle">bestand A</text>
+    <text x="120" y="69" font-size="11" fill="#555" text-anchor="middle">200 MB</text>
+
+    <rect x="200" y="36" width="80" height="40" fill="#b2dfdb" stroke="#004d40" />
+    <text x="240" y="53" font-size="13" fill="#00332b" text-anchor="middle">bestand B</text>
+    <text x="240" y="69" font-size="11" fill="#33564f" text-anchor="middle">100 MB</text>
+
+    <rect x="280" y="36" width="160" height="40" fill="#e0e7e5" stroke="#9bb0ac" />
+    <text x="360" y="53" font-size="13" fill="#222" text-anchor="middle">bestand C</text>
+    <text x="360" y="69" font-size="11" fill="#555" text-anchor="middle">200 MB</text>
+
+    <rect x="440" y="36" width="240" height="40" fill="#f5f7f7" stroke="#9bb0ac" stroke-dasharray="4 3" />
+    <text x="560" y="53" font-size="13" fill="#555" text-anchor="middle">vrij</text>
+    <text x="560" y="69" font-size="11" fill="#555" text-anchor="middle">300 MB</text>
+
+    <!-- stap 2: B gewist -->
+    <text x="40" y="106" font-size="13" fill="#555">2. Bestand B wordt gewist en laat een gat van 100 MB
+        achter</text>
+
+    <rect x="40" y="114" width="160" height="40" fill="#e0e7e5" stroke="#9bb0ac" />
+    <text x="120" y="131" font-size="13" fill="#222" text-anchor="middle">bestand A</text>
+    <text x="120" y="147" font-size="11" fill="#555" text-anchor="middle">200 MB</text>
+
+    <rect x="200" y="114" width="80" height="40" fill="#f5f7f7" stroke="#9bb0ac" stroke-dasharray="4 3" />
+    <text x="240" y="131" font-size="13" fill="#555" text-anchor="middle">vrij</text>
+    <text x="240" y="147" font-size="11" fill="#555" text-anchor="middle">100 MB</text>
+
+    <rect x="280" y="114" width="160" height="40" fill="#e0e7e5" stroke="#9bb0ac" />
+    <text x="360" y="131" font-size="13" fill="#222" text-anchor="middle">bestand C</text>
+    <text x="360" y="147" font-size="11" fill="#555" text-anchor="middle">200 MB</text>
+
+    <rect x="440" y="114" width="240" height="40" fill="#f5f7f7" stroke="#9bb0ac" stroke-dasharray="4 3" />
+    <text x="560" y="131" font-size="13" fill="#555" text-anchor="middle">vrij</text>
+    <text x="560" y="147" font-size="11" fill="#555" text-anchor="middle">300 MB</text>
+
+    <!-- stap 3: D past niet in het gat -->
+    <text x="40" y="184" font-size="13" fill="#555">3. Bestand D is 180 MB en past niet in dat gat, dus de rest komt
+        verderop</text>
+
+    <rect x="40" y="192" width="160" height="40" fill="#e0e7e5" stroke="#9bb0ac" />
+    <text x="120" y="209" font-size="13" fill="#222" text-anchor="middle">bestand A</text>
+    <text x="120" y="225" font-size="11" fill="#555" text-anchor="middle">200 MB</text>
+
+    <rect x="200" y="192" width="80" height="40" fill="#004d40" stroke="#004d40" />
+    <text x="240" y="209" font-size="13" fill="#ffffff" text-anchor="middle">D</text>
+    <text x="240" y="225" font-size="11" fill="#cfe3e0" text-anchor="middle">100 MB</text>
+
+    <rect x="280" y="192" width="160" height="40" fill="#e0e7e5" stroke="#9bb0ac" />
+    <text x="360" y="209" font-size="13" fill="#222" text-anchor="middle">bestand C</text>
+    <text x="360" y="225" font-size="11" fill="#555" text-anchor="middle">200 MB</text>
+
+    <rect x="440" y="192" width="64" height="40" fill="#004d40" stroke="#004d40" />
+    <text x="472" y="209" font-size="13" fill="#ffffff" text-anchor="middle">D</text>
+    <text x="472" y="225" font-size="11" fill="#cfe3e0" text-anchor="middle">80 MB</text>
+
+    <rect x="504" y="192" width="176" height="40" fill="#f5f7f7" stroke="#9bb0ac" stroke-dasharray="4 3" />
+    <text x="592" y="209" font-size="13" fill="#555" text-anchor="middle">vrij</text>
+    <text x="592" y="225" font-size="11" fill="#555" text-anchor="middle">220 MB</text>
+
+    <!-- de twee stukken horen bij elkaar -->
+    <path d="M240 232 L240 250 L472 250 L472 232" stroke="#c0392b" stroke-width="1" stroke-dasharray="4 3"
+        fill="none" />
+    <text x="356" y="270" font-size="13" fill="#c0392b" text-anchor="middle">één bestand, twee stukken: dat is
+        fragmentatie</text>
+</svg>

@@ -59,9 +59,9 @@
             dan per stuk opnieuw positioneren, en elke herpositionering kost seek time en rotational latency. Bij een
             SSD staan er geen onderdelen te bewegen en levert defragmenteren dus niets op.</p>
 
-        <figure class="figure-zoom" style="max-width: 420px">
-            <img src="../../../img/partitioneren-fragmentatie.png" class="img-fluid"
-                alt="Drie bestanden achter elkaar op een schijf, waarna het middelste gewist wordt en een groter nieuw bestand in twee stukken in de vrijgekomen gaten terechtkomt">
+        <figure class="figure-zoom" style="max-width: 620px">
+            <img src="../../../img/partitioneren-fragmentatie.svg" class="img-fluid"
+                alt="Drie bestanden achter elkaar op een schijf; het middelste wordt gewist, en een nieuw bestand van 180 MB vult het gat van 100 MB en zet de overige 80 MB achter het laatste bestand">
             <figcaption class="figure-caption">Het nieuwe bestand past niet in het gat dat het gewiste bestand
                 achterliet, dus komt het in twee stukken op de schijf</figcaption>
         </figure>
@@ -73,11 +73,11 @@
             bestand plaats heeft om te groeien, en fragmenteert daardoor het minst. De ext-bestandssystemen van Linux
             werken zo, en daarom is defragmenteren daar in de praktijk overbodig.</p>
 
-        <figure class="figure-zoom" style="max-width: 520px">
-            <img src="../../../img/partitioneren-first-worst-best-fit.png" class="img-fluid"
-                alt="Vier vrije blokken van verschillende grootte, met pijlen die aanduiden welk blok first fit, worst fit en best fit kiezen voor een bestand van 150 MB">
+        <figure class="figure-zoom" style="max-width: 620px">
+            <img src="../../../img/partitioneren-first-worst-best-fit.svg" class="img-fluid"
+                alt="Een schijf met vier vrije blokken van 100, 200, 160 en 400 MB tussen bezette stukken; in het blok dat first fit, best fit en worst fit elk kiezen staat het bestand van 150 MB getekend, met eronder aangeduid hoeveel van dat blok overblijft: 50, 10 en 250 MB">
             <figcaption class="figure-caption">Hetzelfde bestand van 150 MB komt bij elk algoritme in een ander vrij
-                blok terecht</figcaption>
+                blok terecht, en er blijft elke keer iets anders over</figcaption>
         </figure>
 
         <h2 id="journaal">Het journaal</h2>

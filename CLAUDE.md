@@ -611,7 +611,7 @@ screen: `ongebruikt` and not unallocated, `Uitgebreide partitie` and not extende
 The theory page names the thing `extended`, because that is how the partition type is called
 everywhere else.
 
-**The two theory pages carry eight figures, and five of them are drawn here.** The abstract claims on
+**The two theory pages carry eight figures, and seven of them are drawn here.** The abstract claims on
 these pages (512 bytes split into 440 + 64, four ingangen of 16 bytes, an extended partition holding
 logical ones, the jump from `sda3` to `sda5`, eight sectors under one cluster address, a write
 passing through the journal) had no picture anywhere, so they became SVG files in `img/`, prefixed
@@ -633,13 +633,28 @@ line or on top of a hatch pattern. Headless Edge is enough and needs no install:
 The same command with `--virtual-time-budget=6000` and a tall window screenshots a whole page,
 OrionCSS and `back-link.js` included.
 
-**Three figures come out of the syllabus Word**, extracted from `word/media/` and copied to `img/`
-as `partitioneren-schijfbeheer-windows.png` (image47, Schijfbeheer met System Reserved, C: en DATA),
-`partitioneren-fragmentatie.png` (image48) and `partitioneren-first-worst-best-fit.png` (image49).
-When syllabus chapter 6 is imported, `import-syllabus.py` writes its own copies as
-`img/syllabus-06-*.png`, so those three pictures will be in `img/` twice under different names. That
-is deliberate: the two tracks are independent and a labo page may not depend on a syllabus page
-existing. **Four other images in that chapter are unusable** and were left behind: image51 is a
+**One figure comes out of the syllabus Word**, extracted from `word/media/` and copied to `img/` as
+`partitioneren-schijfbeheer-windows.png` (image47, Schijfbeheer met System Reserved, C: en DATA).
+When syllabus chapter 6 is imported, `import-syllabus.py` writes its own copy as
+`img/syllabus-06-*.png`, so that picture will be in `img/` twice under two names. That is
+deliberate: the two tracks are independent and a labo page may not depend on a syllabus page
+existing.
+
+**Two more came out of that Word and were redrawn on 6 September 2026**, which is the test to apply
+to any picture taken from the syllabus. Image48 (fragmentatie) was three unlabelled RGB bars, and
+image49 (first, worst en best fit) was a whiteboard sketch whose arrows ran from the candidate
+blocks to the file instead of the other way round, with the three abbreviations sitting above the
+gaps rather than above the blocks they name. Both now say in the picture what the paragraph beside
+them says in words: `partitioneren-fragmentatie.svg` carries the sizes that make the split
+inevitable (a file of 180 MB, a gat of 100 MB, 80 MB verderop), and
+`partitioneren-first-worst-best-fit.svg` draws the four vrije blokken to scale and puts the file
+itself inside the block each algorithm picks, so what stays free is a strip you can see rather than
+a number you have to believe: wide at worst fit, four pixels at best fit. That last step came out of
+a second look at the drawing, and it is the test for any figure here, that the claim of the
+paragraph beside it is *shown* and not captioned. The bracket over the leftover is `#c0392b`, the
+same red that annotates the slack in `partitioneren-cluster-en-slack.svg`, because both mark the
+part of a block that stays unused. A picture out of the Word is usable only when it is legible on
+its own; check that before you copy it, the same way you check the watermark. **Four other images in that chapter are unusable** and were left behind: image51 is a
 screenshot of a YouTube player with its chrome, image93 carries a `©2000 How Stuff Works` watermark,
 image46 is a product photo of an SSD, and image50 is a screenshot with the same problem as image51.
 Check the watermark before you copy a picture out of the Word.
