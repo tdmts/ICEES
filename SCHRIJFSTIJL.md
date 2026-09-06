@@ -236,6 +236,13 @@ wordt `even` of `kort`, of het gaat helemaal weg wanneer de zin het niet nodig h
 Preventief ook `hartstikke`, `gaaf`, `lekker` als versterker, en `hoor` of `nou` als toevoegsel aan
 het einde van een zin.
 
+**De woorden van deze opleiding liggen vast.** Een lesgever is een **lector** en geen docent, en een
+resultaat is een **punt** en geen cijfer. In dezelfde reeks: het is een **labo** en geen practicum,
+je **dient** een verslag **in** en levert het niet in, en wat je aflegt is een **test** en geen
+toets of tentamen. Twee van die woorden hebben een tweede betekenis die wel blijft staan: een
+`toets` is ook een knop op je toetsenbord, en een `cijfer` is ook een getal, zoals de 4 in DDR4. De
+regel gaat over het resultaat en over het examen, niet over die twee.
+
 **Twee waarschuwingen, en dit is waar zo'n regel misgaat.**
 
 Ten eerste: bij twijfel **wint het Belgische woord**. De scheidslijn ligt niet tussen Belgisch en
