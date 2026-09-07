@@ -1019,29 +1019,45 @@ kan tegen een prijs.
 ingevoerd is. Er staat geen verwijzing naar, en die hoort er ook niet te staan
 zolang het er niet is.
 
-### Wat er in de tekst opviel, en niet aangeraakt is
+### Wat er in de tekst opviel, en op 7 september 2026 rechtgetrokken is
 
-De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML. Buiten de
-bottleneck-alinea, de rechtgezette VM-passage en de drie mogelijkheden van vraag 5
-is er geen zin en geen typfout gewijzigd.
+De tekst gaat er in principe letterlijk in, dus dit staat hier met wat er beslist
+is. **Deze vier correcties staan alleen in de HTML en een herimport draait ze
+terug.**
 
 - **"Focus op ze weinig mogelijk communicatie met het RAM geheugen"** in
-  mogelijkheid c van vraag 4 van Test jezelf, waar "zo weinig mogelijk" hoort te
-  staan. De mogelijkheid is fout, dus de student valt er niet over, maar ze staat
-  er wel.
-- **"De eigenschappen bij dit type processoren is dat ze ..."** in 5.2: een
-  meervoudig onderwerp bij een enkelvoudig werkwoord.
-- **"Bij dit laatste moeten  we"** in 5.2, met een dubbele spatie.
-- **"die compatibel zijn met een ARM besturingssystemen"** in 5.2: een lidwoord bij
-  een meervoud.
+  mogelijkheid c van vraag 4 van Test jezelf is **"zo weinig mogelijk"** geworden.
+  De mogelijkheid is fout, dus de student valt er niet over, maar ze staat wel
+  gedrukt.
+- **"De eigenschappen bij dit type processoren is dat ze ..."** in 5.2 is **zijn
+  dat ze**: een meervoudig onderwerp bij een enkelvoudig werkwoord.
+- **"die compatibel zijn met een ARM besturingssystemen"** in 5.2 is **een ARM
+  besturingssysteem**: een lidwoord bij een meervoud.
+- **"Bij dit laatste moeten  we"** in 5.2 droeg een harde spatie en daarachter nog
+  een gewone. De harde spatie blijft staan, want die komt zo uit de Word; de
+  tweede is weg.
+
+### Wat er in de tekst opviel, en niet aangeraakt is
+
 - **"Waarschijnlijk verwacht je dat ARM processoren 'recenter' zijn"**: de hoge
   komma's zijn in de Word gewone apostrofs en zijn dat hier gebleven. Dat is opmaak
   en geen tekst, net als de drie punten aan het eind van 5.2, die in de Word het
   beletselteken zijn.
-- **De Word schrijft "een x64 Core 7 processor"** in vraag 4, waar Intel het toestel
-  Core i7 noemt. Hoofdstuk 4 schrijft "Intel Core 3, 5 of zelfs 7", dus binnen deze
-  Word is het consequent en het is niet aangeraakt.
+- **"Een x64 Core 7 processor" in vraag 4 blijft staan, en het is geen tikfout.**
+  Beslist op 7 september 2026, en de reden is de omgekeerde van wat ze op het
+  eerste gezicht lijkt: Intel liet de i eind 2023 vallen bij de overstap naar
+  Meteor Lake. Sindsdien heet de premiumlijn Core Ultra 5, 7 en 9 en de gewone
+  lijn Core 3, 5 en 7. **Core 7 is dus de recentste vorm en Core i7 de oude**, die
+  tot en met de veertiende generatie liep. Hoofdstuk 4 schrijft "Intel Core 3, 5
+  of zelfs 7" en klopt daarmee ook. Wat een student in het labo of op een
+  fabrieksvloer in handen krijgt, draagt vaker nog de oude naam op zijn sticker;
+  dat staat nergens in de tekst en het is geen tegenspraak, want de vraag gaat
+  over de eigenschappen van de processor en niet over zijn naam.
 - **Studievraag 1 vooraan is een imperatief en draagt al een punt** ("Bespreek de
   functionele onderdelen van een computer aan de hand van een schema."). De regel
   uit hoofdstuk 4 had hier dus niets te doen; de vier andere studievragen zijn echte
   vragen en houden hun vraagteken.
+- **Het tweede kernpunt noemt de opslag niet**, terwijl de figuur van 5.1 ze wel
+  heeft en vraag 2 ze mee laat natekenen. Beslist op 7 september 2026: het
+  kernpunt blijft letterlijk wat de Word zegt. De bijgeschreven bottleneck-alinea
+  hierboven noemt de opslag nu in woorden, en dat volstaat.
