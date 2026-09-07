@@ -382,10 +382,10 @@ nog**, want die vraag is meerkeuze gebleven.
 **De vier schermafdrukken blijven staan, met een bronvermelding erbij.** Beslist
 op 7 september 2026. Wat er stond was vier bladzijden lopende tekst van iemand
 anders als plaatje, zonder een woord eigen tekst en zonder te zeggen van wie het
-was. De sectie draagt nu twee eigen alinea's die zeggen wat het artikel toevoegt
-(Secure Boot, de virtualisatie-instelling, de piepjes en de lampjes), een
-info-box Bron met de titel, de redactie, de datum en de link, en per figuur een
-bijschrift "Bladzijde N van 4, TechPulse".
+was. De sectie draagt nu een info-box Bron met de titel, de redactie, de datum en
+de link, en per figuur een bijschrift "Bladzijde N van 4, TechPulse". **Verder
+geen eigen tekst**: er stonden even twee alinea's boven die zeiden wat het artikel
+toevoegt, en die zijn er op vraag van de lector weer uit. De bron volstaat.
 
 De bron is: Redactie TechPulse, *BIOS en UEFI: wat je computer doet voor Windows
 opstart*, 22 april 2022,
