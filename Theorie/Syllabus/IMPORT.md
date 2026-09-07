@@ -7,7 +7,6 @@ NOTITIES.md ernaast.
 
 Per kop staat wat de omzetting moest raden of liet vallen. De tekst zelf is
 letterlijk overgenomen.
-
 ## Generaties (opening)
 
 - kader "Kernpunten" werd een info-box met data-kader="kernpunten"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
@@ -28,3 +27,14 @@ letterlijk overgenomen.
 ## Generaties > Generatie 4: very large scale integration (VLSI)
 
 - afbeelding syllabus-01-generaties-04.jpeg zweeft naast haar alinea (wrapSquare); die alinea blijft lopende tekst en de figuur krijgt geen bijschrift uit de Word
+
+## Hardware in een moderne computer (opening)
+
+- kader "Kernpunten" werd een info-box met data-kader="kernpunten"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+- kader "Studievragen" werd een info-box met data-kader="studievragen"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+
+## Hardware in een moderne computer > Hardware herkennen
+
+- tabel "" kreeg GEEN kopregel (geen enkel signaal), nakijken
+- tabel "" kreeg GEEN kopregel (eenkolomstabel), nakijken
+- tabel "" kreeg GEEN kopregel (eenkolomstabel), nakijken

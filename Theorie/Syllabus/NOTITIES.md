@@ -148,3 +148,165 @@ die vijf regels.
 **Vier van de vijf zweven naast hun alinea in de Word.** Zie CLAUDE.md,
 "Wat de eerste hoofdstukimport aan de importer veranderd heeft": de alinea's
 ernaast zijn lopende tekst en zijn dat hier gebleven.
+
+## Hoofdstuk 2, Hardware in een moderne computer
+
+**Dit hoofdstuk heeft geen sectie Studievragen achteraan.** De enige twee
+H2-secties zijn Hardware herkennen en Prestaties, dus er is hier geen
+`TestJezelf.html`. Het kader Studievragen vooraan staat er wel gewoon, samen met
+de Kernpunten op `Overzicht.html`; dat is het kader dat aankondigt wat je moet
+kunnen, en niet de meerkeuzelijst die hoofdstuk 1 afsluit. Of elk hoofdstuk er
+een hoort te krijgen, wordt beslist na hoofdstuk 16 en in een keer, niet hier.
+
+### Hardware herkennen is een oefening die niet zo heet
+
+In de Word staat 2.1 als drie tabellen: een rij foto's, daaronder een rij met een
+nummer en een regeleinde, en op die lege regel schrijft de student de naam. Dat
+is een vragenlijst in de vorm van een tabel, en regel 14 van de contentcheck
+geldt er onverkort voor. Niets vangt het als je het overslaat: er is geen `<ol>`,
+dus zelfs de verklikker van regel 14, die naar een `<ol>` met invulruimte zoekt,
+ziet niets.
+
+**De drie tabellen zijn dus een `ol.vragen` geworden**, met per nummer de foto,
+de ruimte om te antwoorden, en het antwoord in een `<div class="oplossing">`. De
+PDF drukt die antwoorden achteraan het hoofdstuk als 2.3 Oplossingen; op de site
+vouwt `oplossingen.js` ze weg. Er staat dus geen antwoord in de tekst zelf.
+
+**De nummering loopt van 1 tot 30 over vier lijsten.** De twee foto's die bij een
+hele reeks nummers horen staan tussen de lijsten in, dus de lijst erna draagt
+`start=`: 10 voor het moederbord en 18 voor de achterkant. De vierde lijst begint
+op 24. Regel 14 kijkt die aansluiting na.
+
+**Waar de student schrijft, is hier beslist en niet uit de Word gelezen.** De
+importer merkt op deze drie tabellen geen invulruimte: `lege_kolommen()` zoekt
+een kolom die overal leeg staat, en elke kolom draagt hier tekst, namelijk de
+nummers zelf. De regel waarop de student schrijft is in de Word een regeleinde
+achter het nummer, en dat is geen structuur die je kan herkennen.
+
+Elk nummer krijgt daarom een lege tabel van een rij onder zich, precies de markup
+die de importer voor een lege tabel schrijft. De vier nummers die in de Word al
+labels onder zich dragen (20 groen en paars, 21 blauw en zwart, 23 blauw, groen
+en rood, 28 de cijfers 1 tot 4) krijgen er een regel per label, in de
+invulkolom-vorm: het label links, de ruimte rechts. Zo staat er evenveel te
+schrijven als de Word vraagt, en geen regel meer.
+
+**Er blijft geen enkele `data-geraden` over, en er was er maar een.** De
+importer zette hem op de eerste tabel (geen enkel signaal voor een kopregel); de
+tweede en de derde beginnen met een cel over de volle breedte en gingen als
+eenkolomstabel door zonder gok. Alle drie zijn ze nu een vragenlijst zonder
+kopregel, dus de vraag zelf is vervallen.
+
+### De dertig antwoorden, en waarop ze steunen
+
+**De Word geeft geen enkel antwoord.** Alle dertig zijn hier bepaald door de foto
+open te doen. Waar het opschrift op het toestel zelf het antwoord geeft, staat dat
+erbij.
+
+| Nr | Antwoord | Waarop het steunt |
+|---|---|---|
+| 1 | het moederbord | opschrift GIGABYTE GA-AB350-Gaming 3, Socket AM4 |
+| 2 | harde schijf van 3,5 duim | groen etiket 1.0TB op een metalen behuizing met een SATA-aansluiting |
+| 3 | SSD van 2,5 duim | opschrift SAMSUNG Solid State Drive |
+| 4 | SSD in M.2-formaat met NVMe | opschrift SAMSUNG NVMe SSD 960 PRO M.2 |
+| 5 | twee processoren | opschrift INTEL CONFIDENTIAL en AMD Phenom, contactzijde naar boven |
+| 6 | geheugenmodule | printplaat met acht chips, contactstrip met inkeping, klemuitsparingen |
+| 7 | videokaart | koellichaam met NVIDIA erop, beugel met vier beeldaansluitingen |
+| 8 | netwerkkaart | PCI Express-kaart met een enkele RJ45 in de beugel |
+| 9 | voeding | ventilatorrooster, netschakelaar, stekkeringang, bundel voedingsdraden |
+| 10 | processorsocket | rood kader om de socket van de MSI A520M-A PRO |
+| 11 | geheugensloten | blauw kader om de twee DIMM-sloten |
+| 12 | PCI Express-sloten | turkoois kader om het lange slot en het korte erboven |
+| 13 | SATA-poorten | geel kader om twee staande en twee liggende SATA-poorten |
+| 14 | M.2-slot | rood kader dat onderaan op de M.2-connector uitkomt |
+| 15 | chipset | oranje kader om het koellichaam linksonder |
+| 16 | CMOS-batterij | blauwe cirkel om een knoopcel, opschrift LITHIUM BATTERY CR2032 |
+| 17 | voedingsaansluitingen | turkoois kader om de 24-pins ATX onderaan en om CPU_PWR1 rechtsboven |
+| 18 | HDMI-aansluiting | de vorm van de aansluiting op de foto |
+| 19 | DVI-aansluiting | de vorm van de aansluiting op de foto |
+| 20 | PS/2, groen de muis en paars het toetsenbord | die kleuren staan zo op de foto en zijn de afspraak van PS/2 |
+| 21 | USB, blauw is USB 3 en zwart USB 2 | vier blauwe en twee zwarte poorten binnen hetzelfde kader |
+| 22 | netwerkaansluiting (RJ45) | de vorm van de aansluiting op de foto |
+| 23 | audio, blauw lijningang, groen uitgang, rood microfoon | de drie kleuren op de foto, en de kleurafspraak van een audiopaneel |
+| 24 | VGA-kabel | blauwe stekkers, vijftien pinnen in drie rijen |
+| 25 | DVI-kabel | witte stekkers met het brede blok pinnen en het platte contact ernaast |
+| 26 | DisplayPort | de afgeschuinde hoek van de aansluiting en de klemmetjes op de stekker |
+| 27 | HDMI | de trapeziumvorm van de aansluiting en negentien contacten |
+| 28 | USB type A, type B, micro-USB, type C | de vier vormen van links naar rechts |
+| 29 | SATA-kabel | platte rode kabel met de L-vormige stekker van zeven contacten |
+| 30 | de chip met de firmware, het BIOS of UEFI | zie hieronder |
+
+**Nummer 30 is de enige die niet op de foto zelf te lezen valt.** Wat er staat is
+een moederbord met een rood omcirkelde chip van acht pootjes, uitvergroot tot
+`winbond 25Q128JVSQ` leesbaar is. Dat is een serieel flashgeheugen van 128 Mbit,
+en dat is op een moederbord de chip waar de firmware in staat. Het hoofdstuk
+erna heet BIOS / UEFI, dus de plaats in het document wijst dezelfde kant op.
+Zeker weten doe ik het niet uit de bron; kijk het na als je de kans hebt.
+
+**De achttien afbeeldingen zijn een voor een opengedaan voor het `alt` erbij
+geschreven werd**, zoals de vijf van hoofdstuk 1. Geen enkele draagt een
+bijschrift in de Word, dus ze dragen er hier ook geen, en alle achttien staan
+inline: het zwevende geval van hoofdstuk 1 speelt hier niet. Alle uitsnedes zijn
+bruikbaar. **Twee foto's dragen een watermerk**, een klein `net` linksonder op
+nummer 2 en 5; het staat in de bron zo en er is niets aan gedaan.
+
+**Het `alt` beschrijft de vorm en niet de naam**, want de naam is het antwoord.
+Er staat dus "een smalle lange printplaat met acht chips en een inkeping in de
+contactstrip" en niet "een geheugenmodule". Wat op het toestel gedrukt staat,
+gaat er wel in: dat leest een ziende student ook. Zo kan iemand die de bladzijde
+laat voorlezen de oefening maken zonder het antwoord cadeau te krijgen. Een
+nieuwe import overschrijft die achttien regels.
+
+### Twee bladspiegelregels die dit hoofdstuk nodig had
+
+Beide staan in `syllabus.css` en gelden vanaf nu voor elk hoofdstuk.
+
+- **`.vragen-bij-figuur`** houdt een foto waar een reeks nummers naar wijst op
+  hetzelfde blad als die nummers. Zonder die omhulling stond het moederbord met
+  10 tot 13 op het ene blad en 14 tot 17 op het volgende, en zat de student te
+  bladeren terwijl hij invulde. `page-break-inside` op de figuur alleen helpt
+  daar niet: die houdt de afbeelding heel en zegt niets over wat eronder staat.
+- **`ol.vragen > li` blijft heel.** Dat kwam boven bij vraag 28, waarvan de foto
+  onderaan een blad stond en de vier invulregels bovenaan het volgende.
+
+**De foto van het moederbord staat smaller dan de Word hem zet.** De Word geeft
+hem 160.0mm, de volle bladspiegel, en dan is het blok met zijn acht nummers
+235mm hoog op een bladspiegel van 240mm: het past alleen op een leeg blad, en het
+blad ervoor blijft dan voor twee derde wit. Op 105.0mm is het blok 191mm en volgt
+het gewoon op nummer 9. De nummers die in de foto getekend zijn, blijven daarbij
+ruim leesbaar. Dit is de enige maat in dit hoofdstuk die niet uit de Word komt.
+
+### Prestaties
+
+Zes alinea's lopende tekst, geen tabel, geen vraag, letterlijk overgenomen.
+
+**Ze gebruikt termen die pas veel later uitgelegd worden.** M.2, NVMe, SATA,
+processor socket, DDR4 en DDR5 staan er zonder uitleg, terwijl de hoofdstukken
+die ze behandelen (Harde schijf, Moederbord, RAM, CPU) tien tot dertien
+hoofdstukken verderop staan. Dat is patroon 20 van SCHRIJFSTIJL.md. **Het stoort
+hier weinig**, want de alinea's gebruiken die woorden als voorbeeld van iets dat
+niet past en niet als iets dat je moet kennen: de zin blijft te volgen als je
+alleen weet dat het twee soorten aansluiting zijn. Wat er wel scheef aan staat is
+de studievraag ernaast, "wat bepaalt de prestaties van een processor,
+werkgeheugen en harde schijf", want die vraag beantwoordt dit hoofdstuk niet en
+die vier late hoofdstukken wel. Laten staan of vooruitwijzen is jouw beslissing.
+
+**AM4 komt in dit hoofdstuk niet voor.** Het staat wel op de foto van nummer 1
+gedrukt (Socket AM4), maar de tekst van 2.2 noemt alleen de processor socket,
+AMD en Intel.
+
+### Wat er in de tekst opviel, en niet aangeraakt is
+
+De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML:
+
+- **aansluting** in de opdrachtzin van 2.1, "Noteer bij ieder component, kabel of
+  aansluting de juiste naam". Overal elders in het hoofdstuk staat aansluiting.
+  Een tikfout, en ze staat er nog.
+- **Het kader Kernpunten zegt "een harde schijf"** waar 2.1 en 2.2 SSD's,
+  M.2-schijven en harde schijven naast elkaar zetten. Als verzamelnaam kan het,
+  maar het is wel het woord dat 2.2 voor iets anders gebruikt.
+- **De vierde studievraag is geen vraag** maar een instructie ("Op basis van een
+  foto moet je kunnen ... herkennen en benoemen"), terwijl de andere drie wel
+  vragen zijn. Zo staat het in de Word.
+- **De ellips aan het eind van de vierde alinea van 2.2** ("tot op een bepaalde
+  kloksnelheid...") is in de Word het teken en geen drie punten. Dat is opmaak en
+  is zo gebleven.

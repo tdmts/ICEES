@@ -143,6 +143,30 @@ window.LAB_REFERENCE = {
                         href: 'Generaties/TestJezelf.html'
                     }
                 ]
+            },
+            {
+                name: 'Hardware in een moderne computer',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'hardware-overzicht',
+                        name: 'Kernpunten en studievragen',
+                        blurb: 'Welke onderdelen elke computer heeft, dat ze allemaal op het moederbord uitkomen, en langs welke aansluitingen een randapparaat of een scherm binnenkomt.',
+                        href: 'HardwareInEenModerneComputer/Overzicht.html'
+                    },
+                    {
+                        id: 'hardware-herkennen',
+                        name: 'Hardware herkennen',
+                        blurb: 'Dertig onderdelen, kabels en aansluitingen op foto om te benoemen: van het M.2-slot op het moederbord tot de kleur van een audiostekker.',
+                        href: 'HardwareInEenModerneComputer/HardwareHerkennen.html'
+                    },
+                    {
+                        id: 'hardware-prestaties',
+                        name: 'Prestaties',
+                        blurb: 'Waarom een snellere processor of een grotere schijf niet zomaar past, en waarom een industriele pc die keuze al voor je gemaakt heeft.',
+                        href: 'HardwareInEenModerneComputer/Prestaties.html'
+                    }
+                ]
             }
         ]
     },

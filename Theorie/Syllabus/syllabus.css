@@ -156,6 +156,13 @@ li > ul > li::before, li > ol > li::before { left: 2.1mm; }
    bronpagina. Een oefening halverwege een hoofdstuk stelt dezelfde soort vraag
    en drukte haar mogelijkheden als bolletjes, terwijl de oplossing ernaast wel
    een letter noemde. De vragenlijst zegt nu zelf wat ze is. */
+/* Een vraag blijft heel. Ze draagt vaak een foto en daaronder de ruimte waar de
+   student antwoordt, en die twee horen samen: in 2.1 Hardware herkennen stond de
+   foto van vraag 28 onderaan een blad en de vier invulregels bovenaan het
+   volgende. Bij een meerkeuzevraag scheelt het even veel, want een mogelijkheid
+   die alleen op de volgende bladzijde staat, wordt overgeslagen. */
+ol.vragen > li { page-break-inside: avoid; break-inside: avoid; }
+
 ol.vragen > li > ul { counter-reset: keuze; }
 ol.vragen > li > ul > li { counter-increment: keuze; }
 ol.vragen > li > ul > li::before { content: counter(keuze, lower-alpha) "."; }
@@ -255,6 +262,22 @@ figure { margin: 0 0 4.3mm 0; text-align: center; page-break-inside: avoid; }
    een figuur binnen de bladspiegel, ook als de Word breder gaat. */
 figure img { width: var(--figuur-breedte, auto); max-width: 100%; height: auto; }
 figcaption { font-size: 9pt; color: var(--grijs-tekst); text-align: center; margin-top: 1.5mm; }
+
+/* Een figuur waar een hele reeks vragen naar wijst, hoort op hetzelfde blad als
+   die vragen. Anders staat de foto onderaan een bladzijde en vult de student de
+   helft van de nummers in terwijl hij ernaar terugbladert: 2.1 Hardware
+   herkennen zette het moederbord met 10 tot 13 op het ene blad en 14 tot 17 op
+   het volgende.
+
+   page-break-inside op de figuur alleen helpt daar niet tegen: die houdt de
+   afbeelding heel en zegt niets over wat eronder staat. Vandaar deze omhulling,
+   die de figuur en haar vragenlijst tot een blok maakt.
+
+   Ze werkt alleen zolang dat blok op een bladzijde past. Chrome negeert een
+   avoid die niet uit kan, en dan breekt het blok alsnog, zonder dat er iets
+   faalt. Blijf dus onder de bladspiegel van 240mm; de foto is de knop waar je
+   aan draait. */
+.vragen-bij-figuur { page-break-inside: avoid; break-inside: avoid; }
 
 code, pre, kbd, samp { font-family: Consolas, "Courier New", monospace; font-size: 9pt; }
 pre { white-space: pre-wrap; text-align: left; }

@@ -58,8 +58,10 @@ four engines and the eight scripts started as byte-for-byte copies with the DeN-
 rewritten. **Two scripts have since diverged for a reason that is not a string**, and both are
 recorded below: `import-brightspace.py` (the `rCode` casing, under "Where the content comes from")
 and `import-syllabus.py` (zwevende afbeeldingen, under "Wat de eerste hoofdstukimport ...").
-Read DeN's `CLAUDE.md` for the reasoning behind any shared part; read this section before you copy
-anything across, in either direction.
+`Theorie/Syllabus/syllabus.css` was copied too and has since **gained two page-break rules that DeN
+does not have**, both under "De syllabus": a `ol.vragen > li` that stays whole, and
+`.vragen-bij-figuur`. Read DeN's `CLAUDE.md` for the reasoning behind any shared part; read this
+section before you copy anything across, in either direction.
 
 **Whether the engines should live in a repo of their own is still open.** It gets decided once ICEES
 has its six modules and the three courses lie side by side: today every difference is a rewritten
@@ -732,6 +734,33 @@ weg**; welke het zijn, staat per hoofdstuk in NOTITIES.md, zodat ze in de Word
 bijgeschreven kunnen worden. Dat geldt net zo voor een rechtgetrokken spelling: de
 importer vertaalt opmaak en nooit woorden, dus elke woordcorrectie is per definitie
 een handmatige die een herimport niet overleeft.
+
+**Een oefening in tabelvorm wordt een `ol.vragen`, en dat is de enige plaats waar regel 14 een gat
+heeft.** 2.1 Hardware herkennen is in de Word geen genummerde lijst maar drie tabellen: een rij
+foto's, daaronder een rij met een nummer en een regeleinde waarop de student de naam schrijft.
+Dertig vragen dus, zonder een `<ol>` in de buurt. De verklikker van regel 14 zoekt naar een `<ol>`
+met invulruimte eronder, dus die ziet zo'n tabel niet, en de export ziet er evenmin vragen in: het
+hoofdstuk zou stilzwijgend zonder Oplossingen gedrukt worden. Herken je een oefening, maak er dan
+een `ol.vragen` van voor je verder gaat, ook als de Word er niets genummerds van maakt.
+
+Waar de student schrijft, beslis je daarbij zelf, en je zegt in NOTITIES.md waarom: `lege_kolommen()`
+vindt niets zodra elke kolom tekst draagt, en bij deze drie tabellen droeg elke kolom de nummers.
+
+Loopt de nummering door over een figuur of een tussenzin heen, dan draagt het volgende `<ol>` een
+`start=`; regel 14 kijkt die aansluiting na.
+
+**Twee bladspiegelregels kwamen daaruit voort, en `syllabus.css` wijkt daarmee als derde bestand van
+DeN af.** Een `ol.vragen > li` breekt niet meer over een bladovergang, want een foto zonder haar
+invulregels is geen vraag meer; en `.vragen-bij-figuur` is de omhulling om een figuur waar een hele
+reeks nummers naar wijst, zodat de foto op hetzelfde blad blijft als de nummers die haar nodig
+hebben. Die tweede werkt alleen zolang het blok op een bladzijde past, dus de breedte van zo'n foto
+is een knop waar je aan draait: in hoofdstuk 2 is het moederbord daarvoor van 160.0mm naar 105.0mm
+gegaan, wat de enige maat in dat hoofdstuk is die niet uit de Word komt.
+
+**Een hoofdstuk zonder sectie Studievragen achteraan krijgt geen Test jezelf.** Hoofdstuk 2 heeft er
+geen, en er is er dus ook geen geschreven. Of elk hoofdstuk er een hoort te hebben, wordt na
+hoofdstuk 16 in een keer beslist, met alle zestien naast elkaar; tot dan noteert NOTITIES.md per
+hoofdstuk of het er een had.
 
 ### Wat de eerste hoofdstukimport aan de importer veranderd heeft
 
