@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux en zijn distributies</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Linux en zijn distributies</h1>
+
+        <p>Draait je telefoon op Android, dan draai je Linux. Dezelfde naam staat op de servers waar het grootste
+            deel van het internet op loopt, op een Raspberry Pi en op de Ubuntu-machine waar je in dit labo mee
+            werkt. Dat is mogelijk omdat Linux zelf maar een deel van een besturingssysteem is.</p>
+
+        <h2 id="kernel">Wat een kernel is</h2>
+
+        <p>Linux is een <strong>kernel</strong>: het stuk software dat tussen de hardware en de programma's in zit.
+            De kernel is verantwoordelijk voor het starten en stoppen van programma's, voor het verdelen van het
+            werkgeheugen over die programma's, voor het lezen en schrijven van bestanden, en voor de rechten die
+            een gebruiker op die bestanden heeft. Alles wat een programma van de hardware nodig heeft, vraagt het
+            aan de kernel.</p>
+
+        <p>Wat de kernel niet meebrengt, is alles waar je als gebruiker naar kijkt. Een bureaublad, een venster,
+            een tekstverwerker, een browser, een pakketbeheerder om software mee te installeren: daar zit niets van
+            in de kernel. Een kale Linux-kernel start op en er is niets om mee te werken.</p>
+
+        <h2 id="distributie">Wat een distributie toevoegt</h2>
+
+        <p>Een <strong>distributie</strong> is de kernel plus alles wat je eromheen nodig hebt, gebundeld tot iets
+            dat je kan installeren. Wie de distributie maakt, kiest welke programma's er standaard bij zitten, hoe
+            de mappen ingedeeld worden, met welk programma je software bijinstalleert en hoe het bureaublad
+            eruitziet. Dezelfde kernel komt daardoor in heel verschillende vormen op een toestel terecht.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Vier distributies met dezelfde kernel eronder</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Distributie</th>
+                        <th>Waarvoor ze gemaakt is</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Ubuntu</strong></td>
+                        <td>Desktops, laptops en servers, met een grafisch bureaublad en betalende ondersteuning
+                            voor bedrijven</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Debian</strong></td>
+                        <td>Servers en machines die lang ongewijzigd moeten draaien. Ubuntu is er zelf op gebouwd
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Android</strong></td>
+                        <td>Telefoons en tablets, met een aanraakscherm, een appwinkel en de mogelijkheid om te
+                            bellen en te sms'en</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Raspberry Pi OS</strong></td>
+                        <td>De Raspberry Pi, met de aansluitingen van dat bord erin ondersteund</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-box">
+            <div class="info-title remark">In dit labo werk je met Ubuntu</div>
+            <p>Ubuntu is de distributie die op je virtuele machine staat. De commando's die je leert werken op elke
+                andere distributie even goed, want ze komen niet van Ubuntu maar van de laag die op elke kernel
+                zit.</p>
+        </div>
+
+        <h2 id="open-source">Open-source tegenover gratis</h2>
+
+        <p>Voor Ubuntu betaal je niets, en de broncode ervan ligt open. Dat lijken twee manieren om hetzelfde te
+            zeggen en het zijn twee losse eigenschappen, die alle vier de combinaties opleveren.</p>
+
+        <p><strong>Open-source</strong> gaat over de broncode: die is publiek, je mag ze lezen, aanpassen en je
+            aangepaste versie verder verspreiden. Dat is wat het woord vastlegt, en er staat niets in over geld.
+            <strong>Gratis</strong> gaat over de prijs die je betaalt om het programma te mogen gebruiken, en zegt
+            niets over wat je met de code mag.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De vier combinaties, met een voorbeeld van elk</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th></th>
+                        <th>Broncode open</th>
+                        <th>Broncode gesloten</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Je betaalt niets</th>
+                        <td>Ubuntu, Firefox, de Linux-kernel zelf</td>
+                        <td>Adobe Acrobat Reader, Google Chrome, Zoom in zijn gratis versie</td>
+                    </tr>
+                    <tr>
+                        <th>Je betaalt ervoor</th>
+                        <td>Red Hat Enterprise Linux, waar je voor de ondersteuning betaalt terwijl de code open
+                            ligt</td>
+                        <td>Microsoft Windows, Microsoft Office, CODESYS in zijn betalende versie</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Het rechtsboven vakje is het vakje waar de verwarring vandaan komt. Acrobat Reader kost niets en toch
+            krijg je de broncode nooit te zien, dus je kan er niet in nakijken wat het programma met je bestanden
+            doet en je kan het niet aanpassen wanneer je iets anders nodig hebt. Voor een industriële machine die
+            twintig jaar meegaat is dat verschil het overwegen waard: bij open-source kan je de software zelf
+            blijven onderhouden wanneer de maker ermee stopt.</p>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gebruikers en rechten</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Gebruikers en rechten</h1>
+
+        <p>Op een Linux-machine hoort elk bestand aan een gebruiker toe, en elk programma dat draait, draait onder de
+            naam van een gebruiker. Wat een commando mag, hangt dus niet af van het commando maar van wie het
+            uitvoert.</p>
+
+        <h2 id="root">De root gebruiker</h2>
+
+        <p>Naast de gewone gebruikers is er op elke Linux-machine één gebruiker die alles mag: <strong>root</strong>.
+            Software installeren, bestanden van het systeem wijzigen, de machine heropstarten, de mappen van een
+            andere gebruiker lezen: dat kan alleen root. In Windows heet die gebruiker de
+            <strong>administrator</strong> en doet hij hetzelfde.</p>
+
+        <p>Een gewone gebruiker mag schrijven in zijn eigen map onder <code>/home</code> en in
+            <code>/tmp</code>, en verder vrijwel nergens. Hij mag de meeste mappen van het systeem wel lezen, maar
+            niet aanpassen.</p>
+
+        <div class="info-box">
+            <div class="info-title warning">Meld je niet aan als root</div>
+            <p>Alles wat je doet terwijl je als root aangemeld bent, gebeurt met alle rechten, ook wat je niet zelf
+                gestart bent. Download je een besmet bestand en voer je het uit, dan draait het als root en komt het
+                bij elk bestand en elk proces op de machine. Een tikfout in <code>rm -r</code> heeft dan dezelfde
+                reikwijdte.</p>
+        </div>
+
+        <h2 id="sudo">Sudo, voor één commando tegelijk</h2>
+
+        <p>Je meldt je dus aan als gewone gebruiker, en op het moment dat je meer rechten nodig hebt, verhoog je ze
+            voor dat ene commando. Dat doe je door <code>sudo</code> voor het commando te zetten. Het woord staat
+            voor <em>super user do</em>, ofwel: voer dit uit als de supergebruiker.</p>
+
+        <div class="terminal-window">
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                <span class="term-cmd">sudo du -sh /</span>
+            </div>
+            <pre class="term-out">[sudo] password for elm:</pre>
+        </div>
+
+        <p>De eerste keer vraagt <code>sudo</code> je eigen wachtwoord, en daarna onthoudt het dat een tiental
+            minuten. In Windows werkt de optie <strong>Run as administrator</strong>, die je met een rechtermuisklik
+            op een programma krijgt, op dezelfde manier: verhoogde rechten voor dat ene programma en niet voor je
+            hele sessie.</p>
+
+        <div class="info-box">
+            <div class="info-title remark">Je ziet niets bewegen terwijl je je wachtwoord typt</div>
+            <p>Er verschijnen geen sterretjes en de cursor blijft staan. Dat is met opzet zo gemaakt, want dan leest
+                iemand die naast je zit ook de lengte van je wachtwoord niet mee. Typ gewoon door en druk op
+                <kbd>ENTER</kbd>.</p>
+        </div>
+
+        <h2 id="permission-denied">Permission denied</h2>
+
+        <p>Loopt een commando tegen een map waar de gebruiker geen leesrecht op heeft, dan stopt het niet. Het slaat
+            die map over en schrijft er één regel over, en gaat verder met de rest. Bij een commando dat de hele
+            schijf overloopt, zoals <code>du -sh /</code> of <code>find /</code>, lopen die regels met tientallen
+            over je scherm.</p>
+
+        <div class="terminal-window">
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                <span class="term-cmd">du -sh /</span>
+            </div>
+            <pre class="term-out">du: cannot read directory '/run/sudo': Permission denied
+du: cannot read directory '/etc/ssl/private': Permission denied
+du: cannot read directory '/root': Permission denied
+...
+8,5G	/</pre>
+        </div>
+
+        <p>Onderaan staat wel degelijk een antwoord, maar het is te laag: de mappen die overgeslagen zijn, zitten er
+            niet in geteld. Zet je <code>sudo</code> ervoor, dan verdwijnen bijna alle meldingen en klopt het getal.
+            Een paar meldingen blijven staan, over mappen zoals <code>/run/user/1000/gvfs</code>: dat zijn
+            koppelingen die de grafische omgeving van de gebruiker zelf beheert, en daar komt zelfs root niet in.</p>
+
+        <h2 id="twee-roots">Twee dingen die root heten</h2>
+
+        <p>Het woord root komt in Linux op twee plaatsen voor, en ze hebben niets met elkaar te maken.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De gebruiker root en de root van de bestandsboom</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Wat</th>
+                        <th>Wat het is</th>
+                        <th>Waar je het ziet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>De <strong>root gebruiker</strong></td>
+                        <td>De gebruiker die alles mag</td>
+                        <td>In <code>sudo</code>, en als eigenaar in de uitvoer van <code>ls -alh</code></td>
+                    </tr>
+                    <tr>
+                        <td>De <strong>root</strong> van het bestandssysteem</td>
+                        <td>Het punt waar de mappenboom begint</td>
+                        <td>Als <code>/</code> aan het begin van elk absoluut pad</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>De persoonlijke map van de root gebruiker is trouwens niet <code>/</code> en ook niet
+            <code>/home/root</code>, maar <code>/root</code>. Dat is de map die in de uitvoer hierboven een
+            <em>Permission denied</em> oplevert.</p>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

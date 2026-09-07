@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Een commando en zijn opties</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Een commando en zijn opties</h1>
+
+        <p>Elk commando in de terminal is op dezelfde manier gebouwd, en wie die opbouw kent, hoeft van een nieuw
+            commando alleen de naam op te zoeken. Er staan er achttien in dit labo, en ze verschillen alleen in wat
+            ze doen.</p>
+
+        <h2 id="opbouw">De drie delen van een commando</h2>
+
+        <div class="terminal-window">
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                <span class="term-cmd">cp -r automatisering/ 2auto</span>
+            </div>
+        </div>
+
+        <ul>
+            <li><strong>De naam</strong> staat vooraan: <code>cp</code>. Die is meestal een afkorting van een
+                Engelse term, hier <em>copy</em>.</li>
+            <li><strong>De opties</strong> beginnen met een streepje en sturen bij hoe het commando zijn werk doet:
+                <code>-r</code>. Ze zijn er niet altijd, en laat je ze weg, dan doet het commando wat het standaard
+                doet.</li>
+            <li><strong>De argumenten</strong> staan achteraan en zeggen waarop het commando werkt:
+                <code>automatisering/</code> en <code>2auto</code>. Hoeveel er zijn en in welke volgorde ze staan,
+                verschilt per commando.</li>
+        </ul>
+
+        <p>Een optie heeft vaak twee schrijfwijzen: een korte met één streepje en één letter, en een lange met twee
+            streepjes en een woord. <code>-r</code> en <code>--recursive</code> zijn hetzelfde. De korte typ je
+            sneller, de lange leest een half jaar later beter terug in een script.</p>
+
+        <h2 id="combineren">Korte opties combineren</h2>
+
+        <p>Wil je van één commando meerdere korte opties tegelijk, dan mag je ze achter één streepje zetten. Deze
+            twee regels doen precies hetzelfde:</p>
+
+        <div class="terminal-window">
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                <span class="term-cmd">ls -a -l -h</span>
+            </div>
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                <span class="term-cmd">ls -alh</span>
+            </div>
+        </div>
+
+        <p>Bij lange opties kan dat niet: <code>--all --human-readable</code> blijven apart staan. Ook een optie die
+            zelf nog een waarde nodig heeft, zoals <code>-name todo.txt</code> bij <code>find</code>, laat je los
+            staan, want die waarde hoort erachter.</p>
+
+        <h2 id="help">Elk commando legt zichzelf uit</h2>
+
+        <p>Achter <code>--help</code> zit bij elk commando een lijst van zijn opties, met per optie een regel uitleg.
+            Dat is de snelste manier om na te gaan of het commando kan wat je nodig hebt.</p>
+
+        <div class="terminal-window">
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                <span class="term-cmd">cp --help</span>
+            </div>
+            <pre class="term-out">Usage: cp [OPTION]... [-T] SOURCE DEST
+  or:  cp [OPTION]... SOURCE... DIRECTORY
+  or:  cp [OPTION]... -t DIRECTORY SOURCE...
+Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+...
+<span class="highlight">  -R, -r, --recursive          copy directories recursively</span>
+...</pre>
+        </div>
+
+        <p>Bovenaan staat de <em>usage</em>: welke argumenten het commando verwacht en in welke volgorde. Wat tussen
+            rechte haken staat mag je weglaten, en de puntjes betekenen dat er meer van hetzelfde mag volgen.</p>
+
+        <h2 id="recursief">Recursief werken op een hele map</h2>
+
+        <p>De optie <code>-r</code> komt terug bij <code>cp</code> en bij <code>rm</code>, en betekent op allebei
+            hetzelfde: <strong>recursief</strong>, ofwel de map zelf en alles wat eronder staat, tot de laatste map
+            in de laatste map. Zonder die optie weigeren beide commando's een map aan te raken en werken ze alleen
+            op losse bestanden.</p>
+
+        <div class="info-box">
+            <div class="info-title warning">Wat je met rm -r wist, komt niet terug</div>
+            <p>Er is in de terminal geen prullenbak. Kijk voor je op <kbd>ENTER</kbd> drukt na op welke map je aan
+                het werken bent, bijvoorbeeld met <code>pwd</code>.</p>
+        </div>
+
+        <h2 id="wildcard">De wildcard *</h2>
+
+        <p>Wil je een commando op alle bestanden van een map uitvoeren, dan hoef je ze niet één voor één op te
+            noemen. Het sterretje staat voor elke naam die er staat, dus <code>automatisering/*</code> is elk bestand
+            in die map.</p>
+
+        <div class="terminal-window">
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                <span class="term-cmd">cp automatisering/* backup/</span>
+            </div>
+        </div>
+
+        <p>Het sterretje mag ook een deel van een naam vervangen: <code>*.txt</code> zijn alle bestanden waarvan de
+            naam op <code>.txt</code> eindigt. De terminal vult het zelf in voor het commando begint, dus
+            <code>cp</code> ziet gewoon een lijst van namen en merkt er niets van.</p>
+
+        <h2 id="pipe">De uitvoer doorgeven met een pipe</h2>
+
+        <p>Een commando schrijft zijn uitvoer standaard naar het scherm. Met het teken <code>|</code>, de
+            <strong>pipe</strong>, geef je die uitvoer in plaats daarvan door aan een tweede commando, dat er zijn
+            invoer van maakt. Zo bouw je uit twee eenvoudige commando's iets dat geen van beide alleen kan.</p>
+
+        <div class="terminal-window">
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                <span class="term-cmd">ps -e | more</span>
+            </div>
+        </div>
+
+        <p>Hier maakt <code>ps -e</code> een lijst van enkele honderden processen, en toont <code>more</code> die
+            lijst een scherm per keer in plaats van ze in één keer voorbij te laten lopen. Hetzelfde werkt op elk
+            commando dat te veel uitvoer geeft, bijvoorbeeld <code>ls -alh | more</code> in een grote map.</p>
+
+        <div class="info-box">
+            <div class="info-title tip">Waar de pipe op je toetsenbord zit</div>
+            <p>Op een Belgisch azerty-toetsenbord krijg je <code>|</code> met <kbd>AltGr</kbd>, rechts van de
+                spatiebalk, samen met de toets <kbd>&amp;</kbd> boven de <kbd>a</kbd>.</p>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

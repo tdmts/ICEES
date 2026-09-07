@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archiveren en afsluiten</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Archiveren en afsluiten</h1>
+
+        <p>De laatste twee commando's van de oefening: je pakt je werk in tot één bestand en pakt het weer uit, en
+            daarna zet je de machine op de juiste manier uit.</p>
+
+        <h2 id="tar-gz">Wat tar.gz is</h2>
+
+        <p>Waar Windows zip gebruikt, gebruikt Linux <strong>tar.gz</strong>. Die naam bestaat uit twee delen, want
+            er gebeuren twee dingen na elkaar.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De twee helften van een tar.gz bestand</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Deel</th>
+                        <th>Waar het voor staat</th>
+                        <th>Wat het doet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>tar</code></td>
+                        <td>tape archive</td>
+                        <td>Plakt mappen en bestanden achter elkaar tot één bestand. Het maakt niets kleiner</td>
+                    </tr>
+                    <tr>
+                        <td><code>gz</code></td>
+                        <td>gzip</td>
+                        <td>Comprimeert dat ene bestand met een vrij compressieformaat</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Zip doet die twee dingen in één keer en per bestand. Doordat gzip het samengeplakte geheel comprimeert,
+            haalt tar.gz meestal een kleiner resultaat bij veel kleine bestanden.</p>
+
+        <h2 id="inpakken">Een archief maken</h2>
+
+        <ol>
+            <li>
+                <p>Ga naar je eigen map en controleer dat <code>backup</code> er niet meer staat. Staat ze er nog,
+                    wis ze dan met <code>rm -r backup</code>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">cd ~</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Maak een gecomprimeerd archief van de map <code>automatisering</code>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">tar -cvzf backup.tar.gz automatisering</span>
+                    </div>
+                    <pre class="term-out">automatisering/
+automatisering/todo.txt
+automatisering/b.txt
+automatisering/c.txt
+automatisering/d.txt</pre>
+                </div>
+                <p>De vier letters achter het streepje zijn vier opties die je gecombineerd hebt.</p>
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered align-middle">
+                        <caption class="table-caption">De opties van tar -cvzf</caption>
+                        <thead class="table-header-custom">
+                            <tr>
+                                <th>Optie</th>
+                                <th>Waar ze voor staat</th>
+                                <th>Wat ze doet</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>-c</code></td>
+                                <td>create</td>
+                                <td>Maakt een nieuw archief aan</td>
+                            </tr>
+                            <tr>
+                                <td><code>-v</code></td>
+                                <td>verbose</td>
+                                <td>Toont elk bestand dat erin gaat. Dat is de lijst hierboven</td>
+                            </tr>
+                            <tr>
+                                <td><code>-z</code></td>
+                                <td>gzip</td>
+                                <td>Comprimeert het archief</td>
+                            </tr>
+                            <tr>
+                                <td><code>-f</code></td>
+                                <td>file</td>
+                                <td>Zegt dat de naam van het archief erachter komt. Deze optie staat altijd
+                                    laatst</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+            <li>
+                <p>Kijk of het bestand er staat.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 124K
+drwxr-x---  17 elm  elm  4.0K Sep  4 15:12 .
+drwxr-xr-x   3 root root 4.0K Aug 22 15:41 ..
+drwxrwxr-x   2 elm  elm  4.0K Sep  4 14:31 automatisering
+<span class="highlight">-rw-rw-r--   1 elm  elm   235 Sep  4 15:12 backup.tar.gz</span>
+-rw-------   1 elm  elm   105 Aug 27 11:03 .bash_history
+drwxr-xr-x   3 elm  elm  4.0K Sep  4 14:35 Desktop
+...</pre>
+                </div>
+                <p>Een map van vier bestanden past hier in 235 bytes, want drie van die bestanden zijn leeg.</p>
+            </li>
+        </ol>
+
+        <h2 id="uitpakken">Het archief weer uitpakken</h2>
+
+        <ol start="4">
+            <li>
+                <p>Maak een lege map en ga erin staan.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">mkdir backup</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">cd backup</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Pak het archief hier uit. Het staat een map hoger, dus je verwijst ernaar met
+                    <code>..</code>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/backup$</span>
+                        <span class="term-cmd">tar -xvzf ../backup.tar.gz</span>
+                    </div>
+                    <pre class="term-out">automatisering/
+automatisering/todo.txt
+automatisering/b.txt
+automatisering/c.txt
+automatisering/d.txt</pre>
+                </div>
+                <p>De enige optie die verschilt is de eerste: <code>-x</code> van <em>extract</em> in plaats van
+                    <code>-c</code> van <em>create</em>. De drie andere doen hetzelfde als daarnet.</p>
+            </li>
+            <li>
+                <p>Controleer wat er uitgekomen is.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/backup$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 12K
+drwxrwxr-x  3 elm elm 4.0K Sep  4 15:14 .
+drwxr-x--- 18 elm elm 4.0K Sep  4 15:14 ..
+drwxrwxr-x  2 elm elm 4.0K Sep  4 14:31 automatisering</pre>
+                </div>
+                <p>Er staat een map <code>automatisering</code> in, en niet meteen de vier bestanden. Dat komt
+                    doordat je bij het inpakken de map zelf meegegeven hebt, dus die zit mee in het archief.</p>
+            </li>
+            <li>
+                <p>Kijk in die map of alles er is.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/backup$</span>
+                        <span class="term-cmd">cd automatisering</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/backup/automatisering$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 12K
+drwxrwxr-x 2 elm elm 4.0K Sep  4 14:31 .
+drwxrwxr-x 3 elm elm 4.0K Sep  4 15:14 ..
+-rw-rw-r-- 1 elm elm    0 Sep  4 13:58 b.txt
+-rw-rw-r-- 1 elm elm    0 Sep  4 13:58 c.txt
+-rw-rw-r-- 1 elm elm    0 Sep  4 13:58 d.txt
+-rw-rw-r-- 1 elm elm   26 Sep  4 13:55 todo.txt</pre>
+                </div>
+                <p>Vier bestanden, met dezelfde datum als in de oorspronkelijke map: <code>tar</code> bewaart die
+                    mee. En het bestand heet <code>d.txt</code> en niet <code>a.txt</code>, want je hebt het
+                    hernoemd voor je het archief maakte.</p>
+            </li>
+        </ol>
+
+        <div class="info-box">
+            <div class="info-title tip">Kijken zonder uit te pakken</div>
+            <p>Met <code>tar -tvzf backup.tar.gz</code> krijg je de inhoudsopgave van een archief zonder dat er iets
+                op je schijf verschijnt. De <code>t</code> staat voor <em>table of contents</em>.</p>
+        </div>
+
+        <h2 id="heropstarten">De machine heropstarten</h2>
+
+        <p>Heropstarten en uitzetten doe je allebei met <code>shutdown</code>. Dat mag alleen de root gebruiker, dus
+            er hoort <code>sudo</code> voor.</p>
+
+        <ol start="8">
+            <li>
+                <p>Bekijk eerst welke opties het commando heeft.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">shutdown --help</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>De drie vormen die je gebruikt staan hieronder. Kies er een en start de machine opnieuw op.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo shutdown -r 5</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo shutdown -r now</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo reboot</span>
+                    </div>
+                </div>
+                <p>De eerste herstart binnen vijf minuten, de tweede meteen, en de derde is een kortere schrijfwijze
+                    van de tweede. Het getal is er voor een server waar nog iemand op werkt: die krijgt dan een
+                    waarschuwing voor de machine weggaat.</p>
+            </li>
+        </ol>
+
+        <h2 id="uitzetten">De machine uitzetten</h2>
+
+        <ol start="10">
+            <li>
+                <p>Meld je opnieuw aan, open een terminal en zet de machine volledig uit.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo shutdown -h now</span>
+                    </div>
+                </div>
+                <p>De <code>-h</code> staat voor <em>halt</em>: de machine gaat uit en komt niet terug.</p>
+            </li>
+        </ol>
+
+        <p>Je kan de virtuele machine ook vanuit VirtualBox zelf sluiten. Klik het venster weg en je krijgt drie
+            keuzes.</p>
+
+        <figure class="figure-zoom" style="max-width: 620px">
+            <img src="../../img/de-machine-uitzetten-shutdown-h-now-image-9399617.png" class="img-fluid"
+                alt="Het venster Sluit virtuele machine af van VirtualBox met de drie keuzes: de staat van de machine opslaan, het shutdown-signaal sturen, en de machine uitzetten">
+            <figcaption class="figure-caption">De drie manieren waarop VirtualBox een draaiende machine kan
+                sluiten</figcaption>
+        </figure>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Wat elke keuze met Ubuntu doet</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Keuze</th>
+                        <th>Wat er gebeurt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>De staat van de machine opslaan</td>
+                        <td>Het werkgeheugen gaat naar de schijf en de machine bevriest. Bij de volgende start staat
+                            alles open zoals je het achterliet</td>
+                    </tr>
+                    <tr>
+                        <td>Het shutdown-signaal sturen</td>
+                        <td>Ubuntu krijgt hetzelfde signaal als bij <code>shutdown -h now</code> en sluit zichzelf
+                            netjes af</td>
+                    </tr>
+                    <tr>
+                        <td>De machine uitzetten</td>
+                        <td>De stroom valt weg zonder dat Ubuntu iets merkt. Bestanden die op dat moment
+                            openstonden, kunnen beschadigd raken</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Daarmee is de begeleide oefening afgewerkt. De opdracht die je indient, staat in het document dat je bij
+            Opdracht kan downloaden.</p>
+    </div>
+
+    <script src="../../reference.js"></script>
+    <script src="../../back-link.js"></script>
+</body>
+
+</html>

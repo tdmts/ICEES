@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiekblad</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Spiekblad</h1>
+
+        <p>Elk commando van dit labo, elke toets en elke map in drie tabellen. Houd deze pagina open in een tweede
+            venster terwijl je in de terminal werkt.</p>
+
+        <h2 id="commandos">De commando's</h2>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De achttien commando's van dit labo</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Commando</th>
+                        <th>Waar het voor staat</th>
+                        <th>Wat het doet</th>
+                        <th>De opties die je hier gebruikt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>pwd</code></td>
+                        <td>print working directory</td>
+                        <td>Toont het volledige pad van de map waar je staat</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>ls</code></td>
+                        <td>list</td>
+                        <td>Toont wat er in een map staat</td>
+                        <td><code>-l</code> per regel met alle gegevens<br><code>-a</code> ook de verborgen
+                            namen<br><code>-h</code> groottes in K, M en G<br><code>-t</code> gesorteerd op
+                            tijd<br><code>-alh</code> de drie eerste samen</td>
+                    </tr>
+                    <tr>
+                        <td><code>cd</code></td>
+                        <td>change directory</td>
+                        <td>Verandert de map waar je staat</td>
+                        <td><code>cd ~</code> naar je eigen map<br><code>cd ..</code> één niveau
+                            hoger<br><code>cd /etc</code> naar een absoluut pad</td>
+                    </tr>
+                    <tr>
+                        <td><code>clear</code></td>
+                        <td></td>
+                        <td>Maakt het venster leeg. Je geschiedenis blijft staan</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>history</code></td>
+                        <td></td>
+                        <td>Toont de commando's die je ingegeven hebt, genummerd</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>mkdir</code></td>
+                        <td>make directory</td>
+                        <td>Maakt een map aan</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>nano</code></td>
+                        <td></td>
+                        <td>Opent een bestand in een eenvoudige teksteditor, en maakt het aan als het nog niet
+                            bestaat</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>vi</code></td>
+                        <td></td>
+                        <td>Doet hetzelfde, en staat op elke machine waar nano ontbreekt</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>cp</code></td>
+                        <td>copy</td>
+                        <td>Kopieert een bestand of een map naar een tweede plaats</td>
+                        <td><code>-r</code> voor een map en alles eronder<br><code>*</code> voor alle bestanden van
+                            een map</td>
+                    </tr>
+                    <tr>
+                        <td><code>mv</code></td>
+                        <td>move</td>
+                        <td>Verplaatst of hernoemt. Binnen dezelfde map is het een hernoeming, naar een ander pad
+                            een verplaatsing</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>rm</code></td>
+                        <td>remove</td>
+                        <td>Wist een bestand. Er is geen prullenbak</td>
+                        <td><code>-r</code> voor een map en alles eronder</td>
+                    </tr>
+                    <tr>
+                        <td><code>du</code></td>
+                        <td>disk usage</td>
+                        <td>Toont hoeveel schijfruimte een map inneemt</td>
+                        <td><code>-s</code> ofwel <code>--summarize</code>, één totaal in plaats van een regel per
+                            map<br><code>-h</code> in K, M en G</td>
+                    </tr>
+                    <tr>
+                        <td><code>sudo</code></td>
+                        <td>super user do</td>
+                        <td>Voert het commando erachter uit als root. Vraagt je eigen wachtwoord</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>find</code></td>
+                        <td></td>
+                        <td>Zoekt bestanden vanaf een startmap en in alles eronder</td>
+                        <td><code>-name</code> op bestandsnaam<br><code>-amin</code> op wanneer het bestand voor
+                            het laatst gelezen is</td>
+                    </tr>
+                    <tr>
+                        <td><code>ps</code></td>
+                        <td>process status</td>
+                        <td>Toont de processen zoals ze draaien op het moment dat je het intypt</td>
+                        <td><code>-e</code> alle processen van de machine in plaats van alleen die van jou</td>
+                    </tr>
+                    <tr>
+                        <td><code>more</code></td>
+                        <td></td>
+                        <td>Toont lange uitvoer een scherm per keer</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>|</code></td>
+                        <td>pipe</td>
+                        <td>Geeft de uitvoer van het linkse commando door als invoer van het rechtse</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>tar</code></td>
+                        <td>tape archive</td>
+                        <td>Bundelt mappen en bestanden tot één archiefbestand, en pakt het weer uit</td>
+                        <td><code>-cvzf</code> maken en comprimeren<br><code>-xvzf</code>
+                            uitpakken<br><code>-tvzf</code> de inhoud tonen zonder uit te pakken</td>
+                    </tr>
+                    <tr>
+                        <td><code>shutdown</code></td>
+                        <td></td>
+                        <td>Zet de machine uit of start ze opnieuw op. Vraagt <code>sudo</code></td>
+                        <td><code>-h now</code> nu uitzetten<br><code>-r now</code> nu
+                            heropstarten<br><code>-r 5</code> heropstarten over vijf minuten</td>
+                    </tr>
+                    <tr>
+                        <td><code>reboot</code></td>
+                        <td></td>
+                        <td>Kortere schrijfwijze van <code>shutdown -r now</code>. Vraagt <code>sudo</code></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>--help</code></td>
+                        <td></td>
+                        <td>Geen commando maar een optie die bij elk commando werkt, en zijn opties opsomt</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="toetsen">De toetsen</h2>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">In de terminal</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Toets</th>
+                        <th>Wat ze doet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><kbd>TAB</kbd></td>
+                        <td>Vult de naam aan die je begonnen bent te typen</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>pijl omhoog</kbd> en <kbd>pijl omlaag</kbd></td>
+                        <td>Halen een vorig commando terug, dat je nog kan aanpassen</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>CTRL+C</kbd></td>
+                        <td>Breekt af wat je getypt hebt, of stopt een commando dat bezig is</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>AltGr</kbd> + <kbd>&amp;</kbd></td>
+                        <td>Geeft het teken <code>|</code> op een Belgisch azerty-toetsenbord</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">In more, in nano en in vi</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Waar</th>
+                        <th>Toets</th>
+                        <th>Wat ze doet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="3"><code>more</code></td>
+                        <td><kbd>ENTER</kbd></td>
+                        <td>Eén regel verder</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>spatie</kbd></td>
+                        <td>Eén scherm verder</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>q</kbd></td>
+                        <td>Stoppen</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2"><code>nano</code></td>
+                        <td><kbd>CTRL+O</kbd> en dan <kbd>ENTER</kbd></td>
+                        <td>Opslaan</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>CTRL+X</kbd></td>
+                        <td>Afsluiten</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5"><code>vi</code></td>
+                        <td><kbd>a</kbd></td>
+                        <td>Beginnen met typen, achter de cursor</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>ESC</kbd></td>
+                        <td>Stoppen met typen, zodat je weer kan navigeren</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>:w</kbd></td>
+                        <td>Opslaan</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>:wq</kbd></td>
+                        <td>Opslaan en afsluiten</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>:q!</kbd></td>
+                        <td>Afsluiten zonder op te slaan</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="mappen">De mappen</h2>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Waar in Linux staat wat in Windows onder C: staat</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Windows</th>
+                        <th>Linux</th>
+                        <th>Wat erin staat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>C:\</code></td>
+                        <td><code>/</code></td>
+                        <td>Het startpunt van de boom</td>
+                    </tr>
+                    <tr>
+                        <td><code>C:\Users</code></td>
+                        <td><code>/home</code></td>
+                        <td>De persoonlijke mappen. Die van jou is <code>/home/elm</code>, ofwel <code>~</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>C:\Program Files</code></td>
+                        <td><code>/usr</code></td>
+                        <td>De programma's die erbij geïnstalleerd zijn</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4"><code>C:\Windows</code></td>
+                        <td><code>/bin</code> en <code>/sbin</code></td>
+                        <td>De hulpprogramma's, voor gebruikers en voor beheerders</td>
+                    </tr>
+                    <tr>
+                        <td><code>/etc</code></td>
+                        <td>De configuratiebestanden</td>
+                    </tr>
+                    <tr>
+                        <td><code>/lib</code> en <code>/lib64</code></td>
+                        <td>De gedeelde bibliotheken</td>
+                    </tr>
+                    <tr>
+                        <td><code>/boot</code></td>
+                        <td>De opstartbestanden</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><code>/dev</code></td>
+                        <td>De hardware, elk stuk als een bestand</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><code>/proc</code></td>
+                        <td>Systeeminformatie, zoals het gebruik van de processor en van het werkgeheugen</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><code>/mnt</code></td>
+                        <td>Waar bijkomende bestandssystemen aangekoppeld worden</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><code>/tmp</code></td>
+                        <td>Tijdelijke bestanden</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><code>/var</code></td>
+                        <td>Gegevens die tijdens het draaien groeien, waaronder de logbestanden</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

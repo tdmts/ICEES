@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De terminal</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>De terminal</h1>
+
+        <p>De terminal is een venster waarin je een commando typt en het antwoord terugleest. Er zijn geen knoppen,
+            geen keuzerondjes en geen vinkvakjes: alles gebeurt met tekst. Ubuntu heeft daarnaast een gewoon
+            bureaublad met vensters, maar veel van wat je als beheerder doet, staat alleen in de terminal, en op een
+            server of een embedded system is er vaak niets anders.</p>
+
+        <figure class="figure-zoom" style="max-width: 620px">
+            <img src="../../../img/de-terminal-starten-image-9399484.png" class="img-fluid"
+                alt="Een leeg terminalvenster van Ubuntu met bovenaan de titelbalk en links de prompt elm@elm-VirtualBox:~$">
+            <figcaption class="figure-caption">Een terminal die net geopend is, met de prompt en verder een leeg
+                venster</figcaption>
+        </figure>
+
+        <h2 id="prompt">De prompt lezen</h2>
+
+        <p>De regel waar je op typt heet de <strong>prompt</strong>, en ze zegt vier dingen voor je één toets hebt
+            ingedrukt.</p>
+
+        <div class="terminal-window">
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+            </div>
+        </div>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De vier delen van de prompt</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Deel</th>
+                        <th>Wat het zegt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>elm</code></td>
+                        <td>De gebruiker onder wiens naam de commando's uitgevoerd worden</td>
+                    </tr>
+                    <tr>
+                        <td><code>elm-VirtualBox</code></td>
+                        <td>De naam van de machine. Werk je op meerdere machines tegelijk, dan zie je hieraan op
+                            welke je typt</td>
+                    </tr>
+                    <tr>
+                        <td><code>~</code></td>
+                        <td>De map waar je op dit moment staat. De tilde is de persoonlijke map van de gebruiker,
+                            hier <code>/home/elm</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>$</code></td>
+                        <td>Je werkt als gewone gebruiker. Werk je als root, dan staat er <code>#</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Het derde deel verandert mee terwijl je werkt. Ga je naar een map onder je persoonlijke map, dan groeit
+            de tilde aan tot <code>~/automatisering</code>, en sta je ergens anders op de schijf, dan staat het
+            volledige pad er: <code>/home</code> of <code>/etc</code>. Zo weet je waar een commando zonder pad
+            terechtkomt zonder er iets voor te moeten intypen.</p>
+
+        <h2 id="hoofdletters">Hoofdletters, spaties en streepjes</h2>
+
+        <p>Een commando dat je bijna juist typt, werkt niet bijna. Er zijn drie manieren waarop dat misgaat, en ze
+            leveren alle drie een foutmelding op die niet zegt wat er scheelt.</p>
+
+        <p><strong>Hoofdletters tellen mee.</strong> <code>ls</code> is een commando en <code>LS</code> bestaat
+            niet. Dat geldt niet alleen voor commando's maar ook voor namen van bestanden en mappen: in Linux zijn
+            <code>verslag1.doc</code> en <code>VERSLAG1.doc</code> twee verschillende bestanden, die naast elkaar in
+            dezelfde map kunnen staan. In Windows kan dat niet.</p>
+
+        <p><strong>Spaties scheiden.</strong> De terminal knipt je regel op de spaties in stukken, en het eerste
+            stuk is de naam van het commando. <code>ls -alh</code> is dus het commando <code>ls</code> met
+            <code>-alh</code> erachter, terwijl <code>ls-alh</code> een commando met die volledige naam zoekt en
+            niets vindt. Om dezelfde reden zet je een bestandsnaam met een spatie erin tussen aanhalingstekens.</p>
+
+        <p><strong>Streepjes staan er niet toevallig.</strong> Een optie begint met een koppelteken, en dat is het
+            gewone koppelteken van je toetsenbord. Kopieer je een commando uit een tekstverwerker, dan is dat teken
+            soms stilzwijgend vervangen door een langer streepje, en dan faalt het commando terwijl het er goed
+            uitziet.</p>
+
+        <div class="info-box">
+            <div class="info-title tip">Laat de terminal typen</div>
+            <p>Typ de eerste letters van een map of een bestand en druk op <kbd>TAB</kbd>. Bestaat er maar één naam
+                die zo begint, dan vult de terminal de rest aan. Dat spaart tijd en het maakt een tikfout in een
+                naam onmogelijk.</p>
+        </div>
+
+        <h2 id="geschiedenis">Wat je al getypt hebt</h2>
+
+        <p>De terminal houdt de commando's bij die je ingegeven hebt. Met <kbd>pijl omhoog</kbd> en
+            <kbd>pijl omlaag</kbd> loop je door die lijst, en het commando dat verschijnt kan je aanpassen voor je
+            op <kbd>ENTER</kbd> drukt. Een lang commando waar één optie aan ontbrak, haal je zo terug in plaats van
+            het opnieuw te typen. Wil je de hele lijst zien, dan geef je het commando <code>history</code>.</p>
+
+        <p>Staat er een commando op je regel dat je toch niet wil uitvoeren, dan breek je het af met
+            <kbd>CTRL+C</kbd>. Dezelfde toetsencombinatie stopt ook een commando dat al bezig is en te lang duurt.
+            Met <code>clear</code> maak je het venster leeg; wat je getypt hebt blijft dan gewoon in de geschiedenis
+            staan.</p>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

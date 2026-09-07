@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verplaatsen en verwijderen</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Verplaatsen en verwijderen</h1>
+
+        <p>Bij <code>cp</code> blijft het origineel staan en komt er een tweede exemplaar bij. Bij <code>mv</code>
+            verhuist het bestand en blijft er één exemplaar over, en bij <code>rm</code> blijft er niets over.</p>
+
+        <h2 id="hernoemen">Een bestand hernoemen</h2>
+
+        <p><code>mv</code> staat voor <em>move</em>. Je zet er twee dingen achter, net als bij <code>cp</code>: wat
+            je verplaatst en waarheen. Geef je als bestemming een naam in dezelfde map, dan is het resultaat een
+            hernoeming.</p>
+
+        <ol>
+            <li>
+                <p>Ga naar <code>automatisering</code> en hernoem <code>a.txt</code> naar <code>d.txt</code>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">cd ~/automatisering</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/automatisering$</span>
+                        <span class="term-cmd">mv a.txt d.txt</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/automatisering$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 12K
+drwxrwxr-x  2 elm elm 4.0K Sep  4 14:31 .
+drwxr-x--- 21 elm elm 4.0K Sep  4 14:16 ..
+-rw-rw-r--  1 elm elm    0 Sep  4 13:58 b.txt
+-rw-rw-r--  1 elm elm    0 Sep  4 13:58 c.txt
+<span class="highlight">-rw-rw-r--  1 elm elm    0 Sep  4 13:58 d.txt</span>
+-rw-rw-r--  1 elm elm   26 Sep  4 13:55 todo.txt</pre>
+                </div>
+                <p><code>a.txt</code> staat er niet meer bij: er is geen tweede bestand gemaakt, de naam is
+                    veranderd.</p>
+            </li>
+            <li>
+                <p>Ga naar <code>2auto</code>, de kopie die je op de vorige pagina gemaakt hebt, en kijk of de naam
+                    daar mee veranderd is.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/automatisering$</span>
+                        <span class="term-cmd">cd ../2auto</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/2auto$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 12K
+drwxrwxr-x  2 elm elm 4.0K Sep  4 14:32 .
+drwxr-x--- 21 elm elm 4.0K Sep  4 14:16 ..
+<span class="highlight">-rw-rw-r--  1 elm elm    0 Sep  4 14:16 a.txt</span>
+-rw-rw-r--  1 elm elm    0 Sep  4 14:16 b.txt
+-rw-rw-r--  1 elm elm    0 Sep  4 14:16 c.txt
+-rw-rw-r--  1 elm elm   26 Sep  4 14:16 todo.txt</pre>
+                </div>
+                <p>Daar heet het bestand nog <code>a.txt</code>. Een kopie is vanaf het moment dat ze gemaakt is een
+                    los bestand, en wat je met het origineel doet, laat haar onberoerd.</p>
+            </li>
+        </ol>
+
+        <h2 id="verplaatsen">Een map hernoemen en verplaatsen</h2>
+
+        <ol start="3">
+            <li>
+                <p>Ga naar je eigen map en hernoem <code>2auto</code> naar <code>3auto</code>. Voor een map werkt
+                    <code>mv</code> hetzelfde als voor een bestand, en zonder <code>-r</code>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">cd ~</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">mv 2auto 3auto</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 136K
+drwxr-x---  21 elm  elm  4.0K Sep  4 14:34 .
+drwxr-xr-x   3 root root 4.0K Aug 22 15:41 ..
+<span class="highlight">drwxrwxr-x   2 elm  elm  4.0K Sep  4 14:32 3auto</span>
+drwxrwxr-x   2 elm  elm  4.0K Sep  4 14:31 automatisering
+drwxrwxr-x   2 elm  elm  4.0K Sep  4 14:29 backup
+drwxr-xr-x   2 elm  elm  4.0K Sep  4 13:54 Desktop
+drwxrwxr-x   2 elm  elm  4.0K Sep  4 13:56 elektromechanica
+drwxrwxr-x   2 elm  elm  4.0K Sep  4 13:54 klimatisering
+...</pre>
+                </div>
+            </li>
+            <li>
+                <p>Verplaats de map nu wel: geef als bestemming een pad naar een andere map.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">mv 3auto /home/elm/Desktop/</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Controleer met <code>ls -alh</code> dat <code>3auto</code> weg is uit <code>/home/elm</code>, en
+                    kijk daarna op je bureaublad.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../img/een-map-of-bestand-verplaatsen-mv-2-image-9399572.png" class="img-fluid"
+                        alt="Het venster van Files op Desktop met de map 3auto en het bestand todo.txt, en rechts hetzelfde op het bureaublad zelf, allebei met een rode pijl aangewezen">
+                </figure>
+                <p>Dat is dus wat <code>mv</code> doet: blijft de bestemming in dezelfde map, dan hernoem je, en
+                    wijst ze naar een ander pad, dan verplaats je.</p>
+            </li>
+        </ol>
+
+        <h2 id="rm-bestand">Een bestand wissen</h2>
+
+        <p><code>rm</code> staat voor <em>remove</em>.</p>
+
+        <ol start="6">
+            <li>
+                <p>Kopieer eerst de inhoud van <code>backup</code> naar <code>elektromechanica</code>, zodat daar
+                    iets in staat om te wissen. Gebruik de wildcard.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">cp backup/* elektromechanica/</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">cd ~/elektromechanica</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/elektromechanica$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 12K
+drwxrwxr-x  2 elm elm 4.0K Sep  4 14:41 .
+drwxr-x--- 20 elm elm 4.0K Sep  4 14:35 ..
+-rw-rw-r--  1 elm elm    0 Sep  4 14:41 a.txt
+-rw-rw-r--  1 elm elm    0 Sep  4 14:41 b.txt
+-rw-rw-r--  1 elm elm    0 Sep  4 14:41 c.txt
+-rw-rw-r--  1 elm elm   26 Sep  4 14:41 todo.txt</pre>
+                </div>
+            </li>
+            <li>
+                <p>Wis <code>todo.txt</code> en controleer het resultaat.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/elektromechanica$</span>
+                        <span class="term-cmd">rm todo.txt</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/elektromechanica$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                </div>
+            </li>
+        </ol>
+
+        <h2 id="rm-map">Een map wissen</h2>
+
+        <ol start="8">
+            <li>
+                <p>Ga naar je eigen map en probeer de map <code>elektromechanica</code> op dezelfde manier te
+                    wissen.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">cd ~</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">rm elektromechanica/</span>
+                    </div>
+                    <pre class="term-out">rm: cannot remove 'elektromechanica/': Is a directory</pre>
+                </div>
+                <p>De melding zegt wat er scheelt: het is een map. <code>rm</code> werkt op bestanden, en het weigert
+                    elke map, of er nu iets in staat of niet. Wil je de map toch weg, dan gebruik je
+                    <code>-r</code>, dezelfde optie als bij <code>cp</code>.</p>
+            </li>
+            <li>
+                <p>Wis de map recursief.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">rm -r elektromechanica</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                </div>
+            </li>
+        </ol>
+
+        <div class="info-box">
+            <div class="info-title warning">Wat rm wist, komt niet terug</div>
+            <p>Er is in de terminal geen prullenbak: <code>rm -r</code> haalt de map weg met alles wat eronder
+                stond, en er is geen weg terug. Voer eerst <code>pwd</code> en <code>ls -alh</code> uit, zodat je
+                zeker weet op welke map je aan het werken bent.</p>
+        </div>
+
+        <h2 id="opruimen">Zelf opruimen</h2>
+
+        <ol start="10">
+            <li>
+                <p>Voer <code>ls -alh</code> uit op <code>/home/elm</code>. Je ziet er onder andere de map
+                    <code>klimatisering</code> staan.</p>
+            </li>
+            <li>
+                <p>Wis de map <code>klimatisering</code> met haar inhoud, met één commando.</p>
+            </li>
+            <li>
+                <p>Wis de map <code>backup</code> met haar inhoud, ook met één commando.</p>
+            </li>
+            <li>
+                <p>Voer nog eens <code>ls -alh</code> uit op <code>/home/elm</code>. <code>klimatisering</code> en
+                    <code>backup</code> staan er niet meer bij, en <code>automatisering</code> wel.</p>
+            </li>
+        </ol>
+    </div>
+
+    <script src="../../reference.js"></script>
+    <script src="../../back-link.js"></script>
+</body>
+
+</html>

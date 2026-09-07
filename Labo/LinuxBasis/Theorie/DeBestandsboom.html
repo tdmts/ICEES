@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De bestandsboom</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>De bestandsboom</h1>
+
+        <p>Een map is een verzameling bestanden, en in dit labo wordt ze ook <strong>directory</strong> genoemd. Die
+            twee woorden betekenen hetzelfde en je komt ze allebei tegen, in de namen van de commando's het meest:
+            <code>mkdir</code> is <em>make directory</em> en <code>cd</code> is <em>change directory</em>.</p>
+
+        <h2 id="hierarchie">Alles hangt aan een enkel punt</h2>
+
+        <p>Linux ordent zijn mappen in een boom die op één plaats begint. Dat startpunt heet de <strong>root</strong>,
+            de wortel, en wordt geschreven als een enkele schuine streep <code>/</code>. Elke map en elk bestand op
+            de machine hangt daar rechtstreeks of onrechtstreeks onder.</p>
+
+        <pre class="code-wrapper">/
+|-- bin        hulpprogramma's voor gebruikers
+|-- dev        de hardware van de machine
+|-- etc        configuratiebestanden
+|-- home       de persoonlijke mappen
+|   `-- elm    de map van gebruiker elm, ofwel ~
+|-- usr        de programma's die erbij geïnstalleerd zijn
+`-- var        logbestanden en gegevens die groeien</pre>
+
+        <p>Windows doet dat anders: daar begint elke partitie aan haar eigen letter, dus <code>C:\</code> en
+            <code>D:\</code> zijn twee bomen naast elkaar. In Linux is er één boom, en een tweede schijf verschijnt
+            als een map ergens in die boom, meestal onder <code>/mnt</code>. Je kan <code>/</code> dus vergelijken
+            met <code>C:\</code>, zolang je erbij houdt dat er in Linux geen tweede letter naast staat.</p>
+
+        <h2 id="thuismap">De home directory en de tilde</h2>
+
+        <p>Elke gebruiker heeft een eigen map onder <code>/home</code>, met zijn gebruikersnaam als naam. Voor de
+            gebruiker <code>elm</code> is dat <code>/home/elm</code>. Daar staan zijn documenten, zijn afbeeldingen
+            en zijn instellingen, en het is de enige plaats op de machine waar hij zonder extra rechten mag
+            schrijven.</p>
+
+        <p>Die map komt zo vaak voor dat er een verkorting voor bestaat: het teken <code>~</code>, de
+            <strong>tilde</strong>. Waar je <code>~</code> typt, leest de terminal <code>/home/elm</code>, dus
+            <code>~/Desktop</code> is <code>/home/elm/Desktop</code>. In de prompt staat om dezelfde reden
+            <code>~</code> in plaats van het volledige pad zolang je in je eigen map zit.</p>
+
+        <h2 id="paden">Absoluut en relatief, en de twee punten</h2>
+
+        <p>Een <strong>absoluut pad</strong> begint met <code>/</code> en beschrijft de weg vanaf de root:
+            <code>/home/elm/automatisering</code> wijst altijd dezelfde map aan, waar je ook staat. Een
+            <strong>relatief pad</strong> begint niet met een schuine streep en vertrekt vanaf de map waar je nu
+            bent: sta je in <code>/home/elm</code>, dan wijst <code>automatisering</code> dezelfde map aan.</p>
+
+        <p>Twee namen komen in elke map voor en verwijzen naar de boom zelf.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De twee namen die in elke map staan</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Naam</th>
+                        <th>Waarnaar ze verwijst</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>.</code></td>
+                        <td>De map waar je nu staat. <code>find . -name todo.txt</code> zoekt vanaf hier</td>
+                    </tr>
+                    <tr>
+                        <td><code>..</code></td>
+                        <td>De bovenliggende map. <code>cd ..</code> brengt je één niveau hoger</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-box">
+            <div class="info-title warning">De schuine streep helt de andere kant op</div>
+            <p>Windows scheidt de delen van een pad met een backslash, <code>C:\Users\elm</code>. Linux gebruikt de
+                gewone schuine streep, <code>/home/elm</code>. En omdat namen in Linux hoofdlettergevoelig zijn,
+                zijn <code>/home/elm/verslag1.doc</code> en <code>/home/elm/VERSLAG1.doc</code> twee verschillende
+                bestanden die naast elkaar in dezelfde map kunnen staan.</p>
+        </div>
+
+        <h2 id="mappen-windows-linux">De mappen van Windows naast die van Linux</h2>
+
+        <p>In Windows staan de bestanden van het besturingssysteem onder één map. Linux verdeelt ze over een aantal
+            mappen die elk hun eigen soort inhoud dragen, en die verdeling is op elke distributie dezelfde.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Vier bekende mappen van Windows en hun tegenhanger</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Windows</th>
+                        <th>Wat er staat</th>
+                        <th>Linux</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>C:\</code></td>
+                        <td>Het startpunt van de boom</td>
+                        <td><code>/</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>C:\Users</code></td>
+                        <td>De persoonlijke mappen van de gebruikers</td>
+                        <td><code>/home</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>C:\Program Files</code></td>
+                        <td>De programma's die erbij geïnstalleerd zijn</td>
+                        <td><code>/usr</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>C:\Windows</code></td>
+                        <td>Het besturingssysteem zelf</td>
+                        <td><code>/bin</code>, <code>/sbin</code>, <code>/lib</code> en <code>/etc</code> samen</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>De laatste rij heeft geen enkele tegenhanger, en daar zit het verschil dat de indeling van Linux op het
+            eerste zicht omslachtiger maakt. Waar Windows alles wat bij het systeem hoort onder
+            <code>C:\Windows</code> zet, splitst Linux het naar soort: de programma's staan apart van hun
+            instellingen, en die staan apart van hun bibliotheken.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De mappen die je onder / tegenkomt</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Map</th>
+                        <th>Wat erin staat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/bin</code></td>
+                        <td>De meest noodzakelijke hulpprogramma's voor gebruikers</td>
+                    </tr>
+                    <tr>
+                        <td><code>/sbin</code></td>
+                        <td>De meest noodzakelijke hulpprogramma's voor beheerders</td>
+                    </tr>
+                    <tr>
+                        <td><code>/boot</code></td>
+                        <td>De bestanden die nodig zijn om op te starten</td>
+                    </tr>
+                    <tr>
+                        <td><code>/dev</code></td>
+                        <td>Speciale bestanden waarmee je de hardware aanspreekt</td>
+                    </tr>
+                    <tr>
+                        <td><code>/etc</code></td>
+                        <td>Configuratiebestanden van het systeem en van de programma's</td>
+                    </tr>
+                    <tr>
+                        <td><code>/home</code></td>
+                        <td>De persoonlijke mappen van de gebruikers</td>
+                    </tr>
+                    <tr>
+                        <td><code>/lib</code> en <code>/lib64</code></td>
+                        <td>Bibliotheken die programma's onderling delen</td>
+                    </tr>
+                    <tr>
+                        <td><code>/mnt</code></td>
+                        <td>Waar bijkomende bestandssystemen aangekoppeld worden</td>
+                    </tr>
+                    <tr>
+                        <td><code>/proc</code></td>
+                        <td>Systeeminformatie in de vorm van bestanden, zoals het gebruik van de processor en van
+                            het werkgeheugen</td>
+                    </tr>
+                    <tr>
+                        <td><code>/tmp</code></td>
+                        <td>Tijdelijke bestanden</td>
+                    </tr>
+                    <tr>
+                        <td><code>/usr</code></td>
+                        <td>De programma's die erbij geïnstalleerd zijn</td>
+                    </tr>
+                    <tr>
+                        <td><code>/var</code></td>
+                        <td>Gegevens die tijdens het draaien groeien, waaronder de logbestanden</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="ls-lezen">Een regel van ls -alh lezen</h2>
+
+        <p>Het commando <code>ls</code> toont de namen die in een map staan. Met de opties <code>-alh</code> erbij
+            komt er per naam een hele regel gegevens, en die regel beantwoordt de meeste vragen die je over een
+            bestand hebt.</p>
+
+        <div class="terminal-window">
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                <span class="term-cmd">ls -alh</span>
+            </div>
+            <pre class="term-out">total 116K
+drwxr-x---  16 elm  elm  4.0K Sep  4 12:36 <span class="highlight">.</span>
+drwxr-xr-x   3 root root 4.0K Aug 22 15:41 <span class="highlight">..</span>
+-rw-------   1 elm  elm   105 Aug 27 11:03 .bash_history
+-rw-r--r--   1 elm  elm  3.7K Mar 31 10:41 .bashrc
+drwxr-xr-x   2 elm  elm  4.0K Aug 27 10:21 Desktop
+drwxr-xr-x   2 elm  elm  4.0K Aug 27 10:21 Documents
+-rw-r--r--   1 elm  elm   807 Mar 31 10:41 .profile</pre>
+        </div>
+
+        <p>Van links naar rechts staan er zeven kolommen.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De kolommen van ls -alh</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Kolom</th>
+                        <th>Voorbeeld</th>
+                        <th>Wat het zegt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Soort en rechten</td>
+                        <td><code>drwxr-xr-x</code></td>
+                        <td>Het eerste teken is een <code>d</code> voor een map en een <code>-</code> voor een
+                            bestand. De negen tekens erna zijn de rechten</td>
+                    </tr>
+                    <tr>
+                        <td>Aantal verwijzingen</td>
+                        <td><code>2</code></td>
+                        <td>Hoeveel namen naar dezelfde inhoud wijzen</td>
+                    </tr>
+                    <tr>
+                        <td>Eigenaar</td>
+                        <td><code>elm</code></td>
+                        <td>De gebruiker aan wie het bestand toebehoort</td>
+                    </tr>
+                    <tr>
+                        <td>Groep</td>
+                        <td><code>elm</code></td>
+                        <td>De groep die er de groepsrechten op heeft</td>
+                    </tr>
+                    <tr>
+                        <td>Grootte</td>
+                        <td><code>4.0K</code></td>
+                        <td>Door de optie <code>-h</code> in K, M of G in plaats van in bytes</td>
+                    </tr>
+                    <tr>
+                        <td>Datum</td>
+                        <td><code>Sep 4 12:36</code></td>
+                        <td>Wanneer de inhoud voor het laatst gewijzigd is</td>
+                    </tr>
+                    <tr>
+                        <td>Naam</td>
+                        <td><code>Desktop</code></td>
+                        <td>De naam van het bestand of van de map</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>De twee gemarkeerde regels zijn de map zelf en haar bovenliggende map, en ze staan er alleen door de
+            optie <code>-a</code>. Diezelfde optie toont ook de namen die met een punt beginnen, zoals
+            <code>.bashrc</code>. Dat is namelijk wat een verborgen bestand in Linux is: een bestand waarvan de naam
+            met een punt begint.</p>
+
+        <p>Wat de negen tekens van de rechten precies zeggen, heb je in dit labo nog niet nodig. De eerste letter van
+            die kolom wel: staat er een <code>d</code>, dan is het een map, en dan vragen <code>cp</code> en
+            <code>rm</code> de optie <code>-r</code>.</p>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

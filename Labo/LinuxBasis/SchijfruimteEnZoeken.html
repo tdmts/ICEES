@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schijfruimte bekijken en bestanden zoeken</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Schijfruimte bekijken en bestanden zoeken</h1>
+
+        <p>Twee commando's die de hele schijf overlopen, en die je daardoor allebei tegen dezelfde grens brengen: er
+            staan mappen op de machine waar je als gewone gebruiker niet in mag kijken.</p>
+
+        <h2 id="du">De grootte van een map</h2>
+
+        <p>Met <code>du</code>, van <em>disk usage</em>, vraag je op hoeveel schijfruimte een map inneemt. Je
+            gebruikt het met twee opties: <code>-s</code>, ofwel <code>--summarize</code>, geeft één totaal in plaats
+            van een regel per submap, en <code>-h</code> schrijft dat totaal in K, M of G.</p>
+
+        <ol>
+            <li>
+                <p>Vraag op hoeveel er op de hele schijf in gebruik is. Dat duurt even, want elk bestand op de
+                    machine wordt bekeken en opgeteld.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">du -sh /</span>
+                    </div>
+                    <pre class="term-out">du: cannot read directory '/run/cups/certs': Permission denied
+du: cannot read directory '/run/sudo': Permission denied
+du: cannot read directory '/etc/ssl/private': Permission denied
+du: cannot read directory '/root': Permission denied
+du: cannot read directory '/sys/kernel/debug': Permission denied
+...
+8,5G	/</pre>
+                </div>
+            </li>
+        </ol>
+
+        <p>Het getal onderaan staat er wel, en de regels erboven zeggen waarom het te laag is. Je vraagt als gewone
+            gebruiker de grootte op van mappen waar je geen leesrecht op hebt, en die worden overgeslagen en niet
+            meegeteld. Wat dat leesrecht is, staat bij
+            <a href="Theorie/GebruikersEnRechten.html#permission-denied" target="_blank" rel="noopener">Gebruikers
+                en rechten</a>.</p>
+
+        <ol start="2">
+            <li>
+                <p>Vraag nu de grootte van je eigen map op. Daar heb je wel alle rechten, dus die uitvoer is één
+                    regel.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">du -sh /home/elm</span>
+                    </div>
+                </div>
+            </li>
+        </ol>
+
+        <h2 id="sudo">Hetzelfde commando met sudo</h2>
+
+        <p>Met <code>sudo</code> ervoor, van <em>super user do</em>, draait het commando erachter als de root
+            gebruiker, en die mag overal in kijken.</p>
+
+        <ol start="3">
+            <li>
+                <p>Voer <code>du</code> opnieuw uit, nu met verhoogde rechten. Je vult je eigen wachtwoord in.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo du -sh /</span>
+                    </div>
+                    <pre class="term-out">[sudo] password for elm:</pre>
+                </div>
+            </li>
+        </ol>
+
+        <div class="info-box">
+            <div class="info-title remark">Er beweegt niets terwijl je je wachtwoord typt</div>
+            <p>Geen sterretjes en geen cursor die opschuift. Dat is met opzet zo gemaakt, want dan leest iemand die
+                naast je zit ook de lengte van je wachtwoord niet mee. Typ door en druk op <kbd>ENTER</kbd>.</p>
+        </div>
+
+        <ol start="4">
+            <li>
+                <p>Vergelijk de uitvoer met die van daarnet.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo du -sh /</span>
+                    </div>
+                    <pre class="term-out">du: cannot access '/proc/25485/task/25485/fd/4': No such file or directory
+du: cannot access '/proc/25485/fd/3': No such file or directory
+du: cannot access '/run/user/1000/gvfs': Permission denied
+<span class="highlight">8,6G	/</span></pre>
+                </div>
+                <p>Het totaal is hoger dan daarnet, want nu tellen de mappen mee die eerst overgeslagen werden. De
+                    meldingen die overblijven zijn van een andere soort: de mappen onder <code>/proc</code> horen
+                    bij processen die tijdens het tellen gestopt zijn, en <code>/run/user/1000/gvfs</code> is een
+                    koppeling die de grafische omgeving van de gebruiker zelf beheert, en daar komt zelfs root niet
+                    in.</p>
+            </li>
+        </ol>
+
+        <h2 id="find">Bestanden zoeken</h2>
+
+        <p>Met <code>find</code> zoek je bestanden vanaf een startmap en in alles wat eronder hangt. Je zet er drie
+            dingen achter: waar je begint, waarop je zoekt en waarnaar.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De drie startpunten die je in dit labo gebruikt</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Commando</th>
+                        <th>Waar het zoekt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>find ~ -name todo.txt</code></td>
+                        <td>Vanaf je eigen map</td>
+                    </tr>
+                    <tr>
+                        <td><code>find . -name todo.txt</code></td>
+                        <td>Vanaf de map waar je nu staat</td>
+                    </tr>
+                    <tr>
+                        <td><code>find / -name todo.txt</code></td>
+                        <td>Vanaf de root, dus over de hele machine</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Het tweede woord zegt waarop je zoekt. <code>-name</code> zoekt op de bestandsnaam, en er bestaan er
+            meer: <code>-amin</code> zoekt bijvoorbeeld op wanneer een bestand voor het laatst gelezen is.</p>
+
+        <ol start="5">
+            <li>
+                <p>Zoek <code>todo.txt</code> vanaf je eigen map, en daarna vanaf de map waar je staat.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">find ~ -name todo.txt</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">find . -name todo.txt</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Zoek nu vanaf de root. Je krijgt dezelfde soort meldingen als bij <code>du</code>, en om dezelfde
+                    reden.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">find / -name todo.txt</span>
+                    </div>
+                    <pre class="term-out">find: '/proc/5764/ns': Permission denied
+find: '/proc/5771/task/5771/fd': Permission denied
+find: '/proc/5771/map_files': Permission denied
+find: '/proc/5795/fd': Permission denied
+...</pre>
+                </div>
+            </li>
+            <li>
+                <p>Zet er <code>sudo</code> voor en vergelijk.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo find / -name todo.txt</span>
+                    </div>
+                    <pre class="term-out"><span class="highlight">/home/elm/automatisering/todo.txt
+/home/elm/Desktop/todo.txt
+/home/elm/Desktop/3auto/todo.txt</span>
+find: '/run/user/1000/doc': Permission denied
+find: '/run/user/1000/gvfs': Permission denied</pre>
+                </div>
+                <p>Nu staan de treffers er wel tussen. Er blijven twee meldingen over, dezelfde koppelingen van de
+                    grafische omgeving als daarnet.</p>
+            </li>
+        </ol>
+
+        <p>De drie paden die je terugkrijgt zijn precies de plaatsen waar je <code>todo.txt</code> gezet hebt: de
+            oorspronkelijke op je bureaublad, de kopie in <code>automatisering</code>, en de kopie die met
+            <code>3auto</code> naar je bureaublad meeverhuisd is.</p>
+    </div>
+
+    <script src="../../reference.js"></script>
+    <script src="../../back-link.js"></script>
+</body>
+
+</html>

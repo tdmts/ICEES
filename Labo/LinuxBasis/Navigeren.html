@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigeren tussen mappen</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Navigeren tussen mappen</h1>
+
+        <p>Je weet nu in welke map je staat. Met twee commando's erbij kan je zien wat erin staat en naar een andere
+            map gaan, en daarmee kan je overal op de machine geraken.</p>
+
+        <h2 id="ls">De inhoud van een map tonen</h2>
+
+        <ol>
+            <li>
+                <p>Typ <code>ls</code>, de afkorting van <em>list</em>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">ls</span>
+                    </div>
+                    <pre class="term-out">Desktop  Documents  Downloads  Music  Pictures  Public  snap  Templates  Videos</pre>
+                </div>
+                <p>Je krijgt de namen en verder niets: geen grootte, geen datum, en geen onderscheid tussen een map
+                    en een bestand.</p>
+            </li>
+        </ol>
+
+        <h2 id="parameters">Meer laten tonen met opties</h2>
+
+        <p>Met opties erachter vertelt <code>ls</code> je meer. De vier die je in dit labo tegenkomt staan
+            hieronder.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Vier opties van ls</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Optie</th>
+                        <th>Voorbeeld</th>
+                        <th>Wat ze doet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>-l</code></td>
+                        <td><code>ls -l</code></td>
+                        <td>Zet elke naam op een eigen regel, met de rechten, de eigenaar, de grootte en de datum
+                            erbij</td>
+                    </tr>
+                    <tr>
+                        <td><code>-a</code></td>
+                        <td><code>ls -a</code></td>
+                        <td>Toont ook de verborgen namen, dat zijn de namen die met een punt beginnen</td>
+                    </tr>
+                    <tr>
+                        <td><code>-h</code></td>
+                        <td><code>ls -lh</code></td>
+                        <td>Schrijft de groottes in K, M en G in plaats van in bytes. Werkt samen met
+                            <code>-l</code>, want zonder die optie staat er geen grootte</td>
+                    </tr>
+                    <tr>
+                        <td><code>-t</code></td>
+                        <td><code>ls -t</code></td>
+                        <td>Sorteert op tijd, met het laatst gewijzigde bestand bovenaan</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <ol start="2">
+            <li>
+                <p>Vraag de volledige lijst van opties op. Dat kan bij elk commando met <code>--help</code>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">ls --help</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Combineer nu de drie eerste opties tot <code>-alh</code>. Dit is het commando dat je in de rest
+                    van de oefening blijft gebruiken.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 116K
+drwxr-x---  16 elm  elm  4.0K Sep  4 12:36 .
+drwxr-xr-x   3 root root 4.0K Aug 22 15:41 ..
+-rw-------   1 elm  elm   105 Aug 27 11:03 .bash_history
+-rw-r--r--   1 elm  elm   220 Mar 31 10:41 .bash_logout
+-rw-r--r--   1 elm  elm  3.7K Mar 31 10:41 .bashrc
+drwx------  10 elm  elm  4.0K Aug 27 10:26 .cache
+drwx------  12 elm  elm  4.0K Aug 27 11:02 .config
+drwxr-xr-x   2 elm  elm  4.0K Aug 27 10:21 Desktop
+drwxr-xr-x   2 elm  elm  4.0K Aug 27 10:21 Documents
+drwxr-xr-x   2 elm  elm  4.0K Aug 27 10:21 Downloads
+drwxr-xr-x   2 elm  elm  4.0K Aug 27 10:21 Music
+drwxr-xr-x   2 elm  elm  4.0K Aug 27 10:21 Pictures
+-rw-r--r--   1 elm  elm   807 Mar 31 10:41 .profile
+drwxr-xr-x   2 elm  elm  4.0K Aug 27 10:21 Public
+drwx------   4 elm  elm  4.0K Aug 27 10:21 snap
+drwxr-xr-x   2 elm  elm  4.0K Aug 27 10:21 Templates
+drwxr-xr-x   2 elm  elm  4.0K Aug 27 10:21 Videos</pre>
+                </div>
+            </li>
+        </ol>
+
+        <p>De eerste twee regels zijn de map zelf en haar bovenliggende map. Wat de zeven kolommen erna zeggen, en
+            waarom de eerste letter van elke regel een <code>d</code> of een <code>-</code> is, staat bij
+            <a href="Theorie/DeBestandsboom.html#ls-lezen" target="_blank" rel="noopener">De bestandsboom</a>.</p>
+
+        <h2 id="cd">Naar een andere map gaan</h2>
+
+        <p>Met <code>cd</code>, van <em>change directory</em>, verander je de map waar je staat. Je zet er altijd bij
+            waarheen je wil.</p>
+
+        <ol start="4">
+            <li>
+                <p>Typ <code>cd Doc</code> en druk op <kbd>TAB</kbd> in plaats van op <kbd>ENTER</kbd>. Er beginnen
+                    twee mappen met <code>Doc</code>, dus de terminal vult niets aan en toont ze allebei.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">cd Doc</span>
+                    </div>
+                    <pre class="term-out">Documents/  Downloads/</pre>
+                </div>
+                <p>Typ er een <code>u</code> bij, zodat er <code>cd Docu</code> staat, en druk opnieuw op
+                    <kbd>TAB</kbd>. Nu is er nog één naam die past, en die zet de terminal voor je op de regel.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">cd Documents/</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Druk op <kbd>ENTER</kbd> en kijk naar de prompt: die staat nu op
+                    <code>~/Documents</code>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Documents$</span>
+                        <span class="term-cmd">pwd</span>
+                    </div>
+                    <pre class="term-out">/home/elm/Documents</pre>
+                </div>
+            </li>
+            <li>
+                <p>Ga één niveau hoger met <code>cd ..</code>, en daarna in één keer terug naar je eigen map met
+                    <code>cd ~</code>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Documents$</span>
+                        <span class="term-cmd">cd ..</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">cd ~</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Ga nu met een absoluut pad naar een map van het systeem, en kijk wat er staat.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">cd /etc</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:/etc$</span>
+                        <span class="term-cmd">ls</span>
+                    </div>
+                </div>
+                <p>De prompt toont hier het volledige pad in plaats van een tilde, want je staat buiten je eigen
+                    map. Welke mappen er onder <code>/</code> hangen en wat er in elk ervan staat, vind je bij
+                    <a href="Theorie/DeBestandsboom.html#mappen-windows-linux" target="_blank" rel="noopener">De
+                        bestandsboom</a>.</p>
+            </li>
+            <li>
+                <p>Ga terug naar je eigen map met <code>cd ~</code>. De rest van de oefening vertrekt daarvandaan.
+                </p>
+            </li>
+        </ol>
+
+        <div class="info-box">
+            <div class="info-title tip">Gebruik TAB bij elke naam die je typt</div>
+            <p>Het spaart typwerk en het maakt een tikfout in een mapnaam onmogelijk. Krijg je geen aanvulling, dan
+                bestaat de naam niet zoals je ze getypt hebt, en dat weet je dan al voor je op <kbd>ENTER</kbd>
+                drukt.</p>
+        </div>
+    </div>
+
+    <script src="../../reference.js"></script>
+    <script src="../../back-link.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processen en uitvoer</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Processen en uitvoer</h1>
+
+        <p>Je vraagt op welke programma's er op dit moment draaien. Dat zijn er een paar honderd, en meteen loop je
+            tegen het probleem aan dat de uitvoer sneller voorbijloopt dan je kan lezen.</p>
+
+        <h2 id="ps">De processen van je eigen sessie</h2>
+
+        <p>Met <code>ps</code>, van <em>process status</em>, krijg je een momentopname: de processen zoals ze draaien
+            op het ogenblik dat je op <kbd>ENTER</kbd> drukt. Zonder opties toont het alleen wat je zelf in deze
+            terminal gestart hebt.</p>
+
+        <ol>
+            <li>
+                <p>Typ <code>ps</code>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">ps</span>
+                    </div>
+                    <pre class="term-out">    PID TTY          TIME CMD
+   3768 pts/0    00:00:00 bash
+   5864 pts/0    00:00:00 ps</pre>
+                </div>
+                <p>Er staan er twee: <code>bash</code>, dat is de terminal zelf die op je commando's wacht, en
+                    <code>ps</code>, het commando dat je net gegeven hebt en dat zichzelf in de lijst tegenkomt. De
+                    eerste kolom is het procesnummer, waarmee je een proces later kan aanspreken.</p>
+            </li>
+        </ol>
+
+        <h2 id="alle-processen">Alle processen van de machine</h2>
+
+        <ol start="2">
+            <li>
+                <p>Voeg de optie <code>-e</code> toe, van <em>every process</em>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">ps -e</span>
+                    </div>
+                    <pre class="term-out">...
+   2898 ?        00:00:02 VBoxClient
+   3416 ?        00:00:00 update-notifier
+   3667 ?        00:00:00 seahorse
+   3760 ?        00:00:14 gnome-terminal-
+   3768 pts/0    00:00:00 bash
+   4850 ?        00:00:11 nautilus
+   5633 ?        00:00:05 kworker/0:0-events
+   5803 ?        00:00:00 pipewire
+   5866 pts/0    00:00:00 ps</pre>
+                </div>
+                <p>Nu staan er ook processen bij die je niet zelf gestart hebt, zoals <code>nautilus</code>, de
+                    bestandsverkenner Files, en <code>gnome-terminal</code>, het venster waarin je typt. Een
+                    vraagteken in de tweede kolom betekent dat het proces aan geen enkele terminal hangt.</p>
+            </li>
+        </ol>
+
+        <p>Het scherm is te klein voor die lijst: alleen het staartje blijft staan en de rest is voorbijgelopen. Je
+            zou met <kbd>PAGE UP</kbd> terug kunnen scrollen, en dat werkt maar tot zover het venster onthoudt.</p>
+
+        <h2 id="pipe">De uitvoer doorgeven aan more</h2>
+
+        <p>Met het teken <code>|</code>, de <strong>pipe</strong>, geef je de uitvoer van het ene commando door als
+            invoer van het volgende. Zet je er <code>more</code> achter, dan krijg je de lijst een scherm per keer.
+            Hoe dat doorgeven precies werkt, staat bij
+            <a href="Theorie/CommandoEnOpties.html#pipe" target="_blank" rel="noopener">Een commando en zijn opties</a>.</p>
+
+        <div class="info-box">
+            <div class="info-title tip">Waar de pipe op je toetsenbord zit</div>
+            <p>Op een Belgisch azerty-toetsenbord krijg je <code>|</code> met <kbd>AltGr</kbd>, rechts van de
+                spatiebalk, samen met de toets <kbd>&amp;</kbd> boven de <kbd>a</kbd>.</p>
+        </div>
+
+        <ol start="3">
+            <li>
+                <p>Voer hetzelfde commando uit, nu met <code>more</code> erachter.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">ps -e | more</span>
+                    </div>
+                    <pre class="term-out">  PID TTY          TIME CMD
+    1 ?        00:00:03 systemd
+    2 ?        00:00:00 kthreadd
+    4 ?        00:00:00 kworker/0:0H
+    6 ?        00:00:00 mm_percpu_wq
+    7 ?        00:00:00 ksoftirqd/0
+    8 ?        00:00:01 rcu_sched
+   10 ?        00:00:00 migration/0
+   11 ?        00:00:00 watchdog/0
+...
+<span class="highlight">--More--</span></pre>
+                </div>
+                <p>Onderaan staat nu <code>--More--</code>, en bovenaan begint de lijst bij proces 1,
+                    <code>systemd</code>. Dat is het eerste proces dat de kernel start en waar alle andere onder
+                    hangen.</p>
+            </li>
+            <li>
+                <p>Ga door de lijst met de toetsen hieronder.</p>
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered align-middle">
+                        <caption class="table-caption">Bewegen in more</caption>
+                        <thead class="table-header-custom">
+                            <tr>
+                                <th>Toets</th>
+                                <th>Wat ze doet</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><kbd>ENTER</kbd></td>
+                                <td>Eén regel verder</td>
+                            </tr>
+                            <tr>
+                                <td><kbd>spatie</kbd></td>
+                                <td>Eén volledig scherm verder</td>
+                            </tr>
+                            <tr>
+                                <td><kbd>q</kbd></td>
+                                <td>Stoppen en terug naar de prompt</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+            <li>
+                <p>Pas hetzelfde toe op een ander commando met veel uitvoer.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">ls -alh /etc | more</span>
+                    </div>
+                </div>
+            </li>
+        </ol>
+
+        <div class="info-box">
+            <div class="info-title remark">Naast more bestaat er ook less</div>
+            <p>Dat werkt hetzelfde en kan er bovendien mee terug scrollen en in de uitvoer zoeken. Wat je hier met
+                <code>more</code> doet, werkt met <code>less</code> op dezelfde manier.</p>
+        </div>
+    </div>
+
+    <script src="../../reference.js"></script>
+    <script src="../../back-link.js"></script>
+</body>
+
+</html>

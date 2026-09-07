@@ -315,16 +315,18 @@ wipes the read-flags of every student who has already been in it.
 | `Labo/Assemblage/` | Veiligheid, Componenten, BiosUefi, TestJezelf | no |
 | `Labo/Virtualiseren/` | WatIsVirtualisatie, VirtueleHardware, SchijfEnGeheugen, SoftwareInDeGuest, TestJezelf | no |
 | `Labo/Partitioneren/` | Partitietabellen, Bestandssystemen, Spiekblad, TestJezelf | yes |
-| `Labo/LinuxBasis/` | LinuxEnDistributies, DeTerminal, Navigeren, MappenEnBestanden, ZoekenEnBekijken, ProcessenEnRechten, Archieven | yes |
+| `Labo/LinuxBasis/` | LinuxEnDistributies, DeTerminal, CommandoEnOpties, DeBestandsboom, GebruikersEnRechten, Spiekblad, TestJezelf | yes |
 | `Labo/LinuxGeavanceerd/` | GebruikersEnGroepen, Rechten, SoftwareUitDeRepository, SoftwareBuitenDeRepository, Docker | yes |
 | `Labo/EmbeddedSystems/` | WatIsEenEmbeddedSystem, RaspberryPiInstalleren, PiOpHetNetwerk, AlsHetNietLukt, CodesysInstalleren, CodesysProject, Docker, NodeRed, MqttBroker | yes |
 
-Linux Basis shows what grouping means: 22 command pages become 7 subjects. `Navigeren` is pwd, ls
-and cd; `MappenEnBestanden` is mkdir, vi/nano, three cp pages, two mv pages and two rm pages;
-`ZoekenEnBekijken` is find, more and du; `ProcessenEnRechten` is ps, sudo and the two shutdown
-pages. The two labs without a spiekblad are the two with no commands in them: Assemblage is hardware
-and Virtualiseren is a GUI. Partitioneren is a GUI too, and its spiekblad is a table of partition
-kinds and their limits rather than of commands, which is what a student there keeps looking up.
+**The row for Linux Basis was rewritten on 7 September 2026, and it is the only one in this table
+that no longer names commands.** The approved list put the commands themselves on seven theory
+pages, and writing the module showed that they are a stappenplan and not theory; the reasoning is
+under "Labo Linux Basis" below, and the same test still has to be applied to the two rows under it.
+What stayed is the grouping: 23 command pages become five theory pages and eight stappenplan pages.
+The two labs without a spiekblad are the two with no commands in them: Assemblage is hardware and
+Virtualiseren is a GUI. Partitioneren is a GUI too, and its spiekblad is a table of partition kinds
+and their limits rather than of commands, which is what a student there keeps looking up.
 
 **Every lab closes its theory reeks with a `TestJezelf.html`**, added to Assemblage on 4 September
 2026 and to be written for the other five. It is a category `Zelftest` in the `theorie` reeks, not
@@ -735,6 +737,92 @@ image shows `/dev/sda1 ntfs Windows OS` next to `/dev/sda2 fat32 Data`, and the 
 `gpt-partities-aanmaken` has `/dev/sda` in its title bar while the text says to work on
 `/dev/sdb`. Open the PNG before writing a figcaption; three of the eight captions here would have
 been wrong otherwise.
+
+## Labo Linux Basis, written 7 September 2026
+
+**Third confirmation of the split, and the first one that is countable in the source.** Theory
+carries the begrippen, the opdracht reeks carries the click-through. The approved table put the
+commands themselves on seven theory pages, and the 23 staged pages of the begeleide oefening turn
+out to be one state machine: `backup` is filled on the cp page before `a.txt` is renamed on the mv
+page, so the `ls -alh` on the rm page shows `a.txt` and not `d.txt`; `find` on the second-to-last
+page turns up `todo.txt` in `Desktop/3auto/`, where the mv page moved it two pages earlier. Read as
+theory, half those sentences are nonsense. That is the test to apply to Linux Geavanceerd and
+Embedded Systems, and it is sharper than the one Virtualiseren and Partitioneren used: not "is this
+a numbered list of steps" but "does this page depend on what the previous page left behind".
+
+```
+Theorie (reeks theorie)          Opdracht (reeks opdracht)
+  Theorie/reference.html           Opdracht.html          <- root of the reeks
+  LinuxEnDistributies                TerminalOpenen.html
+  DeTerminal                         Navigeren.html
+  CommandoEnOpties                   MappenEnBestanden.html
+  DeBestandsboom                     Kopieren.html
+  GebruikersEnRechten                VerplaatsenEnVerwijderen.html
+  Spiekblad                          SchijfruimteEnZoeken.html
+  TestJezelf                         ProcessenEnUitvoer.html
+                                     ArchiverenEnAfsluiten.html
+```
+
+**A retyped terminal screenshot becomes a `terminal-window` and not a `code-wrapper`.** That
+component is in `tdmts/OrionContent/template.html` and this is the first module here that uses it:
+`term-prompt` and `term-cmd` on one line, `pre.term-out` under it, and the copy button lands on the
+command alone instead of on the prompt and the output with it. It also carries a `span.highlight`,
+which is what replaced the red arrows on three annotated screenshots: the five callouts on the
+`ls -alh` picture, the TAB hint on the cd picture, and the blur effect that pointed at the `-r` line
+of `cp --help`. **32 of the 54 images went that way, 15 stayed and 7 were dropped.** What stayed is
+what a `<pre>` cannot hold: a desktop, a window of Files, nano, vi, and the shutdown dialog of
+VirtualBox. What was dropped was a duplicate or a picture whose caption did not match it.
+
+**And retyping is proofreading.** Ten corrections came out of it, all ten reported to the lecturer
+before they went in, and none of them survives a re-import of `_incoming/`:
+
+| Where | What the source says | What it says here |
+|---|---|---|
+| `rm` on a directory | "Dat komt omdat de map niet leeg is" | The message is `Is a directory`. `rm` refuses every directory, empty or not, and `-r` is what a directory needs |
+| `sudo find` | "want dan stelt zich dat probleem niet" | Its own screenshot still shows two `Permission denied`, on the user's own gvfs mounts, where even root does not read |
+| rm page 2 | `/home/klimatisering` | `/home/elm/klimatisering` |
+| `more` | "eerst op CTRL+C en dan op CTRL+X" | `q`. CTRL+X is a nano shortcut and does nothing in `more` |
+| `ps` | "process snapshot" | `process status` |
+| `tar` | "gz staat voor gzip, een open source zip formaat" | A free compression format. Zip is something else |
+| pwd page | Two figcaptions sit under the wrong image | The one that shows a command not yet run was dropped; the tree it promised is a text tree |
+| terminal and mkdir pages | "Windows startmenu", "Windows Terminal", "Windows Verkenner" | All four are Ubuntu screens, and the file manager is Files |
+| `ls` table | `ls –a`, `ls –t`, `ls –h` with an en-dash | A hyphen. On a page that just said streepjes matter, that is not a detail |
+| `cp` page 3 | `cp automatisering 2auto` beside a screenshot of `cp automatisering/ 2auto` | The screenshot, so the command and its output belong together |
+
+**The docx asks for four screenshots, not six**, and it asks for no photo with a studentenkaart. The
+proof is the demonstration in the lab, the same as Virtualiseren and Partitioneren.
+
+**Four questions were added to the verslag, one per doelstelling the docx leaves untouched.** The
+docx tests mkdir, nano, cp, du and tar, which is doelstelling 5 and 6 and nothing else. So: two
+distributions and what each is for (1), open-source against gratis with an example of software that
+is free without being open (2), what `sudo` changes and why you do not log in as root (3), and an
+invultabel with the Linux counterpart of the four Windows folders (4).
+
+**`LinuxEnDistributies.html` carries text that has no source anywhere.** Doelstelling 2 asks for the
+difference between open-source and gratis, and no staged page and no syllabus chapter mentions it.
+The page answers it with a two-by-two table of the four combinations, because that is the shape of
+the confusion: Acrobat Reader costs nothing and is closed, Red Hat Enterprise Linux is open and you
+pay for it. Same case as `WatIsVirtualisatie.html`.
+
+**One filename does not come from its heading, and the reason is a regex.** `check-content.py` reads
+the manifest with `name:\s*'([^']*)'`, so an apostrophe inside a single-quoted field truncates the
+value and a double-quoted field is not seen at all. "Commando's en parameters" therefore failed rule
+2 with "veld 'name' ontbreekt of is leeg" while the page was perfectly fine. It is now
+`CommandoEnOpties.html`, "Een commando en zijn opties", and no field in the `linuxbasis` block
+contains an apostrophe. **`partitioneren` still has one**, in the blurb of its zelftest, and it
+passes because a truncated value is not an empty one: the hub silently shows half a sentence. Worth
+fixing when that module is next touched, in the manifest or in the regex.
+
+**The Linux chapter of the syllabus was read beside these pages and needed no correction.**
+`Theorie/Syllabus/Theorie/Besturingssystemen/` says the same thing about the kernel, about root
+against a normal user and about file rights. The two tracks now say it twice, which is what patroon
+17 asks for, and nothing links between them.
+
+**046 leaned on another lab and no longer does.** It opened with "In het vorig labo heb je een
+gebruiker elm ... aangemaakt". Labo Virtualiseren is now named once, on `overview.html`, as a
+material requirement, the same treatment Partitioneren gives it. `InstallatieUbuntu.html` already
+fixes `elm` and `mle` and says the Linux labs use that account, so the data is right; only the
+reference is gone.
 
 ## De syllabus, hoofdstuk 1 tot 8 ingevoerd 7 september 2026
 

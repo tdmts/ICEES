@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mappen en bestanden maken</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Mappen en bestanden maken</h1>
+
+        <p>Je maakt drie mappen aan die je in de rest van de oefening blijft gebruiken, en daarna een tekstbestand
+            met twee editors die je in de terminal zelf bedient.</p>
+
+        <h2 id="mkdir">Een map aanmaken</h2>
+
+        <p>Met <code>mkdir</code>, van <em>make directory</em>, maak je een map in de map waar je staat. De naam die
+            je wil zet je erachter.</p>
+
+        <ol>
+            <li>
+                <p>Ga naar je eigen map, maak er de map <strong>automatisering</strong> in aan, en kijk of ze er
+                    staat.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">cd ~</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">mkdir automatisering</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">pwd</span>
+                    </div>
+                    <pre class="term-out">/home/elm</pre>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 120K
+drwxr-x---  17 elm  elm  4.0K Sep  4 13:39 .
+drwxr-xr-x   3 root root 4.0K Aug 22 15:41 ..
+<span class="highlight">drwxrwxr-x   2 elm  elm  4.0K Sep  4 13:39 automatisering</span>
+-rw-------   1 elm  elm   105 Aug 27 11:03 .bash_history
+-rw-r--r--   1 elm  elm   220 Mar 31 10:41 .bash_logout
+-rw-r--r--   1 elm  elm  3.7K Mar 31 10:41 .bashrc
+drwx------  10 elm  elm  4.0K Aug 27 10:26 .cache
+...</pre>
+                </div>
+            </li>
+            <li>
+                <p>Ga in de nieuwe map staan en kijk wat erin zit. Typ <code>cd auto</code> en vul aan met
+                    <kbd>TAB</kbd>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">cd automatisering/</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/automatisering$</span>
+                        <span class="term-cmd">pwd</span>
+                    </div>
+                    <pre class="term-out">/home/elm/automatisering</pre>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/automatisering$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 8.0K
+drwxrwxr-x  2 elm elm 4.0K Sep  4 13:39 .
+drwxr-x--- 17 elm elm 4.0K Sep  4 13:39 ..</pre>
+                </div>
+                <p>De map is leeg: er staan alleen de twee namen in die in elke map staan, de map zelf en haar
+                    bovenliggende map.</p>
+            </li>
+            <li>
+                <p>Open Files en kijk of de map er ook daar staat. De terminal en de bestandsverkenner tonen
+                    dezelfde schijf.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../img/een-map-aanmaken-mkdir-image-9399537.png" class="img-fluid"
+                        alt="Het venster van Files op Home met de nieuwe map automatisering naast Desktop, Documents en de andere mappen">
+                </figure>
+            </li>
+            <li>
+                <p>Maak nu zelf, onder <code>/home/elm</code>, nog twee mappen bij: <strong>elektromechanica</strong>
+                    en <strong>klimatisering</strong>. Het resultaat is dit:</p>
+                <pre class="code-wrapper">/home/elm/automatisering/
+/home/elm/elektromechanica/
+/home/elm/klimatisering/</pre>
+            </li>
+        </ol>
+
+        <div class="info-box">
+            <div class="info-title warning">Deze drie mappen heb je verderop nodig</div>
+            <p>Op de volgende pagina's kopieer, verplaats en wis je precies deze mappen. Controleer met
+                <code>ls -alh</code> dat ze alle drie onder <code>/home/elm</code> staan en dat de namen juist
+                gespeld zijn.</p>
+        </div>
+
+        <h2 id="nano">Een bestand maken met nano</h2>
+
+        <p>De eenvoudigste teksteditor in de terminal is <strong>nano</strong>. Je zet de bestandsnaam erachter, en
+            bestaat het bestand nog niet, dan maakt nano het aan.</p>
+
+        <ol start="5">
+            <li>
+                <p>Ga naar je bureaublad en open daar een nieuw bestand <code>todo.txt</code>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">cd ~/Desktop</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Desktop$</span>
+                        <span class="term-cmd">nano todo.txt</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Typ enkele regels in. Onderaan het venster staan de sneltoetsen, waarbij het dakje voor
+                    <kbd>CTRL</kbd> staat.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../img/een-nieuw-bestand-aanmaken-vi-nano-image-9399546.png" class="img-fluid"
+                        alt="Nano met het bestand todo.txt open, drie regels tekst erin, en een rode aanduiding bij Write Out onderaan met het opschrift CTRL+O is opslaan">
+                </figure>
+            </li>
+            <li>
+                <p>Sla op met <kbd>CTRL+O</kbd> en dan <kbd>ENTER</kbd>, en sluit af met <kbd>CTRL+X</kbd>.</p>
+            </li>
+            <li>
+                <p>Kijk naar je bureaublad: het bestand staat er.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../img/een-nieuw-bestand-aanmaken-vi-nano-image-9399547.png" class="img-fluid"
+                        alt="Het bureaublad van Ubuntu met het terminalvenster open en rechts het pictogram van todo.txt, aangewezen met een rode pijl">
+                </figure>
+            </li>
+            <li>
+                <p>Dubbelklik het bestand. Het opent in de grafische teksteditor, met dezelfde inhoud als in
+                    nano.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../img/een-nieuw-bestand-aanmaken-vi-nano-image-9399548.png" class="img-fluid"
+                        alt="De teksteditor van Ubuntu met todo.txt open en dezelfde drie regels als in nano">
+                </figure>
+            </li>
+            <li>
+                <p>Pas de tekst aan en sla op via het menu rechtsboven, met <strong>Save</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../img/een-nieuw-bestand-aanmaken-vi-nano-image-9399549.png" class="img-fluid"
+                        alt="De teksteditor met gewijzigde tekst en het geopende menu waarin Save aangeduid staat">
+                </figure>
+            </li>
+        </ol>
+
+        <h2 id="vi">Hetzelfde bestand met vi</h2>
+
+        <div class="info-box">
+            <div class="info-title remark">Op een embedded system is vi vaak de enige editor</div>
+            <p>Er is daar geen grafisch bureaublad en dikwijls staat nano er niet op, terwijl vi op zowat elke
+                Linux-machine aanwezig is. Daarom staat hij hier ook al is nano makkelijker.</p>
+        </div>
+
+        <ol start="11">
+            <li>
+                <p>Open hetzelfde bestand met vi.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Desktop$</span>
+                        <span class="term-cmd">vi todo.txt</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Vi begint in de stand waarin je navigeert en niet typt. Druk op <kbd>a</kbd>, van
+                    <em>append</em>, om te beginnen typen.</p>
+            </li>
+            <li>
+                <p>Zet er onderaan nog een regel bij. Wil je met de pijltjestoetsen ergens anders heen, druk dan
+                    eerst op <kbd>ESC</kbd> om te stoppen met typen, en daarna weer op <kbd>a</kbd> om verder te
+                    typen.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../img/een-nieuw-bestand-aanmaken-vi-nano-image-9399551.png" class="img-fluid"
+                        alt="Vi met het bestand todo.txt en vier regels erin, waarvan de laatste net bijgetypt is">
+                </figure>
+            </li>
+            <li>
+                <p>Druk op <kbd>ESC</kbd> en typ <code>:wq</code>, van <em>write</em> en <em>quit</em>, gevolgd door
+                    <kbd>ENTER</kbd>.</p>
+            </li>
+        </ol>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De vier combinaties die je in vi nodig hebt</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Wat je typt</th>
+                        <th>Wat er gebeurt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>:w</code></td>
+                        <td>Opslaan en in het bestand blijven</td>
+                    </tr>
+                    <tr>
+                        <td><code>:q</code></td>
+                        <td>Afsluiten, en dat lukt alleen wanneer er niets te bewaren is</td>
+                    </tr>
+                    <tr>
+                        <td><code>:wq</code></td>
+                        <td>Opslaan en afsluiten</td>
+                    </tr>
+                    <tr>
+                        <td><code>:q!</code></td>
+                        <td>Afsluiten en je wijzigingen weggooien</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <ol start="15">
+            <li>
+                <p>Ga terug naar je eigen map met <code>cd ~</code>.</p>
+            </li>
+        </ol>
+    </div>
+
+    <script src="../../reference.js"></script>
+    <script src="../../back-link.js"></script>
+</body>
+
+</html>

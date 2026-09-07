@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De terminal openen</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>De terminal openen</h1>
+
+        <p>Je start de virtuele machine met Ubuntu op, opent er een terminal in en zoekt uit waar je staat. Alle
+            uitvoer hieronder komt van de gebruiker <code>elm</code>; werk je met een andere gebruikersnaam, dan
+            staat die van jou in de prompt.</p>
+
+        <h2 id="aanmelden">Aanmelden</h2>
+
+        <ol>
+            <li>
+                <p>Start je virtuele machine op en meld je aan met de gebruiker <strong>elm</strong> en het
+                    wachtwoord <strong>mle</strong>, de gegevens die je bij de installatie van Ubuntu ingevuld
+                    hebt.</p>
+            </li>
+        </ol>
+
+        <div class="info-box">
+            <div class="info-title warning">Meld je niet aan als root</div>
+            <p>Alles wat je daarna start, draait dan met alle rechten. Werk als gewone gebruiker en verhoog je
+                rechten per commando met <code>sudo</code>, verderop in deze oefening. Waarom dat uitmaakt, staat
+                bij <a href="Theorie/GebruikersEnRechten.html#root" target="_blank" rel="noopener">Gebruikers en
+                    rechten</a>.</p>
+        </div>
+
+        <h2 id="terminal-starten">De terminal starten</h2>
+
+        <ol start="2">
+            <li>
+                <p>Klik linksonder op het icoon <strong>Toon toepassingen</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../img/de-terminal-starten-image-9399482.png" class="img-fluid"
+                        alt="Het bureaublad van Ubuntu met een rode pijl naar het icoon Toon toepassingen linksonder in de balk">
+                </figure>
+            </li>
+            <li>
+                <p>Typ <strong>terminal</strong> in het zoekveld en klik de toepassing <strong>Terminal</strong>
+                    aan.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../img/de-terminal-starten-image-9399483.png" class="img-fluid"
+                        alt="Het zoekscherm van Ubuntu met het woord terminal ingetypt en de toepassing Terminal als resultaat">
+                </figure>
+            </li>
+        </ol>
+
+        <p>Het venster dat opengaat is leeg op één regel na, de prompt. Wat de vier delen daarvan betekenen, staat
+            bij <a href="Theorie/DeTerminal.html#prompt" target="_blank" rel="noopener">De terminal</a>.</p>
+
+        <div class="info-box">
+            <div class="info-title warning">Commando's zijn hoofdlettergevoelig</div>
+            <p>En spaties en streepjes tellen mee. <code>ls -alh</code> werkt, <code>LS -alh</code> en
+                <code>ls-alh</code> niet. Zie <a href="Theorie/DeTerminal.html#hoofdletters" target="_blank"
+                    rel="noopener">De terminal</a>.</p>
+        </div>
+
+        <h2 id="pwd">Uitzoeken waar je staat</h2>
+
+        <ol start="4">
+            <li>
+                <p>Typ <code>pwd</code> en druk op <kbd>ENTER</kbd>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">pwd</span>
+                    </div>
+                    <pre class="term-out">/home/elm</pre>
+                </div>
+                <p>Je staat in de persoonlijke map van de gebruiker <code>elm</code>. Dat is ook wat de
+                    <code>~</code> in de prompt zegt: die tilde staat voor <code>/home/elm</code>.</p>
+            </li>
+        </ol>
+
+        <h2 id="verkenner">Dezelfde map in de bestandsverkenner</h2>
+
+        <p>Ubuntu heeft naast de terminal ook een grafische bestandsverkenner, die Files heet. Leg die er even naast,
+            zodat je ziet dat de twee over dezelfde mappen gaan.</p>
+
+        <ol start="5">
+            <li>
+                <p>Klik in de balk links op het icoon van <strong>Files</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../img/pad-van-de-huidige-map-pwd-image-9399490.png" class="img-fluid"
+                        alt="Het bureaublad met het terminalvenster open en een rode pijl naar het icoon van Files in de balk links">
+                </figure>
+            </li>
+            <li>
+                <p>Files opent op <strong>Home</strong>. Dat is dezelfde map als <code>/home/elm</code>, met de
+                    submappen Desktop, Documents, Downloads en de andere erin.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../img/pad-van-de-huidige-map-pwd-image-9399491.png" class="img-fluid"
+                        alt="Het venster van Files op Home, met de mappen Desktop, Documents, Downloads, Music, Pictures, Public, snap, Templates en Videos">
+                </figure>
+            </li>
+            <li>
+                <p>Klik in de adresbalk, typ <code>/home</code> en druk op <kbd>ENTER</kbd>. Je komt in de
+                    bovenliggende map, waar één map in staat: <code>elm</code>.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../img/pad-van-de-huidige-map-pwd-image-9399492.png" class="img-fluid"
+                        alt="Het venster van Files op de map /home met daarin de enkele map elm, en een rode pijl naar het pad in de adresbalk">
+                </figure>
+            </li>
+            <li>
+                <p>Open <code>elm</code> en controleer dat je weer op Home staat. Sluit Files daarna af.</p>
+            </li>
+        </ol>
+
+        <h2 id="geschiedenis">Terug naar wat je al getypt hebt</h2>
+
+        <ol start="9">
+            <li>
+                <p>Maak het venster leeg met <code>clear</code>. Dat wist alleen wat je ziet; de commando's die je
+                    gegeven hebt blijven bewaard.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">clear</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Druk drie keer op <kbd>pijl omhoog</kbd> en daarna één keer op <kbd>pijl omlaag</kbd>. Kijk welk
+                    commando er nu op je regel staat.</p>
+            </li>
+            <li>
+                <p>Voer dat commando niet uit. Druk op <kbd>CTRL+C</kbd> om je regel af te breken.</p>
+            </li>
+            <li>
+                <p>Vraag de volledige lijst op met <code>history</code>. De jouwe ziet er anders uit dan die
+                    hieronder, want er staan de commando's in die jij ingegeven hebt.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">history</span>
+                    </div>
+                    <pre class="term-out">    1  sudo reboot
+    2  sudo apt install bzip2
+    3  sudo apt install tar
+    4  sudo apt install gcc make perl
+    5  sudo shutdown now
+    6  pwd
+    7  clear
+    8  ls
+    9  ls -alh
+   10  clear
+   11  history</pre>
+                </div>
+            </li>
+        </ol>
+
+        <div class="info-box">
+            <div class="info-title tip">De pijltjestoetsen sparen je het meeste typwerk</div>
+            <p>Een lang commando waar één optie aan ontbrak, haal je met <kbd>pijl omhoog</kbd> terug en pas je aan.
+                Dat gebruik je verderop in deze oefening een paar keer.</p>
+        </div>
+    </div>
+
+    <script src="../../reference.js"></script>
+    <script src="../../back-link.js"></script>
+</body>
+
+</html>

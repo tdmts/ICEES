@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test jezelf</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Test jezelf</h1>
+
+        <p>Beantwoord elke vraag eerst zelf en klap daarna pas het antwoord open. Bij elk antwoord staat op welke
+            theoriepagina het uitgelegd wordt, dus lees die opnieuw wanneer je ernaast zat. Er wordt niets
+            bijgehouden en er staat geen punt op.</p>
+
+        <h2 id="vragen">Vragen</h2>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>1. Je installeert Ubuntu op een laptop. Wat is de rol van Linux daarin?</strong></p>
+                <ol type="a">
+                    <li>Linux is het volledige besturingssysteem, en Ubuntu is er de grafische schil van</li>
+                    <li>Linux is de kernel, en Ubuntu is de distributie die er een bureaublad en programma's
+                        bijlevert</li>
+                    <li>Linux is de naam van de fabrikant, en Ubuntu is het besturingssysteem dat hij verkoopt</li>
+                    <li>Linux is het bestandssysteem waarin Ubuntu zijn bestanden bewaart</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord b.</strong> De kernel regelt het geheugen, de processen, de bestanden en de
+                    rechten, en verder niets. Een bureaublad, een browser en een pakketbeheerder zitten er niet in;
+                    die brengt de distributie mee. Dezelfde kernel zit daarom zowel onder Ubuntu als onder Android.
+                    Zie <a href="LinuxEnDistributies.html#kernel">Linux en zijn distributies</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>2. Acrobat Reader kost niets. Is het daarmee open-source?</strong></p>
+                <ol type="a">
+                    <li>Ja, want software waar je niet voor betaalt is per definitie open-source</li>
+                    <li>Ja, want je mag het vrij verspreiden</li>
+                    <li>Neen, want open-source gaat over de broncode en niet over de prijs</li>
+                    <li>Neen, want open-source software kost altijd geld voor de ondersteuning</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord c.</strong> Open-source legt vast dat de broncode publiek is en dat je ze mag
+                    lezen, aanpassen en verder verspreiden. Over de prijs zegt het niets, en de vier combinaties
+                    komen alle vier voor: Red Hat Enterprise Linux is open-source en je betaalt ervoor, Acrobat
+                    Reader is gesloten en je betaalt er niets voor. Zie
+                    <a href="LinuxEnDistributies.html#open-source">Linux en zijn distributies</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>3. Waar staan de persoonlijke bestanden van een gebruiker, daar waar ze in Windows onder
+                        <code>C:\Users</code> staan?</strong></p>
+                <ol type="a">
+                    <li>In <code>/usr</code></li>
+                    <li>In <code>/home</code></li>
+                    <li>In <code>/etc</code></li>
+                    <li>In <code>/var</code></li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord b.</strong> Elke gebruiker heeft een map onder <code>/home</code> met zijn
+                    gebruikersnaam erop, en <code>~</code> is de verkorting daarvan. <code>/usr</code> lijkt op
+                    <em>users</em> en bevat de programma's die erbij geïnstalleerd zijn, wat de tegenhanger is van
+                    <code>C:\Program Files</code>. Zie
+                    <a href="DeBestandsboom.html#mappen-windows-linux">De bestandsboom</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>4. Je hebt in dezelfde map een bestand <code>verslag1.doc</code>. Je slaat er een tweede
+                        bestand op als <code>VERSLAG1.doc</code>. Wat gebeurt er?</strong></p>
+                <ol type="a">
+                    <li>Het tweede bestand overschrijft het eerste, zoals in Windows</li>
+                    <li>Linux weigert de naam, want ze bestaat al</li>
+                    <li>Er staan twee verschillende bestanden naast elkaar in die map</li>
+                    <li>Linux zet de naam automatisch om naar kleine letters</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord c.</strong> Namen van bestanden en mappen zijn in Linux hoofdlettergevoelig, dus
+                    dit zijn twee namen en twee bestanden. In Windows kan dat niet, en daar is het antwoord wel a.
+                    Dezelfde regel geldt voor commando's: <code>ls</code> bestaat en <code>LS</code> niet. Zie
+                    <a href="DeTerminal.html#hoofdletters">De terminal</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>5. Je staat in <code>/home/elm</code> en typt <code>rm elektromechanica</code>. Je krijgt
+                        <code>rm: cannot remove 'elektromechanica': Is a directory</code>. Waarom?</strong></p>
+                <ol type="a">
+                    <li>Omdat de map niet leeg is</li>
+                    <li>Omdat <code>rm</code> zonder de optie <code>-r</code> geen enkele map wist, leeg of niet
+                    </li>
+                    <li>Omdat je geen schrijfrecht hebt op je eigen map</li>
+                    <li>Omdat je er <code>sudo</code> voor moet zetten</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord b.</strong> De foutmelding zegt het zelf: <em>Is a directory</em>, en niet
+                    <em>Directory not empty</em>. <code>rm</code> werkt op bestanden, en pas met <code>-r</code>
+                    neemt het een map en alles eronder mee. Een lege map die je zo probeert te wissen, geeft
+                    dezelfde melding. Zie
+                    <a href="CommandoEnOpties.html#recursief">Een commando en zijn opties</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>6. Wat doet de optie <code>-r</code> bij <code>cp</code>?</strong></p>
+                <ol type="a">
+                    <li>Ze hernoemt het bestand tijdens het kopiëren</li>
+                    <li>Ze vervangt een bestand dat op de bestemming al bestaat</li>
+                    <li>Ze kopieert de map en alles wat eronder staat mee</li>
+                    <li>Ze maakt de kopie alleen leesbaar</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord c.</strong> <code>-r</code> staat voor recursief, en betekent bij
+                    <code>cp</code> en bij <code>rm</code> hetzelfde: de map zelf plus alles wat eronder hangt, tot
+                    de laatste map in de laatste map. Laat je ze weg bij een map, dan weigert <code>cp</code> met
+                    <code>-r not specified; omitting directory</code>. Zie
+                    <a href="CommandoEnOpties.html#recursief">Een commando en zijn opties</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>7. Wat doet <code>ps -e | more</code>?</strong></p>
+                <ol type="a">
+                    <li><code>more</code> toont alleen de eerste processen, en de rest wordt niet opgehaald</li>
+                    <li><code>ps -e</code> maakt de volledige lijst en <code>more</code> toont ze een scherm per
+                        keer</li>
+                    <li>De twee commando's draaien naast elkaar en schrijven allebei naar het scherm</li>
+                    <li><code>more</code> bewaart de lijst in een bestand</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord b.</strong> De pipe stuurt de uitvoer van het linkse commando naar de invoer van
+                    het rechtse. <code>ps -e</code> maakt dus gewoon zijn volledige lijst, en die belandt bij
+                    <code>more</code> in plaats van op het scherm. Hetzelfde werkt op elk commando met te veel
+                    uitvoer, bijvoorbeeld <code>ls -alh | more</code>. Zie
+                    <a href="CommandoEnOpties.html#pipe">Een commando en zijn opties</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>8. Je moet één commando uitvoeren waarvoor je meer rechten nodig hebt. Wat doe
+                        je?</strong></p>
+                <ol type="a">
+                    <li>Je meldt je af en opnieuw aan als root, en meldt je daarna terug af</li>
+                    <li>Je zet <code>sudo</code> voor het commando en vult je eigen wachtwoord in</li>
+                    <li>Je verplaatst het bestand naar <code>/root</code>, waar je wel rechten hebt</li>
+                    <li>Je voert het commando uit vanuit de grafische bestandsverkenner, want die vraagt geen
+                        rechten</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord b.</strong> <code>sudo</code> verhoogt de rechten voor dat ene commando, en het
+                    vraagt je eigen wachtwoord en niet dat van root. Aanmelden als root betekent dat alles wat je
+                    daarna start alle rechten heeft, ook wat je niet zelf bedoeld hebt uit te voeren. Zie
+                    <a href="GebruikersEnRechten.html#sudo">Gebruikers en rechten</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>9. In een pad staat <code>/</code> vooraan, en er bestaat ook een gebruiker root. Hoe
+                        verhouden die zich tot elkaar?</strong></p>
+                <ol type="a">
+                    <li><code>/</code> is de persoonlijke map van de gebruiker root</li>
+                    <li>Ze hebben niets met elkaar te maken: <code>/</code> is het begin van de mappenboom, root is
+                        de gebruiker die alles mag</li>
+                    <li>Alleen de gebruiker root mag bestanden lezen die onder <code>/</code> staan</li>
+                    <li><code>/</code> is een verkorting van <code>/root</code></li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord b.</strong> Het woord komt op twee plaatsen voor en betekent er twee
+                    verschillende dingen. De persoonlijke map van de gebruiker root is trouwens
+                    <code>/root</code>, en niet <code>/</code> en ook niet <code>/home/root</code>. Zie
+                    <a href="GebruikersEnRechten.html#twee-roots">Gebruikers en rechten</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

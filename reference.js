@@ -707,5 +707,130 @@ window.LAB_REFERENCE = {
                 ]
             }
         ]
+    },
+    linuxbasis: {
+        name: 'Labo Linux Basis',
+        categories: [
+            {
+                name: 'Theorie',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'linux-en-distributies',
+                        name: 'Linux en zijn distributies',
+                        blurb: 'Waarom Linux een kernel is en geen besturingssysteem, wat een distributie eraan toevoegt, en waarin open-source verschilt van gratis.',
+                        href: 'LinuxEnDistributies.html'
+                    },
+                    {
+                        id: 'de-terminal',
+                        name: 'De terminal',
+                        blurb: 'Wat de vier delen van de prompt je vertellen, en de drie manieren waarop een commando stukloopt op een hoofdletter, een spatie of een streepje.',
+                        href: 'DeTerminal.html'
+                    },
+                    {
+                        id: 'commando-en-opties',
+                        name: 'Een commando en zijn opties',
+                        blurb: 'De opbouw van elk commando, hoe je korte opties combineert, wat recursief betekent, en wat de wildcard en de pipe met je uitvoer doen.',
+                        href: 'CommandoEnOpties.html'
+                    },
+                    {
+                        id: 'de-bestandsboom',
+                        name: 'De bestandsboom',
+                        blurb: 'De boom die bij / begint, de tilde van je eigen map, de mappen van Linux naast die van Windows, en hoe je een regel van ls -alh leest.',
+                        href: 'DeBestandsboom.html'
+                    },
+                    {
+                        id: 'gebruikers-en-rechten',
+                        name: 'Gebruikers en rechten',
+                        blurb: 'Wat de root gebruiker mag, waarom je je niet als root aanmeldt, wat sudo daaraan verandert, en waar Permission denied vandaan komt.',
+                        href: 'GebruikersEnRechten.html'
+                    }
+                ]
+            },
+            {
+                name: 'Spiekblad',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'spiekblad-linuxbasis',
+                        name: 'Spiekblad',
+                        blurb: 'Elk commando van dit labo met zijn opties, de toetsen van de terminal en van de editors, en de mappen van Linux, in vier tabellen om naast je scherm te houden.',
+                        href: 'Spiekblad.html'
+                    }
+                ]
+            },
+            {
+                name: 'Zelftest',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'test-jezelf-linuxbasis',
+                        name: 'Test jezelf',
+                        blurb: 'Negen meerkeuzevragen over de theorie van dit labo, in dezelfde vorm als de test in Orion. Bij elk antwoord staat waar je het kan nalezen.',
+                        href: 'TestJezelf.html'
+                    }
+                ]
+            },
+            {
+                name: 'Opdracht',
+                reeks: 'opdracht',
+                topics: [
+                    {
+                        id: 'opdracht-linuxbasis',
+                        name: 'De opdracht',
+                        blurb: 'Wat je maakt en indient, en het document waarin je je antwoorden en je screenshots kwijt kan.',
+                        href: '../Opdracht.html'
+                    },
+                    {
+                        id: 'terminal-openen',
+                        name: 'De terminal openen',
+                        blurb: 'Aanmelden op de Ubuntu-machine, een terminal starten, met pwd uitzoeken waar je staat, en met history terugkijken wat je ingegeven hebt.',
+                        href: '../TerminalOpenen.html'
+                    },
+                    {
+                        id: 'navigeren',
+                        name: 'Navigeren tussen mappen',
+                        blurb: 'De inhoud van een map tonen met ls en zijn vier opties, en met cd naar een andere map gaan zonder de naam volledig te typen.',
+                        href: '../Navigeren.html'
+                    },
+                    {
+                        id: 'mappen-en-bestanden',
+                        name: 'Mappen en bestanden maken',
+                        blurb: 'De drie mappen aanmaken waar de rest van de oefening mee werkt, en een tekstbestand schrijven met nano en daarna met vi.',
+                        href: '../MappenEnBestanden.html'
+                    },
+                    {
+                        id: 'kopieren',
+                        name: 'Bestanden en mappen kopiëren',
+                        blurb: 'Kopiëren met cp, alle bestanden van een map in één commando met de wildcard, en de foutmelding die je naar de optie -r brengt.',
+                        href: '../Kopieren.html'
+                    },
+                    {
+                        id: 'verplaatsen-en-verwijderen',
+                        name: 'Verplaatsen en verwijderen',
+                        blurb: 'Hernoemen en verplaatsen met hetzelfde commando mv, en wissen met rm, waar een map om -r vraagt en er geen prullenbak is.',
+                        href: '../VerplaatsenEnVerwijderen.html'
+                    },
+                    {
+                        id: 'schijfruimte-en-zoeken',
+                        name: 'Schijfruimte bekijken en bestanden zoeken',
+                        blurb: 'De grootte van een map opvragen met du en bestanden zoeken met find, en zien wat sudo doet met de foutmeldingen die je onderweg krijgt.',
+                        href: '../SchijfruimteEnZoeken.html'
+                    },
+                    {
+                        id: 'processen-en-uitvoer',
+                        name: 'Processen en uitvoer',
+                        blurb: 'De draaiende processen opvragen met ps, en die lijst met een pipe doorgeven aan more zodat ze niet voorbijloopt.',
+                        href: '../ProcessenEnUitvoer.html'
+                    },
+                    {
+                        id: 'archiveren-en-afsluiten',
+                        name: 'Archiveren en afsluiten',
+                        blurb: 'Een map inpakken en weer uitpakken met tar, en de machine heropstarten of uitzetten met shutdown.',
+                        href: '../ArchiverenEnAfsluiten.html'
+                    }
+                ]
+            }
+        ]
     }
 };
