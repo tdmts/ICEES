@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raspberry Pi</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Raspberry Pi</h1>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 81.9mm">
+            <img src="../../../../img/syllabus-09-moederbord-08.jpeg" class="img-fluid" alt="Een Raspberry Pi 4 Model B van bovenaf: een groene printplaat met bovenaan een rij van veertig I/O-pinnen, rechts een netwerkpoort en vier USB-poorten, en onderaan twee micro-HDMI-aansluitingen">
+        </figure>
+
+        <p>De Raspberry Pi is het embedded system dat wij in het labo  zullen gebruiken.</p>
+
+        <p>Een Raspberry Pi is eigenlijk een volwaardige computer met een ARM processor, werkgeheugen en een SD kaart als harde schijf.</p>
+
+        <p>Er Windows op installeren zal, door de ARM instructieset, niet lukken. Maar je kan er wel een aangepaste ARM versie van Linux op draaien.</p>
+
+        <p>Op de Raspberry Pi zijn er ook een aantal USB aansluitingen voorzien samen met LAN, WiFi en Bluetooth. Je sluit hem aan op een scherm via micro HDMI.</p>
+
+        <p>Binnen een generatie zijn er verschillende uitvoeringen: 2GB RAM, 4GB RAM, … . Dit geheugen kan je niet uitbreiden. Het is en blijft natuurlijk wel een embedded system.</p>
+
+        <p>Aan een Raspberry Pi kan je geen I/O eiland verbinden maar bovenaan vind je een reeks I/O pinnen terug. Je kan die aansturen en uitlezen met bijvoorbeeld C# of Python. Er zijn hier echter wel enkele opmerkingen die we moeten maken waarin een Raspberry Pi (computer) verschilt van een Arduino (microcontroller) of PLC.</p>
+
+        <ul>
+            <li>De I/O pinnen zijn enkel digitale in of uitgangen. De Arduino heeft ook nog analoge in en uitgangen. Voor een PLC kan je een I/O eiland kopen die overweg kan met analoge signalen.</li>
+            <li>Gezien een Arduino en PLC veel dichter staan bij het hardware niveau (er is geen besturingssysteem), is er minder vertraging. Een Raspberry Pi zal dus iets trager I/O kunnen aansturen en uitlezen dan een microcontroller of PLC.</li>
+        </ul>
+
+        <p>De vormfactor heeft ongeveer de afmetingen van een bankkaart. Er zijn behuizingen voor de Raspberry Pi te koop en sommige zijn wel compatibel met elkaar (bijvoorbeeld Raspberry Pi Model 3 B en Model 3 B +) maar het is eigenlijk enkel maar de buitenste afmetingen die dezelfde blijven. Let dus altijd goed op als je een behuizing koopt!</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

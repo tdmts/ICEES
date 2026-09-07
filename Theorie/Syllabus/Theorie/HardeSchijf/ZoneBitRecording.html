@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zone Bit Recording</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Zone Bit Recording</h1>
+
+        <p>Het probleem is natuurlijk dat het aantal sectoren op de tracks beperkt wordt tot het aantal sectoren dat past op de binnenste, kortste track. Hierdoor verliest men veel capaciteit. Met behulp van Zone Bit Recording (ZBR) lost men dit probleem op door het aantal sectoren per track te laten variëren.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 140.0mm">
+            <img src="../../../../img/syllabus-11-zone-bit-recording.svg" class="img-fluid"
+                alt="Een platter verdeeld in drie zones. De binnenste zone is rood en telt acht sectoren per track, de middelste is groen met twaalf en de buitenste is grijs met zestien. In de binnenste en de buitenste zone is een sector volledig ingekleurd; de twee zijn even lang, maar de buitenste beslaat een halve hoek van de binnenste">
+        </figure>
+
+        <p>Men verdeelt de tracks onder in zones (rood, groen, grijs) waarbij elke track in een zone dezelfde hoeveelheid sectoren heeft. Dit maakt adressering er niet makkelijker op maar zorgt wel dat de capaciteit van een harde schijf significant wordt uitgebreid.</p>
+
+        <p>Zoals je kan zien is iedere zone eigenlijk een lokale variant van de CHS adressering. Op alle sectoren worden nog evenveel bits opgeslagen, maar zoals je duidelijk kan zien zijn er veel meer sectoren in de buitenste zones dan in de binnenste.</p>
+
+        <p>Hopelijk zie je nu ook in waarom dit de adressering moeilijker maakt: een sector in de buitenste zone heeft een andere start- en eindpositie dan een sector in de binnenste zone.</p>
+
+        <h2>Performantie</h2>
+
+        <p>Gezien de buitenste zones meer data kunnen bevatten is het interessanter om data aan de buitenkant van de harde schijf te plaatsen. Dit resulteert in kleinere seek-time en dus hogere doorvoersnelheden. Wanneer we deze figuur beschouwen zien we overduidelijk een dramatische impact op de doorvoersnelheid.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 150.0mm">
+            <img src="../../../../img/syllabus-11-doorvoersnelheid-per-zone.svg" class="img-fluid"
+                alt="Grafiek van de doorvoersnelheid tegenover de positie op de schijf. De curve begint aan de buitenrand op zo&#x27;n 130 MB/s en zakt in vlakke treden, een per zone, tot ongeveer 65 MB/s bij de as">
+        </figure>
+
+        <p>In de buitenste zones wordt een snelheid van zo’n 130 MB/s gehaald terwijl dit in de binnenste sectoren wordt gehalveerd. Dit verklaart ook deels waarom een besturingssysteem trager begint te werken. Hoe meer je hebt geïnstalleerd, hoe meer bestanden op de binnenste tracks komen te staan en hoe langzamer het systeem werkt.</p>
+
+        <p>Wie een SSD heeft geïnstalleerd heeft daar natuurlijk allemaal geen last van.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

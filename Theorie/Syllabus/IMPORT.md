@@ -97,3 +97,110 @@ letterlijk overgenomen.
 ## Virtual machines en containers > Server
 
 - tabel "" kreeg GEEN kopregel (geen enkel signaal), nakijken
+
+## Moederbord (opening)
+
+- kader "Kernpunten" werd een info-box met data-kader="kernpunten"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+- kader "Studievragen" werd een info-box met data-kader="studievragen"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+
+## Moederbord > Vormfactoren
+
+- tabel "Control Cabinet" kreeg GEEN kopregel (geen enkel signaal), nakijken
+
+## Moederbord > Raspberry PI
+
+- afbeelding syllabus-09-moederbord-08.jpeg zweeft naast haar alinea (wrapSquare); die alinea blijft lopende tekst en de figuur krijgt geen bijschrift uit de Word
+
+## Moederbord > Industriële moederborden
+
+- afbeelding syllabus-09-moederbord-09.jpeg zweeft naast haar alinea (wrapSquare); die alinea blijft lopende tekst en de figuur krijgt geen bijschrift uit de Word
+
+## Moederbord > Hoe kies je een (industrieel) moederbord?
+
+- afbeelding syllabus-09-moederbord-15.png zweeft naast haar alinea (wrapSquare); die alinea blijft lopende tekst en de figuur krijgt geen bijschrift uit de Word
+
+## Moederbord > Oefening
+
+- lege tabel van 1 rijen overgenomen als invulruimte
+- lege tabel van 1 rijen overgenomen als invulruimte
+- lege tabel van 1 rijen overgenomen als invulruimte
+
+## Moederbord > Studievragen
+
+- afbeelding syllabus-09-moederbord-29.png stond tussen een vraag en haar keuzes en is in de vraag gezet
+
+## Informatievoorstelling (opening)
+
+- kader "Kernpunten" werd een info-box met data-kader="kernpunten"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+- kader "Studievragen" werd een info-box met data-kader="studievragen"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+
+## Informatievoorstelling > Binair = betrouwbaar
+
+- afbeelding syllabus-10-informatievoorstelling-01.png zweeft naast haar alinea (wrapSquare); die alinea blijft lopende tekst en de figuur krijgt geen bijschrift uit de Word
+
+## Informatievoorstelling > Oefeningen
+
+- lege tabel van 1 rijen overgenomen als invulruimte
+- lege tabel van 1 rijen overgenomen als invulruimte
+- lege tabel van 1 rijen overgenomen als invulruimte
+- lege tabel van 1 rijen overgenomen als invulruimte
+- lege tabel van 1 rijen overgenomen als invulruimte
+- lege tabel van 1 rijen overgenomen als invulruimte
+- lege tabel van 1 rijen overgenomen als invulruimte
+- afbeelding syllabus-10-informatievoorstelling-04.png stond tussen een vraag en haar keuzes en is in de vraag gezet
+- afbeelding syllabus-10-informatievoorstelling-05.png stond in een lijstitem en is erin gezet, zonder bijschrift
+
+## Harde schijf (opening)
+
+- kader "Kernpunten" werd een info-box met data-kader="kernpunten"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+- kader "Studievragen" werd een info-box met data-kader="studievragen"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+
+## Harde schijf > Mechanische harde schijf
+
+- afbeelding syllabus-11-harde-schijf-02.png zweeft naast haar alinea (wrapSquare); die alinea blijft lopende tekst en de figuur krijgt geen bijschrift uit de Word
+
+## Harde schijf > Cylinder head sector
+
+- afbeelding syllabus-11-harde-schijf-03.png zweeft naast haar alinea (wrapSquare); die alinea blijft lopende tekst en de figuur krijgt geen bijschrift uit de Word
+
+## Harde schijf > Oefening mechanische harde schijf
+
+- afbeelding syllabus-11-harde-schijf-06.png stond tussen een vraag en haar keuzes en is in de vraag gezet
+- tabel met een lege kolom onder de vraag erboven gezet als invulruimte
+- tabel "1:" kreeg GEEN kopregel (geen enkel signaal), nakijken
+- tabel "1:": kolom 2, 4 staat overal leeg en werd invulruimte, op de breedte van de Word
+- lege tabel van 1 rijen overgenomen als invulruimte
+- lege tabel van 1 rijen overgenomen als invulruimte
+- lege tabel van 2 rijen overgenomen als invulruimte
+- lege tabel van 1 rijen overgenomen als invulruimte
+- lege tabel van 1 rijen overgenomen als invulruimte
+- lege tabel van 1 rijen overgenomen als invulruimte
+- lege tabel van 1 rijen overgenomen als invulruimte
+
+## Harde schijf > Solid State Drive
+
+- afbeelding syllabus-11-harde-schijf-07.png zweeft naast haar alinea (wrapSquare); die alinea blijft lopende tekst en de figuur krijgt geen bijschrift uit de Word
+
+## Harde schijf > Oefening Solid State Disk
+
+- tabel "We starten de zoektocht naar e" kreeg GEEN kopregel (geen enkel signaal), nakijken
+- tabel "We starten de zoektocht naar e": kolom 2 staat overal leeg en werd invulruimte, op de breedte van de Word
+- tabel "Probleemstelling" kreeg een kopregel, want de hele eerste rij staat vet
+- tabel "Probleemstelling" kreeg een kopregel, want de hele eerste rij staat vet
+- tabel "Probleemstelling" kreeg een kopregel, want de hele eerste rij staat vet
+- tabel "Probleemstelling" kreeg een kopregel, want de hele eerste rij staat vet
+- afbeelding syllabus-11-harde-schijf-14.png zweeft naast haar alinea (wrapSquare); die alinea blijft lopende tekst en de figuur krijgt geen bijschrift uit de Word
+- lege tabel van 1 rijen overgenomen als invulruimte
+
+## Harde schijf > Serial Advanced Technology Attachment (SATA)
+
+- afbeelding syllabus-11-harde-schijf-19.png zweeft naast haar alinea (wrapSquare); die alinea blijft lopende tekst en de figuur krijgt geen bijschrift uit de Word
+
+## Harde schijf > Network Attached Storage (NAS)
+
+- afbeelding syllabus-11-harde-schijf-37.png zweeft naast haar alinea (wrapSquare); die alinea blijft lopende tekst en de figuur krijgt geen bijschrift uit de Word
+
+## Harde schijf > Studievragen
+
+- lege tabel van 1 rijen overgenomen als invulruimte
+- lege tabel van 1 rijen overgenomen als invulruimte

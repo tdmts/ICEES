@@ -468,6 +468,210 @@ window.LAB_REFERENCE = {
                         href: 'VirtualMachinesEnContainers/TestJezelf.html'
                     }
                 ]
+            },
+            {
+                name: 'Moederbord',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'moederbord-overzicht',
+                        name: 'Kernpunten en studievragen',
+                        blurb: 'Waarom het moederbord de ruggengraat van een computer is, welke vormfactoren er bestaan, en waarom de keuze ervan het type processor en het type geheugen vastlegt.',
+                        href: 'Moederbord/Overzicht.html'
+                    },
+                    {
+                        id: 'moederbord-vormfactoren',
+                        name: 'Vormfactoren',
+                        blurb: 'ATX meet 30,5 op 24,4 cm en houdt de hardware vervangbaar; een embedded pc op een DIN rail gebruikt PC104 en een panel pc de 3,5 duim standaard.',
+                        href: 'Moederbord/Vormfactoren.html'
+                    },
+                    {
+                        id: 'moederbord-raspberry-pi',
+                        name: 'Raspberry Pi',
+                        blurb: 'Een volwaardige computer op de afmetingen van een bankkaart, met een ARM processor en een SD kaart als schijf, en waarin hij verschilt van een Arduino of een PLC.',
+                        href: 'Moederbord/RaspberryPi.html'
+                    },
+                    {
+                        id: 'moederbord-industriele-moederborden',
+                        name: 'Industriele moederborden',
+                        blurb: 'Waarom een bouwer zijn eigen borden maakt en tien jaar vervangonderdelen belooft, en hoe de processor, het werkgeheugen en de grafische kaart eraan hangen: socket, DIMM slot en PCI Express.',
+                        href: 'Moederbord/IndustrieleMoederborden.html'
+                    },
+                    {
+                        id: 'moederbord-hoe-kiezen',
+                        name: 'Hoe kies je een moederbord',
+                        blurb: 'Je begint bij de processor, want die legt de socket vast, en van daaruit volgen de vormfactor, het geheugen en het aantal PCI Express slots.',
+                        href: 'Moederbord/HoeKiesJeEenIndustrieelMoederbord.html'
+                    },
+                    {
+                        id: 'moederbord-oefening',
+                        name: 'Oefening',
+                        blurb: 'Drie embedded systems van Beckhoff naast elkaar leggen en er dat ene uit kiezen dat je programma in C# op een DVI scherm kan draaien met minstens 2 GB RAM.',
+                        href: 'Moederbord/Oefening.html'
+                    },
+                    {
+                        id: 'moederbord-test-jezelf',
+                        name: 'Test jezelf',
+                        blurb: 'Vier meerkeuzevragen over de vormfactoren, wat een industrieel moederbord onderscheidt, de socket en het merk van de processor, en het herkennen van een DIMM slot.',
+                        href: 'Moederbord/TestJezelf.html'
+                    }
+                ]
+            },
+            {
+                name: 'Informatievoorstelling',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'informatievoorstelling-overzicht',
+                        name: 'Kernpunten en studievragen',
+                        blurb: 'Waarom een computer alles binair bijhoudt, hoe bits gegroepeerd worden, en waarom een kilobyte 1000 bytes is en een kibibyte 1024.',
+                        href: 'Informatievoorstelling/Overzicht.html'
+                    },
+                    {
+                        id: 'informatievoorstelling-binair-betrouwbaar',
+                        name: 'Binair = betrouwbaar',
+                        blurb: 'Een TTL chip leest alles onder 0,4 V als een 0 en alles boven 2,4 V als een 1, dus er mag heel wat misgaan met een signaal voor het verkeerd gelezen wordt.',
+                        href: 'Informatievoorstelling/BinairBetrouwbaar.html'
+                    },
+                    {
+                        id: 'informatievoorstelling-bit-nibble-byte',
+                        name: 'Bit, nibble, byte, word, double word',
+                        blurb: 'De namen voor groepen van 1, 4, 8, 16 en 32 bits, en waarom een qubit er niet bij hoort.',
+                        href: 'Informatievoorstelling/BitNibbleByteWordDoubleWord.html'
+                    },
+                    {
+                        id: 'informatievoorstelling-alles-is-een-getal',
+                        name: 'Alle informatie wordt voorgesteld door getallen',
+                        blurb: 'Tekst, beeld, geluid en video staan allemaal als binaire getallen op de schijf; het is de afspraak, zoals de ASCII tabel, die zegt hoe je zo een getal leest.',
+                        href: 'Informatievoorstelling/AlleInformatieWordtVoorgesteldDoorGetallen.html'
+                    },
+                    {
+                        id: 'informatievoorstelling-kibi-versus-kilo',
+                        name: 'Kibi versus kilo',
+                        blurb: 'Waarom een schijf van 1 TB in Windows als 931 GB verschijnt: de fabrikant rekent met 1000 en het besturingssysteem met 1024, en hoe groter de capaciteit hoe groter dat verschil.',
+                        href: 'Informatievoorstelling/KibiVersusKilo.html'
+                    },
+                    {
+                        id: 'informatievoorstelling-kbps-kbps',
+                        name: 'kbps vs kBps',
+                        blurb: 'Een kleine b is een bit en een grote B een byte, een factor 8 verschil, en daarom meet een schijf in MB/s en een netwerkverbinding in Mbps.',
+                        href: 'Informatievoorstelling/BitOfByte.html'
+                    },
+                    {
+                        id: 'informatievoorstelling-oefeningen',
+                        name: 'Oefeningen',
+                        blurb: 'Negen vragen over bits, bytes en octetten, de tekst eLm opzoeken in de ASCII tabel, en wat een schijf van 1 TB in Windows toont.',
+                        href: 'Informatievoorstelling/Oefeningen.html'
+                    }
+                ]
+            },
+            {
+                name: 'Harde schijf',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'harde-schijf-overzicht',
+                        name: 'Kernpunten en studievragen',
+                        blurb: 'De drie soorten harde schijf, hoe ze aangesloten en aangesproken worden, en wat RAID, de cloud en een NAS voor je data betekenen.',
+                        href: 'HardeSchijf/Overzicht.html'
+                    },
+                    {
+                        id: 'harde-schijf-mechanisch',
+                        name: 'Mechanische harde schijf',
+                        blurb: 'Platters, koppen, tracks en sectoren, en waarom de seek time en de rotational latency samen bepalen hoe lang je op een bestand wacht.',
+                        href: 'HardeSchijf/MechanischeHardeSchijf.html'
+                    },
+                    {
+                        id: 'harde-schijf-chs',
+                        name: 'Cylinder head sector',
+                        blurb: 'Elke track evenveel sectoren geven is eenvoudig te adresseren en laat aan de buitenkant van de platter veel plaats liggen.',
+                        href: 'HardeSchijf/CylinderHeadSector.html'
+                    },
+                    {
+                        id: 'harde-schijf-zbr',
+                        name: 'Zone Bit Recording',
+                        blurb: 'Het aantal sectoren per zone laten variëren wint die plaats terug, en verklaart waarom een schijf aan zijn buitenrand dubbel zo snel is als bij de as.',
+                        href: 'HardeSchijf/ZoneBitRecording.html'
+                    },
+                    {
+                        id: 'harde-schijf-oefening-mechanisch',
+                        name: 'Oefening mechanische harde schijf',
+                        blurb: 'Tien vragen bij een video: de onderdelen benoemen, de rotatiesnelheid, het luchtkussen onder de kop, en het verschil tussen een track, een disk sector en een track sector.',
+                        href: 'HardeSchijf/OefeningMechanischeHardeSchijf.html'
+                    },
+                    {
+                        id: 'harde-schijf-ssd',
+                        name: 'Solid State Drive',
+                        blurb: 'Pages, blocks, planes en chips, en waarom wear levelling, write amplification, garbage collection en TRIM bepalen hoe snel en hoe lang een SSD meegaat.',
+                        href: 'HardeSchijf/SolidStateDrive.html'
+                    },
+                    {
+                        id: 'harde-schijf-oefening-ssd',
+                        name: 'Oefening Solid State Drive',
+                        blurb: 'Vijf keer twee schijven naast elkaar leggen en er de beste uit kiezen, van een HDD tegen een SSD tot twee M.2 schijven die alleen in lengte verschillen.',
+                        href: 'HardeSchijf/OefeningSolidStateDrive.html'
+                    },
+                    {
+                        id: 'harde-schijf-pata',
+                        name: 'Parallel Advanced Technology Attachment (PATA)',
+                        blurb: 'De lintkabel van 40 of 80 geleiders, en het jumpertje waarmee je uitmaakt welke schijf de master is en welke de slave.',
+                        href: 'HardeSchijf/ParallelAdvancedTechnologyAttachmentPata.html'
+                    },
+                    {
+                        id: 'harde-schijf-sata',
+                        name: 'Serial Advanced Technology Attachment (SATA)',
+                        blurb: 'Een kabel per toestel in plaats van master en slave, schijven wisselen terwijl de computer draait, en waarom 6 Gb/s in de praktijk 600 MB/s is.',
+                        href: 'HardeSchijf/SerialAdvancedTechnologyAttachmentSata.html'
+                    },
+                    {
+                        id: 'harde-schijf-ahci',
+                        name: 'Advanced Host Controller Interface (AHCI)',
+                        blurb: 'De standaard die hot swapping en een wachtrij met commando’s brengt, en die de koppen van een mechanische schijf zo weinig mogelijk laat bewegen.',
+                        href: 'HardeSchijf/AdvancedHostControllerInterfaceAhci.html'
+                    },
+                    {
+                        id: 'harde-schijf-nvme',
+                        name: 'Non-Volatile Memory Express (NVMe)',
+                        blurb: 'Waarom een SSD op AHCI zijn potentieel niet haalt, en hoe 65536 wachtrijen over PCI Express dat wel doen.',
+                        href: 'HardeSchijf/NonVolatileMemoryExpressNvme.html'
+                    },
+                    {
+                        id: 'harde-schijf-pcie',
+                        name: 'PCI Express (PCIe)',
+                        blurb: 'Een verbinding per toestel in plaats van een gedeelde bus, de breedtes x1 tot x16, en wat elke versie van de standaard erbij haalt.',
+                        href: 'HardeSchijf/PciExpressPcie.html'
+                    },
+                    {
+                        id: 'harde-schijf-m2',
+                        name: 'M.2',
+                        blurb: 'De aansluiting die de snelheid van PCI Express in het formaat van een kaartje legt, en waar je op moet letten als je er een koopt.',
+                        href: 'HardeSchijf/M2.html'
+                    },
+                    {
+                        id: 'harde-schijf-raid',
+                        name: 'Redundant Array Of Independent Disks (RAID)',
+                        blurb: 'Meerdere schijven laten samenwerken voor snelheid, voor redundantie of voor allebei, van RAID 0 tot RAID 10 en in software.',
+                        href: 'HardeSchijf/RedundantArrayOfIndependentDisksRaid.html'
+                    },
+                    {
+                        id: 'harde-schijf-cloud',
+                        name: 'Cloud storage',
+                        blurb: 'Je bestanden op de server van iemand anders: goedkoop en overal bereikbaar, met privacy en beveiliging als de prijs.',
+                        href: 'HardeSchijf/CloudStorage.html'
+                    },
+                    {
+                        id: 'harde-schijf-nas',
+                        name: 'Network Attached Storage (NAS)',
+                        blurb: 'Een embedded system met meerdere schijven op je eigen netwerk, en welke RAID configuratie daarbij past.',
+                        href: 'HardeSchijf/NetworkAttachedStorageNas.html'
+                    },
+                    {
+                        id: 'harde-schijf-test-jezelf',
+                        name: 'Test jezelf',
+                        blurb: 'Vierentwintig vragen over de mechanische schijf, de SSD, de aansluitingen en de RAID configuraties.',
+                        href: 'HardeSchijf/TestJezelf.html'
+                    }
+                ]
             }
         ]
     },

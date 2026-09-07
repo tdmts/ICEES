@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Volatile Memory Express (NVMe)</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Non-Volatile Memory Express (NVMe)</h1>
+
+        <p>Voor iemand een klassieke harde schijf vervangt door een SSD op de SATA interface zijn er onmiddellijk grote verschillen qua performantie op te merken.</p>
+
+        <p>Maar... ondertussen zijn SSD&#x27;s al zodanig geëvolueerd dat zelfs SATA III met zijn transfersnelheid van 600 MB/s niet meer kan volgen. SATA communiceert met de harde schijf via de Advanced Host Controller Interface of AHCI en net hier bevindt zich het probleem.</p>
+
+        <p>Zoals je weet is AHCI geoptimaliseerd voor mechanische harde schijven en focust het zich om de beweging van de koppen te optimaliseren. Bij SSD&#x27;s is dit natuurlijk niet van toepassing.</p>
+
+        <p>Als oplossing gebruiken fabrikanten de PCI Express aansluiting, deze bevindt zich dichter bij de processor dan de SATA aansluiting en heeft een theoretische limiet van maar liefst 4 GB/s. Maar als we nog steeds AHCI gebruiken is het volle potentieel van een SSD nog steeds niet toegankelijk. Vandaar dat men kiest voor Non-Volatile Memory Express ten voordele van AHCI.</p>
+
+        <p>NVMe is de nieuwe standaard wanneer het gaat om SSD&#x27;s aan te spreken. Terwijl een mechanische harde schijf geen gelijktijdige lees- en schrijf operaties aankan is een SSD hier wel toe in staat. Het grootste verschil zit hem dan ook in het Command Queueing mechanisme. De command queue is een wachtrij met I/O commando&#x27;s.</p>
+
+        <p>Terwijl AHCI slechts 1 queue heeft met 32 commando&#x27;s ondersteunt NVMe liefst 65536 queue&#x27;s met elk 65536 commando&#x27;s. De performantiewinst is dan ook substantieel.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-11-harde-schijf-22.png" class="img-fluid"
+                alt="Staafgrafiek HDD vs. SATA vs. NVMe met de maximale theoretische snelheden. Een mechanische harde schijf leest 150 en schrijft 130, SATA leest en schrijft 550, NVMe leest 2500 en schrijft 1000">
+        </figure>
+
+        <p>Naar de toekomst toe worden harde schijven meer en meer aangesloten via M.2 in tegenstelling tot SATA of PCI Express. Over deze aansluiting leer je zo dadelijk meer.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

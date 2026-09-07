@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oefening</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Oefening</h1>
+
+        <p>Op je stage heb je een programma geschreven in C# dat een sensor uitleest en visualiseert op een scherm met DVI aansluiting. Je hebt minstens 2 GB RAM nodig.</p>
+
+        <p>Je kan kiezen tussen de CX9020, de CX5120 en de CX5620. De datasheets van deze systemen kan je op de volgende pagina&#x2019;s terugvinden.</p>
+
+        <div class="info-box">
+            <div class="info-title remark">Bron</div>
+            <p>Beckhoff Automation, productdatasheets <em>CX9020</em> en <em>CX5120</em> van 14 september 2023 en
+                <em>CX5620</em> van 18 september 2023. Hieronder staan per toestel de twee bladzijden met de
+                technische gegevens; wat daarop volgt zijn bestelnummers, opties en toebehoren. De volledige
+                datasheet staat op beckhoff.com/cx9020, beckhoff.com/cx5120 en beckhoff.com/cx5620. De drie
+                vragen staan achter de datasheets.
+            </p>
+        </div>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 152.0mm">
+            <img src="../../../../img/syllabus-09-moederbord-16.png" class="img-fluid" alt="Bladzijde 1 van de datasheet van de CX9020: de titel CX9020 Basic CPU module, een tekening van het toestel met zijn Ethernet-, USB-, DVI- en optionele aansluitingen benoemd, en een omschrijving die zegt dat het een systeem voor een DIN rail is met een ARM Cortex-A8 van 1 GHz, twee microSD-sloten en Windows Embedded Compact 7; onderaan begint de technische tabel met de processor, het aantal kernen, het flashgeheugen en 1 GB DDR3 RAM dat niet uitbreidbaar is">
+            <figcaption class="figure-caption">Bladzijde 1 van 4, CX9020</figcaption>
+        </figure>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 152.0mm">
+            <img src="../../../../img/syllabus-09-moederbord-17.png" class="img-fluid" alt="Bladzijde 2 van de datasheet van de CX9020: de rest van de technische tabel, met twee netwerkpoorten, een DVI-D, vier USB 2.0 en een optionele aansluiting, Windows Embedded Compact 7 als besturingssysteem, een voeding van 24 V, afmetingen van 84 bij 100 bij 91 mm en een werkbereik van min 25 tot plus 60 graden">
+            <figcaption class="figure-caption">Bladzijde 2 van 4, CX9020</figcaption>
+        </figure>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 152.0mm">
+            <img src="../../../../img/syllabus-09-moederbord-20.png" class="img-fluid" alt="Bladzijde 1 van de datasheet van de CX5120: de titel CX5120 Embedded PC with Intel Atom processor, een tekening van het toestel met zijn Ethernet-, USB-, DVI- en optionele aansluitingen benoemd, en een omschrijving die zegt dat het een Intel Atom met een kern van 1,46 GHz is met twee gigabitpoorten, vier USB 2.0 en een DVI-I; onderaan begint de technische tabel met de processor, het aantal kernen en het flashgeheugen">
+            <figcaption class="figure-caption">Bladzijde 1 van 5, CX5120</figcaption>
+        </figure>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 152.0mm">
+            <img src="../../../../img/syllabus-09-moederbord-21.png" class="img-fluid" alt="Bladzijde 2 van de datasheet van de CX5120: de rest van de technische tabel, die begint met 2 GB DDR3 RAM dat niet uitbreidbaar is, en verder twee netwerkpoorten, een DVI-I, vier USB 2.0, en als besturingssysteem Windows Embedded Compact 7, Windows Embedded Standard 7 P en drie versies van Windows 10 IoT Enterprise">
+            <figcaption class="figure-caption">Bladzijde 2 van 5, CX5120</figcaption>
+        </figure>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 152.0mm">
+            <img src="../../../../img/syllabus-09-moederbord-25.png" class="img-fluid" alt="Bladzijde 1 van de datasheet van de CX5620: de titel CX5620 Basic CPU module, een tekening van het toestel met vier blauwe USB 3.0-poorten, twee netwerkpoorten en een DVI-aansluiting, en een omschrijving die zegt dat het een AMD Ryzen R1102G van 1,2 GHz met twee kernen is, met 4 GB DDR4 RAM en een vervangbare M.2 SSD">
+            <figcaption class="figure-caption">Bladzijde 1 van 4, CX5620</figcaption>
+        </figure>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 152.0mm">
+            <img src="../../../../img/syllabus-09-moederbord-26.png" class="img-fluid" alt="Bladzijde 2 van de datasheet van de CX5620: de volledige technische tabel, met de AMD Ryzen R1102G van 1,2 GHz, twee kernen, 4 GB DDR4 RAM, twee netwerkpoorten, een DVI-D, vier USB 3.0, en als besturingssysteem Windows 10 IoT Enterprise 2019 en 2021 LTSC of TwinCAT BSD">
+            <figcaption class="figure-caption">Bladzijde 2 van 4, CX5620</figcaption>
+        </figure>
+
+        <ol class="vragen">
+            <li>Welk(e) embedded system(s) komen in aanmerking?
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered invulruimte">
+                        <tbody>
+                            <tr><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="oplossing">De CX5120 en de CX5620. Allebei dragen ze een processor met de x64
+                    instructieset, waar je programma in C# op draait, allebei hebben ze een DVI aansluiting, en
+                    allebei halen ze de 2 GB: de CX5120 heeft 2 GB DDR3 en de CX5620 4 GB DDR4.</div>
+            </li>
+            <li>Waarom zijn er embedded systems die niet in aanmerking komen?
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered invulruimte">
+                        <tbody>
+                            <tr><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="oplossing">De CX9020 valt af, om twee redenen. Hij heeft 1 GB RAM en dat geheugen is
+                    niet uitbreidbaar, dus de 2 GB die je nodig hebt haal je er nooit. En zijn processor is een ARM
+                    Cortex-A8 met Windows Embedded Compact 7 erop, dus je programma in C# draait er niet zoals je
+                    het geschreven hebt. Zijn DVI-D aansluiting is wel in orde.</div>
+            </li>
+            <li>Welk embedded system zou je kiezen?
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered invulruimte">
+                        <tbody>
+                            <tr><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="oplossing">Allebei zijn ze een goed antwoord, zolang je je keuze motiveert. Voor de
+                    CX5620 pleit de ruimte: 2 GB is bij de CX5120 de ondergrens die de opgave vraagt en meteen het
+                    plafond, want dat geheugen is niet uitbreidbaar terwijl het besturingssysteem er zelf ook een
+                    stuk van neemt, en de CX5620 heeft 4 GB en twee kernen in plaats van een. Voor de CX5120 pleit
+                    dat hij aan alles voldoet wat de opgave vraagt, en dat je niet betaalt voor wat je niet nodig
+                    hebt.</div>
+            </li>
+        </ol>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+    <script src="../../../../oplossingen.js"></script>
+</body>
+
+</html>

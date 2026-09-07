@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallel Advanced Technology Attachment (PATA)</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Parallel Advanced Technology Attachment (PATA)</h1>
+
+        <p>De PATA of Parallel Advanced Technology Attachment standaard is een standaard met een lange geschiedenis. Deze evolueerde vanuit Western Digital&#x27;s Integrated Drive Electronics of IDE interface. IDE is de voorloper van AHCI en NVMe. Hierover leer je later meer. Bijgevolg worden de namen ATA en IDE vaak door elkaar gebruikt en voor synoniemen aanzien. Na de introductie van SATA ofwel Serial ATA werd ATA hernoemd naar Parallel ATA of PATA.</p>
+
+        <p>De standaard wordt gebruikt om opslagapparaten zoals harde schijven, floppy stations en optische stations (CD-ROM, DVD) aan te sluiten.</p>
+
+        <h2>Kabels</h2>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 85.0mm">
+            <img src="../../../../img/syllabus-11-harde-schijf-16.png" class="img-fluid"
+                alt="Een PATA lintkabel met drie connectoren. Onder elke connector staat waar ze in hoort: de zwarte in de master, de grijze in de slave en de blauwe in de controllerkaart of het moederbord">
+        </figure>
+
+        <p>PATA ribbon kabels hebben een maximum lengte van ongeveer 45 centimeter. Ze tellen twee of drie 40-pin connectoren die langs de ene kant aangesloten worden op het moederbord en langs de andere kant op opslagapparaten zoals harde schijf en CD-ROM.</p>
+
+        <p>In een moderne computer ga je ze niet meer terugvinden.</p>
+
+        <p>Om de snelheid verder op te drijven zijn er ook PATA kabels met 80 geleiders (onderaan) op de markt. Deze extra geleiders zijn vooral ground wires om, zoals je al kan raden, crosstalk te vermijden. De connectoren blijven dezelfde.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-11-harde-schijf-17.jpeg" class="img-fluid"
+                alt="Twee PATA lintkabels onder elkaar met dezelfde connectoren aan de uiteinden. De onderste is zichtbaar fijner geribbeld, want ze telt 80 geleiders tegen 40 voor de bovenste">
+        </figure>
+
+        <h2>Master / Slave / Cable Select</h2>
+
+        <p>Zoals je weet stuurt een PATA kabel 16 bits tegelijkertijd aan gegevens. Gezien er twee apparaten aangesloten kunnen worden op dezelfde kabel moet er uitgemaakt worden naar welk apparaat deze gegevens worden gestuurd.</p>
+
+        <p>Om dit in goede banen te leiden wordt het ene apparaat ingesteld als device 0 ofwel de master en het andere als device 1 ofwel de slave.</p>
+
+        <p>Dit gebeurt aan de hand van een jumper instelling op de harde schijf. Een jumper is een klein stukje plastic met daarin een geleider dat dient als een schakelaar.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 78.1mm">
+            <img src="../../../../img/syllabus-11-harde-schijf-18.png" class="img-fluid"
+                alt="Tekening van de jumperpennen achteraan een harde schijf, met een tabel General Pin Setting erboven die per stand aangeeft waar het jumpertje moet zitten: set as master, set as slave of cable select">
+        </figure>
+
+        <p>Wanneer twee opslagapparaten aangesloten worden op dezelfde kabel moet de ene  ingesteld worden als master en de andere als slave. Er is echter ook nog een derde optie cable select genaamd. Bij deze laatste optie worden beide opslagapparaten ingesteld op cable select en is het de kabel die bepaalt welk apparaat master wordt en welk apparaat slave.</p>
+
+        <p>Doorgaans zet je het belangrijkste apparaat, bijvoorbeeld de harde schijf met het besturingssysteem, als master en het andere als slave.</p>
+
+        <p>Indien er slechts één apparaat is dat aangesloten moet worden stel je dat in als master. Op sommige harde schijven wordt dit echter aangeduid als single.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

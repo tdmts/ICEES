@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vormfactoren</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Vormfactoren</h1>
+
+        <p>Het moederbord wordt vaak vergeleken met de ruggengraat van een computer. Alle apparaten die in en rond een computer voorkomen zoals processor, werkgeheugen, scherm, toetsenbord, ... worden er op aangesloten.</p>
+
+        <p>In principe is een moederbord niets meer dan een PCB of Printed Circuit Board met verschillende aansluitingen. Een moederbord heeft zelf geen rekenkracht maar het vertrouwt op andere componenten om correct te functioneren.</p>
+
+        <p>Het ontwerpen van een moederbord is niet eenvoudig gezien de afmetingen vastliggen volgens een bepaalde standaard zoals bijvoorbeeld ATX of Advanced Technology Extended.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-09-moederbord-01.png" class="img-fluid" alt="Vijf moederborden van groot naar klein naast elkaar, met onder elk zijn naam: Standard-ATX, Micro-ATX, Mini-ITX, Nano-ITX en Pico-ITX, en rechtsonder een balpen als maatstaf">
+        </figure>
+
+        <p>De afmetingen van Standard-ATX zijn 30.5 cm op 24.4 cm (ongeveer een A4 blad) en op deze oppervlakte moeten bijgevolg alle aansluitingen komen die het moederbord moet ondersteunen. Hierbij denken we vooral aan:</p>
+
+        <ul>
+            <li>de processor;</li>
+            <li>het werkgeheugen;</li>
+            <li>de grafische kaart.</li>
+        </ul>
+
+        <p>Zo een standaard legt meer vast dan de lengte en de breedte. Ze bepaalt ook waar de schroefgaten zitten, waar het blok met de aansluitingen aan de achterkant uitkomt en waar de voeding zijn stekkers kwijt kan. Daardoor past elk ATX moederbord in elke ATX kast, en werkt elke ATX voeding erop.</p>
+
+        <p>Die vaste maat is meteen het nadeel van ATX. Een bord van dat formaat vraagt een kast die er plaats voor heeft, en zo een kast staat niet in een machine en past niet op een DIN rail. En omdat alle aansluitingen op dat ene oppervlak moeten, ligt de indeling van het bord grotendeels vast: zet een fabrikant er een aansluiting bij, dan moet er ergens anders plaats weg.</p>
+
+        <p>Een industriële computer zoals een Control Cabinet PC houdt zich meestal aan de standaard ATX afmetingen maar bij een embedded PC, die vaak gemonteerd wordt op een DIN rail, wijken die afmetingen natuurlijk af. Daar wordt de PC104 standaard gebruikt.</p>
+
+        <p>Voor Panel PCs wordt de 3.5 inch standaard gebruikt.</p>
+
+        <p>Als je kijkt naar de verschillen tussen de drie moederborden dan zie je dat er bij ATX nog mogelijkheden zijn om bepaalde componenten zoals processor, werkgeheugen, harde schijf, grafische kaart, … te vervangen.</p>
+
+        <p>Bij de PC104 standaard is dat niet het geval. Vandaar ook de naam: embedded system.</p>
+
+        <p>Het enige wat je meestal nog kan veranderen in een embedded system is de SD kaart. Als je goed kijkt zie je ook 2 SD kaart slots in de behuizing van de embedded PC. Op de SD kaart staat het besturingssysteem en het programma dat je wil laten uitvoeren.</p>
+
+        <p>Aan een embedded system hang je meestal ook I/O eilanden om een extern proces uit te lezen of aan te sturen. Ook die kan je uitwisselen maar in principe maken deze geen deel uit van het embedded system.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered">
+                <thead class="table-header-custom">
+                    <tr><th>Control Cabinet</th><th>Panel PC</th><th>Embedded PC</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 42.9mm">
+            <img src="../../../../img/syllabus-09-moederbord-02.jpeg" class="img-fluid" alt="Een opengeklapte kast van een control cabinet pc, met het moederbord rechtop tegen de zijwand en twee schijfhouders onderaan">
+        </figure></td><td><figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 39.7mm">
+            <img src="../../../../img/syllabus-09-moederbord-03.jpeg" class="img-fluid" alt="Een panel pc schuin van voren: een vierkant scherm in een metalen rand, met het opschrift BECKHOFF onderaan en een koelrooster aan de achterkant">
+        </figure></td><td><figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 48.7mm">
+            <img src="../../../../img/syllabus-09-moederbord-04.jpeg" class="img-fluid" alt="Een embedded pc van Beckhoff, type CX9020, met twee netwerkpoorten, vier USB-poorten, een DVI-D-aansluiting en een rij klemmen ernaast">
+        </figure></td></tr>
+                    <tr><td><figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 45.0mm">
+            <img src="../../../../img/syllabus-09-moederbord-05.jpeg" class="img-fluid" alt="Een groot industrieel moederbord schuin van boven, met een processorsocket, vier geheugensloten en zeven uitbreidingssloten op een rij">
+        </figure></td><td><figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 45.0mm">
+            <img src="../../../../img/syllabus-09-moederbord-06.jpeg" class="img-fluid" alt="Een moederbord van 3,5 duim schuin van boven, met VGA, DVI, twee USB-poorten en twee netwerkpoorten aan een lange zijde">
+        </figure></td><td><figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 45.0mm">
+            <img src="../../../../img/syllabus-09-moederbord-07.jpeg" class="img-fluid" alt="Een vierkant PC104-bord schuin van boven, met langs twee zijden een dubbele rij pennen om er een volgend bord op te stapelen">
+        </figure></td></tr>
+                    <tr><td>ATX</td><td>3.5 inch</td><td>PC104</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

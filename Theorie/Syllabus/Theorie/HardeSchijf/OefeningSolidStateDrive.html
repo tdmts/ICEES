@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oefening Solid State Drive</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Oefening Solid State Drive</h1>
+
+        <p>We starten de zoektocht naar een nieuwe harde schijf. Je krijgt telkens een concrete probleemsituatie met twee mogelijke oplossingen.</p>
+
+        <p>Aan jou om telkens de beste oplossing te kiezen.</p>
+
+        <h2>Oefening 1</h2>
+
+        <p>De harde schijf van onze laptop is vol en we willen deze uitbreiden naar 1 TB. Omdat we er ook onze programma&#x27;s zullen op installeren is vooral snelheid belangrijk.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-11-oefening-1-seagate-barracuda.png" class="img-fluid"
+                alt="Het productblad van de Seagate BarraCuda ST1000LM048: totale opslagcapaciteit 1 TB, type harde schijf 2,5 inch, S-ATA (III), compatibel met een laptop, 5400 rpm en 128 MB cachegeheugen">
+        </figure>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-11-oefening-1-samsung-870-evo.png" class="img-fluid"
+                alt="Het productblad van de Samsung 870 EVO 2,5 inch: totale opslagcapaciteit 1 TB, type SSD 2,5 inch SATA, SSD-controller van Samsung en als soort geheugen Triple Level Cell (TLC)">
+        </figure>
+
+        <ol class="vragen">
+            <li>Wat is het voornaamste verschil tussen de twee harde schijven?
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered invulruimte">
+                        <tbody>
+                            <tr><td>&nbsp;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="oplossing">De Seagate is een mechanische harde schijf, met platters die aan 5400
+                    toeren per minuut draaien en met koppen die zich moeten verplaatsen. De Samsung is een SSD
+                    zonder bewegende delen. Voor de rest lijken ze op elkaar: allebei 1 TB, allebei 2,5 duim en
+                    allebei aan SATA.</div>
+            </li>
+            <li>Welke harde schijf zou je kiezen als je enkel rekening moet houden met prestaties?
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered invulruimte">
+                        <tbody>
+                            <tr><td>&nbsp;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="oplossing">De Samsung 870 EVO. Bij een SSD vallen de seek time en de rotational
+                    latency weg, en juist die twee maken het openen van een programma traag.</div>
+            </li>
+        </ol>
+
+        <h2>Oefening 2</h2>
+
+        <p>Online hebben we twee harde schijven gevonden: een Samsung 860 EVO en een Samsung 970 EVO. Ze zien er ongeveer hetzelfde uit en ze hebben beiden 1TB aan opslag.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-11-oefening-2-samsung-860-evo.png" class="img-fluid"
+                alt="Het productblad van de Samsung 860 EVO SATA M.2 van 1 TB: een M.2-kaartje met groene printplaat, buffer 1000 MB, interface SATA 600, technologie V-Nand 3-bit MLC">
+        </figure>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-11-oefening-2-samsung-970-evo-plus.png" class="img-fluid"
+                alt="Het productblad van de Samsung 970 EVO Plus NVMe M.2 van 1 TB: hetzelfde M.2-formaat maar met een zwarte printplaat, buffer 512 MB, interface PCI Express 3.0, technologie V-NAND MLC">
+        </figure>
+
+        <ol class="vragen" start="3">
+            <li>Wat is het voornaamste verschil tussen de twee harde schijven?
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered invulruimte">
+                        <tbody>
+                            <tr><td>&nbsp;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="oplossing">Allebei zijn het M.2-schijven, maar de 860 EVO praat over SATA en de
+                    970 EVO Plus over PCI Express. Dat is het verschil tussen AHCI over SATA en NVMe over PCI
+                    Express, en niet het verschil in vormfactor.</div>
+            </li>
+            <li>Welke harde schijf zou je kiezen als je enkel rekening moet houden met prestaties?
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered invulruimte">
+                        <tbody>
+                            <tr><td>&nbsp;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="oplossing">De 970 EVO Plus. SATA III loopt vast op 600 MB/s en een moderne SSD haalt
+                    dat probleemloos, dus de 860 EVO zit tegen het plafond van zijn interface. PCI Express heeft
+                    die grens niet.</div>
+            </li>
+        </ol>
+
+        <h2>Oefening 3</h2>
+
+        <p>Opnieuw vergelijken we twee harde schijven met elkaar die er op het eerste zicht heel gelijkaardig utizien.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-11-oefening-3-samsung-990-pro.png" class="img-fluid"
+                alt="Het productblad van de Samsung 990 Pro M.2 SSD van 1 TB: type SSD M.2 NVMe (PCIe), SSD-controller van Samsung, soort geheugen Multi Level Cell (MLC), vijf jaar garantie">
+        </figure>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-11-oefening-3-wd-black-sn770.png" class="img-fluid"
+                alt="Het productblad van de WD Black SN770 NVMe SSD van 1 TB: type SSD M.2 NVMe (PCIe), SSD-controller WD Black, soort geheugen Triple Level Cell (TLC), vijf jaar garantie">
+        </figure>
+
+        <ol class="vragen" start="5">
+            <li>Wat is het voornaamste verschil tussen de twee harde schijven?
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered invulruimte">
+                        <tbody>
+                            <tr><td>&nbsp;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="oplossing">Het soort geheugencel. De Samsung is een MLC met twee bits per cel, de
+                    WD een TLC met drie. Verder zijn het allebei M.2-schijven van 1 TB die NVMe over PCI Express
+                    spreken.</div>
+            </li>
+            <li>Welke harde schijf zou je kiezen als je enkel rekening moet houden met prestaties?
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered invulruimte">
+                        <tbody>
+                            <tr><td>&nbsp;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="oplossing">De Samsung 990 Pro. Hoe meer bits er in een cel staan, hoe meer
+                    spanningsniveaus de controller uit elkaar moet houden en hoe trager het lezen en schrijven
+                    gaat: een TLC leest 4 keer en schrijft 6 keer trager dan een SLC.</div>
+            </li>
+            <li>Welke harde schijf zou je kiezen als je enkel rekening moet houden met levensduur?
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered invulruimte">
+                        <tbody>
+                            <tr><td>&nbsp;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="oplossing">Opnieuw de Samsung 990 Pro. Bij minder bits per cel liggen de
+                    spanningsniveaus verder uit elkaar, dus een cel mag meer slijten voor de controller ze niet
+                    meer uit elkaar houdt. Een MLC haalt daardoor meer schrijfcycli dan een TLC.</div>
+            </li>
+        </ol>
+
+        <h2>Oefening 4</h2>
+
+        <p>InnoDisk is een fabrikant van harde schijven die worden gebruikt in industriële omgevingen. In hun aanbod vind je twee harde schijven die opnieuw goed op elkaar lijken: M.2 aansluiting, beiden SATA, beiden MLC, een opslagcapaciteit en snelheden die je (ongeveer) kan vergelijken met elkaar, … Maar toch verschillen ze. De ene M.2 is duidelijk de andere niet!</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-11-oefening-4-innodisk-s42.png" class="img-fluid"
+                alt="De datasheet van de InnoDisk M.2 (S42) 3MG2-P AES: interface SATA III 6.0 Gb/s, flash type MLC, capaciteit 32GB tot 256GB, sequentieel lezen en schrijven 560 en 350 MB per seconde, verbruik 1,4 W, afmeting 22,0 bij 42,0 bij 3,5 mm">
+        </figure>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-11-oefening-4-innodisk-s80.png" class="img-fluid"
+                alt="De datasheet van de InnoDisk M.2 (S80) 3MG2-P AES: dezelfde interface SATA III 6.0 Gb/s en hetzelfde flash type MLC, maar capaciteit 32GB tot 1TB, sequentieel lezen en schrijven 520 en 450 MB per seconde, verbruik 4,6 W, afmeting 22,0 bij 80,0 bij 3,5 mm">
+        </figure>
+
+        <ol class="vragen" start="8">
+            <li>Wat is het voornaamste verschil tussen de twee harde schijven?
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered invulruimte">
+                        <tbody>
+                            <tr><td>&nbsp;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="oplossing">De lengte. De S42 is 42 mm lang en de S80 is 80 mm, allebei 22 mm breed.
+                    Dat is precies waar je op moet letten bij een M.2-schijf: het slot en de bevestigingsschroef
+                    op het moederbord liggen op een vaste plaats, dus een schijf van 80 mm past niet in een
+                    toestel dat er 42 verwacht. De S80 gaat daarbij tot 1 TB waar de S42 op 256 GB stopt, en
+                    verbruikt 4,6 W tegen 1,4 W.</div>
+            </li>
+        </ol>
+
+        <h2>Oefening 5</h2>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 52.7mm">
+            <img src="../../../../img/syllabus-11-harde-schijf-14.png" class="img-fluid"
+                alt="Een B&amp;R industriële computer, een platte oranje met witte kast met ventilatiesleuven en een beugel om ze aan een wand te hangen">
+        </figure>
+
+        <p>De B&amp;R PC3100 industriële computer heeft de mogelijkheid om een harde schijf aan te sluiten via een M.2 aansluiting (met een adapter).</p>
+
+        <p>In de datasheet waarschuwt de fabrikant echter dat ze niet kunnen garanderen dat alle M.2 schijven compatibel zijn. Er zijn, zoals je ondertussen wel al hebt gemerkt, toch wel wat verschillen.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-11-harde-schijf-15.png" class="img-fluid"
+                alt="Een bladzijde uit de datasheet van B&amp;R. Bovenaan een kader Notice dat zegt dat B&amp;R de werking van M.2 schijven van derden niet kan garanderen. Daaronder de technische gegevens van de 5ACCMSM2 schijven: solid-state drives, MLC technology, SATA support, 512 GB of 1 TB, met adapterkaart 5ACCMS01.MDT2-000. Een kader Caution zegt dat M.2 schijven niet hot-pluggable zijn. Onderaan de besteltabel met 512 GB M.2 SSD MLC Innodisk SATA en 1 TB M.2 SSD MLC Innodisk SATA">
+        </figure>
+
+        <ol class="vragen" start="9">
+            <li>Doe een voorstel wat betreft een compatible harde schijf. Zoek online.
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered invulruimte">
+                        <tbody>
+                            <tr><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="oplossing">Een M.2-schijf die SATA spreekt en geen NVMe, met MLC-geheugen. De
+                    besteltabel van B&amp;R zelf noemt de 5ACCMSM2.0512-000 en de 5ACCMSM2.1024-000, en dat zijn
+                    Innodisk M.2 SSD&#x27;s met MLC over SATA. De InnoDisk 3MG2-P AES uit oefening 4 is dus een
+                    verdedigbaar voorstel, op voorwaarde dat je de lengte neemt die de adapterkaart
+                    5ACCMS01.MDT2-000 aankan.</div>
+            </li>
+        </ol>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+    <script src="../../../../oplossingen.js"></script>
+</body>
+
+</html>

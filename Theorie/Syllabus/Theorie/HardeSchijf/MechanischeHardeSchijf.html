@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanische harde schijf</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Mechanische harde schijf</h1>
+
+        <p>Een mechanische harde schijf bestaat uit een aantal onderdelen. De belangrijkste daarvan zijn de platters en de lees/schrijfkoppen of heads die bevestigd zijn op de arm.</p>
+
+        <p>Een platter is een aluminium schijf met een magneet coating. Tegenwoordig is de diameter van deze platters zo’n 3 tot 12cm. Een lees/schrijfkop (head) met een inductiespoel zweeft vlak boven het oppervlak van de platter en rust op een luchtkussen.</p>
+
+        <p>Wanneer een positieve of negatieve stroom door de kop loopt, magnetiseert deze het oppervlak vlak onder de kop. Wanneer de kop over een gemagnetiseerd gebied gaat, wordt in de kop een positieve of negatieve spanning geïnduceerd. Op die manier kunnen bits worden weggeschreven of uitgelezen.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 145.0mm">
+            <img src="../../../../img/syllabus-11-harde-schijf-01.png" class="img-fluid"
+                alt="Doorsnedetekening van een opengewerkte harde schijf met dertien genummerde onderdelen: spoelen, voorversterker, flextor head assembly, lees- en schrijfkoppen, e-block, platen, thin film, assen, chassis, elektronika, motor, bus en stroomtoevoer">
+        </figure>
+
+        <p>De reeks bits die geschreven wordt wanneer de platter, zonder dat de arm beweegt, een omwenteling maakt noemen we een track. Elk van de tracks is verdeeld in een aantal sectoren.</p>
+
+        <p>Een sector heeft een vaste lengte van meestal 512 byte. In de sectoren wordt de data opgeslagen. Een verzameling van sectoren noemen we een cluster. Een bestand bestaat meestal uit verschillende sectoren en clusters. Het bestandssysteem houdt bij uit welke sectoren een bestand bestaat en waar deze precies terug te vinden zijn op de harde schijf.</p>
+
+        <p>Na de data komt er een error correcting code of ECC die meerdere bitfouten in een sector kan corrigeren.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 76.6mm">
+            <img src="../../../../img/syllabus-11-harde-schijf-02.png" class="img-fluid"
+                alt="Tekening van vier platters boven elkaar op dezelfde as, met een sector aangeduid op de bovenste platter en met de tracks op dezelfde plaats in de vier platters samen aangeduid als cilinder X">
+        </figure>
+
+        <p>De meeste schijfstations bevatten een aantal platters die verticaal gestapeld zijn zoals je in bovenstaande figuur kan zien.</p>
+
+        <p>Elke kant heeft zijn eigen arm en kop. Alle armen zijn met elkaar verbonden zodat ze altijd tegelijkertijd bewegen.</p>
+
+        <p>De verzameling tracks die bij een bepaalde positie van de armen hoort, noemen we een cilinder. De huidige harde schijven hebben meestal 6 tot 12 platters wat dus zorgt voor 12 tot 24 opnamevlakken.</p>
+
+        <p>De snelheid van de mechanische harde schijf wordt beperkt door fysieke limieten. De voornaamste zijn de snelheid waarmee de arm kan bewegen en de snelheid waarmee de platters draaien.</p>
+
+        <p>De meeste mechanische harde schijven draaien hun platters aan een snelheid van 5400 of 7200 toeren per minuut. Mechanische harde schijven die in een server gebruikt worden halen tot 15000 toeren per minuut.</p>
+
+        <p>De seek time is de tijd die de arm erover doet om op de plaats te komen waar het bestand fysiek op de harde schijf staat. De gemiddelde seek time is zo’n 9ms. De arm wordt, door deze kleine seek time, blootgesteld aan duizelingwekkende G krachten.</p>
+
+        <p>Als we de seek time als de horizontale (links naar rechts naar links) vertraging beschouwen, dan is de rotational latency de verticale vertraging. Als een harde schijf aan 7200 toeren per minuut draait, betekent dit dat er per 8 ms één omwenteling wordt gemaakt. Gemiddeld betekent dit dat we na 4ms op de juiste plaats zitten op de harde schijf.</p>
+
+        <p>De access time is de som van de seek time en rotational latency. Dit is de tijd die de harde schijf er gemiddeld over doet om op de juiste plaats terecht te komen voor een lees of schrijf operatie. In de praktijk is de access time zo&#x27;n 13 ms.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

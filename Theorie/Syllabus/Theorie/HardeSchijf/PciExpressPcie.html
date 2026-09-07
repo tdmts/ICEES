@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCI Express (PCIe)</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>PCI Express (PCIe)</h1>
+
+        <p>PCI of Peripheral Component Interconnect werd ontwikkeld in de jaren 1990 als een bus met een hoge bandbreedte waarop allerlei randapparaten aangesloten kunnen worden. We hebben het dan bijvoorbeeld over een netwerkkaart, een audio adapter, ...</p>
+
+        <p>De bovenstaande standaard is ondertussen meer dan 30 jaar oud en werd vervangen door PCI Express. Dit was nodig omdat de snelheid van PCI niet meer voldoende was voor de apparaten die we er nu op willen aansluiten. We spreken dan over grafische kaarten, netwerkkaarten, harde schijven, enzovoort.</p>
+
+        <p>PCI Express biedt heel wat voordelen ten opzichte van PCI. Vooral de hogere snelheid, de kleinere afmetingen en hot-swapping waarbij appararen aan- en afgeschakeld kunnen worden terwijl het systeem actief is.</p>
+
+        <p>De hogere snelheid wordt behaald doordat PCI Express, in tegenstelling tot PCI, geen klassieke bus architectuur meer heeft maar werkt als een point-to-point verbinding.</p>
+
+        <p>Bij PCI was de capaciteit van de bus gedeeld over alle apparaten en kon er slechts 1 apparaat tegelijkertijd actief zijn. Bij PCI Express kunnen alle apparaten op hetzelfde moment actief zijn. De communicatie kan in tegenstelling tot PCI ook full duplex verlopen.</p>
+
+        <p>Verder onderscheiden we PCI Express x1, x2, x4, x8 en x16. In onderstaande afbeelding zie je x4, x16, x1, x16 en helemaal onderaan de klassieke PCI aansluiting. Hoe meer bandbreedte een apparaat nodig heeft, hoe groter het PCI Express slot.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-11-harde-schijf-23.png" class="img-fluid"
+                alt="Close-up van een moederbord met vijf gele sloten onder elkaar. Van boven naar onder een kort slot, een lang slot, een heel kort slot, een lang slot en onderaan een PCI-slot met een andere indeling van de contacten">
+        </figure>
+
+        <p>Ondertussen zijn er al verschillende versies van de PCI Express standaard de revue voorbij gegaan. Elke versie verdubbelt de snelheid van de vorige: 5.0 haalt over een x16 slot al 63 GB/s, en de meest recente standaard is de 7.0.</p>
+
+        <p>Deze laatste is vooral nodig wanneer het gaat over grafische kaarten, 4k schermen die aangestuurd moeten worden met een hoge framerate hebben gigantisch veel bandbreedte nodig.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De doorvoersnelheid per versie, voor elke breedte van het slot</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Versie</th>
+                        <th>Jaar</th>
+                        <th>Lijncode</th>
+                        <th>Transfersnelheid</th>
+                        <th>x1</th>
+                        <th>x2</th>
+                        <th>x4</th>
+                        <th>x8</th>
+                        <th>x16</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.0</td>
+                        <td>2003</td>
+                        <td>8b/10b</td>
+                        <td>2.5 GT/s</td>
+                        <td>250 MB/s</td>
+                        <td>0.50 GB/s</td>
+                        <td>1.0 GB/s</td>
+                        <td>2.0 GB/s</td>
+                        <td>4.0 GB/s</td>
+                    </tr>
+                    <tr>
+                        <td>2.0</td>
+                        <td>2007</td>
+                        <td>8b/10b</td>
+                        <td>5.0 GT/s</td>
+                        <td>500 MB/s</td>
+                        <td>1.0 GB/s</td>
+                        <td>2.0 GB/s</td>
+                        <td>4.0 GB/s</td>
+                        <td>8.0 GB/s</td>
+                    </tr>
+                    <tr>
+                        <td>3.0</td>
+                        <td>2010</td>
+                        <td>128b/130b</td>
+                        <td>8.0 GT/s</td>
+                        <td>984.6 MB/s</td>
+                        <td>1.97 GB/s</td>
+                        <td>3.94 GB/s</td>
+                        <td>7.88 GB/s</td>
+                        <td>15.8 GB/s</td>
+                    </tr>
+                    <tr>
+                        <td>4.0</td>
+                        <td>2017</td>
+                        <td>128b/130b</td>
+                        <td>16.0 GT/s</td>
+                        <td>1969 MB/s</td>
+                        <td>3.94 GB/s</td>
+                        <td>7.88 GB/s</td>
+                        <td>15.75 GB/s</td>
+                        <td>31.5 GB/s</td>
+                    </tr>
+                    <tr>
+                        <td>5.0</td>
+                        <td>2019</td>
+                        <td>128b/130b</td>
+                        <td>32.0 GT/s</td>
+                        <td>3938 MB/s</td>
+                        <td>7.88 GB/s</td>
+                        <td>15.75 GB/s</td>
+                        <td>31.51 GB/s</td>
+                        <td>63.0 GB/s</td>
+                    </tr>
+                    <tr>
+                        <td>6.0</td>
+                        <td>2022</td>
+                        <td>1b/1b</td>
+                        <td>64.0 GT/s</td>
+                        <td>7563 MB/s</td>
+                        <td>15.13 GB/s</td>
+                        <td>30.25 GB/s</td>
+                        <td>60.5 GB/s</td>
+                        <td>121.0 GB/s</td>
+                    </tr>
+                    <tr>
+                        <td>7.0</td>
+                        <td>2025</td>
+                        <td>1b/1b</td>
+                        <td>128.0 GT/s</td>
+                        <td>15125 MB/s</td>
+                        <td>30.25 GB/s</td>
+                        <td>60.5 GB/s</td>
+                        <td>121.0 GB/s</td>
+                        <td>242.0 GB/s</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-11-harde-schijf-25.jpeg" class="img-fluid"
+                alt="Een grafische kaart RTX 4090 met twee koelvinnen en een ventilator, rechtop op een houten tafel, met bovenaan de contactstrip die in een x16 slot gaat">
+        </figure>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

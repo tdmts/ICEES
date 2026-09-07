@@ -1603,6 +1603,54 @@ terug.
   geeft zelf af" bij de enige onderbreking onderaan. Het rood is dezelfde
   `#c0392b` waarmee de andere figuren hier annoteren.
 
+### De figuur van 10.1 is hertekend
+
+**`img/syllabus-10-informatievoorstelling-01.png` is vervangen door
+`img/syllabus-10-binair-betrouwbaar.svg`.** Beslist op 7 september 2026 door de lector.
+Hierboven stond dat er geen reden was om image86 te hertekenen, en dat klopte tegen de toets
+die hoofdstuk 3 en 9 hebben opgesteld: geen watermerk, Nederlandse tekst, en ruim boven de
+dpi-grens. **Die toets zegt wanneer je moet hertekenen en niet wanneer het mag.** Wat hier
+de doorslag geeft is dat de figuur de enige gescande grijstintentekening in dit hoofdstuk
+is: ze staat er met de korrel van een fotokopie naast tekeningen die in het palet van de
+syllabus getekend zijn.
+
+**Er valt geen enkel gegeven weg.** De hertekening draagt dezelfde acht dingen als de scan:
+de lijn van 5 V, de lijn van 0 V, de twee stippellijnen die het fout-gebied afbakenen, de
+dubbele pijl met het opschrift Fout-gebied, de drie streepjeslijnen op de klokmomenten, de
+kloktijd t met index c tussen de laatste twee, de bits 0, 1 en 0 eronder, en het signaal
+zelf, dat laag blijft, steil klimt tot net onder 5 V en weer terugvalt. Dat het signaal
+laag niet op 0 V ligt en hoog niet op 5 V, is uit de scan overgenomen en het is precies
+wat de alinea's eronder beweren.
+
+**Het palet is dat van de andere SVG's**: `#004d40` voor het signaal, `#e0e7e5` voor het
+vlak, `#c0392b` voor de annotatie, `#222222` voor de assen en de bits, `#555555` voor de
+stippellijnen en de spanningslabels.
+
+**Een ding is er bijgekomen en het is opmaak en geen gegeven:** het fout-gebied is nu een
+licht ingekleurd vlak in plaats van alleen twee stippellijnen met een pijl ertussen. De
+stippellijnen en de pijl staan er nog, dus wie de scan ernaast legt, ziet dezelfde figuur.
+
+**De spanningen van de drempels staan er met opzet niet bij.** De alinea eronder zegt dat
+een laag maximaal 0.4 V is en een hoog minimum 2.4 V, en het lag voor de hand om die twee
+getallen op de stippellijnen te zetten, want dan toont de figuur wat de alinea beweert. Op
+schaal is 0.4 V van 5 V echter 8 procent: die stippellijn valt dan op anderhalve millimeter
+van de lijn van 0 V en het signaal moet er nog tussen. Beslist op 7 september 2026: **de
+figuur blijft schematisch**, net als de scan, en de getallen blijven in de lopende tekst
+staan. Wie ze er toch bij wil, moet de figuur breder maken dan 87.0mm en de bladspiegel
+opnieuw narekenen.
+
+**De breedte blijft 87.0mm**, de maat uit de Word. De verhouding is 400 op 250 tegen 520 op
+310 van de scan, dus de figuur is 54.4mm hoog in plaats van 51.9mm. Nagekeken in de
+gedrukte PDF: 10.1 en 10.2 staan nog altijd samen op een bladzijde, en de inhoudstafel wijst
+ze allebei naar dezelfde. De labels van 12px drukken op 2.6mm, dat is 7.4pt, en dat is de
+maat die de SVG's van hoofdstuk 3, 6, 7 en 11 ook halen.
+
+**De PNG is geschrapt**, want niets verwijst er nog naar en regel 1 van de contentcheck valt
+over een ongebruikte afbeelding. Dat is het geval van
+`img/syllabus-10-informatievoorstelling-03.png` hierboven. **Een herimport zet ze terug** en
+schrijft de `<img>` van deze pagina weer naar de PNG; dan faalt regel 1 tot ze opnieuw weg
+is. De `alt` van de figuur is met de hand geschreven en overleeft een herimport evenmin.
+
 ### De bladspiegel van dit hoofdstuk
 
 Acht bladzijden, 59 tot en met 66. Nagerekend na de redactionele ronde en niet
@@ -2086,3 +2134,1359 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
   de PDF het enige dat de student ziet.
 - **8.2 heet Nadelen van fysieke machines en somt er een op**, de prijs. Dat het er
   maar een is, staat in de Word zo.
+
+## Hoofdstuk 9, Moederbord
+
+**De sectie Studievragen achteraan heet hier Test jezelf**, zoals in hoofdstuk 1,
+3, 4, 5, 6 en 8. Het kader Studievragen vooraan houdt zijn eigen naam en staat
+samen met de Kernpunten op `Overzicht.html`. De pagina heet `TestJezelf.html`; de
+importer schreef `Studievragen.html`.
+
+**Vier secties, 74 alinea's, zes tabellen en zeventien gedrukte bladzijden, 73 tot
+en met 89.** 9.3 draagt drie Heading 3's (Processor, Werkgeheugen, Grafische
+kaart), wat dit na hoofdstuk 7 het tweede hoofdstuk met koppen onder een sectie
+maakt; een Heading 4 komt er niet in voor.
+
+### Het gat: de nadelen van ATX stonden alleen in het kader
+
+Studievraag 1 vooraan luidt "Hoe wordt de layout van een moederbord bepaald? Wat zijn
+de nadelen van ATX?" Nagekeken met grep in de lopende tekst van dit hoofdstuk:
+**nadeel, nadelen en layout komen er samen nul keer in voor.** 9.1 geeft ATX alleen
+zijn voordeel, dat je er componenten in kan vervangen, en over de afmetingen zegt het
+alleen dat ze vastliggen volgens een standaard.
+
+Dat is het gat van de wet van Moore in hoofdstuk 1, van de bottleneck in hoofdstuk 5,
+van het partitieschema in hoofdstuk 6, van realtime in hoofdstuk 7 en van de
+programma's die een virtuele machine draaien in hoofdstuk 8, en de uitkomst is
+dezelfde. Beslist op 7 september 2026 door de lector: er komt tekst bij in plaats van
+dat de studievraag onbeantwoord blijft.
+
+**Het werden twee alinea's, en ze staan midden in 9.1 en niet achteraan.** Ze komen na
+het lijstje met de processor, het werkgeheugen en de grafische kaart, en voor de zin
+"Een industriële computer zoals een Control Cabinet PC houdt zich meestal aan de
+standaard ATX afmetingen maar bij een embedded PC ... wijken die afmetingen natuurlijk
+af". Die plaats is gekozen omdat de tweede alinea precies uitlegt **waarom** een
+embedded PC afwijkt, en de bestaande zin er dus als gevolg op leest. Er komt geen eigen
+kop bij, anders dan bij realtime in hoofdstuk 7: het past in de gedachtegang die er al
+staat, zoals bij hoofdstuk 1, 5 en 6.
+
+Wat er staat, in het kort: een vormfactor legt meer vast dan de lengte en de breedte,
+namelijk ook de schroefgaten, het aansluitingenblok achteraan en waar de voeding zijn
+stekkers kwijt kan, en daardoor past elk ATX bord in elke ATX kast; en die vaste maat
+is meteen het nadeel, want een bord van dat formaat vraagt een kast die niet in een
+machine staat en niet op een DIN rail past, en omdat alles op dat ene oppervlak moet,
+ligt de indeling van het bord grotendeels vast.
+
+**Deze twee alinea's staan alleen in de HTML en een herimport gooit ze weg.** De maat
+wordt er met opzet niet herhaald: ze staat drie regels hoger al, en de Word schrijft
+haar met punten ("30.5 cm op 24.4 cm") waar eigen tekst een komma zou zetten.
+
+### De volgorde van 9.5 is voorgelegd en gebleven
+
+De verplaatsing van de drie vragen naar achter de datasheets was eerst een eigen
+beslissing en is daarna alsnog voorgelegd. Beslist op 7 september 2026 door de lector:
+**ze blijft.** De reden staat hieronder bij de datasheets.
+
+### De lege Heading 2 achteraan is een pagina geworden en is weggegooid
+
+Achter Studievragen staat in de Word een Heading 2 zonder tekst. De importer maakt
+daar een volwaardige sectie van: `Moederbord/Pagina.html`, met een lege `<title>`,
+een lege `<h1>` en verder niets. De bestandsnaam is de terugval van `pascal()` op
+een lege kop.
+
+Dat is een restant van een bladovergang en geen sectie, dus de pagina is
+weggegooid en staat niet in `reference.js`. **Een herimport zet ze terug**, en dan
+verschijnt ze ook weer in de contentcheck, want een pagina onder een module die
+niet in het manifest staat, faalt op regel 2.
+
+### De kop Raspberry PI is meegegaan met de schrijfwijze van de eigenaar
+
+De kop van 9.2 luidde "Raspberry PI" en de acht zinnen eronder schreven het net zo.
+De regel van 7 september 2026 zegt dat een productnaam de schrijfwijze van zijn
+eigenaar draagt, en de foto in die sectie draagt **Raspberry Pi 4 Model B** op de
+printplaat zelf.
+
+Beslist op 7 september 2026 door de lector: **de kop gaat mee.** Dat is nieuw. Bij
+hoofdstuk 8 bleven de koppen met opzet staan zoals de Word ze zet, maar daar ging
+het om een gewone woordgroep (Virtual machines) en hier om een merknaam. Een kop is
+de gedrukte sectietitel en staat ook in de inhoudstafel, dus laat je hem staan, dan
+drukt dezelfde bladzijde de naam op twee manieren.
+
+**De bestandsnaam verandert er niet door.** `pascal()` maakt van "Raspberry PI" en
+van "Raspberry Pi" allebei `RaspberryPi.html`, want de regel houdt alleen `[a-z0-9]`
+over en zet daarna elk woord op een hoofdletter. Dat is nagekeken voor de
+hernoeming overwogen werd; er viel niets te hernoemen.
+
+Tien plaatsen in totaal: de `<title>`, de `<h1>` en acht zinnen in de lopende tekst.
+**Een herimport draait ze terug.**
+
+### mini ATX bestaat hier niet, en de figuur van dit hoofdstuk zegt dat zelf
+
+Kernpunt 2 schreef "We onderscheiden bijvoorbeeld ATX, mini ATX, micro ATX, ....".
+Mini-ITX en mini ATX zijn niet hetzelfde ding, en de figuur van 9.1, in dit
+hoofdstuk zelf, labelt haar vijf borden **Standard-ATX, Micro-ATX, Mini-ITX,
+Nano-ITX en Pico-ITX**. Mini ATX staat er niet bij. De schermafdruk van 9.4 schrijft
+Micro-ATX en ITX, en `Labo/Assemblage/Theorie/Componenten.html` heeft een tabel met
+ATX, Micro-ATX, Mini-ITX en BTX.
+
+Beslist op 7 september 2026 door de lector: het kernpunt wordt **"ATX, Micro-ATX,
+Mini-ITX, ...."**, met het streepje dat de figuur eronder ook draagt. Dat is
+hetzelfde geval als Windows 10 in hoofdstuk 7: het kader wordt wel aangeraakt, want
+het gaat niet om een tegenspraak waarvan de lopende tekst de plaats is om bij te
+draaien, maar om een naam die overal hetzelfde hoort te staan. De lopende tekst van
+9.1 noemt deze drie namen nergens, dus daar viel niets recht te zetten.
+
+**Een herimport draait ze terug.**
+
+### Vraag 3 van Test jezelf gaat van twee naar vier mogelijkheden
+
+"Kan je een AMD processor op een Intel socket plaatsen?" had Ja en Nee, dus een
+gokkans van een op twee. Beslist op 7 september 2026 door de lector: er komen
+afleiders bij, zoals bij vraag 5 van hoofdstuk 5 en vraag 2 van hoofdstuk 6.
+
+Het verschil met vraag 2 van hoofdstuk 8, waar de gokkans van een op twee juist
+**wel** aanvaard is, is dat host en guest daar samen de hele verzameling waren. Hier
+niet: 9.3 zegt met zoveel woorden dat er geen merkoverschrijdende standaarden zijn
+en dat ook binnen een merk een bepaald type processor op een bepaald type socket
+past, en daar zijn verdedigbare afleiders uit te halen.
+
+De vier mogelijkheden zijn nu:
+
+> a. Ja, elke socket aanvaardt elke processor
+> b. Ja, zolang allebei de processoren de x64 instructieset gebruiken
+> c. Nee, een socket is gemaakt voor een bepaald merk, en binnen dat merk zelfs voor
+>    een bepaald type processor
+> d. Nee, maar met een verloopstuk past hij wel
+
+Juist is **c**, en die zin is de samenvatting van de derde alinea van
+Processor -> socket. Mogelijkheid b is de afleider die telt: de x64 instructieset
+komt in dit hoofdstuk twee keer voor en zegt niets over de socket. **De drie andere
+mogelijkheden zijn bijgeschreven en staan alleen in de HTML.**
+
+### De vier vragen van Test jezelf
+
+| Vraag | Antwoord | Waarop het steunt |
+|---|---|---|
+| 1 Wat is GEEN vormfactor | b, SO-DIMM | 9.1 noemt ATX en PC104 als vormfactor; 9.3 legt SO-DIMM uit als een soort geheugenmodule |
+| 2 Verschil met een industrieel moederbord | c, nog lang na aankoopdatum te bestellen | 9.3, "garanderen dat je bij aankoop tot 10 jaar na datum nog vervangonderdelen zal kunnen krijgen"; dezelfde alinea zegt dat je er juist **niet** de laatste technologie vindt, dus a en b zijn allebei fout |
+| 3 AMD processor op een Intel socket | c, nee, een socket is gemaakt voor een bepaald merk | 9.3, "Er zijn geen merk overschrijdende standaarden ... Ook binnen het merk zelf kan een bepaald type processor maar geplaatst worden op een bepaald type socket" |
+| 4 Welke hardware past in deze aansluiting | a, RAM | de afbeelding is de foto van de DIMM slots uit 9.3; opengedaan om dat te bevestigen voor de letter gezet werd |
+
+**Alle vier de vragen hebben precies een juist antwoord, en dat is nageteld.** Het
+probleem van hoofdstuk 3, waar vier van de vijf mogelijkheden juist waren, speelt
+hier bij geen enkele vraag, dus er is geen enkele open vraag en geen enkele
+`<div class="oplossing">` in Test jezelf. Vraag 1 stelt de vraag al omgekeerd
+("Wat is GEEN"), dus de ingreep van vraag 6 van hoofdstuk 3 was hier niet nodig.
+
+**Vraag 4 draagt een figuur en blijft daardoor heel op een bladzijde**, zonder dat
+er een `.vragen-bij-figuur` aan te pas komt: de figuur staat **binnen** de `<li>`
+van de vraag, en `ol.vragen > li` breekt sinds hoofdstuk 2 niet meer over een
+bladovergang. Die omhulling is er voor een figuur die **naast** een reeks nummers
+staat, zoals het moederbord van 2.1, en dat geval doet zich hier niet voor.
+Nagekeken in de gedrukte PDF: Test jezelf past volledig op bladzijde 88, met de
+foto bij vraag 4.
+
+### 9.5 Oefening houdt haar naam, en wordt een vragenlijst met invulruimte
+
+Zoals de regel bij hoofdstuk 2 zegt: een sectie die halverwege Oefening heet, houdt
+haar naam en krijgt wel dezelfde vragenbehandeling. De drie open vragen dragen elk
+een lege tabel van een rij in de Word, en zijn hier een `ol.vragen` geworden met
+invulruimte en een `<div class="oplossing">`. Zonder die oplossingen drukt het hele
+hoofdstuk geen Oplossingen.
+
+**Elke vraag draagt twee invulregels**, geteld naar wat het antwoord telt, zoals de
+regel bij hoofdstuk 3 zegt: vraag 1 noemt twee toestellen, vraag 2 noemt twee
+redenen waarom de derde afvalt, en vraag 3 is een keuze plus haar motivatie.
+
+**De drie oplossingen zijn hier bepaald en staan nergens in de Word.** Ze steunen op
+de datasheets zelf, die daarvoor bladzijde per bladzijde opengedaan zijn.
+
+| Vraag | Antwoord | Waarop het steunt |
+|---|---|---|
+| 1 Welke komen in aanmerking | de CX5120 en de CX5620 | CX5120: Intel Atom E3815, 2 GB DDR3, DVI-I. CX5620: AMD Ryzen R1102G, 4 GB DDR4, DVI-D. Allebei x64, allebei DVI, allebei minstens 2 GB |
+| 2 Waarom valt er een af | de CX9020, om twee redenen | 1 GB DDR3 RAM dat de datasheet "not expandable" noemt, dus de 2 GB haal je nooit; en een ARM Cortex-A8 met Windows Embedded Compact 7, dus een programma in C# draait er niet zoals het geschreven is. Zijn DVI-D is wel in orde |
+| 3 Welke zou je kiezen | allebei goed, als je motiveert | Beslist op 7 september 2026 door de lector: **de oplossing wijst geen winnaar aan.** Voor de CX5620 pleit de ruimte, want 2 GB is bij de CX5120 de ondergrens **en** het plafond (ook daar staat "not expandable") terwijl het besturingssysteem er zelf een stuk van neemt, en de CX5620 heeft 4 GB en twee kernen. Voor de CX5120 pleit dat hij aan alles voldoet en dat je niet betaalt voor wat je niet nodig hebt |
+
+**De twee redenen bij vraag 2 zijn allebei nodig.** Alleen het geheugen noemen laat
+de indruk dat een grotere microSD-kaart het probleem oplost, en de datasheet biedt
+die kaarten ook aan; het is het werkgeheugen dat vastligt, niet de opslag.
+
+**De leverbaarheid is met opzet geen argument in vraag 3.** De datasheet van de
+CX5620 draagt "product announcement | estimated market release 4th quarter 2023" en
+die van de CX5120 "regular delivery", en de oplossing gebruikte dat eerst als het
+argument voor wie de CX5120 koos. Beslist op 7 september 2026 door de lector: **dat
+gaat eruit.** Zo een productstatus hangt aan de datum van de datasheet en niet aan de
+afweging, en of hij vandaag nog klopt weet niemand hier. Wat overblijft zijn twee
+argumenten die niet verouderen: ruimte boven de ondergrens tegenover niet betalen voor
+wat je niet nodig hebt. **Dat de status op de afgedrukte bladzijde staat, blijft
+zo**: het is een schermafdruk van de datasheet en die wordt niet bewerkt.
+
+### De dertien datasheetbladzijden zijn er zes geworden
+
+9.5 zegt "De datasheets van deze systemen kan je op de volgende pagina's
+terugvinden", en daaronder stonden dertien volle bladzijden datasheet van Beckhoff:
+CX9020 (4 bladzijden), CX5120 (5) en CX5620 (4). Dat is het geval van de sectie
+Artikel in hoofdstuk 3, en het krijgt dezelfde behandeling: een info-box **Bron** en
+per figuur een bijschrift "Bladzijde N van 4".
+
+**Alle dertien zijn opengedaan.** Het antwoord op de drie vragen staat volledig op de
+eerste twee bladzijden van elk toestel: de foto, de omschrijving en de technische
+tabel met de processor, het werkgeheugen en de aansluitingen. De zeven andere zijn
+bestelnummers, opties en toebehoren, en die dragen geen enkel gegeven dat de
+oefening vraagt.
+
+Beslist op 7 september 2026 door de lector: **het worden de zes bladzijden met de
+specificaties, en de volledige datasheet komt in de bronvermelding.** Anders dan bij
+het artikel van hoofdstuk 3, waar alle vier de bladzijden bleven staan, want dat
+artikel telde er vier en niet dertien.
+
+- De bijschriften blijven **"Bladzijde 1 van 4"** en **"Bladzijde 2 van 4"**, dus de
+  student ziet dat de datasheet doorloopt en waar ze ophoudt.
+- De info-box Bron zegt met zoveel woorden wat er niet afgedrukt staat, en noemt
+  `beckhoff.com/cx9020`, `beckhoff.com/cx5120` en `beckhoff.com/cx5620`. **Dat zijn
+  geen links maar adressen**: de PDF is papier. Om diezelfde reden staat er in het
+  hele hoofdstuk geen enkele `<a>`.
+- De zeven geschrapte bladzijden zijn ook uit `img/` verdwenen
+  (`syllabus-09-moederbord-18`, `-19`, `-22`, `-23`, `-24`, `-27` en `-28`), want
+  regel 1 van de contentcheck valt over een afbeelding waar geen pagina naar wijst.
+  **Een herimport zet alle zeven terug**, en dan faalt regel 1 tot ze opnieuw weg
+  zijn.
+
+**De drie toestellen zijn van Beckhoff, en dat staat op de bladzijden zelf**: het
+logo BECKHOFF New Automation Technology onderaan elke bladzijde, de URL bovenaan, en
+de datum 14 september 2023 voor de CX9020 en de CX5120 en 18 september 2023 voor de
+CX5620. Beckhoff is ook het bedrijf dat 9.3 als voorbeeld noemt van een bouwer die
+zijn eigen moederborden ontwerpt, dus de oefening en de sectie ervoor hangen samen.
+
+**De drie vragen staan nu achter de datasheets en niet ervoor**, wat de enige
+volgordewijziging in dit hoofdstuk is. In de Word staan ze ervoor, en dan schrijft de
+student op bladzijde 80 en 81 terwijl de gegevens op 82 tot 87 staan. Nu leest hij de
+opgave, bladert hij door de zes bladzijden en schrijft hij op de bladzijde meteen
+erna. De zin uit de Word blijft ondertussen letterlijk waar, want de datasheets staan
+nog altijd "op de volgende pagina's"; de info-box Bron zegt erbij dat de vragen erna
+komen. Het hoofdstuk telt er geen bladzijde meer of minder door, maar bladzijde 81
+was in de oude volgorde voor twee derde wit.
+
+### De vier foto's onder de dpi-grens zijn versmald en niet hertekend
+
+Vier afbeeldingen van dit hoofdstuk zitten onder de dpi-grens van 98 die hoofdstuk 3
+vastgelegd heeft, en dat zijn er meer dan in enig hoofdstuk tot nu toe:
+
+| bestand | pixels | in de Word | dpi |
+|---|---|---|---|
+| `syllabus-09-moederbord-10.png` (DIMM slots) | 512 × 202 | 160.0mm | 81 |
+| `syllabus-09-moederbord-11.png` (een DDR-module) | 413 × 107 | 160.0mm | 66 |
+| `syllabus-09-moederbord-12.png` (DIMM tegen SO-DIMM) | 381 × 187 | 156.4mm | 62 |
+| `syllabus-09-moederbord-13.png` (PCI Express sloten) | 350 × 237 | 160.0mm | 56 |
+
+Die laatste gaat onder de 63 dpi van de cooperative multitasking van hoofdstuk 7, die
+tot dan de laagste van de hele Word was.
+
+**Alle vier zijn ze opengedaan, en alle vier zijn het foto's en geen schema's.** Dat
+is het onderscheid dat telt: image31 van hoofdstuk 3 en de drie van hoofdstuk 7 zijn
+hertekend omdat het tekeningen waren, en image52 van hoofdstuk 7 bleef staan omdat
+het een schermafdruk van een echt venster was. Een close-up van een moederbord teken
+je niet na, en de labotrack tekent ze evenmin: `Labo/Assemblage/Theorie/Componenten.html`
+draagt over hetzelfde onderwerp `dual-channel-dimm-slots.jpg` en
+`geheugen-generaties-inkeping.png`, twee andere beelden. Er was hier dus geen
+byte-voor-byte kopie te maken, zoals bij de drie paren van hoofdstuk 6 en 8.
+
+**De enige knop die een foto heeft, is haar breedte.** Beslist op 7 september 2026
+door de lector: alle vier gaan ze naar ongeveer 98 dpi, dus naar **132.0mm, 107.0mm,
+98.0mm en 90.0mm**. Ze worden kleiner op papier en scherp in plaats van blokkerig, en
+bij een DIMM slot of een PCIe slot is de vorm het enige dat de tekst ernaast vraagt.
+Nagekeken in de gedrukte PDF: alle vier blijven ze ruim leesbaar, en de klemmen aan
+de uiteinden van de DIMM slots zijn nog altijd te tellen. **Dit zijn de enige vier
+maten in dit hoofdstuk die niet uit de Word komen.**
+
+### De andere afbeeldingen
+
+**Dit hoofdstuk telt 29 afbeeldingsplaatsingen over 28 bestanden**, en niet de 24 over
+23 die vooraf geteld waren; de zes foto's van de tabel van 9.1 zaten er niet bij. Na
+het schrappen van de zeven datasheetbladzijden en van de socketfoto blijven er 21
+plaatsingen over 20 bestanden.
+
+De tien van 9.1 tot 9.4 die niet onder de dpi-grens zitten drukken op 132, 133, 130,
+162, 189, 183, 163, 155, 188 en 218 dpi, de foto bij vraag 4 van Test jezelf op
+150 dpi op haar 86.5mm, en de zes datasheetbladzijden op 260 dpi op hun 152.0mm. Elke
+afbeelding is opengedaan voor haar `alt` geschreven werd, en **een nieuwe import gooit
+die alt-teksten weg.**
+
+- **Drie zweven** (`wrapSquare`), en `IMPORT.md` meldt ze: image65 in 9.2 (de Raspberry
+  Pi), image66 in 9.3 (de socket, hieronder geschrapt) en image72 in 9.4 (de
+  vergelijkingstabel van drie panel pcs). Hun alinea blijft lopende tekst en ze dragen
+  geen bijschrift uit de Word.
+- **image67 staat twee keer in de Word, en de importer maakt er twee bestanden van.**
+  Een keer in 9.3 op 160.0mm en een keer bij vraag 4 van Test jezelf op 86.5mm, en dat
+  worden `syllabus-09-moederbord-10.png` en `-29.png`, byte voor byte gelijk. Regel 1
+  van de contentcheck is daar tevreden mee, want elk bestand heeft precies een
+  verwijzing; met een enkel bestand en twee verwijzingen zou ze dat ook zijn. De twee
+  zijn zo gelaten, want dat is wat een herimport opnieuw schrijft. **De breedtes lopen
+  wel uiteen**: de kopie in 9.3 is naar 132.0mm gegaan om boven de dpi-grens te komen en
+  die bij vraag 4 stond op haar 86.5mm al op 150 dpi.
+- **image58 in 9.1 is dezelfde foto als `img/moederbord-vormfactoren.jpg` in
+  Labo Assemblage**, pixel voor pixel hetzelfde beeld, maar het ene is een `.png` uit
+  de Word en het andere een `.jpg` uit de Brightspace-export. Dat is een vierde paar
+  naast de drie van hoofdstuk 6 en 8, en het enige waarvan de twee bestanden **niet**
+  byte voor byte gelijk zijn, omdat ze uit twee verschillende bronnen komen. Een eigen
+  kopie per track blijft de afspraak; hier valt er niets gelijk te trekken, want het is
+  al hetzelfde beeld.
+- **image66, de socket, is geschrapt.** De foto droeg ronde merktekens van een
+  fotobank over het hele beeld, en anders dan bij de twee watermerken van hoofdstuk 2
+  en het AskVG-watermerk van hoofdstuk 3 draagt dat merkteken **geen leesbare naam**:
+  er valt dus niet eens een bron bij te schrijven, en een fotobankwatermerk betekent
+  dat het beeld van iemand is die ervoor betaald wil worden. Beslist op 7 september
+  2026 door de lector: de figuur en `img/syllabus-09-moederbord-09.jpeg` gaan eruit, en
+  **er komt een eigen foto uit het labo in de plaats zodra die er is.** Tot dan opent
+  Processor -> socket met zijn eerste alinea.
+
+  **Er ging geen tekst mee verloren.** De afbeelding zweefde (`wrapSquare`), dus haar
+  alinea was gewone lopende tekst en er stond geen bijschrift bij, en geen enkele zin
+  van 9.3 verwijst naar een figuur. In `img/` staat ook geen bruikbaar alternatief:
+  `Labo/Assemblage/` heeft `processor-ryzen-3-4300g.jpg` en `moederbord-a520m-s2h.jpg`,
+  maar geen opname van een open socket met de klem omhoog. **Een herimport zet de foto
+  terug**, en dan staat ze er weer met haar watermerk.
+- **image71 in 9.4 is een schermafdruk van een webshop**, met drie moederborden, hun
+  prijs, een winkelwagenknop en "Morgen in huis" erbij. De rode pijlen die de socket, de
+  vormfactor en het maximum geheugen aanwijzen, staan in het origineel. Ze is leesbaar
+  op 159.4mm en blijft staan, maar **de prijzen verouderen** en er staat niet bij van
+  welke winkel ze komt. Dat is minder erg dan image51 van hoofdstuk 6, dat om zijn
+  YouTube-chroom onbruikbaar was, maar het is dezelfde soort bezwaar.
+- **image72, de vergelijkingstabel van 9.4, is onderaan afgesneden**: de rij
+  Hard disks/flash is de laatste die je ziet, en de tabel gaat in het origineel verder.
+  Het is een schermafdruk van een Beckhoff-catalogus en ze draagt geen bron. Ze blijft
+  staan, want wat er wel op staat (het scherm, de processor, het moederbord van 3,5
+  duim, het geheugen) is precies wat de alinea ernaast zegt dat je moet vergelijken.
+
+### De bladspiegel van dit hoofdstuk
+
+Zeventien bladzijden, 73 tot en met 89, met de gedrukte 9.7 Oplossingen als laatste.
+Nagerekend **na** de redactionele ronde, dus na de versmalde foto's, na het verplaatsen
+van de vragen van 9.5, na de twee bijgeschreven alinea's van 9.1 en na het schrappen
+van de socketfoto. De oude en de nieuwe PDF zijn bladzijde voor bladzijde vergeleken:
+van de 72 bladzijden die de vorige telde verschilt er **een**, bladzijde 4, en dat is
+de inhoudstafel zelf. Hoofdstuk 1 tot 8 zijn dus niet verschoven.
+
+- **De datasheetbladzijden staan op 152.0mm en niet op de 160.0mm van de Word.** Op
+  160.0mm is 1557 bij 2272 pixels precies 233mm hoog op een bladspiegel van 240mm, en
+  dan past figuur plus bijschrift niet meer samen: Chrome negeert de
+  `page-break-inside` die niet uit kan en het bijschrift belandt op de bladzijde na
+  zijn figuur. Dat is letterlijk het geval van hoofdstuk 3, met dezelfde uitkomst.
+  Nagekeken in de render: alle zes staan ze met hun bijschrift op hun eigen bladzijde.
+- **Drie figuren volgen hun aankondiging over een bladovergang**, en daar is geen
+  breedte voor te vinden. "In deze DIMM slots worden RAM modules geplaatst zoals je in
+  onderstaande figuur kan zien" staat onderaan 77 en die figuur bovenaan 78; "In
+  onderstaande afbeelding zie je een stukje van een moederbord" staat onderaan 78 en
+  die figuur bovenaan 79; en de zwevende vergelijkingstabel van 9.4 staat bovenaan 80
+  terwijl haar alinea onderaan 79 eindigt. Dat is het geval van hoofdstuk 7, en het is
+  zo gelaten: de figuren zijn hier al tot op de dpi-grens versmald, en verder krimpen
+  maakt ze onleesbaar zonder de overgang te winnen.
+- **9.2 en 9.3 beginnen allebei op bladzijde 76**, en dat is het gevolg van de twee
+  ingrepen samen: de twee bijgeschreven alinea's van 9.1 duwen 9.2 van 75 naar 76, en
+  het wegvallen van de socketfoto trekt 9.3 op diezelfde bladzijde. In de versie ervoor
+  liep 76 voor een derde leeg omdat "Processor -> socket" met zijn figuur er niet meer
+  bij paste; die bladzijde is nu vol.
+
+### Waar dit hoofdstuk en Labo Assemblage naast elkaar staan
+
+Dit is de zwaarste overlap tot nu toe, zwaarder dan hoofdstuk 6 met Labo Partitioneren
+en hoofdstuk 8 met Labo Virtualiseren. `Labo/Assemblage/Theorie/Componenten.html`
+draagt secties met de ids `vormfactor`, `moederbord`, `processor`, `werkgeheugen`,
+`opslag` en `voeding`, en behandelt ATX tegen Micro-ATX, de socket, de chipset, de
+DIMM-slots en de PCIe-slots. Patroon 17: de twee tracks zeggen hetzelfde twee keer en
+er linkt niets tussen. **Er is aan geen enkele labopagina iets veranderd.** Nagekeken
+op tegenspraak, en dit kwam eruit.
+
+- **De vormfactoren.** Zie hierboven. Dat was de enige echte tegenspraak, en de
+  syllabus is de kant die rechtgezet is: mini ATX is Mini-ITX geworden, met het
+  streepje dat het labo en de figuur van dit hoofdstuk allebei dragen. **De maten
+  spreken elkaar niet tegen**: de syllabus zegt 30,5 op 24,4 cm voor Standard-ATX, het
+  labo 305 × 244 mm. **De bijgeschreven alinea over de kast spreekt het labo niet
+  tegen**: de syllabus zegt nu dat elk ATX bord in elke ATX kast past, het labo dat een
+  ATX kast ook de kleinere borden opneemt en dat het omgekeerd niet werkt. Dat tweede is
+  het scherpere van de twee, en er is aan die labopagina niets veranderd.
+- **De socket en welke processor erop past. Geen tegenspraak.** Het labo zegt "de
+  socket ... bepaalt welke processors op dit moederbord passen" en 9.3 zegt "De keuze
+  van het moederbord bepaalt dus ook het merk en het type processor dat je moet
+  kiezen". Dat is dezelfde richting. 9.4 zegt er de omgekeerde kant bij, "De processor
+  zal dan bepalen welke socket er aanwezig moet zijn op het moederbord", en dat is niet
+  in strijd: het is de volgorde waarin je koopt en niet wie wat bepaalt. Studievraag 3
+  vooraan vraagt precies naar allebei de richtingen, en het hoofdstuk beantwoordt ze
+  allebei.
+- **De chipset staat in dit hoofdstuk nul keer**, nagekeken met grep. Het labo legt uit
+  wat ze doet en zegt er uitdrukkelijk bij dat ze **niet** bepaalt welke processor past;
+  de syllabus komt op dat onderwerp nergens uit. Dat is een gat en geen tegenspraak.
+- **De DIMM-slots. Geen tegenspraak, wel twee helften.** 9.3 legt uit waar de naam
+  vandaan komt (dual tegenover SIMM), dat DDR4 niet in een DDR5-slot past en wat SO-DIMM
+  is. Het labo legt uit waarom de generaties niet in elkaars slot passen (de inkeping
+  zit elders), wat dual channel is en in welke twee slots je twee modules zet. **Dual
+  channel komt in de syllabus niet voor en SO-DIMM niet in het labo.**
+- **De PCIe-slots. Geen tegenspraak, wel twee helften.** 9.3 geeft de geschiedenis, AGP
+  naar PCI naar PCI Express, en zegt dat je op een industriële computer meestal genoeg
+  hebt aan de grafische kaart in de processor. Het labo geeft de breedtes, x16 en x1, en
+  welke kaart in welk slot gaat. **Het aantal lanes komt in de syllabus niet voor.**
+- **De ingebouwde grafische kaart. Geen tegenspraak.** 9.3 zegt dat een recente
+  processor er een heeft en dat die voor basistaken volstaat; het labo zegt dat het
+  beeld dan van de processor komt en dat het scherm zwart blijft als de processor er
+  geen heeft en er geen kaart in het x16-slot zit. Dat tweede staat niet in de syllabus.
+- **De Raspberry Pi.** 9.2 en `Labo/Assemblage/` raken elkaar hier niet, maar hoofdstuk
+  4 wel: dat noemt de Raspberry Pi al bij Embedded system, met dezelfde schrijfwijze
+  sinds de ronde van 7 september 2026. De twee hoofdstukken zeggen nu allebei
+  Raspberry Pi.
+
+### Wat er in de tekst opviel, en op 7 september 2026 rechtgetrokken is
+
+De tekst gaat er in principe letterlijk in, dus dit staat hier met wat er beslist is.
+**Al deze correcties staan alleen in de HTML en een herimport draait ze terug.** Wat
+hierboven al per beslissing beschreven staat (Raspberry Pi, mini ATX, vraag 3), staat
+hier niet nog eens.
+
+- **"c#" is "C#" geworden**, vier plaatsen: een in 9.2 en drie in 9.5, de twee
+  bijgeschreven oplossingen inbegrepen. Hoofdstuk 4 schrijft in
+  `IndustrieleComputers.html` al **C#**, dus de twee hoofdstukken van dezelfde syllabus
+  spraken elkaar tegen over dezelfde naam. Dat is de regel van 7 september 2026, de
+  schrijfwijze van de eigenaar, en Microsoft schrijft C#. Ook de blurb in
+  `reference.js` is meegegaan.
+- **"PCI express" is "PCI Express" geworden**, twee plaatsen: de kop van de derde
+  Heading 3 van 9.3 en een opsommingsteken in 9.4. Dit hoofdstuk schrijft het zelf twaalf
+  keer met een hoofdletter, dus het sprak zichzelf tegen op een letter. PCI-SIG schrijft
+  PCI Express. Ook de blurb in `reference.js` is meegegaan. **Dit is de tweede kop die
+  om een productnaam aangeraakt wordt**, na die van 9.2.
+- **"Nvidia" is "NVIDIA" geworden**, een plaats in 9.3. Hoofdstuk 2 en
+  `Labo/Virtualiseren/Theorie/SoftwareInDeGuest.html` schrijven allebei NVIDIA, en het
+  bedrijf ook. Dezelfde regel.
+- **"in tegenstelling to SIMM's" is "tot" geworden** in 9.3. Een tikfout, en de enige
+  die rechtgezet is.
+
+### De tabel van 9.1 kreeg een kopregel, en de gok van de importer is nagekeken
+
+`IMPORT.md` meldde "tabel Control Cabinet kreeg GEEN kopregel (geen enkel signaal)" en
+zette er een `data-geraden` op. Nagekeken in de bron: de rij met **Control Cabinet**,
+**Panel PC** en **Embedded PC** staat **boven** de twee rijen foto's, en de rij met
+**ATX**, **3.5 inch** en **PC104** eronder. De bovenste benoemt dus wel degelijk de
+kolommen, en het is een `<thead>` geworden; het `data-geraden` is weg.
+
+Dat is hetzelfde geval als de vergelijkingstabel van 6.1 en het spiegelbeeld van de
+fototabel van 8.1, waar de benoemende rij juist **onder** de foto's stond en er dus
+geen kopregel kwam. **De toets is waar de rij staat en niet wat ze bevat.**
+
+### Wat er in de tekst opviel, en niet aangeraakt is
+
+De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
+
+- **"In de volgende hoofdstukken bespreken we kort hoe de processor, het werkgeheugen
+  en de grafische kaart aangesloten worden"** in 9.3. Het zijn geen hoofdstukken maar de
+  drie Heading 3's van diezelfde sectie, en ze volgen er meteen op.
+- **"Zie ook het hoofdstuk Accelerated Processing Unit"** en **"Over de werking van DDR
+  leer je meer in het hoofdstuk Random Access Memory"**, allebei in 9.3. Die twee
+  hoofdstukken bestaan nog niet en worden geen links, om dezelfde reden als de twee
+  verwijzingen van 8.2: van de syllabus is de PDF het enige dat de student ziet.
+- **"Ze heten Duals omdat ze in tegenstelling tot SIMM's aan beide kanten van het
+  printplaatje aansluitpunten hebben."** Duals met een hoofdletter en in het meervoud,
+  en `printplaatje` als verkleinwoord, wat patroon 12 zou zijn als deze tekst hier
+  geschreven was.
+- **"Dat komt omdat ieder type processor zoals Core 3, 5, 7, 9, Ryzen... over andere
+  eigenschappen beschikken"**, met een meervoud bij een enkelvoudig onderwerp. In
+  diezelfde zin staat **Core 3**, en Intel begint zijn reeks bij Core i3.
+- **"Voor een PLC kan je een I/O eiland kopen die overweg kan"** in 9.2, met die waar
+  dat hoort.
+- **"Er zijn hier echter wel enkele opmerkingen die we moeten maken"** in 9.2, met de
+  we-vorm die SCHRIJFSTIJL.md voor eigen tekst naar de je-vorm stuurt. Dat geldt niet
+  voor de brontekst.
+- **"Let dus altijd goed op als je een behuizing koopt!"** in 9.2, het enige uitroepteken
+  van het hoofdstuk.
+- **"2GB RAM, 4GB RAM"** in 9.2 schrijft de eenheid vast aan het getal, terwijl 9.3
+  "8 GB DDR4" met een spatie schrijft.
+- **"het aantal PCI Express slots:"** in 9.4 eindigt op een dubbele punt waar de vier
+  andere opsommingstekens een kommapunt dragen.
+- **"Maar je hoeft je geen zorgen te maken als alles compatibel is met elkaar"** in 9.4,
+  waar of hoort te staan, dezelfde vaste vorm als de drie gevallen in 3.2.
+- **"een uit de kluiten gewassen grafische kaart"** in 9.3, beeldspraak die patroon 15
+  zou raken als deze tekst hier geschreven was.
+- **De pijl in de drie koppen van 9.3** staat in de Word als `->` en niet als een
+  echt pijltje. Dat is opmaak en is zo gebleven.
+- **9.4 heet "Hoe kies je een (industrieel) moederbord?"**, met haakjes in de
+  sectietitel. Die titel staat zo in de inhoudstafel; de `name` in `reference.js` is
+  "Hoe kies je een moederbord", want dat is een knoptekst op de hub en geen gedrukte
+  titel.
+- **Studievraag 1 vooraan stelt twee vragen in een**, "Hoe wordt de layout van een
+  moederbord bepaald? Wat zijn de nadelen van ATX?", en alle drie de studievragen zijn
+  echte vragen met een vraagteken. De imperatief-met-vraagteken van hoofdstuk 1, 3, 4, 7
+  en 8 komt hier niet voor.
+
+## Hoofdstuk 10, Informatievoorstelling
+
+**Dit hoofdstuk heeft geen sectie Studievragen achteraan**, en er is dus geen
+`TestJezelf.html`. Het is het derde hoofdstuk zonder, na hoofdstuk 2 en 7. Het kader
+Studievragen vooraan staat er wel gewoon, samen met de Kernpunten op `Overzicht.html`;
+dat is het kader dat aankondigt wat je moet kunnen. Of elk hoofdstuk er een hoort te
+krijgen, wordt beslist na hoofdstuk 16 en in een keer, niet hier.
+
+**Zes secties, 45 alinea's, negen tabellen en zeven gedrukte bladzijden, 91 tot en met
+97.** Geen enkele Heading 3 of 4, dus elke pagina draagt alleen haar eigen h1, en er is
+geen lege kop zoals hoofdstuk 9 er een had. Van die negen tabellen zijn er twee de kaders
+en zeven de lege invulruimtes onder de oefeningen: er kwam dus geen enkele gegevenstabel
+uit de Word en de importer hoefde nergens een kopregel te raden. `IMPORT.md` meldt voor
+dit hoofdstuk dan ook geen enkele `data-geraden`.
+
+### Het hoofdstuk sprak hoofdstuk 6 tegen over wat een kilobyte is
+
+Het kader hier zegt met zoveel woorden: "Een kilobit of kilobyte zijn 1000 bits of 1000
+bytes. Een kibibit of kibibyte zijn 1024 bits of 1024 bytes." 10.4 bouwt daar een hele
+sectie op, met een tabel die de fout per eenheid uitrekent.
+`Theorie/Syllabus/Theorie/Bestandssystemen/Clusters.html` schreef "Standaard wordt er 4096
+bytes of 4 kB gerekend" en rekende in dezelfde sectie met een clustergrootte van 64 kB
+waarvan bij een bestand van 412 bytes zo'n 63 kB verloren gaat. Dat zijn machten van twee
+met een kilo-etiket, dus precies wat dit hoofdstuk fout noemt.
+
+Dat is het geval van hoofdstuk 4 tegen 7 (Windows 10) en van hoofdstuk 5 tegen 8 (de
+emulatie): twee hoofdstukken van dezelfde syllabus die elkaar tegenspreken over hetzelfde
+feit. Beslist op 7 september 2026 door de lector: **de cursusinhoud moet juist zijn en al
+de rest schikt zich daarnaar.** Hoofdstuk 6 is dus de kant die rechtgezet is, want
+hoofdstuk 10 heeft gelijk.
+
+**Drie plaatsen in `Clusters.html`, en alleen de eenheid is aangeraakt:**
+
+| Was | Is | Waarom |
+|---|---|---|
+| 4096 bytes of 4 kB | 4096 bytes of 4 KiB | 4096 bytes is 4 x 1024, dus 4 KiB en niet 4 kB |
+| een clustergrootte van 64 kB | een clustergrootte van 64 KiB | een clustergrootte is altijd een macht van twee, dus 65 536 bytes |
+| zo'n 63 kB aan opslagruimte | zo'n 63 KiB aan opslagruimte | volgt uit de vorige: 65 536 min 412 is 65 124, en dat is 63,6 KiB |
+
+**Er valt geen enkel getal weg**, alleen de eenheid erachter verandert. De rekensom in die
+alinea klopte al en klopt nog: 63 blijft 63, want ook 64 000 min 412 komt op ongeveer 63
+uit. Het is de eerste van de drie die de zaak beslist, want 4096 bytes is onmiskenbaar
+4 KiB.
+
+**De rest van hoofdstuk 6 stond al goed**, en dat is met grep nagekeken: `EiB` staat er
+twee keer, in de maximale partitiegrootte van EXT en in de maximale bestandsgrootte van
+NTFS. Het hoofdstuk was dus niet consequent fout maar alleen op die ene pagina, en het is
+nu inwendig consequent. **Een herimport van hoofdstuk 6 draait deze drie terug.**
+
+**Aan `Labo/Partitioneren/` is niets veranderd, en dat is patroon 17.**
+`Theorie/Spiekblad.html` en `Theorie/Bestandssystemen.html` dragen 2 TB, 4 GB, 256 TB en
+16 TB, en dat zijn stuk voor stuk machten van twee met een kilo-etiket. Ze staan er zo
+omdat elk bestandssysteem zijn grenzen zo adverteert, en de labotrack is onafhankelijk van
+de theorietrack. Genoteerd en niet aangeraakt.
+
+### Het gat: het woord kibibyte stond nergens in de lopende tekst
+
+Sectie 10.4 heet Kibi versus kilo, het kader vooraan zegt wat een kibibyte is en oefening
+4 vraagt "Hoeveel bytes zitten er in een kibibyte?" Nagekeken met grep in de lopende tekst
+van dit hoofdstuk: **het woord kibi komt er nul keer in voor.** De negen alinea's van 10.4
+schrijven alleen kilobyte en zeggen nergens dat 1024 bytes een eigen naam heeft. De
+student die 10.4 las, kon oefening 4 niet beantwoorden.
+
+Dat is het gat van de wet van Moore in hoofdstuk 1, van de bottleneck in hoofdstuk 5, van
+het partitieschema in hoofdstuk 6, van realtime in hoofdstuk 7 en van de nadelen van ATX
+in hoofdstuk 9, en de uitkomst is dezelfde. Beslist op 7 september 2026 door de lector: er
+komt tekst bij in plaats van dat de oefening onbeantwoord blijft.
+
+**Het werd een alinea, en ze staat achter de zin over 1024 byte en niet achteraan.** Ze
+krijgt geen eigen kop, want ze past in de bestaande gedachtegang; dat is de lijn van
+hoofdstuk 1, 5 en 6 en niet die van hoofdstuk 7, waar de bijgeschreven tekst wel een kop
+kreeg. **Deze alinea staat alleen in de HTML en een herimport gooit ze weg:**
+
+> Voor die 1024 byte bestaat er een eigen naam: een kibibyte, afgekort KiB. Daarboven gaat
+> het net zo verder: 1024 kibibyte is een mebibyte (MiB), 1024 mebibyte een gibibyte (GiB)
+> en 1024 gibibyte een tebibyte (TiB). Wie 1024 bedoelt, schrijft dus KiB, MiB, GiB of
+> TiB, en wie 1000 bedoelt kB, MB, GB of TB. Windows houdt zich daar niet aan en toont die
+> getallen van 1024 nog altijd als kB, MB en GB.
+
+**Dit is ook de tekst waar de correctie in hoofdstuk 6 naartoe wijst.** Zonder haar zou
+`Clusters.html` "4 KiB" schrijven zonder dat de syllabus dat woord ergens invoert.
+
+### De kibi-tabel is overgetypt, en ze rekende verkeerd
+
+**image88 bestond alleen als afbeelding**, en alinea [1007] verwijst er met zoveel woorden
+naar: "In onderstaande tabel zie je duidelijk dat, hoe groter de capaciteit, hoe groter de
+procentuele fout wordt". Het is een gegevenstabel van vijf rijen en zeven kolommen
+(Eenheid, HD fabrikant base 10, Windows base 2, Ratio, %, HD, Windows), en die typ je
+gewoon over. Dat is het geval van de clustertabel van hoofdstuk 6, die als lopende tekst
+met pijpen binnenkwam, en van de vergelijkingstabel van 6.1. Beslist op 7 september 2026
+door de lector.
+
+**Bij het overtypen bleek de kolom Windows in drie van de vijf rijen fout te rekenen.** De
+tabel neemt telkens de ratio van dezelfde rij maal 1000 in plaats van het aantal bytes
+door 1024 te delen. De kolommen base 10, base 2, Ratio en % kloppen alle vier wel, en de
+rijen B en kB kloppen ook.
+
+| Rij | Stond er | Staat er nu | Waarop het steunt |
+|---|---|---|---|
+| MB | 953 kilo byte | 976 kilo byte | 1 000 000 / 1024 = 976,56 |
+| GB | 931 Mega byte | 953 Mega byte | 1 000 000 000 / 1024² = 953,67 |
+| TB | 9,09 Giga byte | 931 Giga byte | 1 000 000 000 000 / 1024³ = 931,32 |
+
+Die laatste was dubbel fout: de eenheid klopte, maar het getal was de ratio 0,909 met een
+verschoven komma. Beslist op 7 september 2026 door de lector: **de tabel wordt overgetypt
+en rechtgezet.** Alleen die drie getallen zijn veranderd; de eenheden erachter stonden al
+goed en zijn niet aangeraakt, en de schrijfwijze van de bron blijft ("1kB" zonder spatie,
+"kilo byte" los, Mega en Giga met een hoofdletter).
+
+**Dat dit ertoe doet, blijkt uit oefening 7**, die vraagt hoeveel GB een schijf van 1 TB is.
+De enige plaats in het hoofdstuk waar dat getal stond, gaf 9,09 GB.
+
+**`img/syllabus-10-informatievoorstelling-03.png` is geschrapt**, want niets verwijst er
+nog naar en regel 1 van de contentcheck valt over een ongebruikte afbeelding. **Een
+herimport zet ze terug**, met de fout erin, en dan faalt regel 1 tot ze opnieuw weg is.
+
+### De ASCII-tabel blijft een afbeelding
+
+**image87 is de volledige ASCII-tabel**, 128 rijen in drie kolomgroepen naast elkaar, met
+per teken de decimale, hexadecimale, binaire en octale waarde en het teken zelf. Ze is
+1261 bij 1024 pixels op 160.0mm, dus 200 dpi, ze draagt geen watermerk en de tabel zelf is
+schoon: geen chroom, geen bijgesneden rand. Beslist op 7 september 2026 door de lector:
+**ze blijft een afbeelding.** 128 rijen overtypen kost veel markup en maakt de gedrukte
+bladspiegel onvoorspelbaar, en de tabel is op 160.0mm ruim leesbaar.
+
+**Dat laatste is nagekeken in de gedrukte PDF, en het moest**, want oefening 5 laat de
+student er drie letters in opzoeken. De kolom Char en de kolom Binary zijn allebei
+leesbaar; de e, de L en de m staan alle drie in het beeld.
+
+De tekst van de tabel is in het Engels ([NULL], [BELL], [LINE FEED] en zo voort) en dat is
+in een Nederlandse tekst hetzelfde bezwaar als bij de MBR van hoofdstuk 3 en bij de
+defragmentatie van hoofdstuk 6. **Hier weegt het niet op tegen het hertekenen**: die twee
+waren tekeningen van tien tot twintig elementen, dit zijn 128 rijen waarvan de Engelse
+namen bovendien de officiële namen van de stuurtekens zijn.
+
+### De bestandsnaam van 10.5
+
+`pascal()` maakt van de kop "kbps vs kBps" de naam `KbpsVsKbps.html`, en daarmee is precies
+het onderscheid weg dat de sectie behandelt: de kleine b tegen de grote B. Het botst met
+niets, dus het is geen fout, maar het is wel het geval van `DeUefiOmgeving.html` in
+hoofdstuk 3: een naam die je in een grep niet terugvindt als wat ze is.
+
+Beslist op 7 september 2026 door de lector: de pagina heet **`BitOfByte.html`**, naar het
+onderscheid zelf. **De kop op de pagina blijft "kbps vs kBps"**, want dat is de tekst uit
+de Word en dat is ook wat er in de inhoudstafel staat, en de `name` in `reference.js`
+blijft dat ook, want een knoptekst op de hub mag het onderscheid gewoon dragen. De id is
+`informatievoorstelling-kbps-kbps`. Dit is de tweede bestandsnaam in de syllabus die niet
+`pascal()` van de kop is.
+
+### De negen oefeningen van 10.6
+
+**10.6 Oefeningen houdt haar naam**, zoals de regel bij hoofdstuk 2 zegt: een sectie die
+halverwege Oefening of Oefeningen heet, houdt haar naam en krijgt wel dezelfde
+vragenbehandeling. Ze is met de hand een `ol class="vragen"` geworden en de pagina heeft
+met de hand `oplossingen.js` onder `back-link.js` gekregen; de importer doet geen van
+beide.
+
+**De negen vragen zijn van twee soorten door elkaar**, en dat is nieuw: zeven open vragen
+met invulruimte en een `<div class="oplossing">`, en twee meerkeuzevragen met een
+`<li class="juist">`. Elk ander hoofdstuk had ofwel alleen meerkeuze ofwel alleen open
+vragen in een lijst.
+
+**De nummering loopt zonder `start=` van 1 tot 9.** De drie mogelijkheden onder vraag 8 en
+9 staan in de Word op `ilvl=0`, hetzelfde inspringniveau als de vragen zelf, alleen met een
+eigen `numId` (32 en 33). Nagekeken wat de importer daarvan maakt: hij zet ze als een
+`<ul>` **binnen** de `<li>` van hun vraag, precies zoals bij een echt geneste lijst, dus de
+genummerde lijst loopt gewoon door en er valt niets aan te sluiten. Regel 14 is daar
+tevreden mee.
+
+| Vraag | Antwoord | Waarop het steunt |
+|---|---|---|
+| 1 Bits in een byte | 8 bits | 10.2, "Een byte (of octet) zijn 8 bits" |
+| 2 Bytes in een octet | 1 byte | 10.2, dezelfde zin: octet en byte zijn twee namen voor hetzelfde |
+| 3 Bits in een kilobyte | 8000 bits | het kader, een kilobyte is 1000 bytes, en 10.2, een byte is 8 bits |
+| 4 Bytes in een kibibyte | 1024 bytes | het kader, en sinds vandaag ook de bijgeschreven alinea in 10.4 |
+| 5 De tekst eLm in ASCII | 0110 0101 0100 1100 0110 1101 | image87: e is 101, L is 76, m is 109; de vorm van 8 bits in groepjes van 4 komt uit 10.3, dat de hoofdletter A als 0100 0001 schrijft |
+| 6 Een SD kaart van 8GB | minder, ongeveer 7,45 GB | 10.4 en de tabel: 8 miljard bytes door 1024³, een verschil van 6,87% |
+| 7 1 TB in GB | 1000 GB volgens de fabrikant, 931 GB in Windows | de rechtgezette tabel van 10.4; zie hieronder |
+| 8 De transfersnelheid van deze harde schijf | b, Mega byte per seconde | de afbeelding zegt 3300 MB/s en 3500 MB/s, met een hoofdletter B |
+| 9 De downloadsnelheid van deze verbinding | a, Mega bit per seconde | de afbeelding zegt Mbps, met een kleine b |
+
+**Vraag 8 en 9 hebben elk precies een juist antwoord, en dat is nageteld nadat de twee
+afbeeldingen opengedaan zijn.** Zonder het plaatje is geen van de twee te beantwoorden en
+met het plaatje is er telkens maar een antwoord. Het probleem van hoofdstuk 3, waar vier
+van de vijf mogelijkheden juist waren, speelt hier dus niet, en er hoefde geen enkele vraag
+omgekeerd of open gemaakt te worden.
+
+**Vraag 7 was dubbelzinnig, en de vraagzin is aangescherpt.** "Je hebt een harde schijf van
+1 TB gekocht. Hoeveel GB is dat?" heeft twee verdedigbare antwoorden, 1000 GB volgens de
+fabrikant en 931 GB zoals Windows het toont, en de hele sectie ervoor gaat er juist over
+dat die twee niet hetzelfde zijn. Beslist op 7 september 2026 door de lector: **de vraag
+vraagt nu allebei.** Ze luidt "Hoeveel GB is dat volgens de fabrikant, en hoeveel toont
+Windows?" en draagt twee invulregels. Zo toetst ze precies wat 10.4 uitlegt in plaats van
+de student te laten gokken welke van de twee bedoeld is. **De vraagzin staat alleen in de
+HTML en een herimport draait ze terug.**
+
+**Een invulregel per ding dat het antwoord telt**, zoals de regel bij hoofdstuk 3 zegt.
+Zes van de zeven open antwoorden tellen een ding en dragen dus een regel; vraag 7 telt er
+twee en draagt er twee. **Vraag 5 houdt de tabel van drie kolommen die de Word haar geeft**,
+een per letter, en dat is precies de bedoeling: e, L en m.
+
+**De zeven oplossingen zijn hier bepaald en staan nergens in de Word.** Zonder ze drukt het
+hele hoofdstuk geen Oplossingen.
+
+### De vijf afbeeldingen
+
+**Geen enkele zit onder de dpi-grens van 98 die hoofdstuk 3 vastgelegd heeft**, en er is
+dus geen enkele kandidaat om te versmallen of te hertekenen. Dat is na hoofdstuk 9, waar er
+vier onder zaten, een opluchting. De vijf drukken op 152, 200, 125, 143 en 543 dpi. Elke
+afbeelding is opengedaan voor haar `alt` geschreven werd, en **een nieuwe import gooit die
+alt-teksten weg.**
+
+- **Drie zweven** (`wrapSquare`): image86 in 10.1, image89 bij vraag 8 en image90 bij vraag
+  9. Hun alinea blijft lopende tekst en ze dragen geen bijschrift uit de Word; `IMPORT.md`
+  meldt de eerste als zwevend en de twee andere onder hun eigen melding, want die zet de
+  importer netjes binnen de `<li>` van hun vraag, zoals de foto bij vraag 4 van hoofdstuk 9.
+- **image86 is een gescande boekfiguur in grijstinten**, een signaal dat van 0V naar 5V
+  klimt en terugvalt, met stippellijnen, een pijl met "Fout-gebied" ernaast en op de tijdas
+  de bits 0, 1, 0. Ze staat in het Nederlands en draagt geen watermerk, en op 152 dpi
+  stoort de korrel niet, dus hier stond eerst dat er geen reden was om ze te hertekenen.
+  **Ze is op 7 september 2026 alsnog hertekend**, op vraag van de lector; zie hieronder.
+- **image89 is een schermafdruk van een webshop met een prijs erop**, een Samsung 970 EVO
+  PLUS M.2 1TB met sterren, 118 reviews, 178,95 en twee snelheden. Dat is het geval van
+  image71 van hoofdstuk 9, en de uitkomst is dezelfde: **ze blijft staan.** De prijs
+  veroudert en er staat geen bron bij, maar wat de vraag ernaast nodig heeft zijn de twee
+  regels 3300 MB/s en 3500 MB/s, en die verouderen niet. **De regel van hoofdstuk 9 speelt
+  hier niet**: een prijs of een productstatus mag geen argument in een oplossing worden, en
+  dat is ze hier ook niet, want de vraag gaat over de eenheid en niet over het toestel.
+- **image90 is de enige donkere afbeelding in de hele syllabus.** Een snelheidsmeter op een
+  bijna zwarte achtergrond, en op papier is dat een vlak van 70,2 bij ongeveer 47mm dat
+  volloopt met inkt terwijl elke andere figuur hier op wit staat. Nagekeken in de gedrukte
+  PDF: **het leest, en het slaat niet door.** Wat de vraag ernaast nodig heeft is het woord
+  **Mbps** in het midden van de meter, en dat is grijs op donkerblauw en daarmee het minst
+  contrastrijke ding op de bladzijde. Op 543 dpi is de breedte geen knop die iets zou
+  oplossen, dus ze staat op de 70.2mm van de Word. **Kijk het na op een echte afdruk**: valt
+  Mbps daar dicht, dan is vraag 9 niet te beantwoorden en is een bredere versie of een
+  eigen tekening de uitweg.
+
+### De bladspiegel van dit hoofdstuk
+
+Zeven bladzijden, 91 tot en met 97, met de gedrukte 10.7 Oplossingen als laatste.
+Nagerekend **na** de redactionele ronde, dus na de bijgeschreven alinea van 10.4, na de
+overgetypte tabel en na het aanscherpen van vraag 7. De inhoudstafel van de oude en de
+nieuwe PDF zijn naast elkaar gelegd: **elk hoofdstuk van 1 tot 9 is precies een bladzijde
+opgeschoven**, en dat is de inhoudstafel zelf, die van vier op vijf bladzijden gekomen is.
+Er is dus verder niets verschoven, en dat is wat je na hoofdstuk 9 ook zag.
+
+- **De ASCII-tabel past ruim.** Op 160.0mm is ze 129,9mm hoog, ze draagt geen bijschrift, en
+  ze staat samen met de drie alinea's van 10.3 en de eerste alinea van 10.4 op bladzijde 93.
+  De 240mm-grens van hoofdstuk 3 komt hier niet in zicht en de breedte hoefde dus geen knop
+  te zijn.
+- **De overgetypte tabel van 10.4 staat op een bladzijde**, samen met de negen alinea's van
+  die sectie en de kop van 10.5. Dat is precies wat het overtypen oplevert bovenop de
+  correctie: een tabel breekt over een bladovergang als het moet, een afbeelding niet.
+- **De negen vragen van 10.6 staan op twee bladzijden**, 1 tot 7 op 95 en 8 en 9 op 96.
+  **Vraag 8 en 9 blijven elk heel met hun figuur**, zonder dat er een `.vragen-bij-figuur`
+  aan te pas komt: de figuur staat **binnen** de `<li>` en `ol.vragen > li` breekt sinds
+  hoofdstuk 2 niet meer over een bladovergang. Dat is hetzelfde geval als vraag 4 van
+  hoofdstuk 9. De lege ruimte onder vraag 9 is voor de student plaats om te schrijven.
+
+### Waar dit hoofdstuk en de rest van dit vak naast elkaar staan
+
+**Geen enkel labo behandelt informatievoorstelling**, dus de vergelijking met de labotrack
+levert hier weinig op. Waar dit hoofdstuk wel tegenaan schuurt zijn twee hoofdstukken van de
+syllabus zelf, en die zijn er dus naast gelegd op tegenspraak.
+
+- **Hoofdstuk 6, Bestandssystemen. Een echte tegenspraak, en ze is rechtgezet.** Zie
+  hierboven.
+- **Hoofdstuk 1, Generatie 5: quantumcomputers. Geen tegenspraak.** 10.2 sluit af met "Een
+  qubit kan ofwel 0 of 1 zijn maar ook 0 en 1 tegelijkertijd" en 1.6 zegt "Een qubit kan
+  ofwel de waarde 0, ofwel de waarde 1 maar ook zowel de waarde 0 als 1 hebben op hetzelfde
+  moment". Dat is dezelfde zin, twee keer. Hoofdstuk 1 gaat verder en voert de
+  quantumsuperpositie in, de kat van Schrödinger en het feit dat de toestand vastklikt zodra
+  je hem uitleest; 10.2 zegt daar niets over en spreekt het dus ook niet tegen. Wat wel
+  scheef stond is de schrijfwijze, zie hieronder.
+- **Hoofdstuk 11 heet Harde schijf en komt hierna.** 10.4 gaat over wat een fabrikant van
+  opslagruimte adverteert, dus die twee gaan elkaar raken. **Wat hier vastligt en hoofdstuk
+  11 dus niet mag tegenspreken:** een kilobyte is 1000 bytes en een kibibyte 1024, en wie
+  1024 bedoelt schrijft KiB, MiB, GiB of TiB. Een schijf van 1 TB draagt 1 000 000 000 000
+  bytes en Windows toont daar 931 GB van. Het verschil is een eenheid en geen capaciteit,
+  en het loopt op van 2,34% bij kB tot 9,05% bij TB. Komt er in hoofdstuk 11 een
+  schijfgrootte in kB, MB, GB of TB voor die eigenlijk een macht van twee is, dan is dat
+  hetzelfde geval als `Clusters.html` hierboven.
+
+### Wat er in de tekst opviel, en op 7 september 2026 rechtgetrokken is
+
+De tekst gaat er in principe letterlijk in, dus dit staat hier met wat er beslist is. **Al
+deze correcties staan alleen in de HTML en een herimport draait ze terug.** Wat hierboven al
+per beslissing beschreven staat (de bijgeschreven alinea, de tabel, vraag 7), staat hier
+niet nog eens.
+
+- **"quantum computers" is "quantumcomputers" geworden**, een plaats in 10.2. Hoofdstuk 1
+  heeft die keuze al gemaakt en er staat bij dat het woord in de rest van de Word nergens
+  voorkwam; dat klopte tot dit hoofdstuk. De twee hoofdstukken schrijven het nu allebei
+  aaneen. In de Word stond het bovendien als twee `<strong>`-blokken naast elkaar
+  (`quantum` en ` computers`), dus het is nu ook een enkel `<strong>`.
+
+### Wat er in de tekst opviel, en niet aangeraakt is
+
+De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
+
+- **Het kernpunt "De eenheden zijn als volgt: kilo, Mega, Giga, Tera, Peta."** Dat zijn
+  voorvoegsels en geen eenheden, en drie van de vier dragen een hoofdletter waar het
+  Nederlands ze klein schrijft. Het kernpunt erboven zegt wel "Een kilo schrijf je altijd
+  met een klein letter", dus de hoofdletters lijken hier het **symbool** te bedoelen (k
+  tegen M, G, T, P) en niet het woord. Dat is een verdedigbare bedoeling en ze is niet
+  aangeraakt.
+- **De overgetypte tabel houdt diezelfde schrijfwijze**, "kilo byte" los en "Mega byte" en
+  "Giga byte" met een hoofdletter, en "1kB" en "1MB" zonder spatie in de kolom HD. Dat is
+  wat op de afbeelding stond, en alleen de drie foute getallen zijn veranderd.
+- **De decimale punt.** Het hoofdstuk schrijft "14.8 GB", "9.76 kilobyte", "0.4 V" en
+  "2.4 V" met een punt, terwijl de tabel ernaast komma's gebruikt en het Nederlands dat ook
+  doet. Zo staat het in de Word.
+- **"8GB" in oefening 6** schrijft de eenheid vast aan het getal, terwijl 10.4 "16 GigaByte"
+  met een spatie schrijft, en dat laatste zet byte dan weer met een hoofdletter midden in
+  het woord. Dezelfde soort inconsistentie als "2GB RAM" tegen "8 GB DDR4" in hoofdstuk 9.
+- **"een SD kaartje"** in oefening 6, een verkleinwoord dat patroon 12 zou raken als deze
+  tekst hier geschreven was. 10.4 schrijft in dezelfde betekenis "SD kaart".
+- **"De transfersnelheid (lees / schrijfsnelheid van deze harde schijf wordt uitgedrukt in
+  ..."** in oefening 8 opent een haakje dat nooit sluit.
+- **"of ander opslagmedia"** in 10.4, met een meervoud achter een enkelvoudig lidwoord.
+- **"Omdat die interpretatie over de hele wereld dezelfde zou zijn maakt men gebruik van
+  afspraken"** in 10.3, waar Opdat hoort te staan.
+- **"aanziet Microsoft een kilobyte nog steeds als"** in 10.4, waar beschouwt als hoort te
+  staan; dezelfde zin schrijft "aanzien als" nog een tweede keer.
+- **"Beiden hebben echter hetzelfde aantal bytes"** in 10.4, met de vorm voor personen.
+- **"Gezien de opslagruimte toen beperkt was"** in 10.4, met gezien als voegwoord.
+- **"men"** staat vier keer in dit hoofdstuk (10.3 twee keer, 10.4 twee keer), de vorm die
+  SCHRIJFSTIJL.md voor eigen tekst naar de je-vorm stuurt. Dat geldt niet voor de brontekst.
+- **De ellipsen** in 10.2 ("In groepjes van 4, 8, 16, ... ."), in 10.3 en in oefening 9 zijn
+  in de Word het teken en geen drie punten, terwijl oefening 8 wel drie losse punten
+  schrijft. Dat is opmaak en is zo gebleven.
+
+## Hoofdstuk 11, Harde schijf
+
+**De sectie Studievragen achteraan heet hier Test jezelf**, zoals in hoofdstuk 1,
+3, 4, 5, 6, 8 en 9. Het kader Studievragen vooraan houdt zijn eigen naam en staat
+samen met de Kernpunten op `Overzicht.html`. De pagina heet `TestJezelf.html`; de
+importer schreef `Studievragen.html`.
+
+**Zestien secties, twintig Heading 3's, 269 alinea's, 18 tabellen en 44
+afbeeldingsplaatsingen, en vijfenveertig gedrukte bladzijden, 98 tot en met 142.**
+Dat is ruim het dubbele van hoofdstuk 9, dat tot nu toe het grootste was. Geen
+enkele Heading 4, dus de tak die hoofdstuk 7 voor het eerst gebruikte komt hier
+niet in beeld.
+
+### De import liet vier afbeeldingen vallen, en meldde er geen enkele
+
+Dit is de zwaarste vondst van dit hoofdstuk en ze is met de hand rechtgezet.
+`import-syllabus.py` schreef 38 bestanden waar de Word er 44 plaatst, en het
+verschil kwam nergens in `IMPORT.md` terecht. **Een herimport laat ze opnieuw
+vallen**, want de importer is niet aangepast.
+
+- **De QR-code bij 11.4 hing aan de kop van de sectie.** In de Word zweeft ze
+  (`wrapSquare`) naast de Heading 2 zelf. `verwerk()` snijdt die kop eraf
+  (`inhoud[i + 1:eind]`) voor `renderen()` iets ziet, dus de afbeelding wordt niet
+  eens geschreven. **Ze bevat exact `https://www.youtube.com/watch?v=kdmLvl1n82U`**,
+  nagekeken door ze te decoderen, en ze staat nu terug als
+  `img/syllabus-11-qr-video.png`. Zie hieronder bij de twee adressen waarom dat
+  ertoe doet.
+- **De drie tekeningen van vraag 5 zaten in de tabel eronder.** De Word zet ze in
+  de eerste rij van een tabel van 2 bij 3, met de invulruimte in de tweede rij.
+  De importer herkende die tabel als een lege tabel, schreef er invulruimte voor in
+  de plaats en gooide de drie afbeeldingen weg. Ze heten nu
+  `img/syllabus-11-track.png`, `-disk-sector.png` en `-track-sector.png`, naar wat
+  ze tonen: een volledige ring, een taartpunt van de as tot de rand, en het vakje
+  waar die twee elkaar kruisen. **Zonder hen is vraag 5 onbeantwoordbaar** en er is
+  niets dat het meldt: de bestanden zijn nooit geschreven, dus regel 16 van de
+  contentcheck ziet niets.
+- **De lintkabel van 11.7 hing aan de Heading 3 Kabels.** Die wordt wel geschreven
+  (`syllabus-11-harde-schijf-16.png`) maar niet geplaatst, want `renderen()` maakt
+  van een kop een `<h2>` en laat de afbeelding erin vallen. Dat is het enige geval
+  dat de contentcheck wel vangt: regel 16 viel over het weesbestand. Ze staat nu
+  bovenaan de sectie Kabels.
+
+**Waar je op moet letten is dus een zwevende afbeelding die aan een KOP hangt en
+een afbeelding die in een TABELCEL zit.** Bij een kop van niveau 1 of 2 verdwijnt
+ze spoorloos, bij een kop van niveau 3 blijft er een weesbestand achter, en in een
+tabelcel verdwijnt ze zodra `lege_kolommen()` die tabel als invulruimte leest. Tel
+na de import de `a:blip` in het hoofdstuk tegen wat er in `img/` staat; loopt dat
+niet gelijk, dan is er iets weg.
+
+### Een element dat breder is dan de bladspiegel krimpt het HELE document
+
+**Dit is de belangrijkste vondst voor de bladspiegel en ze geldt vanaf nu voor elk
+hoofdstuk.** Bij de eerste export verschoven hoofdstuk 1 tot 10 met 1 tot 4
+bladzijden naar voren, ongelijk verdeeld, terwijl er aan geen van die hoofdstukken
+iets veranderd was. Opnieuw drukken met alleen hoofdstuk 1 tot 10 gaf bladzijde
+voor bladzijde precies de PDF die er al stond, dus de export is reproduceerbaar en
+de oorzaak lag in hoofdstuk 11.
+
+Wat er gebeurde: **Chrome krimpt bij `--print-to-pdf` het volledige document zodra
+de inhoud breder is dan de bladspiegel.** De schaal staat in de PDF zelf, als de
+eerste `cm` van elke bladzijde: `3.1249194` is de normale maat (0,75, de omrekening
+van CSS-pixels naar punten) en er stond `2.8672137`, oftewel 91,75%. Alles werd
+8,25% kleiner, tekst en afbeeldingen samen, er paste meer op een blad, en elk
+hoofdstuk kroop een paar bladzijden naar voren.
+
+De boosdoener was de invultabel van vraag 1 van 11.4. `ol > li` springt in
+`syllabus.css` **14,7mm** in, dus een tabel binnen een vraag heeft 145,4mm en geen
+160,1mm. De kolombreedtes uit de Word tellen op tot 159,8mm, en `table-layout:
+fixed` maakt een tabel breder in plaats van de kolommen te knijpen. De vier kolommen
+staan nu op 6,6 / 64,4 / 6,7 / 64,3mm, samen 142,0mm, **dezelfde maat die 2.1
+Hardware herkennen al gebruikt**. Dat zijn de enige vier kolombreedtes in dit
+hoofdstuk die niet uit de Word komen.
+
+**Kijk het na met de schaalfactor en niet met het oog.** In de PDF staat op elke
+bladzijde `q\n<schaal> 0 0 <schaal> ... cm`; is die niet overal `3.1249194`, dan
+overloopt er ergens iets. Bestaande hoofdstukken zijn nagekeken: de vijf andere
+`invulkolom`-tabellen in de syllabus staan op 142,0mm en overlopen niet, dus de
+gedrukte PDF was tot nu toe altijd op ware grootte.
+
+### De acht beslissingen van dit hoofdstuk
+
+Alle acht zijn ze op 7 september 2026 door de lector genomen. **Elke correctie
+hieronder staat alleen in de HTML en een herimport draait ze terug.**
+
+**1. "130Mbps" voor een harde schijf is "130 MB/s" geworden.** H3 Performantie onder
+11.3 schreef "In de buitenste zones wordt een snelheid van zo'n 130Mbps gehaald".
+10.5 zegt dat transfersnelheid binnen een computer in kB/s, MB/s of GB/s gaat en dat
+Mbps megabit per seconde is, voor een netwerk; oefening 8 van 10.6 heeft "Mega byte
+per seconde" als juist antwoord voor precies zo'n schijf. Het getal blijft, alleen
+de eenheid verandert. Drie dingen wijzen dezelfde kant op: de grafiek er pal boven
+draagt op haar y-as **Throughput (MiB/s)**, de staafgrafiek van 11.10 zet een
+mechanische schijf op 150 en 130 naast SATA op 550, en
+`Labo/Assemblage/Theorie/Componenten.html` schrijft "ongeveer 100 tot 200 MB/s" voor
+dezelfde schijf. **MiB/s was de andere verdedigbare uitkomst** en is niet gekozen,
+want dan staat er in de hele syllabus een enkele snelheid in MiB/s terwijl 11.8 en
+11.10 vlak erna MB/s schrijven. **11.8 SATA III is met opzet niet aangeraakt**: die
+legt uit dat 6 Gb/s gelijk is aan 750 MB/s en waar de 150 MB/s overhead zit, en dat
+is een correcte toepassing van 10.5.
+
+**2. Zes page- en blockgroottes zijn van kB naar KiB gegaan.** 11.5 schreef "2 kB,
+4 kB, 8 kB of 16 kB", "minimum 256 kB en maximum 4096 kB" en in Write amplification
+nog eens "16 kB" en "4096 kB". Dat zijn stuk voor stuk machten van twee met een
+kilo-etiket, en dat is letterlijk het geval waarvoor
+`Theorie/Bestandssystemen/Clusters.html` op dezelfde dag rechtgezet is. Er valt geen
+enkel getal weg: een page van 4096 bytes is 4 KiB, en 128 pages van 16 KiB is 2048
+KiB, dus de rekensom van het hoofdstuk blijft kloppen.
+
+**3. De openingszin van 11.13 spreekt hoofdstuk 1 niet meer tegen.** Er stond
+"Ongeveer iedere 18 maanden verdubbelt de processorsnelheid." Hoofdstuk 1 draagt
+sinds 7 september 2026 een bijgeschreven alinea die de wet van Moore uitlegt als het
+aantal transistoren op dezelfde oppervlakte, en 1.7 zegt er juist bij dat snelheid
+tegenwoordig van parallellisme komt; vraag 3 van Test jezelf van hoofdstuk 1 toetst
+dat verschil. De zin luidt nu **"Processoren zijn decennialang zeer snel sneller
+geworden."** De redenering van 11.13 blijft volledig staan, want de derde alinea
+zegt zelf al dat je een processor sneller maakt met parallellisme.
+
+**4. Drie zinnen bijgeschreven voor drie vragen die op niets steunden.** Dat is het
+gat van de wet van Moore in hoofdstuk 1, van de bottleneck in 5, van het
+partitieschema in 6, van realtime in 7, van de nadelen van ATX in 9 en van het woord
+kibibyte in 10, en de uitkomst is dezelfde. Ze passen in de gedachtegang die er al
+staat en krijgen dus geen eigen kop, zoals bij 1, 5, 6, 9 en 10 en anders dan bij 7.
+
+- **11.13 > RAID 5:** "Je hebt voor RAID 5 minstens drie schijven nodig: twee met
+  data en een met de pariteit. In de figuur hierboven staan er vier." Ze staat voor
+  de zin over 1/2 tegen 1/4, die op precies die vier schijven slaat.
+- **11.13 > RAID 6:** "Je hebt voor RAID 6 minstens vier schijven nodig: twee met
+  data en twee met pariteit. In de figuur hierboven staan er vijf."
+- **11.13 > Software RAID:** "Een hot spare is een extra harde schijf die al aan de
+  controller hangt zonder dat er data op staat. Valt er een schijf uit, dan neemt de
+  controller die reserveschijf meteen in gebruik en begint de rebuild zonder dat er
+  iemand aan te pas komt." Het woord hot spare kwam in de hele syllabus alleen in
+  vraag 23 voor.
+
+**5. Vraag 13 van Test jezelf kreeg een vierde mogelijkheid.** "RAID 0 is dubbel zo
+snel als een enkele harde schijf: In lezen / In schrijven / Geen van deze" had er
+twee juist, want 11.13 zegt zelf "De lees en schrijfsnelheid wordt hiermee minstens
+verdubbeld". De drie mogelijkheden staan er woord voor woord nog en er kwam **"In
+lezen en in schrijven"** bij, die het juiste antwoord is. Dat is het geval van vraag
+5 van hoofdstuk 5 en vraag 2 van hoofdstuk 6, en het houdt de vraag meerkeuze, zodat
+ze op de Brightspace-test met giscorrectie blijft voorbereiden. Omkeren en open
+maken zijn allebei overwogen: omkeren zou een dubbele ontkenning opleveren die niets
+toetst, open maken kost een meerkeuzevraag. **Vraag 15, over RAID 1, is niet
+aangeraakt**, want daar zegt de tekst uitdrukkelijk dat alleen het lezen sneller
+wordt.
+
+**6. De twee adressen zijn adressen en geen links, en de QR-code staat terug.** Dat
+is de regel van hoofdstuk 9: de PDF is papier, en in dat hele hoofdstuk staat geen
+enkele `<a>`. De importer had er hier wel twee gemaakt. Bij de video weegt er iets
+zwaarder mee: **de tien vragen van 11.4 zijn zonder die video niet te maken.**
+Nagerekend tegen 11.1 tot 11.3: vraag 2, 3, 6, 8, 9 en 10 staan in de tekst, maar
+vraag 4 (hoe de arm beweegt), vraag 5 (de drie tekeningen) en vraag 7 (de
+vormfactor) staan er niet. De video is dus een voorwaarde en geen hulpmiddel, en de
+QR-code is precies wat de Word zelf ervoor bedacht had.
+
+**7. PCI Express 5.0 is 7.0 geworden en de tabel is overgetypt.** 11.11 zei "De
+meest recente standaard is de 5.0, deze haalt over een x16 slot een snelheid van
+maar liefst 63 GB/s". Het getal klopt, maar 6.0 is er sinds 2022 en 7.0 sinds 2025.
+Dat is het geval van Windows 10 in hoofdstuk 4 en 7: een versienummer dat veroudert.
+**Hoofdstuk 9 en `Labo/Assemblage/` noemen geen enkel PCIe-versienummer**, nagekeken
+met grep, dus dit raakt alleen dit hoofdstuk en er viel niets elders gelijk te
+trekken. De zin luidt nu "Elke versie verdubbelt de snelheid van de vorige: 5.0
+haalt over een x16 slot al 63 GB/s, en de meest recente standaard is de 7.0."
+
+De figuur eronder was een schermafdruk van de Wikipedia-tabel *PCI Express link
+performance*, met voetnootnummers, blauwe links en **"expected in Q2 2019"** in de
+rij 5.0. Ze is overgetypt tot een echte tabel van zeven rijen en negen kolommen, met
+6.0 en 7.0 erbij; dat is het geval van de kibi-tabel van 10.4. **De schrijfwijze van
+de bron blijft**, dus decimale punten en geen komma's, zoals bij die kibi-tabel
+afgesproken. `img/syllabus-11-harde-schijf-24.png` is geschrapt en een herimport zet
+ze terug. **Het woord lane komt in dit hoofdstuk niet voor**, dus het bijschrift zegt
+"voor elke breedte van het slot" en niet "per lane" (patroon 20); de kolomkoppen x1
+tot x16 zijn wel de woorden die de tekst zelf gebruikt.
+
+**8. De kop van 11.6 is Oefening Solid State Drive geworden.** Er stond Disk,
+terwijl 11.5 het hoofdstuk opent met "Een Solid State Drive of SSD", het kernpunt
+Solid state schrijft en vraag 1 van Test jezelf de afkorting juist voluit laat
+schrijven. Een sectietitel die Disk zegt is dan een valstrik in de inhoudstafel. De
+bestandsnaam ging mee naar `OefeningSolidStateDrive.html`; de importer schreef
+`OefeningSolidStateDisk.html`.
+
+**De zestien bestandsnamen zijn nagerekend en geen enkele is hernoemd.** Vier
+secties dragen hun afkorting tussen haakjes achteraan, dus `pascal()` maakt er
+`ParallelAdvancedTechnologyAttachmentPata.html` van en zo voort, met de afkorting
+twee keer in de naam. Dat is lang en het is het geval van `DeUefiOmgeving.html` in
+hoofdstuk 3 en `BitOfByte.html` in hoofdstuk 10, maar het botst met niets en het is
+uit de kop af te leiden. Beslist op 7 september 2026: **ze blijven wat `pascal()`
+ervan maakt.** De enige naam die afwijkt is die van 11.6, en die volgt uit de
+gewijzigde kop en niet uit een keuze.
+
+### De vierentwintig vragen van Test jezelf
+
+Vierentwintig vragen en 67 mogelijkheden, met afstand de langste zelftest van de
+syllabus. Twee ervan zijn open en dragen elk een `<div class="oplossing">`; de
+tweeentwintig andere zijn meerkeuze. **Alle tweeentwintig zijn nageteld op precies
+een juist antwoord**, want dat is waar hoofdstuk 3 op strandde.
+
+| Vraag | Antwoord | Waarop het steunt |
+|---|---|---|
+| 1 SSD voluit | open, Solid State Drive | 11.5, eerste zin |
+| 2 Naast PATA en SATA aangesloten via | c, M.2 | het kernpunt scheidt aansluiten (PATA, SATA, PCI Express, M.2) van communiceren (AHCI, NVMe); xSATA bestaat niet |
+| 3 Waaruit bestaat een track | a, sectoren | 11.1, "Elk van de tracks is verdeeld in een aantal sectoren" |
+| 4 Hoe groot is een sector | b, 512 bytes | 11.1, "een vaste lengte van meestal 512 byte" |
+| 5 Mechanische schijf hot swappable | a, waar | 11.8 en 11.9: hot swappable is een eigenschap van SATA en niet van het soort schijf, met datacenters als voorbeeld |
+| 6 Fragmentatie bij een SSD | a, ja | 6.8, "geen performantieverlies wanneer het op gefragmenteerde bestanden aankomt", dus ze ontstaat wel en ze kost niets |
+| 7 NVMe beter dan AHCI omdat | a, een command queue die parallellisme toelaat | 11.10, 65536 queues met elk 65536 commando's tegen de ene queue van 32 bij AHCI |
+| 8 Wat is NVRAM | b, niet vluchtig geheugen | 11.5, "in tegenstelling tot RAM geheugen, niet volatiel", en NVMe staat voor Non-Volatile Memory Express |
+| 9 Welk type SSD het snelst | a, single level cell | 11.5, een TLC leest 4 en schrijft 6 keer trager |
+| 10 Wat is wear levelling | c, schrijfopdrachten spreiden over de pages | 11.5 |
+| 11 RAID voluit | open, Redundant Array Of Independent Disks | 11.13, eerste zin van RAID 0 |
+| 12 RAID 0 gebruikt | a, striping | 11.13 |
+| 13 RAID 0 dubbel zo snel | c, in lezen en in schrijven | zie beslissing 5 |
+| 14 RAID 1 gebruikt | b, mirrorring | 11.13 |
+| 15 RAID 1 dubbel zo snel | a, in lezen | 11.13, "Het schrijven gaat even snel als op 1 enkele schijf" |
+| 16 RAID 5 minstens 5 schijven | b, niet waar | de bijgeschreven zin: het zijn er drie |
+| 17 RAID 1 goedkoper per bit dan RAID 5 | b, niet waar | 11.13, "De totale kost per bit van RAID 5 is dus iets lager" |
+| 18 RAID 6 minstens 4 schijven | a, waar | de bijgeschreven zin |
+| 19 RAID 6 een garantie | b, niet waar | 11.13 noemt het "een relatief veilige oplossing" en ze overleeft twee uitvallen, niet elk aantal |
+| 20 Crash van 1 schijf | a, zo snel mogelijk een rebuild | 11.13, "Je vervangt best de defecte harde schijf zo snel mogelijk" en "van cruciaal belang ... zo snel mogelijk tracht te herstellen" |
+| 21 RAID 10 veiliger dan RAID 6 | b, niet waar | 11.13: RAID 6 overleeft elke tweevoudige uitval, RAID 10 met vier schijven "de uitval van (minstens) een enkele schijf" |
+| 22 Wat is een spanned volume | a, schijven tot een logische schijf | 11.13 > Software RAID |
+| 23 Wat is een hot spare | a, een extra schijf aan de controller | de bijgeschreven zin |
+| 24 RAID 1 met 100 GB en 50 GB | a, 50 GB | 11.13, "De kleinste schijf in de array bepaalt de omvang" |
+
+**Vraag 5 en vraag 21 zagen er verdacht uit en zijn allebei blijven staan.** Bij
+vraag 5 zou je "niet waar" verwachten omdat een mechanische schijf oud aanvoelt,
+maar 11.8 en 11.9 hangen hot swapping aan de SATA-aansluiting en geven datacenters
+vol mechanische schijven als voorbeeld. Bij vraag 21 is "dat hangt ervan af" het
+eerlijke antwoord in het algemeen, maar dit hoofdstuk kiest partij: RAID 6 overleeft
+elke tweevoudige uitval en RAID 10 met vier schijven alleen de eerste. Allebei zijn
+ze dus uit de tekst te halen.
+
+**Vraag 6 en vraag 8 steunen op iets buiten dit hoofdstuk, en dat mag.** Vraag 6
+steunt op 6.8 en vraag 8 op de definitie van niet-volatiel in 11.5 plus de naam
+NVMe. De theorietrack loopt in volgorde, dus een student die hoofdstuk 11 leest,
+heeft hoofdstuk 6 gehad; dat is precies wat patroon 17 toelaat.
+
+**Een invulregel per ding dat het antwoord telt.** Vraag 1 en 11 vragen elk een naam
+voluit en dragen dus een regel.
+
+### 11.4 en 11.6 zijn allebei een vragenlijst geworden
+
+Allebei houden ze hun naam, zoals de regel bij hoofdstuk 2 zegt, en allebei kregen
+ze met de hand een `ol class="vragen"` en `oplossingen.js` onder `back-link.js`. Met
+Test jezelf erbij zijn dat drie pagina's met vragen in dit hoofdstuk en 43 antwoorden
+in de gedrukte 11.17 Oplossingen.
+
+**11.4 telt tien vragen, waarvan twee meerkeuze en acht open.** De nummering loopt
+over twee lijsten, want tussen vraag 7 en 8 staat de tussenzin "Redeneervragen:"; de
+tweede lijst draagt dus `start="8"` en regel 14 kijkt die aansluiting na. De keuzes
+van vraag 4 en 6 staan in de Word op een eigen `numId` (77 en 78) terwijl de vragen
+op 76 staan, en de importer zet ze netjes binnen de `<li>` van hun vraag, precies
+zoals bij hoofdstuk 10; er was daar niets aan te sluiten. In Test jezelf geldt
+hetzelfde voor `numId` 62 tegen 69, en die lijst loopt van 1 tot 24 zonder enkele
+`start=`.
+
+**De invulregels zijn geteld naar wat het antwoord telt.** Vraag 8 noemt drie dingen
+(de draaisnelheid, de armsnelheid en de plaats op de schijf) en draagt drie regels;
+vraag 10 noemt er twee en draagt er twee; de zes andere open vragen tellen een ding
+en dragen een regel. Vraag 5 draagt drie invulcellen, een per tekening.
+
+**11.6 is in de Word geen genummerde lijst maar zes tabellen**, en dat is het geval
+van 2.1 Hardware herkennen: herken je een oefening, maak er dan een `ol.vragen` van.
+Het werden negen vragen over vijf oefeningen, doorlopend genummerd met `start="3"`,
+`"5"`, `"8"` en `"9"`. De inleidende tabel van 1 bij 2 is twee gewone alinea's
+geworden: haar tweede kolom is 4,9mm breed en dat is geen schrijfruimte maar een
+opmaakrestant. Daarmee is ook de `data-geraden` van die tabel vervallen.
+
+**De schermafdruk staat nu voor de vragen en niet erna.** In de Word komt eerst de
+tabel met de probleemstelling en de vragen, en dan pas het beeld waarop het antwoord
+staat; de student schrijft dan op de ene bladzijde terwijl de gegevens op de
+volgende staan. Dat is het geval van 9.5, en dezelfde beslissing: probleemstelling,
+figuur, vragen. **Elke oefening kreeg daarbij een `<h2>` "Oefening N"**, want de
+Word zet die naam in een tabelkop en zonder kop lopen de vijf oefeningen in elkaar
+over. Dat de schermafdruk die naam zelf ook draagt, linksboven in het beeld, is
+daarmee een herhaling; ze is niet weg te snijden zonder de geleende bladzijde te
+bewerken.
+
+**De negen antwoorden zijn hier bepaald en staan nergens in de Word.** Ze steunen op
+de schermafdrukken zelf, die daarvoor een voor een opengedaan zijn.
+
+| Vraag | Antwoord | Waarop het steunt |
+|---|---|---|
+| 1 Verschil in oefening 1 | mechanisch tegen solid state | Seagate BarraCuda: 2,5 inch, S-ATA (III), 5400 rpm, 128 MB cache. Samsung 870 EVO: 2,5 inch SATA, TLC. Allebei 1 TB |
+| 2 Keuze op prestaties | de Samsung 870 EVO | 11.5: bij een SSD vallen seek time en rotational delay weg |
+| 3 Verschil in oefening 2 | SATA tegen NVMe over PCI Express | 860 EVO: interface SATA 600. 970 EVO Plus: interface PCI Express 3.0. Allebei M.2 en allebei 1 TB |
+| 4 Keuze op prestaties | de 970 EVO Plus | 11.8: SATA III loopt vast op 600 MB/s en een moderne SSD haalt dat probleemloos |
+| 5 Verschil in oefening 3 | MLC tegen TLC | 990 Pro: Multi Level Cell. SN770: Triple Level Cell. Allebei M.2 NVMe (PCIe) en allebei 1 TB |
+| 6 Keuze op prestaties | de 990 Pro | 11.5: meer bits per cel is trager, een TLC leest 4 en schrijft 6 keer trager dan een SLC |
+| 7 Keuze op levensduur | de 990 Pro | de zin die hiervoor bijgeschreven is, zie hieronder |
+| 8 Verschil in oefening 4 | de lengte, 42mm tegen 80mm | de datasheets: Dimension 22,0 x 42,0 x 3,5 tegen 22,0 x 80,0 x 3,5. Ook 256GB tegen 1TB en 1,4 W tegen 4,6 W |
+| 9 Voorstel voor de B&R PC3100 | een M.2 met SATA en MLC | de besteltabel van B&R noemt zelf 512 GB en 1 TB M.2 SSD MLC van Innodisk over SATA, met adapterkaart 5ACCMS01.MDT2-000 |
+
+**Vraag 7 vroeg naar iets wat het hoofdstuk niet zei, en daar is een zin voor
+bijgeschreven.** 11.5 legt SLC, MLC en TLC uit in termen van snelheid en raadt MLC
+aan, maar koppelde het aantal bits per cel nergens aan de levensduur; de 10000
+schrijfcycli staan los daarvan bij wear levelling. In SLC, MLC en TLC staat nu:
+"Meer bits per cel kost ook levensduur: hoe fijner de spanningsniveaus in een cel
+uit elkaar liggen, hoe eerder slijtage ze niet meer uit elkaar te houden maakt. Een
+SLC haalt daarom meer schrijfcycli dan een MLC en een MLC meer dan een TLC." Dat is
+de vierde bijgeschreven zin van dit hoofdstuk.
+
+### De afbeeldingen
+
+Vierenveertig plaatsingen in de Word, waarvan twee de kadericoontjes van 5,4mm die
+de importer weggooit. Van de 42 andere zijn er nu 45 bestanden in `img/`, want vier
+schermafdrukken zijn in twee gesplitst en drie tekeningen zijn hertekend. **Elk
+bestand is opengedaan voor het `alt` erbij geschreven werd, en een nieuwe import
+gooit die alt-teksten weg.**
+
+**Acht zweven** (`wrapSquare`): de platterstapel van 11.1, de CHS-tekening van 11.2,
+de QR-code bij de kop van 11.4, de SSD-foto van 11.5, de B&R-computer bij oefening 5,
+de lintkabel bij de kop Kabels, de SATA-tekening van 11.8 en de NAS-foto van 11.15.
+Hun alinea blijft lopende tekst en ze dragen geen bijschrift uit de Word.
+
+**Drie zijn hertekend**, en elk van de drie heeft een reden naast de dpi:
+
+- **`img/syllabus-11-zone-bit-recording.svg`** vervangt image94, 245 bij 224 pixels
+  op 115,4mm, oftewel **54 dpi**. Dat is de laagste van de hele Word, onder de 56 van
+  hoofdstuk 9. Het origineel is bovendien een schema en geen foto. De hertekening
+  laat niets vallen en toont wat de tekst beweert in plaats van het te onderschrijven:
+  drie zones met 8, 12 en 16 sectoren per track, en in de binnenste en de buitenste
+  zone een sector volledig ingekleurd. Die twee zijn **even lang** terwijl de
+  buitenste een halve hoek beslaat, en dat is precies waarom de adressering
+  moeilijker wordt. **De kleuren rood, groen en grijs zijn die van de brontekst**,
+  want 11.3 schrijft "zones (rood, groen, grijs)"; ze staan gedempt, zoals de
+  fragmentatiefiguur van hoofdstuk 6.
+- **`img/syllabus-11-doorvoersnelheid-per-zone.svg`** vervangt image95, 454 bij 247
+  pixels op 146,9mm, oftewel **79 dpi**. Het origineel is een gnuplot-meting met
+  Engelse assen (`zcav`, `Throughput (MiB/s)`, `Offset (GiB)`), en die y-as draagt
+  net de eenheid waar beslissing 1 over gaat. De hertekening zet de assen in het
+  Nederlands, houdt de trap (elke trede is een zone), loopt van 0 tot 140 zodat de
+  halvering te zien is in plaats van te geloven, en zegt met een pijl onder de x-as
+  welke kant de buitenrand op ligt.
+- **`img/syllabus-11-wear-levelling.svg`** vervangt image103, 426 bij 281 pixels op
+  112,6mm, oftewel **96 dpi**, dus op de grens. De reden is een andere: het origineel
+  staat volledig in het Engels en schrijft **4 KB** waar de tekst sinds beslissing 2
+  4 KiB zegt. Dezelfde 4 KiB staat er nu vier keer, genummerd, op vier verschillende
+  pages, met de reden eronder.
+
+**Een is versmald.** De doorsnedetekening van 11.1 is 559 bij 397 pixels op 159,6mm,
+oftewel 89 dpi, en gaat naar **145,0mm** voor ongeveer 98 dpi. Ze is niet hertekend:
+het is een gedetailleerde scan met dertien genummerde onderdelen die al in het
+Nederlands staan, en dat teken je niet na.
+
+**Vier blijven staan op 96 dpi, en dat is een beslissing.** De jumperinstelling van
+11.7 (78,1mm), de SATA-kabels van 11.8 (79,4mm), het RAID 5-schema van 11.13
+(107,1mm) en de NAS-foto van 11.15 (70,1mm) zitten alle vier op 96 en niet eronder.
+Twee millimeter versmallen zou ze formeel boven de grens van 98 tillen en op papier
+niets opleveren, en hoofdstuk 9 versmalde foto's die op 56 tot 81 dpi stonden. **De
+grens van 98 dpi is een diagnose en geen drempel waar je overheen moet.**
+
+**Twee watermerken blijven staan, met de bron in het bijschrift.** De CHS-tekening
+van 11.2 draagt "©2000 How Stuff Works" en de rooster-tekening van 11.5 draagt het
+logo van Hardware.Info. Allebei zijn ze te noemen, en dat is de toets die hoofdstuk 9
+vastlegde: een watermerk met een leesbare naam mag blijven met de bron erbij (het
+geval AskVG van hoofdstuk 3), een watermerk van een fotobank zonder naam gaat eruit.
+De CHS-tekening ging daarbij van 44,0 naar **60,0mm**, want op 44,0mm is de bron in
+het beeld niet te lezen en de tekening zelf nauwelijks; ze haalt op 60,0mm nog altijd
+108 dpi.
+
+**Vier schermafdrukken van 11.6 zijn elk in twee gesplitst.** De Word zet ze op
+233,9 / 233,0 / 239,9 en 237,8mm, breder dan de bladspiegel van 160mm, **want in de
+Word staan ze 90 graden gedraaid om op een blad te passen.** `syllabus.css` klemt ze
+met `max-width: 100%` op 160mm, en dan drukt de tekst erin een derde kleiner dan
+bedoeld. Nagemeten inkthoogte van een tekstregel: **1,32 / 1,98 / 1,32 en 1,10mm**,
+tegen 2,5mm voor de lopende tekst van de syllabus en de 3,18mm die het artikel van
+hoofdstuk 3 goedgekeurd kreeg. Oefening 4 was daarmee de kleinste druk van de hele
+syllabus, en het is net de rij Dimension daarin die het antwoord op vraag 8 draagt.
+
+Beslist op 7 september 2026 door de lector: **elke schermafdruk wordt in twee
+gesplitst en de twee helften komen onder elkaar.** Elke afbeelding zet twee producten
+naast elkaar met een verticale lijn ertussen, en die lijn is opgemeten en niet gegokt
+(x = 1088, 1093, 1086 en 1088, over 93 tot 94% van de hoogte). De witte rand rond
+elke helft is weggesneden. De inkthoogte is daarmee **2,65 / 3,95 / 2,65 en 2,21mm**,
+de orde van de lopende tekst. De acht bestanden heten
+`img/syllabus-11-oefening-N-<product>.png` en staan buiten de nummering van de
+importer; `syllabus-11-harde-schijf-10` tot `-13` zijn geschrapt, en **een herimport
+zet die vier terug en laat regel 1 en 16 falen tot ze opnieuw weg zijn.**
+
+De prijs staat in bladzijden: 11.6 gaat van vijf naar elf gedrukte bladzijden, want
+elke helft is op 160mm nog 149 tot 209mm hoog en er passen er dus geen twee op een
+blad. Dat is uitdrukkelijk aanvaard.
+
+**De B&R-datasheet van oefening 5 is niet gesplitst**: die zet geen twee producten
+naast elkaar en haalt op 160mm al 2,76mm inkthoogte.
+
+**image93 sluit een lus die bij hoofdstuk 6 open bleef staan.** NOTITIES.md zegt daar
+onder "Drie claims die wrong waren" dat image93 niet in hoofdstuk 6 zit maar in
+hoofdstuk 11. Dat klopt: ze staat in 11.2 Cylinder head sector, zwevend, en is de
+tekening met het How Stuff Works-watermerk hierboven. **De lus is dicht.**
+
+**Twee schermafdrukken dragen geen bron en blijven staan.** De webshopbladen van
+oefening 1 en 3 zeggen nergens van welke winkel ze komen; er staan wel geen prijzen
+op, dus het bezwaar van image71 van hoofdstuk 9 en image89 van hoofdstuk 10 speelt
+hier maar half. Wat ze dragen is precies wat de vraag ernaast nodig heeft, en dat
+veroudert niet.
+
+**De schermafdruk van Schijfbeheer bij Software RAID draagt een handgeschreven
+aantekening, "sweet" in het groen.** Dat is een knipoog en zou patroon 14 zijn als
+het eigen tekst was, maar het staat in een geleende schermafdruk en een afgedrukte
+bladzijde wordt niet bewerkt (de regel van hoofdstuk 9). Diezelfde afdruk toont een
+schijf van 1 TB als 931,42 GB, en dat is precies het getal van 10.4.
+
+### De bladspiegel van dit hoofdstuk
+
+Vijfenveertig bladzijden, 98 tot en met 142, met de gedrukte 11.17 Oplossingen als
+laatste. Nagerekend **na** de redactionele ronde, dus na de hertekeningen, na het
+splitsen van de vier schermafdrukken, na de vier bijgeschreven zinnen en na de
+overgetypte PCIe-tabel.
+
+**Hoofdstuk 1 tot 10 zijn geen bladzijde verschoven**, alle tachtig rijen van de
+inhoudstafel staan op hun oude nummer, en de inhoudstafel zelf paste de achttien
+nieuwe rijen nog binnen zijn vijf bladzijden voorwerk. Dat is een strengere uitkomst
+dan hoofdstuk 9 en 10, die er elk een opschoven. **Het klopte eerst niet**, en dat is
+de vondst die bij de schaalfactor hierboven staat.
+
+Drie bladzijden lopen voor meer dan zeventig millimeter leeg, en dat is bij alle drie
+nagekeken en gelaten:
+
+- **Bladzijde 109** opent 11.6 en stopt na de eerste probleemstelling, want de figuur
+  eronder is 175mm hoog en er is 129mm vrij. Versmallen zou de druk terugbrengen naar
+  waar ze voor het splitsen stond, dus dat is de knop niet.
+- **Bladzijde 118** draagt de tekst van oefening 5 en de foto van de B&R, en de
+  datasheet eronder past er niet meer bij.
+- **Bladzijde 140** draagt vraag 24 van Test jezelf alleen. Dat is het geval van
+  vraag 9 van hoofdstuk 3: `ol.vragen > li` houdt elke vraag heel, en 24 vragen met
+  67 mogelijkheden lopen nu eenmaal over drie bladzijden.
+
+**De twee open vragen van Test jezelf staan allebei op de eerste twee bladzijden**,
+dus hun invulruimte valt niet in een hoek.
+
+**Vraag 1 en vraag 5 van 11.4 blijven elk heel met hun figuren**, zonder dat er een
+`.vragen-bij-figuur` aan te pas komt: de figuur staat **binnen** de `<li>` en
+`ol.vragen > li` breekt sinds hoofdstuk 2 niet meer over een bladovergang. Dat is
+hetzelfde geval als vraag 4 van hoofdstuk 9 en vraag 8 en 9 van hoofdstuk 10. Die
+omhulling is er voor een figuur die **naast** een reeks nummers staat, en dat geval
+doet zich hier niet voor.
+
+### Waar dit hoofdstuk en de rest van dit vak naast elkaar staan
+
+Patroon 17: de twee tracks zeggen hetzelfde twee keer en er linkt niets tussen. **Er
+is aan geen enkele labopagina iets veranderd.** Nagekeken op tegenspraak, en dit
+kwam eruit.
+
+- **Hoofdstuk 10, Informatievoorstelling. Twee echte tegenspraken, allebei
+  rechtgezet.** Zie beslissing 1 en 2. Wat hoofdstuk 10 vastlegde en dit hoofdstuk
+  niet mocht tegenspreken (een kilobyte is 1000 bytes, wie 1024 bedoelt schrijft KiB,
+  een schijf van 1 TB toont 931 GB) staat er nu allemaal naast. **11.8 SATA III is een
+  toepassing van 10.5** en is met opzet niet aangeraakt.
+- **Hoofdstuk 1, Generaties. Een echte tegenspraak, rechtgezet.** Zie beslissing 3.
+- **Hoofdstuk 6, Bestandssystemen. Geen tegenspraak.** 11.1 zegt "Een sector heeft
+  een vaste lengte van meestal 512 byte" en 6.4 Clusters rekent met diezelfde 512
+  bytes en met acht sectoren onder een clusteradres. **Seek time en rotational
+  latency staan in allebei**, en het zijn twee helften: 6.6 en 6.9 gebruiken de
+  termen zonder ze uit te leggen, 11.1 legt ze uit met getallen (9ms gemiddelde seek
+  time, 4ms rotational latency bij 7200 toeren, 13ms access time). Dat 6.6 ze eerder
+  gebruikt dan 11.1 ze invoert, is een gat in hoofdstuk 6 en geen tegenspraak; het is
+  niet aangeraakt.
+- **Hoofdstuk 9, Moederbord. Geen tegenspraak, wel drie helften.** 9.3 geeft de
+  geschiedenis van PCI Express (AGP naar PCI naar PCI Express) en 11.11 de werking en
+  de versies; **hoofdstuk 9 noemt geen enkel versienummer en geen lanes**, nagekeken
+  met grep, dus beslissing 7 raakte het niet. M.2 komt in hoofdstuk 9 alleen voor op
+  een datasheet van 9.5 en niet in de lopende tekst. **Hot swapping en point to point
+  komen in hoofdstuk 9 nul keer voor**, dus daar viel niets naast te leggen.
+
+**Labo Assemblage. Geen tegenspraak, en dit is de zwaarste overlap van dit
+hoofdstuk.** `Labo/Assemblage/Theorie/Componenten.html` draagt onder de id `opslag`
+precies dit onderwerp.
+
+- **De M.2-schijf. Twee helften.** Het labo zegt dat je aan de inkepingen ziet of een
+  M.2-SSD SATA of NVMe is en dat de handleiding van het moederbord zegt wat het slot
+  aanvaardt; 11.12 zegt dat je op de lengte moet letten en dat je beter PCI Express
+  dan SATA kiest. **De inkepingen staan niet in de syllabus en de lengte niet in het
+  labo.**
+- **De snelheid van SATA III. Geen tegenspraak.** Het labo zegt "6 Gbit/s, wat in de
+  praktijk op ongeveer 550 MB/s neerkomt en waar een SATA-SSD tegenaan loopt"; 11.8
+  rekent 6 Gb/s om naar 750 MB/s bruto, 150 MB/s overhead en 600 MB/s netto. Dat is
+  de grens van de interface tegen wat een schijf er in de praktijk uit haalt, en de
+  staafgrafiek van 11.10 zet SATA zelf ook op 550.
+- **De mechanische schijf. Geen tegenspraak.** Het labo zegt "ongeveer 100 tot 200
+  MB/s" en 11.3 zegt sinds beslissing 1 "zo'n 130 MB/s" aan de buitenrand, de helft
+  daarvan bij de as. Dat ligt binnen elkaar.
+- **De hybride schijf.** Het labo legt uit wat het is; de syllabus noemt hem in
+  kernpunt 3 en 4 en behandelt hem verder niet. Een gat en geen tegenspraak.
+- **PATA en IDE. Geen tegenspraak.** Het labo zegt in een zin dat het de oudere
+  aansluitingen zijn met een brede lintkabel; 11.7 doet er twee bladzijden over.
+
+**Labo Partitioneren. Geen tegenspraak.** `Theorie/Bestandssystemen.html` en
+`Theorie/Spiekblad.html` dragen de sector van 512 bytes en de clustergrenzen, en die
+komen overeen met 11.1. **De grenzen in het spiekblad staan in kB, MB en GB waar het
+machten van twee zijn**, en dat is bij hoofdstuk 10 al genoteerd en met opzet niet
+aangeraakt: de labotrack is onafhankelijk en elk bestandssysteem adverteert zijn
+grenzen zo.
+
+**Wat hoofdstuk 12 tot 16 niet mogen tegenspreken.** 11.11 draagt nu de tabel met de
+PCI Express versies en zegt dat 7.0 de meest recente is; 11.5 zegt dat een SLC meer
+schrijfcycli haalt dan een MLC en een MLC meer dan een TLC; en 11.13 zegt dat RAID 5
+minstens drie schijven vraagt en RAID 6 minstens vier. Die vier zijn hier
+bijgeschreven en staan niet in de Word.
+
+### Wat er in de tekst opviel, en niet aangeraakt is
+
+De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
+
+- **"Tegenwoordig is de diameter van deze platters zo'n 3 tot 12cm"** in 11.1. Een
+  schijf van 3,5 duim heeft platters van 9,5cm en een van 2,5 duim van 6,5cm; 12cm is
+  de maat van een 5,25 duim schijf, die al lang niet meer gemaakt wordt.
+- **"een SSD met meerdere bits mer cel"** in 11.5, waar per hoort te staan.
+- **"De waarden blijven behouden zelfs als wordt de harde schijf spanningsloos
+  gezet"** in 11.5, met de woorden in de verkeerde volgorde.
+- **"heel gelijkaardig utizien"** in de probleemstelling van oefening 3.
+- **"doorvoorsnelheid"** in 11.8, bij SATA I. Dezelfde sectie schrijft verderop wel
+  doorvoersnelheid.
+- **"appararen aan- en afgeschakeld"** in 11.11.
+- **"voor synoniemen aanzien"** in 11.7 en **"afhankelijk is als opeenvolgende
+  sectoren uitgelezen kunnen worden"** in 11.9, met als waar of hoort te staan.
+  Dezelfde vaste vorm als de drie gevallen in 3.2.
+- **"heeft natuurlijk te maken in welke mate je je gegevens wil beschermen"** in
+  11.15, waar met ontbreekt.
+- **RAID wordt met en zonder streepje geschreven.** 11.13 schrijft RAID 0, RAID 1 en
+  RAID 5 los en RAID-6, RAID-10, RAID-0 en RAID-1 met een streepje, soms in dezelfde
+  alinea. De koppen schrijven het alle vijf los.
+- **mirrorring, mirroring, mirrorred en gemirrorde** staan alle vier in 11.13, en
+  Test jezelf schrijft twee keer Mirrorring.
+- **"SSDs"** in 11.9 tegen **"SSD's"** overal elders.
+- **"Onwaarschijnlijk, denk je misschien... Maar helaas, niets is minder waar."** en
+  **"Een aanrader!"** en **"Wie geen centen heeft"** in 11.13, en **"Een nieuwe
+  computer of laptop kopen zonder een SSD harde schijf is vrijwel nooit een goed
+  idee"** in 11.5. Dat zijn patroon 14 en 16 en zouden weggaan als deze tekst hier
+  geschreven was.
+- **"men"** staat in 11.3, 11.7 en 11.10, de vorm die SCHRIJFSTIJL.md voor eigen
+  tekst naar de je-vorm stuurt. Dat geldt niet voor de brontekst.
+- **"512 Mb" als vierde mogelijkheid bij vraag 4 van Test jezelf** mengt bit en byte
+  in een reeks, en dat is precies waar 10.5 over gaat. Als afleider is dat juist de
+  bedoeling en ze is niet aangeraakt.
+- **"Solid state harde schijven zijn voorlopig nog duurder"** in kernpunt 3, en
+  **"SSD harde schijf"** in 11.5 en in oefening 1. Het eerste veroudert, het tweede
+  is een pleonasme.
+- **De ellipsen** in 11.10 ("Maar... ondertussen"), in 11.13 en in vraag 20 van Test
+  jezelf zijn in de Word het teken en geen drie punten. Dat is opmaak en is zo
+  gebleven.
+- **De dubbele spaties** in "Naast een aantal  dataschijven" (11.13) en "moet de ene
+  ingesteld worden" (11.7) staan zo in de Word.

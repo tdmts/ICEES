@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Host Controller Interface (AHCI)</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Advanced Host Controller Interface (AHCI)</h1>
+
+        <p>Ontwikkeld door Intel is AHCI een standaard bedoeld om mechanische harde schijven optimaal aan te sturen. Bij SATA harde schijven zorgt de standaard ervoor dat hot swapping en command queueing toegepast worden.</p>
+
+        <p>Hot swapping betekent dat je een SATA harde schijf kan ontkoppelen of aansluiten zonder dat het systeem uitgeschakeld moet worden. Dit is vooral handig in datacenters met heel veel harde schijven die af en toe vervangen moeten worden.</p>
+
+        <p>Een command queue is een wachtrij met I/O commando&#x27;s zoals lees en schrijf operaties. In plaats van te wachten tot het commando afgelopen is en het systeem te laten wachten op het resultaat wordt dit overgelaten aan de wachtrij.</p>
+
+        <p>De queue kan eventueel ook de operaties optimaliseren door ze opnieuw te ordenen. Dit is vooral handig bij mechanische harde schijven waar de snelheid vooral afhankelijk is als opeenvolgende sectoren uitgelezen kunnen worden of niet.</p>
+
+        <p>Voor SSDs is AHCI niet optimaal en in de plaats daarvan wordt NVMe gebruikt.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

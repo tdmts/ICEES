@@ -718,7 +718,7 @@ shot. Check the watermark before you copy a picture out of the Word.
 
 **Three claims that stood here about that chapter's images were wrong, and were corrected on 7
 September 2026 by opening all eight.** image93 is not in chapter 6 at all but in chapter 11, Harde
-schijf. image46 is not a loose product photo: it is one of the three cells of a comparison table in
+schijf, where it turned out to be the How Stuff Works drawing of 11.2 (the loop is closed). image46 is not a loose product photo: it is one of the three cells of a comparison table in
 6.1 that puts a mechanical 3.5" disk, a 2.5" SSD and a 1.8" M.2 SSD side by side, and the syllabus
 uses all three. And image50 is not a screenshot with browser chrome: it is a clean before-and-after
 drawing of defragmentation with a legend under it and no watermark, whose only faults are that it
@@ -824,7 +824,7 @@ material requirement, the same treatment Partitioneren gives it. `InstallatieUbu
 fixes `elm` and `mle` and says the Linux labs use that account, so the data is right; only the
 reference is gone.
 
-## De syllabus, hoofdstuk 1 tot 8 ingevoerd 7 september 2026
+## De syllabus, hoofdstuk 1 tot 11 ingevoerd 7 september 2026
 
 De theorietrack bestond hier nog niet: `Theorie/Syllabus/` was leeg en het manifest kende geen
 module `syllabus`. Wat er bij dit eerste hoofdstuk aan infrastructuur bij gekomen is, hoort erbij en
@@ -1107,6 +1107,24 @@ omdat de twee hoofdstukken elkaar anders tegenspreken over wat er op een industr
 **Leg een hoofdstuk dus naast de hoofdstukken die er al staan voor je een naam wijzigt**, en wijzig
 ze dan alle.
 
+**Een tabel die alleen als afbeelding bestaat, typ je over; een tabel van 128 rijen niet.**
+Hoofdstuk 10 had er twee. De kibi/kilo-tabel van 10.4 is vijf rijen en zeven kolommen, en de
+alinea ervoor verwijst er met zoveel woorden naar, dus die is een echte `<table>` geworden en
+`img/syllabus-10-informatievoorstelling-03.png` is geschrapt. De ASCII-tabel van 10.3 is 128
+rijen en blijft een afbeelding: overtypen kost daar veel markup en maakt de bladspiegel
+onvoorspelbaar, en op 160.0mm en 200 dpi is ze ruim leesbaar. **De grens is dus de omvang en
+niet het feit dat het een tabel is**, en de toets ernaast is of een oefening de tabel moet
+kunnen lezen: oefening 5 laat er drie letters in opzoeken, dus de leesbaarheid is nagekeken in
+de gedrukte PDF voor ze bleef staan.
+
+**En overtypen is nakijken.** De kolom Windows van diezelfde kibi/kilo-tabel rekende in drie
+van de vijf rijen verkeerd: ze nam de ratio van dezelfde rij maal 1000 in plaats van het aantal
+bytes door 1024 te delen, zodat 1 GB als "931 Mega byte" verscheen waar het 953 moet zijn en
+1 TB als "9,09 Giga byte" waar het 931 GB moet zijn. Dat is precies het getal waar oefening 7
+naar vraagt. Zolang de tabel een afbeelding bleef, was er niets om na te rekenen; een
+afgedrukte bladzijde wordt namelijk niet bewerkt, en dat is de regel van hoofdstuk 9. **Een
+tabel die je overtypt, valt daar buiten en gaat dus door dezelfde toets als lopende tekst.**
+
 **En de vorm van een productnaam is die van zijn eigenaar.** Beslist op 7 september 2026, nadat
 hoofdstuk 4 en 7 dezelfde vijf namen verschillend bleken te schrijven (ETHERCAT tegen EtherCAT,
 CODESYS tegen CodeSys, en zo voort) omdat de vorm per hoofdstuk gekozen was. Een huisregel zou hier
@@ -1122,6 +1140,122 @@ achterblijven naast een rechtgezette buur.
 Geavanceerd staan we daar uitgebreid bij stil", waar de Word "In een van de labo's" schreef. Een naam
 in een zin kost niets en helpt de lezer; een link zou de twee tracks aan elkaar hangen, en de PDF is
 bovendien papier. Patroon 17 gaat over de andere richting en verbiedt dit niet.
+
+**En een kop draagt die schrijfwijze ook, zodra het om een merknaam gaat.** Beslist op 7 september
+2026 bij hoofdstuk 9, waarvan sectie 9.2 "Raspberry PI" heette terwijl de foto eronder Raspberry Pi
+op de printplaat draagt. Dat lijkt in strijd met hoofdstuk 8, waar de koppen juist met opzet bleven
+staan zoals de Word ze zet, maar daar ging het om een gewone woordgroep (Virtual machines) en hier
+om een naam die een eigenaar heeft. Een kop is de gedrukte sectietitel en staat ook in de
+inhoudstafel, dus laat je hem staan, dan drukt dezelfde bladzijde de naam op twee manieren. **Kijk
+er meteen bij na wat `pascal()` van de kop maakt**: bij Raspberry PI en Raspberry Pi is dat allebei
+`RaspberryPi.html`, dus daar viel niets te hernoemen, maar dat hoeft niet altijd zo uit te komen.
+In hetzelfde hoofdstuk gingen op dezelfde regel **C#** (hoofdstuk 4 schreef het al zo), **PCI
+Express** (het hoofdstuk zelf schreef het twaalf keer zo en twee keer niet) en **NVIDIA** mee.
+
+**Een foto onder de dpi-grens wordt versmald en niet hertekend.** De grens van 98 dpi uit hoofdstuk
+3 is een diagnose en geen voorschrift over wat je doet: bij een tekening is het antwoord hertekenen,
+bij een foto of een schermafdruk van een echt venster is dat onmogelijk (image52 van hoofdstuk 7).
+De enige knop die een foto dan heeft is haar breedte, want dezelfde pixels op minder millimeter
+drukken scherper. Hoofdstuk 9 heeft dat op vier foto's gedaan, van 81, 66, 62 en 56 dpi naar
+ongeveer 98. **Open het bestand dus voor je beslist wat de ingreep is**: alle vier zagen ze er in de
+lijst uit als schema's en het waren alle vier close-ups van een moederbord.
+
+**De dpi-grens zegt wanneer je moet hertekenen, niet wanneer het mag.** Een gescande tekening in
+grijstinten mag ook boven die grens hertekend worden, en hoofdstuk 10 is het eerste dat het doet:
+image86 van 10.1 droeg geen watermerk, stond in het Nederlands en drukte op 152 dpi, en NOTITIES.md
+had daarom genoteerd dat er geen reden was om ze te hertekenen. Wat de doorslag gaf was de korrel
+van de fotokopie naast tekeningen die in het palet van de syllabus staan. De voorwaarden blijven
+dezelfde als bij de MBR van hoofdstuk 3: geen enkel gegeven van het origineel valt weg, de figuur
+wordt gerenderd voor je ze vertrouwt, en de bladspiegel wordt nagerekend omdat een SVG zelden
+dezelfde verhouding heeft als de scan. **Voeg daarbij geen getal toe dat de figuur niet op schaal
+kan tonen**: de twee TTL-drempels van 0.4 V en 2.4 V liggen op 8 en 48 procent van 5 V, en op
+87.0mm valt de eerste stippellijn dan op anderhalve millimeter van de nullijn. De figuur blijft dan
+schematisch, zoals de scan, en de getallen blijven in de lopende tekst.
+
+**Geleend materiaal mag ingekort worden tot de bladzijden die iets dragen, en de bron zegt dan wat
+er niet staat.** 9.5 verwees naar dertien volle bladzijden datasheet van Beckhoff, waarvan er zes
+het antwoord op de oefening dragen en zeven bestelnummers en toebehoren zijn. Beslist op 7 september
+2026: het worden de zes, de bijschriften blijven "Bladzijde 1 van 4" en "Bladzijde 2 van 4" zodat de
+lezer ziet dat de datasheet doorloopt, en de info-box Bron noemt het adres van de volledige versie.
+Dat is iets anders dan het artikel van hoofdstuk 3, waar alle vier de bladzijden bleven staan: dat
+telde er vier en niet dertien. **Schrap de bestanden dan ook uit `img/`**, want regel 1 valt over een
+afbeelding waar geen pagina naar wijst, en noteer het, want een herimport zet ze alle zeven terug.
+
+**Een watermerk zonder naam is iets anders dan een watermerk met een naam.** Hoofdstuk 2 liet twee
+watermerken staan en hoofdstuk 3 liet er een staan en noemde de bron erbij, en dat leek de regel.
+Hoofdstuk 9 wees uit dat het dat niet is: de socketfoto van 9.3 droeg ronde merktekens van een
+fotobank over het hele beeld, zonder leesbare naam erin, dus er viel niet eens een bron bij te
+schrijven, en zo een merkteken betekent dat het beeld van iemand is die ervoor betaald wil worden.
+Beslist op 7 september 2026: **die gaat eruit en er komt een eigen foto in de plaats.** De toets is
+dus of de bron te noemen valt, en niet of er een watermerk staat. Kijk voor je schrapt na of er
+tekst aan hangt: deze foto zweefde, dus haar alinea was gewone lopende tekst en geen enkele zin
+verwees ernaar. Een herimport zet zo een foto terug.
+
+**Een productstatus of een prijs is geen argument in een oplossing.** De datasheet van de CX5620 in
+9.5 draagt "product announcement" en die van de CX5120 "regular delivery", en de oplossing van de
+derde vraag gebruikte dat eerst als het argument voor wie de goedkoopste koos. Beslist op 7
+september 2026 door de lector: **dat gaat eruit**, want zo een status hangt aan de datum van de
+datasheet en niet aan de afweging, en of hij vandaag nog klopt weet niemand hier. Een oplossing
+steunt op wat er in de tekst of op de afgedrukte bladzijde staat en niet verandert. Dat de status op
+de schermafdruk zelf te lezen is, blijft wel zo: een afgedrukte bladzijde wordt niet bewerkt.
+
+**Een lege Heading 2 wordt een pagina zonder titel, en die gooi je weg.** Achteraan hoofdstuk 9
+staat er een, een restant van een bladovergang, en de importer maakt er een volwaardige sectie van
+met een lege `<title>`, een lege `<h1>` en `Pagina.html` als naam, de terugval van `pascal()` op een
+lege kop. Ze hoort niet in `reference.js`, en na een herimport staat ze er weer en faalt regel 2 tot
+ze opnieuw weg is.
+
+**Een element dat breder is dan de bladspiegel krimpt het HELE gedrukte document, en niets faalt.**
+Ontdekt op 7 september 2026 bij hoofdstuk 11, en het is de scherpste bladspiegelregel die hier
+staat. Chrome past bij `--print-to-pdf` een schaal toe zodra de inhoud ergens breder is dan de
+pagina, en die schaal geldt voor het document en niet voor de bladzijde: tekst en afbeeldingen
+werden 8,25% kleiner, er paste meer op een blad, en **hoofdstuk 1 tot 10 kropen 1 tot 4 bladzijden
+naar voren** terwijl er aan geen van die hoofdstukken iets veranderd was. De oorzaak lag in een
+enkele invultabel in hoofdstuk 11.
+
+De maat die telt is niet 160,1mm maar wat er op die plaats overblijft. `ol > li` springt in
+`syllabus.css` **14,7mm** in, dus een tabel binnen een vraag heeft er nog **145,4mm**, en
+`table-layout: fixed` maakt een tabel breder in plaats van de kolommen te knijpen zodra de
+`--kolom-breedte` uit de Word meer optelt. De vijf bestaande `invulkolom`-tabellen in de syllabus
+staan op 142,0mm, en dat is dus meteen de maat die je neemt.
+
+**Kijk het na in de PDF en niet met het oog.** Elke bladzijde opent met `q\n<schaal> 0 0 <schaal>
+... cm`, en `3.1249194` is de ongekrompen maat (0,75, de omrekening van CSS-pixels naar punten).
+Staat er iets anders, dan overloopt er ergens iets. Doe dat na elk hoofdstuk, want dit is precies
+het soort fout dat er op het scherm perfect uitziet.
+
+**De importer laat twee soorten afbeelding vallen, en meldt geen van beide.** Ook dat kwam bij
+hoofdstuk 11 boven, waar de Word er 44 plaatst en `img/` er 38 kreeg. Een afbeelding die aan een
+KOP hangt verdwijnt: bij een Heading 1 of 2 snijdt `verwerk()` die kop eraf voor `renderen()` iets
+ziet, dus het bestand wordt niet eens geschreven, en bij een Heading 3 wordt het wel geschreven maar
+niet geplaatst, waarna regel 16 over het weesbestand valt. En een afbeelding die in een TABELCEL
+zit verdwijnt zodra `lege_kolommen()` die tabel als invulruimte leest. In hoofdstuk 11 kostte dat de
+QR-code naast de kop van 11.4 en de drie tekeningen waar vraag 5 naar verwijst, en die vraag was
+daarmee onbeantwoordbaar. **De importer is niet aangepast**, dus tel na elke import de `a:blip` in
+het hoofdstuk tegen wat er in `img/` staat.
+
+**Een adres in de syllabus mag een QR-code naast zich krijgen, en die staat soms al in de Word.**
+11.4 hangt aan een YouTube-video en de tien vragen zijn er zonder niet te maken, dus het adres van
+43 tekens moest overtypbaar zijn. De Word had dat zelf al opgelost met een QR-code naast de kop; die
+was bij de import weggevallen. De regel van hoofdstuk 9 blijft wel gelden: het adres zelf is gewone
+tekst en geen `<a>`.
+
+**De dpi-grens van 98 is een diagnose en geen drempel waar je overheen moet.** Hoofdstuk 11 had er
+acht onder, waarvan vier op 96, en die vier zijn blijven staan: twee millimeter versmallen tilt ze
+formeel over de grens en levert op papier niets op. Hoofdstuk 9 versmalde foto's die op 56 tot 81
+dpi stonden, en dat is het verschil. Wat wel telt naast de dpi is een tweede reden: Engelse labels
+in een Nederlandse tekst, of een getal in het beeld dat de tekst intussen anders schrijft. Zo werd
+de wear-levellingtekening van 11.5 hertekend op 96 dpi, omdat ze "4 KB" drukt waar de tekst nu 4 KiB
+zegt.
+
+**Een geleende schermafdruk die twee dingen naast elkaar zet, mag je splitsen om ze leesbaar te
+krijgen.** De Word zet de vier vergelijkingen van 11.6 op 233 tot 240mm, want daar staan ze gedraaid
+op een blad; op de bladspiegel van 160mm drukte de tekst erin op 1,10 tot 1,98mm inkthoogte per
+regel, tegen 2,5mm voor de lopende tekst. Elk beeld is langs zijn eigen scheidingslijn in twee
+gesneden en de twee helften staan onder elkaar, elk op 160mm, wat de druk verdubbelt naar 2,21 tot
+3,95mm. **Meet dat na en gok het niet**: de inkthoogte van een regel is te tellen in de
+bronafbeelding, en de vergelijking met de 2,5mm van de lopende tekst en de 3,18mm van het artikel
+van hoofdstuk 3 zegt of het nog leest. De prijs is bladzijden, en die is hier aanvaard.
 
 ### Wat de eerste hoofdstukimport aan de importer veranderd heeft
 

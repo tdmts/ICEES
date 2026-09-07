@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 380" width="660" height="380"
+     font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <rect width="660" height="380" fill="#ffffff"/>
+
+    <!-- rasterlijnen en de schaal van de y-as -->
+    <line x1="92" y1="300.0" x2="612" y2="300.0" stroke="#e0e7e5" stroke-width="1"/>
+    <text x="82" y="304.0" font-size="11" fill="#555555" text-anchor="end">0</text>
+    <line x1="92" y1="265.7" x2="612" y2="265.7" stroke="#e0e7e5" stroke-width="1"/>
+    <text x="82" y="269.7" font-size="11" fill="#555555" text-anchor="end">20</text>
+    <line x1="92" y1="231.4" x2="612" y2="231.4" stroke="#e0e7e5" stroke-width="1"/>
+    <text x="82" y="235.4" font-size="11" fill="#555555" text-anchor="end">40</text>
+    <line x1="92" y1="197.1" x2="612" y2="197.1" stroke="#e0e7e5" stroke-width="1"/>
+    <text x="82" y="201.1" font-size="11" fill="#555555" text-anchor="end">60</text>
+    <line x1="92" y1="162.9" x2="612" y2="162.9" stroke="#e0e7e5" stroke-width="1"/>
+    <text x="82" y="166.9" font-size="11" fill="#555555" text-anchor="end">80</text>
+    <line x1="92" y1="128.6" x2="612" y2="128.6" stroke="#e0e7e5" stroke-width="1"/>
+    <text x="82" y="132.6" font-size="11" fill="#555555" text-anchor="end">100</text>
+    <line x1="92" y1="94.3" x2="612" y2="94.3" stroke="#e0e7e5" stroke-width="1"/>
+    <text x="82" y="98.3" font-size="11" fill="#555555" text-anchor="end">120</text>
+    <line x1="92" y1="60.0" x2="612" y2="60.0" stroke="#e0e7e5" stroke-width="1"/>
+    <text x="82" y="64.0" font-size="11" fill="#555555" text-anchor="end">140</text>
+
+    <line x1="92.0" y1="300" x2="92.0" y2="305" stroke="#555555" stroke-width="1"/>
+    <text x="92.0" y="320" font-size="11" fill="#555555" text-anchor="middle">0</text>
+    <line x1="203.8" y1="300" x2="203.8" y2="305" stroke="#555555" stroke-width="1"/>
+    <text x="203.8" y="320" font-size="11" fill="#555555" text-anchor="middle">200</text>
+    <line x1="315.7" y1="300" x2="315.7" y2="305" stroke="#555555" stroke-width="1"/>
+    <text x="315.7" y="320" font-size="11" fill="#555555" text-anchor="middle">400</text>
+    <line x1="427.5" y1="300" x2="427.5" y2="305" stroke="#555555" stroke-width="1"/>
+    <text x="427.5" y="320" font-size="11" fill="#555555" text-anchor="middle">600</text>
+    <line x1="539.3" y1="300" x2="539.3" y2="305" stroke="#555555" stroke-width="1"/>
+    <text x="539.3" y="320" font-size="11" fill="#555555" text-anchor="middle">800</text>
+
+    <line x1="92" y1="300" x2="612" y2="300" stroke="#222222" stroke-width="1.4"/>
+    <line x1="92" y1="300" x2="92" y2="60" stroke="#222222" stroke-width="1.4"/>
+
+    <text x="34" y="180.0" font-size="12" fill="#222222" text-anchor="middle" transform="rotate(-90 34 180.0)">Doorvoersnelheid (MB/s)</text>
+    <text x="352.0" y="340" font-size="12" fill="#222222" text-anchor="middle">Positie op de schijf (GB)</text>
+
+    <!-- de meting: elke trede is een zone -->
+    <path d="M 92.0 73.7 L 92.0 73.7 L 126.7 73.7 L 126.7 77.0 L 161.3 77.0 L 161.3 82.0 L 196.0 82.0 L 196.0 88.1 L 230.7 88.1 L 230.7 94.9 L 265.3 94.9 L 265.3 102.3 L 300.0 102.3 L 300.0 110.3 L 334.7 110.3 L 334.7 118.8 L 369.3 118.8 L 369.3 127.7 L 404.0 127.7 L 404.0 137.0 L 438.7 137.0 L 438.7 146.6 L 473.3 146.6 L 473.3 156.7 L 508.0 156.7 L 508.0 167.0 L 542.7 167.0 L 542.7 177.6 L 577.3 177.6 L 577.3 188.6 L 612.0 188.6" fill="none" stroke="#004d40" stroke-width="2.2"/>
+
+    <!-- de twee waarden die de tekst noemt -->
+    <line x1="92" y1="73.7" x2="159.1" y2="73.7" stroke="#c0392b" stroke-width="1" stroke-dasharray="4 3"/>
+    <line x1="92" y1="188.6" x2="612.0" y2="188.6" stroke="#c0392b" stroke-width="1" stroke-dasharray="4 3"/>
+    <text x="164.7" y="65.7" font-size="12" fill="#c0392b">zo'n 130 MB/s aan de buitenrand</text>
+    <text x="332.4" y="180.6" font-size="12" fill="#c0392b">de helft daarvan bij de as</text>
+
+    <text x="92" y="48" font-size="12" fill="#555555">Elke trede is een zone: binnen een zone blijft de snelheid gelijk</text>
+
+    <text x="97.6" y="358" font-size="11" fill="#555555">buitenrand</text>
+    <text x="606.4" y="358" font-size="11" fill="#555555" text-anchor="end">as</text>
+    <line x1="142.3" y1="354" x2="561.7" y2="354" stroke="#555555" stroke-width="0.8"/>
+    <path d="M 561.7 354 l -8 -3 l 0 6 z" fill="#555555"/>
+</svg>
