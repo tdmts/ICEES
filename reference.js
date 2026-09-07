@@ -288,6 +288,96 @@ window.LAB_REFERENCE = {
                         href: 'DeVonNeumannArchitectuur/TestJezelf.html'
                     }
                 ]
+            },
+            {
+                name: 'Bestandssystemen',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'bestandssystemen-overzicht',
+                        name: 'Kernpunten en studievragen',
+                        blurb: 'Waarom je een schijf eerst partitioneert en dan formatteert, wat het bestandssysteem vastlegt aan grenzen, en wat fragmentatie en clusters met elkaar te maken hebben.',
+                        href: 'Bestandssystemen/Overzicht.html'
+                    },
+                    {
+                        id: 'bestandssystemen-inleiding',
+                        name: 'Inleiding',
+                        blurb: 'Drie schijven naast elkaar: een mechanische van 3.5 inch, een SSD van 2.5 inch aan SATA en een SSD van 1.8 inch in een M.2-slot.',
+                        href: 'Bestandssystemen/Inleiding.html'
+                    },
+                    {
+                        id: 'bestandssystemen-partitioneren',
+                        name: 'Partitioneren',
+                        blurb: 'Een schijf verdelen in stukken die je apart kan gebruiken: het MBR en het GPT partitieschema, de drie soorten partities die alleen MBR kent, en waarom je systeem en data uit elkaar houdt.',
+                        href: 'Bestandssystemen/Partitioneren.html'
+                    },
+                    {
+                        id: 'bestandssystemen-formatteren',
+                        name: 'Formatteren',
+                        blurb: 'Het bestandssysteem als de inhoudstafel van de schijf, en waarom het aantal bits voor een sectoradres bepaalt hoe groot een partitie en een bestand mogen worden.',
+                        href: 'Bestandssystemen/Formatteren.html'
+                    },
+                    {
+                        id: 'bestandssystemen-clusters',
+                        name: 'Clusters',
+                        blurb: 'Acht sectoren onder een adres in plaats van een: dezelfde adresruimte dekt acht keer zo veel schijf, en wat er in het laatste cluster overblijft heet slack.',
+                        href: 'Bestandssystemen/Clusters.html'
+                    },
+                    {
+                        id: 'bestandssystemen-fragmentatie',
+                        name: 'Fragmentatie',
+                        blurb: 'Een gewist bestand laat een gat achter dat te klein is voor het volgende, dus komt dat bestand in stukken op de schijf terecht.',
+                        href: 'Bestandssystemen/Fragmentatie.html'
+                    },
+                    {
+                        id: 'bestandssystemen-fragmentatie-schijf',
+                        name: 'Fragmentatie bij de klassieke harde schijf',
+                        blurb: 'Elk stuk kost de arm een nieuwe seek time en rotational latency, en daarom heeft FAT er meer last van dan NTFS of ext2.',
+                        href: 'Bestandssystemen/FragmentatieBijDeKlassiekeHardeSchijf.html'
+                    },
+                    {
+                        id: 'bestandssystemen-fits',
+                        name: 'First fit, best fit, worst fit',
+                        blurb: 'Drie manieren om een vrij blok te kiezen, en waarom uitgerekend worst fit het minst fragmenteert.',
+                        href: 'Bestandssystemen/FirstFitBestFitWorstFit.html'
+                    },
+                    {
+                        id: 'bestandssystemen-fragmentatie-ssd',
+                        name: 'Fragmentatie bij een solid state drive',
+                        blurb: 'Zonder bewegende onderdelen kost een verspreid bestand geen tijd, dus een SSD verliest er niets bij.',
+                        href: 'Bestandssystemen/FragmentatieBijEenSolidStateDrive.html'
+                    },
+                    {
+                        id: 'bestandssystemen-defragmentatie',
+                        name: 'Defragmentatie',
+                        blurb: 'De bestanden weer achter elkaar zetten zodat de kop nog een keer moet zoeken, en waarom dat op ext in principe overbodig is.',
+                        href: 'Bestandssystemen/Defragmentatie.html'
+                    },
+                    {
+                        id: 'bestandssystemen-fat',
+                        name: 'File Allocation Table (FAT)',
+                        blurb: 'Het bestandssysteem van USB-sticks en SD-kaarten: partities tot 2 TB, bestanden tot 4 GB, en daarom niet meer in een computer.',
+                        href: 'Bestandssystemen/FileAllocationTableFat.html'
+                    },
+                    {
+                        id: 'bestandssystemen-ntfs',
+                        name: 'New Technology File System (NTFS)',
+                        blurb: 'Wat Windows op zijn eigen schijven zet: een grote adresruimte en een journaal, dat eerst sneller schrijft en daarna als logboek dient wanneer de stroom uitvalt.',
+                        href: 'Bestandssystemen/NewTechnologyFileSystemNtfs.html'
+                    },
+                    {
+                        id: 'bestandssystemen-ext',
+                        name: 'Extended File System (EXT)',
+                        blurb: 'Het standaardbestandssysteem van de meeste Linux-distributies sinds 2009: gericht op snelheid, met vooraf gereserveerde blokken tegen fragmentatie.',
+                        href: 'Bestandssystemen/ExtendedFileSystemExt.html'
+                    },
+                    {
+                        id: 'bestandssystemen-test-jezelf',
+                        name: 'Test jezelf',
+                        blurb: 'Zeven meerkeuzevragen over de volgorde van partitioneren en formatteren, wat het bestandssysteem begrenst, en welk bestandssysteem bij Windows en bij Linux hoort.',
+                        href: 'Bestandssystemen/TestJezelf.html'
+                    }
+                ]
             }
         ]
     },

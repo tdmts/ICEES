@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="720" height="300"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">Welk vrij blok first fit, best fit en worst fit kiezen voor een bestand van 150 MB</title>
+    <rect width="720" height="300" fill="#ffffff" />
+
+    <!-- het bestand dat geplaatst moet worden -->
+    <text x="40" y="28" font-size="13" fill="#555">Er moet een bestand van 150 MB opgeslagen worden</text>
+
+    <rect x="40" y="36" width="68" height="30" fill="#004d40" stroke="#004d40" />
+    <text x="74" y="56" font-size="12" fill="#ffffff" text-anchor="middle">150 MB</text>
+
+    <path d="M40 86 L680 86" stroke="#e9ecef" stroke-width="1" />
+
+    <!-- de schijf -->
+    <text x="40" y="104" font-size="13" fill="#555">De harde schijf, met vier vrije blokken tussen de bezette
+        stukken</text>
+
+    <!-- welk algoritme welk blok kiest -->
+    <text x="122" y="126" font-size="11" fill="#888" text-anchor="middle">te klein</text>
+    <text x="250" y="126" font-size="13" fill="#004d40" text-anchor="middle" font-weight="600">FF</text>
+    <text x="391" y="126" font-size="13" fill="#004d40" text-anchor="middle" font-weight="600">BF</text>
+    <text x="577" y="126" font-size="13" fill="#004d40" text-anchor="middle" font-weight="600">WF</text>
+
+    <!-- de grootte van elk vrij blok -->
+    <text x="122" y="142" font-size="11" fill="#55635f" text-anchor="middle">100 MB</text>
+    <text x="250" y="142" font-size="11" fill="#55635f" text-anchor="middle">200 MB</text>
+    <text x="391" y="142" font-size="11" fill="#55635f" text-anchor="middle">160 MB</text>
+    <text x="577" y="142" font-size="11" fill="#55635f" text-anchor="middle">400 MB</text>
+
+    <!-- bezette stukken -->
+    <g fill="#e0e7e5" stroke="#9bb0ac">
+        <rect x="40" y="150" width="60" height="44" />
+        <rect x="145" y="150" width="60" height="44" />
+        <rect x="295" y="150" width="60" height="44" />
+        <rect x="427" y="150" width="60" height="44" />
+    </g>
+    <g font-size="11" fill="#55635f" text-anchor="middle">
+        <text x="70" y="176">bezet</text>
+        <text x="175" y="176">bezet</text>
+        <text x="325" y="176">bezet</text>
+        <text x="457" y="176">bezet</text>
+    </g>
+
+    <!-- vrije blokken, met het bestand erin waar elk algoritme het neerzet -->
+    <g fill="#b2dfdb" stroke="#004d40">
+        <rect x="100" y="150" width="45" height="44" />
+        <rect x="205" y="150" width="90" height="44" />
+        <rect x="355" y="150" width="72" height="44" />
+        <rect x="487" y="150" width="180" height="44" />
+    </g>
+
+    <text x="122" y="176" font-size="11" fill="#00332b" text-anchor="middle">vrij</text>
+
+    <g fill="#004d40" stroke="#004d40">
+        <rect x="205" y="150" width="67.5" height="44" />
+        <rect x="355" y="150" width="67.5" height="44" />
+        <rect x="487" y="150" width="67.5" height="44" />
+    </g>
+    <g font-size="11" fill="#ffffff" text-anchor="middle">
+        <text x="238" y="176">150 MB</text>
+        <text x="388" y="176">150 MB</text>
+        <text x="520" y="176">150 MB</text>
+    </g>
+
+    <!-- wat er in het gekozen blok overblijft -->
+    <g stroke="#c0392b" stroke-width="1" fill="none">
+        <path d="M272.5 198 L272.5 204 L295 204 L295 198" />
+        <path d="M422.5 198 L422.5 204 L427 204 L427 198" />
+        <path d="M554.5 198 L554.5 204 L667 204 L667 198" />
+    </g>
+    <g font-size="11" fill="#c0392b" text-anchor="middle">
+        <text x="283" y="220">50 MB blijft over</text>
+        <text x="424" y="220">10 MB blijft over</text>
+        <text x="610" y="220">250 MB blijft over</text>
+    </g>
+
+    <path d="M40 236 L680 236" stroke="#e9ecef" stroke-width="1" />
+
+    <g font-size="13" fill="#222">
+        <text x="40" y="256"><tspan font-weight="600" fill="#004d40">FF</tspan> first fit: het eerste blok dat
+            genoeg ruimte heeft</text>
+        <text x="40" y="276"><tspan font-weight="600" fill="#004d40">BF</tspan> best fit: het blok waarbij het
+            minst ruimte overblijft</text>
+        <text x="40" y="296"><tspan font-weight="600" fill="#004d40">WF</tspan> worst fit: het blok waarbij het
+            meest ruimte overblijft</text>
+    </g>
+</svg>

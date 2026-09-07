@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partitioneren</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Partitioneren</h1>
+
+        <p>Als we informatie opslaan op de harde schijf dan moeten we deze op een bepaald moment terug kunnen uitlezen. Om die reden is het belangrijk dat we bijhouden waar we die informatie gezet hebben.</p>
+
+        <p>Een harde schijf moeten we, voor we ze kunnen gebruiken, partitioneren.</p>
+
+        <p>Partitioneren is het verdelen van een harde schijf in verschillende partities. Een partitie is een stuk aaneengesloten opslagruimte op een opslagmedium zoals een harde schijf of USB stick. Op die manier kan één fysiek opslagmedium gebruikt worden, alsof ze uit meerdere opslagmedia bestaat.</p>
+
+        <p>De naam ‘partitie’ is de gebruikelijke aanduiding bij de diverse versies van de Windows en Linux besturingssystemen. Soms wordt echter ook volume of slice gebruikt.</p>
+
+        <p>Op een opslagmedium moet er altijd minstens 1 partitie aanwezig zijn.</p>
+
+        <p>Hoe die partities op het opslagmedium bijgehouden worden, ligt vast in het partitieschema. Er zijn er
+            twee. Het oudste heet MBR, naar het master boot record waarin de tabel staat: die tabel heeft vier
+            plaatsen en beschrijft schijven tot 2 TB. Het nieuwere heet GPT, het schema dat bij UEFI hoort, met
+            plaats voor 128 partities en zonder die grens van 2 TB.</p>
+
+        <p>Het MBR schema kent daarbij drie soorten partities. Een primaire partitie neemt een van de vier
+            tabelplaatsen in en draagt een bestandssysteem. Wil je er meer dan vier, dan geef je een van die
+            plaatsen aan een extended partitie: die draagt zelf geen bestandssysteem maar dient als houder waarin
+            je zoveel logische partities aanmaakt als je nodig hebt. In het GPT schema bestaat dat onderscheid
+            niet, want daar zijn de 128 plaatsen aan elkaar gelijk.</p>
+
+        <p>Als je een moderne versie van Windows installeert is er vaak één zichtbare partitie genaamd C:\ aangevuld met één of meerdere onzichtbare systeemgereserveerde partities zoals bijvoorbeeld de UEFI partitie. De onzichtbare partities hebben vaak als doel om eenvoudig een systeemherstel te kunnen uitvoeren of bevatten een bootloader.</p>
+
+        <p>De maximale grootte van een partitie wordt bepaald door het gebruikte bestandssysteem zoals FAT32, NTFS of EXT4. In het hoofdstuk Bestandssystemen kom je hierover meer te weten.</p>
+
+        <p>Als je eens het partitie-overzicht in Windows wenst te bekijken voor jouw computer dan kan je het programma ‘Schijfbeheer’ (Engels: ‘Disk Management’) openen.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-06-bestandssystemen-04.png" class="img-fluid" alt="Het venster Disk Management van Windows. Bovenaan staan de volumes C:, DATA (F:) en System Reserved, alle drie NTFS. Onderaan staat Disk 0 van 232,88 GB als een balk met daarin System Reserved van 500 MB, C: van 183,57 GB en DATA (F:) van 48,83 GB, en daaronder een CD-ROM 0 zonder media">
+        </figure>
+
+        <p>Er zijn verschillende redenen waarom men kan kiezen om een harde schijf extra te partitioneren.</p>
+
+        <p>Een eerste reden is het scheiden van het besturingssysteem en de data. Het besturingssysteem en de programma’s worden geïnstalleerd op de ene partitie terwijl de data op een andere partitie staat. Het grote voordeel hiervan is dat, als men het besturingssysteem opnieuw wil installeren of als men wil overschakelen naar een nieuwere versie, de data veilig op haar eigen partitie staat. Na het formatteren en herinstalleren van de systeempartitie (partitie met het besturingssysteem) zullen alle bestanden op de data partitie gewoon beschikbaar zijn. Men hoeft dus geen backup terug te zetten om opnieuw over de data te beschikken.</p>
+
+        <p>Een tweede reden om partities aan te maken is als men van plan is om meerdere besturingssystemen te
+            installeren. Elk besturingssysteem heeft daarvoor zijn eigen partitie nodig: het formatteert die
+            partitie in zijn eigen bestandssysteem en legt er zijn eigen mappenstructuur op aan. Twee
+            besturingssystemen op dezelfde partitie zouden elkaars bestanden dus overschrijven.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

@@ -69,3 +69,17 @@ letterlijk overgenomen.
 ## De Von Neumann architectuur > Studievragen
 
 - lege tabel van 1 rijen overgenomen als invulruimte
+
+## Bestandssystemen (opening)
+
+- kader "Kernpunten" werd een info-box met data-kader="kernpunten"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+- kader "Studievragen" werd een info-box met data-kader="studievragen"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+
+## Bestandssystemen > Inleiding
+
+- tabel "Mechanische harde schijf
+3.5” " kreeg GEEN kopregel (geen enkel signaal), nakijken
+
+## Bestandssystemen > Fragmentatie
+
+- afbeelding syllabus-06-bestandssystemen-05.png zweeft naast haar alinea (wrapSquare); die alinea blijft lopende tekst en de figuur krijgt geen bijschrift uit de Word

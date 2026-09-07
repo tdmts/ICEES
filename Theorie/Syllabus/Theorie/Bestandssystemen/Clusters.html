@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clusters</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Clusters</h1>
+
+        <p>Ieder bestandssysteem heeft een inhoudstafel dat aanduidt op welke sectoren de bestanden staan. Hoe meer sectoren er aanwezig zijn op de harde schijf, hoe groter de inhoudstafel moet worden en hoe complexer/ trager de adressering.</p>
+
+        <p>Om deze reden gaat men, bij het ontwerpen van een bestandssysteem, een maximum aantal bits voorzien wat betreft het aantal plaatsen in de inhoudstafel. Men houdt dan vooral rekening met de huidige capaciteit van opslagmedia en rekent er wat marge bij.</p>
+
+        <p>Daarnaast gaat men ook rekening houden met het feit dat één adres niet gekoppeld moet zijn aan één sector. Men kan sectoren clusteren door ze aan hetzelfde adres te koppelen.</p>
+
+        <p>Zonder clusters:</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered">
+                <thead class="table-header-custom">
+                    <tr><th>Adres</th><th>Sectoren</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Adres 0</td><td>Sector 0</td></tr>
+                    <tr><td>Adres 1</td><td>Sector 1</td></tr>
+                    <tr><td>...</td><td>...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Met clusters:</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered">
+                <thead class="table-header-custom">
+                    <tr><th>Adres</th><th>Sectoren</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Adres 0</td><td>Sector 0, Sector 1, Sector 2, ... Sector 7</td></tr>
+                    <tr><td>Adres 1</td><td>Sector 8, Sector 9, Sector 10, ... Sector 15</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Zoals je ziet kunnen we nu 8 keer meer sectoren kunnen adresseren met dezelfde adresruimte! Dit betekent dan ook dat onze maximum partitiegrootte maar liefst 8 keer groter wordt!</p>
+
+        <p>Waarom dan geen clusters die 64, 128 of 1024 sectoren koppelen? Je kan het misschien al raden, aan deze techniek zit ook een nadeel verbonden. Stel nu dat we kiezen voor een clustergrootte van 64 kB en we slaan een bestand op van 412 bytes. Er wordt dan één adres gereserveerd om aan te duiden waar dat bestand staat maar dit maakt ook dat er zo&#x27;n 63 kB aan opslagruimte verloren gaat. Dit wordt ook wel slack genoemd.</p>
+
+        <p>Bij het formatteren kan je opgeven hoe groot de clusters moeten zijn. Standaard wordt er 4096 bytes of 4 kB gerekend. Als je veel kleine bestanden hebt kan je ervoor kiezen om kleinere clusters te maken. Heb je veel grote bestanden dan kies je best voor grotere clusters.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

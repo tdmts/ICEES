@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestandssystemen</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Bestandssystemen</h1>
+
+        <div class="info-box" data-kader="kernpunten">
+            <div class="info-title remark">Kernpunten</div>
+            <ul>
+                <li>Een opslagmedium zoals een harde schijf moet je eerst partitioneren voor je deze kan gebruiken om bestanden op te slaan.</li>
+                <li>Er moet minstens één partitie zijn.</li>
+                <li>In het MBR partitieschema onderscheiden we primary, logical en extended partities. In het UEFI partitieschema is dat onderscheid er niet.</li>
+                <li>Een partitie moet geformatteerd worden in een bestandssysteem zoals FAT32, NTFS of EXT4.</li>
+                <li>Het type besturingssysteem bepaalt het type bestandssysteem. Windows gebruikt NTFS en Linux EXT4.</li>
+                <li>Het bestandssysteem bepaalt de maximum grootte van een bestand. Bij FAT32 is dat beperkt tot 4 GB.</li>
+                <li>Het bestandssysteem bepaalt ook hoeveel bestanden op een harde schijf kunnen staan.</li>
+                <li>Fragmentatie is het verspreid staan van sectoren die bij een bestand horen over de harde schijf. Mechanische harde schijven hebben er baat bij dat die sectoren aanliggend op de harde schijf staan.</li>
+                <li>Clusters groeperen sectoren bij elkaar om het aantal bestanden dat kan bijgehouden worden met een bepaald bestandssysteem te vergroten en kunnen fragmentatie vermijden.</li>
+            </ul>
+        </div>
+
+        <div class="info-box" data-kader="studievragen">
+            <div class="info-title tip">Studievragen</div>
+            <ul>
+                <li>Moet je eerst partitioneren en dan formatteren of omgekeerd?</li>
+                <li>Hoeveel partities moeten er minstens aanwezig zijn op een opslagmedium?</li>
+                <li>Waarvoor staat de afkorting MBR? Waarvoor staat de afkorting UEFI?</li>
+                <li>Als je mag kiezen, kies je dan voor MBR of UEFI? Geef minstens 2 redenen.</li>
+                <li>Geef minstens drie voorbeelden van een bestandssysteem.</li>
+                <li>Wat bepaalt de keuze van het bestandssysteem? Noem minstens drie factoren op.</li>
+                <li>Wat is fragmentatie?</li>
+                <li>Wat zijn clusters en waarom worden ze gebruikt? Wat is hun relatie met het bestandssysteem?</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

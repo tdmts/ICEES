@@ -1054,3 +1054,330 @@ terug.**
   heeft en vraag 2 ze mee laat natekenen. Beslist op 7 september 2026: het
   kernpunt blijft letterlijk wat de Word zegt. De bijgeschreven bottleneck-alinea
   hierboven noemt de opslag nu in woorden, en dat volstaat.
+
+## Hoofdstuk 6, Bestandssystemen
+
+**De sectie Studievragen achteraan heet hier Test jezelf**, zoals in hoofdstuk 1,
+3, 4 en 5. Het kader Studievragen vooraan houdt zijn eigen naam en staat samen met
+de Kernpunten op `Overzicht.html`. De pagina heet `TestJezelf.html`; de importer
+schreef `Studievragen.html`.
+
+**Dit is veruit het grootste hoofdstuk tot nu toe**: dertien secties tegen zeven
+bij hoofdstuk 3, acht afbeeldingen, en elf gedrukte bladzijden. Geen enkele
+Heading 3, dus elke pagina draagt alleen haar eigen h1.
+
+### De dertien secties blijven dertien pagina's
+
+Verschillende secties zijn heel kort. 6.8 Fragmentatie bij een solid state drive
+is een enkele zin, 6.9 Defragmentatie twee alinea's, 6.6 Fragmentatie bij de
+klassieke harde schijf twee. Ze zijn niet gegroepeerd, en dat is een keuze.
+
+De reden is de nummering. `export-syllabus.py` leidt het sectienummer af uit de
+plaats in `reference.js`, dus twee secties samennemen laat de gedrukte 6.8 iets
+anders betekenen dan de 6.8 van de Word, en de Word blijft de herkomst waar een
+herimport tegenaan gelegd wordt. De prijs is klein: `syllabus.css` legt geen
+bladovergang op een sectie, alleen op een hoofdstukopening, op Test jezelf en op
+Oplossingen. Twaalf korte secties leveren dus geen twaalf halflege bladzijden op,
+en dat is nagekeken in de gedrukte PDF.
+
+### Het grote gat: MBR, UEFI en primary / logical / extended stonden alleen in de kaders
+
+Nagekeken in de lopende tekst van dit hoofdstuk: de woorden MBR, GPT, primary,
+logical en extended kwamen er geen enkele keer in voor. Ze stonden wel in
+kernpunt 3 ("In het MBR partitieschema onderscheiden we primary, logical en
+extended partities. In het UEFI partitieschema is dat onderscheid er niet"), in
+studievraag 3 (waar de afkortingen MBR en UEFI voor staan) en in studievraag 4
+(kies je MBR of UEFI, geef minstens 2 redenen).
+
+Dat is het gat van de wet van Moore in hoofdstuk 1 en van de instructieset in
+hoofdstuk 4, en het is groter dan allebei: drie kaderregels steunen op een begrip
+dat het hoofdstuk nergens invoert. Hoofdstuk 3 legt MBR en UEFI wel uit, maar niet
+als partitieschema, en het noemt GPT nergens; dat gat staat bij hoofdstuk 3
+hierboven al genoteerd.
+
+**Er zijn dus twee alinea's bijgeschreven in 6.2 Partitioneren, en een herimport
+gooit ze weg.** Ze staan achter "Op een opslagmedium moet er altijd minstens 1
+partitie aanwezig zijn":
+
+> Hoe die partities op het opslagmedium bijgehouden worden, ligt vast in het
+> partitieschema. Er zijn er twee. Het oudste heet MBR, naar het master boot
+> record waarin de tabel staat: die tabel heeft vier plaatsen en beschrijft
+> schijven tot 2 TB. Het nieuwere heet GPT, het schema dat bij UEFI hoort, met
+> plaats voor 128 partities en zonder die grens van 2 TB.
+>
+> Het MBR schema kent daarbij drie soorten partities. Een primaire partitie neemt
+> een van de vier tabelplaatsen in en draagt een bestandssysteem. Wil je er meer
+> dan vier, dan geef je een van die plaatsen aan een extended partitie: die draagt
+> zelf geen bestandssysteem maar dient als houder waarin je zoveel logische
+> partities aanmaakt als je nodig hebt. In het GPT schema bestaat dat onderscheid
+> niet, want daar zijn de 128 plaatsen aan elkaar gelijk.
+
+Twee keuzes daarin. **De eerste alinea noemt GPT bij naam**, terwijl het kernpunt
+het schema UEFI noemt; ze zegt daarom uitdrukkelijk dat GPT het schema is dat bij
+UEFI hoort, zodat het kader en de tekst op elkaar aansluiten. **Het kernpunt zelf
+is niet aangeraakt**, zoals bij hoofdstuk 5: een kader blijft letterlijk wat de
+Word zegt. **En de twee redenen van studievraag 4 staan er nu**, de vier
+tabelplaatsen en de grens van 2 TB; wat hoofdstuk 3 daarnaast over UEFI zegt komt
+daar nog bij.
+
+**Een derde stuk is bijgeschreven onderaan 6.2, voor vraag 5 van Test jezelf.**
+Die vraagt of je twee besturingssystemen op dezelfde partitie kan installeren, en
+het antwoord Nee volgde alleen indirect uit "een tweede reden om partities aan te
+maken is als men van plan is om meerdere besturingssystemen te installeren". Die
+zin draagt nu: "Elk besturingssysteem heeft daarvoor zijn eigen partitie nodig:
+het formatteert die partitie in zijn eigen bestandssysteem en legt er zijn eigen
+mappenstructuur op aan. Twee besturingssystemen op dezelfde partitie zouden
+elkaars bestanden dus overschrijven."
+
+### Het hoofdstuk sprak zichzelf tegen over wat wat bepaalt
+
+6.3 Formatteren zei: "Het type bestandssysteem (FAT32, NTFS en EXT4) waarin je een
+partitie formatteert is bepalend voor het type besturingssysteem dat
+geinstalleerd wordt, de maximale schijfgrootte, de maximale partitiegrootte en de
+maximale bestandsgrootte." Kernpunt 5 zei: "Het type besturingssysteem bepaalt het
+type bestandssysteem. Windows gebruikt NTFS en Linux EXT4." Die twee wijzen de
+tegenovergestelde kant op.
+
+**Het kernpunt heeft gelijk, en 6.3 is omgedraaid.** Beslist op 7 september 2026.
+De rest van het hoofdstuk kiest namelijk dezelfde kant als het kernpunt: 6.10,
+6.11 en 6.12 sluiten elk af met een regel "Type besturingssysteem: Windows /
+Linux / ...", "Windows", "Linux", dus het bestandssysteem hoort bij een
+besturingssysteem en niet omgekeerd. `Labo/Partitioneren/Theorie/Bestandssystemen.html`
+zegt het ook zo ("Het besturingssysteem dat op de partitie komt, bepaalt de keuze
+het sterkst"). De zin luidt nu:
+
+> Het type besturingssysteem dat geinstalleerd wordt is bepalend voor het type
+> bestandssysteem (FAT32, NTFS of EXT4) waarin je een partitie formatteert. Dat
+> bestandssysteem bepaalt op zijn beurt de maximale schijfgrootte, de maximale
+> partitiegrootte en de maximale bestandsgrootte.
+
+**Er valt niets weg**: de drie grenzen die de Word noemt staan er nog, en ze hangen
+nu aan het bestandssysteem in plaats van in een opsomming waarvan het eerste lid de
+andere kant op wees. Het is een woordcorrectie, dus ze staat alleen in de HTML en
+een herimport draait ze terug.
+
+### De zeven vragen van Test jezelf, en de vier die een probleem hadden
+
+| Vraag | Antwoord | Waarop het steunt |
+|---|---|---|
+| 1 Grootteorde van een nieuwe SSD | a, MB | omgekeerd, zie hieronder |
+| 2 Wat je eerst doet met een nieuwe schijf | a, partitioneren | 6.2, "Een harde schijf moeten we, voor we ze kunnen gebruiken, partitioneren", en 6.3, "partitioneren is niet voldoende voor het besturingssysteem" |
+| 3 Waar het bestandssysteem invloed op heeft | c, zowel bestands- als partitiegrootte | 6.3, "bepalend zal zijn voor de grootte van de partitie en de grootte van de bestanden" |
+| 4 C: en D: in Windows Verkenner | a, je weet zeker dat je twee partities hebt | 6.2, een partitie is wat het besturingssysteem als een aparte schijf aanbiedt; twee stationsletters kunnen op een of op twee schijven staan |
+| 5 Twee besturingssystemen op dezelfde partitie | c, nee | de alinea die hierboven in 6.2 bijgeschreven is |
+| 6 Bestandssysteem voor Windows | a, NTFS | 6.11, "In een Windows omgeving is het meest gebruikte bestandssysteem NTFS" |
+| 7 Bestandssysteem voor Linux | b, EXT4 | 6.12, "meer bepaald in Linux besturingssystemen ... het standaard bestandssysteem voor de meeste distributies sinds 2009" |
+
+MACFS in vraag 6 en 7 is een verzonnen naam, zoals AUTOCAT in hoofdstuk 4. Alle
+zeven de vragen zijn meerkeuze gebleven; dit hoofdstuk heeft dus geen enkele open
+vraag en geen enkele `<div class="oplossing">`.
+
+**Vraag 1 is omgekeerd, want zowel GB als TB is vandaag verdedigbaar.** Ze luidde
+"Als je een nieuwe SSD harde schijf koopt dan is deze in grootteorde: MB / GB /
+TB", en daar zijn er twee van de drie juist. Dat is het geval van vraag 6 van
+hoofdstuk 3, en de uitkomst is dezelfde: de vraagzin is omgekeerd naar "Als je
+vandaag een nieuwe SSD harde schijf koopt dan is deze zeker NIET in grootteorde",
+en de drie mogelijkheden staan er woord voor woord nog. De vraag blijft meerkeuze,
+en het antwoord is nu MB. Het woord **vandaag** is erbij gekomen, want een
+grootteorde verschuift en zonder dat woord veroudert de vraag stil.
+
+**Vraag 2 ging van twee mogelijkheden naar vier**, want met alleen Partitioneren
+en Formatteren is de gokkans bij giscorrectie een op twee. Dat is het geval van
+vraag 5 van hoofdstuk 5, en de twee afleiders komen ook hier uit het hoofdstuk
+zelf: **de clustergrootte instellen** is wat je volgens 6.4 bij het formatteren
+opgeeft, en **defragmenteren** is 6.9. Allebei zijn het echte handelingen aan een
+schijf, en allebei komen ze na het partitioneren. **Ze staan niet in de Word** en
+een herimport gooit ze weg; het juiste antwoord is niet veranderd.
+
+**Vraag 4 stond in het meervoud terwijl er maar een bewering waar is.** "Welke
+beweringen zijn WAAR?" is "Welke bewering is WAAR?" geworden. Dat is geen
+inhoudelijke wijziging: van de drie mogelijkheden is alleen "je weet zeker dat je
+twee partities hebt" juist, want twee stationsletters kunnen even goed op een als
+op twee schijven staan en zeggen niets over een tweede besturingssysteem. In
+dezelfde zin is **"ziet je" "zie je"** geworden.
+
+**Vraag 5 is blijven staan zoals ze was**, want het gat waar ze op steunde is met
+de bijgeschreven alinea in 6.2 gedicht. Omkeren of open maken was hier dus niet
+nodig; de vraag toetst nu iets wat de tekst zegt.
+
+### De clustertabel stond als lopende tekst met pijpen
+
+In 6.4 Clusters staan zes gewone alinea's van de vorm "Adres 0 | Sector 0" en
+"Adres 0 | Sector 0, Sector 1, ... Sector 7". Nagekeken in `word/document.xml`:
+dat zijn echte pijptekens in gewone alinea's, geen tabel en geen tab. De importer
+maakte daar zes losse regels van.
+
+Dat is het geval van 2.1 Hardware herkennen en van het invulblad van vraag 5 van
+hoofdstuk 4: herken je een tabel, maak er dan een tabel van voor je verder gaat.
+Het zijn er twee geworden, een zonder en een met clusters, allebei met de kolommen
+**Adres** en **Sectoren**. De regel "..." uit de Word is de derde rij van de eerste
+tabel geworden, in allebei de kolommen.
+
+**De vorm is hier gekozen en niet gelezen.** De Word geeft geen enkel signaal dat
+dit een tabel is; wat er staat is een pijpteken op een plaats waar een kolomgrens
+hoort. De kopregel Adres / Sectoren staat evenmin in de Word en is hier
+bijgeschreven, want een tabel zonder kopregel laat de lezer raden wat de tweede
+kolom is.
+
+### De vergelijkingstabel van 6.1 kreeg een kopregel
+
+De importer meldde in `IMPORT.md` dat de tabel "Mechanische harde schijf 3.5" geen
+kopregel kreeg omdat de Word geen enkel signaal geeft, en zette er een
+`data-geraden` op. Nagekeken en beslist: de eerste rij van die tabel is wel degelijk
+een kopregel. Ze bevat drie keer twee regels tekst die de kolom benoemen (soort
+schijf, en vormfactor met aansluiting), en de tweede rij bevat de foto die daarbij
+hoort. Die rij staat nu in een `<thead class="table-header-custom">` met `<th>`, en
+het `data-geraden` is weg.
+
+### De vier hertekende afbeeldingen, en de vier die blijven staan
+
+Alle acht zijn opengedaan voor er iets over geschreven werd. **Vier blijven
+staan** en kregen een met de hand geschreven `alt`, dat een herimport weggooit:
+
+- **image44, 45 en 46** (`syllabus-06-bestandssystemen-01.jpeg`, `-02.jpeg`,
+  `-03.png`) zijn de drie cellen van de vergelijkingstabel van 6.1: een
+  opengewerkte mechanische schijf van 3.5 inch, een SSD van 2.5 inch aan SATA en
+  een SSD van 1.8 inch in M.2. Geen watermerk, alle drie leesbaar op de 46.4, 41.9
+  en 36.8mm van de Word. **CLAUDE.md noemde image46 bij de onbruikbare
+  afbeeldingen**; dat gold voor het labo en niet voor de syllabus, en die zin is
+  rechtgezet.
+- **image47** (`-04.png`, 160.0 bij 102.8mm) is Schijfbeheer met System Reserved,
+  C: en DATA. Die staat ook als `img/partitioneren-schijfbeheer-windows.png` in de
+  repo, en dat is met opzet: de twee tracks zijn onafhankelijk en een eigen kopie
+  per track is de afspraak. Wat opvalt is dat de tekst het programma
+  'Schijfbeheer' noemt en dat de schermafdruk het Engelse Disk Management toont;
+  de tekst zegt er zelf "(Engels: 'Disk Management')" bij, dus dat klopt en is niet
+  aangeraakt.
+
+**Vier zijn hertekend**, en ze staan alle vier op 160.0mm. Palet en lettertype zijn
+die van de SVG's van Labo Partitioneren en van hoofdstuk 3, op wit, en alle vier
+zijn ze in Edge gerenderd voor ze vertrouwd werden. De originelen zijn geschrapt,
+want niets verwijst er nog naar en regel 1 van de contentcheck valt over een
+ongebruikte afbeelding; een herimport zet ze terug.
+
+- **image51 is `img/syllabus-06-journaal.svg` geworden, en dat was het
+  dringendste.** Het origineel is een schermafdruk van een YouTube-speler, met
+  titelbalk "Journaling", afspeelknop, `0:00 / 2:20`, de knop MEER VIDEO'S, het
+  YouTube-logo, een HD-badge en de penpunt van de spreker in beeld. Erger dan het
+  chroom is wat ze tekent: een **Unified Buffer Cache** in het Main Memory, en de
+  vier alinea's eronder gaan over het journaal op de schijf. De hertekening houdt
+  wat het origineel wel heeft (CPU, cache, bus, Main Memory, de schijf als
+  cilinder), zet in de plaats van de buffer cache het journaal op de schijf, en
+  tekent de twee stappen die de tekst beschrijft met een pijl 1 en een pijl 2. De
+  waarschuwing over de stroomuitval staat er in het rood onder, zoals in
+  `partitioneren-journaal.svg`. **Het werkgeheugen is het enige groene blok**,
+  want de tekst eronder begint met "In het groen zie je het Main Memory ofwel RAM
+  geheugen", en het blok draagt daarom ook letterlijk dat opschrift. Wat wegvalt is
+  de Unified Buffer Cache en het vak Used ernaast; die staan in geen enkele zin van
+  dit hoofdstuk.
+- **image49 is `img/syllabus-06-first-best-worst-fit.svg` geworden.** Het origineel
+  is een whiteboardschets waarvan de pijlen van de kandidaat-blokken naar het
+  bestand lopen in plaats van omgekeerd, en waarvan FF, WF en BF boven de gaten
+  tussen de blokken staan in plaats van boven het blok dat ze aanwijzen. Ze is
+  bovendien 663 pixels breed, wat op 160.0mm neerkomt op 105 dpi. De hertekening
+  laat niets vallen: het bestand van 150 MB, de drie afkortingen en hun drie
+  omschrijvingen staan er nog, die laatste in een legende onderaan. **Wat erbij
+  komt zijn de maten van de vrije blokken** (100, 200, 160 en 400 MB), want zonder
+  die maten kan de lezer niet nagaan waarom elk algoritme kiest wat het kiest. Het
+  bestand staat getekend in het blok dat elk algoritme neemt, met eronder in het
+  rood wat er overblijft: 50, 10 en 250 MB. Dat zijn dezelfde maten als
+  `img/partitioneren-first-worst-best-fit.svg`, met opzet, zodat de twee tracks
+  geen verschillende getallen geven.
+- **image48 is `img/syllabus-06-fragmentatie.svg` geworden.** Het origineel zweeft
+  (`wrapSquare`), dus de alinea ernaast is lopende tekst gebleven en de figuur
+  kreeg geen bijschrift uit de Word; `IMPORT.md` meldt het. Wat het tekent zijn
+  drie rijen ongelabelde gekleurde balken, en op 79.0mm haalt het 120 dpi. De
+  hertekening zet bij elke rij wat er gebeurt en bij elke balk welk bestand het is.
+  **De vier kleuren zijn die van de brontekst en niet die van OrionCSS**: 6.5
+  schrijft "bestand 1 = rood, bestand 2 = blauw en bestand 3 = groen" en "bestand 4
+  = zwart", dus het palet zou de zin ernaast onwaar maken. De vrije ruimte en de
+  rode annotatie eronder komen wel uit het palet. **De figuur staat nu onder de
+  drie alinea's** in plaats van erboven, want ze toont wat die alinea's stap voor
+  stap beschrijven; de importer zette haar bovenaan omdat ze in de Word zweeft.
+- **image50 is `img/syllabus-06-defragmentatie.svg` geworden**, en dat was het
+  minst dringende geval. Het origineel is geen schermafdruk met chroom: het is een
+  schone voor-en-na-tekening met een legende eronder en zonder watermerk. Wat er
+  wel mis mee is, is dat ze volledig Engels staat in een Nederlandse tekst
+  (fragmented, defragmented, allocated space, MFT, free space, being processed,
+  SundayParty.JPEG) en dat 790 pixels op 160.0mm neerkomt op 125 dpi. Dat is
+  dezelfde afweging als bij de MBR van hoofdstuk 3, en dezelfde uitkomst. De
+  hertekening houdt de vorm van het origineel: dezelfde schijf twee keer als een
+  rooster van clusters, een bestand dat je in allebei de roosters terugvindt, en
+  een legende. **Twee onderdelen van de legende zijn niet overgenomen**, en dat is
+  een bewuste keuze: **MFT** is een structuur van NTFS die dit hoofdstuk nergens
+  invoert, en **being processed** is een toestand van het Windows-programma terwijl
+  het draait en niet iets over de schijf. Het bestand heet `vakantie.jpg` in plaats
+  van SundayParty.JPEG, wat geen enkel gegeven kost.
+
+### Waar dit hoofdstuk en Labo Partitioneren naast elkaar staan
+
+Dit is de zwaarste overlap met een labo tot nu toe.
+`Labo/Partitioneren/Theorie/Bestandssystemen.html` en `Partitietabellen.html` zijn
+uit dit hoofdstuk geschreven, en `Spiekblad.html` draagt dezelfde grenzen.
+Patroon 17: de twee tracks zeggen hetzelfde twee keer en er linkt niets tussen.
+**Er is aan geen enkele labopagina iets veranderd.** Nagekeken op tegenspraak, en
+dit kwam eruit.
+
+- **De getallen komen overeen.** FAT32 2 TB en 4 GB, NTFS 256 TB en 2 TB met MBR,
+  EXT 1 EiB en 2 TB met MBR en 16 TB per bestand, een sector van 512 bytes, een
+  cluster van standaard 4096 bytes, een adressering van 8 bits die op 131 072 bytes
+  uitkomt, acht sectoren onder een adres, en een bestand van 412 bytes in een
+  cluster van 64 kB. Alle negen staan in allebei de tracks gelijk.
+- **Het spiekblad heeft exFAT en linux-swap erbij**, en de syllabus noemt die twee
+  nergens. Dat is een gat en geen tegenspraak: het labo werkt in GParted, waar de
+  keuzelijst die twee ook aanbiedt.
+- **Het labo zegt van FAT32 uitdrukkelijk dat het geen journaal heeft, de syllabus
+  niet.** 6.10 zwijgt over het journaal en 6.11 voert het pas in bij NTFS. Ook een
+  gat en geen tegenspraak.
+- **De maximale bestandsgrootte van NTFS staat alleen in de syllabus**
+  ("Theoretisch: 16 EiB, Praktisch 256 TB"); het spiekblad zet er 256 TB. Hetzelfde
+  getal, alleen zonder de theoretische grens ernaast.
+- **Over first, best en worst fit zeggen de twee precies hetzelfde**, tot en met de
+  reden waarom uitgerekend worst fit het minst fragmenteert en waarom defragmenteren
+  op ext daardoor in de praktijk overbodig is.
+- **Het MBR-schema staat nu in allebei de tracks**, sinds de alinea's die hierboven
+  in 6.2 bijgeschreven zijn. Ze zeggen hetzelfde als
+  `Labo/Partitioneren/Theorie/Partitietabellen.html`, in het kort waar het labo het
+  in het lang doet: vier tabelplaatsen, 2 TB, primair tegen extended tegen logisch,
+  en 128 plaatsen bij GPT. Er linkt niets tussen.
+- **De syllabus schrijft een bestandssysteem in kapitalen** (FAT32, NTFS, EXT4),
+  het labo schrijft ext4 in kleine letters zoals Linux zelf. Allebei zijn ze binnen
+  hun eigen track consequent, en geen van beide is aangeraakt.
+
+### Wat er in de tekst opviel, en op 7 september 2026 rechtgetrokken is
+
+De tekst gaat er in principe letterlijk in, dus dit staat hier met wat er beslist
+is. **Deze correcties staan alleen in de HTML en een herimport draait ze terug.**
+
+- **"Geef minstens drie voorbeelden van een bestandssysteem?"** in het kader
+  Studievragen is een imperatief met een vraagteken en draagt nu een punt. De regel
+  staat bij hoofdstuk 4. "Geef minstens 2 redenen." en "Noem minstens drie factoren
+  op." droegen er al een; de zes echte vragen in dat kader houden hun vraagteken.
+- **"ziet je"** in vraag 4 van Test jezelf is **"zie je"**, en **"Welke beweringen
+  zijn WAAR?"** is **"Welke bewering is WAAR?"**. Zie hierboven bij die vraag.
+- **De zin over wat wat bepaalt in 6.3** is omgedraaid. Zie hierboven.
+
+### Wat er in de tekst opviel, en niet aangeraakt is
+
+- **"Zoals je ziet kunnen we nu 8 keer meer sectoren kunnen adresseren"** in 6.4,
+  met kunnen twee keer.
+- **6.4 vraagt "Waarom dan geen clusters die 64, 128 of 1024 sectoren koppelen?" en
+  rekent de alinea erna met "een clustergrootte van 64 kB".** Dat zijn sectoren
+  tegen kilobytes: 64 sectoren van 512 bytes is 32 kB. De rekensom binnen die
+  alinea klopt wel op zichzelf, want een bestand van 412 bytes in een cluster van
+  64 kB laat inderdaad zo'n 63 kB liggen. Alleen de sprong van de vraagzin naar de
+  alinea erna klopt niet.
+- **"Vooral USB sticks en SD kaartjes worden nog vaak geformatteerd in dit
+  bestandssysteem"** in 6.10 mist een punt op het eind.
+- **"Per herpositionering is er dus een Seek Time en Rotational latency..."** in
+  6.6 schrijft Seek Time met twee hoofdletters en Rotational latency met een; 6.9
+  schrijft "(Seek Time + Rotational Latency)" met twee.
+- **"Dit heeft te maken het algoritme dat wordt gebruikt"** in 6.6, waar "te maken
+  met het algoritme" hoort te staan.
+- **"En een derde reden is fragmentatie kan vermeden worden"** in 6.12, waar "is
+  dat fragmentatie" hoort te staan.
+- **"ext2" in 6.6 tegen "EXT4" in de kernpunten en in 6.12.** Binnen het hoofdstuk
+  wisselt de schrijfwijze, en het is niet aangeraakt.
+- **De hoge komma's rond partitie, Schijfbeheer en Disk Management** zijn in de
+  Word gewone apostrofs en zijn dat hier gebleven. Dat is opmaak en geen tekst, net
+  als de apostrof in "zo'n 63 kB" in 6.4.

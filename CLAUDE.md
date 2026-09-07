@@ -665,10 +665,19 @@ a second look at the drawing, and it is the test for any figure here, that the c
 paragraph beside it is *shown* and not captioned. The bracket over the leftover is `#c0392b`, the
 same red that annotates the slack in `partitioneren-cluster-en-slack.svg`, because both mark the
 part of a block that stays unused. A picture out of the Word is usable only when it is legible on
-its own; check that before you copy it, the same way you check the watermark. **Four other images in that chapter are unusable** and were left behind: image51 is a
-screenshot of a YouTube player with its chrome, image93 carries a `©2000 How Stuff Works` watermark,
-image46 is a product photo of an SSD, and image50 is a screenshot with the same problem as image51.
-Check the watermark before you copy a picture out of the Word.
+its own; check that before you copy it, the same way you check the watermark. **One image in that
+chapter is unusable** and was left behind for the labo: image51 is a screenshot of a YouTube player,
+with its title bar, its play button, its `0:00 / 2:20`, an HD badge and the presenter's pen tip in
+shot. Check the watermark before you copy a picture out of the Word.
+
+**Three claims that stood here about that chapter's images were wrong, and were corrected on 7
+September 2026 by opening all eight.** image93 is not in chapter 6 at all but in chapter 12, Harde
+schijf. image46 is not a loose product photo: it is one of the three cells of a comparison table in
+6.1 that puts a mechanical 3.5" disk, a 2.5" SSD and a 1.8" M.2 SSD side by side, and the syllabus
+uses all three. And image50 is not a screenshot with browser chrome: it is a clean before-and-after
+drawing of defragmentation with a legend under it and no watermark, whose only faults are that it
+is entirely in English and that 790 pixels on 160.0mm is 125 dpi. Open the file before you write
+down what is on it.
 
 **Wikimedia Commons was considered and not used.** `File:GUID Partition Table Scheme.svg` is the
 obvious candidate and it is CC BY-SA 2.5: usable, but it labels its blocks in English with LBA
@@ -683,7 +692,7 @@ image shows `/dev/sda1 ntfs Windows OS` next to `/dev/sda2 fat32 Data`, and the 
 `/dev/sdb`. Open the PNG before writing a figcaption; three of the eight captions here would have
 been wrong otherwise.
 
-## De syllabus, hoofdstuk 1 tot 5 ingevoerd 7 september 2026
+## De syllabus, hoofdstuk 1 tot 6 ingevoerd 7 september 2026
 
 De theorietrack bestond hier nog niet: `Theorie/Syllabus/` was leeg en het manifest kende geen
 module `syllabus`. Wat er bij dit eerste hoofdstuk aan infrastructuur bij gekomen is, hoort erbij en
@@ -849,6 +858,27 @@ en nagebootst zijn de randapparaten. Daaruit volgt dat een virtuele machine nooi
 instructieset kan draaien, en dat x86-op-ARM emulatie heet. De regel is dus: leg een passage naast de
 labopagina die er over gaat, zet de syllabus recht waar ze fout staat, en **raak de labopagina niet
 aan** (patroon 17). De hele redenering hoort in NOTITIES.md, zoals hoofdstuk 3 dat doet.
+
+**Een hoofdstuk dat zichzelf tegenspreekt, wordt rechtgezet in de lopende tekst en niet in het
+kader.** Hoofdstuk 6 zei in 6.3 dat het bestandssysteem bepaalt welk besturingssysteem er
+geinstalleerd wordt, en in kernpunt 5 dat het besturingssysteem het bestandssysteem bepaalt. Dat
+zijn tegengestelde richtingen, en de rest van het hoofdstuk kiest partij: elk bestandssysteem draagt
+onderaan zijn eigen regel "Type besturingssysteem". Het kernpunt heeft dus gelijk en de zin in 6.3
+is omgedraaid, met alle drie de gevolgen (schijf-, partitie- en bestandsgrootte) die er al in
+stonden. Dat is de regel: het kader blijft letterlijk wat de Word zegt, zoals bij hoofdstuk 5, en de
+lopende tekst is wat je bijdraait. Dit is iets anders dan hoofdstuk 5, waar de syllabus een
+**labopagina** tegensprak; hier ligt de tegenspraak binnen een hoofdstuk.
+
+**Een hertekening houdt de kleuren van de brontekst wanneer die tekst ze bij naam noemt.** 6.5
+schrijft "bestand 1 = rood, bestand 2 = blauw en bestand 3 = groen" en "bestand 4 = zwart", dus
+`img/syllabus-06-fragmentatie.svg` is de eerste SVG hier die niet in het palet van OrionCSS staat:
+het palet zou de zin ernaast onwaar maken. Wat wel uit het palet komt is alles waar de tekst niets
+over zegt, de vrije ruimte en de rode annotatie eronder. Elders geldt het palet gewoon.
+
+**Vier van de acht afbeeldingen van hoofdstuk 6 zijn hertekend**, meer dan in enig ander hoofdstuk
+tot nu toe, en de vier redenen staan per figuur in NOTITIES.md. Drie ervan tekenen iets wat
+`Labo/Partitioneren/` ook al tekent, en dat is geen reden om het niet te doen: de twee tracks zijn
+onafhankelijk en een eigen kopie per track is de afspraak, precies zoals bij de MBR van hoofdstuk 3.
 
 ### Wat de eerste hoofdstukimport aan de importer veranderd heeft
 

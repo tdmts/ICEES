@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 290" width="720" height="290"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">Hoe bestand 4 in twee stukken op de harde schijf terechtkomt</title>
+    <rect width="720" height="290" fill="#ffffff" />
+
+    <!-- stap 1: de drie bestanden staan achter elkaar -->
+    <text x="40" y="28" font-size="13" fill="#555">1. Bestand 1, 2 en 3 werden na elkaar opgeslagen</text>
+
+    <rect x="40" y="36" width="200" height="40" fill="#cc0000" stroke="#8c0000" />
+    <text x="140" y="61" font-size="13" fill="#ffffff" text-anchor="middle">bestand 1</text>
+
+    <rect x="240" y="36" width="80" height="40" fill="#2b3fbf" stroke="#1c2a80" />
+    <text x="280" y="61" font-size="13" fill="#ffffff" text-anchor="middle">bestand 2</text>
+
+    <rect x="320" y="36" width="200" height="40" fill="#2e9e3e" stroke="#1f6b2a" />
+    <text x="420" y="61" font-size="13" fill="#ffffff" text-anchor="middle">bestand 3</text>
+
+    <rect x="520" y="36" width="160" height="40" fill="#f5f7f7" stroke="#9bb0ac" stroke-dasharray="4 3" />
+    <text x="600" y="61" font-size="13" fill="#555" text-anchor="middle">vrij</text>
+
+    <!-- stap 2: bestand 2 wordt gewist -->
+    <text x="40" y="106" font-size="13" fill="#555">2. Bestand 2 wordt gewist en laat een gat achter</text>
+
+    <rect x="40" y="114" width="200" height="40" fill="#cc0000" stroke="#8c0000" />
+    <text x="140" y="139" font-size="13" fill="#ffffff" text-anchor="middle">bestand 1</text>
+
+    <rect x="240" y="114" width="80" height="40" fill="#f5f7f7" stroke="#9bb0ac" stroke-dasharray="4 3" />
+    <text x="280" y="139" font-size="13" fill="#555" text-anchor="middle">gat</text>
+
+    <rect x="320" y="114" width="200" height="40" fill="#2e9e3e" stroke="#1f6b2a" />
+    <text x="420" y="139" font-size="13" fill="#ffffff" text-anchor="middle">bestand 3</text>
+
+    <rect x="520" y="114" width="160" height="40" fill="#f5f7f7" stroke="#9bb0ac" stroke-dasharray="4 3" />
+    <text x="600" y="139" font-size="13" fill="#555" text-anchor="middle">vrij</text>
+
+    <!-- stap 3: bestand 4 is groter dan het gat -->
+    <text x="40" y="184" font-size="13" fill="#555">3. Bestand 4 is groter dan bestand 2 en past dus niet in dat
+        gat</text>
+
+    <rect x="40" y="192" width="200" height="40" fill="#cc0000" stroke="#8c0000" />
+    <text x="140" y="217" font-size="13" fill="#ffffff" text-anchor="middle">bestand 1</text>
+
+    <rect x="240" y="192" width="80" height="40" fill="#222222" stroke="#000000" />
+    <text x="280" y="217" font-size="13" fill="#ffffff" text-anchor="middle">bestand 4</text>
+
+    <rect x="320" y="192" width="200" height="40" fill="#2e9e3e" stroke="#1f6b2a" />
+    <text x="420" y="217" font-size="13" fill="#ffffff" text-anchor="middle">bestand 3</text>
+
+    <rect x="520" y="192" width="72" height="40" fill="#222222" stroke="#000000" />
+    <text x="556" y="217" font-size="11" fill="#ffffff" text-anchor="middle">bestand 4</text>
+
+    <rect x="592" y="192" width="88" height="40" fill="#f5f7f7" stroke="#9bb0ac" stroke-dasharray="4 3" />
+    <text x="636" y="217" font-size="13" fill="#555" text-anchor="middle">vrij</text>
+
+    <!-- de twee stukken horen bij elkaar -->
+    <path d="M280 232 L280 250 L556 250 L556 232" stroke="#c0392b" stroke-width="1" stroke-dasharray="4 3"
+        fill="none" />
+    <text x="418" y="270" font-size="13" fill="#c0392b" text-anchor="middle">één bestand, verspreid op de harde
+        schijf: dat is fragmentatie</text>
+</svg>

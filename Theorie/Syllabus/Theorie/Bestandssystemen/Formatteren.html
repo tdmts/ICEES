@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatteren</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Formatteren</h1>
+
+        <p>Als je partitioneert verdeel je het opslagmedium in deeltjes maar partitioneren is niet voldoende voor het besturingssysteem. Het besturingssysteem moet weten op welke locaties (= op welke sectoren) de bestanden staan. Die locaties worden bijgehouden in een bestandssysteem dat we voor het gemak zullen vergelijken met de inhoudstafel van een boek.</p>
+
+        <p>Laat ons de hoofdstukken in een boek vergelijken met een bestand op de harde schijf. In de inhoudstafel wordt bijgehouden op welke pagina het bestand staat en in een bestandssysteem wordt bijgehouden op welke sectoren een bestand staat.</p>
+
+        <p>Hoe langer ons boek wordt, hoe meer pagina’s we gebruiken en hoe groter het cijfer wordt dat het paginanummer voorstelt.</p>
+
+        <p>Hoe meer bestanden op de harde schijf, hoe meer sectoren we gebruiken en hoe groter het sectoradres kan worden dat geassocieerd is met een bepaald bestand.</p>
+
+        <p>Je ziet misschien al in dat het aantal bits dat we zullen gebruiken voor de sectoradressering bepalend zal zijn voor de grootte van de partitie en de grootte van de bestanden.</p>
+
+        <p>Gebruik je bijvoorbeeld 8 bits voor de sectoradressering in een bestandssysteem dan kan je maximum 2^8 * 512 bytes = 131 072 bytes opslaan.</p>
+
+        <p>Om dit uit te breiden kan je nu drie dingen doen:</p>
+
+        <ol>
+            <li>Je kan het aantal bits voor de adressering vergroten</li>
+            <li>Je kan meer partities maken</li>
+            <li>Je kan het aantal bits dat gekoppeld is aan één adres vergroten</li>
+        </ol>
+
+        <p>Dit laatste wordt in de praktijk gebruikt onder de vorm van clusters.</p>
+
+        <p>Het type besturingssysteem dat geïnstalleerd wordt is bepalend voor het type bestandssysteem
+            (FAT32, NTFS of EXT4) waarin je een partitie formatteert. Dat bestandssysteem bepaalt op zijn beurt de
+            maximale schijfgrootte, de maximale partitiegrootte en de maximale bestandsgrootte.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>
