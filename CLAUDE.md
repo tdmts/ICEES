@@ -715,7 +715,7 @@ with its title bar, its play button, its `0:00 / 2:20`, an HD badge and the pres
 shot. Check the watermark before you copy a picture out of the Word.
 
 **Three claims that stood here about that chapter's images were wrong, and were corrected on 7
-September 2026 by opening all eight.** image93 is not in chapter 6 at all but in chapter 12, Harde
+September 2026 by opening all eight.** image93 is not in chapter 6 at all but in chapter 11, Harde
 schijf. image46 is not a loose product photo: it is one of the three cells of a comparison table in
 6.1 that puts a mechanical 3.5" disk, a 2.5" SSD and a 1.8" M.2 SSD side by side, and the syllabus
 uses all three. And image50 is not a screenshot with browser chrome: it is a clean before-and-after

@@ -2081,7 +2081,7 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
 - **"een virtuele harde schijf, etc."** in 8.3 schrijft etc. waar de rest van de
   Word het beletselteken gebruikt.
 - **8.2 verwijst naar "hoofdstuk Harde schijf" en "hoofdstuk Besturingssystemen".**
-  Het tweede is hoofdstuk 7 en staat er; het eerste is hoofdstuk 12 en bestaat nog
+  Het tweede is hoofdstuk 7 en staat er; het eerste is hoofdstuk 11 en bestaat nog
   niet. Allebei blijven ze woorden en worden er geen links van: van de syllabus is
   de PDF het enige dat de student ziet.
 - **8.2 heet Nadelen van fysieke machines en somt er een op**, de prijs. Dat het er
