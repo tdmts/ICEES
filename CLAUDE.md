@@ -697,6 +697,23 @@ komt er geen tweede keer:
 - **De module `syllabus` staat eerst in `reference.js`**, zoals in DeN. Een categorie is een
   hoofdstuk, een topic een sectie, en het hoofdstuknummer volgt uit de plaats in de lijst.
 
+**De syllabushub wordt met opzet door niets gelinkt, en dat is geen vergetelheid.** De
+theorietrack heeft in Orion een enkel menu-item, `Theorie/Syllabus/overview.html`, en dat biedt de
+PDF aan. `Theorie/Syllabus/Theorie/reference.html` en de hoofdstukpagina's eronder zijn op de site
+dus niet bereikbaar. Bevestigd op 7 september 2026: **van de hele syllabus is de PDF het enige dat
+de student te zien krijgt**, precies zoals de motivatie bij regel 13 al zei. De HTML is de bron
+waaruit gedrukt wordt, niet een tweede kanaal ernaast. DeN heeft hetzelfde gat en om dezelfde reden.
+
+Laat het dus staan, en repareer het niet: een tweede Orion-topic of een link vanaf `overview.html`
+zet een leeskanaal open dat niemand onderhoudt en dat naast de PDF een tweede waarheid wordt.
+
+**Het manifest blijft daarom wel nodig, en om een andere reden dan de hub.**
+`scripts/export-syllabus.py` leest `window.LAB_REFERENCE.syllabus` voor de volgorde en de nummering
+van het gedrukte document, en regel 2 van de contentcheck eist dat elke pagina onder een module erin
+staat. `reference.js` is hier dus de inhoudsopgave van de PDF, en de hub is wat er toevallig ook mee
+te tekenen valt. `back-link.js` op een hoofdstukpagina is om dezelfde reden geen fout: hij hoort bij
+het sjabloon van de importer en wordt in de gedrukte bundel niet geladen.
+
 **Een sectie Studievragen achteraan een hoofdstuk wordt `TestJezelf.html` met de kop "Test jezelf".**
 In deze Word heet het woord Studievragen twee dingen: vooraan het kader naast Kernpunten (dat samen
 met de Kernpunten op `Overzicht.html` komt), achteraan de meerkeuzelijst die het hoofdstuk afsluit.

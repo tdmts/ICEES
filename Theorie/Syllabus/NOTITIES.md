@@ -27,7 +27,7 @@ maar is hier gekozen. Alle zes de vragen zijn meerkeuze, dus er is geen enkele
 | Vraag | Antwoord | Waarop het steunt |
 |---|---|---|
 | 1 Wanneer de eerste elektrische computers | c, tijdens en kort na de tweede wereldoorlog | 1.2, "De aanzet voor de eerste elektronische computer was de tweede wereldoorlog", en de COLOSSUS die in 1943 in bedrijf komt |
-| 2 Waarom computers sneller worden | a, omdat transistoren dichter bij elkaar kunnen | het tweede kernpunt, en 1.5: "hoe kleiner de afstand tussen twee transistoren, hoe sneller de schakeling kan werken" |
+| 2 Twee redenen om componenten dichter bij elkaar te zetten | b, sneller en zuiniger | het tweede kernpunt (snelheid) en het derde (de spanning zakt, dus zuiniger); 1.5 zegt "hoe kleiner de afstand tussen twee transistoren, hoe sneller de schakeling kan werken" |
 | 3 Wat de wet van Moore stelt | c, iedere 18 tot 24 maanden verdubbelt het aantal transistoren op dezelfde oppervlakte | NIET uit dit hoofdstuk, zie hieronder |
 | 4 De afstand tussen transistoren nu | c, 10 nm | NIET uit dit hoofdstuk, zie hieronder |
 | 5 Hoe prestaties vandaag verhoogd worden | b, meerdere kernen, zodat taken parallel lopen | het vierde kernpunt, en 1.7: "wordt volop ingezet op parallelisme" |
@@ -42,8 +42,7 @@ las, kon die twee vragen niet beantwoorden.
 
 Beslist op 7 september 2026: er komt tekst bij in plaats van dat de vragen weg
 vallen. **Dit zijn de twee enige alinea's in dit hoofdstuk die niet uit de Word
-komen**, en ze horen dus in de Word bijgeschreven te worden voor de volgende
-import ze weggooit.
+komen.** Ze gaan niet terug naar het docx, zie hieronder.
 
 - **1.5, na de zin over meer transistors op dezelfde oppervlakte:** "Die
   verdubbeling heeft een naam: de wet van Moore. Gordon Moore, een van de
@@ -62,8 +61,7 @@ import ze weggooit.
   een 5nm- of 3nm-procede noemt is een handelsnaam en geen gemeten afstand, en de
   werkelijke afstanden op zo'n chip liggen hoger. Vraag 4 laat kiezen tussen
   ordes van grootte (mm, um, nm, pm) en niet tussen getallen, dus ze blijft
-  kloppen zolang dat zo is. **Kijk deze alinea na**; het is de zin waar ik het
-  minst zeker over ben.
+  kloppen zolang dat zo is. Nagekeken en goedgekeurd op 7 september 2026.
 
 **De vierde studievraag werd door geen enkele vraag getoetst, en vraag 6 vult dat
 gat.** Het kader vooraan stelt er vier: de wet van Moore, twee redenen om
@@ -80,14 +78,33 @@ kernen) en met schaalverkleining uit 1.5 (transistoren van enkele atomen groot);
 allebei zijn het antwoorden die dit hoofdstuk elders wel geeft, op een andere
 vraag.
 
-**Vraag 2 toetst maar de helft van studievraag 2.** Die studievraag vraagt twee
-redenen om componenten dichter bij elkaar te plaatsen; het tweede kernpunt geeft
-de snelheid en het derde de lagere spanning en dus het lagere verbruik. Vraag 2
-laat kiezen tussen die twee ("voornamelijk omdat ... sneller" tegen "voornamelijk
-omdat ... minder energie") en zet ze zo tegenover elkaar in plaats van naast
-elkaar. Voor de meerkeuzevorm is dat werkbaar, en de vraagstelling is niet
-aangeraakt, maar het is de reden waarom deze vraag niet dekt wat het kader
-belooft.
+**Vraag 2 is herschreven, want ze toetste maar de helft van studievraag 2.** Die
+studievraag vraagt twee redenen om componenten dichter bij elkaar te plaatsen; het
+tweede kernpunt geeft de snelheid en het derde de lagere spanning en dus het lagere
+verbruik. De oorspronkelijke vraag ("De reden waarom computers steeds sneller
+worden is...") zette die twee juist tegenover elkaar, met "voornamelijk omdat
+sneller" tegen "voornamelijk omdat zuiniger", zodat een van de twee redenen als
+fout gold.
+
+Beslist op 7 september 2026. De vraag stelt nu de studievraag zelf ("Om welke twee
+redenen?") en de mogelijkheden zijn gepaard: het juiste antwoord noemt allebei de
+redenen, twee afleiders noemen er een van de twee samen met een verzonnen tweede,
+en de vierde noemt er geen enkele. De twee verzonnen redenen zijn een lagere
+kloksnelheid en quantumtransistoren, allebei dingen die dit hoofdstuk elders
+uitdrukkelijk als fout aanduidt. **Goedkoper is met opzet geen afleider**: 1.3 en
+1.4 noemen lagere prijzen wel degelijk als gevolg, dus die mogelijkheid zou
+verdedigbaar juist zijn. Het juiste antwoord verschoof daarmee van a naar b; de
+export telt de letter zelf, dus er was niets met de hand bij te stellen.
+
+**De alinea over tien nanometer blijft zoals ze is.** Nagekeken en beslist op
+7 september 2026: de orde van grootte klopt, de kwart nanometer tussen twee
+siliciumatomen klopt, en vraag 4 laat kiezen tussen mm, um, nm en pm en niet
+tussen getallen. Ze veroudert dus niet zolang de vraag zo staat.
+
+**De Word wordt niet bijgewerkt.** Beslist op 7 september 2026: de HTML is vanaf de
+import de bron, en dit bestand is het register van wat er van de Word afwijkt. Er
+gaat dus niets terug naar het docx, en wie hoofdstuk 1 ooit opnieuw importeert,
+leest hier wat hij daarmee weggooit.
 
 **Wat in de tekst opviel, en op 7 september 2026 rechtgetrokken is.** De tekst
 gaat er in principe letterlijk in, dus dit staat hier met wat er beslist is:
@@ -117,8 +134,8 @@ gaat er in principe letterlijk in, dus dit staat hier met wat er beslist is:
   Dat is opmaak en geen tekst, en is zo gebleven.
 
 **Deze correcties staan alleen hier, niet in de Word.** Een nieuwe import van
-hoofdstuk 1 draait ze allemaal terug, samen met de twee bijgeschreven alinea's en
-vraag 6.
+hoofdstuk 1 draait ze allemaal terug, samen met de twee bijgeschreven alinea's,
+vraag 6 en de herschreven vraag 2.
 
 **De vijf afbeeldingen zijn opengedaan en kloppen met hun uitsnede.** Het zijn
 achtereenvolgens de ENIAC in een zaal, een transistor in een TO-220 behuizing,
