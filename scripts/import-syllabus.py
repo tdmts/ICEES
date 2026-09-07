@@ -70,6 +70,7 @@ WAT HET WEL INTERPRETEERT, en waarom dat geen woorden raakt:
 import argparse
 import html
 import re
+import unicodedata
 import sys
 from io import BytesIO
 import zipfile
@@ -124,9 +125,23 @@ AFKORTINGEN = {"bios": "Bios", "uefi": "Uefi", "gpt": "Gpt", "mbr": "Mbr",
                "raid": "Raid", "nas": "Nas", "usb": "Usb", "plc": "Plc"}
 
 
+def ontdiakritiseer(tekst):
+    """Vervang elke letter met een teken erop door de kale letter: ue -> u, e -> e.
+
+    Een bestandsnaam in deze repo is ASCII, en de regel eronder gooide alles weg
+    wat dat niet is. Een trema brak zo het WOORD in twee: "vacuumbuizen" met
+    trema werd Generatie1VacuMbuizen, en "Industriele" met trema wordt
+    IndustriLe, wat hoofdstuk 4 raakt zonder dat iemand er iets aan gedaan
+    heeft. NFKD hangt het teken los van zijn letter, waarna de combinerende
+    tekens (categorie Mn) weg kunnen en de letter blijft staan.
+    """
+    ontbonden = unicodedata.normalize("NFKD", tekst)
+    return "".join(k for k in ontbonden if not unicodedata.combining(k))
+
+
 def pascal(tekst):
     """PascalCase Nederlands zelfstandig naamwoord, zoals elke naam in deze repo."""
-    t = tekst.lower().replace("/", " ")
+    t = ontdiakritiseer(tekst).lower().replace("/", " ")
     t = re.sub(r"[^a-z0-9]+", " ", t)
     delen = [d for d in t.split() if d]
     naam = "".join(AFKORTINGEN.get(d, d[:1].upper() + d[1:]) for d in delen)

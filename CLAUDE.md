@@ -705,6 +705,17 @@ dingen in hetzelfde hoofdstuk hetzelfde. Een sectie die halverwege "Oefening" he
 ze krijgt wel dezelfde vragenbehandeling (regel 14). De hernoeming staat per hoofdstuk in
 `Theorie/Syllabus/NOTITIES.md`.
 
+**Een hoofdstuk mag tekst bijkrijgen, en dat is een beslissing van de lector.**
+Hoofdstuk 1 stelde in Test jezelf twee vragen (de wet van Moore, de afstand tussen
+transistoren) waarop de tekst nergens antwoordt, terwijl het kader vooraan wel naar
+Moore vraagt. Er is toen tekst bijgeschreven in plaats van dat de vragen wegvielen,
+en er kwam een zesde vraag bij voor de studievraag die niets toetste. **Zulke
+alinea's staan alleen in de HTML en niet in de Word, dus een herimport gooit ze
+weg**; welke het zijn, staat per hoofdstuk in NOTITIES.md, zodat ze in de Word
+bijgeschreven kunnen worden. Dat geldt net zo voor een rechtgetrokken spelling: de
+importer vertaalt opmaak en nooit woorden, dus elke woordcorrectie is per definitie
+een handmatige die een herimport niet overleeft.
+
 ### Wat de eerste hoofdstukimport aan de importer veranderd heeft
 
 **Word plaatst een afbeelding op twee manieren, en `import-syllabus.py` kende er maar een.** Een
@@ -721,6 +732,15 @@ een `<p>`. De importer noteert het per geval in `IMPORT.md`.
 
 **Dat raakt DeN ook**, maar minder: daar zijn 9 van de 92 afbeeldingen zo verankerd, hier 21 van de
 132. Wie de scripts ooit samenvoegt, neemt deze kant op en niet de andere.
+
+**`pascal()` brak een woord in twee op elk diakritisch teken.** De regel eronder
+houdt alleen `[a-z0-9]` over, dus "vacuümbuizen" werd `VacuMbuizen` en
+"Industriële computer vs embedded system", de titel van hoofdstuk 4, wordt
+`IndustriLeComputerVsEmbeddedSystem`. Dat laatste is geen gevolg van een
+redactionele keuze: het staat zo in de Word en het hoofdstuk is nog niet ingevoerd.
+`ontdiakritiseer()` normaliseert nu naar NFKD en gooit de combinerende tekens weg,
+zodat de kale letter blijft staan. Dit raakt DeN even hard en is de tweede
+wijziging aan `import-syllabus.py` die geen string is.
 
 **Een zwevende afbeelding heeft dus geen bijschrift meer, en dus ook geen `alt`.** `figuur()` valt
 dan terug op "Afbeelding uit de syllabus", en dat is geen beschrijving. De vijf `alt`-teksten van

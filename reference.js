@@ -126,9 +126,9 @@ window.LAB_REFERENCE = {
                     },
                     {
                         id: 'generaties-generatie-5',
-                        name: 'Generatie 5: quantum computers',
+                        name: 'Generatie 5: quantumcomputers',
                         blurb: 'De qubit en de superpositie, uitgelegd met de kat van Schrodinger, en waarom dit voorlopig geen general purpose computer oplevert.',
-                        href: 'Generaties/Generatie5QuantumComputers.html'
+                        href: 'Generaties/Generatie5Quantumcomputers.html'
                     },
                     {
                         id: 'generaties-nu',
