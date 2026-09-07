@@ -62,6 +62,15 @@ names the *form* of the evaluation and sends the reader to `Evaluatie.html` for 
 site never prints two different numbers for the same thing. Resolve it before either page grows a
 number.
 
+**`Algemeen/Studiefiche.html` en `Algemeen/Studiemateriaal.html` worden door niets in deze repo
+gelinkt, en dat is geen vergetelheid.** Beslist op 7 september 2026. `Planning.html` en
+`Evaluatie.html` hangen aan elke hub omdat een labo er iets over te zeggen heeft: wanneer je werkt
+en hoe het meetelt. Die twee andere gaan over het vak in zijn geheel en niet over een labo, dus een
+regel eronder op elke hub is drie kopieen van dezelfde zin en een vierde plaats waar iets kan
+verouderen. Hoe de student ze bereikt ligt in Orion en niet hier; wat deze repo doet is ze
+publiceren. **Voeg er dus geen link naartoe toe vanaf een `overview.html`**, net zomin als bij de
+syllabushub.
+
 ## De indeling in Orion, en waarom niets zijwaarts linkt
 
 Identical to DeN, whose `CLAUDE.md` carries the full reasoning. Every rule below hangs off this
