@@ -1019,6 +1019,17 @@ omdat de twee hoofdstukken elkaar anders tegenspreken over wat er op een industr
 **Leg een hoofdstuk dus naast de hoofdstukken die er al staan voor je een naam wijzigt**, en wijzig
 ze dan alle.
 
+**En de vorm van een productnaam is die van zijn eigenaar.** Beslist op 7 september 2026, nadat
+hoofdstuk 4 en 7 dezelfde vijf namen verschillend bleken te schrijven (ETHERCAT tegen EtherCAT,
+CODESYS tegen CodeSys, en zo voort) omdat de vorm per hoofdstuk gekozen was. Een huisregel zou hier
+een smaakkeuze zijn; de schrijfwijze van de eigenaar is na te rekenen en ze werkt ook voor de
+volgende naam die erbij komt. Het is daarom **Raspberry Pi, CODESYS, EtherCAT, PROFINET, EtherNet/IP
+en Modbus TCP**, en dat die reeks er wisselend uitziet is het punt en geen slordigheid: CODESYS
+schrijft zichzelf in kapitalen en EtherCAT niet. Doorgevoerd in de vier plaatsen van hoofdstuk 4 en
+de ene van hoofdstuk 7, kaders inbegrepen, om dezelfde reden als hierboven. **EtherNet/IP kwam er
+ongevraagd bij**: die naam stond in dezelfde opsommingen en zou anders als enige in kapitalen
+achterblijven naast een rechtgezette buur.
+
 **De syllabus mag een labo bij naam noemen, en linkt er nooit naar.** 7.4 zegt "In het labo Linux
 Geavanceerd staan we daar uitgebreid bij stil", waar de Word "In een van de labo's" schreef. Een naam
 in een zin kost niets en helpt de lezer; een link zou de twee tracks aan elkaar hangen, en de PDF is

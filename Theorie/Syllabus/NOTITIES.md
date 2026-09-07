@@ -551,8 +551,8 @@ sluiten.
 |---|---|---|
 | 1 Waarin een IPC verschilt van een gewone desktop | b, hardware die lang ondersteund wordt, tot 10 jaar vervangstukken | 4.1, "vaak voor hardware gekozen waarvan de ondersteuning en beschikbaarheid nog lang in de toekomst gegarandeerd worden", en de garantie van 10 jaar in de zin erna |
 | 2 Waarom het processortype een bepalende keuze is | c, de instructieset x64 / ARM | het vijfde kernpunt; de lopende tekst dekte het niet, zie hieronder |
-| 3 Wat een IO eiland is | b, de IPC heeft de connectoren niet op zijn moederbord en bereikt het eiland over een industrieel netwerkprotocol | het derde en vierde kernpunt, en 4.3, "Via een ethernet interface communiceer je dan met verschillende I/O eilanden over EtherCAT, ProfiNET, Modbus TCP" |
-| 4 Welke naam GEEN industrieel netwerkprotocol is | d, AUTOCAT | het vierde kernpunt noemt PROFINET, MODBUS/TCP, ETHERNET/IP en ETHERCAT; AUTOCAT komt in de hele Word niet voor |
+| 3 Wat een IO eiland is | b, de IPC heeft de connectoren niet op zijn moederbord en bereikt het eiland over een industrieel netwerkprotocol | het derde en vierde kernpunt, en 4.3, "Via een ethernet interface communiceer je dan met verschillende IO eilanden over EtherCAT, PROFINET, Modbus TCP" |
+| 4 Welke naam GEEN industrieel netwerkprotocol is | d, AUTOCAT | het vierde kernpunt noemt PROFINET, Modbus TCP, EtherNet/IP en EtherCAT; AUTOCAT komt in de hele Word niet voor |
 | 5 De specs van een recente Raspberry Pi | open, geen vast antwoord | zie hieronder |
 
 **Vraag 3 leek twee juiste antwoorden te kunnen hebben en heeft er een.** De
@@ -623,7 +623,7 @@ herimport gooit ze weg.**
   moederbord van een industriele computer zitten die aansluitingen meestal niet.
   Ze zitten op een apart toestel dat bij de machine staat, een IO eiland, en de
   computer bereikt dat over het netwerk. Daarvoor dient een industrieel
-  netwerkprotocol zoals PROFINET, MODBUS/TCP, ETHERNET/IP of ETHERCAT: het brengt
+  netwerkprotocol zoals PROFINET, Modbus TCP, EtherNet/IP of EtherCAT: het brengt
   de toestand van elke ingang naar de computer, en het commando voor elke uitgang
   terug naar het eiland." Die alinea beantwoordt meteen studievraag 4 en 5
   vooraan, die anders alleen door het kader beantwoord werden.
@@ -722,17 +722,22 @@ terug.**
   **Schermaansluiting**. Die label is daarmee een letter langer, en hij past nog
   altijd op een regel in de kolom van 78mm; nagekeken in de render.
 
-**Vier namen wisselden binnen het hoofdstuk van schrijfwijze, en dragen nu de
-vorm van het kader Kernpunten.** Dat kader is gekozen als de maat omdat Test
-jezelf er al op steunt: vraag 4 schrijft PROFINET, ETHERCAT en MODBUS in
-kapitalen, en een sectie die ProfiNET schrijft laat de student twee dingen voor
-hetzelfde aanzien.
+**Vier namen wisselden binnen het hoofdstuk van schrijfwijze, en zijn in twee
+rondes rechtgetrokken.** De eerste ronde nam het kader Kernpunten als maat, omdat
+Test jezelf daar al op steunde, en zette de protocolnamen daarmee in kapitalen.
+**Die maat is later diezelfde dag vervallen**: toen hoofdstuk 7 dezelfde vijf namen
+anders bleek te schrijven, is beslist dat een productnaam de schrijfwijze van zijn
+eigenaar draagt. Het kader is dus meegegaan in plaats van de maat te zijn. De
+redenering staat bij hoofdstuk 7; hier staat wat het geworden is.
 
 - **CodeSYS in 4.1 en 4.4, CodeSys in 4.3** zijn alle drie **CODESYS**, zoals de
-  fabrikant het schrijft.
-- **De protocolnamen in 4.3** stonden als EtherCAT, ProfiNET en Modbus TCP en
-  staan nu als **ETHERCAT, PROFINET en MODBUS/TCP**, in dezelfde volgorde als
-  daar al stond.
+  fabrikant het schrijft. Deze naam is in allebei de rondes dezelfde gebleven.
+- **De protocolnamen** staan nu als **EtherCAT, PROFINET, Modbus TCP en
+  EtherNet/IP**, in vier plaatsen: het kernpunt over industriele
+  netwerkprotocollen, de bijgeschreven alinea in 4.1, 4.3 en mogelijkheid b en c
+  van vraag 4 van Test jezelf. De losse **MODBUS** in die vraag is **Modbus**.
+  ETHERNET/IP stond in geen van de twee lijstjes die vergeleken werden en is
+  meegegaan omdat hij anders als enige in kapitalen naast EtherCAT zou staan.
 - **"I/O eilanden" in 4.3** is **IO eilanden**, zonder schuine streep, zoals de
   kernpunten en de vragen het schrijven.
 - **"Windows 10 IOT" in 4.1 en 4.2** is **Windows 10 IoT**, zoals Microsoft het
@@ -808,11 +813,11 @@ spreken. Wat dit hoofdstuk vastlegt en wat dat labo dus moet aanhouden:
   computer over een industrieel netwerkprotocol bereikt, omdat een industriele
   computer of embedded system die connectoren meestal niet op zijn moederbord
   heeft. Zie de bijgeschreven alinea hierboven.
-- **De vier protocolnamen die dit hoofdstuk noemt** zijn PROFINET, MODBUS/TCP,
-  ETHERNET/IP en ETHERCAT. Vraag 4 van Test jezelf toetst er drie van.
+- **De vier protocolnamen die dit hoofdstuk noemt** zijn PROFINET, Modbus TCP,
+  EtherNet/IP en EtherCAT. Vraag 4 van Test jezelf toetst er drie van.
 
-**Dit hoofdstuk raakt aan hoofdstuk 9, Virtual machines en containers**, dat nog
-niet ingevoerd is: 4.1 en 4.3 hebben het over een SOFT PLC en over software die
+**Dit hoofdstuk raakt aan hoofdstuk 8, Virtual machines en containers**, dat sinds
+7 september 2026 ingevoerd is: 4.1 en 4.3 hebben het over een SOFT PLC en over software die
 op een IPC draait. Er staat geen verwijzing naar dat hoofdstuk, en die hoort er
 ook niet te staan zolang het er niet is.
 
@@ -1677,14 +1682,31 @@ cabinet pc, het labo bij naam), staat hier niet nog eens.
 
 De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
 
-**Vijf namen die hoofdstuk 4 al rechtgetrokken heeft, staan hier weer in hun oude
-vorm.** 7.2 schrijft **Raspberry PI**, **CodeSys**, **EtherCAT**, **ProfiNET** en
-**Modbus TCP**, terwijl hoofdstuk 4 op 7 september 2026 juist Raspberry Pi,
-CODESYS, ETHERCAT, PROFINET en MODBUS/TCP geworden is, met het kader Kernpunten
-van dat hoofdstuk als maat. Dit is dus geen tikfout maar een **tegenspraak tussen
-twee hoofdstukken die dezelfde ronde gemaakt heeft**, en ze is bewust blijven
-staan omdat de vorm daar per hoofdstuk gekozen is en niet voor de hele syllabus.
-Beslis dit voor hoofdstuk 8 erbij komt, want dan gaat het over drie hoofdstukken.
+**Vijf namen die hoofdstuk 4 al rechtgetrokken had, stonden hier in hun oude vorm,
+en dat is op 7 september 2026 beslist.** 7.2 schreef Raspberry PI, CodeSys,
+EtherCAT, ProfiNET en Modbus TCP, hoofdstuk 4 schreef Raspberry Pi, CODESYS,
+ETHERCAT, PROFINET en MODBUS/TCP. Geen tikfout dus, maar een tegenspraak tussen
+twee hoofdstukken die dezelfde ronde gemaakt hadden, omdat de vorm per hoofdstuk
+gekozen was in plaats van voor de syllabus.
+
+**De schrijfwijze van de eigenaar wint**, en niet de vorm van hoofdstuk 4 of die
+van hoofdstuk 7. Een huisregel zou hier een smaakkeuze zijn; deze is na te rekenen
+en ze werkt ook voor de volgende naam. Het wordt dus **Raspberry Pi, CODESYS,
+EtherCAT, PROFINET en Modbus TCP**. Dat die reeks er wisselend uitziet is het punt:
+CODESYS schrijft zichzelf in kapitalen en EtherCAT niet. In dit hoofdstuk raakt dat
+een enkele zin, 7.2, met drie wijzigingen erin (Raspberry PI, CodeSys, ProfiNET, en
+de PI verderop in diezelfde zin); EtherCAT en Modbus TCP stonden hier al goed.
+
+**Hoofdstuk 4 is meegegaan, kader inbegrepen**, met vier plaatsen: het kernpunt over
+industriele netwerkprotocollen, 4.1, 4.3 en een mogelijkheid van Test jezelf. Daar
+werden ETHERCAT en MODBUS/TCP dus EtherCAT en Modbus TCP, en de losse MODBUS in Test
+jezelf werd Modbus; PROFINET en CODESYS stonden er al goed. **Er kwam een zesde naam
+bij die in geen van beide lijstjes stond**: ETHERNET/IP staat in diezelfde
+opsommingen en zou als enige in kapitalen achterblijven naast een rechtgezette buur,
+dus die is EtherNet/IP geworden, zoals ODVA hem schrijft.
+
+Het blijven woordcorrecties, dus **een herimport draait ze in allebei de
+hoofdstukken terug.**
 
 - **"besturingssyteem"** in kernpunt 1, met een s te weinig. Het staat in het
   kader dat het meest gelezen wordt.
@@ -1982,11 +2004,11 @@ Nagekeken op tegenspraak, en dit kwam eruit.
 - **De syllabus noemt Labo Virtualiseren nergens en omgekeerd ook niet.** Dat blijft
   zo: 7.4 mag Linux Geavanceerd bij naam noemen omdat daar een belofte stond die
   nergens heen wees, en hier staat geen belofte.
-- **De vijf productnamen die hoofdstuk 4 en 7 uit elkaar laten lopen** (Raspberry
-  Pi, CODESYS, ETHERCAT, PROFINET, MODBUS/TCP tegen Raspberry PI, CodeSys,
-  EtherCAT, ProfiNET, Modbus TCP) komen in dit hoofdstuk **geen enkele keer** voor.
-  Nagekeken met grep. Die beslissing gaat dus nog altijd over twee hoofdstukken en
-  niet over drie, en ze blijft openstaan.
+- **De vijf productnamen die hoofdstuk 4 en 7 uit elkaar lieten lopen komen in dit
+  hoofdstuk geen enkele keer voor**, nagekeken met grep. Dat hield de beslissing bij
+  twee hoofdstukken, en ze is op 7 september 2026 genomen: de schrijfwijze van de
+  eigenaar wint. De uitwerking staat bij hoofdstuk 7. Dit hoofdstuk is er niet door
+  geraakt.
 
 ### Wat er in de tekst opviel, en op 7 september 2026 rechtgetrokken is
 
@@ -2005,29 +2027,46 @@ Wat hierboven al per beslissing beschreven staat (host en guest, de emulatie, de
   programma dat een virtual machine kan draaien;". Dat is een imperatief, dus ze
   draagt nu een punt. Studievraag 4 ernaast, met dezelfde bouw, droeg er al een.
   Dat is precies het geval van studievraag 8 van hoofdstuk 7.
+- **"overal" is "telkens" geworden** in 8.4, "omdat het besturingssysteem overal mee
+  gevirtualiseerd wordt". Kernpunt 4 en kernpunt 5 schrijven allebei telkens, dus het
+  hoofdstuk sprak zijn eigen kader tegen op een woord.
+- **"diskettestation, floppy" is "diskettestation" geworden** in 8.3. Dat is hetzelfde
+  toestel twee keer, en het staat in de alinea die voor de emulatie toch al rechtgezet
+  was. De term zelf blijft staan hoewel hij verouderd is: geen enkele virtuele machine
+  heeft vandaag nog een diskettestation, maar dat is wat de Word opsomt en het is geen
+  onwaarheid.
+- **Het onderwerp heet in de lopende tekst overal "virtuele machine".** Er stonden vijf
+  vormen door elkaar: virtual machine, Virtual Machine, Virtuele Machines, VM en
+  virtuele machine. Die laatste was al de meerderheid en het is de Nederlandse vorm.
+  Negen plaatsen, verspreid over alle vijf de pagina's, kader en Test jezelf inbegrepen;
+  in het kader is dat kernpunt 4, dat als enige "VM's" schreef.
+
+  **Twee soorten plaatsen zijn met opzet niet meegegaan.** De koppen houden hun vorm uit
+  de Word, want dat zijn de gedrukte titels die ook in de inhoudstafel en in de
+  `name` van `reference.js` staan: het hoofdstuk heet Virtual machines en containers en
+  8.3 heet Virtual machines. En de Engelse eenregelaar in 8.3 ("What happens in the
+  virtual machine, stays in the virtual machine") blijft letterlijk, want vertalen is
+  geen spellingcorrectie.
+
+  **De vraagzin van vraag 1 van Test jezelf is meegegaan**, en dat moest samen met 8.3:
+  de vraag citeert de eerste zin van die sectie woord voor woord, dus de twee zouden
+  anders uit elkaar lopen.
+- **"eventueel" is uit de licentiezin van 8.4**, maar niet zonder meer geschrapt. "Voor
+  iedere VM heb je eventueel een licentie van Windows nodig" wordt **"Voor iedere
+  virtuele machine met Windows heb je een aparte licentie nodig."** Alleen het woord
+  wegnemen zou de zin onwaar maken, want een guest met Linux heeft geen Windowslicentie
+  nodig, en dat is precies wat dat vage eventueel afdekte. De voorwaarde staat er nu
+  met zoveel woorden in plaats van als een slag om de arm, en zo zegt de zin hetzelfde
+  als `Labo/Virtualiseren/Theorie/WatIsVirtualisatie.html`, dat het al scherper had.
 
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
 De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
 
-- **"diskettestation, floppy"** in 8.3 noemt hetzelfde toestel twee keer. Het staat
-  zo in de Word en het staat na de correctie van die alinea nog altijd zo, want de
-  opsomming is niet ingekort. De term is bovendien verouderd: er is geen enkele
-  virtuele machine meer met een diskettestation.
 - **"What happens in the virtual machine, stays in the virtual machine."** in 8.3
   is een Engelse eenregelaar midden in een Nederlandse tekst, zonder bron en zonder
   dat er staat dat het een gezegde is. De zin ervoor legt hetzelfde in het
   Nederlands uit, dus wie hem overslaat mist niets.
-- **"Voor iedere VM heb je eventueel een licentie van Windows nodig"** in 8.4: het
-  woord eventueel maakt van een kost een mogelijkheid, terwijl kernpunt 4 de
-  licentiekost gewoon als een nadeel opsomt.
-- **"Het performantieverlies komt onder andere omdat het besturingssysteem overal
-  mee gevirtualiseerd wordt"** in 8.4, waar telkens hoort te staan; kernpunt 4 en
-  kernpunt 5 gebruiken allebei telkens.
-- **De naam van het onderwerp wisselt binnen het hoofdstuk**: virtual machine,
-  Virtual Machine, virtuele machine, Virtuele Machines en VM staan er alle vijf. De
-  hoofdstuktitel is Virtual machines en containers, en dat is de vorm die de kop
-  draagt.
 - **"Een server krijgt meestal slechts 1 taak"** in 8.2 en **"1 of meerdere guest
   besturingssystemen"** in 8.3 schrijven een cijfer waar een woord gebruikelijk is;
   dezelfde zinnen schrijven twee en vier wel voluit.
