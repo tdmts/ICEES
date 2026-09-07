@@ -54,7 +54,10 @@ there is nothing above an Orion entry that this site may send you to.
 ## Relation to tdmts/DeN
 
 This repo was started from DeN, and everything it shares with it was **copied, not shared**: the
-four engines and the eight scripts are byte-for-byte copies with the DeN-specific strings rewritten.
+four engines and the eight scripts started as byte-for-byte copies with the DeN-specific strings
+rewritten. **Two scripts have since diverged for a reason that is not a string**, and both are
+recorded below: `import-brightspace.py` (the `rCode` casing, under "Where the content comes from")
+and `import-syllabus.py` (zwevende afbeeldingen, under "Wat de eerste hoofdstukimport ...").
 Read DeN's `CLAUDE.md` for the reasoning behind any shared part; read this section before you copy
 anything across, in either direction.
 
@@ -183,10 +186,15 @@ has already happened here: the Word is dated 5 June 2026 and the PDF students re
 The Word is
 `~/OneDrive - Hogeschool Gent/EDU/2025-2026/Industriële computers en embedded systems/Theorie/Syllabus/Industriële computers en embedded systems_.docx`,
 which is the default in `import-syllabus.py`. **There are two docx in that folder**: the one without
-the trailing underscore is dated April 2024 and is the previous version. The `AFKORTINGEN` table in
-`import-syllabus.py` is still DeN's networking vocabulary and needs this course's own (BIOS, UEFI,
-GPT, MBR, VM, SSD, MQTT) before the first chapter is imported, or those words come out of `pascal()`
-mis-capitalised.
+the trailing underscore is dated April 2024 and is the previous version.
+
+**The `AFKORTINGEN` table in `import-syllabus.py` now carries this course's vocabulary**, replaced on
+7 September 2026 before the first chapter went in. Every value in it is the same PascalCase that
+`pascal()` would produce anyway, and that is the point: the table *pins* the spelling rather than
+changing it. This repo writes an abbreviation in a filename as an ordinary word (`BiosUefi.html`,
+`MbrPartities.html`, `GptPartities.html`), not in capitals, and without the table that convention is
+written down nowhere. Put `"bios": "BIOS"` in it and the syllabus page becomes `BIOS...` while the
+labo page stays `Bios...`, a difference you only see when you lay the two side by side.
 
 **A hoorcollege is a deck that becomes a handout.** One `.html` per session under `Hoorcollege/`,
 one `<section class="slide">` per slide; `import-slides.py` converts a pptx once and after that the
@@ -671,3 +679,51 @@ image shows `/dev/sda1 ntfs Windows OS` next to `/dev/sda2 fat32 Data`, and the 
 `gpt-partities-aanmaken` has `/dev/sda` in its title bar while the text says to work on
 `/dev/sdb`. Open the PNG before writing a figcaption; three of the eight captions here would have
 been wrong otherwise.
+
+## De syllabus, hoofdstuk 1 ingevoerd 7 september 2026
+
+De theorietrack bestond hier nog niet: `Theorie/Syllabus/` was leeg en het manifest kende geen
+module `syllabus`. Wat er bij dit eerste hoofdstuk aan infrastructuur bij gekomen is, hoort erbij en
+komt er geen tweede keer:
+
+- **`Theorie/Syllabus/syllabus.css` en `img/syllabus-cover-logo.png` zijn uit DeN gekopieerd.** Het
+  stijlblad is de huisstijl van het DOCUMENT en staat naast OrionCSS, dat de huisstijl van de site
+  is; de bundel die naar de PDF gaat laadt alleen het eerste. **De maten erin zijn niet hermeten.**
+  Ze komen uit DeN, waar de bestaande syllabus bladzijde per bladzijde opgemeten is; het HOGENT-
+  sjabloon is hetzelfde, maar `ICEES Syllabus 20250912.pdf` is er nooit naast gelegd. Wijkt de
+  gedrukte PDF af van wat de student gewend is, kijk daar dan eerst.
+- **`Theorie/Syllabus/overview.html` en `Theorie/Syllabus/Theorie/reference.html`** zijn de twee
+  Orion-ingangen van de theorietrack, geschreven voor dit vak en niet uit DeN overgenomen.
+- **De module `syllabus` staat eerst in `reference.js`**, zoals in DeN. Een categorie is een
+  hoofdstuk, een topic een sectie, en het hoofdstuknummer volgt uit de plaats in de lijst.
+
+**Een sectie Studievragen achteraan een hoofdstuk wordt `TestJezelf.html` met de kop "Test jezelf".**
+In deze Word heet het woord Studievragen twee dingen: vooraan het kader naast Kernpunten (dat samen
+met de Kernpunten op `Overzicht.html` komt), achteraan de meerkeuzelijst die het hoofdstuk afsluit.
+Elk labo van dit vak noemt zijn zelftest Test jezelf, en zonder deze regel heten twee verschillende
+dingen in hetzelfde hoofdstuk hetzelfde. Een sectie die halverwege "Oefening" heet, houdt haar naam;
+ze krijgt wel dezelfde vragenbehandeling (regel 14). De hernoeming staat per hoofdstuk in
+`Theorie/Syllabus/NOTITIES.md`.
+
+### Wat de eerste hoofdstukimport aan de importer veranderd heeft
+
+**Word plaatst een afbeelding op twee manieren, en `import-syllabus.py` kende er maar een.** Een
+INLINE afbeelding staat in de tekstregel zelf, en dan is de alinea eromheen haar bijschrift: zo zijn
+de meeste figuren in deze Word gemaakt, en daar rekende de importer op. Een ZWEVENDE afbeelding
+(`wp:anchor` met `wrapSquare`) is aan een alinea verankerd en de tekst loopt eromheen; die alinea is
+gewone lopende tekst die toevallig naast het plaatje staat.
+
+Zonder dat onderscheid wordt zo'n alinea een klein gecentreerd onderschrift, en de tekst die de
+student hoort te lezen staat in de opmaak van een bijschrift. In hoofdstuk 1 gebeurde dat vier keer
+op vijf afbeeldingen, waaronder de hele alinea over de ENIAC. `zwevend_van()` en `vast_bijschrift()`
+vangen dat nu op: een zwevende afbeelding krijgt geen bijschrift uit de Word en haar alinea blijft
+een `<p>`. De importer noteert het per geval in `IMPORT.md`.
+
+**Dat raakt DeN ook**, maar minder: daar zijn 9 van de 92 afbeeldingen zo verankerd, hier 21 van de
+132. Wie de scripts ooit samenvoegt, neemt deze kant op en niet de andere.
+
+**Een zwevende afbeelding heeft dus geen bijschrift meer, en dus ook geen `alt`.** `figuur()` valt
+dan terug op "Afbeelding uit de syllabus", en dat is geen beschrijving. De vijf `alt`-teksten van
+hoofdstuk 1 zijn met de hand geschreven na het openen van elk bestand, zoals de figuren van Labo
+Partitioneren. **Een nieuwe import van hetzelfde hoofdstuk gooit ze weg**; dat is dezelfde afspraak
+als voor elke andere handmatige correctie, want na de import is de HTML de bron.

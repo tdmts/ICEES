@@ -104,10 +104,24 @@ def noteer(waar, tekst):
 
 # ------------------------------------------------------------------ namen
 
-AFKORTINGEN = {"tcp/ip": "TcpIp", "osi": "Osi", "ip": "Ip", "lan": "Lan",
-               "wan": "Wan", "mac": "Mac", "vlan": "Vlan", "qos": "Qos",
-               "arp": "Arp", "dhcp": "Dhcp", "dns": "Dns", "nat": "Nat",
-               "http": "Http", "smtp": "Smtp", "nic": "Nic"}
+# De afkortingen die in de koppen van deze Word staan, met de schrijfwijze die
+# ze in een bestandsnaam krijgen. Elke waarde is dezelfde PascalCase die de
+# regel eronder ook zelf zou maken, en dat is de bedoeling: de tabel LEGT DIE
+# SCHRIJFWIJZE VAST in plaats van ze te veranderen. De repo schrijft een
+# afkorting in een bestandsnaam als een gewoon woord (BiosUefi.html,
+# MbrPartities.html, GptPartities.html), niet in kapitalen, en zonder deze
+# tabel is dat nergens opgeschreven. Zet je hier "bios": "BIOS", dan heet de
+# syllabuspagina BIOS... en het labo Bios..., en dat verschil valt pas op als
+# je de twee naast elkaar legt.
+AFKORTINGEN = {"bios": "Bios", "uefi": "Uefi", "gpt": "Gpt", "mbr": "Mbr",
+               "vm": "Vm", "ssd": "Ssd", "hdd": "Hdd", "mqtt": "Mqtt",
+               "ic": "Ic", "ics": "Ics", "vlsi": "Vlsi", "cpu": "Cpu",
+               "gpu": "Gpu", "apu": "Apu", "psu": "Psu", "pch": "Pch",
+               "ram": "Ram", "dram": "Dram", "sdram": "Sdram", "sdr": "Sdr",
+               "ddr": "Ddr", "ecc": "Ecc", "arm": "Arm", "fat": "Fat",
+               "ntfs": "Ntfs", "ext": "Ext", "pata": "Pata", "sata": "Sata",
+               "ahci": "Ahci", "nvme": "Nvme", "pci": "Pci", "pcie": "Pcie",
+               "raid": "Raid", "nas": "Nas", "usb": "Usb", "plc": "Plc"}
 
 
 def pascal(tekst):
@@ -299,6 +313,26 @@ def breedte_van(blip):
     return int(extent.get("cx")) / 36000
 
 
+def zwevend_van(blip):
+    """Zweeft deze afbeelding naast de tekst (wp:anchor) of staat ze erin (wp:inline)?
+
+    Word kent twee manieren om een afbeelding te plaatsen. Een INLINE afbeelding
+    staat in de tekstregel zelf: de alinea eromheen is dan haar bijschrift, en zo
+    zijn de meeste figuren in deze Word gemaakt. Een ZWEVENDE afbeelding is aan
+    een alinea verankerd en de tekst loopt eromheen (wrapSquare); die alinea is
+    gewone lopende tekst die toevallig naast het plaatje staat.
+
+    Het verschil is niet cosmetisch. Wie het overslaat, verandert vier alinea's
+    van hoofdstuk 1 van lopende tekst in een klein gecentreerd bijschrift, en de
+    tekst die de student hoort te lezen staat dan in de opmaak van een onderschrift.
+    In deze Word zijn 21 van de 132 afbeeldingen zo verankerd, in DeN 9 van de 92.
+    """
+    tekening = tekening_van(blip)
+    if tekening is None:
+        return False
+    return tekening.find(f"{{{WP}}}anchor") is not None
+
+
 def uitsnede_van(blip):
     """Wat de Word van deze afbeelding wegsnijdt, als (l, t, r, b), of None.
 
@@ -348,7 +382,7 @@ def snijden(blob, kanten):
 
 
 def afbeeldingen_van(element, doc, stam, teller):
-    """Schrijf elke afbeelding naar img/ en geef (naam, breedte) terug."""
+    """Schrijf elke afbeelding naar img/ en geef (naam, breedte, zwevend) terug."""
     namen = []
     for blip in element.findall(".//" + qn("a:blip")):
         rid = blip.get(f"{{{R}}}embed")
@@ -361,7 +395,7 @@ def afbeeldingen_van(element, doc, stam, teller):
         kanten = uitsnede_van(blip)
         (IMG / naam).write_bytes(
             snijden(deel.blob, kanten) if kanten else deel.blob)
-        namen.append((naam, breedte_van(blip)))
+        namen.append((naam, breedte_van(blip), zwevend_van(blip)))
     return namen
 
 
@@ -664,6 +698,17 @@ def lijst_html(tag, items, start=1):
     return "\n".join(regels)
 
 
+def vast_bijschrift(plaatjes):
+    """Neemt een van deze afbeeldingen de tekst van de alinea als bijschrift over?
+
+    Alleen een INLINE afbeelding doet dat (zie zwevend_van). Staan er enkel
+    zwevende plaatjes in de alinea, dan is haar tekst gewone lopende tekst en
+    moet ze als <p> blijven staan; zonder deze vraag valt ze weg omdat er
+    "wel een afbeelding" in de alinea zat.
+    """
+    return any(not zwevend for _, _, zwevend in plaatjes)
+
+
 def renderen(blokkenlijst, ctx, kop_offset=2, ontvet=False):
     """Blokken naar HTML-fragmenten.
 
@@ -743,7 +788,7 @@ def renderen(blokkenlijst, ctx, kop_offset=2, ontvet=False):
             # De drie topologievragen van hoofdstuk 2 dragen elk hun tekening zo,
             # en zonder haar is de vraag niet te beantwoorden. Ze krijgt geen
             # bijschrift: de tekst van de alinea is de vraag zelf.
-            for naam, breedte in plaatjes:
+            for naam, breedte, _ in plaatjes:
                 noteer(ctx["waar"], f"afbeelding {naam} stond in een lijstitem "
                                     "en is erin gezet, zonder bijschrift")
                 onder_laatste(figuur(naam, "", ctx["diepte"], breedte))
@@ -751,9 +796,10 @@ def renderen(blokkenlijst, ctx, kop_offset=2, ontvet=False):
 
         if (info is None and lijstalinea(blok) and stapel and stapel[-1][1]
                 and (inhoud or plaatjes)):
-            for naam, breedte in plaatjes:
-                onder_laatste(figuur(naam, inhoud, ctx["diepte"], breedte))
-            if inhoud and not plaatjes:
+            for naam, breedte, zwevend in plaatjes:
+                onder_laatste(figuur(naam, "" if zwevend else inhoud,
+                                     ctx["diepte"], breedte))
+            if inhoud and not vast_bijschrift(plaatjes):
                 onder_laatste(f"<p>{inhoud}</p>")
             continue
 
@@ -768,7 +814,7 @@ def renderen(blokkenlijst, ctx, kop_offset=2, ontvet=False):
         # want na een gewone opsomming is een figuur wel degelijk een figuur.
         if (not inhoud and plaatjes and stapel and stapel[0][0] == "ol"
                 and stapel[-1][1]):
-            for naam, breedte in plaatjes:
+            for naam, breedte, _ in plaatjes:
                 noteer(ctx["waar"], f"afbeelding {naam} stond tussen een vraag "
                                     "en haar keuzes en is in de vraag gezet")
                 onder_laatste(figuur(naam, "", ctx["diepte"], breedte))
@@ -780,9 +826,14 @@ def renderen(blokkenlijst, ctx, kop_offset=2, ontvet=False):
         sluit_tot(0)
         if "—" in inhoud or "–" in inhoud:
             noteer(ctx["waar"], f"em-dash of en-dash in: {strip_tags(inhoud)[:70]}")
-        for naam, breedte in plaatjes:
-            uit.append(figuur(naam, inhoud, ctx["diepte"], breedte))
-        if inhoud and not plaatjes:
+        for naam, breedte, zwevend in plaatjes:
+            if zwevend:
+                noteer(ctx["waar"], f"afbeelding {naam} zweeft naast haar alinea "
+                                    "(wrapSquare); die alinea blijft lopende tekst "
+                                    "en de figuur krijgt geen bijschrift uit de Word")
+            uit.append(figuur(naam, "" if zwevend else inhoud,
+                              ctx["diepte"], breedte))
+        if inhoud and not vast_bijschrift(plaatjes):
             uit.append(f"<p>{inhoud}</p>")
 
     sluit_tot(0)

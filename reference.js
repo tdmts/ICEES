@@ -66,6 +66,86 @@
  * de theoriereeks.
  */
 window.LAB_REFERENCE = {
+    /*
+     * De syllabus is de theorietrack, en ze werkt anders dan een labo: wat de
+     * student krijgt is een PDF, en die wordt uit deze pagina's gegenereerd
+     * door scripts/export-syllabus.py. Het manifest bepaalt daarbij de volgorde
+     * van het gedrukte document, precies zoals het hier de volgorde van de hub
+     * bepaalt, zodat de twee niet uit elkaar kunnen lopen.
+     *
+     * Een categorie is een hoofdstuk en krijgt in de PDF zijn nummer uit haar
+     * plaats in deze lijst, niet uit een veld: een nummer dat hier staat, is een
+     * tweede waarheid naast de volgorde. Een Voorwoord draagt geen nummer en
+     * zegt dat met genummerd: false.
+     *
+     * De Word heeft zestien genummerde hoofdstukken; ze worden een voor een
+     * ingevoerd, dus wat hieronder staat is wat er al is en niet wat er komt.
+     */
+    syllabus: {
+        name: 'Syllabus',
+        categories: [
+            {
+                name: 'Generaties',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'generaties-overzicht',
+                        name: 'Kernpunten en studievragen',
+                        blurb: 'Waarom componenten dichter bij elkaar kruipen, waar die schaalverkleining op vastloopt, en wat er dan overblijft om sneller te worden.',
+                        href: 'Generaties/Overzicht.html'
+                    },
+                    {
+                        id: 'generaties-generatie-0',
+                        name: 'Generatie 0: mechanische computers',
+                        blurb: 'Rekenmachines van voor de elektronica, van het telraam tot de analytical engine, zonder een weerstand of condensator erin.',
+                        href: 'Generaties/Generatie0MechanischeComputers.html'
+                    },
+                    {
+                        id: 'generaties-generatie-1',
+                        name: 'Generatie 1: vacuumbuizen',
+                        blurb: 'De COLOSSUS en de ENIAC: 18000 buizen, twee klaslokalen groot, geprogrammeerd met schakelaars tot Von Neumann er instructies in het geheugen van maakte.',
+                        href: 'Generaties/Generatie1Vacuumbuizen.html'
+                    },
+                    {
+                        id: 'generaties-generatie-2',
+                        name: 'Generatie 2: transistoren',
+                        blurb: 'De transistor van Bell Labs als elektronische schakelaar, en waarom de vacuumbuis er binnen tien jaar door verdween.',
+                        href: 'Generaties/Generatie2Transistoren.html'
+                    },
+                    {
+                        id: 'generaties-generatie-3',
+                        name: 'Generatie 3: integrated circuits (ICs)',
+                        blurb: 'Tientallen transistoren op een chip, en de eerste computers die meer dan een taak tegelijk aankonden.',
+                        href: 'Generaties/Generatie3IntegratedCircuitsIcs.html'
+                    },
+                    {
+                        id: 'generaties-generatie-4',
+                        name: 'Generatie 4: very large scale integration (VLSI)',
+                        blurb: 'Miljoenen transistoren op een chip vanaf 1980, en de twee redenen waarom kleiner ook sneller en complexer betekent.',
+                        href: 'Generaties/Generatie4VeryLargeScaleIntegrationVlsi.html'
+                    },
+                    {
+                        id: 'generaties-generatie-5',
+                        name: 'Generatie 5: quantum computers',
+                        blurb: 'De qubit en de superpositie, uitgelegd met de kat van Schrodinger, en waarom dit voorlopig geen general purpose computer oplevert.',
+                        href: 'Generaties/Generatie5QuantumComputers.html'
+                    },
+                    {
+                        id: 'generaties-nu',
+                        name: 'Nu',
+                        blurb: 'Meerdere kernen in plaats van kleinere transistoren, en waarom die kernen niets opleveren als het programma geen threads gebruikt.',
+                        href: 'Generaties/Nu.html'
+                    },
+                    {
+                        id: 'generaties-test-jezelf',
+                        name: 'Test jezelf',
+                        blurb: 'Vijf meerkeuzevragen over de generaties, de wet van Moore en waar de snelheidswinst vandaag vandaan komt.',
+                        href: 'Generaties/TestJezelf.html'
+                    }
+                ]
+            }
+        ]
+    },
     assemblage: {
         name: 'Labo Assemblage + BIOS/UEFI',
         categories: [
