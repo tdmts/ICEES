@@ -602,8 +602,10 @@ theory track but may not send the student there.
 `022-werkgeheugen-aanpassen-2.html` writes "de host computer (= VM)" and "de guest computer (=
 fysieke machine)", and a kernpunt in the syllabus Word says "op één fysieke guest machine kan je
 meerdere virtuele host machines draaien". The host is the physical machine and the guest runs on it;
-both pages here say so. Fix the kernpunt when that chapter is imported, because `import-syllabus.py`
-translates formatting and never words.
+both pages here say so. **That kernpunt is kernpunt 2 of chapter 8, and it was fixed on 7 September
+2026 when that chapter went in**, together with kernpunt 4, which swapped the two the same way. No
+other chapter carries the inversion; chapter 5 was checked and does not. Both corrections are manual,
+so a re-import undoes them and NOTITIES.md records them.
 
 **The opdracht is one dropbox and one docx**, so `Labo/Virtualiseren/Opdracht.html` sits directly
 under the module. Unlike the three Assemblage verslagen, that docx asks for **no photo and no

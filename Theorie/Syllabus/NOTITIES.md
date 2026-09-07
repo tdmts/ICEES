@@ -1754,10 +1754,12 @@ van haar juistheid. Hier ligt het omgekeerd, en in allebei de gevallen wint wat
 waar is. Het blijft een handmatige woordcorrectie, dus **een herimport draait ze
 terug.**
 
-**Dezelfde omkering stond in de Word van hoofdstuk 5**, in een kernpunt dat schreef
-dat je op één fysieke guest meerdere virtuele hosts draait. Dat is dezelfde fout in
-dezelfde bewoording, en ze was bij Labo Virtualiseren al opgemerkt.
-`Labo/Virtualiseren/` zegt het overal juist en is niet aangeraakt.
+**Deze fout stond al in CLAUDE.md genoteerd**, sinds Labo Virtualiseren geschreven
+werd: die sectie meldde een kernpunt in de syllabus-Word dat host en guest omdraait,
+met de opdracht het recht te zetten zodra het hoofdstuk ingevoerd werd. Dat is dit
+kernpunt, en die notitie is nu bijgewerkt. **Geen ander hoofdstuk draagt de omkering**;
+hoofdstuk 5 is nagekeken en heeft ze niet. `Labo/Virtualiseren/` zegt het overal juist
+en is niet aangeraakt.
 
 ### De emulatie sprak het labo tegen, en hoofdstuk 5 ook
 
