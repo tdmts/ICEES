@@ -790,6 +790,20 @@ de hand een `<ol class="vragen">`, en de pagina krijgt met de hand `<script src=
 onder `back-link.js`. Zonder het eerste ziet de export geen vragen en drukt ze zwijgend geen
 Oplossingen; het tweede vangt regel 14 wel op.
 
+**Een studievraag die een imperatief is, krijgt een punt en geen vraagteken.** Deze Word schrijft
+"Geef twee redenen waarom ...?" en "Geef enkele voordelen van UEFI?", en dat staat in het kader
+Kernpunten naast vragen die wel echte vragen zijn. Beslist op 7 september 2026, en meteen
+doorgevoerd in de drie hoofdstukken waar zo'n zin stond (1, 3 en 4). Een echte vraag houdt haar
+vraagteken, dus "Waarvoor staat de afkorting UEFI?" is niet aangeraakt. Het is een woordcorrectie,
+dus ze staat alleen in de HTML en een herimport draait ze terug; welke het zijn, staat per hoofdstuk
+in NOTITIES.md.
+
+**Reken de bladspiegel na na een redactionele ronde, en niet alleen na de import.** In hoofdstuk 4
+paste de foto van de Raspberry Pi op 0,6mm onder de tekst erboven, en een enkel woord dat er later
+bij kwam ("Windows Embedded Compact 7") maakte die alinea een regel langer en duwde de figuur naar
+een eigen bladzijde. Een correctie aan een woord is dus een correctie aan de bladspiegel zodra er
+een figuur onder staat.
+
 **Een sectie die net zo heet als haar hoofdstuk, krijgt een andere bestandsnaam.** In hoofdstuk 3
 heten de H1 en een van de H2's allebei BIOS / UEFI, dus de importer schreef
 `Theorie/Syllabus/Theorie/BiosUefi/BiosUefi.html`. Dat is niet fout, maar het leest raar en het botst

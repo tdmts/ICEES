@@ -129,6 +129,9 @@ gaat er in principe letterlijk in, dus dit staat hier met wat er beslist is:
 - 1.2 zei over de ENIAC "nam de ruimte van twee klaslokalen in beslag en
   **verbruikt** zo'n 140 kW": tegenwoordige tijd tussen twee verleden tijden. Dat
   is nu **verbruikte**.
+- **Studievraag 2 vooraan was een imperatief met een vraagteken**, "Geef twee
+  redenen waarom men tracht componenten dichter tegen elkaar te plaatsen?" Ze
+  draagt nu een punt; de regel staat bij hoofdstuk 4.
 - De vier mogelijkheden van vraag 4 staan tussen aanhalingstekens rond
   'ongeveer', wat in de brontekst een gewone apostrof is en hier `&#x27;` werd.
   Dat is opmaak en geen tekst, en is zo gebleven.
@@ -502,8 +505,9 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML:
 - **De syllabus schrijft "de Master Boot Record", het labo "het Master Boot
   Record".** Binnen dit hoofdstuk is het consequent de; het labo is niet
   aangeraakt.
-- **Studievraag 6 vooraan is een imperatief met een vraagteken**: "Geef enkele
-  voordelen van UEFI?"
+- **Studievraag 6 vooraan was een imperatief met een vraagteken**, "Geef enkele
+  voordelen van UEFI?" Ze draagt sinds 7 september 2026 een punt; de regel en de
+  reden staan bij hoofdstuk 4, dat de derde was die zo'n zin tegenkwam.
 - De hoge komma's rond booten, strijd en spammen zijn in de Word gewone
   apostrofs en zijn dat hier gebleven. Dat is opmaak en geen tekst.
 
@@ -667,10 +671,12 @@ de tekst zelf ook onvertaald gebruikt. Ze blijft dus staan zoals ze is.
 **Drie maten wijken af van de Word, en alle drie om dezelfde reden: bladspiegel.**
 De Word zet de vijf figuren op 160.0, 90.0, 160.0, 90.0 en 90.0mm.
 
-- De Raspberry Pi in 4.2 staat op **145.0mm** in plaats van 160.0. Op 160.0 is ze
+- De Raspberry Pi in 4.2 staat op **140.0mm** in plaats van 160.0. Op 160.0 is ze
   123.3mm hoog en bleef er onder de tekst van bladzijde 36 net te weinig over, dus
-  ze sprong naar een eigen bladzijde en liet een halve bladzijde wit achter. Op
-  145.0 is ze 111.7mm en volgt ze gewoon op de zin die haar aankondigt.
+  ze sprong naar een eigen bladzijde en liet een halve bladzijde wit achter. Ze
+  stond eerst op 145.0mm; de redactionele ronde hieronder maakte de alinea erboven
+  een regel langer en dat volstond om haar opnieuw over de rand te duwen. Op 140.0
+  is ze 107.9mm en houdt ze drie millimeter over.
 - De panel PC in 4.3 en de control cabinet PC in 4.4 staan allebei op **80.0mm**
   in plaats van 90.0. Nadat de Pi opschoof, liep 4.4 met een enkele regel over
   naar een volgende bladzijde. Die twee figuren tien millimeter smaller maken
@@ -701,35 +707,77 @@ uit het manifest, dus "4.1 Industriële computers" stond er al goed. De blurbs
 blijven ook ASCII, want die worden nergens gedrukt: ze staan alleen op de hub, en
 die wordt met opzet door niets gelinkt.
 
+### Wat er in de tekst opviel, en op 7 september 2026 rechtgetrokken is
+
+De tekst gaat er in principe letterlijk in, dus dit staat hier met wat er beslist
+is. **Al deze correcties staan alleen in de HTML en een herimport draait ze
+terug.**
+
+- **"Een tweede / derde / vierde criteria"** in 4.1 is drie keer **criterium**
+  geworden.
+- **"toegangkelijk"** in 4.4 is **toegankelijk**.
+- **"Rasbperry PI"** in vraag 5 en **"Raspberry PI"** in 4.2 zijn allebei
+  **Raspberry Pi**, de naam die de fabrikant het toestel geeft.
+- **"Schermaansluting"** in het invulblad van vraag 5 is
+  **Schermaansluiting**. Die label is daarmee een letter langer, en hij past nog
+  altijd op een regel in de kolom van 78mm; nagekeken in de render.
+
+**Vier namen wisselden binnen het hoofdstuk van schrijfwijze, en dragen nu de
+vorm van het kader Kernpunten.** Dat kader is gekozen als de maat omdat Test
+jezelf er al op steunt: vraag 4 schrijft PROFINET, ETHERCAT en MODBUS in
+kapitalen, en een sectie die ProfiNET schrijft laat de student twee dingen voor
+hetzelfde aanzien.
+
+- **CodeSYS in 4.1 en 4.4, CodeSys in 4.3** zijn alle drie **CODESYS**, zoals de
+  fabrikant het schrijft.
+- **De protocolnamen in 4.3** stonden als EtherCAT, ProfiNET en Modbus TCP en
+  staan nu als **ETHERCAT, PROFINET en MODBUS/TCP**, in dezelfde volgorde als
+  daar al stond.
+- **"I/O eilanden" in 4.3** is **IO eilanden**, zonder schuine streep, zoals de
+  kernpunten en de vragen het schrijven.
+- **"Windows 10 IOT" in 4.1 en 4.2** is **Windows 10 IoT**, zoals Microsoft het
+  product noemt.
+- **"Als je een IPC of ES koopt" in 4.1** schrijft **embedded system** voluit. De
+  afkorting ES werd nergens ingevoerd, terwijl IPC dat twee alinea's eerder wel
+  wordt.
+
+**De ARM-kant van 4.2 draagt nu de naam die op ARM draaide.** De zin zette
+tweemaal "Windows 7 Embedded" neer, aan allebei de kanten van het verschil dat ze
+maakt, en daarmee viel er niets na te kijken. Voor ARM staat er nu **Windows
+Embedded Compact 7**, de variant die op die instructieset werkte; de x86-kant is
+niet aangeraakt. Dat is een woord bij, en het is het enige feit in dit hoofdstuk
+dat niet uit de Word komt buiten de twee alinea's hierboven. Beslist op
+7 september 2026, en het raakt vraag 2, die net over instructiesets gaat.
+
+**Een studievraag die een imperatief is, krijgt een punt en geen vraagteken.**
+Beslist op 7 september 2026, en meteen doorgevoerd in de drie hoofdstukken waar
+zo'n zin staat: "Geef twee redenen waarom men tracht componenten dichter tegen
+elkaar te plaatsen." in hoofdstuk 1, "Geef enkele voordelen van UEFI." in
+hoofdstuk 3, en "Geef de naam van minstens twee industriële netwerkprotocollen
+waarmee IO aangestuurd kan worden." hier. Een echte vraag houdt haar vraagteken,
+dus "Waarvoor staat de afkorting UEFI?" is niet aangeraakt. **Deze regel geldt
+vanaf nu voor elk hoofdstuk**, en ze staat hier omdat hoofdstuk 4 de derde was
+die ze tegenkwam.
+
+**Vraag 1 van Test jezelf vraagt weer letterlijk wat studievraag 1 vraagt.** Het
+kader schrijft "een gewone desktop computer", de vraag achteraan schreef "een
+gewone desktop". Dat is nu allebei het eerste: het is dezelfde vraag, dus ze
+hoort er twee keer hetzelfde te staan.
+
+**De Raspberry Pi ging daarna van 145.0 naar 140.0mm.** "Windows Embedded Compact
+7" maakte de alinea over de besturingssystemen een regel langer, en die ene regel
+duwde de figuur weer naar een eigen bladzijde. Dat is de knop van hierboven, voor
+de derde keer in dit hoofdstuk: elke ingreep in de tekst kan een figuur die op
+0,6mm past over de rand duwen, dus reken de bladspiegel na na elke redactionele
+ronde en niet alleen na de import.
+
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
 De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML:
 
-- **"Een tweede criteria", "Een derde criteria", "Een vierde criteria"** in 4.1,
-  drie keer, waar criterium hoort te staan.
-- **"toegangkelijk"** in 4.4, waar toegankelijk hoort te staan.
-- **"Rasbperry PI"** in vraag 5 van Test jezelf, en **"Raspberry PI"** in 4.2.
-  Het toestel heet Raspberry Pi.
-- **"Schermaansluting"** in het invulblad van vraag 5, zonder de tweede i. Het
-  staat er nog, ook in de HTML; alleen de indeling eromheen is veranderd.
-- **CodeSYS in 4.1 en 4.4, CodeSys in 4.3.** De fabrikant schrijft CODESYS.
-- **De protocolnamen staan in drie schrijfwijzen.** Het kader schrijft PROFINET,
-  MODBUS/TCP, ETHERNET/IP en ETHERCAT, 4.3 schrijft EtherCAT, ProfiNET en Modbus
-  TCP, en Test jezelf schrijft PROFINET, ETHERCAT en MODBUS. Hetzelfde geldt voor
-  **IO eiland tegen I/O eilanden**, waarvan 4.3 de tweede vorm gebruikt.
-- **"ES" wordt in 4.1 een keer als afkorting gebruikt** ("Als je een IPC of ES
-  koopt") zonder dat ze ooit ingevoerd is. IPC wordt dat wel, in de tweede alinea.
-- **"Windows 10 IOT"** in 4.1 en 4.2; Microsoft schrijft Windows 10 IoT. 4.1 noemt
-  het "Windows 7 Compact / Embedded", 4.2 "Windows 7 Embedded".
-- **4.2 zegt dat je voor ARM processoren kan kiezen voor Windows 7 Embedded en
-  Linux.** Windows Embedded Compact 7 draaide inderdaad op ARM, maar Windows
-  Embedded Standard 7, waar 4.1 het over lijkt te hebben, was x86. De twee namen
-  door elkaar maken die zin moeilijk na te kijken.
-- **Studievraag 5 vooraan is een imperatief met een vraagteken**, "Geef de naam
-  van minstens twee industriële netwerkprotocollen waarmee IO aangestuurd kan
-  worden?" Dat is dezelfde vorm als studievraag 6 van hoofdstuk 3.
-- **Studievraag 1 vooraan en vraag 1 van Test jezelf verschillen een woord**:
-  vooraan "een gewone desktop computer", achteraan "een gewone desktop".
+- **4.1 noemt het "Windows 7 Compact / Embedded", 4.2 "Windows 7 Embedded".**
+  Twee namen voor wat waarschijnlijk hetzelfde is; alleen de ARM-kant van 4.2 is
+  aangepast, de rest niet.
 - **Drie woorden voor hetzelfde onderdeel**: vervangonderdelen in 4.1,
   vervangstukken in Test jezelf, wisselstuk in 4.4.
 - **"Een embedded systeem" tegen "een embedded system"** wisselen in 4.2 binnen
