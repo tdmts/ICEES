@@ -777,6 +777,14 @@ als antwoord, maar de Brightspace-test van elk labo is meerkeuze met giscorrecti
 vraag is er een die niet meer op die test voorbereidt. In hoofdstuk 3 werd het een keer het eerste en
 twee keer het tweede. Leg de keuze voor per vraag, en zet in NOTITIES.md welke het werd.
 
+**Een open vraag krijgt een invulregel per ding dat het antwoord telt**, en niet een regel per vraag.
+De importer schrijft een lege tabel van een rij, en dat is te weinig zodra het antwoord een opsomming
+is: vraag 7 van hoofdstuk 3 noemt vier situaties en draagt dus vier regels. Een regel is 8,2mm, de
+hoogte van gewoon gelinieerd papier. Reken daarbij na of de vragenlijst nog op een blad past; loopt
+ze over, dan is dat geen fout, want `ol.vragen > li` houdt elke vraag heel en de lege ruimte eronder
+is plaats om te schrijven. De ondermarge van een tabel is geen knop om dat mee bij te sturen: die
+staat in de gedeelde `table`-regel en geldt voor elk hoofdstuk.
+
 **De importer schrijft een gewone `<ol>` en laadt `oplossingen.js` niet.** Een vragenlijst wordt met
 de hand een `<ol class="vragen">`, en de pagina krijgt met de hand `<script src=".../oplossingen.js">`
 onder `back-link.js`. Zonder het eerste ziet de export geen vragen en drukt ze zwijgend geen

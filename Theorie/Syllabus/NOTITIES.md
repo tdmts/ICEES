@@ -371,6 +371,21 @@ elkaar alsof je kan kiezen. Het artikel op bladzijde 4 zit tussen de twee in
 ("Piepgeluidjes zijn de meest voorkomende manier"). De oplossing van vraag 9 zegt
 allebei en noemt de reden waarom de pieptoon overblijft.
 
+**Een open vraag krijgt een invulregel per ding dat het antwoord telt.** Beslist
+op 7 september 2026, nadat de drie open vragen elk een enkele regel bleken te
+dragen. Vraag 7 vraagt naar situaties en het antwoord noemt er vier, dus ze
+draagt vier regels; vraag 9 vraagt hoe de POST een fout kenbaar maakt en dat zijn
+er twee, dus twee regels; vraag 2 vraagt waar een afkorting voor staat en dat is
+er een. Een regel is 8,2mm, wat overeenkomt met gewoon gelinieerd papier.
+
+**Test jezelf loopt daardoor over twee bladzijden, en vraag 9 staat alleen op de
+tweede.** Dat is nagerekend en niet op te lossen: vraag 9 heeft 25,0mm nodig en
+onderaan de eerste bladzijde is 14,1mm vrij. De enige knop die genoeg zou
+opleveren is de ondermarge van 4,3mm van een tabel, en die staat in de gedeelde
+`table`-regel van `syllabus.css`, dus eraan draaien versmalt ook de dertig
+invulruimtes van hoofdstuk 2. De lege ruimte onder vraag 9 is voor de student
+trouwens gewoon plaats om te schrijven.
+
 **"aanpasssen" is verdwenen zonder dat er iets gecorrigeerd is.** Die tikfout
 stond in de vierde mogelijkheid van vraag 7, en die mogelijkheden zijn met de
 omzetting naar een open vraag weggevallen. De oplossing eronder is nieuwe tekst
