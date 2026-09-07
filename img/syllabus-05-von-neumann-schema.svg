@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 420" width="740" height="420"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">Het Von Neumann schema: invoer, een centrale verwerkingseenheid en geheugen aan een systeembus,
+        uitvoer, en opslag eronder</title>
+    <rect width="740" height="420" fill="#ffffff" />
+
+    <defs>
+        <marker id="punt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#004d40" />
+        </marker>
+        <marker id="punt-terug" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
+            orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#004d40" />
+        </marker>
+    </defs>
+
+    <!-- de computer zelf: de processor en het geheugen aan een systeembus -->
+    <rect x="210" y="25" width="320" height="270" fill="#e0e7e5" stroke="#9bb0ac" />
+
+    <rect x="232" y="45" width="276" height="90" fill="#004d40" stroke="#004d40" />
+    <text x="370" y="83" font-size="15" fill="#ffffff" text-anchor="middle">Centrale verwerkingseenheid</text>
+    <text x="370" y="105" font-size="15" fill="#ffffff" text-anchor="middle">(CPU)</text>
+
+    <rect x="232" y="185" width="276" height="90" fill="#004d40" stroke="#004d40" />
+    <text x="370" y="223" font-size="15" fill="#ffffff" text-anchor="middle">Geheugen</text>
+    <text x="370" y="245" font-size="15" fill="#ffffff" text-anchor="middle">(programma + data)</text>
+
+    <path d="M 297 143 L 297 177" stroke="#004d40" stroke-width="2" fill="none" marker-start="url(#punt-terug)"
+        marker-end="url(#punt)" />
+    <text x="315" y="165" font-size="14" fill="#004d40">systeembus</text>
+
+    <!-- invoer links en uitvoer rechts -->
+    <rect x="30" y="115" width="110" height="90" fill="#b2dfdb" stroke="#004d40" />
+    <text x="85" y="166" font-size="15" fill="#00332b" text-anchor="middle">INVOER</text>
+
+    <rect x="600" y="115" width="110" height="90" fill="#b2dfdb" stroke="#004d40" />
+    <text x="655" y="166" font-size="15" fill="#00332b" text-anchor="middle">UITVOER</text>
+
+    <path d="M 148 160 L 202 160" stroke="#004d40" stroke-width="2" fill="none" marker-start="url(#punt-terug)"
+        marker-end="url(#punt)" />
+    <path d="M 538 160 L 592 160" stroke="#004d40" stroke-width="2" fill="none" marker-start="url(#punt-terug)"
+        marker-end="url(#punt)" />
+
+    <!-- opslag onder de computer -->
+    <path d="M 370 303 L 370 337" stroke="#004d40" stroke-width="2" fill="none" marker-start="url(#punt-terug)"
+        marker-end="url(#punt)" />
+
+    <rect x="310" y="345" width="120" height="50" fill="#b2dfdb" stroke="#004d40" />
+    <text x="370" y="376" font-size="15" fill="#00332b" text-anchor="middle">OPSLAG</text>
+</svg>

@@ -237,6 +237,17 @@ tbody tr:nth-child(odd) td { background-color: var(--grijs-licht); }
 /* Een invulkader is er om in te schrijven, dus het krijgt geen bandering. */
 .invulruimte tbody tr td { background-color: transparent; height: 6mm; }
 
+/* Een tekenopdracht vraagt geen regels maar een vlak. Invulruimte kent alleen
+   rijen, en een rij meet er ruim zeven millimeter: daar teken je geen schema
+   met zes blokken en pijlen in. Vraag 2 van hoofdstuk 5 laat de figuur van 5.1
+   natekenen, en die staat op papier 90.9mm hoog, dus zoveel ruimte staat er
+   onder de vraag. Die maat is afgeleid van wat erin moet en niet gekozen.
+
+   De 89.7mm hieronder is nagemeten en niet gerekend: de rand wordt op de rand
+   van de cel getekend en niet ernaast, dus het kader meet er op papier 90.0mm
+   mee. Meet het opnieuw na als de rand of de opvulling van een cel verandert. */
+.tekenkader tbody tr td { height: 89.7mm; }
+
 /* Een tabel met een lege kolom is voor de helft invulruimte: links de
    definitie, rechts wat de student erbij schrijft. Chrome verdeelt een tabel
    over haar inhoud en houdt voor een lege cel niets over dan haar opvulling,

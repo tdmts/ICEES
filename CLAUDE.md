@@ -58,10 +58,11 @@ four engines and the eight scripts started as byte-for-byte copies with the DeN-
 rewritten. **Two scripts have since diverged for a reason that is not a string**, and both are
 recorded below: `import-brightspace.py` (the `rCode` casing, under "Where the content comes from")
 and `import-syllabus.py` (zwevende afbeeldingen, under "Wat de eerste hoofdstukimport ...").
-`Theorie/Syllabus/syllabus.css` was copied too and has since **gained two page-break rules that DeN
-does not have**, both under "De syllabus": a `ol.vragen > li` that stays whole, and
-`.vragen-bij-figuur`. Read DeN's `CLAUDE.md` for the reasoning behind any shared part; read this
-section before you copy anything across, in either direction.
+`Theorie/Syllabus/syllabus.css` was copied too and has since **gained three rules that DeN does not
+have**, all three under "De syllabus": a `ol.vragen > li` that stays whole, `.vragen-bij-figuur`,
+and `.tekenkader`, the drawing frame under a question that asks the student to draw. Read DeN's
+`CLAUDE.md` for the reasoning behind any shared part; read this section before you copy anything
+across, in either direction.
 
 **Whether the engines should live in a repo of their own is still open.** It gets decided once ICEES
 has its six modules and the three courses lie side by side: today every difference is a rewritten
@@ -682,7 +683,7 @@ image shows `/dev/sda1 ntfs Windows OS` next to `/dev/sda2 fat32 Data`, and the 
 `/dev/sdb`. Open the PNG before writing a figcaption; three of the eight captions here would have
 been wrong otherwise.
 
-## De syllabus, hoofdstuk 1 tot 4 ingevoerd 7 september 2026
+## De syllabus, hoofdstuk 1 tot 5 ingevoerd 7 september 2026
 
 De theorietrack bestond hier nog niet: `Theorie/Syllabus/` was leeg en het manifest kende geen
 module `syllabus`. Wat er bij dit eerste hoofdstuk aan infrastructuur bij gekomen is, hoort erbij en
@@ -755,7 +756,8 @@ invulregels is geen vraag meer; en `.vragen-bij-figuur` is de omhulling om een f
 reeks nummers naar wijst, zodat de foto op hetzelfde blad blijft als de nummers die haar nodig
 hebben. Die tweede werkt alleen zolang het blok op een bladzijde past, dus de breedte van zo'n foto
 is een knop waar je aan draait: in hoofdstuk 2 is het moederbord daarvoor van 160.0mm naar 105.0mm
-gegaan, wat de enige maat in dat hoofdstuk is die niet uit de Word komt.
+gegaan, wat de enige maat in dat hoofdstuk is die niet uit de Word komt. Hoofdstuk 5 legde er een
+derde regel bovenop, `.tekenkader`; die staat verderop bij dat hoofdstuk.
 
 **Een hoofdstuk zonder sectie Studievragen achteraan krijgt geen Test jezelf.** Hoofdstuk 2 heeft er
 geen, en er is er dus ook geen geschreven. Of elk hoofdstuk er een hoort te hebben, wordt na
@@ -827,6 +829,26 @@ schermafdruk uit deze Word kan treffen. De hertekening laat geen enkel gegeven v
 vallen en gebruikt het palet van de SVG's van Labo Partitioneren; renderen voor je ze vertrouwt
 geldt hier net zo goed. Dat een labopagina hetzelfde tekent, is geen reden om het niet te doen: de
 twee tracks zijn onafhankelijk en een eigen kopie is de afspraak.
+
+**Een vraag die de student laat tekenen, krijgt een `.tekenkader` en geen invulregels.** De Word zet
+onder zo'n vraag dezelfde lege tabel van een rij als onder elke andere, en die is op papier ruim
+zeven millimeter hoog: daar tekent niemand een schema met blokken en pijlen in. `.tekenkader` in
+`syllabus.css` maakt van die ene cel een vlak, en het is de derde regel in dat bestand die DeN niet
+heeft. **De hoogte wordt afgeleid en niet gekozen**: vraag 2 van hoofdstuk 5 laat de figuur van 5.1
+natekenen, die staat op papier 90.9mm hoog, dus het kader is 90mm. Meet het na in de PDF in plaats
+van het te rekenen, want een rand wordt op de rand van de cel getekend en niet ernaast: 89.7mm
+`height` levert 90.0mm op. Bij dezelfde meting bleek **een invulregel op papier ongeveer 7,4mm te
+meten en niet de 8,2mm** die bij hoofdstuk 3 genoteerd staat; de hoogte van zo'n rij komt van de
+tekstregel erin en niet van de `height` van 6mm.
+
+**Een passage die een ander deel van dit vak tegenspreekt, wordt rechtgezet en niet overgenomen.**
+Hoofdstuk 5 bood een virtuele machine aan als de manier om een x86-programma op ARM te draaien, met
+"alle hardware wordt gesimuleerd" erbij, en `Labo/Virtualiseren/Theorie/VirtueleHardware.html` zegt
+het omgekeerde en heeft gelijk: de instructies van de gast lopen rechtstreeks op de echte processor,
+en nagebootst zijn de randapparaten. Daaruit volgt dat een virtuele machine nooit een andere
+instructieset kan draaien, en dat x86-op-ARM emulatie heet. De regel is dus: leg een passage naast de
+labopagina die er over gaat, zet de syllabus recht waar ze fout staat, en **raak de labopagina niet
+aan** (patroon 17). De hele redenering hoort in NOTITIES.md, zoals hoofdstuk 3 dat doet.
 
 ### Wat de eerste hoofdstukimport aan de importer veranderd heeft
 

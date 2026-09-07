@@ -815,3 +815,233 @@ spreken. Wat dit hoofdstuk vastlegt en wat dat labo dus moet aanhouden:
 niet ingevoerd is: 4.1 en 4.3 hebben het over een SOFT PLC en over software die
 op een IPC draait. Er staat geen verwijzing naar dat hoofdstuk, en die hoort er
 ook niet te staan zolang het er niet is.
+
+## Hoofdstuk 5, De Von Neumann architectuur
+
+**De sectie Studievragen achteraan heet hier Test jezelf**, zoals in hoofdstuk 1,
+3 en 4. Het kader Studievragen vooraan houdt zijn eigen naam en staat samen met
+de Kernpunten op `Overzicht.html`. De pagina heet `TestJezelf.html`; de importer
+schreef `Studievragen.html`.
+
+**Dit is een kort hoofdstuk**: twee secties tekst en een Test jezelf, samen zes
+bladzijden. De twee Heading 3's binnen 5.2 (x86 / x64 instructieset, en ARM)
+worden op die pagina h2, zoals de importer dat overal doet.
+`ProcessorX86VsX64VsArm.html` is een lange bestandsnaam en blijft wat `pascal()`
+ervan maakt: er botst niets mee, dus er is geen reden voor de uitzondering die
+hoofdstuk 3 wel nodig had.
+
+### De vijf vragen van Test jezelf
+
+| Vraag | Antwoord | Waarop het steunt |
+|---|---|---|
+| 1 Het principe van de Von Neumann architectuur | c, data en instructies moeten in het werkgeheugen staan om uitgevoerd te kunnen worden | 5.1, "data en instructies moeten in het werkgeheugen aanwezig zijn", en het derde kernpunt |
+| 2 Teken het schema | open, het schema van 5.1 met per blok een component | zie hieronder |
+| 3 Traag opstarten, daarna vlot | a, de harde schijf | de alinea die hier bijgeschreven is, zie hieronder |
+| 4 Eigenschappen van een x64 Core 7 | b, focus op performantie maar weinig energiezuinig | 5.2, "erg gericht zijn op het leveren van de beste prestaties maar daartegenover staat dat ze een vrij groot energieverbruik opmeten", en het vierde kernpunt |
+| 5 Compatibiliteit ARM en x64 | d, nee, een programma voor ARM moet opnieuw geschreven worden | 5.2, "Het is dan aan de software ontwikkelaars om hun programma's volledig opnieuw te schrijven voor ARM processoren" |
+
+**Elke meerkeuzevraag heeft precies een juist antwoord, en dat is nageteld.** De
+drie vragen van hoofdstuk 3 die dat niet haalden, hebben hier geen tegenhanger.
+Wat wel nagekeken moest worden is mogelijkheid b van vraag 1: die noemt de
+bottleneck, en sinds de bijgeschreven alinea hieronder staat de bottleneck wel
+degelijk in het hoofdstuk. Ze wordt daarmee niet juist. De vraag vraagt naar het
+**principe** van de Von Neumann architectuur, en dat is dat data en instructies in
+het werkgeheugen moeten staan; dat het traagste onderdeel de snelheid bepaalt is
+een gevolg van dat principe en niet het principe zelf.
+
+### Vraag 2 is een tekenopdracht en krijgt een tekenkader van 90mm
+
+De Word zet onder deze vraag een lege tabel van een rij, en dat is op papier ruim
+zeven millimeter. Daar teken je geen schema van zes blokken met pijlen in.
+
+**Het kader is 90mm hoog, en die maat is afgeleid en niet gekozen**: de figuur van
+5.1 staat op papier 160.0 bij 90.9mm, en dat is precies wat er nagetekend moet
+worden. `syllabus.css` heeft daar een nieuwe regel voor, `.tekenkader`, want
+invulruimte kent alleen rijen. Die regel staat naast `ol.vragen > li` en
+`.vragen-bij-figuur`, dus `syllabus.css` wijkt nu op drie plaatsen van DeN af.
+
+**De 89.7mm in die regel is nagemeten en niet gerekend.** Een rand wordt op de
+rand van de cel getekend en niet ernaast, dus 89.7mm `height` levert een kader van
+90.0mm op; nagemeten in de PDF. Dat is meteen ook de plaats om te melden dat **een
+invulregel op papier ongeveer 7,4mm meet en niet de 8,2mm** die bij hoofdstuk 3 en
+4 genoteerd staat: de hoogte van zo'n rij wordt bepaald door de tekstregel erin en
+niet door de `height` van 6mm. Er is niets aan hoofdstuk 3 of 4 veranderd, want
+het aantal regels per vraag klopt daar los van de maat.
+
+**De oplossing van vraag 2 noemt per blok een component voluit.** Zonder die
+`<div class="oplossing">` drukt het hele hoofdstuk geen Oplossingen, want de
+export eist per vraag een antwoord. Ze staat niet in de Word: die geeft er geen.
+
+**Test jezelf past er toch op een bladzijde mee.** Bij hoofdstuk 3 liep de
+vragenlijst over twee bladen; hier houden vier meerkeuzevragen en een kader van
+90mm samen 240mm net. `ol.vragen > li` houdt elke vraag heel, dus als er ooit een
+woord bijkomt, springt vraag 5 in haar geheel naar de volgende bladzijde en breekt
+ze niet halverwege.
+
+### Vraag 5 gaat van twee naar vier mogelijkheden
+
+In de Word staan er alleen Ja en Nee onder, en bij giscorrectie is dat een gokkans
+van een op twee. De drie afleiders komen uit 5.2 zelf: dat alle software op
+allebei de instructiesets draait, dat het volstaat als het besturingssysteem
+hetzelfde is, en dat de processor de instructies van de andere kant er zomaar bij
+uitvoert. **Die drie mogelijkheden staan niet in de Word**, en een herimport gooit
+ze weg. Het juiste antwoord is niet veranderd.
+
+De derde afleider is de scherpste en ook de gevaarlijkste: emulatie laat een
+programma van de andere instructieset wel degelijk draaien, dus wie alleen dat
+onthoudt, kiest ze. Ze is daarom zo geschreven dat het onjuiste deel de
+**processor** is en niet de emulatie: emulatie is software die vertaalt, en geen
+ARM processor voert x64 instructies zelf uit. Dat staat woord voor woord in de
+rechtgezette passage hieronder.
+
+### De bottleneck stond alleen in de vragen, en er is tekst voor bijgeschreven
+
+Nagekeken: het woord bottleneck komt in de lopende tekst van dit hoofdstuk nergens
+voor. Het staat in mogelijkheid b van vraag 1 en in vraag 3, die er helemaal op
+steunt. Ook het woord **opslag** stond alleen in de figuur van 5.1 en in geen
+enkele zin. Dat is het gat van de wet van Moore in hoofdstuk 1, en de uitkomst is
+dezelfde: er komt tekst bij in plaats van dat de vraag wegvalt.
+
+**Dit is de enige alinea in dit hoofdstuk die niet uit de Word komt, en een
+herimport gooit haar weg.** Ze staat in 5.1, achter het schema:
+
+> Elk blok van dat schema heeft zijn eigen snelheid, en het traagste blok bepaalt
+> hoe snel het geheel werkt. Dat traagste onderdeel heet de bottleneck. Bij het
+> opstarten moet alles wat de computer nodig heeft van de opslag naar het
+> werkgeheugen gelezen worden, want data en instructies moeten daar staan om
+> uitgevoerd te kunnen worden. Start een computer traag op en werkt hij daarna
+> vlot, dan wijst dat naar de schijf en niet naar de processor of het
+> werkgeheugen.
+
+Ze staat achter de figuur en niet ervoor, want ze gaat over de blokken van dat
+schema en het woord opslag komt er pas in beeld.
+
+### De passage over de virtuele machine is rechtgezet
+
+**Wat er stond, klopte niet.** De sectie ARM zei "Dit is in feite een gesimuleerde
+computer", "Alle hardware: processor, harde schijf, werkgeheugen worden dan
+gesimuleerd", en bood dat aan als de manier om een x86- of x64-programma op ARM te
+draaien.
+
+`Labo/Virtualiseren/Theorie/VirtueleHardware.html` heeft het bij het rechte eind:
+een virtuele machine laat de instructies van de gast **rechtstreeks** op de echte
+processor lopen, met hardware die bewaakt dat hij niet buiten zijn virtuele machine
+komt. Nagebootst zijn de randapparaten (schijf, dvd-station, netwerkkaart,
+firmware); het werkgeheugen is echt geheugen. Daaruit volgt dat een virtuele
+machine alleen een gast met **dezelfde** instructieset kan draaien, en dus nooit
+x86 op ARM. Dat vraagt emulatie, en dat is wat traag maakt. De slotzin van de Word
+("het nadeel is dat dit trager zal gaan") klopt dus wel, maar hoort bij emulatie.
+
+De drie alinea's zijn herschreven naar die formulering, met **emulatie** als de
+naam voor x86-op-ARM. **Aan de labopagina is niets veranderd** (patroon 17): de
+twee tracks zeggen hetzelfde twee keer en er linkt niets tussen.
+
+Twee keuzes in die herschrijving:
+
+- **Het woord gast of guest komt er niet in voor.** Het labo zegt guest, maar de
+  syllabus voert dat woord nergens in, en hoofdstuk 8 Virtual machines en
+  containers is nog niet ingevoerd. Er staat dus "het besturingssysteem dat erin
+  draait". Dat is patroon 20.
+- **Paginatabellen staan er niet in.** Dat is de nauwkeurige reden waarom het
+  geheugen van een virtuele machine echt geheugen is, maar het is een term die dit
+  hoofdstuk niet draagt en die nergens uitgelegd wordt. Er staat "waarvan de
+  virtuele machine een stuk toegewezen krijgt", en dat is waar.
+
+**De eerste zin van die passage is daardoor omgekeerd.** In de Word begint ze met
+"Een tussenoplossing bestaat er in om gebruik te maken van een virtuele machine",
+en dat is precies wat niet klopt. Ze begint nu met "Een virtuele machine lost dat
+niet op." De figuur ernaast blijft staan en blijft kloppen: ze toont twee virtuele
+machines op een gewone computer, en dat is wat de twee alinea's eronder uitleggen.
+
+**Studievraag 5 vooraan blijft beantwoord, en met twee zaken.** Ze vraagt wat je
+kan doen om een programma voor x64 toch op ARM werkend te krijgen, en noemt
+uitdrukkelijk twee dingen. Dat zijn nu emulatie, uit de rechtgezette passage, en
+het programma opnieuw laten schrijven voor ARM, uit de alinea vlak ervoor. Voor de
+correctie waren dat de virtuele machine en het opnieuw schrijven, en het eerste van
+die twee was fout.
+
+### Het schema van 5.1 is hertekend
+
+**image42 heet nu `img/syllabus-05-von-neumann-schema.svg`.** Drie redenen, en de
+eerste is de enige die je kan narekenen: ze is 741 pixels breed en komt op 160.0mm
+neer op 118 dpi, tegen ongeveer 250 voor de rest van dit hoofdstuk. Ze is verder
+oranje-grijs terwijl `syllabus-03-master-boot-record.svg` het palet van OrionCSS
+draagt, en vraag 2 laat de student haar natekenen, dus ze wordt beter bekeken dan
+een gewone figuur. **De taalreden van hoofdstuk 3 speelt hier niet mee**: het
+origineel staat volledig in het Nederlands en is leesbaar.
+
+De hertekening laat **geen enkel gegeven van het origineel vallen**: INVOER links
+en UITVOER rechts, de centrale verwerkingseenheid en het geheugen met programma en
+data samen in een kader met de systeembus ertussen, OPSLAG eronder, en elke pijl in
+twee richtingen. Palet en lettertype zijn die van de SVG's van Labo Partitioneren
+en van hoofdstuk 3, op wit. Ze is in Edge gerenderd voor ze vertrouwd werd, en dat
+was nodig: de pijlpunten aan de beginkant van elke pijl wezen de verkeerde kant op
+tot er een tweede marker met `orient="auto-start-reverse"` bij kwam. In het bestand
+zag dat er niet fout uit.
+
+**Het origineel `img/syllabus-05-de-von-neumann-architectuur-01.png` is geschrapt**,
+want niets verwijst er nog naar en regel 1 van de contentcheck valt anders over een
+ongebruikte afbeelding. Een herimport zet het terug.
+
+**Wat het schema toont en de kernpunten niet noemen, is de opslag.** Het tweede
+kernpunt somt invoer, centrale verwerkingseenheid, tijdelijk werkgeheugen en
+uitvoer op, en de figuur heeft daar OPSLAG onder hangen. De bijgeschreven alinea
+hierboven vult dat gat in de tekst; het kernpunt zelf is niet aangeraakt.
+
+### De twee afbeeldingen
+
+**De tweede zweeft**, `syllabus-05-de-von-neumann-architectuur-02.jpeg` in 5.2, met
+`wrapSquare` verankerd. De alinea ernaast blijft dus lopende tekst en de figuur
+krijgt geen bijschrift uit de Word; `IMPORT.md` meldt het. Het is een schermafdruk
+van een Windows-bureaublad met twee vensters van Parallels Desktop erop, in het ene
+Windows XP en in het andere Fedora 11, met allebei de virtuele machines in de
+taakbalk onderaan. **Ze is opengedaan en uitvergroot**: de uitsnede loopt tot en met
+de taakbalk en er staat geen watermerk op, niet linksonder en niet rechtsonder. Ze
+blijft op de 87.0mm van de Word staan en haalt daarmee 190 dpi. Het `alt` is met de
+hand geschreven en een herimport gooit het weg.
+
+### Hoofdstuk 4 en dit hoofdstuk dekken elkaar over de instructieset
+
+**Hoofdstuk 4 blijft ongewijzigd.** In 4.1 staat een daar bijgeschreven alinea over
+de instructieset, en 5.2 behandelt datzelfde in het lang. Dat blijft zo: hoofdstuk
+4 voert de term in omdat zijn eigen vraag 2 erop steunt, en zonder die alinea duwt
+de zin "Het type processor bepaalt ook onmiddellijk welke applicaties kunnen
+gedraaid worden", vlak na Core 3, 5 en 7, naar de verkeerde mogelijkheid.
+
+Nagekeken op tegenspraak, en er is er geen. 4.1 zegt dat x86 en x64 dezelfde
+instructieset zijn en dat een programma voor x64 niet op ARM start; 5.2 zegt dat
+x86 de 32 bit voorganger van x64 is en dat software voor ARM niet op x86 of x64
+draait. Het enige dat 5.2 erbij zegt is emulatie, en 4.1 spreekt dat niet tegen:
+daar staat wat je nodig hebt om een programma te draaien, en hier hoe je eronderuit
+kan tegen een prijs.
+
+**5.2 raakt ook aan hoofdstuk 8, Virtual machines en containers**, dat nog niet
+ingevoerd is. Er staat geen verwijzing naar, en die hoort er ook niet te staan
+zolang het er niet is.
+
+### Wat er in de tekst opviel, en niet aangeraakt is
+
+De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML. Buiten de
+bottleneck-alinea, de rechtgezette VM-passage en de drie mogelijkheden van vraag 5
+is er geen zin en geen typfout gewijzigd.
+
+- **"Focus op ze weinig mogelijk communicatie met het RAM geheugen"** in
+  mogelijkheid c van vraag 4 van Test jezelf, waar "zo weinig mogelijk" hoort te
+  staan. De mogelijkheid is fout, dus de student valt er niet over, maar ze staat
+  er wel.
+- **"De eigenschappen bij dit type processoren is dat ze ..."** in 5.2: een
+  meervoudig onderwerp bij een enkelvoudig werkwoord.
+- **"Bij dit laatste moeten  we"** in 5.2, met een dubbele spatie.
+- **"die compatibel zijn met een ARM besturingssystemen"** in 5.2: een lidwoord bij
+  een meervoud.
+- **"Waarschijnlijk verwacht je dat ARM processoren 'recenter' zijn"**: de hoge
+  komma's zijn in de Word gewone apostrofs en zijn dat hier gebleven. Dat is opmaak
+  en geen tekst, net als de drie punten aan het eind van 5.2, die in de Word het
+  beletselteken zijn.
+- **De Word schrijft "een x64 Core 7 processor"** in vraag 4, waar Intel het toestel
+  Core i7 noemt. Hoofdstuk 4 schrijft "Intel Core 3, 5 of zelfs 7", dus binnen deze
+  Word is het consequent en het is niet aangeraakt.
+- **Studievraag 1 vooraan is een imperatief en draagt al een punt** ("Bespreek de
+  functionele onderdelen van een computer aan de hand van een schema."). De regel
+  uit hoofdstuk 4 had hier dus niets te doen; de vier andere studievragen zijn echte
+  vragen en houden hun vraagteken.

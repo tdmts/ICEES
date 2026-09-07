@@ -56,3 +56,16 @@ letterlijk overgenomen.
 ## Industriële computer vs embedded system > Embedded system
 
 - afbeelding syllabus-04-industriele-computer-vs-embedded-system-02.png zweeft naast haar alinea (wrapSquare); die alinea blijft lopende tekst en de figuur krijgt geen bijschrift uit de Word
+
+## De Von Neumann architectuur (opening)
+
+- kader "Kernpunten" werd een info-box met data-kader="kernpunten"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+- kader "Studievragen" werd een info-box met data-kader="studievragen"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+
+## De Von Neumann architectuur > Processor: x86 vs x64 vs ARM
+
+- afbeelding syllabus-05-de-von-neumann-architectuur-02.jpeg zweeft naast haar alinea (wrapSquare); die alinea blijft lopende tekst en de figuur krijgt geen bijschrift uit de Word
+
+## De Von Neumann architectuur > Studievragen
+
+- lege tabel van 1 rijen overgenomen als invulruimte

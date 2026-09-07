@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processor: x86 vs x64 vs ARM</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Processor: x86 vs x64 vs ARM</h1>
+
+        <p>In het Von Neumann schema is er één component waar je een <strong>keuze</strong> in moet maken die bepalend is voor de <strong>programma&#x27;s</strong> die het systeem kan draaien en dat is de <strong>processor.</strong></p>
+
+        <p>Er zijn namelijk <strong>twee types processoren</strong> op de markt:</p>
+
+        <ol>
+            <li>processoren met een <strong>x86</strong> of <strong>x64</strong> instructieset</li>
+            <li>processoren met een <strong>ARM</strong> instructieset</li>
+        </ol>
+
+        <h2>x86 / x64 instructieset</h2>
+
+        <p>Dit zijn de klassieke processoren die je terug kan vinden in <strong>desktops</strong>, <strong>laptops</strong> en <strong>servers</strong>. Ze worden gefabriceerd door <strong>Intel </strong>of <strong>AMD</strong> en kunnen, in theorie, alle software draaien die geschreven is sinds het DOS tijdperk.</p>
+
+        <p>Bij dit laatste moeten  we natuurlijk een kanttekening plaatsen want de software die geschreven is voor ARM processoren kunnen ze uiteraard niet uitvoeren.</p>
+
+        <p>De eigenschappen bij dit type processoren is dat ze erg gericht zijn op het leveren van de <strong>beste prestaties</strong> maar daartegenover staat dat ze een vrij <strong>groot energieverbruik</strong> opmeten.</p>
+
+        <p>Bij een server, desktop of laptop is dat niet zo erg maar het maakt dat ze minder geschikt zijn voor mobiele apparaten.</p>
+
+        <p>x64 is de 64 bit processor variant terwijl x86 (of ook i386) de 32 bit voorganger was. Vandaag de dag worden er geen 32 bit processoren meer verkocht maar je kan ze natuurlijk wel nog hier en daar terugvinden op een fabrieksvloer.</p>
+
+        <h2>ARM</h2>
+
+        <p>Waarschijnlijk verwacht je dat ARM processoren &#x27;recenter&#x27; zijn dan de x86 of x64 tegenhangers. Toch bestaat ARM al sinds 1985. De reden waarom deze nu aan populariteit winnen is natuurlijk door het groot aantal <strong>mobiele apparaten </strong>zoals smartphones en tablets.</p>
+
+        <p>ARM focust zich niet zozeer op prestaties maar wel op een <strong>laag energieverbruik </strong>en dat is uiteraard een eigenschap waar deze apparaten een groot voordeel bij hebben.</p>
+
+        <p>Daarbij komt ook dat ARM iets efficiënter intern opgebouwd is waardoor de kloof tussen ARM en x64 kleiner wordt. Het is zelfs zo dat Apple ondertussen hun laptops uitrust met op ARM gebaseerde processoren. Ook Microsoft heeft al een aantal (tablet) modellen uitgebracht met ARM processoren maar deze hadden weinig succes.</p>
+
+        <p>De reden waarom ARM moeilijk aanslaat op desktops en laptops is doordat de applicaties die voor deze machines ontwikkeld werden enkel draaien op x64 processoren. Je koopt dus een energiezuinige ARM laptop maar heel wat software is er niet compatibel mee.</p>
+
+        <p>Het is dan aan de software ontwikkelaars om hun programma&#x27;s volledig opnieuw te schrijven voor ARM processoren (die compatibel zijn met een ARM besturingssystemen) maar gezien de kleine markt voor ARM laptops / desktops zien die daar voorlopig nog niet het nut van in.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 87.0mm">
+            <img src="../../../../img/syllabus-05-de-von-neumann-architectuur-02.jpeg" class="img-fluid" alt="Een Windows bureaublad met daarop twee vensters van Parallels Desktop. In het ene draait Windows XP met het startmenu open, in het andere Fedora 11. Onderaan staan de twee virtuele machines naast elkaar in de taakbalk van de computer waarop ze draaien.">
+        </figure>
+
+        <p>Een virtuele machine lost dat niet op. Een virtuele machine is een computer die uit software bestaat en die je op je gewone computer draait.</p>
+
+        <p>Nagebootst zijn daarbij de randapparaten: de harde schijf, het dvd-station, de netwerkkaart en de firmware. De processor is dat niet. Een virtuele machine laat de instructies van het besturingssysteem dat erin draait rechtstreeks op de echte processor lopen, en de hardware bewaakt daarbij dat die instructies niet buiten de virtuele machine komen. Ook het werkgeheugen is echt geheugen, waarvan de virtuele machine een stuk toegewezen krijgt.</p>
+
+        <p>Een virtuele machine draait dus alleen een besturingssysteem met dezelfde instructieset als de processor eronder. Een x86 of x64 programma op een ARM processor vraagt emulatie: software die elke instructie van de ene instructieset vertaalt naar de andere. Het nadeel is natuurlijk wel dat dit trager zal gaan…</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

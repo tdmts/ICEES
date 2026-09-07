@@ -258,6 +258,36 @@ window.LAB_REFERENCE = {
                         href: 'IndustrieleComputerVsEmbeddedSystem/TestJezelf.html'
                     }
                 ]
+            },
+            {
+                name: 'De Von Neumann architectuur',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'von-neumann-overzicht',
+                        name: 'Kernpunten en studievragen',
+                        blurb: 'Uit welke functionele onderdelen een computer bestaat, waarom data en instructies in het werkgeheugen moeten staan, en waarom het verschil tussen x86, x64 en ARM bepaalt welke software er draait.',
+                        href: 'DeVonNeumannArchitectuur/Overzicht.html'
+                    },
+                    {
+                        id: 'von-neumann-schema',
+                        name: 'Von Neumann schema',
+                        blurb: 'Van een machine die maar een taak kende naar een general purpose computer: de processor haalt zijn instructies uit het werkgeheugen, en het traagste blok van het schema is de bottleneck.',
+                        href: 'DeVonNeumannArchitectuur/VonNeumannSchema.html'
+                    },
+                    {
+                        id: 'von-neumann-processor',
+                        name: 'Processor: x86 vs x64 vs ARM',
+                        blurb: 'Twee instructiesets: x86 en x64 mikken op prestaties en verbruiken veel, ARM op een laag verbruik. Wat voor de ene vertaald is, draait niet op de andere, en emulatie kost snelheid.',
+                        href: 'DeVonNeumannArchitectuur/ProcessorX86VsX64VsArm.html'
+                    },
+                    {
+                        id: 'von-neumann-test-jezelf',
+                        name: 'Test jezelf',
+                        blurb: 'Vier meerkeuzevragen over het principe, de bottleneck, de eigenschappen van een x64 processor en de compatibiliteit met ARM, en een tekenkader voor het schema zelf.',
+                        href: 'DeVonNeumannArchitectuur/TestJezelf.html'
+                    }
+                ]
             }
         ]
     },

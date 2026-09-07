@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Von Neumann schema</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Von Neumann schema</h1>
+
+        <p>De eerste elektronische rekenmachines / computers hadden vaste programma&#x27;s die niet gewijzigd konden worden. Deze waren gemaakt voor één specifieke taak en konden niet uitgebreid worden. Dit kwam omdat hun programmacode vast gecodeerd zat in een niet herprogrammeerbaar geheugen. We noemen dit ook wel single purpose computers.</p>
+
+        <p>Als men het programma wou wijzigen moest men ofwel de machine wijzigen ofwel het geheugen herprogrammeren. Dit nam heel wat tijd in beslag en dan nog was de machine slechts in staat om één specifieke taak uit te voeren.</p>
+
+        <p>John Von Neumann bedacht in 1945 een oplossing onder de vorm van de Von Neumann architectuur. De centrale verwerkingseenheid of processor staat in dit model centraal en haalt zijn instructies en gegevens zelf uit het werkgeheugen. Deze worden uitgevoerd en terug weggeschreven naar de randapparaten.</p>
+
+        <p>Doorheen dit onderdeel van de cursus staat dus één iets centraal: data en instructies moeten in het werkgeheugen aanwezig zijn. Dit principe zal, zoals je zal merken, heel wat gevolgen hebben op de werking van onze computer.</p>
+
+        <p>Doordat we wijzigende instructies en data in het werkgeheugen kunnen inladen kunnen we onze machine andere taken laten uitvoeren. We spreken dan ook van een general purpose computer.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-05-von-neumann-schema.svg" class="img-fluid" alt="Links een blok INVOER en rechts een blok UITVOER. Daartussen staat de computer zelf, met bovenaan de centrale verwerkingseenheid en onderaan het geheugen met het programma en de data, verbonden door de systeembus. Onder de computer hangt een blok OPSLAG. Elke pijl loopt in twee richtingen.">
+        </figure>
+
+        <p>Elk blok van dat schema heeft zijn eigen snelheid, en het traagste blok bepaalt hoe snel het geheel
+            werkt. Dat traagste onderdeel heet de bottleneck. Bij het opstarten moet alles wat de computer nodig
+            heeft van de opslag naar het werkgeheugen gelezen worden, want data en instructies moeten daar staan
+            om uitgevoerd te kunnen worden. Start een computer traag op en werkt hij daarna vlot, dan wijst dat
+            naar de schijf en niet naar de processor of het werkgeheugen.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>
