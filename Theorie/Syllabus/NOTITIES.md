@@ -1044,15 +1044,10 @@ terug.**
   en geen tekst, net als de drie punten aan het eind van 5.2, die in de Word het
   beletselteken zijn.
 - **"Een x64 Core 7 processor" in vraag 4 blijft staan, en het is geen tikfout.**
-  Beslist op 7 september 2026, en de reden is de omgekeerde van wat ze op het
-  eerste gezicht lijkt: Intel liet de i eind 2023 vallen bij de overstap naar
-  Meteor Lake. Sindsdien heet de premiumlijn Core Ultra 5, 7 en 9 en de gewone
-  lijn Core 3, 5 en 7. **Core 7 is dus de recentste vorm en Core i7 de oude**, die
-  tot en met de veertiende generatie liep. Hoofdstuk 4 schrijft "Intel Core 3, 5
-  of zelfs 7" en klopt daarmee ook. Wat een student in het labo of op een
-  fabrieksvloer in handen krijgt, draagt vaker nog de oude naam op zijn sticker;
-  dat staat nergens in de tekst en het is geen tegenspraak, want de vraag gaat
-  over de eigenschappen van de processor en niet over zijn naam.
+  Beslist op 7 september 2026: Intel liet de i eind 2023 vallen bij de overstap
+  naar Meteor Lake, dus **Core 7 is de recentste vorm en Core i7 de oude**. Deze
+  hele repo schrijft het zonder i, hier en twee keer in hoofdstuk 4, dus er valt
+  ook niets recht te trekken.
 - **Studievraag 1 vooraan is een imperatief en draagt al een punt** ("Bespreek de
   functionele onderdelen van een computer aan de hand van een schema."). De regel
   uit hoofdstuk 4 had hier dus niets te doen; de vier andere studievragen zijn echte
