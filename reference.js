@@ -426,6 +426,48 @@ window.LAB_REFERENCE = {
                         href: 'Besturingssystemen/Procesbeheer.html'
                     }
                 ]
+            },
+            {
+                name: 'Virtual machines en containers',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'virtual-machines-overzicht',
+                        name: 'Kernpunten en studievragen',
+                        blurb: 'Wat een virtuele machine nabootst en wat niet, hoe host en guest zich tot elkaar verhouden, en waarom een container het besturingssysteem van de machine deelt.',
+                        href: 'VirtualMachinesEnContainers/Overzicht.html'
+                    },
+                    {
+                        id: 'virtual-machines-server',
+                        name: 'Server',
+                        blurb: 'Een server is een machine die een dienst levert aan anderen op het netwerk; de vormfactor van 1U en het 19 inch rack waarin zo een machine geschoven wordt.',
+                        href: 'VirtualMachinesEnContainers/Server.html'
+                    },
+                    {
+                        id: 'virtual-machines-nadelen-fysiek',
+                        name: 'Nadelen van fysieke machines',
+                        blurb: 'Waarom een server meestal maar een taak krijgt, en waarom dat het splitsen van diensten over aparte machines duur maakt.',
+                        href: 'VirtualMachinesEnContainers/NadelenVanFysiekeMachines.html'
+                    },
+                    {
+                        id: 'virtual-machines-vm',
+                        name: 'Virtual machines',
+                        blurb: 'Host en guest, wat er nagebootst wordt en wat rechtstreeks op de echte processor loopt, waarom virtualiseren geld bespaart, en waarmee je het doet.',
+                        href: 'VirtualMachinesEnContainers/VirtualMachines.html'
+                    },
+                    {
+                        id: 'virtual-machines-containers',
+                        name: 'Containers',
+                        blurb: 'Een container schermt een programma af zoals een virtuele machine dat doet, maar deelt het besturingssysteem van de machine, dus de overhead en de licentie vallen weg.',
+                        href: 'VirtualMachinesEnContainers/Containers.html'
+                    },
+                    {
+                        id: 'virtual-machines-test-jezelf',
+                        name: 'Test jezelf',
+                        blurb: 'Drie meerkeuzevragen over wat een virtuele machine is, wie de host is en welke bewering over virtuele machines niet klopt.',
+                        href: 'VirtualMachinesEnContainers/TestJezelf.html'
+                    }
+                ]
             }
         ]
     },

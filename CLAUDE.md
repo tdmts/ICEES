@@ -734,7 +734,7 @@ image shows `/dev/sda1 ntfs Windows OS` next to `/dev/sda2 fat32 Data`, and the 
 `/dev/sdb`. Open the PNG before writing a figcaption; three of the eight captions here would have
 been wrong otherwise.
 
-## De syllabus, hoofdstuk 1 tot 7 ingevoerd 7 september 2026
+## De syllabus, hoofdstuk 1 tot 8 ingevoerd 7 september 2026
 
 De theorietrack bestond hier nog niet: `Theorie/Syllabus/` was leeg en het manifest kende geen
 module `syllabus`. Wat er bij dit eerste hoofdstuk aan infrastructuur bij gekomen is, hoort erbij en
@@ -917,6 +917,25 @@ instructieset kan draaien, en dat x86-op-ARM emulatie heet. De regel is dus: leg
 labopagina die er over gaat, zet de syllabus recht waar ze fout staat, en **raak de labopagina niet
 aan** (patroon 17). De hele redenering hoort in NOTITIES.md, zoals hoofdstuk 3 dat doet.
 
+**Datzelfde geval kwam in hoofdstuk 8 een tweede keer voor, en met dezelfde zin.** 8.3 schreef "De
+hardware van de computer wordt geemuleerd" met de processor en het werkgeheugen in de opsomming
+erachter, en kernpunt 1 vatte dat samen. Allebei rechtgezet, en dan in de bewoording die hoofdstuk 5
+al draagt, want twee hoofdstukken van dezelfde syllabus horen hetzelfde te zeggen: nagebootst zijn
+de randapparaten, de instructies lopen rechtstreeks op de echte processor en het werkgeheugen is
+echt geheugen. **Leg een passage dus niet alleen naast de labopagina maar ook naast het hoofdstuk
+dat er al over gaat**, en neem de formulering over die er staat in plaats van een tweede te
+verzinnen.
+
+**Een naam die je bijschrijft, mag de definitie van het hoofdstuk niet onwaar maken.** Hoofdstuk 8
+vroeg in zijn kader naar een programma dat een virtuele machine draait en noemde er zelf geen, dus
+er kwamen vier namen bij, dezelfde als in `Labo/Virtualiseren/`. Een ervan, Proxmox VE, draait op de
+kale hardware, terwijl 8.3 virtualiseren juist definieert als een host besturingssysteem waarop
+guests staan: die naam alleen neerzetten maakt de eigen definitie van het hoofdstuk onwaar. Er staat
+daarom bij wat het verschil is met de drie andere. **Reken dus na of elk voorbeeld dat je bijschrijft
+onder de definitie valt die het hoofdstuk zelf geeft**, en schrijf het onderscheid erbij als het er
+niet onder valt. Het woord hypervisor is daarbij niet ingevoerd, want geen enkel hoofdstuk draagt
+het (patroon 20).
+
 **Een hoofdstuk dat zichzelf tegenspreekt, wordt rechtgezet in de lopende tekst en niet in het
 kader.** Hoofdstuk 6 zei in 6.3 dat het bestandssysteem bepaalt welk besturingssysteem er
 geinstalleerd wordt, en in kernpunt 5 dat het besturingssysteem het bestandssysteem bepaalt. Dat
@@ -927,7 +946,7 @@ stonden. Wat hier beslist heeft is niet dat de fout in de lopende tekst stond ma
 waar was, en de rest van het hoofdstuk koos die partij al. Dit is iets anders dan hoofdstuk 5, waar
 de syllabus een **labopagina** tegensprak; hier ligt de tegenspraak binnen een hoofdstuk. Staat een
 kader fout terwijl de lopende tekst het juist heeft, dan wordt het kader rechtgezet: hoofdstuk 8
-doet dat met twee kernpunten die host en guest omdraaien.
+heeft dat gedaan met de twee kernpunten die host en guest omdraaien.
 
 **Een hertekening houdt de kleuren van de brontekst wanneer die tekst ze bij naam noemt, maar dempt
 ze wel.** 6.5 schrijft "bestand 1 = rood, bestand 2 = blauw en bestand 3 = groen" en "bestand 4 =
@@ -959,7 +978,12 @@ regels eronder zijn daardoor geen legende meer maar drie definities, en ze staan
 zegt welk blok het algoritme neemt, en niet wat het gevolg is. Het gevolg (een bestand kan in het
 grootste blok nog groeien) staat in de lopende tekst van allebei de tracks. De labokopie heette
 `partitioneren-first-worst-best-fit.svg` en heet nu `...-first-best-worst-fit.svg`, zodat de twee
-namen dezelfde volgorde dragen als de tekening en als de sectietitel.
+namen dezelfde volgorde dragen als de tekening en als de sectietitel. **Het derde paar is
+`img/virtualiseren-vm-versus-container.svg` en `img/syllabus-08-vm-versus-container.svg`**, en dat
+is het eerste dat niet uit de Word komt: hoofdstuk 8 heeft geen enkele tekening en 8.4 behandelt
+precies wat het labo al tekent, dus de labotekening is er ongewijzigd naartoe gekopieerd. Een
+hoofdstuk zonder figuur mag er dus een uit de labotrack krijgen, zolang de kopie byte voor byte
+dezelfde blijft.
 
 **Vier van de acht afbeeldingen van hoofdstuk 6 zijn hertekend**, meer dan in enig ander hoofdstuk
 tot nu toe, en de vier redenen staan per figuur in NOTITIES.md. Drie ervan tekenen iets wat

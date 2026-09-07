@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual machines</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Virtual machines</h1>
+
+        <p>De encyclopedie Wikipedia omschrijft een virtual machine als een computerprogramma dat de werking van een echte, fysieke computer nabootst.</p>
+
+        <p>Een deel van de hardware van de computer wordt geëmuleerd. Dit wil zeggen dat de werking van het diskettestation, de floppy, USB, netwerk, … wordt nagebootst in software. De processor en het werkgeheugen horen daar niet bij. De instructies van de virtuele machine lopen rechtstreeks op de echte processor, en de hardware bewaakt daarbij dat ze niet buiten die virtuele machine komen. Ook het werkgeheugen is echt geheugen, waarvan de virtuele machine een stuk toegewezen krijgt.</p>
+
+        <p>Een besturingssysteem dat geïnstalleerd is op een virtuele machine gedraagt zich net zoals het zich zou gedragen op een fysieke computer.</p>
+
+        <p>Virtualiseren betekent ook dat er één host besturingssysteem is waarop er 1 of meerdere guest besturingssystemen worden geïnstalleerd. De resources van het host systeem worden dus gedeeld over de host en de verschillende guest systemen.</p>
+
+        <p>Ieder guest besturingssysteem krijgt een eigen virtuele processor, virtueel werkgeheugen en een virtuele harde schijf, etc. Wijzigingen in een guest besturingssysteem hebben geen enkele invloed op het host besturingssysteem of andere guest besturingssystemen!</p>
+
+        <p>Programma's die een virtuele machine draaien zijn er in twee soorten. VirtualBox, VMware Workstation en Hyper-V installeer je op een gewoon besturingssysteem, dat daarmee de host wordt, en je blijft er ondertussen zelf op werken. Proxmox VE installeer je rechtstreeks op de kale hardware, zonder host besturingssysteem eronder, en zo een machine draait niets anders meer dan guests. Die tweede vorm tref je aan op een server, waar niemand aan het toestel zelf werkt.</p>
+
+        <p>Er zijn verschillende redenen waarom virtualisatie zeer interessant is. De meest belangrijke is ongetwijfeld de economische factor. De meeste computers benutten niet optimaal hun resources: de processor doet vaak niets, het werkgeheugen is niet volledig vol, … waardoor de capaciteit van de machine niet volledig wordt benut.</p>
+
+        <p>Door te virtualiseren kan je op dezelfde hardware verschillende computersystemen laten draaien waardoor je enorm bespaart op hardware, onderhoud en energiekost.</p>
+
+        <p>Een tweede reden is dat je verschillende systemen van elkaar kan scheiden op dezelfde hardware. What happens in the virtual machine, stays in the virtual machine. Een crash van het ene heeft geen invloed op het andere.</p>
+
+        <p>Het nadeel is dat een virtuele machine trager werkt dan een fysieke machine. Ze moet namelijk haar resources delen met de fysieke machine en eventueel andere virtuele machines.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

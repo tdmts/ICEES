@@ -1716,3 +1716,332 @@ Beslis dit voor hoofdstuk 8 erbij komt, want dan gaat het over drie hoofdstukken
   in de Word gewone apostrofs en zijn dat hier gebleven. Dat is opmaak en geen
   tekst, net als de drie punten in "gebruikersbeheer, bestandsbeheer,
   geheugenbeheer, ... ." in 7.2, die daar met een spatie voor de punt staan.
+## Hoofdstuk 8, Virtual machines en containers
+
+**De sectie Studievragen achteraan heet hier Test jezelf**, zoals in hoofdstuk 1,
+3, 4, 5 en 6. Het kader Studievragen vooraan houdt zijn eigen naam en staat samen
+met de Kernpunten op `Overzicht.html`. De pagina heet `TestJezelf.html`; de
+importer schreef `Studievragen.html`.
+
+**Vier secties, 54 alinea's en zes gedrukte bladzijden.** Geen enkele Heading 3,
+dus elke pagina draagt alleen haar eigen h1, en **geen enkele zwevende
+afbeelding**: de twee foto's staan inline in een tabel. `IMPORT.md` meldt dan ook
+maar een ding, de kopregel van die tabel.
+
+### Het kader stond fout over host en guest, en is rechtgezet
+
+Kernpunt 2 zei "Op één fysieke **guest** machine kan je meerdere virtuele
+**host** machines draaien" en kernpunt 4 zei "Het **host** besturingssysteem
+wordt telkens mee gevirtualiseerd". Allebei omgekeerd. De lopende tekst van 8.3
+heeft het wel juist: "er is één host besturingssysteem waarop er 1 of meerdere
+guest besturingssystemen worden geïnstalleerd", en "Ieder guest besturingssysteem
+krijgt een eigen virtuele processor". Het hoofdstuk sprak zichzelf dus tegen, en
+het kader was de kant die fout stond.
+
+Beslist op 7 september 2026 door de lector: **de twee kernpunten worden juist
+gezet en de lopende tekst blijft ongemoeid.**
+
+> kernpunt 2: Op één fysieke host machine kan je meerdere virtuele guest machines
+> draaien.
+>
+> kernpunt 4: ... Het guest besturingssysteem wordt telkens mee gevirtualiseerd.
+
+**Dat verfijnt de regel van hoofdstuk 6, en de verfijning staat ook in CLAUDE.md.**
+Daar stond na hoofdstuk 6 dat het kader letterlijk blijft wat de Word zegt en dat
+de lopende tekst is wat je bijdraait. Dat was toeval: in hoofdstuk 6 had het kader
+gelijk, en daardoor was de *plaats* van de zin het criterium geworden in plaats
+van haar juistheid. Hier ligt het omgekeerd, en in allebei de gevallen wint wat
+waar is. Het blijft een handmatige woordcorrectie, dus **een herimport draait ze
+terug.**
+
+**Dezelfde omkering stond in de Word van hoofdstuk 5**, in een kernpunt dat schreef
+dat je op één fysieke guest meerdere virtuele hosts draait. Dat is dezelfde fout in
+dezelfde bewoording, en ze was bij Labo Virtualiseren al opgemerkt.
+`Labo/Virtualiseren/` zegt het overal juist en is niet aangeraakt.
+
+### De emulatie sprak het labo tegen, en hoofdstuk 5 ook
+
+**Wat er stond, klopte niet.** 8.3 schreef: "De hardware van de computer wordt
+geëmuleerd. Dit wil zeggen dat de werking van de processor, werkgeheugen,
+diskettestation, floppy, USB, netwerk, … wordt nagebootst in software." Kernpunt 1
+vatte dat samen als "Een virtuele machine bootst de hardware van een fysieke
+computer na in software".
+
+`Labo/Virtualiseren/Theorie/VirtueleHardware.html` heeft het bij het rechte eind:
+een virtuele machine laat de instructies van de gast rechtstreeks op de echte
+processor lopen, met de virtualisatie-uitbreiding van de processor die bewaakt dat
+hij niet buiten zijn virtuele machine komt. Nagebootst zijn de randapparaten. Dat
+is precies het geval van hoofdstuk 5, en de regel geldt onverkort: zet de syllabus
+recht, **raak de labopagina niet aan** (patroon 17).
+
+**Er komt hier wel iets bij dat hoofdstuk 5 nog niet had: de syllabus sprak
+zichzelf tegen over twee hoofdstukken heen.** 5.2 draagt sinds de vorige ronde de
+rechtgezette formulering, en 8.3 zei er het omgekeerde van. De correctie neemt
+daarom **de bewoording van hoofdstuk 5 over** in plaats van een tweede te
+verzinnen, zodat de twee bladzijden hetzelfde zeggen. Alinea 2 van 8.3 luidt nu:
+
+> Een deel van de hardware van de computer wordt geëmuleerd. Dit wil zeggen dat de
+> werking van het diskettestation, de floppy, USB, netwerk, … wordt nagebootst in
+> software. De processor en het werkgeheugen horen daar niet bij. De instructies
+> van de virtuele machine lopen rechtstreeks op de echte processor, en de hardware
+> bewaakt daarbij dat ze niet buiten die virtuele machine komen. Ook het
+> werkgeheugen is echt geheugen, waarvan de virtuele machine een stuk toegewezen
+> krijgt.
+
+En kernpunt 1 luidt nu: "Een virtuele machine bootst de **randapparaten** van een
+fysieke computer na in software; haar instructies lopen op de echte processor;".
+
+Drie keuzes daarin:
+
+- **De opsomming van de Word blijft staan**, diskettestation, floppy, USB en
+  netwerk, met het beletselteken erachter. Er valt dus geen enkel gegeven weg; wat
+  eruit gaat is de processor en het werkgeheugen, en die twee krijgen er hun eigen
+  zin bij. Dat diskettestation en floppy hetzelfde ding zijn, staat hieronder bij
+  wat niet aangeraakt is.
+- **Het woord guest komt in die alinea niet voor**, want 8.3 voert het pas twee
+  alinea's later in (patroon 20). Er staat "de virtuele machine". Hoofdstuk 5 moest
+  om diezelfde reden "het besturingssysteem dat erin draait" schrijven, en dat
+  blijft daar zo.
+- **De eerste alinea van 8.3 is niet aangeraakt.** Die geeft de omschrijving van
+  Wikipedia, en vraag 1 van Test jezelf steunt er woord voor woord op. Ze blijft
+  waar ook: een virtuele machine gedraagt zich als een fysieke computer, en de
+  correctie gaat over hoe dat gebeurt en niet over of het gebeurt.
+
+**Een herimport gooit deze correctie weg.**
+
+### De onbeantwoorde studievraag kreeg vier namen, en Proxmox VE kostte een zin
+
+Het kader vraagt "Geef een voorbeeld van een programma dat een virtual machine kan
+draaien." Het hoofdstuk noemt Docker voor containers in 8.4, en voor een virtuele
+machine noemt het nergens iets. Dat is het gat van de wet van Moore in hoofdstuk 1,
+van de bottleneck in hoofdstuk 5, van het partitieschema in hoofdstuk 6 en van
+realtime in hoofdstuk 7, en de uitkomst is dezelfde: er komt tekst bij.
+
+Beslist op 7 september 2026 door de lector: **dezelfde vier namen als het labo,
+exact zo gespeld.** VirtualBox, VMware Workstation, Hyper-V en Proxmox VE. Ze zijn
+uit de tabel van `Labo/Virtualiseren/Theorie/WatIsVirtualisatie.html` overgenomen
+als eigen tekst en niet als link: de twee tracks zijn onafhankelijk (patroon 17).
+
+**De vierde naam is niet gratis, en daar volgt een aanvulling uit.** Proxmox VE
+draait rechtstreeks op de kale hardware, zonder host besturingssysteem eronder, en
+8.3 definieert virtualiseren juist als "er is één host besturingssysteem waarop er
+1 of meerdere guest besturingssystemen worden geïnstalleerd". Die naam noemen
+zonder een woord over het verschil maakt de eigen definitie van het hoofdstuk
+onwaar. De alinea staat achter de definitie waar ze een uitzondering op is, en niet
+achteraan de sectie:
+
+> Programma's die een virtuele machine draaien zijn er in twee soorten. VirtualBox,
+> VMware Workstation en Hyper-V installeer je op een gewoon besturingssysteem, dat
+> daarmee de host wordt, en je blijft er ondertussen zelf op werken. Proxmox VE
+> installeer je rechtstreeks op de kale hardware, zonder host besturingssysteem
+> eronder, en zo een machine draait niets anders meer dan guests. Die tweede vorm
+> tref je aan op een server, waar niemand aan het toestel zelf werkt.
+
+**Het woord hypervisor staat er niet in.** Dat is de vakterm voor het onderscheid,
+maar geen enkel hoofdstuk van deze syllabus voert hem in, en hem hier invoeren zou
+een definitie kosten die niets extra uitlegt. Dat is patroon 20, en het is dezelfde
+afweging als de paginatabellen die in hoofdstuk 5 buiten de tekst bleven.
+
+**De laatste zin knoopt aan 8.1 en 8.2 vast**, waar de server het onderwerp is.
+
+**Deze alinea staat alleen in de HTML en een herimport gooit haar weg.**
+
+### De drie vragen van Test jezelf
+
+| Vraag | Antwoord | Waarop het steunt |
+|---|---|---|
+| 1 Wikipedia omschrijft een virtual machine als | c, een computerprogramma dat de werking van een echte, fysieke computer nabootst | 8.3, eerste zin, woord voor woord |
+| 2 Draait jouw computer virtuele machines, dan is hij | a, het host systeem | 8.3, "er is één host besturingssysteem waarop er 1 of meerdere guest besturingssystemen worden geïnstalleerd", en het rechtgezette kernpunt 2 |
+| 3 Welke bewering is NIET WAAR | d, als er hardware crasht blijft de virtuele machine gewoon verder werken | de drie andere staan in 8.3 (kostenbesparend, volledig gescheiden, trager); de scheiding zit in de software en niet in de hardware |
+
+**Alle drie de vragen hebben precies een juist antwoord, en dat is nageteld.** Het
+probleem van hoofdstuk 3, waar vier van de vijf mogelijkheden juist waren, speelt
+hier bij geen enkele vraag. Er is dus geen enkele open vraag en geen enkele
+`<div class="oplossing">` in dit hoofdstuk; alle drie zijn ze meerkeuze gebleven,
+zoals in hoofdstuk 6.
+
+**Vraag 2 houdt haar twee mogelijkheden**, host of guest, en er wordt er geen derde
+bijverzonnen. Beslist op 7 september 2026. Bij vraag 5 van hoofdstuk 5 en vraag 2
+van hoofdstuk 6 gebeurde dat wel, en het verschil is dat daar een echte derde
+mogelijkheid uit de tekst te halen was. Hier zijn host en guest samen de hele
+verzameling: een computer die virtuele machines draait is de host, en dat is het.
+Een verzonnen derde zou een woord invoeren dat het hoofdstuk niet kent. **De
+gokkans van een op twee is daarmee bewust aanvaard**; de zelftest is oefening, en
+de Word bepaalt de vraag.
+
+**Vraag 3 stelt de vraag al omgekeerd** ("Welke bewering is NIET WAAR"), dus de
+ingreep die vraag 6 van hoofdstuk 3 en vraag 1 van hoofdstuk 6 nodig hadden, was
+hier niet nodig. De Word deed het zelf.
+
+### 8.4 kreeg de tekening van het labo
+
+**Het hoofdstuk heeft geen enkele afbeelding buiten de twee foto's van 8.1**, en
+8.4 behandelt precies wat `img/virtualiseren-vm-versus-container.svg` al tekent.
+Beslist op 7 september 2026: die tekening wordt gekopieerd naar
+`img/syllabus-08-vm-versus-container.svg`, **byte voor byte dezelfde**, zoals de
+fragmentatiefiguur en de first/best/worst-fitfiguur al twee zulke paren vormen.
+Dat is het derde paar en het eerste dat niet uit de Word komt. Nagekeken met
+`diff`; **wijzig er nooit een zonder de andere.**
+
+De tekening is in Edge gerenderd voor ze vertrouwd werd, en er viel niets te
+herstellen: geen overlappende tekst, geen label onder een lijn. Ze staat op
+160.0mm, en met een viewBox van 720 bij 280 is ze op papier 62.2mm hoog, dus figuur
+en bijschrift samen blijven ver onder de 240mm van hoofdstuk 3. De breedte is hier
+dus geen knop geweest.
+
+**Ze noemt VirtualBox, Ubuntu, Docker en guest, en alle vier draagt het hoofdstuk
+die woorden nu.** Docker staat in 8.4 zelf, guest in 8.3, en VirtualBox in de
+alinea die hierboven bijgeschreven is. Zonder die alinea zou de tekening een naam
+tonen die in geen enkele zin van het hoofdstuk voorkomt, en dat is patroon 20.
+
+**Ze staat onder de vier alinea's** en niet ertussen, want ze toont wat die vier
+samen beschrijven, en de laatste ervan noemt Docker. Het `alt` en het bijschrift
+zijn met de hand geschreven na het openen van de gerenderde tekening, en ze zijn
+eigen tekst: de labopagina draagt haar eigen `alt` en die is niet overgenomen.
+**Er is geen tweede tekening bij 8.2 gemaakt**; het bleef bij deze ene.
+
+### De twee foto's van 8.1
+
+**Allebei opengedaan voor hun bijschrift geschreven werd.** Het zijn productfoto's
+op wit, allebei zonder watermerk en zonder chroom, en allebei leesbaar op hun
+breedte uit de Word.
+
+- **image56** (`syllabus-08-virtual-machines-en-containers-01.jpeg`, 500 bij 251
+  pixels op 74.5mm, dus **170 dpi**) is een 1U serverkast schuin van voren: een
+  zilverkleurig deksel, een zwarte voorkant met twee ventilatieroosters en aan
+  weerszijden een montage-oor.
+- **image57** (`syllabus-08-virtual-machines-en-containers-02.jpeg`, 450 bij 450
+  pixels op 68.4mm, dus **167 dpi**) is een zwarte rackkast op wieltjes met een
+  glazen deur.
+
+Allebei zitten ze ruim boven de dpi-grens van 98 die hoofdstuk 3 vastgelegd heeft,
+dus **de breedtes uit de Word zijn niet aangeraakt**. Hertekenen is hier geen optie
+en was ook niet nodig: het zijn foto's, en de enige reden om er een te vervangen
+zou onleesbaarheid of een watermerk zijn.
+
+**De tabel eromheen krijgt geen kopregel, en de gok van de importer is daarmee
+nagekeken.** `IMPORT.md` meldde "geen enkel signaal" en zette er een `data-geraden`
+op. Nagekeken: de rij met **1U server** en **19" rack** staat *onder* de foto's,
+dus ze benoemt geen kolommen maar onderschrijft twee beelden. Een kopregel hoort
+bovenaan, dus die is er niet, en het `data-geraden` is weg. Dat is het spiegelbeeld
+van de vergelijkingstabel van 6.1, waar de benoemende rij wel bovenaan stond en dus
+wel een `<thead>` geworden is. Nagekeken in de render: de twee foto's staan naast
+elkaar met hun naam eronder, en de linkercel is hoger dan de foto omdat de rechter
+vierkant is. Dat is geen fout maar het gevolg van twee beeldverhoudingen naast
+elkaar.
+
+**"zoals je in de figuur ziet" klopte niet meer, en is rechtgezet.** De zin eronder
+luidde "Eerst en vooral hoeft een server er niet uit te zien zoals je in de figuur
+ziet", en er staan twee figuren, waarvan er maar een een server is: de andere is de
+kast waar hij in gaat. Ze luidt nu "**zoals de 1U server hierboven**", wat de foto
+aanwijst die bedoeld is en het woord gebruikt dat de tabelcel en de alinea erna al
+dragen (patroon 20). Het is een woordcorrectie, dus **een herimport draait ze
+terug.**
+
+### De bladspiegel van dit hoofdstuk
+
+Zes bladzijden, 63 tot en met 68, met de gedrukte 8.6 Oplossingen als laatste.
+Nagerekend na de redactionele ronde en niet alleen na de import, want de
+bijgeschreven alinea van 8.3 en de figuur van 8.4 kwamen er allebei na de import
+bij.
+
+**Er is aan geen enkele breedte gedraaid**, net als bij hoofdstuk 7. De fototabel
+van 8.1 staat heel op haar bladzijde, met de kop 8.2 en zijn eerste twee alinea's
+er nog onder. De figuur van 8.4 staat met haar bijschrift samen onderaan de
+bladzijde waar 8.4 op begint, dus de grens van 240mm uit hoofdstuk 3 is nergens
+geraakt. Test jezelf past op een bladzijde en Oplossingen op de volgende: geen
+enkele vraag valt uiteen, en het geval van hoofdstuk 3, waar vraag 9 alleen op de
+tweede bladzijde belandde, speelt hier niet.
+
+### Waar dit hoofdstuk en de rest van dit vak naast elkaar staan
+
+Dit is na hoofdstuk 6 de zwaarste overlap met een labo.
+`Labo/Virtualiseren/Theorie/WatIsVirtualisatie.html` en `VirtueleHardware.html`
+behandelen hetzelfde onderwerp. Patroon 17: de twee tracks zeggen hetzelfde twee
+keer en er linkt niets tussen. **Er is aan geen enkele labopagina iets veranderd.**
+Nagekeken op tegenspraak, en dit kwam eruit.
+
+- **De emulatie.** Zie hierboven. Dat was een echte tegenspraak, en de syllabus is
+  de kant die rechtgezet is.
+- **Host en guest.** Zie hierboven. Het labo had het overal juist.
+- **De vier programma's staan nu in allebei de tracks**, met dezelfde spelling en
+  dezelfde indeling: drie op een gewoon besturingssysteem en Proxmox VE op de kale
+  hardware. Het labo zet ze in een tabel met een kolom "Waar het draait", de
+  syllabus in twee zinnen. Er linkt niets tussen.
+- **De container.** 8.4 en de labopagina zeggen allebei dat containers hetzelfde
+  besturingssysteem delen, dat de overhead daardoor wegvalt en dat de licentiekost
+  lager ligt. Het labo zegt er twee dingen bij die de syllabus niet heeft: dat een
+  container in seconden start, en dat Linux-containers alleen op Linux draaien. Dat
+  is een gat en geen tegenspraak, en de tekening die allebei de tracks nu dragen,
+  zegt dat laatste wel.
+- **De licentie.** 8.4 schrijft "Voor iedere VM heb je eventueel een licentie van
+  Windows nodig", het labo "Draai je tien virtuele machines met Windows, dan heb je
+  tien Windows-licenties nodig". Hetzelfde feit, alleen zegt het labo het scherper.
+- **De syllabus noemt Labo Virtualiseren nergens en omgekeerd ook niet.** Dat blijft
+  zo: 7.4 mag Linux Geavanceerd bij naam noemen omdat daar een belofte stond die
+  nergens heen wees, en hier staat geen belofte.
+- **De vijf productnamen die hoofdstuk 4 en 7 uit elkaar laten lopen** (Raspberry
+  Pi, CODESYS, ETHERCAT, PROFINET, MODBUS/TCP tegen Raspberry PI, CodeSys,
+  EtherCAT, ProfiNET, Modbus TCP) komen in dit hoofdstuk **geen enkele keer** voor.
+  Nagekeken met grep. Die beslissing gaat dus nog altijd over twee hoofdstukken en
+  niet over drie, en ze blijft openstaan.
+
+### Wat er in de tekst opviel, en op 7 september 2026 rechtgetrokken is
+
+De tekst gaat er in principe letterlijk in, dus dit staat hier met wat er beslist
+is. **Al deze correcties staan alleen in de HTML en een herimport draait ze terug.**
+Wat hierboven al per beslissing beschreven staat (host en guest, de emulatie, de
+1U server), staat hier niet nog eens.
+
+- **Studievraag 1 vooraan was een imperatief met een vraagteken.** "Omschrijf in
+  eigen woorden waarom virtuele machines zo interessant zijn?" draagt nu een punt.
+  De regel staat bij hoofdstuk 4 en dit is het vijfde hoofdstuk dat ze tegenkomt.
+  **De tweede zin van diezelfde studievraag is wel een echte vraag** ("Welke
+  voordelen hebben ze ten opzichte van een fysieke machine?") en houdt haar
+  vraagteken, net als studievraag 2.
+- **Studievraag 3 vooraan eindigde op een kommapunt**, "Geef een voorbeeld van een
+  programma dat een virtual machine kan draaien;". Dat is een imperatief, dus ze
+  draagt nu een punt. Studievraag 4 ernaast, met dezelfde bouw, droeg er al een.
+  Dat is precies het geval van studievraag 8 van hoofdstuk 7.
+
+### Wat er in de tekst opviel, en niet aangeraakt is
+
+De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
+
+- **"diskettestation, floppy"** in 8.3 noemt hetzelfde toestel twee keer. Het staat
+  zo in de Word en het staat na de correctie van die alinea nog altijd zo, want de
+  opsomming is niet ingekort. De term is bovendien verouderd: er is geen enkele
+  virtuele machine meer met een diskettestation.
+- **"What happens in the virtual machine, stays in the virtual machine."** in 8.3
+  is een Engelse eenregelaar midden in een Nederlandse tekst, zonder bron en zonder
+  dat er staat dat het een gezegde is. De zin ervoor legt hetzelfde in het
+  Nederlands uit, dus wie hem overslaat mist niets.
+- **"Voor iedere VM heb je eventueel een licentie van Windows nodig"** in 8.4: het
+  woord eventueel maakt van een kost een mogelijkheid, terwijl kernpunt 4 de
+  licentiekost gewoon als een nadeel opsomt.
+- **"Het performantieverlies komt onder andere omdat het besturingssysteem overal
+  mee gevirtualiseerd wordt"** in 8.4, waar telkens hoort te staan; kernpunt 4 en
+  kernpunt 5 gebruiken allebei telkens.
+- **De naam van het onderwerp wisselt binnen het hoofdstuk**: virtual machine,
+  Virtual Machine, virtuele machine, Virtuele Machines en VM staan er alle vijf. De
+  hoofdstuktitel is Virtual machines en containers, en dat is de vorm die de kop
+  draagt.
+- **"Een server krijgt meestal slechts 1 taak"** in 8.2 en **"1 of meerdere guest
+  besturingssystemen"** in 8.3 schrijven een cijfer waar een woord gebruikelijk is;
+  dezelfde zinnen schrijven twee en vier wel voluit.
+- **Twee dubbele spaties in 8.2** ("we het  risico" en "de gevolgen van
+  onderbrekingen") en **een in 8.1** (achter de zin over de 1U server). Het zijn
+  gewone spaties en geen harde, anders dan bij hoofdstuk 5 en 7, en ze vallen in de
+  opmaak weg. Dat is opmaak en geen tekst.
+- **"Op die manier wordt dit echter wel een heel dure aangelegenheid..."** in 8.2
+  en **"Dit op zich neemt ook al processortijd in beslag..."** in 8.4 eindigen op
+  drie punten die in de Word het beletselteken zijn. Dat is opmaak en geen tekst,
+  net als de apostrofs rond 'dienst' in 8.1.
+- **"een virtuele harde schijf, etc."** in 8.3 schrijft etc. waar de rest van de
+  Word het beletselteken gebruikt.
+- **8.2 verwijst naar "hoofdstuk Harde schijf" en "hoofdstuk Besturingssystemen".**
+  Het tweede is hoofdstuk 7 en staat er; het eerste is hoofdstuk 12 en bestaat nog
+  niet. Allebei blijven ze woorden en worden er geen links van: van de syllabus is
+  de PDF het enige dat de student ziet.
+- **8.2 heet Nadelen van fysieke machines en somt er een op**, de prijs. Dat het er
+  maar een is, staat in de Word zo.

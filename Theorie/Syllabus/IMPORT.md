@@ -88,3 +88,12 @@ letterlijk overgenomen.
 
 - kader "Kernpunten" werd een info-box met data-kader="kernpunten"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
 - kader "Studievragen" werd een info-box met data-kader="studievragen"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+
+## Virtual machines en containers (opening)
+
+- kader "Kernpunten" werd een info-box met data-kader="kernpunten"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+- kader "Studievragen" werd een info-box met data-kader="studievragen"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+
+## Virtual machines en containers > Server
+
+- tabel "" kreeg GEEN kopregel (geen enkel signaal), nakijken

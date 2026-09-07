@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Containers</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Containers</h1>
+
+        <p>Er zijn heel veel voordelen aan Virtual Machines maar er is ook één heel belangrijk nadeel: ze zijn traag.</p>
+
+        <p>Het performantieverlies komt onder andere omdat het besturingssysteem overal mee gevirtualiseerd wordt. Dit op zich neemt ook al processortijd in beslag... Ook de licentiekost moet telkens in rekening gebracht worden. Voor iedere VM heb je eventueel een licentie van Windows nodig.</p>
+
+        <p>Containers doen eigenlijk net hetzelfde als een Virtual Machine, ze maken een afgeschermde omgeving voor programma&#x27;s maar met dat verschil dat ze steeds hetzelfde besturingssysteem gebruiken. De overhead is bijgevolg weg, wat maakt dat ze vele malen performanter zijn.</p>
+
+        <p>Een voorbeeld van container software is Docker. Je kan dit installeren op zowel Windows als Linux en op de website van Docker vind je allerlei software die je in een container kan stoppen.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-08-vm-versus-container.svg" class="img-fluid"
+                alt="Twee stapels naast elkaar. Links dragen de hardware, het besturingssysteem van de machine en VirtualBox twee guests, die elk een eigen Ubuntu met daarbovenop een programma hebben. Rechts dragen dezelfde hardware, hetzelfde besturingssysteem en Docker drie programma's, met op de plaats van het guest besturingssysteem een gestreepte rode strook met het opschrift geen eigen besturingssysteem">
+            <figcaption class="figure-caption">Elke guest draagt een eigen besturingssysteem; de containers ernaast delen dat van de machine</figcaption>
+        </figure>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>
