@@ -167,6 +167,54 @@ window.LAB_REFERENCE = {
                         href: 'HardwareInEenModerneComputer/Prestaties.html'
                     }
                 ]
+            },
+            {
+                name: 'BIOS / UEFI',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'bios-uefi-overzicht',
+                        name: 'Kernpunten en studievragen',
+                        blurb: 'Waarvoor de BIOS dient, welke beperkingen hij heeft, en waarom zijn opvolger UEFI nog altijd BIOS genoemd wordt.',
+                        href: 'BiosUefi/Overzicht.html'
+                    },
+                    {
+                        id: 'bios-uefi-bootsequence',
+                        name: 'Bootsequence',
+                        blurb: 'De processor begint bij de reset vector, en die ene instructie stuurt hem door naar het geheugen waar de firmware staat.',
+                        href: 'BiosUefi/Bootsequence.html'
+                    },
+                    {
+                        id: 'bios-uefi-bios',
+                        name: 'Basic input output system (BIOS)',
+                        blurb: 'De POST, de instellingen die de batterij bewaart, speed stepping op een industriele pc, en de weg van opstartvolgorde over master boot record naar bootloader.',
+                        href: 'BiosUefi/BasicInputOutputSystemBios.html'
+                    },
+                    {
+                        id: 'bios-uefi-uefi',
+                        name: 'Unified Extensible Firmware Interface (UEFI)',
+                        blurb: 'Vier nadelen van de BIOS, en hoe UEFI ze oplost met een grotere chip, TPM en een opstartpartitie met een .efi-programma erop.',
+                        href: 'BiosUefi/UnifiedExtensibleFirmwareInterfaceUefi.html'
+                    },
+                    {
+                        id: 'bios-uefi-omgeving',
+                        name: 'BIOS / UEFI',
+                        blurb: 'Waarom de term BIOS blijft plakken op firmware die UEFI is, en met welke toets je tijdens het opstarten in die omgeving raakt.',
+                        href: 'BiosUefi/DeUefiOmgeving.html'
+                    },
+                    {
+                        id: 'bios-uefi-artikel',
+                        name: 'Artikel: BIOS en UEFI',
+                        blurb: 'Vier schermafdrukken van een artikel van TechPulse over wat je computer doet voor Windows opstart.',
+                        href: 'BiosUefi/ArtikelBiosEnUefi.html'
+                    },
+                    {
+                        id: 'bios-uefi-test-jezelf',
+                        name: 'Test jezelf',
+                        blurb: 'Negen vragen over het opstartproces, de POST, de MBR en de nadelen van de BIOS.',
+                        href: 'BiosUefi/TestJezelf.html'
+                    }
+                ]
             }
         ]
     },

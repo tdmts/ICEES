@@ -38,3 +38,12 @@ letterlijk overgenomen.
 - tabel "" kreeg GEEN kopregel (geen enkel signaal), nakijken
 - tabel "" kreeg GEEN kopregel (eenkolomstabel), nakijken
 - tabel "" kreeg GEEN kopregel (eenkolomstabel), nakijken
+
+## BIOS / UEFI (opening)
+
+- kader "Kernpunten" werd een info-box met data-kader="kernpunten"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+- kader "Studievragen" werd een info-box met data-kader="studievragen"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+
+## BIOS / UEFI > Studievragen
+
+- lege tabel van 1 rijen overgenomen als invulruimte

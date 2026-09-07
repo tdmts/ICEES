@@ -310,3 +310,205 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML:
 - **De ellips aan het eind van de vierde alinea van 2.2** ("tot op een bepaalde
   kloksnelheid...") is in de Word het teken en geen drie punten. Dat is opmaak en
   is zo gebleven.
+
+## Hoofdstuk 3, BIOS / UEFI
+
+**De H1 en een H2 heten allebei BIOS / UEFI, en de sectiepagina is hernoemd.** De
+importer maakte er `BiosUefi/BiosUefi.html` van. Dat is niet fout, maar het leest
+raar en het botst in een grep met `Labo/Assemblage/Theorie/BiosUefi.html`, dat
+over hetzelfde onderwerp gaat en een heel ander bestand is. De pagina heet nu
+`DeUefiOmgeving.html`, naar wat ze werkelijk behandelt: dat de term BIOS blijft
+plakken op firmware die UEFI is, en met welke toets je in die omgeving raakt. De
+kop op de pagina blijft **BIOS / UEFI**, want dat is de tekst uit de Word, en de
+id in `reference.js` is `bios-uefi-omgeving`. Een bestandsnaam is hier dus voor
+het eerst iets anders dan `pascal()` van de kop; de tekst zelf is niet aangeraakt.
+
+**De sectie Studievragen achteraan heet hier Test jezelf**, zoals in hoofdstuk 1.
+Het kader Studievragen vooraan houdt zijn eigen naam en staat samen met de
+Kernpunten op `Overzicht.html`. Hoofdstuk 2 had geen sectie achteraan, dit
+hoofdstuk wel.
+
+### De negen vragen van Test jezelf, en de drie die niet in het mechanisme pasten
+
+De export eist per meerkeuzevraag precies een `class="juist"`; een open vraag
+draagt in de plaats een `<div class="oplossing">`. Drie van de negen vragen
+konden dat niet halen zoals ze in de Word stonden. Alle drie zijn ze op
+7 september 2026 door de lector beslist.
+
+| Vraag | Antwoord | Waarop het steunt |
+|---|---|---|
+| 1 Welk apparaat is verantwoordelijk voor het opstarten | b, de BIOS / UEFI | 3.1, het reset vector adres verwijst naar het BIOS geheugen, en daar staan de instructies die verder opstarten |
+| 2 Waarvoor staat de afkorting BIOS | open, Basic Input Output System | 3.2, eerste zin |
+| 3 Hoe de instellingen bewaard blijven | d, door een batterij op het moederbord | 3.2, "Deze instellingen blijven, ook als de computer uitstaat, bewaard door middel van de batterij" |
+| 4 Doel van de POST | c, de hardware controleren op aanwezigheid en goede werking | 3.2, "controleren als alle nodige hardware aanwezig is en functioneert" |
+| 5 Hoe je de MBR het best omschrijft | b, een kleine ruimte op de harde schijf met instructies om verder op te starten | 3.2, de eerste sector van 512 bytes waarvan 440 voor de Master Boot Code |
+| 6 Welke GEEN nadeel is van de BIOS | e, limiteert de kloksnelheid van de processor | 3.3 somt de vier andere op als nadelen; over de kloksnelheid zegt 3.2 net het omgekeerde, dat je die er zelf instelt |
+| 7 In welke situaties je de instellingen wijzigt | open, de vier situaties samen | de vier mogelijkheden uit de Word |
+| 8 Hoe je in de omgeving raakt | b, F1, F2, DEL bij het opstarten | 3.4, "moet je op een specifieke toets drukken", met Esc, F2, F10, F12 of Delete |
+| 9 Hoe de POST fouten kenbaar maakt | open, pieptonen en een boodschap op het scherm | 3.2, "hoor je vaak een BEEP geluid of zie je een foutboodschap op het scherm" |
+
+**Vraag 6 is omgekeerd, want vier van de vijf mogelijkheden waren juist.** Klein,
+onveilig, traag en schijven tot 2 TB staan alle vier in 3.3 als nadeel; alleen de
+kloksnelheid niet. De vraag luidt nu "Welke van deze is GEEN nadeel van de BIOS
+ten opzichte van UEFI?" en de vijf mogelijkheden staan er woord voor woord nog.
+Alleen de vraagzin is veranderd.
+
+**Vraag 7 en vraag 9 zijn open vragen geworden, en dat is een verlies dat je moet
+kennen.** Bij vraag 7 waren alle vier de mogelijkheden verdedigbaar juist, bij
+vraag 9 twee van de vier: 3.2 zegt letterlijk "hoor je vaak een BEEP geluid of
+zie je een foutboodschap op het scherm", dus zowel het scherm als de luidspreker
+klopt. Ze dragen nu invulruimte en een `<div class="oplossing">` waarin de
+mogelijkheden uit de Word samen het antwoord vormen. **De brontekst gaat daarmee
+niet verloren, maar de vorm wel**: de Brightspace-test van dit labo is meerkeuze
+met giscorrectie, en drie van de negen vragen bereiden daar nu niet meer op voor.
+Wie dat liever anders heeft, keert vraag 9 om zoals vraag 6 ("wanneer er nog geen
+beeld is") en houdt vier meerkeuzemogelijkheden over.
+
+**Vraag 9 legt ook een verschil met het labo bloot.** `Labo/Assemblage/Theorie/BiosUefi.html`
+zegt: "Loopt de POST vast, dan is er nog geen beeld om een boodschap op te tonen.
+Daarom geeft het moederbord een reeks pieptonen." De syllabus zet de twee naast
+elkaar alsof je kan kiezen. Het artikel op bladzijde 4 zit tussen de twee in
+("Piepgeluidjes zijn de meest voorkomende manier"). De oplossing van vraag 9 zegt
+allebei en noemt de reden waarom de pieptoon overblijft.
+
+**"aanpasssen" is verdwenen zonder dat er iets gecorrigeerd is.** Die tikfout
+stond in de vierde mogelijkheid van vraag 7, en die mogelijkheden zijn met de
+omzetting naar een open vraag weggevallen. De oplossing eronder is nieuwe tekst
+en schrijft dus gewoon "aan te passen". **"besturinggsysteem" in vraag 4 staat er
+nog**, want die vraag is meerkeuze gebleven.
+
+### De sectie Artikel: BIOS en UEFI, en wat ze kost
+
+**De vier schermafdrukken blijven staan, met een bronvermelding erbij.** Beslist
+op 7 september 2026. Wat er stond was vier bladzijden lopende tekst van iemand
+anders als plaatje, zonder een woord eigen tekst en zonder te zeggen van wie het
+was. De sectie draagt nu twee eigen alinea's die zeggen wat het artikel toevoegt
+(Secure Boot, de virtualisatie-instelling, de piepjes en de lampjes), een
+info-box Bron met de titel, de redactie, de datum en de link, en per figuur een
+bijschrift "Bladzijde N van 4, TechPulse".
+
+De bron is: Redactie TechPulse, *BIOS en UEFI: wat je computer doet voor Windows
+opstart*, 22 april 2022,
+`https://techpulse.be/achtergrond/215297/bios-en-uefi-wat-je-computer-doet-voor-windows-opstart/`.
+De link draagt `target="_blank"`; regel 4 van de contentcheck weigert alleen een
+externe **document**link, dus een artikel mag.
+
+**Leesbaarheid is niet het probleem, en dat is nagekeken in de render.** De vier
+afbeeldingen drukken op ongeveer 250 dpi en de lopende tekst erin meet 3,18 mm
+inkthoogte per regel bij een regelafstand van 5,23 mm, tegen 10 pt voor de tekst
+van de syllabus zelf. Wat er wel op staat, staat er ook op: kruimelpaden, twee
+groene blokken waar een videospeler hoorde te staan, drie wegklik-kruisjes, en op
+bladzijde 3 een zin die twee keer na elkaar staat ("Meer dan vroeger is het een
+uitdaging om in de UEFI/BIOS te raken."). De tekst is niet doorzoekbaar en niet
+selecteerbaar, en het `alt` beschrijft daarom wat er op de bladzijde staat in
+plaats van het over te typen.
+
+**Drie van de vier zijn smaller gezet dan de Word ze zet, en dat is de knop uit
+hoofdstuk 2.** De Word geeft ze 160.0mm, en dan is de afbeelding 233mm hoog op een
+bladspiegel van 240mm: figuur plus bijschrift past dan niet meer samen op een
+blad, Chrome negeert de `page-break-inside: avoid` die niet uit kan, en het
+bijschrift belandde op de bladzijde na zijn figuur. Op 152.0mm (bladzijde 2) en
+153.0mm (bladzijde 3 en 4) is het blok 232mm en blijft het heel. Dat scheelde ook
+een bladzijde in het hoofdstuk. Bladzijde 1 is niet aangeraakt: die afbeelding is
+korter en paste al.
+
+### De acht afbeeldingen
+
+**Alle acht staan inline**, dus het zwevende geval van hoofdstuk 1 speelt hier
+niet; `IMPORT.md` meldt er ook geen. Elk bestand is opengedaan voor het `alt`
+erbij geschreven werd, en die alt-teksten staan alleen in de HTML: **een nieuwe
+import van dit hoofdstuk gooit ze weg**.
+
+**image31 is hertekend en heet nu `img/syllabus-03-master-boot-record.svg`.** Het
+origineel is de MBR-tekening uit de Word, en er waren drie redenen om ze niet
+over te nemen. Ze staat in het Engels in een Nederlandse tekst en gebruikt woorden
+die de tekst ernaast niet gebruikt (Code, Disk Signature, Nulls). Ze draagt een
+tikfout, "E ach sector has 512 bytes". En ze is 616 pixels breed, wat op 160.0mm
+neerkomt op 98 dpi, tegen 247 voor de rest van dit hoofdstuk. Dat is dezelfde
+afweging als bij fragmentatie en de drie fits in Labo Partitioneren, en dezelfde
+uitkomst.
+
+De hertekening laat **geen enkel gegeven van het origineel vallen**: de schijf
+als een rij sectoren van 512 bytes met sector 0 als master boot record, en die
+sector op schaal verdeeld in 440 + 4 + 2 + 64 + 2 bytes. Drie van die vijf velden
+zijn op schaal een haarlijn breed, dus ze worden benoemd in een legende onder de
+balk in plaats van erin. Palet en lettertype zijn die van de SVG's van Labo
+Partitioneren, en de tekening is voor gebruik in Edge gerenderd.
+
+**Dit is de eerste SVG in de theorietrack, en er staat nu tweemaal een MBR in
+`img/`.** `partitioneren-mbr-indeling.svg` tekent hetzelfde voor het labo, in het
+Nederlands en met dezelfde getallen. Dat is met opzet: de twee tracks zijn
+onafhankelijk en een labopagina mag niet afhangen van een syllabuspagina. **De
+twee spreken elkaar op een punt tegen**: het labo noemt de laatste 8 bytes van de
+sector "een handtekening", de syllabusfiguur splitst ze in 4 bytes
+schijfhandtekening, 2 bytes nullen en 2 bytes handtekening. De syllabusversie is
+de nauwkeurige, en dat volgt de Word. Er is niets aan de labopagina veranderd.
+
+**image32, het Windows Boot Manager-scherm, draagt een watermerk AskVG.com
+rechtsonder, en blijft staan.** Het is de enige afbeelding van een bootloader die
+je laat kiezen, en het bijschrift noemt de bron nu bij naam in plaats van ze
+alleen in het watermerk te laten staan. Dat is dezelfde lijn als de beslissing
+over het artikel hierboven, en anders dan de How Stuff Works-figuur van hoofdstuk
+6, waar wel een alternatief voor bestaat.
+
+**Het originele `img/syllabus-03-bios-uefi-03.png` is geschrapt**, want de SVG
+staat in de plaats en niets verwijst er nog naar. Een herimport zet het terug.
+
+### Wat er in de tekst opviel, en niet aangeraakt is
+
+De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML:
+
+- **Vier Engelse opsommingstekens midden in 3.2**, een citaat uit de documentatie
+  van industriele moederborden ("BIOS functionality very much depends on the
+  field of usage for a motherboard", en drie regels erna). Er staat niet bij dat
+  het een citaat is en er staat geen bron bij. De drie alinea's eronder geven de
+  inhoud ervan wel in het Nederlands, dus wie het Engels overslaat mist niets.
+- **Het kader Studievragen vraagt naar Thermal Throttling**, een term die in de
+  hele tekst niet voorkomt: 3.2 heeft het over **thermal monitoring**. Dezelfde
+  vraag schrijft SpeedStepping aaneen waar de tekst **speed stepping** los
+  schrijft.
+- **"besturinggsysteem"** in mogelijkheid a van vraag 4 van Test jezelf.
+- **"op te starten.In de BIOS"** in 3.2, zonder spatie na de punt.
+- **"Zodra dit is gebeurt"** in 3.2, waar gebeurd hoort te staan.
+- **"Ontwikkeld door Intel, UEFI is tegenwoordig aanwezig op iedere recente
+  computer die je nu koopt een heeft bovenvermelde nadelen niet."** in 3.3: "een"
+  voor "en", en een zinsopener die uit het Engels komt.
+- **"Voor een modern besturingssysteem kunnen in die 440 bytes te weinig
+  instructies om het besturingssysteem van op te starten."** in 3.2. Er ontbreekt
+  een werkwoord; bedoeld is dat er te weinig instructies in passen.
+- **"Zoals je zopas hebt misschien kunnen afleiden"** in 3.3, met misschien op de
+  verkeerde plaats.
+- **"om te zien als", "controleren als", "om te weten als"** staan drie keer in
+  3.2 waar het standaard Nederlands "of" gebruikt. Dat is een vaste vorm in deze
+  hele Word.
+- **"de computer absoluut nog niet weet hoe het de aanwezige hardware moet
+  aanspreken"** in 3.1, met het waar hij of ze hoort te staan.
+- **"energie verslindende"** in 3.2, los geschreven.
+- **De syllabus schrijft "de Master Boot Record", het labo "het Master Boot
+  Record".** Binnen dit hoofdstuk is het consequent de; het labo is niet
+  aangeraakt.
+- **Studievraag 6 vooraan is een imperatief met een vraagteken**: "Geef enkele
+  voordelen van UEFI?"
+- De hoge komma's rond booten, strijd en spammen zijn in de Word gewone
+  apostrofs en zijn dat hier gebleven. Dat is opmaak en geen tekst.
+
+### Waar de syllabus en de labo's naast elkaar staan
+
+Patroon 17: de twee tracks zeggen hetzelfde twee keer en er linkt niets tussen.
+Nagekeken op tegenspraak, en dit kwam eruit. Er is aan geen enkele labopagina
+iets veranderd.
+
+- **De 8 laatste bytes van de MBR.** Zie hierboven bij de hertekening. Het labo
+  vat ze samen als een handtekening, de syllabus splitst ze in drie velden.
+- **De POST en de pieptoon.** Zie hierboven bij vraag 9. Het labo zegt dat er nog
+  geen beeld is, de syllabus geeft scherm en pieptoon als gelijkwaardige
+  mogelijkheden.
+- **De grens van de opstartschijf.** De syllabus zegt 2 TB,
+  `Labo/Assemblage/Theorie/BiosUefi.html` zegt "Tot 2 TB",
+  `Labo/Partitioneren/Theorie/Partitietabellen.html` rekent het voor als 2^32
+  sectoren van 512 bytes, "ongeveer 2 TB", en het artikel op bladzijde 3 schrijft
+  2,1 TB. Hetzelfde getal, alleen anders afgerond.
+- **GPT komt in dit hoofdstuk niet voor.** De syllabus zegt over UEFI alleen dat
+  er "een speciale partitie" met een `.efi`-programma in de plaats van de MBR
+  komt, en noemt de partitietabel nergens bij naam. Beide labo's doen dat wel.
+  Dat is een gat en geen tegenspraak.

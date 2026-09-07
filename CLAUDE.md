@@ -762,6 +762,50 @@ geen, en er is er dus ook geen geschreven. Of elk hoofdstuk er een hoort te hebb
 hoofdstuk 16 in een keer beslist, met alle zestien naast elkaar; tot dan noteert NOTITIES.md per
 hoofdstuk of het er een had.
 
+**Een meerkeuzevraag met meer dan een juist antwoord is een beslissing van de lector, niet van jou.**
+Regel 14 en `export-syllabus.py` eisen per vraag precies een `<li class="juist">`, en bij een enkele
+vraag zonder antwoord drukt het hele hoofdstuk geen Oplossingen. Hoofdstuk 3 had er drie op negen:
+een vraag naar de nadelen van de BIOS met vier juiste van de vijf, een vraag naar situaties om de
+instellingen te wijzigen met vier verdedigbare, en een vraag naar de POST waarop de tekst zelf twee
+antwoorden geeft. **Tel dat na voor je een letter zet**, want de vraag ziet er in de Word volstrekt
+normaal uit en de export klaagt pas over de vraag en niet over de reden.
+
+Er zijn twee vormen die werken en ze kosten elk iets anders. **Omkeren** ("Welke van deze is GEEN
+nadeel van...") houdt alle mogelijkheden woord voor woord en verandert alleen de vraagzin; het blijft
+meerkeuze. **Een open vraag** met invulruimte en een `<div class="oplossing">` houdt de mogelijkheden
+als antwoord, maar de Brightspace-test van elk labo is meerkeuze met giscorrectie, dus elke open
+vraag is er een die niet meer op die test voorbereidt. In hoofdstuk 3 werd het een keer het eerste en
+twee keer het tweede. Leg de keuze voor per vraag, en zet in NOTITIES.md welke het werd.
+
+**De importer schrijft een gewone `<ol>` en laadt `oplossingen.js` niet.** Een vragenlijst wordt met
+de hand een `<ol class="vragen">`, en de pagina krijgt met de hand `<script src=".../oplossingen.js">`
+onder `back-link.js`. Zonder het eerste ziet de export geen vragen en drukt ze zwijgend geen
+Oplossingen; het tweede vangt regel 14 wel op.
+
+**Een sectie die net zo heet als haar hoofdstuk, krijgt een andere bestandsnaam.** In hoofdstuk 3
+heten de H1 en een van de H2's allebei BIOS / UEFI, dus de importer schreef
+`Theorie/Syllabus/Theorie/BiosUefi/BiosUefi.html`. Dat is niet fout, maar het leest raar en het botst
+in een grep met `Labo/Assemblage/Theorie/BiosUefi.html`. De pagina heet nu `DeUefiOmgeving.html`,
+naar wat ze behandelt. **De kop op de pagina blijft de kop uit de Word** en de id in `reference.js`
+staat er los van, dus dit raakt de tekst niet. Het is de eerste bestandsnaam in de syllabus die niet
+`pascal()` van de kop is.
+
+**Een figuur en haar bijschrift moeten samen onder de 240mm blijven, niet de figuur alleen.**
+`figure` draagt in `syllabus.css` al een `page-break-inside: avoid`, maar Chrome negeert een avoid
+die niet uit kan: bij 160.0mm zijn de vier artikelbladzijden van hoofdstuk 3 elk 233mm hoog, en het
+bijschrift landde telkens op de bladzijde na zijn figuur. Op 152.0 en 153.0mm past het blok wel, en
+dat scheelde meteen een bladzijde. De breedte is dus dezelfde knop als bij het moederbord van
+hoofdstuk 2, alleen ligt de grens lager zodra er een bijschrift onder staat.
+
+**Een afbeelding uit de Word mag hertekend worden, en `img/syllabus-<nn>-<naam>.svg` is dan haar
+naam.** Hoofdstuk 3 deed dat met de MBR-tekening: Engelse labels in een Nederlandse tekst, een
+tikfout erin, en 616 pixels die op 160.0mm neerkomen op 98 dpi tegen 247 voor de rest van het
+hoofdstuk. Dat laatste is het argument dat je kan narekenen, en het is er een dat elke
+schermafdruk uit deze Word kan treffen. De hertekening laat geen enkel gegeven van het origineel
+vallen en gebruikt het palet van de SVG's van Labo Partitioneren; renderen voor je ze vertrouwt
+geldt hier net zo goed. Dat een labopagina hetzelfde tekent, is geen reden om het niet te doen: de
+twee tracks zijn onafhankelijk en een eigen kopie is de afspraak.
+
 ### Wat de eerste hoofdstukimport aan de importer veranderd heeft
 
 **Word plaatst een afbeelding op twee manieren, en `import-syllabus.py` kende er maar een.** Een
