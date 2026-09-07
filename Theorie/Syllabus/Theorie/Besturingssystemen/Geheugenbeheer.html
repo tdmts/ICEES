@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geheugenbeheer</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Geheugenbeheer</h1>
+
+        <p>Zoals je weet zegt de Von Neuman architectuur dat een programma, om uitgevoerd te kunnen worden, in het werkgeheugen moet worden geladen.</p>
+
+        <p>Hoe meer programma’s er worden uitgevoerd op een bepaald moment, hoe meer gegevens in het werkgeheugen worden geladen. Als een besturingssysteem performant wil zijn dan moet het ook opletten op welke adressen de data weggeschreven wordt naar het werkgeheugen.</p>
+
+        <p>Zo is het beter om gegevens die bij elkaar horen ook op aanliggende adressen te plaatsen in het werkgeheugen. We doen dit uiteraard om fragmentatie te vermijden en zo optimaal gebruik te kunnen maken van de prefetch buffer.</p>
+
+        <p>Wanneer we te maken hebben met grote programma&#x27;s en bestanden kan het zijn dat het werkgeheugen helemaal vol is. In principe zouden er dan geen nieuwe bestanden meer kunnen worden geopend en geen programma&#x27;s meer kunnen worden uitgevoerd. Gelukkig heeft men hierop een handige workaround gevonden.</p>
+
+        <p>Vanuit het standpunt van de gebruiker zijn er altijd slechts een paar programma&#x27;s actief. De gebruiker kan namelijk slechts enkele taken tegelijkertijd uitvoeren. Het besturingssysteem gaat programma&#x27;s die actief zijn maar niet vaak gebruikt worden uit het werkgeheugen halen en hun status opslaan op de harde schijf.</p>
+
+        <p>Dit principe heet swapping. Het kopiëren van die grote hoeveelheid data is natuurlijk zeer negatief voor de prestaties van het systeem.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

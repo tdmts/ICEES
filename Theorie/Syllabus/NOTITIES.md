@@ -1275,13 +1275,18 @@ ongebruikte afbeelding; een herimport zet ze terug.
   bestand lopen in plaats van omgekeerd, en waarvan FF, WF en BF boven de gaten
   tussen de blokken staan in plaats van boven het blok dat ze aanwijzen. Ze is
   bovendien 663 pixels breed, wat op 160.0mm neerkomt op 105 dpi. De hertekening
-  laat niets vallen: het bestand van 150 MB, de drie afkortingen en hun drie
-  omschrijvingen staan er nog, die laatste in een legende onderaan. **Wat erbij
+  laat niets vallen: het bestand van 150 MB, de drie algoritmes en hun drie
+  omschrijvingen staan er nog, die laatste op drie regels onderaan. **De
+  afkortingen FF, BF en WF zijn er op 7 september 2026 uit**, en de namen staan
+  nu voluit boven de blokken: geen enkele zin van dit hoofdstuk gebruikt die
+  afkortingen, de lopende tekst schrijft zelf First Fit, Best Fit en Worst Fit.
+  Daarmee is de tekening ook woord voor woord dezelfde geworden als de
+  labokopie. **Wat erbij
   komt zijn de maten van de vrije blokken** (100, 200, 160 en 400 MB), want zonder
   die maten kan de lezer niet nagaan waarom elk algoritme kiest wat het kiest. Het
   bestand staat getekend in het blok dat elk algoritme neemt, met eronder in het
   rood wat er overblijft: 50, 10 en 250 MB. Dat zijn dezelfde maten als
-  `img/partitioneren-first-worst-best-fit.svg`, met opzet, zodat de twee tracks
+  `img/partitioneren-first-best-worst-fit.svg`, met opzet, zodat de twee tracks
   geen verschillende getallen geven.
 - **image48 is `img/syllabus-06-fragmentatie.svg` geworden.** Het origineel zweeft
   (`wrapSquare`), dus de alinea ernaast is lopende tekst gebleven en de figuur
@@ -1291,7 +1296,14 @@ ongebruikte afbeelding; een herimport zet ze terug.
   **De vier kleuren zijn die van de brontekst en niet die van OrionCSS**: 6.5
   schrijft "bestand 1 = rood, bestand 2 = blauw en bestand 3 = groen" en "bestand 4
   = zwart", dus het palet zou de zin ernaast onwaar maken. De vrije ruimte en de
-  rode annotatie eronder komen wel uit het palet. **De figuur staat nu onder de
+  rode annotatie eronder komen wel uit het palet. **De drie kleuren zijn op 7
+  september 2026 wel gedempt** naar `#9e2f26`, `#2a4d7c` en `#3f7238`: de
+  verzadigde `#cc0000`, `#2b3fbf` en `#2e9e3e` waren de enige drie kleuren in de
+  hele `img/` die naast het palet van OrionCSS schreeuwden, en een donkerder rood
+  is nog altijd rood. De hue blijft dus de hue van de brontekst en alleen de
+  verzadiging is bijgedraaid. **Het woord gat is in diezelfde ronde weg**: het
+  middenblok heet nu `vrij` net als het blok achteraan, wat ook waar is en
+  meteen laat zien dat de vrije ruimte in twee stukken uiteenvalt. **De figuur staat nu onder de
   drie alinea's** in plaats van erboven, want ze toont wat die alinea's stap voor
   stap beschrijven; de importer zette haar bovenaan omdat ze in de Word zweeft.
 - **image50 is `img/syllabus-06-defragmentatie.svg` geworden**, en dat was het
@@ -1381,3 +1393,326 @@ is. **Deze correcties staan alleen in de HTML en een herimport draait ze terug.*
 - **De hoge komma's rond partitie, Schijfbeheer en Disk Management** zijn in de
   Word gewone apostrofs en zijn dat hier gebleven. Dat is opmaak en geen tekst, net
   als de apostrof in "zo'n 63 kB" in 6.4.
+
+## Hoofdstuk 7, Besturingssystemen
+
+**Dit hoofdstuk heeft geen sectie Studievragen achteraan.** Er is hier dus geen
+`TestJezelf.html` en er wordt achteraan het hoofdstuk geen sectie Oplossingen
+gedrukt. Dat is het geval van hoofdstuk 2 en het tweede in zeven hoofdstukken.
+Het kader Studievragen vooraan bestaat wel, met tien vragen, en het staat samen
+met de Kernpunten op `Overzicht.html`. Of elk hoofdstuk er een hoort te krijgen,
+wordt beslist na hoofdstuk 16 en in een keer, niet hier.
+
+### Heading 4 draaide hier voor het eerst, en de tak klopt
+
+Dit is het enige hoofdstuk van de hele Word met een Heading 4, en het zijn er
+vijf: de vijf scheduling algoritmes onder 7.6 Procesbeheer. De importer rekent de
+kop om met `min(max(niveau - kop_offset + 1, 2), 6)`, dus een Heading 3 wordt een
+`h2` op de pagina en een Heading 4 een `h3`. Nagekeken in de uitvoer en dat is
+precies wat er gebeurde.
+
+`verplaats_koppen()` in `export-syllabus.py` schuift daar in de bundel nog een
+niveau overheen, dus in de PDF is de rangorde:
+
+| in de Word | op de pagina | in de PDF | grootte |
+|---|---|---|---|
+| Heading 2 | `h1` | `h2` | 13pt vet |
+| Heading 3 | `h2` | `h3` | 11pt vet |
+| Heading 4 | `h3` | `h4` | 10pt vet |
+
+**Een Heading 4 is in de PDF dus even groot als de lopende tekst en verschilt er
+alleen in vet en in de ruimte erboven.** Gemeten op bladzijde 65 en 66: de tekst
+is 10pt Arial, de vijf algoritmekoppen zijn 10pt Arial-Bold. Dat leest, en op
+bladzijde 66 zie je het verschil met "Prioriteit en realtime" op 11pt er meteen
+boven staan, dus **`syllabus.css` is niet aangeraakt**. Wie het ooit toch wil
+aanzetten: het is de regel `h4, h5, h6` in dat bestand, en die geldt dan voor elk
+hoofdstuk, ook al is dit het enige met zo'n kop.
+
+### Het gat: realtime en tijdskritisch stonden alleen in de kaders
+
+Nagekeken in de lopende tekst van dit hoofdstuk: realtime, real time, real-time
+en tijdskritisch komen er samen **nul** keer in voor. Ze staan alleen in kernpunt
+5 en in studievraag 10 ("Waarom is het niet altijd een goed idee om een proces
+realtime te laten uitvoeren?"). Het woord prioriteit komt wel zeven keer voor in
+7.6 en starvation vijf keer, dus de helft van het mechanisme stond er al; wat
+ontbrak was waarom je een proces realtime zet en wat het kost.
+
+Dat is het gat van de wet van Moore in hoofdstuk 1, van de bottleneck in
+hoofdstuk 5 en van het partitieschema in hoofdstuk 6, en de uitkomst is dezelfde.
+Beslist op 7 september 2026: er komt tekst bij in plaats van dat de studievraag
+onbeantwoord blijft.
+
+**Dat werd een eigen sectie `Prioriteit en realtime` achteraan 7.6**, met vier
+alinea's. Een `h2` op de pagina, dus in de PDF een `h3` naast Cooperative
+multitasking en Preemptive multitasking, en niet een zesde algoritme onder
+Preemptive multitasking, want het is er geen. Dit is de eerste bijgeschreven
+tekst in de syllabus die een eigen kop krijgt in plaats van in een bestaande
+alineareeks te schuiven; de reden is dat de vijf secties ervoor stuk voor stuk
+een algoritme behandelen en een alinea erachter als deel van PMFQ zou lezen.
+
+Wat er staat, in het kort: een tijdskritisch proces moet niet snel zijn maar op
+tijd; je regelt dat met de prioriteit, in de Windows Task Manager tot en met de
+klasse Realtime; een echte garantie geeft dat niet, want daarvoor bestaat er een
+real time operating system, en dat is de term die **hoofdstuk 4** invoert bij
+Embedded system; en een realtime proces dat de processor niet loslaat, laat al de
+rest verhongeren, wat de starvation is die 7.6 al twee keer bij naam noemt.
+
+**Deze vier alinea's staan alleen in de HTML en een herimport gooit ze weg.**
+
+### Windows 10 is Windows 11 geworden, in dit hoofdstuk en in hoofdstuk 4
+
+Het kader zei "Windows 10 IoT Enterprise Long Term Servicing Channel", de
+studievragen 1, 2 en 3 zeiden alle drie Windows 10, en de lopende tekst van 7.1
+zei een keer "Windows IoT Enterprise LTSC" zonder nummer en een keer "in principe
+een exacte kopie van Windows 10 Enterprise". Windows 10 is sinds oktober 2025
+buiten ondersteuning en er bestaat een Windows 11 IoT Enterprise LTSC.
+
+Beslist op 7 september 2026 door de lector: **het wordt overal Windows 11.** Dat
+is het geval van Core 7 in hoofdstuk 5 en van Windows Embedded Compact 7 in
+hoofdstuk 4: een productnaam die veroudert, is een beslissing van de lector en
+niet van de omzetting. Zes plaatsen in dit hoofdstuk:
+
+- kernpunt 2, "Windows 11 IoT Enterprise Long Term Servicing Channel"
+- studievraag 1 en 2, "versies van Windows 11" en "versie van Windows 11"
+- studievraag 3, twee keer, "Windows 11 IoT Enterprise LTSC" en "Windows 11
+  Enterprise"
+- 7.1, "De versie die je vooral aantreft bij industriële PCs is Windows 11 IoT
+  Enterprise LTSC"
+- 7.1, "in principe een exacte kopie van Windows 11 Enterprise"
+
+**Het kader is hier dus wel aangeraakt**, anders dan bij hoofdstuk 5 en 6. Het
+verschil is dat het daar om een tegenspraak binnen de tekst ging, waar de
+lopende tekst de plaats is om bij te draaien, en hier om een feit dat overal
+hetzelfde hoort te staan: laat je het kader op 10 staan, dan drukt dezelfde
+bladzijde twee verschillende versienummers.
+
+**Hoofdstuk 4 is meegegaan**, want anders spreken de twee hoofdstukken elkaar
+tegen over wat er op een industriële pc draait. Drie plaatsen, alle drie in
+Windows 11 IoT Long Term Servicing Channel dan wel "de speciale variant van
+Windows 11":
+
+- `IndustrieleComputers.html`, twee keer in 4.1
+- `EmbeddedSystem.html`, een keer in 4.2
+
+De zin "Windows 7 Embedded" en "Windows 7 Compact / Embedded" ernaast is niet
+aangeraakt: die is historisch en klopt.
+
+**Wat hierbij niet gebeurd is**: er is geen versienummer aan de kop van 7.1
+gehangen. Die heet nog altijd "Windows IoT Enterprise Long Term Servicing
+Channel", zonder nummer, en dat is de naam van de reeks en niet van een versie.
+De kop had in de Word wel **IOT** in kapitalen terwijl de alinea eronder IoT
+schrijft; dat is nu overal IoT, dezelfde correctie die hoofdstuk 4 op 4.1 en 4.2
+al gekregen heeft.
+
+### Control panel pc bestaat niet, en is control cabinet pc geworden
+
+7.1 sloot af met "Deze versie wordt vooral gebruikt bij control panel pc's en
+panel pc's". Hoofdstuk 4 heeft twee secties die **Panel PCs** en **Control
+cabinet PC** heten, en control panel pc is geen van beide. 4.4 zegt bovendien met
+zoveel woorden dat een control cabinet PC de desktopvariant van een panel PC is,
+en dat zijn precies de twee die hier naast elkaar gezet worden.
+
+Beslist op 7 september 2026: het wordt **control cabinet pc's en panel pc's**.
+Dat is patroon 20 van SCHRIJFSTIJL.md, waar de tekst al een naam voor het ding
+heeft is dat het woord. Zonder die correctie leest een student die hoofdstuk 4
+gelezen heeft drie namen voor twee dingen, en gaat hij een derde soort pc zoeken
+die niet bestaat. De kapitalen van hoofdstuk 4 zijn niet overgenomen: 7.1
+schrijft pc's in kleine letters en dat is binnen dit hoofdstuk consequent.
+
+### De syllabus wijst naar een labo, en noemt het nu bij naam
+
+7.4 Bestandsbeheer eindigde met "Ook in Linux kan je rechten toepassen op mappen
+en bestanden. In één van de labo's staan we daar uitgebreid bij stil." Patroon 17
+gaat over de andere richting, een labo dat op de theorietrack steunt, en deze zin
+belooft iets zonder te zeggen waar.
+
+Beslist op 7 september 2026: het labo wordt bij naam genoemd, **Linux
+Geavanceerd**. Die modulenaam ligt vast in CLAUDE.md en dat labo draagt de
+pagina's Rechten en GebruikersEnGroepen, dus de zin wijst naar iets dat bestaat
+zodra het geschreven is. `Labo/LinuxGeavanceerd/` staat vandaag nog in
+`_incoming/`.
+
+**Er komt geen link bij, in geen geval.** De twee tracks zijn onafhankelijk, de
+PDF is papier, en een naam in een zin is geen verwijzing waar iets van afhangt.
+
+### De vier afbeeldingen, en de drie die hertekend zijn
+
+Alle vier zijn opengedaan voor er iets over geschreven werd. **Een blijft staan:**
+
+- **image52** (`syllabus-07-besturingssystemen-01.png`, 904 bij 519 pixels op
+  160.0 bij 91.9mm, dus 143 dpi) zijn drie Windows-vensters na elkaar met groene
+  pijlen ertussen: Video Properties op de tab Security, Permissions for Video, en
+  Select Users or Groups. Volledig Engels, geen watermerk. Ze zit als enige ruim
+  boven de dpi-grens van 98 die hoofdstuk 3 vastgelegd heeft, en ze is als enige
+  een **schermafdruk van een echt venster**: dat hertekenen kan niet, want de zin
+  erboven zegt "via een Wizard" en de student hoort te zien hoe die eruitziet. Het
+  `alt` is met de hand geschreven en een herimport gooit het weg.
+
+**Drie zijn hertekend**, alle drie schema's en alle drie onder de dpi-grens. Ze
+staan op 160.0mm, dragen het palet van de SVG's van Labo Partitioneren en van
+hoofdstuk 3 op wit, en ze zijn alle drie in Edge gerenderd voor ze vertrouwd
+werden. De originelen zijn geschrapt, want niets verwijst er nog naar en regel 1
+van de contentcheck valt over een ongebruikte afbeelding; een herimport zet ze
+terug.
+
+- **image53 is `img/syllabus-07-processtatussen.svg` geworden.** Het origineel is
+  566 bij 346 pixels op 160.0mm, dus 90 dpi, en het tekent ready, running en
+  blocked als witte pijlen op een donkerrood vlak. Het is het enige van de vier
+  dat al Nederlands is, en de twee bijschriften "starten van een proces" en
+  "beëindigen van een proces" staan er in de hertekening nog. Wat erbij komt zijn
+  de **namen van de vier overgangen** (de scheduler kiest, CPU slice op, wacht op
+  I/O, I/O klaar), want de vier alinea's eronder benoemen ze stuk voor stuk en het
+  origineel laat de pijlen leeg. Wat er ook bij komt is de **overgang die niet
+  bestaat**: 7.6 zegt "Merk op dat een proces niet rechtstreeks uit de blocked
+  status naar de running status kan gaan", en het origineel toont dat door de pijl
+  weg te laten. Ze staat er nu als een rode streepjespijl met een kruis erdoor en
+  het woord "kan niet", zodat de claim van de alinea getekend staat in plaats van
+  afwezig te zijn. Dat is dezelfde afweging als bij de maten van de vrije blokken
+  in `syllabus-06-first-best-worst-fit.svg`. De ready-stapel is een stapel
+  gebleven, want de tekst noemt haar een **ready queue**; running en blocked zijn
+  enkele vakken, want die noemt de tekst een status.
+- **image54 is `img/syllabus-07-cooperative-multitasking.svg` geworden**, en dat
+  was het dringendste geval: 395 bij 296 pixels op 160.0mm is **63 dpi, de laagste
+  resolutie in de hele Word tot nu toe**. Het origineel tekent drie lussen met de
+  namen FRED, HARRY en JOE, met PAUSE op elke lus en de stappen 1, 2 en 3 ertussen,
+  en het staat in het Engels ("CO-OPERATIVE MULTITASKING"). De hertekening houdt
+  alles: drie lussen, drie overdrachten, genummerd 1, 2 en 3 in dezelfde volgorde.
+  **De namen zijn Proces A, B en C geworden**, wat geen enkel gegeven kost, precies
+  zoals `vakantie.jpg` in hoofdstuk 6 SundayParty.JPEG verving. **PAUSE is een
+  punt met een legende geworden**: "Op dit punt geeft een proces de controle zelf
+  af. Doet het dat niet, dan komt geen enkel ander proces aan de beurt." Die
+  tweede zin is de starvation-alinea eronder, in de tekening. De pijlpunt boven op
+  elke lus geeft de richting waarin een proces zijn eigen werk afdraait; hij stond
+  eerst aan de zijkant van de lus en botste daar met de overdrachtpijlen, wat pas
+  in de render te zien was.
+- **image55 is `img/syllabus-07-preemptive-vs-cooperative.svg` geworden.** Het
+  origineel is 473 bij 244 pixels op 160.0mm, dus 82 dpi, het staat in het Engels,
+  en er staat een tikfout **in** de tekening: "Preempetive". De hertekening houdt
+  de vorm van het origineel, twee rijen met een tijdlijn per proces, en zet de
+  fout recht. **Windows 95 System Scheduler is process scheduler geworden**: dit
+  hoofdstuk noemt Windows 95 nergens, en process scheduler is het woord dat 7.6
+  wel gebruikt (patroon 20). **Thread 1 en Thread 2 zijn Proces 1 en Proces 2
+  geworden**, om dezelfde reden: het woord thread komt in dit hoofdstuk niet voor.
+  Wat erbij komt zijn de twee bijschriften die zeggen wat het verschil is: "de
+  scheduler onderbreekt" in het rood bij de streepjeslijnen bovenaan, en "proces 1
+  geeft zelf af" bij de enige onderbreking onderaan. Het rood is dezelfde
+  `#c0392b` waarmee de andere figuren hier annoteren.
+
+### De bladspiegel van dit hoofdstuk
+
+Acht bladzijden, 59 tot en met 66. Nagerekend na de redactionele ronde en niet
+alleen na de import, want de vier bijgeschreven alinea's over realtime kwamen er
+na de import bij.
+
+**De vier figuren staan alle vier op de 160.0mm van de Word en geen enkele draagt
+een bijschrift**, dus de grens van 240mm uit hoofdstuk 3 speelt hier niet: de
+hoogste is de cooperative multitasking op 118.9mm. Er is dus **aan geen enkele
+figuurbreedte gedraaid**, wat dit het eerste hoofdstuk met figuren maakt waar dat
+niet nodig was.
+
+**Twee figuren volgen hun aankondiging over een bladovergang, en daar is geen
+breedte voor te vinden.** 7.4 eindigt onderaan bladzijde 61 op "In Windows kan je
+de rechten makkelijk aanpassen via een Wizard:" en de schermafdruk staat bovenaan
+62; de eerste alinea van Preemptive multitasking eindigt onderaan 64 op "In de
+figuur kan je duidelijk het onderscheid zien" en die figuur staat bovenaan 65. In
+allebei de gevallen blijft er onderaan de bladzijde ongeveer 40mm respectievelijk
+18mm over en heeft de figuur er 92mm respectievelijk 75mm nodig. Smaller maken
+lost dat pas op bij een breedte waarop de schermafdruk onleesbaar wordt. Het is
+dus zo gelaten: de zin eindigt op een dubbele punt en de figuur is het eerste dat
+de lezer op de volgende bladzijde ziet.
+
+### Waar dit hoofdstuk en de rest van dit vak naast elkaar staan
+
+Geen enkel labo over dit onderwerp is geschreven: Linux Basis, Linux Geavanceerd
+en Embedded Systems staan nog in `_incoming/`. Twee dingen raken wel aan wat er al
+staat, en ze zijn naast elkaar gelegd. **Er is aan geen enkele labopagina iets
+veranderd** (patroon 17).
+
+- **Swapping tegen linux-swap.** 7.5 legt swapping uit als het mechanisme: het
+  besturingssysteem haalt programma's die actief zijn maar weinig gebruikt worden
+  uit het werkgeheugen en zet hun status op de schijf.
+  `Labo/Partitioneren/Theorie/Bestandssystemen.html` en `Spiekblad.html` leggen de
+  plaats uit: een linux-swap-partitie bevat geen bestanden en is de schijfruimte
+  waar Linux gegevens neerzet waar geen plaats meer voor is in het werkgeheugen,
+  en Windows doet hetzelfde in `pagefile.sys`. **Geen tegenspraak, wel twee
+  helften van hetzelfde**: de syllabus noemt de partitie en het bestand niet, het
+  labo noemt het woord swapping niet. Dat is een gat en dat mag: de twee tracks
+  zijn onafhankelijk.
+- **Fragmentatie betekent hier iets anders dan in hoofdstuk 6.** 7.5 zegt dat het
+  besturingssysteem gegevens die bij elkaar horen op aanliggende adressen in het
+  **werkgeheugen** zet, "om fragmentatie te vermijden en zo optimaal gebruik te
+  kunnen maken van de prefetch buffer". Hoofdstuk 6 en
+  `Labo/Partitioneren/Theorie/Bestandssystemen.html` gebruiken hetzelfde woord voor
+  een bestand dat in stukken over de **schijf** verspreid staat. Dat is geen
+  tegenspraak maar wel hetzelfde woord voor twee dingen, en 7.5 voert het niet in:
+  de student die hoofdstuk 6 gelezen heeft, leest hier zijn schijffragmentatie in
+  een alinea over RAM. Er is niets aan veranderd, want het is de tekst van de
+  Word; wie het ooit rechttrekt, doet dat met een woord als versnippering of met
+  de toevoeging "in het werkgeheugen".
+- **Prefetch buffer wordt nergens uitgelegd.** Niet hier, en niet in de zes
+  hoofdstukken ervoor. Dat is patroon 20, en het staat in dezelfde zin als de
+  fragmentatie hierboven.
+
+### Wat er in de tekst opviel, en op 7 september 2026 rechtgetrokken is
+
+De tekst gaat er in principe letterlijk in, dus dit staat hier met wat er beslist
+is. **Al deze correcties staan alleen in de HTML en een herimport draait ze
+terug.** Wat hierboven al per beslissing beschreven staat (Windows 11, control
+cabinet pc, het labo bij naam), staat hier niet nog eens.
+
+- **Studievraag 8 vooraan eindigde op een kommapunt**, "Geef de naam van vier
+  proces scheduling algoritmes en verduidelijk kort aan de hand van een schets;".
+  Dat is een imperatief, dus ze draagt nu een punt; de regel staat bij hoofdstuk 4
+  en dit is het vierde hoofdstuk dat ze tegenkomt. De negen andere studievragen
+  zijn echte vragen en houden hun vraagteken.
+- **De kop van 7.1 schreef IOT in kapitalen**, "Windows IOT Enterprise Long Term
+  Servicing Channel", terwijl de alinea eronder IoT schrijft. Dat is nu IoT,
+  dezelfde correctie die hoofdstuk 4 op 4.1 en 4.2 al kreeg.
+- **"Processen moeten immers gepauzeerd en  terug gestart worden"** in Round robin
+  droeg een harde spatie en daarachter nog een gewone. De harde spatie blijft
+  staan, want die komt zo uit de Word; de tweede is weg. Dat is precies het geval
+  van "Bij dit laatste moeten  we" in hoofdstuk 5.
+
+### Wat er in de tekst opviel, en niet aangeraakt is
+
+De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
+
+**Vijf namen die hoofdstuk 4 al rechtgetrokken heeft, staan hier weer in hun oude
+vorm.** 7.2 schrijft **Raspberry PI**, **CodeSys**, **EtherCAT**, **ProfiNET** en
+**Modbus TCP**, terwijl hoofdstuk 4 op 7 september 2026 juist Raspberry Pi,
+CODESYS, ETHERCAT, PROFINET en MODBUS/TCP geworden is, met het kader Kernpunten
+van dat hoofdstuk als maat. Dit is dus geen tikfout maar een **tegenspraak tussen
+twee hoofdstukken die dezelfde ronde gemaakt heeft**, en ze is bewust blijven
+staan omdat de vorm daar per hoofdstuk gekozen is en niet voor de hele syllabus.
+Beslis dit voor hoofdstuk 8 erbij komt, want dan gaat het over drie hoofdstukken.
+
+- **"besturingssyteem"** in kernpunt 1, met een s te weinig. Het staat in het
+  kader dat het meest gelezen wordt.
+- **"eventuool"** in studievraag 4 van het kader.
+- **"Andere procoessen blijven op hun honger zitten"** in Cooperative
+  multitasking.
+- **"de process scheduler van het besturinggsysteem"** in Preemptive
+  multitasking, met een g te veel.
+- **"Prioritiy based scheduling (PBS)"** als kop van een Heading 4, en het is de
+  enige van de vijf algoritmekoppen met een fout erin.
+- **"moet er een mechanisme zijn die kan schakelen"** in 7.6 en **"er niet één
+  bepaald process scheduling algoritme is die superieur is"** in Preemptive
+  multitasking: allebei die waar dat hoort.
+- **"Zoals je weet zegt de Von Neuman architectuur"** in 7.5, met een n te weinig.
+  Hoofdstuk 5 schrijft consequent Von Neumann, en de hoofdstuktitel daar is
+  De Von Neumann architectuur.
+- **"een marktaandeel van 80 a 90%"** in 7.1, met a waar à hoort. De
+  cijfers ernaast (macOS +- 10%, Linux +- 2%) verouderen, en +- staat er als twee
+  tekens in plaats van als ±.
+- **"proces" tegen "process"** wisselt binnen 7.6: "hevelen dan de controle aan
+  een ander process over" naast proces in elke andere zin. De vaste uitdrukkingen
+  process scheduler en process scheduling houden hun Engelse vorm door het hele
+  hoofdstuk heen, en dat is consequent.
+- **"een multiple tasks besturingssysteem"** in de eerste zin van 7.6, waar
+  multitasking het woord is dat de rest van de sectie gebruikt.
+- **"met zich teweeg brengen"** in Cooperative multitasking, een kruising van
+  met zich meebrengen en teweegbrengen.
+- **De hoge komma's rond 'indruk' in 7.6 en rond 'gewone' en 'hart' in 7.2** zijn
+  in de Word gewone apostrofs en zijn dat hier gebleven. Dat is opmaak en geen
+  tekst, net als de drie punten in "gebruikersbeheer, bestandsbeheer,
+  geheugenbeheer, ... ." in 7.2, die daar met een spatie voor de punt staan.

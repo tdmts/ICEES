@@ -83,3 +83,8 @@ letterlijk overgenomen.
 ## Bestandssystemen > Fragmentatie
 
 - afbeelding syllabus-06-bestandssystemen-05.png zweeft naast haar alinea (wrapSquare); die alinea blijft lopende tekst en de figuur krijgt geen bijschrift uit de Word
+
+## Besturingssystemen (opening)
+
+- kader "Kernpunten" werd een info-box met data-kader="kernpunten"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+- kader "Studievragen" werd een info-box met data-kader="studievragen"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet

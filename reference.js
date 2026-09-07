@@ -378,6 +378,54 @@ window.LAB_REFERENCE = {
                         href: 'Bestandssystemen/TestJezelf.html'
                     }
                 ]
+            },
+            {
+                name: 'Besturingssystemen',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'besturingssystemen-overzicht',
+                        name: 'Kernpunten en studievragen',
+                        blurb: 'Waarom een industriële pc een besturingssysteem nodig heeft, welke twee je in de industrie tegenkomt, en welke vier kerntaken zo een systeem op zich neemt.',
+                        href: 'Besturingssystemen/Overzicht.html'
+                    },
+                    {
+                        id: 'besturingssystemen-windows',
+                        name: 'Windows',
+                        blurb: 'Waarom Windows het bedrijfsleven haalde en Linux niet, en wat het IoT Enterprise LTSC-kanaal anders doet: zo weinig mogelijk updaten en lang ondersteund blijven.',
+                        href: 'Besturingssystemen/Windows.html'
+                    },
+                    {
+                        id: 'besturingssystemen-linux',
+                        name: 'Linux',
+                        blurb: 'Linux is een kernel en geen besturingssysteem, en het is de distributie die er een van maakt; waarom embedded systems er zo vaak op draaien.',
+                        href: 'Besturingssystemen/Linux.html'
+                    },
+                    {
+                        id: 'besturingssystemen-gebruikersbeheer',
+                        name: 'Gebruikersbeheer',
+                        blurb: 'Aanmelden met een wachtwoord of met biometrie, en waarom je een gebruiker op een machine net zo weinig rechten geeft als hij nodig heeft.',
+                        href: 'Besturingssystemen/Gebruikersbeheer.html'
+                    },
+                    {
+                        id: 'besturingssystemen-bestandsbeheer',
+                        name: 'Bestandsbeheer',
+                        blurb: 'Rechten op bestanden en mappen houden de ene gebruiker uit de bestanden van de andere: geen rechten is geen toegang.',
+                        href: 'Besturingssystemen/Bestandsbeheer.html'
+                    },
+                    {
+                        id: 'besturingssystemen-geheugenbeheer',
+                        name: 'Geheugenbeheer',
+                        blurb: 'Waarom bij elkaar horende gegevens op aanliggende adressen komen, en wat het besturingssysteem doet zodra het werkgeheugen vol zit: swapping.',
+                        href: 'Besturingssystemen/Geheugenbeheer.html'
+                    },
+                    {
+                        id: 'besturingssystemen-procesbeheer',
+                        name: 'Procesbeheer',
+                        blurb: 'Ready, running en blocked, het verschil tussen cooperative en preemptive multitasking, vijf scheduling algoritmes met hun starvation, en wat een realtime prioriteit kost.',
+                        href: 'Besturingssystemen/Procesbeheer.html'
+                    }
+                ]
             }
         ]
     },

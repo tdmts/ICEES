@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" width="720" height="240"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">De reeks stappen tussen de aan-uitknop en het besturingssysteem</title>
+    <rect width="720" height="240" fill="#ffffff" />
+
+    <!-- wie er aan zet is: eerst de firmware, dan pas het besturingssysteem -->
+    <text x="356" y="24" font-size="12" fill="#004d40" text-anchor="middle">firmware op het moederbord</text>
+    <text x="616" y="24" font-size="12" fill="#004d40" text-anchor="middle">besturingssysteem</text>
+
+    <g stroke="#004d40" stroke-width="1" fill="none">
+        <path d="M170 40 L170 32 L542 32 L542 40" />
+        <path d="M560 40 L560 32 L672 32 L672 40" />
+    </g>
+
+    <!-- de stappen -->
+    <rect x="40" y="52" width="112" height="52" fill="#e0e7e5" stroke="#9bb0ac" />
+    <text x="96" y="74" font-size="12" fill="#222" text-anchor="middle">Aan-uitknop</text>
+    <text x="96" y="90" font-size="11" fill="#555" text-anchor="middle">je duwt hem in</text>
+
+    <g fill="#b2dfdb" stroke="#004d40">
+        <rect x="170" y="52" width="112" height="52" />
+        <rect x="300" y="52" width="112" height="52" />
+        <rect x="430" y="52" width="112" height="52" />
+    </g>
+
+    <text x="226" y="74" font-size="12" fill="#00332b" text-anchor="middle">POST</text>
+    <text x="226" y="90" font-size="11" fill="#33564f" text-anchor="middle">hardware testen</text>
+
+    <text x="356" y="74" font-size="12" fill="#00332b" text-anchor="middle">CMOS</text>
+    <text x="356" y="90" font-size="11" fill="#33564f" text-anchor="middle">instellingen lezen</text>
+
+    <text x="486" y="74" font-size="12" fill="#00332b" text-anchor="middle">Opstartvolgorde</text>
+    <text x="486" y="90" font-size="11" fill="#33564f" text-anchor="middle">toestellen aflopen</text>
+
+    <rect x="560" y="52" width="112" height="52" fill="#004d40" stroke="#004d40" />
+    <text x="616" y="74" font-size="12" fill="#ffffff" text-anchor="middle">Bootloader</text>
+    <text x="616" y="90" font-size="11" fill="#cfe3e0" text-anchor="middle">laadt het OS</text>
+
+    <!-- pijlen tussen de stappen -->
+    <g stroke="#004d40" stroke-width="1" fill="#004d40">
+        <path d="M154 78 L164 78" />
+        <path d="M164 74 L170 78 L164 82 Z" stroke="none" />
+        <path d="M284 78 L294 78" />
+        <path d="M294 74 L300 78 L294 82 Z" stroke="none" />
+        <path d="M414 78 L424 78" />
+        <path d="M424 74 L430 78 L424 82 Z" stroke="none" />
+        <path d="M544 78 L554 78" />
+        <path d="M554 74 L560 78 L554 82 Z" stroke="none" />
+    </g>
+
+    <!-- wat er gebeurt als de POST vastloopt -->
+    <g stroke="#c0392b" stroke-width="1" fill="#c0392b">
+        <path d="M226 104 L226 124" fill="none" />
+        <path d="M222 124 L226 130 L230 124 Z" stroke="none" />
+    </g>
+
+    <rect x="170" y="130" width="340" height="44" fill="#fdf1ef" stroke="#c0392b" stroke-dasharray="4 3" />
+    <text x="182" y="149" font-size="11" fill="#c0392b">Loopt de POST vast, dan is er nog geen beeld voor een</text>
+    <text x="182" y="165" font-size="11" fill="#c0392b">boodschap. Het moederbord geeft dan een reeks pieptonen.</text>
+
+    <text x="40" y="204" font-size="13" fill="#222">Alles tot en met de opstartvolgorde doet de firmware in een chip op het
+        moederbord.</text>
+    <text x="40" y="224" font-size="13" fill="#222">Pas bij de bootloader komt er een besturingssysteem in het
+        geheugen.</text>
+</svg>

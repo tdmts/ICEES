@@ -700,7 +700,7 @@ blocks to the file instead of the other way round, with the three abbreviations 
 gaps rather than above the blocks they name. Both now say in the picture what the paragraph beside
 them says in words: `partitioneren-fragmentatie.svg` carries the sizes that make the split
 inevitable (a file of 180 MB, a gat of 100 MB, 80 MB verderop), and
-`partitioneren-first-worst-best-fit.svg` draws the four vrije blokken to scale and puts the file
+`partitioneren-first-best-worst-fit.svg` draws the four vrije blokken to scale and puts the file
 itself inside the block each algorithm picks, so what stays free is a strip you can see rather than
 a number you have to believe: wide at worst fit, four pixels at best fit. That last step came out of
 a second look at the drawing, and it is the test for any figure here, that the claim of the
@@ -734,7 +734,7 @@ image shows `/dev/sda1 ntfs Windows OS` next to `/dev/sda2 fat32 Data`, and the 
 `/dev/sdb`. Open the PNG before writing a figcaption; three of the eight captions here would have
 been wrong otherwise.
 
-## De syllabus, hoofdstuk 1 tot 6 ingevoerd 7 september 2026
+## De syllabus, hoofdstuk 1 tot 7 ingevoerd 7 september 2026
 
 De theorietrack bestond hier nog niet: `Theorie/Syllabus/` was leeg en het manifest kende geen
 module `syllabus`. Wat er bij dit eerste hoofdstuk aan infrastructuur bij gekomen is, hoort erbij en
@@ -892,6 +892,22 @@ van het te rekenen, want een rand wordt op de rand van de cel getekend en niet e
 meten en niet de 8,2mm** die bij hoofdstuk 3 genoteerd staat; de hoogte van zo'n rij komt van de
 tekstregel erin en niet van de `height` van 6mm.
 
+**De cursusinhoud moet juist zijn, en dat gaat voor op elke andere regel hier.** Beslist op 7
+september 2026 door de lector. De Word is de HERKOMST van de tekst en niet haar gezag: staat er iets
+fout in, dan wordt het rechtgezet, of dat nu in een kader staat of in de lopende tekst, en of de
+tegenspraak nu binnen een hoofdstuk ligt of tussen de twee tracks. Wat beslist is welke van de twee
+zinnen waar is, en niet waar ze staat. **Dit vervangt de regel die hier na hoofdstuk 6 stond**, dat
+het kader letterlijk blijft en de lopende tekst bijgedraaid wordt: in dat hoofdstuk had het kader
+toevallig gelijk, en daardoor was de plaats van de zin per ongeluk het criterium geworden in plaats
+van haar juistheid. De twee gevallen hieronder zijn dus geen twee regels maar twee toepassingen van
+deze ene.
+
+**Je meldt een inhoudelijke correctie voor je ze doorvoert.** Ook dat is een uitdrukkelijke afspraak
+van 7 september 2026. Een feitelijke fout wegwerken is nooit een stille bewerking: zeg welke zin
+fout is, waarom, en wat ze wordt, en voer ze daarna uit. Dat geldt niet voor opmaak, spelling of een
+bladspiegel, en het geldt wel voor elke bewering die de student als juist meeneemt. Zo'n correctie
+overleeft geen herimport, dus ze gaat daarnaast altijd in NOTITIES.md.
+
 **Een passage die een ander deel van dit vak tegenspreekt, wordt rechtgezet en niet overgenomen.**
 Hoofdstuk 5 bood een virtuele machine aan als de manier om een x86-programma op ARM te draaien, met
 "alle hardware wordt gesimuleerd" erbij, en `Labo/Virtualiseren/Theorie/VirtueleHardware.html` zegt
@@ -907,20 +923,80 @@ geinstalleerd wordt, en in kernpunt 5 dat het besturingssysteem het bestandssyst
 zijn tegengestelde richtingen, en de rest van het hoofdstuk kiest partij: elk bestandssysteem draagt
 onderaan zijn eigen regel "Type besturingssysteem". Het kernpunt heeft dus gelijk en de zin in 6.3
 is omgedraaid, met alle drie de gevolgen (schijf-, partitie- en bestandsgrootte) die er al in
-stonden. Dat is de regel: het kader blijft letterlijk wat de Word zegt, zoals bij hoofdstuk 5, en de
-lopende tekst is wat je bijdraait. Dit is iets anders dan hoofdstuk 5, waar de syllabus een
-**labopagina** tegensprak; hier ligt de tegenspraak binnen een hoofdstuk.
+stonden. Wat hier beslist heeft is niet dat de fout in de lopende tekst stond maar dat het kernpunt
+waar was, en de rest van het hoofdstuk koos die partij al. Dit is iets anders dan hoofdstuk 5, waar
+de syllabus een **labopagina** tegensprak; hier ligt de tegenspraak binnen een hoofdstuk. Staat een
+kader fout terwijl de lopende tekst het juist heeft, dan wordt het kader rechtgezet: hoofdstuk 8
+doet dat met twee kernpunten die host en guest omdraaien.
 
-**Een hertekening houdt de kleuren van de brontekst wanneer die tekst ze bij naam noemt.** 6.5
-schrijft "bestand 1 = rood, bestand 2 = blauw en bestand 3 = groen" en "bestand 4 = zwart", dus
-`img/syllabus-06-fragmentatie.svg` is de eerste SVG hier die niet in het palet van OrionCSS staat:
-het palet zou de zin ernaast onwaar maken. Wat wel uit het palet komt is alles waar de tekst niets
-over zegt, de vrije ruimte en de rode annotatie eronder. Elders geldt het palet gewoon.
+**Een hertekening houdt de kleuren van de brontekst wanneer die tekst ze bij naam noemt, maar dempt
+ze wel.** 6.5 schrijft "bestand 1 = rood, bestand 2 = blauw en bestand 3 = groen" en "bestand 4 =
+zwart", dus `img/syllabus-06-fragmentatie.svg` en zijn kopie in de labotrack zijn de enige twee
+SVG's hier die niet in het palet van OrionCSS staan: het palet zou de zin ernaast onwaar maken. Wat wel uit het palet komt is alles waar
+de tekst niets over zegt, de vrije ruimte en de rode annotatie eronder. **Wat de brontekst vastlegt
+is de hue en niet de verzadiging**, en dat is het onderscheid dat op 7 september 2026 gemaakt is:
+`#cc0000`, `#2b3fbf` en `#2e9e3e` waren de enige drie kleuren in de hele `img/` die uit de toon
+vielen, en ze zijn `#9e2f26`, `#2a4d7c` en `#3f7238` geworden. Een donkerder rood is nog altijd
+rood, dus de zin ernaast blijft waar en de figuur staat niet meer te schreeuwen naast de teal van
+elke andere tekening. Doe dat dus ook bij een volgende figuur waar de tekst een kleur noemt.
+Elders geldt het palet gewoon.
+
+**Diezelfde figuur staat in `img/` twee keer, en de twee bestanden zijn byte voor byte gelijk.**
+`img/partitioneren-fragmentatie.svg` en `img/syllabus-06-fragmentatie.svg` tekenen hetzelfde
+voorbeeld met dezelfde getallen, want het is een van de drie plaatsen waar de labotrack en de
+theorietrack hetzelfde onderwerp behandelen. Een eigen kopie per track blijft de afspraak, maar een
+*andere tekening* per track is het niet: dan ziet de student twee voorstellingen van hetzelfde en
+gaat hij zoeken waar het verschil in zit. **Wijzig er dus nooit een zonder de andere**, en
+controleer met `diff` dat ze gelijk blijven; de labopagina noemt in haar lopende tekst geen kleuren,
+dus de tekst van de syllabus is wat de tekening vastlegt. **Het tweede zulke paar is op dezelfde
+dag gelijkgetrokken**: `img/partitioneren-first-best-worst-fit.svg` en
+`img/syllabus-06-first-best-worst-fit.svg` tekenden dezelfde vier blokken met dezelfde maten in
+hetzelfde palet, maar de labotekening schreef first fit, best fit en worst fit voluit boven de
+blokken terwijl de syllabustekening `FF`, `BF` en `WF` zette met een legende eronder, zoals de Word
+doet. **De voluitversie heeft gewonnen**, want geen van beide lopende teksten gebruikt die
+afkortingen ook maar een keer: de syllabus schrijft zelf First Fit, Best Fit en Worst Fit. De drie
+regels eronder zijn daardoor geen legende meer maar drie definities, en ze staan er parallel: elk
+zegt welk blok het algoritme neemt, en niet wat het gevolg is. Het gevolg (een bestand kan in het
+grootste blok nog groeien) staat in de lopende tekst van allebei de tracks. De labokopie heette
+`partitioneren-first-worst-best-fit.svg` en heet nu `...-first-best-worst-fit.svg`, zodat de twee
+namen dezelfde volgorde dragen als de tekening en als de sectietitel.
 
 **Vier van de acht afbeeldingen van hoofdstuk 6 zijn hertekend**, meer dan in enig ander hoofdstuk
 tot nu toe, en de vier redenen staan per figuur in NOTITIES.md. Drie ervan tekenen iets wat
 `Labo/Partitioneren/` ook al tekent, en dat is geen reden om het niet te doen: de twee tracks zijn
 onafhankelijk en een eigen kopie per track is de afspraak, precies zoals bij de MBR van hoofdstuk 3.
+
+**Heading 4 bestaat, en hoofdstuk 7 is het enige hoofdstuk dat er een heeft.** Vijf, alle vijf de
+scheduling algoritmes onder Procesbeheer. `import-syllabus.py` rekent de kop om met
+`min(max(niveau - kop_offset + 1, 2), 6)` en `verplaats_koppen()` in `export-syllabus.py` schuift er
+in de bundel nog een niveau overheen, dus een Heading 3 is op de pagina een `h2` en in de PDF een
+`h3` van 11pt, en een Heading 4 een `h3` en dan een `h4` van 10pt. Die tak had nog nooit gedraaid en
+hij klopt, nagemeten in de PDF. **Een Heading 4 is daarmee even groot als de lopende tekst** en
+verschilt er alleen in vet en in de ruimte erboven; dat leest, en `syllabus.css` is er niet voor
+aangepast, want die regel (`h4, h5, h6`) geldt voor elk hoofdstuk terwijl er maar een zo'n kop
+gebruikt.
+
+**Bijgeschreven tekst mag een eigen kop krijgen, en hoofdstuk 7 is de eerste die er een heeft.** De
+vier alinea's over realtime staan achteraan Procesbeheer onder `Prioriteit en realtime`, een `h2` op
+de pagina naast Cooperative multitasking en Preemptive multitasking. De reden is dat de vijf secties
+ervoor stuk voor stuk een algoritme behandelen: een alinea erachter zonder kop leest als deel van de
+laatste. Waar de bijgeschreven tekst in een bestaande gedachtegang past (hoofdstuk 1, 5 en 6) blijft
+het een gewone alinea.
+
+**Een productnaam die veroudert, wordt in het kader wel aangeraakt, en dan in elk hoofdstuk tegelijk.**
+Dat is iets anders dan de regel bij hoofdstuk 5 en 6, waar het kader letterlijk blijft wat de Word
+zegt: daar ging het om een tegenspraak binnen de tekst, en dan is de lopende tekst wat je bijdraait.
+Bij een versienummer staat overal hetzelfde feit, dus laat je het kader staan, dan drukt dezelfde
+bladzijde twee verschillende nummers. Op 7 september 2026 ging Windows 10 IoT Enterprise LTSC zo naar
+**Windows 11**, in de vijf plaatsen van hoofdstuk 7 (kader inbegrepen) en in de drie van hoofdstuk 4,
+omdat de twee hoofdstukken elkaar anders tegenspreken over wat er op een industriële pc draait.
+**Leg een hoofdstuk dus naast de hoofdstukken die er al staan voor je een naam wijzigt**, en wijzig
+ze dan alle.
+
+**De syllabus mag een labo bij naam noemen, en linkt er nooit naar.** 7.4 zegt "In het labo Linux
+Geavanceerd staan we daar uitgebreid bij stil", waar de Word "In een van de labo's" schreef. Een naam
+in een zin kost niets en helpt de lezer; een link zou de twee tracks aan elkaar hangen, en de PDF is
+bovendien papier. Patroon 17 gaat over de andere richting en verbiedt dit niet.
 
 ### Wat de eerste hoofdstukimport aan de importer veranderd heeft
 

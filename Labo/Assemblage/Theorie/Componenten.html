@@ -62,14 +62,14 @@
             </table>
         </div>
 
-        <p>Een kast die voor ATX gemaakt is, neemt ook de kleinere borden op: de schroefgaten van Micro-ATX vallen
-            samen met een deel van die van ATX. Omgekeerd werkt het niet, want een ATX-bord is langer dan de ruimte in
-            een Micro-ATX-kast.</p>
+        <p>Een kast die voor ATX gemaakt is, neemt ook de kleinere moederborden op: de schroefgaten van Micro-ATX vallen
+            samen met een deel van die van ATX. Omgekeerd werkt het niet, want een ATX-moederbord is langer dan de
+            ruimte in een Micro-ATX-kast.</p>
 
         <h2 id="moederbord">Het moederbord</h2>
 
         <p>Het moederbord verbindt alle onderdelen met elkaar. Dat van dit labo is een Gigabyte A520M S2H, een
-            bord in Micro-ATX.</p>
+            moederbord in Micro-ATX.</p>
         <figure class="figure-zoom" style="max-width: 360px">
             <img src="../../../img/moederbord-a520m-s2h.jpg" class="img-fluid"
                 alt="Een Gigabyte A520M S2H moederbord van bovenaf gezien">
@@ -79,25 +79,25 @@
         <figure class="figure-zoom" style="max-width: 380px">
             <img src="../../../img/moederbord-a520m-s2h-schema.png" class="img-fluid"
                 alt="Schematische tekening van hetzelfde moederbord, waarop elk onderdeel een naam draagt">
-            <figcaption class="figure-caption">Hetzelfde bord met de namen uit de handleiding</figcaption>
+            <figcaption class="figure-caption">Hetzelfde moederbord met de namen uit de handleiding</figcaption>
         </figure>
 
         <h3>De socket en de chipset</h3>
 
         <p>De <strong>socket</strong> is de aansluiting waar de processor in gaat, en ze bepaalt welke processors op
-            dit bord passen. AM4 en AM5 zijn sockets van AMD, LGA1200 en LGA1700 die van Intel. Op dit bord staat
-            <code>Socket AM4</code> naast de socket gedrukt. De <strong>chipset</strong> is de chip die het verkeer
-            tussen de processor en de rest van het bord regelt. Ze bepaalt mee hoeveel USB-poorten en SATA-poorten er
-            zijn en of je de processor mag overklokken. Hier is dat de A520, en die naam zit in de naam van het bord
-            zelf: een A520M S2H is een A520-bord in Micro-ATX.</p>
+            dit moederbord passen. AM4 en AM5 zijn sockets van AMD, LGA1200 en LGA1700 die van Intel. Hier staat
+            <code>Socket AM4</code> naast de socket gedrukt. De <strong>chipset</strong> is de chip die het
+            verkeer tussen de processor en de rest van het moederbord regelt. Ze bepaalt mee hoeveel USB-poorten en
+            SATA-poorten er zijn en of je de processor mag overklokken. Hier is dat de A520, en die naam zit in de naam
+            van het moederbord zelf: een A520M S2H is een A520-moederbord in Micro-ATX.</p>
 
         <h3>Het geheugen en de opslag</h3>
 
-        <p>De <strong>DIMM-slots</strong> nemen de geheugenmodules op. Hoeveel er zijn en hoeveel GB het bord in
-            totaal aankan, staat in de handleiding van het moederbord. Dit bord heeft er twee, <code>DDR4_A1</code> en
-            <code>DDR4_B1</code>. De <strong>SATA-poorten</strong> nemen een
+        <p>De <strong>DIMM-slots</strong> nemen de geheugenmodules op. Hoeveel er zijn en hoeveel GB het moederbord in
+            totaal aankan, staat in de handleiding. Dit moederbord heeft er twee,
+            <code>DDR4_A1</code> en <code>DDR4_B1</code>. De <strong>SATA-poorten</strong> nemen een
             harde schijf of een 2,5-inch SSD op, en een <strong>M.2-aansluiting</strong> neemt een SSD op die plat
-            op het bord ligt. Hier zijn dat vier SATA-poorten aan de rechterrand, <code>SATA3 0</code> tot
+            op het moederbord ligt. Hier zijn dat vier SATA-poorten aan de rechterrand, <code>SATA3 0</code> tot
             <code>SATA3 3</code>, en één M.2-aansluiting, aangeduid met <code>M2A_CPU</code>.</p>
 
         <h3>De uitbreidingsslots</h3>
@@ -105,8 +105,8 @@
         <p>PCI Express bestaat in verschillende breedtes, en het getal achter de x is het aantal lanes. Een
             <strong>x16</strong>-slot is het langste en is bedoeld voor een grafische kaart; een
             <strong>x1</strong>-slot is kort en neemt een netwerkkaart, een geluidskaart of een uitbreiding met extra
-            USB-poorten op. Een kaart past in een slot dat even breed of breder is dan de kaart zelf. Dit bord heeft
-            één x16-slot, <code>PCIEX16</code>, en twee x1-slots: <code>PCIEX1_1</code> ligt erboven en
+            USB-poorten op. Een kaart past in een slot dat even breed of breder is dan de kaart zelf. Dit moederbord
+            heeft één x16-slot, <code>PCIEX16</code>, en twee x1-slots: <code>PCIEX1_1</code> ligt erboven en
             <code>PCIEX1_2</code> eronder.</p>
 
         <h3>De aansluitingen aan de achterkant</h3>
@@ -117,27 +117,27 @@
 
         <ul>
             <li><strong>PS/2.</strong> Een ronde connector met zes pinnen, voor een toetsenbord of een muis. Waar er
-                twee zijn, is de paarse voor het toetsenbord en de groene voor de muis. Dit bord heeft er één, die
+                twee zijn, is de paarse voor het toetsenbord en de groene voor de muis. Dit moederbord heeft er één, die
                 allebei aankan, in hetzelfde blok als twee USB-poorten.</li>
             <li><strong>Beeld.</strong> VGA, ook D-SUB genoemd, is analoog en heeft vijftien pinnen in drie rijen.
-                DVI, DisplayPort en HDMI zijn digitaal. Dit bord heeft VGA, DVI en HDMI, en geen DisplayPort.</li>
+                DVI, DisplayPort en HDMI zijn digitaal. Dit moederbord heeft VGA, DVI en HDMI, en geen DisplayPort.</li>
             <li><strong>USB.</strong> Een USB 2-poort heeft vier contacten en een zwart of wit binnenstuk; een USB
-                3-poort heeft er negen en is aan zijn blauwe binnenstuk te herkennen. Dit bord heeft er zes aan de
+                3-poort heeft er negen en is aan zijn blauwe binnenstuk te herkennen. Dit moederbord heeft er zes aan de
                 achterkant: twee USB 2-poorten bij de PS/2-poort en vier blauwe USB 3-poorten, twee bij
                 <code>U32</code> en twee bij <code>U32_LAN</code>.</li>
             <li><strong>Netwerk.</strong> Een RJ-45-poort, waarvan de snelheid 100 Mbps, 1 Gbps of meer is. Wat een
-                bord haalt, staat in de handleiding. Dit bord haalt 1 Gbps, en aan de lampjes in de poort zie je wat
-                je werkelijk krijgt: oranje is 1 Gbps, groen is 100 Mbps en uit is 10 Mbps.</li>
+                moederbord haalt, staat in de handleiding. Dit moederbord haalt 1 Gbps, en aan de lampjes in de poort
+                zie je wat je werkelijk krijgt: oranje is 1 Gbps, groen is 100 Mbps en uit is 10 Mbps.</li>
             <li><strong>Geluid.</strong> Drie jacks van 3,5 mm, elk met een eigen kleur: de groene voor de
                 luidsprekers of de koptelefoon, de roze voor een microfoon en de blauwe voor een lijningang.</li>
         </ul>
 
         <p>Tussen de USB-poorten zit ook nog een knopje, <code>QFLASH_PLUS</code>. Daarmee vernieuw je de software van
-            het bord vanaf een USB-stick terwijl de computer uitstaat.</p>
+            het moederbord vanaf een USB-stick terwijl de computer uitstaat.</p>
 
         <div class="info-box">
             <div class="info-title remark">De knoopcelbatterij houdt de instellingen vast</div>
-            <p>Op het bord zit een platte batterij, meestal een CR2032. Ze voedt het geheugen waarin de
+            <p>Op het moederbord zit een platte batterij, meestal een CR2032. Ze voedt het geheugen waarin de
                 BIOS-instellingen staan en de klok die de tijd bijhoudt terwijl de computer van het net los is. Is ze
                 leeg, dan start de computer met de standaardinstellingen op en klopt de datum niet meer.</p>
         </div>
@@ -172,7 +172,8 @@
             <code>CPU_FAN</code> aangeduid staat.</p>
 
         <div class="info-box">
-            <div class="info-title remark">Draait de ventilator van de processor niet, dan legt het bord de computer stil</div>
+            <div class="info-title remark">Draait de ventilator van de processor niet, dan legt het moederbord de
+                computer stil</div>
             <p>Het moederbord meet het toerental op de <code>CPU_FAN</code>-aansluiting. Krijgt het daar geen
                 signaal, dan zet het de computer na enkele seconden weer uit: een processor zonder koeling loopt in
                 die tijd al te warm.</p>
@@ -222,7 +223,7 @@
             </table>
         </div>
 
-        <p>Staan er vier DIMM-slots op het bord en zet je er twee modules in, dan bepaalt de handleiding van het
+        <p>Staan er vier DIMM-slots op het moederbord en zet je er twee modules in, dan bepaalt de handleiding van het
             moederbord welke twee slots je daarvoor gebruikt. Meestal zijn dat het tweede en het vierde, geteld
             vanaf de processor. Zo spreekt de processor de twee modules in <strong>dual channel</strong> aan en
             verdubbelt de breedte waarmee hij het geheugen bereikt.</p>

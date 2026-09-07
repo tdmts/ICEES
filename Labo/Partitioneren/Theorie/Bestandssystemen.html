@@ -61,9 +61,9 @@
 
         <figure class="figure-zoom" style="max-width: 620px">
             <img src="../../../img/partitioneren-fragmentatie.svg" class="img-fluid"
-                alt="Drie bestanden achter elkaar op een schijf; het middelste wordt gewist, en een nieuw bestand van 180 MB vult het gat van 100 MB en zet de overige 80 MB achter het laatste bestand">
-            <figcaption class="figure-caption">Het nieuwe bestand past niet in het gat dat het gewiste bestand
-                achterliet, dus komt het in twee stukken op de schijf</figcaption>
+                alt="Drie stappen. Eerst staan bestand 1 in het rood (200 MB), bestand 2 in het blauw (100 MB) en bestand 3 in het groen (200 MB) achter elkaar op de schijf, met 300 MB vrije ruimte erachter. Dan wordt bestand 2 gewist en komt er 100 MB vrij tussen bestand 1 en bestand 3. Ten slotte komt bestand 4 in het zwart erbij: het is 180 MB, dus een eerste stuk van 100 MB komt in die vrije ruimte en de overige 80 MB komt achter bestand 3">
+            <figcaption class="figure-caption">Het nieuwe bestand past niet in de 100 MB die het gewiste bestand
+                vrijmaakte, dus komt het in twee stukken op de schijf</figcaption>
         </figure>
 
         <p>Hoeveel last een bestandssysteem van fragmentatie heeft, hangt af van waar het een nieuw bestand neerzet.
@@ -74,8 +74,8 @@
             werken zo, en daarom is defragmenteren daar in de praktijk overbodig.</p>
 
         <figure class="figure-zoom" style="max-width: 620px">
-            <img src="../../../img/partitioneren-first-worst-best-fit.svg" class="img-fluid"
-                alt="Een schijf met vier vrije blokken van 100, 200, 160 en 400 MB tussen bezette stukken; in het blok dat first fit, best fit en worst fit elk kiezen staat het bestand van 150 MB getekend, met eronder aangeduid hoeveel van dat blok overblijft: 50, 10 en 250 MB">
+            <img src="../../../img/partitioneren-first-best-worst-fit.svg" class="img-fluid"
+                alt="Een harde schijf met vier vrije blokken van 100, 200, 160 en 400 MB tussen de bezette stukken. Het blok van 100 MB is te klein. In het blok dat first fit, best fit en worst fit elk kiezen staat het bestand van 150 MB getekend, met eronder hoeveel er in dat blok overblijft: 50, 10 en 250 MB. Onderaan staat wat elk van de drie algoritmes kiest">
             <figcaption class="figure-caption">Hetzelfde bestand van 150 MB komt bij elk algoritme in een ander vrij
                 blok terecht, en er blijft elke keer iets anders over</figcaption>
         </figure>

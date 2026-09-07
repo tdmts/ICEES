@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="720" height="300"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">Een statische en een dynamische virtuele schijf van 25 GB op de schijf van je laptop</title>
+    <rect width="720" height="300" fill="#ffffff" />
+
+    <!-- statisch -->
+    <text x="40" y="28" font-size="13" fill="#555">Statisch: het vinkje Pre-alloceren staat aan</text>
+
+    <rect x="40" y="38" width="96" height="40" fill="#e0e7e5" stroke="#9bb0ac" />
+    <text x="88" y="63" font-size="10" fill="#55635f" text-anchor="middle">andere bestanden</text>
+
+    <rect x="136" y="38" width="160" height="40" fill="#004d40" stroke="#004d40" />
+    <text x="216" y="63" font-size="11" fill="#ffffff" text-anchor="middle">10 GB in gebruik</text>
+
+    <rect x="296" y="38" width="240" height="40" fill="#b2dfdb" stroke="#004d40" />
+    <text x="416" y="63" font-size="11" fill="#00332b" text-anchor="middle">15 GB gereserveerd, nog leeg</text>
+
+    <rect x="536" y="38" width="144" height="40" fill="#f5f7f7" stroke="#9bb0ac" stroke-dasharray="4 3" />
+    <text x="608" y="63" font-size="11" fill="#555" text-anchor="middle">vrij</text>
+
+    <path d="M136 82 L136 88 L536 88 L536 82" stroke="#004d40" stroke-width="1" fill="none" />
+    <text x="336" y="104" font-size="11" fill="#004d40" text-anchor="middle">25 GB is meteen weg op je laptop, ook
+        al staat er nog niets in</text>
+
+    <path d="M40 124 L680 124" stroke="#e9ecef" stroke-width="1" />
+
+    <!-- dynamisch -->
+    <text x="40" y="148" font-size="13" fill="#555">Dynamisch: het vinkje staat uit</text>
+
+    <rect x="40" y="158" width="96" height="40" fill="#e0e7e5" stroke="#9bb0ac" />
+    <text x="88" y="183" font-size="10" fill="#55635f" text-anchor="middle">andere bestanden</text>
+
+    <rect x="136" y="158" width="64" height="40" fill="#004d40" stroke="#004d40" />
+    <text x="168" y="183" font-size="10" fill="#ffffff" text-anchor="middle">VDI</text>
+
+    <rect x="200" y="158" width="48" height="40" fill="#e0e7e5" stroke="#9bb0ac" />
+
+    <rect x="248" y="158" width="64" height="40" fill="#004d40" stroke="#004d40" />
+    <text x="280" y="183" font-size="10" fill="#ffffff" text-anchor="middle">VDI</text>
+
+    <rect x="312" y="158" width="64" height="40" fill="#f5f7f7" stroke="#9bb0ac" stroke-dasharray="4 3" />
+    <text x="344" y="183" font-size="10" fill="#555" text-anchor="middle">vrij</text>
+
+    <rect x="376" y="158" width="32" height="40" fill="#004d40" stroke="#004d40" />
+
+    <rect x="408" y="158" width="272" height="40" fill="#f5f7f7" stroke="#9bb0ac" stroke-dasharray="4 3" />
+    <text x="544" y="183" font-size="11" fill="#555" text-anchor="middle">vrij</text>
+
+    <g stroke="#c0392b" stroke-width="1" stroke-dasharray="4 3" fill="none">
+        <path d="M168 198 L168 214 L392 214 L392 198" />
+        <path d="M280 198 L280 214" />
+    </g>
+    <text x="280" y="232" font-size="11" fill="#c0392b" text-anchor="middle">samen 10 GB, in drie stukken verspreid
+        over de schijf</text>
+
+    <text x="40" y="266" font-size="13" fill="#222">Statisch reserveert de volle 25 GB meteen en houdt het bestand in
+        één stuk. Dynamisch</text>
+    <text x="40" y="286" font-size="13" fill="#222">neemt alleen wat de guest geschreven heeft, maar raakt verspreid
+        terwijl het groeit.</text>
+</svg>
