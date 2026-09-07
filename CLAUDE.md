@@ -21,13 +21,46 @@ prints) and a lecture track (six hoorcolleges, of which five have a deck).
 its three `Opdracht.html`; `Labo/Virtualiseren/` holds its hub, four theory pages, a zelftest, one
 `Opdracht.html` and the three stappenplan pages that hang under it; `Labo/Partitioneren/` holds its
 hub, two theory pages, a spiekblad, a zelftest, one `Opdracht.html` and the four stappenplan pages
-that hang under it; `Algemeen/` holds both pages that every hub links to. `check-content.py`
+that hang under it; `Algemeen/` holds the four pages that sit beside both tracks. `check-content.py`
 and `check-nav.js` are both green with no warnings. The other three modules are staged in
 `_incoming/`.
 
 No build system and no test suite: you edit HTML/CSS/JS directly. `scripts/` holds eight Python
 scripts, of which `check-content.py` and `import-brightspace.py` are stdlib only, plus one Node
 script, `check-nav.js`, which needs `jsdom` and is the only reason a `node_modules/` may exist here.
+
+## De studiefiche, en waar ze het laatste woord heeft
+
+The ECTS fiche is the official description of this course and the yardstick every module is held
+against. It is public, no login:
+`https://bamaflexweb.hogent.be/BMFUIDetailxOLOD.aspx?a=206743&b=5&c=1`. **The number matters:
+`a=206743` is ICEES and `a=206742` is Datacommunicatie en netwerken**, the neighbouring course in
+`tdmts/DeN`, and the two fiches look alike. Tom Demets is titularis on both and Stefan Lievens is
+medewerker on both.
+
+**The four doelstellingen are what a module has to serve**, quoted from the fiche:
+
+1. De onderdelen in een industriële computer en embedded system herkennen, hun nut en de
+   basisprincipes in eigen woorden ervan omschrijven.
+2. Verantwoorde hardware keuzes maken en een industriële computer samenstellen uit losse onderdelen.
+3. Een industrieel besturingssysteem installeren, configureren en up-to-date houden.
+4. Eenvoudige programma's schrijven, installeren en configureren in functie van een grotere
+   industriële toepassing.
+
+Above those sits the opleiding's leerresultaat: "De bachelor kan op basis van een technisch probleem
+of vraag een analyse maken en de verschillende oplossingen in kaart brengen en hierover passend
+communiceren." The fiche also fixes 3 studiepunten, 75 hours of which 30 contactonderwijs, and two
+werkvormen (activerend hoorcollege, oefensessie met leerpad) that map one to one onto the two tracks
+here.
+
+**One number on the fiche does not match this repo, and it is not resolved.** The fiche puts the
+first examenkans at **schriftelijk examen 30% and geintegreerde evaluatie 70%** (second: 60/40),
+where `Algemeen/Evaluatie.html` says **theorie 40% and labo's 60%**. Checked with the lecturer on 7
+September 2026, who is verifying it against the studiewijzer; **40/60 stays on the page until then**
+and nothing here was changed. `Algemeen/Studiefiche.html` therefore carries no percentage at all: it
+names the *form* of the evaluation and sends the reader to `Evaluatie.html` for the weights, so the
+site never prints two different numbers for the same thing. Resolve it before either page grows a
+number.
 
 ## De indeling in Orion, en waarom niets zijwaarts linkt
 
@@ -111,7 +144,7 @@ Labo/<Naam>/
         *.html         one page per subject
 Theorie/Syllabus/      the theory track: the source of the syllabus PDF
 Hoorcollege/           the lecture decks: the source of the handout PDFs
-Algemeen/              planning and evaluation, outside both tracks on purpose
+Algemeen/              studiefiche, planning, evaluatie en studiemateriaal, outside both tracks
 img/  datasheets/  downloads/  scripts/
 reference.js           the manifest of every theory page, per module
 back-link.js  reference-dashboard.js  reference-dashboard.css
