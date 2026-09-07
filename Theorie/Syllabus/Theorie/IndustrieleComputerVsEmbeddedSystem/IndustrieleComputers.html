@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industriële computers</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Industriële computers</h1>
+
+        <p>De personal computer heeft een ongeëvenaard succesverhaal achter de rug en is een onderdeel geworden van het dagelijks leven.</p>
+
+        <p>Ook in de industrie worden computers heel vaak gebruikt voor diverse automatiseringstaken. In een industriële omgeving spreekt men dan over een industriële computer, industriële pc of kortweg IPC.</p>
+
+        <p>De hardware en vormfactoren die gebruikt worden voor industriële computers zijn héél divers en hangen af van de taak waarvoor de computer ingezet wordt. Hier gaan we straks iets dieper op in.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-04-industriele-computer-vs-embedded-system-01.png" class="img-fluid" alt="Links van een schuine scheidingslijn staat hardware voor thuis: een Dell toren met een scherm, een toetsenbord en een muis, en daaronder een ASUS netbook en een MacBook. Rechts staat industriele hardware: twee rekmodellen met een open chassis, een verstevigde Panasonic laptop, en een rij toestellen met de opschriften Control cabinet PCs, Panel PCs, Control Panel, Industrial Motherboards en Embedded PCs.">
+        </figure>
+
+        <p>Wat de processor betreft begint dit onderaan het segment bij ARM of Intel Atom x86 varianten. Doordat deze processoren weinig warmte ontwikkelen is er dan vaak geen ventilator nodig. We spreken dan van een passief gekoeld systeem. Dit zorgt ervoor dat ze ingezet kunnen worden in omgevingen met heel veel stof.</p>
+
+        <p>Wanneer prestaties belangrijk zijn kan er gekozen worden voor Intel Core 3, 5 of zelfs 7 processoren. Het type processor bepaalt ook onmiddellijk welke applicaties kunnen gedraaid worden.</p>
+
+        <p>Dat type is daarbij niet het typenummer maar de instructieset: de verzameling instructies die de
+            processor begrijpt. Een Atom, een Core en een Ryzen delen dezelfde instructieset, x86 en in zijn 64 bit
+            vorm x64, en draaien dus dezelfde programma&#x27;s. Een ARM processor heeft een andere instructieset. Een
+            programma dat voor x64 vertaald is, start daar niet op, dus wie van x64 naar ARM gaat heeft van elk
+            programma een versie voor ARM nodig.</p>
+
+        <p>Bij personal computers heeft een consument ook de keuze om een processor te kopen van AMD. Deze doen net hetzelfde als een Intel processor maar zijn doorgaans iets goedkoper. Toch wordt in de industrie bijna altijd gekozen voor Intel.</p>
+
+        <p>Een tweede criteria is de vormfactor van het moederbord.  Deze gaat van ATX tot computers die passen op een DIN rail. ATX staat voor Advanced Technology Extended en heeft ongeveer de afmetingen van een A4 formaat papier.</p>
+
+        <p>Een derde criteria is het scherm waarop de GUI of Graphical User Interface wordt getoond. In de industrie worden heel vaak touchscreens gebruikt. Hierbij speelt natuurlijk de grootte een rol maar ook als dit scherm drukgevoelig is of capacitief.</p>
+
+        <p>Een vierde criteria is natuurlijk ook het besturingssysteem en bijhorende software. Vaak wordt gekozen voor Windows 7 Compact / Embedded of de opvolger: Windows 10 IOT Long Term Servicing Channel. Dit is de speciale variant van Windows 10 bedoeld voor industriële toepassingen.</p>
+
+        <p>De programmatie van een industriële PC kan bijgevolg met om het even wat je kan bedenken: Visual Basic, C#, Java, ... Vaak wordt de industriële PC gebruikt als een software PLC of kortweg SOFT PLC.</p>
+
+        <p>De programmatie daarvan gebeurt dan aan de hand van gespecialiseerde software zoals bijvoorbeeld TwinCAT of CodeSYS. Deze zorgt ervoor dat de computer zich gedraagt als een PLC met als toegevoegde bonus de mogelijkheid tot een complexe gebruikersinterface.</p>
+
+        <p>Een PLC stuurt IO aan: ingangen die een sensor uitlezen en uitgangen die een klep of een motor
+            schakelen. Op het moederbord van een industriele computer zitten die aansluitingen meestal niet. Ze
+            zitten op een apart toestel dat bij de machine staat, een IO eiland, en de computer bereikt dat over het
+            netwerk. Daarvoor dient een industrieel netwerkprotocol zoals PROFINET, MODBUS/TCP, ETHERNET/IP of
+            ETHERCAT: het brengt de toestand van elke ingang naar de computer, en het commando voor elke uitgang
+            terug naar het eiland.</p>
+
+        <p>Wanneer je de hardware van een IPC of embedded system bekijkt dan zie je dat deze vaak niet spectaculair vooruitstrevend is... Een vorige generatie RAM geheugen, harde schijf en processor zijn geen uitzonderingen. Dit komt omdat er vaak voor hardware gekozen wordt waarvan de ondersteuning en beschikbaarheid nog lang in de toekomst gegarandeerd worden door de fabrikant.</p>
+
+        <p>Als je een IPC of ES koopt dan krijg je er vaak de garantie bij dat je na 10 jaar nog steeds vervangonderdelen ervoor kan krijgen.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

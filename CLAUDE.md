@@ -682,7 +682,7 @@ image shows `/dev/sda1 ntfs Windows OS` next to `/dev/sda2 fat32 Data`, and the 
 `/dev/sdb`. Open the PNG before writing a figcaption; three of the eight captions here would have
 been wrong otherwise.
 
-## De syllabus, hoofdstuk 1 ingevoerd 7 september 2026
+## De syllabus, hoofdstuk 1 tot 4 ingevoerd 7 september 2026
 
 De theorietrack bestond hier nog niet: `Theorie/Syllabus/` was leeg en het manifest kende geen
 module `syllabus`. Wat er bij dit eerste hoofdstuk aan infrastructuur bij gekomen is, hoort erbij en
@@ -839,6 +839,22 @@ redactionele keuze: het staat zo in de Word en het hoofdstuk is nog niet ingevoe
 `ontdiakritiseer()` normaliseert nu naar NFKD en gooit de combinerende tekens weg,
 zodat de kale letter blijft staan. Dit raakt DeN even hard en is de tweede
 wijziging aan `import-syllabus.py` die geen string is.
+
+**`slug()` brak diezelfde woorden, en dat merk je pas aan een bestandsnaam in `img/`.**
+`ontdiakritiseer()` zat op `pascal()` en niet op `slug()`, dus de map van hoofdstuk 4 heette wel
+`IndustrieleComputerVsEmbeddedSystem` terwijl zijn afbeeldingen
+`syllabus-04-industri-le-computer-vs-embedded-system-01.png` heetten. De twee gaan nu allebei door
+`ontdiakritiseer()`. Dit is de derde wijziging aan `import-syllabus.py` die geen string is, ze raakt
+DeN even hard, en ze raakt de drie hoofdstukken die er al staan niet: geen van hun titels draagt een
+diakritisch teken.
+
+**De naam van een categorie in `reference.js` is de gedrukte hoofdstuktitel, en mag dus geen
+diakritisch teken kwijtspelen.** `export-syllabus.py` drukt hem boven de eerste bladzijde van het
+hoofdstuk en in de inhoudstafel. `reference.js` was tot hoofdstuk 4 volledig ASCII, en de titel
+verscheen daardoor als "4 Industriele computer vs embedded system" boven een kader dat drie keer
+"industriële" schrijft. De naam draagt nu het teken zelf, en dat is de enige regel in het bestand
+die niet ASCII is. Dit raakt alleen de `name` van een categorie: een sectietitel komt uit de `<h1>`
+van de pagina, en een blurb wordt nergens gedrukt.
 
 **Een zwevende afbeelding heeft dus geen bijschrift meer, en dus ook geen `alt`.** `figuur()` valt
 dan terug op "Afbeelding uit de syllabus", en dat is geen beschrijving. De vijf `alt`-teksten van

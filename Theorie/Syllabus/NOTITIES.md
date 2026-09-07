@@ -527,3 +527,243 @@ iets veranderd.
   er "een speciale partitie" met een `.efi`-programma in de plaats van de MBR
   komt, en noemt de partitietabel nergens bij naam. Beide labo's doen dat wel.
   Dat is een gat en geen tegenspraak.
+
+## Hoofdstuk 4, Industriële computer vs embedded system
+
+**De sectie Studievragen achteraan heet hier Test jezelf**, zoals in hoofdstuk 1
+en 3. Het kader Studievragen vooraan houdt zijn eigen naam en staat samen met de
+Kernpunten op `Overzicht.html`. De pagina heet `TestJezelf.html`; de importer
+schreef `Studievragen.html`.
+
+**De vijf genummerde items lopen door in een enkele `<ol>`, dus er is nergens een
+`start=`.** De lege alinea's tussen de vraaggroepen staan in de Word in de stijl
+Normal en niet in List Paragraph, dus ze breken de nummering niet. De importer
+laat ze vallen en de lijst blijft heel. Regel 14 heeft hier dus niets aan te
+sluiten.
+
+### De vijf vragen van Test jezelf, en de vijfde die geen vraag is
+
+| Vraag | Antwoord | Waarop het steunt |
+|---|---|---|
+| 1 Waarin een IPC verschilt van een gewone desktop | b, hardware die lang ondersteund wordt, tot 10 jaar vervangstukken | 4.1, "vaak voor hardware gekozen waarvan de ondersteuning en beschikbaarheid nog lang in de toekomst gegarandeerd worden", en de garantie van 10 jaar in de zin erna |
+| 2 Waarom het processortype een bepalende keuze is | c, de instructieset x64 / ARM | het vijfde kernpunt; de lopende tekst dekte het niet, zie hieronder |
+| 3 Wat een IO eiland is | b, de IPC heeft de connectoren niet op zijn moederbord en bereikt het eiland over een industrieel netwerkprotocol | het derde en vierde kernpunt, en 4.3, "Via een ethernet interface communiceer je dan met verschillende I/O eilanden over EtherCAT, ProfiNET, Modbus TCP" |
+| 4 Welke naam GEEN industrieel netwerkprotocol is | d, AUTOCAT | het vierde kernpunt noemt PROFINET, MODBUS/TCP, ETHERNET/IP en ETHERCAT; AUTOCAT komt in de hele Word niet voor |
+| 5 De specs van een recente Raspberry Pi | open, geen vast antwoord | zie hieronder |
+
+**Vraag 3 leek twee juiste antwoorden te kunnen hebben en heeft er een.** De
+tweede en de derde mogelijkheid zijn elkaars tegengestelde, dus dat is nagekeken
+tegen de tekst en niet op gevoel: mogelijkheid c zegt dat een IO eiland
+stand-alone is en geen communicatie via een industrieel netwerkprotocol nodig
+heeft, en het vierde kernpunt zegt net dat je zo'n protocol gebruikt om een IO
+eiland vanaf het netwerk aan te sturen. c is dus tegengesproken. Vraag 1, 2 en 4
+hebben elk ook precies een juiste mogelijkheid; vraag 4 was in de Word al een
+omkering en is niet aangeraakt.
+
+**Vraag 5 is een open vraag geworden met een oplossing die naar de bron wijst.**
+Beslist op 7 september 2026. Ze heeft geen mogelijkheden en dus geen
+`class="juist"`, en zonder `<div class="oplossing">` drukt het hele hoofdstuk
+geen Oplossingen. Ze heeft ook geen vast antwoord: welke specs kloppen, hangt af
+van welk model de student opzoekt. De oplossing zegt daarom waar je het opzoekt
+(bij het model zelf op raspberrypi.com, onder Products, en in de product brief
+die daar per model hangt) in plaats van wat het antwoord is. **Dat is een
+oplossing die de brontekst niet heeft**, want de Word geeft er geen.
+
+De twee andere mogelijkheden zijn overwogen en afgewezen: ze uit Test jezelf
+halen en een eigen sectie Oefening geven, of ze laten vallen. Ze blijft staan
+omdat dit de enige plaats in het hoofdstuk is waar de student zelf naar de
+Raspberry Pi kijkt, terwijl 4.2 zegt dat dat het toestel van het labo is.
+
+**Het invulblad van vraag 5 zijn negen invulregels, en die vorm is hier gekozen.**
+In de Word zijn het vijf gewone alinea's die met tabs twee velden naast elkaar
+zetten: Model / Jaartal uitgebracht, Processor / Instructieset, Capaciteit
+werkgeheugen / Aantal USB aansluitingen, Schermaansluting / Ethernet, en WiFi
+alleen. De importer maakt daar lopende tekst van en de tabs vallen weg, dus er
+bleef niets over om in te schrijven en twee labels plakten aan elkaar
+("Capaciteit werkgeheugen:Aantal USB aansluitingen:"). Dat is hetzelfde geval als
+de drie tabellen van 2.1 Hardware herkennen.
+
+Het zijn negen velden, dus negen regels: de afspraak uit hoofdstuk 3 is een
+invulregel per ding dat het antwoord telt, en niet een regel per vraag. Ze staan
+in de invulkolom-vorm, het label links en de ruimte rechts, zoals de vier
+genummerde vragen met labels in hoofdstuk 2. **De labelkolom is 78mm en niet de
+62mm die de tekst nodig zou hebben**: bij die maat brak "Schermaansluting: DVI /
+HDMI / DisplayPort" over twee regels en werd die ene rij twee keer zo hoog als de
+acht andere.
+
+### Twee gaten in de dekking, en de tekst die ervoor bijgeschreven is
+
+Beslist op 7 september 2026, dezelfde afweging als bij de wet van Moore in
+hoofdstuk 1: er komt tekst bij in plaats van dat een vraag wegvalt. **Deze twee
+alinea's zijn de enige in dit hoofdstuk die niet uit de Word komen, en een
+herimport gooit ze weg.**
+
+- **Het woord instructieset kwam in de lopende tekst nergens voor**, terwijl
+  vraag 2 er rechtstreeks op steunt. Erger nog, 4.1 duwde naar de verkeerde
+  mogelijkheid: vlak na "Intel Core 3, 5 of zelfs 7 processoren" staat "Het type
+  processor bepaalt ook onmiddellijk welke applicaties kunnen gedraaid worden",
+  en wie alleen dat leest kiest afleider a, het typenummer. De nieuwe alinea
+  staat er meteen achter en zegt wat dat type is: "Dat type is daarbij niet het
+  typenummer maar de instructieset: de verzameling instructies die de processor
+  begrijpt. Een Atom, een Core en een Ryzen delen dezelfde instructieset, x86 en
+  in zijn 64 bit vorm x64, en draaien dus dezelfde programma's. Een ARM processor
+  heeft een andere instructieset. Een programma dat voor x64 vertaald is, start
+  daar niet op, dus wie van x64 naar ARM gaat heeft van elk programma een versie
+  voor ARM nodig."
+- **Een IO eiland werd nergens uitgelegd.** Het staat in het derde en vierde
+  kernpunt, in studievraag 4 vooraan, in vraag 3 van Test jezelf, en een keer in
+  het voorbijgaan in 4.3 ("verschillende I/O eilanden"), maar geen enkele sectie
+  zegt wat het is. De nieuwe alinea staat in 4.1, achter de alinea over de SOFT
+  PLC, omdat een PLC is wat IO aanstuurt: "Een PLC stuurt IO aan: ingangen die
+  een sensor uitlezen en uitgangen die een klep of een motor schakelen. Op het
+  moederbord van een industriele computer zitten die aansluitingen meestal niet.
+  Ze zitten op een apart toestel dat bij de machine staat, een IO eiland, en de
+  computer bereikt dat over het netwerk. Daarvoor dient een industrieel
+  netwerkprotocol zoals PROFINET, MODBUS/TCP, ETHERNET/IP of ETHERCAT: het brengt
+  de toestand van elke ingang naar de computer, en het commando voor elke uitgang
+  terug naar het eiland." Die alinea beantwoordt meteen studievraag 4 en 5
+  vooraan, die anders alleen door het kader beantwoord werden.
+
+### De vijf afbeeldingen
+
+**Elk bestand is opengedaan voor het `alt` erbij geschreven werd**, zoals in de
+drie hoofdstukken ervoor. Die vijf regels staan alleen in de HTML en **een nieuwe
+import gooit ze weg**. Geen enkele afbeelding draagt een bijschrift in de Word,
+dus ze dragen er hier ook geen.
+
+**De tweede zweeft**, `syllabus-04-industriele-computer-vs-embedded-system-02.png`
+in 4.2, met `wrapSquare` verankerd. De alinea ernaast ("Een embedded systeem
+afgelijnd omschrijven is geen eenvoudige taak") is dus lopende tekst gebleven en
+de figuur kreeg geen bijschrift. Dat is het geval van hoofdstuk 1; `IMPORT.md`
+meldt het. De vier andere staan inline.
+
+**De twee productfoto's van 45KB dragen geen watermerk**, tegen de verwachting
+in. Het zijn schone catalogusfoto's van Beckhoff, de panel PC van voren en van
+achteren en twee control cabinet PC's, allebei 504 bij 259 pixels op de
+lichtblauwe achtergrond van die fabrikant. Ze zijn opengedaan en uitvergroot voor
+die conclusie getrokken werd, want dat is precies het geval waar Labo
+Partitioneren een regel voor heeft. Wat erop staat, klopt bovendien met de tekst
+ernaast: op de control cabinet PC's zie je de lezer, de ventilatoren, de
+aansluitingen en de uitbreidingssleuven alle vier aan het frontpaneel, en dat is
+wat 4.4 beweert. Ze blijven staan, met het merk zichtbaar op de omlijsting van
+het scherm, zoals het toestel dat zelf draagt.
+
+**De eerste afbeelding mist haar twee kolomtitels, en dat zit zo in de Word.**
+`...-01.png` zet consumentenhardware links en industriele hardware rechts van een
+schuine lijn, en boven elke helft stond een titel die in de bron al weggesneden
+is: op de bovenste beeldrij staan alleen nog de staarten van twee letterregels.
+Nagekeken in `word/document.xml`: deze afbeelding draagt geen `srcRect`, dus de
+uitsnede komt niet van Word en de importer laat niets vallen. Het `alt` zegt
+daarom in woorden wat de twee helften tegenover elkaar zetten. Wie de figuur ooit
+vervangt, is de titels kwijt en niet iets anders.
+
+**De Beckhoff CX9020 in 4.2 heeft Engelse bijschriften in een Nederlandse tekst**
+(Ethernet and USB connection, Battery compartment, Status LEDs). Dat is dezelfde
+afweging als bij de MBR-tekening van hoofdstuk 3, en hier valt ze de andere kant
+uit: het is een productfoto met wijzers erop en geen tekening die je natekent, ze
+haalt 182 dpi op haar 89.9mm, en de woorden die erop staan zijn hardwarenamen die
+de tekst zelf ook onvertaald gebruikt. Ze blijft dus staan zoals ze is.
+
+**Drie maten wijken af van de Word, en alle drie om dezelfde reden: bladspiegel.**
+De Word zet de vijf figuren op 160.0, 90.0, 160.0, 90.0 en 90.0mm.
+
+- De Raspberry Pi in 4.2 staat op **145.0mm** in plaats van 160.0. Op 160.0 is ze
+  123.3mm hoog en bleef er onder de tekst van bladzijde 36 net te weinig over, dus
+  ze sprong naar een eigen bladzijde en liet een halve bladzijde wit achter. Op
+  145.0 is ze 111.7mm en volgt ze gewoon op de zin die haar aankondigt.
+- De panel PC in 4.3 en de control cabinet PC in 4.4 staan allebei op **80.0mm**
+  in plaats van 90.0. Nadat de Pi opschoof, liep 4.4 met een enkele regel over
+  naar een volgende bladzijde. Die twee figuren tien millimeter smaller maken
+  levert samen 10mm hoogte op, en daarmee passen 4.3 en 4.4 samen op een
+  bladzijde.
+
+Het hoofdstuk telt daardoor zeven bladzijden in plaats van negen. De drie maten
+zijn de knop uit hoofdstuk 2 en 3, en dit is de eerste keer dat eraan draaien in
+twee stappen ging: de eerste ingreep verplaatste het probleem naar de sectie
+erna.
+
+**De bladzijden van dit hoofdstuk zijn gerenderd en bekeken**, de vier met een
+figuur, de opening, Test jezelf en Oplossingen. Test jezelf past met zijn vier
+meerkeuzevragen en zijn invulblad van negen regels op een enkele bladzijde;
+Oplossingen drukt de vier letters b, c, b, d en het open antwoord.
+
+### De hoofdstuktitel in reference.js draagt een trema, en de rest van het bestand niet
+
+`reference.js` was tot hier volledig ASCII, en de naam van een categorie is wat
+`export-syllabus.py` als **hoofdstuktitel drukt**, boven de eerste bladzijde en in
+de inhoudstafel. Zonder trema stond er "4 Industriele computer vs embedded
+system" boven een kader dat drie keer "industriële" schrijft. De naam is dus
+`Industriële computer vs embedded system`, met het teken zelf, en dat is de enige
+regel in het bestand die niet ASCII is.
+
+**De sectietitels raakt dit niet**: die komen uit de `<h1>` van de pagina en niet
+uit het manifest, dus "4.1 Industriële computers" stond er al goed. De blurbs
+blijven ook ASCII, want die worden nergens gedrukt: ze staan alleen op de hub, en
+die wordt met opzet door niets gelinkt.
+
+### Wat er in de tekst opviel, en niet aangeraakt is
+
+De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML:
+
+- **"Een tweede criteria", "Een derde criteria", "Een vierde criteria"** in 4.1,
+  drie keer, waar criterium hoort te staan.
+- **"toegangkelijk"** in 4.4, waar toegankelijk hoort te staan.
+- **"Rasbperry PI"** in vraag 5 van Test jezelf, en **"Raspberry PI"** in 4.2.
+  Het toestel heet Raspberry Pi.
+- **"Schermaansluting"** in het invulblad van vraag 5, zonder de tweede i. Het
+  staat er nog, ook in de HTML; alleen de indeling eromheen is veranderd.
+- **CodeSYS in 4.1 en 4.4, CodeSys in 4.3.** De fabrikant schrijft CODESYS.
+- **De protocolnamen staan in drie schrijfwijzen.** Het kader schrijft PROFINET,
+  MODBUS/TCP, ETHERNET/IP en ETHERCAT, 4.3 schrijft EtherCAT, ProfiNET en Modbus
+  TCP, en Test jezelf schrijft PROFINET, ETHERCAT en MODBUS. Hetzelfde geldt voor
+  **IO eiland tegen I/O eilanden**, waarvan 4.3 de tweede vorm gebruikt.
+- **"ES" wordt in 4.1 een keer als afkorting gebruikt** ("Als je een IPC of ES
+  koopt") zonder dat ze ooit ingevoerd is. IPC wordt dat wel, in de tweede alinea.
+- **"Windows 10 IOT"** in 4.1 en 4.2; Microsoft schrijft Windows 10 IoT. 4.1 noemt
+  het "Windows 7 Compact / Embedded", 4.2 "Windows 7 Embedded".
+- **4.2 zegt dat je voor ARM processoren kan kiezen voor Windows 7 Embedded en
+  Linux.** Windows Embedded Compact 7 draaide inderdaad op ARM, maar Windows
+  Embedded Standard 7, waar 4.1 het over lijkt te hebben, was x86. De twee namen
+  door elkaar maken die zin moeilijk na te kijken.
+- **Studievraag 5 vooraan is een imperatief met een vraagteken**, "Geef de naam
+  van minstens twee industriële netwerkprotocollen waarmee IO aangestuurd kan
+  worden?" Dat is dezelfde vorm als studievraag 6 van hoofdstuk 3.
+- **Studievraag 1 vooraan en vraag 1 van Test jezelf verschillen een woord**:
+  vooraan "een gewone desktop computer", achteraan "een gewone desktop".
+- **Drie woorden voor hetzelfde onderdeel**: vervangonderdelen in 4.1,
+  vervangstukken in Test jezelf, wisselstuk in 4.4.
+- **"Een embedded systeem" tegen "een embedded system"** wisselen in 4.2 binnen
+  drie alinea's.
+- **Dubbele spatie** na "vormfactor van het moederbord." in 4.1, en **"héél
+  divers"** met een accent aigu als nadruk in dezelfde sectie.
+- De hoge komma's rond 'stevig' in het kader Kernpunten zijn in de Word gewone
+  apostrofs en zijn dat hier gebleven. Dat is opmaak en geen tekst.
+
+### Wat het labo Embedded Systems straks niet mag tegenspreken
+
+`Labo/EmbeddedSystems/` bestaat nog niet, dus er is hier niets om tegen te
+spreken. Wat dit hoofdstuk vastlegt en wat dat labo dus moet aanhouden:
+
+- **De Raspberry Pi is het embedded system van het labo.** 4.2 zegt dat met zoveel
+  woorden en toont er een foto van, en vraag 5 van Test jezelf laat de student de
+  specs van een recent model opzoeken. Een labo dat met iets anders werkt, maakt
+  die zin en die vraag onwaar.
+- **ARM tegen x86 is een verschil in instructieset.** Dat staat nu in 4.1, in de
+  alinea die hier bijgeschreven is: dezelfde instructieset betekent dezelfde
+  programma's, een andere instructieset betekent een aparte versie van elk
+  programma. De Raspberry Pi is ARM, dus dat is precies waar een labo tegenaan
+  loopt bij het kiezen van een image of een pakket.
+- **Een real time besturingssysteem is er een dat kan garanderen dat een taak
+  binnen een zekere tijd afgehandeld wordt.** Zo staat het in 4.2, en dat is een
+  garantie over de tijd en niet over de snelheid. Raspberry Pi OS is er geen.
+- **Een IO eiland is een apart toestel met de IO-aansluitingen erop**, dat de
+  computer over een industrieel netwerkprotocol bereikt, omdat een industriele
+  computer of embedded system die connectoren meestal niet op zijn moederbord
+  heeft. Zie de bijgeschreven alinea hierboven.
+- **De vier protocolnamen die dit hoofdstuk noemt** zijn PROFINET, MODBUS/TCP,
+  ETHERNET/IP en ETHERCAT. Vraag 4 van Test jezelf toetst er drie van.
+
+**Dit hoofdstuk raakt aan hoofdstuk 9, Virtual machines en containers**, dat nog
+niet ingevoerd is: 4.1 en 4.3 hebben het over een SOFT PLC en over software die
+op een IPC draait. Er staat geen verwijzing naar dat hoofdstuk, en die hoort er
+ook niet te staan zolang het er niet is.

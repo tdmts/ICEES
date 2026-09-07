@@ -216,6 +216,49 @@ window.LAB_REFERENCE = {
                     }
                 ]
             }
+            ,
+            {
+                name: 'Industriële computer vs embedded system',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'industriele-computer-overzicht',
+                        name: 'Kernpunten en studievragen',
+                        blurb: 'Wat een industriele computer onderscheidt van een gewone desktop, waarom de instructieset van de processor vastlegt wat er kan draaien, en waarvoor een IO eiland dient.',
+                        href: 'IndustrieleComputerVsEmbeddedSystem/Overzicht.html'
+                    },
+                    {
+                        id: 'industriele-computer-ipc',
+                        name: 'Industriele computers',
+                        blurb: 'Vier criteria bij de keuze van een IPC: de processor, de vormfactor van ATX tot DIN rail, het touchscreen en het besturingssysteem, en waarom de hardware een generatie achterloopt.',
+                        href: 'IndustrieleComputerVsEmbeddedSystem/IndustrieleComputers.html'
+                    },
+                    {
+                        id: 'industriele-computer-embedded',
+                        name: 'Embedded system',
+                        blurb: 'Een computer voor een enkele taak: waarnemen met sensoren, verwerken, bijregelen, en waarom dat een real time besturingssysteem vraagt. Het toestel van het labo is de Raspberry Pi.',
+                        href: 'IndustrieleComputerVsEmbeddedSystem/EmbeddedSystem.html'
+                    },
+                    {
+                        id: 'industriele-computer-panel-pc',
+                        name: 'Panel PCs',
+                        blurb: 'De tablet van de machinekast: ingebouwd in de deur, bediend via het touchscreen, en over ethernet verbonden met de IO eilanden.',
+                        href: 'IndustrieleComputerVsEmbeddedSystem/PanelPcs.html'
+                    },
+                    {
+                        id: 'industriele-computer-control-cabinet-pc',
+                        name: 'Control cabinet PC',
+                        blurb: 'Dezelfde machine zonder scherm, gebouwd op beschikbaarheid: onderdelen die lang leverbaar blijven en vanaf het frontpaneel te wisselen zijn.',
+                        href: 'IndustrieleComputerVsEmbeddedSystem/ControlCabinetPc.html'
+                    },
+                    {
+                        id: 'industriele-computer-test-jezelf',
+                        name: 'Test jezelf',
+                        blurb: 'Vier meerkeuzevragen over de IPC, het processortype, het IO eiland en de netwerkprotocollen, en een invulblad voor de specs van een Raspberry Pi.',
+                        href: 'IndustrieleComputerVsEmbeddedSystem/TestJezelf.html'
+                    }
+                ]
+            }
         ]
     },
     assemblage: {

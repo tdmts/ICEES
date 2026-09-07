@@ -149,7 +149,13 @@ def pascal(tekst):
 
 
 def slug(tekst):
-    return re.sub(r"[^a-z0-9]+", "-", tekst.lower()).strip("-") or "sectie"
+    """Kleine letters met koppeltekens, voor de bestandsnaam van een afbeelding.
+
+    Dezelfde reden als bij pascal(): zonder ontdiakritiseer() breekt een teken
+    op een letter het woord in twee, en werd hoofdstuk 4
+    "industri-le-computer-vs-embedded-system".
+    """
+    return re.sub(r"[^a-z0-9]+", "-", ontdiakritiseer(tekst).lower()).strip("-") or "sectie"
 
 
 def strip_tags(tekst):
