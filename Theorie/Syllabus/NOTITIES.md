@@ -1043,11 +1043,9 @@ terug.**
   komma's zijn in de Word gewone apostrofs en zijn dat hier gebleven. Dat is opmaak
   en geen tekst, net als de drie punten aan het eind van 5.2, die in de Word het
   beletselteken zijn.
-- **"Een x64 Core 7 processor" in vraag 4 blijft staan, en het is geen tikfout.**
-  Beslist op 7 september 2026: Intel liet de i eind 2023 vallen bij de overstap
-  naar Meteor Lake, dus **Core 7 is de recentste vorm en Core i7 de oude**. Deze
-  hele repo schrijft het zonder i, hier en twee keer in hoofdstuk 4, dus er valt
-  ook niets recht te trekken.
+- **"Een x64 Core 7 processor" in vraag 4 blijft staan.** Beslist op 7 september
+  2026: zo noemt Intel die processoren sinds eind 2023, en zo staat het hier en
+  twee keer in hoofdstuk 4.
 - **Studievraag 1 vooraan is een imperatief en draagt al een punt** ("Bespreek de
   functionele onderdelen van een computer aan de hand van een schema."). De regel
   uit hoofdstuk 4 had hier dus niets te doen; de vier andere studievragen zijn echte
