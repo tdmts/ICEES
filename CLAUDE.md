@@ -179,6 +179,31 @@ match in DeN.
   rule 13) and one handout PDF per deck (derived by `export-handout.py`). All committed, because
   Pages serves only tracked files.
 
+**De syllabus-PDF staat sinds 8 september 2026 op `skip-worktree`, en dat is onzichtbaar.** Elke
+regeneratie legt er een volledige kopie van 56 MB bij in `.git` (git delta-comprimeert een PDF
+niet), en met vijf hoofdstukken te gaan loopt dat tegen de grenzen van GitHub aan. Daarom telt het
+bestand voorlopig niet meer mee:
+
+```
+git update-index --skip-worktree downloads/Industriele-computers-en-embedded-systems-syllabus.pdf
+```
+
+Wat dat doet en niet doet. De PDF **blijft in HEAD**, dus Pages serveert ze en de downloadknop van
+`Theorie/Syllabus/overview.html` blijft werken; wat er staat, is de versie van hoofdstuk 1 tot 11.
+Wat je lokaal opnieuw genereert, komt er niet meer bij. **`git status` zwijgt dan over het bestand**,
+ook als het wel degelijk veranderd is, en dat is de val: je draait `export-syllabus.py`, alles ziet
+er goed uit, en er gaat niets omhoog. Regel 13 blijft wel werken, want die leest de mtime op schijf
+en niet de index.
+
+Het is per checkout ingesteld, dus **een verse kloon draagt het niet** en commit de PDF weer gewoon
+mee. Zet het daar opnieuw met hetzelfde commando, of zet het hier uit met
+`--no-skip-worktree` wanneer de PDF wel weer mee moet. Kijk het na met `git ls-files -v downloads/`:
+een `S` vooraan betekent dat het aan staat.
+
+Dit is een noodrem en geen oplossing. De echte staat in NOTITIES.md en in de sessienotitie: de PDF
+verkleinen met Ghostscript voor hoofdstuk 12, en pas daarna eventueel de geschiedenis opschonen.
+**Nooit via Git LFS**, want Pages lost LFS-pointers niet op en serveert dan het pointerbestand.
+
 **A handout's filename is an agreement with Orion, so it is fixed.** The lecture track has no
 landing page: its Orion topic links straight at
 `https://tdmts.github.io/ICEES/downloads/ICEES-handout-<naam>.pdf`. Renaming a deck moves the file
@@ -554,6 +579,64 @@ a finger; both are in the Veiligheid box.
 Restored in the same pass: each of the three verslag blocks says again that the photo with the
 studentenkaart is the proof the opdracht was made in the lab. The original docx said so beside
 every one of the three, and all three had lost it.
+
+## De volgorde binnen het menu-item Opdracht, beslist 8 september 2026
+
+**Een reeks `opdracht` heeft twee soorten, en ze verschillen in waar de downloadknop hoort.** Bij de
+ene vult de student het document in TERWIJL hij het stappenplan doorloopt; bij de andere is het
+stappenplan een begeleide oefening en doet hij het werk dat hij indient DAARNA, zelfstandig. Lees dat
+af aan de eerste alinea van het `<!-- verslag -->` blok: zegt die "Vul dit document aan terwijl je de
+oefening maakt", dan is het de eerste soort.
+
+| Reeks | Soort | Wortel |
+|---|---|---|
+| Virtualiseren | document invullen tijdens de oefening | `Opdracht.html` |
+| Partitioneren, Linux Basis, Chmod, Chown, Chgrp | begeleide oefening, daarna zelfstandig | `Overzicht.html` |
+| Assemblage (drie opdrachten) | geen stappenplan op de site | `Opdracht.html` |
+
+**Bij de tweede soort is `Opdracht.html` de LAATSTE pagina van de reeks en niet de eerste.** Tot 8
+september 2026 was ze overal de wortel, dus wie in Orion op Opdracht klikte, kreeg eerst het document
+dat hij moet invullen en pas daarna de oefening die eraan voorafgaat. Bij Linux Basis is dat een
+echte fout en geen kwestie van smaak: de acht stappenplanpagina's bouwen een toestand op de machine
+op (mappen, bestanden, een archief) en het verslag vertrekt daarvan.
+
+**De wortel heet daarom `Overzicht.html`, en de naam is het hele trucje.** Elk script in deze repo
+grijpt op de bestandsnaam `Opdracht.html`: `opdracht_paginas()` in `check-content.py` (waar regel 6,
+8 en 11 aan hangen) globt erop, en `export-verslag.py` leest `module / "Opdracht.html"` hard. Laat je
+die naam op de laatste pagina staan en zet je er een pagina onder een ANDERE naam voor, dan verandert
+er aan de scripts niets. Het omgekeerde (de laatste pagina hernoemen naar `ZelfstandigeOefening.html`)
+kost een scriptronde en levert hetzelfde op. `topic_van()` stuurt allebei naar het menu-item Opdracht,
+want ze staan los in de modulemap, dus het blijft een enkel Orion-topic en er verandert niets in
+Orion. `back-link.js` leidt de wortel af uit de eerste manifestregel van de reeks en niet uit de
+naam. Dezelfde vorm die `SoftwareInstalleren/Overzicht.html` al had.
+
+**Wat op zo'n `Overzicht.html` hoort, is wat te laat komt als het achteraan staat.** Concreet de
+materiaalvereisten en de waarschuwingen: welke machine je nodig hebt, welke opdracht je eerst
+afgewerkt moet hebben, en dat de pagina's op elkaar voortbouwen. Die kaders stonden op `Opdracht.html`
+en zijn mee naar voren verhuisd. Wat op `Opdracht.html` blijft, is de lead, de downloadknop, het
+verslagblok, en een waarschuwing die pas NA de opdracht geldt (bij Chmod: laat de gebruikers staan,
+want chown en chgrp werken erop verder).
+
+**En de lead van `Opdracht.html` beschrijft dan alleen nog het zelfstandige deel.** Ze komt op de
+eerste bladzijde van het verslag terecht (regel 8), dus ze moet daar op zichzelf leesbaar zijn: geen
+"Daarna maak je op diezelfde machine ...", want er staat in het document niets voor. Bij Partitioneren
+en Linux Basis dekte een enkele lead allebei de delen en is ze in tweeen geschreven.
+
+**Regel 12 ziet die nieuwe leads niet, en dat is een gat.** `leadpaginas()` kijkt naar
+`overview.html`, `Theorie/reference.html` en elke `Opdracht.html`, dus de vijf leads van een
+`Overzicht.html` (en die van `SoftwareInstalleren/Overzicht.html`) worden met niets vergeleken. Twee
+introducties van hetzelfde labo mogen elkaar nog altijd niet navertellen; hier bewaakt alleen je
+eigen lezing dat. Zelfde soort stille bewaker als regel 11.
+
+**Een stappenplanpagina die afsluit met "ga terug naar de eerste pagina" liegt na deze wissel.** Drie
+deden dat (`Partitioneren/GptPartities.html`, `LinuxBasis/ArchiverenEnAfsluiten.html`,
+`LinuxGeavanceerd/Chmod/Opruimen.html`) en wijzen nu vooruit. Geen enkele regel valt daarover: de link
+bleef binnen hetzelfde menu-item, dus regel 10 zwijgt, en de zin bleef grammaticaal. Grep na een
+herordening op "eerste pagina", "hierboven" en "terug naar".
+
+**Apostrof in een blurb, opnieuw.** `'de acht pagina's hierna'` brak `reference.js` bij het inlezen
+met node en zou regel 2 stil half hebben afgekapt. Twee blurbs zijn erom herschreven. Zie ook de
+noot bij Labo Linux Basis: geen enkel veld in een manifestblok draagt een apostrof.
 
 ## Labo Virtualiseren, written 4 September 2026
 

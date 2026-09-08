@@ -879,10 +879,10 @@ window.LAB_REFERENCE = {
                 reeks: 'opdracht',
                 topics: [
                     {
-                        id: 'opdracht-partitioneren',
-                        name: 'De opdracht',
-                        blurb: 'Wat je maakt en indient, en het document waarin je je antwoorden invult.',
-                        href: '../Opdracht.html'
+                        id: 'oefening-partitioneren',
+                        name: 'De begeleide oefening',
+                        blurb: 'Waar je oefent en waar je het echte werk doet, en waarom dat twee verschillende virtuele machines zijn.',
+                        href: '../Overzicht.html'
                     },
                     {
                         id: 'oefenmachine',
@@ -907,6 +907,12 @@ window.LAB_REFERENCE = {
                         name: 'GPT-partities',
                         blurb: 'Dezelfde oefening op de tweede schijf, met een GPT-partitietabel en vijf partities die allemaal primair zijn.',
                         href: '../GptPartities.html'
+                    },
+                    {
+                        id: 'opdracht-partitioneren',
+                        name: 'De opdracht',
+                        blurb: 'Wat je maakt en indient, en het document waarin je je antwoorden invult.',
+                        href: '../Opdracht.html'
                     }
                 ]
             }
@@ -980,10 +986,10 @@ window.LAB_REFERENCE = {
                 reeks: 'opdracht',
                 topics: [
                     {
-                        id: 'opdracht-linuxbasis',
-                        name: 'De opdracht',
-                        blurb: 'Wat je maakt en indient, en het document waarin je je antwoorden en je screenshots kwijt kan.',
-                        href: '../Opdracht.html'
+                        id: 'oefening-linuxbasis',
+                        name: 'De begeleide oefening',
+                        blurb: 'Wat je hierna stap voor stap intypt, waarom de volgorde ervan telt, en wat er daarna zelfstandig van je verwacht wordt.',
+                        href: '../Overzicht.html'
                     },
                     {
                         id: 'terminal-openen',
@@ -1032,6 +1038,12 @@ window.LAB_REFERENCE = {
                         name: 'Archiveren en afsluiten',
                         blurb: 'Een map inpakken en weer uitpakken met tar, en de machine heropstarten of uitzetten met shutdown.',
                         href: '../ArchiverenEnAfsluiten.html'
+                    },
+                    {
+                        id: 'opdracht-linuxbasis',
+                        name: 'De opdracht',
+                        blurb: 'Wat je maakt en indient, en het document waarin je je antwoorden en je screenshots kwijt kan.',
+                        href: '../Opdracht.html'
                     }
                 ]
             }
@@ -1159,10 +1171,10 @@ window.LAB_REFERENCE = {
                 reeks: 'chmod',
                 topics: [
                     {
-                        id: 'opdracht-chmod',
-                        name: 'De opdracht',
-                        blurb: 'Twee gebruikers en een bestand maken, en met chmod uitzoeken wie het daarna nog open krijgt.',
-                        href: '../Chmod/Opdracht.html'
+                        id: 'oefening-chmod',
+                        name: 'De begeleide oefening',
+                        blurb: 'Gebruikers en groepen aanmaken in vier stappen die op elkaar voortbouwen, voor je aan het document begint.',
+                        href: '../Chmod/Overzicht.html'
                     },
                     {
                         id: 'gebruikers-aanmaken',
@@ -1187,6 +1199,12 @@ window.LAB_REFERENCE = {
                         name: 'Wissen en opruimen',
                         blurb: 'Met deluser een gebruiker wissen samen met zijn map, en iemand uit een groep halen zonder hem te wissen.',
                         href: '../Chmod/Opruimen.html'
+                    },
+                    {
+                        id: 'opdracht-chmod',
+                        name: 'De opdracht',
+                        blurb: 'Twee gebruikers en een bestand maken, en met chmod uitzoeken wie het daarna nog open krijgt.',
+                        href: '../Chmod/Opdracht.html'
                     }
                 ]
             },
@@ -1195,16 +1213,22 @@ window.LAB_REFERENCE = {
                 reeks: 'chown',
                 topics: [
                     {
-                        id: 'opdracht-chown',
-                        name: 'De opdracht',
-                        blurb: 'Een regel van ls ontleden, het bestand aan een andere eigenaar geven, en software langs drie wegen installeren.',
-                        href: '../Chown/Opdracht.html'
+                        id: 'oefening-chown',
+                        name: 'De begeleide oefening',
+                        blurb: 'Waar de owner in de uitvoer van ls staat, en welke opdracht je afgewerkt moet hebben voor je hieraan begint.',
+                        href: '../Chown/Overzicht.html'
                     },
                     {
                         id: 'owner-aanpassen',
                         name: 'De owner aanpassen',
                         blurb: 'In welke van de twee naamkolommen van ls de owner staat, en hoe je een map met chown aan een andere gebruiker geeft.',
                         href: '../Chown/OwnerAanpassen.html'
+                    },
+                    {
+                        id: 'opdracht-chown',
+                        name: 'De opdracht',
+                        blurb: 'Een regel van ls ontleden, het bestand aan een andere eigenaar geven, en software langs drie wegen installeren.',
+                        href: '../Chown/Opdracht.html'
                     }
                 ]
             },
@@ -1213,16 +1237,22 @@ window.LAB_REFERENCE = {
                 reeks: 'chgrp',
                 topics: [
                     {
-                        id: 'opdracht-chgrp',
-                        name: 'De opdracht',
-                        blurb: 'Een bestand waar de eigenaar niet meer bij kan, en een groep die het weer toegankelijk maakt.',
-                        href: '../Chgrp/Opdracht.html'
+                        id: 'oefening-chgrp',
+                        name: 'De begeleide oefening',
+                        blurb: 'Waar de group staat en wat ze aan de toegang verandert, en welke twee opdrachten hieraan voorafgaan.',
+                        href: '../Chgrp/Overzicht.html'
                     },
                     {
                         id: 'group-aanpassen',
                         name: 'De group aanpassen',
                         blurb: 'De group van een map wijzigen met chgrp, en zien voor wie de drie letters in het midden daarna gelden.',
                         href: '../Chgrp/GroupAanpassen.html'
+                    },
+                    {
+                        id: 'opdracht-chgrp',
+                        name: 'De opdracht',
+                        blurb: 'Een bestand waar de eigenaar niet meer bij kan, en een groep die het weer toegankelijk maakt.',
+                        href: '../Chgrp/Opdracht.html'
                     }
                 ]
             }
