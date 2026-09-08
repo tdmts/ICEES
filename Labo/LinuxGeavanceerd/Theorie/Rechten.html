@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechten op een bestand</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Rechten op een bestand</h1>
+
+        <p>Elk bestand en elke map op een Linux-machine draagt drie soorten rechten, en die staan los ingesteld voor
+            drie soorten gebruikers. Dat zijn negen schakelaars per bestand, en je leest ze alle negen af uit één
+            regel tekst.</p>
+
+        <h2 id="soorten">De drie rechten</h2>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De drie rechten, en wat ze op een map betekenen</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Recht</th>
+                        <th>Letter</th>
+                        <th>Op een bestand</th>
+                        <th>Op een map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>read</td>
+                        <td><code>r</code></td>
+                        <td>De inhoud lezen</td>
+                        <td>De namen zien die erin staan</td>
+                    </tr>
+                    <tr>
+                        <td>write</td>
+                        <td><code>w</code></td>
+                        <td>De inhoud wijzigen</td>
+                        <td>Er iets in maken, hernoemen of wissen</td>
+                    </tr>
+                    <tr>
+                        <td>execute</td>
+                        <td><code>x</code></td>
+                        <td>Het uitvoeren als programma</td>
+                        <td>Erin gaan met <code>cd</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="klassen">De drie klassen</h2>
+
+        <p>Die drie rechten staan drie keer ingesteld, telkens voor een andere groep mensen.</p>
+
+        <ol>
+            <li><strong>owner</strong>, de eigenaar van het bestand. Dat is de gebruiker die het aangemaakt heeft,
+                tenzij iemand het eigendom later doorgegeven heeft.</li>
+            <li><strong>group</strong>, de groep waar het bestand bij hoort. Iedereen die in die groep zit, valt
+                hieronder.</li>
+            <li><strong>other</strong>, iedereen die geen eigenaar is en niet in die groep zit.</li>
+        </ol>
+
+        <p>Er geldt er altijd precies één. Ben je de eigenaar, dan tellen de rechten van owner voor jou, ook al zit
+            je toevallig ook in de groep. Ben je dat niet maar zit je in de groep, dan tellen die van group. En zo
+            niet, dan die van other.</p>
+
+        <div class="info-box">
+            <div class="info-title warning">Root staat buiten die drie</div>
+            <p>De root gebruiker mag elk bestand lezen en schrijven, wat er ook ingesteld staat. Je kan een bestand
+                dus niet met <code>chmod</code> voor root afschermen: zet je alle negen schakelaars af, dan geraakt
+                niemand er nog aan behalve root.</p>
+        </div>
+
+        <h2 id="lezen">De regel van ls lezen</h2>
+
+        <p>Met <code>ls -alh</code> zie je van elke naam in een map wie de eigenaar is, bij welke groep ze hoort en
+            welke rechten erop staan. De map <code>/home</code> van een machine met vier gebruikers ziet er zo
+            uit.</p>
+
+        <div class="terminal-window">
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                <span class="term-cmd">cd /home</span>
+            </div>
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:/home$</span>
+                <span class="term-cmd">ls -alh</span>
+            </div>
+            <pre class="term-out">total 20K
+drwxr-xr-x  5 root         root         4,0K Apr 12 11:24 .
+drwxr-xr-x 24 root         root         4,0K Apr 12 10:31 ..
+<span class="highlight">drwxr-xr-x 23 elm          elm          4,0K Apr 14 09:29 elm</span>
+drwxr-xr-x  3 labopartner1 labopartner1 4,0K Apr 12 10:57 labopartner1
+drwxr-xr-x  2 labopartner2 labopartner2 4,0K Apr 12 10:36 labopartner2</pre>
+        </div>
+
+        <p>De eerste tien tekens van zo'n regel zijn de negen schakelaars, met er één voor. Ze staan altijd in
+            dezelfde volgorde, en een streepje betekent dat het recht op die plaats niet gegeven is.</p>
+
+        <figure class="figure-zoom" style="max-width: 620px">
+            <img src="../../../img/linuxgeavanceerd-rechten-posities.svg" class="img-fluid"
+                alt="De tien tekens van drwxr-xr-x uit elkaar getrokken: het eerste teken d voor het soort, daarna drie groepjes van drie letters onder de bijschriften owner, group en other, met onder elk groepje het cijfer 7, 5 en 5">
+            <figcaption class="figure-caption">De tien tekens van de map elm, met onder elk groepje het cijfer dat
+                erbij hoort</figcaption>
+        </figure>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De regel van de map elm, positie per positie</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Wat er staat</th>
+                        <th>Wat het betekent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>d</code></td>
+                        <td>Een map. Een gewoon bestand heeft hier een streepje</td>
+                    </tr>
+                    <tr>
+                        <td><code>rwx</code></td>
+                        <td>De <strong>owner</strong> mag lezen, schrijven en erin gaan</td>
+                    </tr>
+                    <tr>
+                        <td><code>r-x</code></td>
+                        <td>De <strong>group</strong> mag lezen en erin gaan, en er niets in wijzigen</td>
+                    </tr>
+                    <tr>
+                        <td><code>r-x</code></td>
+                        <td><strong>other</strong> mag hetzelfde als de group</td>
+                    </tr>
+                    <tr>
+                        <td><code>elm</code> (eerste keer)</td>
+                        <td>De naam van de <strong>owner</strong></td>
+                    </tr>
+                    <tr>
+                        <td><code>elm</code> (tweede keer)</td>
+                        <td>De naam van de <strong>group</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Dat de twee namen hier hetzelfde zijn, komt door de groep die <code>adduser</code> bij elke gebruiker
+            aanmaakt. Het zijn wel degelijk twee verschillende dingen, en je kan ze los van elkaar wijzigen.</p>
+
+        <h2 id="cijfers">Dezelfde rechten in cijfers</h2>
+
+        <p>Elk groepje van drie letters is ook één cijfer van 0 tot 7. Zet een <code>1</code> op elke plaats waar
+            een letter staat en een <code>0</code> waar een streepje staat, en lees die drie bits als een getal:
+            <code>r</code> weegt 4, <code>w</code> weegt 2 en <code>x</code> weegt 1.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De acht mogelijke groepjes</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Letters</th>
+                        <th>Bits</th>
+                        <th>Cijfer</th>
+                        <th>Wat mag</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>---</code></td>
+                        <td><code>000</code></td>
+                        <td><code>0</code></td>
+                        <td>Niets</td>
+                    </tr>
+                    <tr>
+                        <td><code>--x</code></td>
+                        <td><code>001</code></td>
+                        <td><code>1</code></td>
+                        <td>Alleen execute</td>
+                    </tr>
+                    <tr>
+                        <td><code>-w-</code></td>
+                        <td><code>010</code></td>
+                        <td><code>2</code></td>
+                        <td>Alleen write</td>
+                    </tr>
+                    <tr>
+                        <td><code>-wx</code></td>
+                        <td><code>011</code></td>
+                        <td><code>3</code></td>
+                        <td>Write en execute</td>
+                    </tr>
+                    <tr>
+                        <td><code>r--</code></td>
+                        <td><code>100</code></td>
+                        <td><code>4</code></td>
+                        <td>Alleen read</td>
+                    </tr>
+                    <tr>
+                        <td><code>r-x</code></td>
+                        <td><code>101</code></td>
+                        <td><code>5</code></td>
+                        <td>Read en execute</td>
+                    </tr>
+                    <tr>
+                        <td><code>rw-</code></td>
+                        <td><code>110</code></td>
+                        <td><code>6</code></td>
+                        <td>Read en write</td>
+                    </tr>
+                    <tr>
+                        <td><code>rwx</code></td>
+                        <td><code>111</code></td>
+                        <td><code>7</code></td>
+                        <td>Read, write en execute</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>De map <code>elm</code> hierboven draagt dus <code>755</code>: een 7 voor de owner, een 5 voor de group en
+            een 5 voor other.</p>
+
+        <h2 id="chmod">De rechten zetten met chmod</h2>
+
+        <p>Met <code>chmod</code> geef je de drie cijfers en de naam van het bestand of de map.</p>
+
+        <div class="terminal-window">
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                <span class="term-cmd">chmod 600 tekst.txt</span>
+            </div>
+        </div>
+
+        <p>Je geeft altijd alle drie de cijfers, ook wanneer je er maar één wil wijzigen: wat je typt vervangt de
+            negen schakelaars in hun geheel. Zet je <code>600</code> op een bestand, dan mag de owner het lezen en
+            schrijven, en mag verder niemand het openen, root uitgezonderd.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Vier combinaties die je vaak tegenkomt</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Cijfers</th>
+                        <th>Letters</th>
+                        <th>Wat het betekent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>600</code></td>
+                        <td><code>rw-------</code></td>
+                        <td>Alleen de owner leest en schrijft</td>
+                    </tr>
+                    <tr>
+                        <td><code>644</code></td>
+                        <td><code>rw-r--r--</code></td>
+                        <td>De owner leest en schrijft, de rest leest mee</td>
+                    </tr>
+                    <tr>
+                        <td><code>700</code></td>
+                        <td><code>rwx------</code></td>
+                        <td>Alleen de owner, en hij mag het ook uitvoeren</td>
+                    </tr>
+                    <tr>
+                        <td><code>755</code></td>
+                        <td><code>rwxr-xr-x</code></td>
+                        <td>De owner mag alles, de rest lezen en uitvoeren</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="chown-chgrp">De owner en de group zetten</h2>
+
+        <p><code>chmod</code> raakt alleen de negen schakelaars aan. Wie de owner is en welke group eraan hangt, zijn
+            twee andere gegevens, en die hebben elk hun eigen commando.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Drie commando's op dezelfde regel van ls</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Commando</th>
+                        <th>Wat het wijzigt</th>
+                        <th>Voorbeeld</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>chmod</code></td>
+                        <td>De negen rechten</td>
+                        <td><code>chmod 640 tekst.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>chown</code></td>
+                        <td>De owner</td>
+                        <td><code>sudo chown rechten2 tekst.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>chgrp</code></td>
+                        <td>De group</td>
+                        <td><code>sudo chgrp rechten tekst.txt</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>De laatste twee vragen <code>sudo</code>, ook wanneer het over je eigen bestand gaat. Zonder die regel
+            zou je je bestanden aan iemand anders kunnen opdringen, en dat is nu net wat een systeem waar meer dan
+            één mens op werkt moet tegenhouden.</p>
+
+        <p>Wijzig je de owner of de group, dan verandert er niets aan de negen letters. Wat er wel verandert, is wie
+            er onder welk groepje valt: geef je een bestand aan de group <code>rechten</code>, dan gelden de drie
+            letters in het midden vanaf dat moment voor iedereen die in die groep zit, en vallen alle anderen terug
+            op other.</p>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht chown</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Opdracht chown</h1>
+
+        <p class="lead">Wie eigenaar is van een bestand, staat in één van de twee naamkolommen van ls. Je leest er
+            eerst een uit, je geeft daarna tekst.txt aan een andere eigenaar, en je installeert tot slot software
+            langs drie van de wegen die dit labo behandelt.</p>
+
+        <div class="download-container">
+            <a href="../../../downloads/Labo-LinuxGeavanceerd-Chown-verslag.docx">Opdracht downloaden</a>
+            <ul>
+                <li>De volledige opdracht staat in dit document, met ruimte voor je antwoorden en je screenshots.
+                </li>
+                <li>Je dient het in via de opdracht op Orion, en dat mag zo vaak als je wil.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <div class="info-title warning">Doe eerst de opdracht chmod</div>
+            <p>Deze opdracht werkt verder op de gebruikers <code>rechten1</code> en <code>rechten2</code> en op het
+                bestand <code>/home/rechten1/tekst.txt</code> die je daar gemaakt hebt.</p>
+        </div>
+
+        <h2 id="stappenplan">De begeleide oefening</h2>
+
+        <p>Op de pagina hierna zie je waar de owner in de uitvoer van <code>ls</code> staat en hoe je hem met
+            <code>chown</code> aan iemand anders geeft. <strong>Klik rechtsboven op Volgende.</strong></p>
+
+
+        <!-- verslag
+        Van dit blok maakt scripts/export-verslag.py het verslagsjabloon. Wijzig hier, draai
+        daarna het script, en commit de docx mee.
+
+        <p>Deze opdracht maak je op de virtuele machine met Ubuntu. Vul dit document aan terwijl je werkt.</p>
+
+        <h2>Een regel van een andere machine lezen</h2>
+
+        <p>Op een andere Linux-machine geeft <code>ls -l</code> deze regel terug:</p>
+
+        <p><code>drwxr-xr-x  1 vulphere  users  486 Jun 26  2018  Discography</code></p>
+
+        <ol class="vragen">
+            <li>Is <code>vulphere</code> in die regel de owner of de group?</li>
+            <li>Is <code>users</code> in die regel de owner of de group?</li>
+            <li>Welke rechten heeft een gebruiker die in de groep <code>users</code> zit op deze map, en welke heeft
+                een gebruiker die er niet in zit?</li>
+        </ol>
+
+        <h2>De owner van tekst.txt</h2>
+
+        <ol class="vragen">
+            <li>Meld je aan als <code>elm</code>. Zorg ervoor dat <code>rechten2</code> de owner wordt van het
+                bestand <code>tekst.txt</code> in de map <code>/home/rechten1</code>. Welke commando's heb je
+                hiervoor gebruikt?</li>
+            <li class="screenshot">Voer <code>ls -alh</code> uit in de juiste map en neem een screenshot die
+                bewijst dat <code>rechten2</code> de owner is van <code>/home/rechten1/tekst.txt</code>. Plak die
+                hieronder.</li>
+            <li>De negen letters vooraan zijn niet veranderd, en toch mag <code>rechten1</code> nu iets anders met
+                dit bestand dan daarvoor. Leg uit hoe dat komt.</li>
+        </ol>
+
+        <h2>Software installeren</h2>
+
+        <ol class="vragen">
+            <li>Installeer een programma naar keuze uit het Software Center, en een tweede met <code>apt</code>.
+                Welke commando's heb je gebruikt, en hoe heet het programma dat je met het Software Center
+                geïnstalleerd hebt?</li>
+            <li class="screenshot">Neem een screenshot waarop de twee programma's tussen je toepassingen staan, en
+                plak die hieronder.</li>
+            <li>Installeer daarna een programma langs een <code>.deb</code> bestand of langs een installer script.
+                Welke commando's heb je gebruikt, en welke eigenschap geef je met die weg op tegenover de twee
+                hierboven?</li>
+            <li>Zet je machine up to date vanuit de terminal. Welke twee commando's heb je daarvoor nodig, en welk
+                programma met vensters doet hetzelfde?</li>
+        </ol>
+
+        <h2>Controle</h2>
+
+        <p>Laat dit controleren door de lector tijdens het labo.</p>
+        -->
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

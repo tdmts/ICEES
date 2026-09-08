@@ -1036,5 +1036,196 @@ window.LAB_REFERENCE = {
                 ]
             }
         ]
+    },
+    linuxgeavanceerd: {
+        name: 'Labo Linux Geavanceerd',
+        categories: [
+            {
+                name: 'Theorie',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'gebruikers-en-groepen',
+                        name: 'Gebruikers en groepen',
+                        blurb: 'Wat root mag en waarom je je er niet als aanmeldt, wat sudo daaraan verandert, en waarom rechten op een groep staan in plaats van op tien gebruikers.',
+                        href: 'GebruikersEnGroepen.html'
+                    },
+                    {
+                        id: 'rechten',
+                        name: 'Rechten op een bestand',
+                        blurb: 'De drie rechten en de drie klassen, hoe je de tien tekens van ls leest, dezelfde rechten in cijfers, en wat chmod, chown en chgrp elk aanpassen.',
+                        href: 'Rechten.html'
+                    },
+                    {
+                        id: 'software-uit-de-repository',
+                        name: 'Software uit de repository',
+                        blurb: 'Wat een repository is en waarom software eruit bijgewerkt blijft, wat een package manager met dependencies doet, en waarin het Software Center, apt en snap verschillen.',
+                        href: 'SoftwareUitDeRepository.html'
+                    },
+                    {
+                        id: 'software-buiten-de-repository',
+                        name: 'Software buiten de repository',
+                        blurb: 'Een deb bestand, een installer script en broncode die je zelf compileert, en bij elke stap wat je opgeeft aan automatisch bijwerken.',
+                        href: 'SoftwareBuitenDeRepository.html'
+                    },
+                    {
+                        id: 'docker',
+                        name: 'Docker',
+                        blurb: 'Wat een container is naast een virtuele machine, het verschil tussen een image en een container, wat in een Dockerfile staat en wat een poort doorgeven betekent.',
+                        href: 'Docker.html'
+                    }
+                ]
+            },
+            {
+                name: 'Spiekblad',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'spiekblad-linuxgeavanceerd',
+                        name: 'Spiekblad',
+                        blurb: 'Elk commando van dit labo, de rechtennotatie met haar cijfers en de vijf wegen om software te installeren, in vier tabellen om naast je scherm te houden.',
+                        href: 'Spiekblad.html'
+                    }
+                ]
+            },
+            {
+                name: 'Zelftest',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'test-jezelf-linuxgeavanceerd',
+                        name: 'Test jezelf',
+                        blurb: 'Negen meerkeuzevragen over de theorie van dit labo, in dezelfde vorm als de test in Orion. Bij elk antwoord staat waar je het kan nalezen.',
+                        href: 'TestJezelf.html'
+                    }
+                ]
+            },
+            {
+                name: 'Software installeren',
+                reeks: 'software',
+                topics: [
+                    {
+                        id: 'software-overzicht',
+                        name: 'Software installeren',
+                        blurb: 'Wat je op de pagina hierna installeert en langs welke weg, en waarom de volgorde van makkelijk naar moeilijk zelf het onderwerp is.',
+                        href: '../SoftwareInstalleren/Overzicht.html'
+                    },
+                    {
+                        id: 'uit-de-winkel',
+                        name: 'Uit de winkel',
+                        blurb: 'Een editor uit het Software Center, ssh met apt en VLC met snap, en de dependencies die er bij het tweede vanzelf bijkomen.',
+                        href: '../SoftwareInstalleren/UitDeWinkel.html'
+                    },
+                    {
+                        id: 'eigen-repository',
+                        name: 'Een repository van de leverancier',
+                        blurb: 'Spotify installeren door de sleutel van de leverancier in etc apt keyrings te zetten en de APT-regel ernaar te laten wijzen met signed-by.',
+                        href: '../SoftwareInstalleren/EigenRepository.html'
+                    },
+                    {
+                        id: 'deb-bestand',
+                        name: 'Een deb bestand',
+                        blurb: 'Google Chrome installeren met dpkg, de dependency-fout lezen die daarop volgt, en ze rechtzetten met apt-get install -f.',
+                        href: '../SoftwareInstalleren/DebBestand.html'
+                    },
+                    {
+                        id: 'installer-script',
+                        name: 'Een installer script',
+                        blurb: 'De Arduino IDE uitpakken uit een tar.xz archief, het installer script herkennen aan zijn rechten en het met sudo uitvoeren.',
+                        href: '../SoftwareInstalleren/InstallerScript.html'
+                    },
+                    {
+                        id: 'source-code',
+                        name: 'Compileren uit broncode',
+                        blurb: 'De no-ip client zelf vertalen met make, de handleiding lezen die bij de broncode zit, en zien welke compiler make aanroept.',
+                        href: '../SoftwareInstalleren/SourceCode.html'
+                    },
+                    {
+                        id: 'container-met-docker',
+                        name: 'Een container met Docker',
+                        blurb: 'De webserver Apache uit Docker Hub halen, er met een Dockerfile je eigen bladzijde in bouwen en de container op poort 8080 draaien.',
+                        href: '../SoftwareInstalleren/ContainerMetDocker.html'
+                    },
+                    {
+                        id: 'up-to-date',
+                        name: 'Je systeem up to date houden',
+                        blurb: 'Bijwerken met de Software Updater en met apt, en nagaan welk van de zeven geinstalleerde programmas daarin meegaat.',
+                        href: '../SoftwareInstalleren/UpToDate.html'
+                    }
+                ]
+            },
+            {
+                name: 'Opdracht chmod',
+                reeks: 'chmod',
+                topics: [
+                    {
+                        id: 'opdracht-chmod',
+                        name: 'De opdracht',
+                        blurb: 'Twee gebruikers en een bestand maken, en met chmod uitzoeken wie het daarna nog open krijgt.',
+                        href: '../Chmod/Opdracht.html'
+                    },
+                    {
+                        id: 'gebruikers-aanmaken',
+                        name: 'Gebruikers aanmaken',
+                        blurb: 'Twee gebruikers maken met adduser, zien wat dat commando er allemaal bij aanmaakt, en met su en exit wisselen tussen gebruikers.',
+                        href: '../Chmod/GebruikersAanmaken.html'
+                    },
+                    {
+                        id: 'sudo-rechten',
+                        name: 'Een gebruiker sudo-rechten geven',
+                        blurb: 'De melding die je krijgt zonder dat recht, de gebruiker met usermod in de groep sudo zetten, en met members nakijken wie erin zit.',
+                        href: '../Chmod/SudoRechten.html'
+                    },
+                    {
+                        id: 'een-eigen-groep',
+                        name: 'Een eigen groep maken',
+                        blurb: 'Een groep maken met groupadd, er twee gebruikers in zetten, en zien dat een gebruiker in meer dan een groep tegelijk zit.',
+                        href: '../Chmod/EenEigenGroep.html'
+                    },
+                    {
+                        id: 'opruimen',
+                        name: 'Wissen en opruimen',
+                        blurb: 'Met deluser een gebruiker wissen samen met zijn map, en iemand uit een groep halen zonder hem te wissen.',
+                        href: '../Chmod/Opruimen.html'
+                    }
+                ]
+            },
+            {
+                name: 'Opdracht chown',
+                reeks: 'chown',
+                topics: [
+                    {
+                        id: 'opdracht-chown',
+                        name: 'De opdracht',
+                        blurb: 'Een regel van ls ontleden, het bestand aan een andere eigenaar geven, en software langs drie wegen installeren.',
+                        href: '../Chown/Opdracht.html'
+                    },
+                    {
+                        id: 'owner-aanpassen',
+                        name: 'De owner aanpassen',
+                        blurb: 'In welke van de twee naamkolommen van ls de owner staat, en hoe je een map met chown aan een andere gebruiker geeft.',
+                        href: '../Chown/OwnerAanpassen.html'
+                    }
+                ]
+            },
+            {
+                name: 'Opdracht chgrp',
+                reeks: 'chgrp',
+                topics: [
+                    {
+                        id: 'opdracht-chgrp',
+                        name: 'De opdracht',
+                        blurb: 'Een bestand waar de eigenaar niet meer bij kan, en een groep die het weer toegankelijk maakt.',
+                        href: '../Chgrp/Opdracht.html'
+                    },
+                    {
+                        id: 'group-aanpassen',
+                        name: 'De group aanpassen',
+                        blurb: 'De group van een map wijzigen met chgrp, en zien voor wie de drie letters in het midden daarna gelden.',
+                        href: '../Chgrp/GroupAanpassen.html'
+                    }
+                ]
+            }
+        ]
     }
 };

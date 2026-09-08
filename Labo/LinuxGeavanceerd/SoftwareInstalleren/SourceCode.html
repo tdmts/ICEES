@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compileren uit broncode</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Compileren uit broncode</h1>
+
+        <p>Bij de laatste weg levert de maker geen programma maar alleen de tekst waaruit het gemaakt wordt. Jij
+            vertaalt die zelf naar een uitvoerbaar bestand. Je installeert hier de DUC client van no-ip, een
+            programma dat het IP-adres achter een gratis domeinnaam bijhoudt wanneer dat adres verandert.</p>
+
+        <h2 id="make">make installeren</h2>
+
+        <p><code>make</code> leest een bestand dat bij de broncode zit en roept op basis daarvan de compiler aan. Het
+            staat zelf gewoon in de repository.</p>
+
+        <ol>
+            <li>
+                <p>Installeer het met <code>apt</code>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo apt update</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo apt install make</span>
+                    </div>
+                    <pre class="term-out">Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+<span class="highlight">make is already the newest version (4.1-9.1ubuntu1).</span>
+make set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 8 not upgraded.</pre>
+                </div>
+                <p>Staat het er al, dan zegt <code>apt</code> dat en doet hij verder niets.</p>
+            </li>
+        </ol>
+
+        <h2 id="account">Een account en een domeinnaam</h2>
+
+        <ol start="2">
+            <li>
+                <p>Surf naar <code>noip.com</code>, maak een account aan en registreer een domeinnaam. Je hebt die
+                    gebruikersnaam en dat wachtwoord straks nodig bij de installatie.</p>
+            </li>
+            <li>
+                <p>Download vanaf je Ubuntu-machine de DUC software voor Linux, en kijk daarna wat er in je map
+                    <strong>Downloads</strong> staat.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Downloads$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 123M
+drwxr-xr-x  3 elm elm 4,0K Apr 16 10:59 .
+drwxr-xr-x 24 elm elm 4,0K Apr 16 20:49 ..
+drwxr-xr-x 10 elm elm 4,0K Feb 13 10:32 arduino-1.8.12
+-r--r--r--  1 elm elm 123M Apr 14 20:19 arduino-1.8.12-linux64.tar.xz
+<span class="highlight">-rw-rw-r--  1 elm elm 132K Apr 16 10:44 noip-duc-linux.tar.gz</span></pre>
+                </div>
+                <p>Deze keer is het een <code>.tar.gz</code>, dus met gzip ingepakt, en dan neem je wel de
+                    <code>z</code> erbij.</p>
+            </li>
+            <li>
+                <p>Pak het uit en ga in de map die eruit komt.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Downloads$</span>
+                        <span class="term-cmd">tar xvzf noip-duc-linux.tar.gz</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Downloads$</span>
+                        <span class="term-cmd">cd noip-2.1.9-1</span>
+                    </div>
+                </div>
+                <p>Het versienummer in die mapnaam kan bij jou anders zijn. Vul het aan met <kbd>TAB</kbd> in
+                    plaats van het over te typen.</p>
+            </li>
+        </ol>
+
+        <h2 id="handleiding">De handleiding lezen</h2>
+
+        <ol start="5">
+            <li>
+                <p>Kijk wat er in de map staat.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Downloads/noip-2.1.9-1$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 360K
+drwxr-xr-x 2 elm elm 4,0K Nov 25  2008 binaries
+-rw-r--r-- 1 elm elm  18K Dez 14  2002 COPYING
+-rw-r--r-- 1 elm elm  889 Jan 17  2004 debian.noip2.sh
+<span class="highlight">-rw-r--r-- 1 elm elm 1021 Nov 25  2008 Makefile</span>
+-rw-r--r-- 1 elm elm  76K Nov 25  2008 noip2.c
+<span class="highlight">-rw-r--r-- 1 elm elm  13K Jul 13  2004 README.FIRST</span>
+-rw-r--r-- 1 elm elm  14K Feb  8  2006 README.FIRST.FRANCAIS</pre>
+                </div>
+                <p><code>noip2.c</code> is de broncode, <code>Makefile</code> is het bestand waaruit
+                    <code>make</code> leest wat er moet gebeuren, en <code>README.FIRST</code> is de handleiding.
+                    Er is geen enkel uitvoerbaar bestand bij.</p>
+            </li>
+            <li>
+                <p>Lees de handleiding met nano.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Downloads/noip-2.1.9-1$</span>
+                        <span class="term-cmd">nano README.FIRST</span>
+                    </div>
+                </div>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../../img/via-source-code-image-9399745.png" class="img-fluid"
+                        alt="README.FIRST geopend in nano, met de sectie HOW TO BUILD AN EXECUTABLE FOR YOUR SYSTEM waarin de commando's make en make install beschreven staan">
+                    <figcaption class="figure-caption">Onder <em>How to build an executable for your system</em>
+                        staan de twee commando's die je nodig hebt</figcaption>
+                </figure>
+                <p>Sluit nano af met <kbd>CTRL</kbd> + <kbd>X</kbd>.</p>
+            </li>
+        </ol>
+
+        <h2 id="compileren">Compileren en installeren</h2>
+
+        <ol start="7">
+            <li>
+                <p>Vertaal de broncode naar een uitvoerbaar programma.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Downloads/noip-2.1.9-1$</span>
+                        <span class="term-cmd">sudo make</span>
+                    </div>
+                    <pre class="term-out"><span class="highlight">gcc -Wall -g -Dlinux -DPREFIX=\"/usr/local\" noip2.c -o noip2</span>
+noip2.c: In function 'dynamic_update':
+noip2.c:1595:6: warning: variable 'i' set but not used [-Wunused-but-set-variable]
+   int i, x, is_group, retval, response;
+      ^
+noip2.c: In function 'domains':
+noip2.c:1826:13: warning: variable 'x' set but not used [-Wunused-but-set-variable]
+       int x;
+           ^</pre>
+                </div>
+                <p>In de gemarkeerde regel zie je wat <code>make</code> doet: hij roept <strong>gcc</strong> aan,
+                    de compiler, met de opties die in de <code>Makefile</code> staan. <code>make</code> compileert
+                    dus zelf niet.</p>
+                <p>De regels eronder zijn <em>warnings</em> en geen <em>errors</em>. Een warning zegt dat de
+                    compiler iets vreemds ziet en toch doorgaat; een error zegt dat hij stopt. Je programma is dus
+                    gemaakt.</p>
+            </li>
+            <li>
+                <p>Zet het resultaat op zijn plaats. Dit commando vraagt de gebruikersnaam en het wachtwoord van je
+                    account bij no-ip, en niet die van je Linux-machine. Voor de rest ga je akkoord met wat het
+                    voorstelt.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Downloads/noip-2.1.9-1$</span>
+                        <span class="term-cmd">sudo make install</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Zoek in de handleiding hoe je de client start. Ze staat onder <em>How to start the
+                        client</em>.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../../img/via-source-code-image-9399748.png" class="img-fluid"
+                        alt="README.FIRST in nano, geschoven naar de sectie How to start the client, met het pad slash usr slash local slash bin slash noip2 en de opties -C, -S, -D en -K">
+                    <figcaption class="figure-caption">De handleiding noemt het volledige pad waar
+                        <code>make install</code> het programma neergezet heeft</figcaption>
+                </figure>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo /usr/local/bin/noip2</span>
+                    </div>
+                </div>
+            </li>
+        </ol>
+
+        <div class="info-box">
+            <div class="info-title remark">Dit programma staat in geen enkele lijst</div>
+            <p>Je hebt het zelf gecompileerd en zelf neergezet, dus je machine weet niet dat het bestaat. Komt er
+                een nieuwe versie uit, dan moet je deze hele pagina opnieuw doorlopen. Dat is de prijs van de
+                laatste weg, en het is de reden waarom je met de eerste begint.</p>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

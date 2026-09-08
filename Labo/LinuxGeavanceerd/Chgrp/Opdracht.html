@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht chgrp</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Opdracht chgrp</h1>
+
+        <p class="lead">Je brengt tekst.txt in een toestand waarin de eigenaar er zelf niet meer bij kan, en gaat
+            per gebruiker na wie het bestand dan nog open krijgt. Daarna maak je een groep, hangt die aan het
+            bestand, en stelt dezelfde vraag opnieuw.</p>
+
+        <div class="download-container">
+            <a href="../../../downloads/Labo-LinuxGeavanceerd-Chgrp-verslag.docx">Opdracht downloaden</a>
+            <ul>
+                <li>De volledige opdracht staat in dit document, met ruimte voor je antwoorden en je screenshots.
+                </li>
+                <li>Je dient het in via de opdracht op Orion, en dat mag zo vaak als je wil.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <div class="info-title warning">Doe eerst de opdrachten chmod en chown</div>
+            <p>Deze opdracht vertrekt van het bestand <code>/home/rechten1/tekst.txt</code> zoals het na die twee
+                is, en ze heeft ook de gebruiker <code>labopartner1</code> uit de begeleide oefening nodig.</p>
+        </div>
+
+        <h2 id="stappenplan">De begeleide oefening</h2>
+
+        <p>Op de pagina hierna zie je in welke kolom de group staat en hoe je er met <code>chgrp</code> een andere
+            op zet. <strong>Klik rechtsboven op Volgende.</strong></p>
+
+
+        <!-- verslag
+        Van dit blok maakt scripts/export-verslag.py het verslagsjabloon. Wijzig hier, draai
+        daarna het script, en commit de docx mee.
+
+        <p>Deze opdracht maak je op de virtuele machine met Ubuntu, op het bestand
+            <code>/home/rechten1/tekst.txt</code>. Vul dit document aan terwijl je werkt.</p>
+
+        <h2>Een bestand waar de eigenaar niet bij kan</h2>
+
+        <p>Zorg ervoor dat <code>tekst.txt</code> deze regel oplevert bij <code>ls -alh</code>, dus met
+            <code>rechten2</code> als owner, <code>rechten1</code> als group, en enkel de group die mag lezen en
+            schrijven:</p>
+
+        <p><code>----rw---- 1 rechten2 rechten1 15 Jan  2 17:47 tekst.txt</code></p>
+
+        <ol class="vragen">
+            <li>Welke commando's heb je gebruikt om die regel te krijgen?</li>
+            <li class="screenshot">Neem een screenshot die bewijst dat het bestand er zo bij staat, en plak die
+                hieronder.</li>
+        </ol>
+
+        <p>Probeer nu per gebruiker het bestand te openen en beantwoord de vragen. Gebruik daarbij geen
+            <code>sudo</code>, behalve waar het er uitdrukkelijk bij staat.</p>
+
+        <ol class="vragen">
+            <li>Krijgt de owner <code>rechten2</code> dit bestand nog open? Waarom wel of niet?</li>
+            <li>Krijgt de gebruiker <code>elm</code> dit bestand open? Waarom wel of niet?</li>
+            <li>Krijgt de root gebruiker het bestand open, met <code>sudo</code>? Waarom wel of niet?</li>
+        </ol>
+
+        <h2>Een eigen groep op het bestand</h2>
+
+        <ol class="vragen">
+            <li>Maak een nieuwe group <code>rechten</code> aan. Welk commando heb je hiervoor gebruikt?</li>
+            <li>Voeg zowel <code>rechten1</code> als <code>rechten2</code> toe aan de group <code>rechten</code>.
+                Welke commando's heb je hiervoor gebruikt?</li>
+            <li>Verander de group van het bestand <code>tekst.txt</code> naar <code>rechten</code>. Welk commando
+                heb je hiervoor gebruikt?</li>
+        </ol>
+
+        <p>Probeer opnieuw per gebruiker het bestand te openen, en beantwoord de vragen. Gebruik ook hier geen
+            <code>sudo</code>, behalve bij de laatste.</p>
+
+        <ol class="vragen">
+            <li>Krijgt de owner <code>rechten2</code> dit bestand nu open? Waarom wel of niet?</li>
+            <li>Krijgt de gebruiker <code>rechten1</code> dit bestand open? Waarom wel of niet?</li>
+            <li>Krijgt de gebruiker <code>labopartner1</code> dit bestand open? Waarom wel of niet?</li>
+            <li>Krijgt de gebruiker <code>elm</code> dit bestand open? Waarom wel of niet?</li>
+            <li>Krijgt de root gebruiker het bestand open, met <code>sudo</code>?</li>
+            <li>Wat zou je moeten doen om <code>labopartner1</code> ook toegang te geven tot dit bestand? Geef het
+                commando.</li>
+        </ol>
+
+        <h2>De juiste weg kiezen</h2>
+
+        <ol class="vragen">
+            <li>Je moet één programma op dertig labomachines installeren, en het moet bijgewerkt blijven zonder dat
+                iemand er nog naar omkijkt. Welke van de vijf wegen uit dit labo kies je, en waarom valt elk van de
+                vier andere af?</li>
+        </ol>
+
+        <h2>Controle</h2>
+
+        <p>Laat dit controleren door de lector tijdens het labo.</p>
+        -->
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

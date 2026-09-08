@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uit de winkel: Software Center, apt en snap</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Uit de winkel: Software Center, apt en snap</h1>
+
+        <p>De drie wegen op deze pagina halen hun software uit een repository, dus wat je hier installeert blijft
+            bijgewerkt zonder dat je er nog naar omkijkt. Je doet ze alle drie: één keer met vensters en twee keer
+            in de terminal.</p>
+
+        <h2 id="softwarecenter">Software Center</h2>
+
+        <ol>
+            <li>
+                <p>Open <strong>Ubuntu Software</strong> vanuit de balk links, en klik op het vergrootglas
+                    linksboven.</p>
+            </li>
+            <li>
+                <p>Typ de naam van een programma. Zoek je geen inspiratie, typ dan <code>notepad</code> en kies
+                    <strong>notepad-plus-plus</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../../img/via-software-center-image-9399694.png" class="img-fluid"
+                        alt="Ubuntu Software met het zoekveld opengeklapt en de resultaten voor notepad, waaronder notepad-plus-plus">
+                    <figcaption class="figure-caption">Het vergrootglas linksboven opent het zoekveld
+                    </figcaption>
+                </figure>
+            </li>
+            <li>
+                <p>Klik het pakket aan en klik op <strong>Install</strong>. Je geeft je wachtwoord en de rest
+                    gebeurt vanzelf.</p>
+            </li>
+            <li>
+                <p>Kijk na of het geïnstalleerd is: klik linksonder op de negen puntjes en zoek het programma
+                    tussen je toepassingen.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../../img/via-software-center-image-9399695.png" class="img-fluid"
+                        alt="Het raster met alle toepassingen van Ubuntu, met Notepad++ ertussen">
+                    <figcaption class="figure-caption">De knop met de negen puntjes linksonder toont al je
+                        toepassingen</figcaption>
+                </figure>
+            </li>
+        </ol>
+
+        <h2 id="apt">apt</h2>
+
+        <p>Dezelfde repository, maar dan in de terminal. Je installeert <code>ssh</code>, en je let onderweg op wat
+            er nog meebinnenkomt.</p>
+
+        <ol start="5">
+            <li>
+                <p>Open een terminal en haal eerst de lijst op van wat er te krijgen is.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo apt update</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Installeer daarna het pakket.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo apt install ssh</span>
+                    </div>
+                    <pre class="term-out">Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+<span class="highlight">  ncurses-term openssh-server openssh-sftp-server ssh-import-id</span>
+Suggested packages:
+  molly-guard monkeysphere rssh ssh-askpass
+The following NEW packages will be installed:
+  ncurses-term openssh-server openssh-sftp-server ssh ssh-import-id
+0 upgraded, 5 newly installed, 0 to remove and 8 not upgraded.
+Need to get 642 kB of archives.
+After this operation, 5.422 kB of additional disk space will be used.
+Do you want to continue? [Y/n]</pre>
+                </div>
+                <p>De vier namen in de gemarkeerde regel zijn de dependencies: je vroeg één pakket en er komen er
+                    vijf. Druk op <kbd>ENTER</kbd> om door te gaan, want de <code>Y</code> staat in hoofdletters en
+                    is dus het standaardantwoord.</p>
+            </li>
+        </ol>
+
+        <h2 id="snap">snap</h2>
+
+        <p>VLC staat ook in de gewone repository, maar de makers raden hun snap aan omdat je daarmee sneller een
+            nieuwe versie krijgt. Het commando lijkt op dat van <code>apt</code>.</p>
+
+        <ol start="7">
+            <li>
+                <p>Installeer VLC met <code>snap</code>. Dit duurt langer dan de vorige, want een snap brengt alles
+                    zelf mee.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo snap install vlc</span>
+                    </div>
+                    <pre class="term-out">vlc 3.0.20 from VideoLAN✓ installed</pre>
+                </div>
+            </li>
+            <li>
+                <p>Zoek VLC op tussen je toepassingen en start het.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../../img/via-snap-image-9399701.png" class="img-fluid"
+                        alt="Het zoekveld van Ubuntu met vlc ingetypt en VLC media player als enig resultaat">
+                    <figcaption class="figure-caption">Na de installatie staat VLC gewoon tussen je toepassingen
+                    </figcaption>
+                </figure>
+            </li>
+        </ol>
+
+        <div class="info-box">
+            <div class="info-title remark">Alle drie de wegen komen uit dezelfde soort bron</div>
+            <p>Het Software Center, <code>apt</code> en <code>snap</code> halen hun pakketten uit een repository, en
+                dat is waarom je er niets meer voor moet doen om ze bijgewerkt te houden. Vanaf de volgende pagina
+                verlaat je dat pad, en dan wordt dat wel jouw werk.</p>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

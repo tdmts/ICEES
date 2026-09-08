@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software installeren</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Software installeren</h1>
+
+        <p class="lead">Je installeert op je Ubuntu-machine zeven programma's, elk langs een andere weg. Je begint
+            bij de winkel met vensters en je eindigt bij broncode die je zelf compileert, en onderweg zie je bij elke
+            stap wat de vorige voor je deed en wat je nu zelf moet doen.</p>
+
+        <div class="info-box">
+            <div class="info-title tip">Wat je nodig hebt</div>
+            <p>Een draaiende Ubuntu-machine met een internetverbinding, en een gebruiker die <code>sudo</code> mag
+                uitvoeren. Het spiekblad bij Theorie zet elk commando van dit labo in een tabel; zet dat in een
+                tweede venster open terwijl je werkt.</p>
+        </div>
+
+        <h2 id="volgorde">De volgorde is het onderwerp</h2>
+
+        <p>De zeven pagina's hierna staan op volgorde van makkelijk naar moeilijk, en dat is geen toeval: het is de
+            volgorde waarin je in de praktijk zoekt. Vind je een programma in de winkel, dan stopt het daar. Vind je
+            het er niet, dan zak je een trap lager, en bij elke trap doet de leverancier minder werk voor je en jij
+            meer. De laatste pagina is de enige die je daarna nog met de hand moet blijven doen.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Wat je op elke pagina installeert</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Pagina</th>
+                        <th>Programma</th>
+                        <th>Weg</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Uit de winkel</td>
+                        <td>Een editor naar keuze, <code>ssh</code> en VLC</td>
+                        <td>Software Center, <code>apt</code> en <code>snap</code></td>
+                    </tr>
+                    <tr>
+                        <td>Een repository van de leverancier</td>
+                        <td>Spotify</td>
+                        <td>De sleutel en de APT-regel zelf neerzetten</td>
+                    </tr>
+                    <tr>
+                        <td>Een .deb bestand</td>
+                        <td>Google Chrome</td>
+                        <td><code>dpkg</code>, en daarna de dependencies rechtzetten</td>
+                    </tr>
+                    <tr>
+                        <td>Een installer script</td>
+                        <td>Arduino IDE</td>
+                        <td>Een archief uitpakken en <code>install.sh</code> uitvoeren</td>
+                    </tr>
+                    <tr>
+                        <td>Compileren uit broncode</td>
+                        <td>De no-ip DUC client</td>
+                        <td><code>make</code> en <code>make install</code></td>
+                    </tr>
+                    <tr>
+                        <td>Een container met Docker</td>
+                        <td>De webserver Apache</td>
+                        <td>Een image halen, een eigen image bouwen en draaien</td>
+                    </tr>
+                    <tr>
+                        <td>Je systeem up to date houden</td>
+                        <td>Alles wat hierboven staat</td>
+                        <td>De Software Updater en <code>apt upgrade</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p><strong>Klik rechtsboven op Volgende om te beginnen.</strong></p>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

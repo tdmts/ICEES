@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gebruikers en groepen</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Gebruikers en groepen</h1>
+
+        <p>Linux is vanaf het begin gebouwd voor een machine waar meer dan één mens aan werkt. Elk bestand hoort bij
+            een gebruiker, elk programma draait onder de naam van de gebruiker die het gestart heeft, en wie iets
+            mag hangt af van wie je bent. Dat is het onderwerp van deze pagina en van de pagina erna.</p>
+
+        <h2 id="root">De root gebruiker</h2>
+
+        <p>Op elke Linux-machine bestaat er één gebruiker die alles mag: <strong>root</strong>. Hij mag elk bestand
+            lezen en wissen, ook die van andere gebruikers, hij mag software installeren en verwijderen, en hij mag
+            de instellingen van het systeem wijzigen. In Windows heet die gebruiker Administrator.</p>
+
+        <p>Op Ubuntu meld je je niet aan als root, en dat is een bewuste keuze van de distributie. Alles wat je
+            typt zou dan zonder tegenspraak uitgevoerd worden, ook een commando met een tikfout erin, en een
+            programma dat je opent zou dezelfde macht krijgen als jij. De gebruiker die tijdens de installatie
+            aangemaakt is, is dus een gewone gebruiker.</p>
+
+        <h2 id="sudo">Wat sudo doet</h2>
+
+        <p>Zet je <code>sudo</code> voor een commando, dan voert Linux dát ene commando uit alsof root het typt. Het
+            vraagt eerst jouw wachtwoord, en daarna ben je weer gewoon jezelf. Je blijft dus aangemeld als je eigen
+            gebruiker, en alleen de regel die je met <code>sudo</code> begint, krijgt de rechten van root.</p>
+
+        <p>Een gebruiker mag <code>sudo</code> niet zomaar. Het recht hangt aan een groep die op Ubuntu ook
+            <strong>sudo</strong> heet, en wie er niet in zit, krijgt deze melding.</p>
+
+        <div class="terminal-window">
+            <div class="term-line">
+                <span class="term-prompt">labopartner1@elm-VirtualBox:/home/elm$</span>
+                <span class="term-cmd">sudo adduser labopartner3</span>
+            </div>
+            <pre class="term-out">[sudo] password for labopartner1:
+<span class="highlight">labopartner1 is not in the sudoers file.  This incident will be reported.</span></pre>
+        </div>
+
+        <p>De oplossing is niet het wachtwoord opnieuw proberen: het wachtwoord klopte. De gebruiker hoort in de
+            groep <code>sudo</code> te zitten, en dat is iets wat iemand die er zelf al in zit voor hem doet.</p>
+
+        <h2 id="gebruikers">Een gebruiker aanmaken</h2>
+
+        <p>Met <code>adduser</code> maak je een gebruiker aan. Dat commando doet in één keer vier dingen, en het is
+            handig om te weten welke, want je ziet ze alle vier terug wanneer je later naar de rechten van een
+            bestand kijkt.</p>
+
+        <ol>
+            <li>Het maakt de <strong>gebruiker</strong> zelf, met een nummer erbij dat het systeem uitdeelt.</li>
+            <li>Het maakt een <strong>groep met dezelfde naam</strong> als de gebruiker, waar alleen die ene
+                gebruiker in zit.</li>
+            <li>Het maakt een <strong>eigen map</strong> onder <code>/home</code>, met de naam van de gebruiker.</li>
+            <li>Het vraagt een <strong>wachtwoord</strong>, en daarna een naam, een kamernummer en twee
+                telefoonnummers die je alle vier leeg mag laten.</li>
+        </ol>
+
+        <p>Die tweede is de reden waarom in een lijst van bestanden dezelfde naam vaak twee keer naast elkaar staat:
+            links de gebruiker die eigenaar is, rechts de groep, en die twee heten hetzelfde zolang er niets aan
+            veranderd is.</p>
+
+        <p>Het wachtwoord van een bestaande gebruiker wijzig je met <code>passwd</code>. Typ je het zonder naam
+            erachter, dan verander je je eigen wachtwoord en vraagt Linux eerst het oude. Typ je
+            <code>sudo passwd rechten2</code>, dan zet je het wachtwoord van iemand anders, en dan is het oude niet
+            nodig: root vraagt geen toestemming aan de gebruiker wiens wachtwoord hij vervangt.</p>
+
+        <h2 id="groepen">Waarom een groep bestaat</h2>
+
+        <p>Een groep is een verzameling gebruikers, en rechten kunnen op een groep staan in plaats van op een
+            persoon. Dat is het hele nut ervan. Werken er tien mensen aan dezelfde map, dan zet je die tien in één
+            groep en geef je die groep de rechten. Komt er een elfde bij, dan voeg je hem aan de groep toe en is hij
+            klaar; zou je de rechten per gebruiker zetten, dan moest je elf keer hetzelfde doen en bij elke wijziging
+            opnieuw elf keer.</p>
+
+        <p>Een gebruiker zit in meer dan één groep tegelijk. Hij zit altijd in zijn eigen groep, die bij het
+            aanmaken gemaakt is, en daarnaast in elke groep waar iemand hem in gezet heeft. De groep
+            <code>sudo</code> is daar een voorbeeld van, en dat is ook precies hoe je iemand het recht op
+            <code>sudo</code> geeft: je zet hem erin.</p>
+
+        <div class="info-box">
+            <div class="info-title tip">De optie <code>-a</code> van <code>usermod</code> is niet optioneel</div>
+            <p>Je voegt een gebruiker aan een groep toe met <code>sudo usermod -aG sudo labopartner1</code>. De
+                <code>G</code> staat voor de groepen waar hij bij komt, en de <code>a</code> voor
+                <em>append</em>: erbij. Laat je die <code>a</code> weg, dan vervangt <code>usermod</code> alle
+                groepen van die gebruiker door de ene die je opgeeft, en verliest hij de rest.</p>
+        </div>
+
+        <h2 id="opzoeken">Wie zit er in een groep</h2>
+
+        <p>Het commando <code>members</code> toont de gebruikers van een groep. Het staat niet standaard op Ubuntu,
+            dus je installeert het eerst zelf; hoe dat gaat, staat op de volgende pagina's. Daarna zie je met
+            <code>members sudo</code> in één regel wie op deze machine <code>sudo</code> mag gebruiken.</p>
+
+        <h2 id="wissen">Wissen</h2>
+
+        <p>Met <code>deluser</code> haal je een gebruiker weg. Zonder opties blijft zijn map onder
+            <code>/home</code> gewoon staan, met alles wat erin zit, want Linux gooit niet ongevraagd bestanden weg
+            waar nog werk in kan zitten. Wil je de map mee wissen, dan zeg je dat met
+            <code>--remove-home</code>.</p>
+
+        <p>Datzelfde commando haalt ook een gebruiker uit een groep, en dan wist het niets: zet je een groepsnaam
+            achter de gebruikersnaam, zoals in <code>sudo deluser labopartner2 sudo</code>, dan verliest die
+            gebruiker zijn lidmaatschap en blijft hij zelf gewoon bestaan.</p>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

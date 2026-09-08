@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gebruikers aanmaken</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Gebruikers aanmaken</h1>
+
+        <p>Op je machine staat één gebruiker, die je bij de installatie van Ubuntu gemaakt hebt. Voor de oefeningen
+            hierna heb je er twee bij nodig, en je maakt ze aan met de weinig originele namen
+            <code>labopartner1</code> en <code>labopartner2</code>.</p>
+
+        <div class="info-box">
+            <div class="info-title tip">Kies een wachtwoord dat je onthoudt</div>
+            <p>Je gaat je op deze pagina en op de drie erna herhaaldelijk als deze gebruikers aanmelden, en Linux
+                toont een wachtwoord nooit terwijl je het typt. Neem voor beide hetzelfde en schrijf het op.</p>
+        </div>
+
+        <h2 id="adduser">De eerste gebruiker</h2>
+
+        <ol>
+            <li>
+                <p>Open een terminal en maak de eerste gebruiker.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo adduser labopartner1</span>
+                    </div>
+                    <pre class="term-out">[sudo] password for elm:
+Adding user `labopartner1' ...
+<span class="highlight">Adding new group `labopartner1' (1001) ...</span>
+Adding new user `labopartner1' (1001) with group `labopartner1' ...
+<span class="highlight">Creating home directory `/home/labopartner1' ...</span>
+Copying files from `/etc/skel' ...
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+Changing the user information for labopartner1
+Enter the new value, or press ENTER for the default
+        Full Name []:</pre>
+                </div>
+                <p>Bij <em>Full Name</em> en de vier vragen erna mag je gewoon op <kbd>ENTER</kbd> drukken, en op
+                    <em>Is the information correct?</em> antwoord je met <kbd>ENTER</kbd>.</p>
+            </li>
+            <li>
+                <p>In die uitvoer staan de twee dingen die <code>adduser</code> naast de gebruiker zelf gemaakt
+                    heeft: een groep met dezelfde naam, en een map onder <code>/home</code>.</p>
+            </li>
+        </ol>
+
+        <h2 id="tweede">De tweede gebruiker</h2>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>3. Maak op dezelfde manier de gebruiker labopartner2.</strong></p>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo adduser labopartner2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>4. Bekijk de inhoud van /home en kijk na of de twee mappen er staan.</strong></p>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">ls -alh /home</span>
+                    </div>
+                    <pre class="term-out">total 20K
+drwxr-xr-x  5 root         root         4,0K Apr 12 11:24 .
+drwxr-xr-x 24 root         root         4,0K Apr 12 10:31 ..
+drwxr-xr-x 23 elm          elm          4,0K Apr 14 09:29 elm
+<span class="highlight">drwxr-xr-x  3 labopartner1 labopartner1 4,0K Apr 12 10:57 labopartner1</span>
+<span class="highlight">drwxr-xr-x  2 labopartner2 labopartner2 4,0K Apr 12 10:36 labopartner2</span></pre>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="su">Wisselen van gebruiker met su</h2>
+
+        <p>Met <code>su</code>, van <em>switch user</em>, ga je in dezelfde terminal verder als iemand anders. Je
+            meldt je dus niet af en je opent geen nieuwe sessie.</p>
+
+        <ol start="5">
+            <li>
+                <p>Meld je aan als labopartner1. Je geeft het wachtwoord dat je zonet voor hem gekozen hebt.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">su labopartner1</span>
+                    </div>
+                    <pre class="term-out">Password:
+<span class="highlight">labopartner1@elm-VirtualBox:/home/elm$</span></pre>
+                </div>
+            </li>
+            <li>
+                <p>De prompt is veranderd, en hij vertelt je vier dingen.</p>
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered align-middle">
+                        <caption class="table-caption">De vier delen van
+                            <code>labopartner1@elm-VirtualBox:/home/elm$</code></caption>
+                        <thead class="table-header-custom">
+                            <tr>
+                                <th>Wat er staat</th>
+                                <th>Wat het is</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>labopartner1</code></td>
+                                <td>De gebruiker die nu aangemeld is</td>
+                            </tr>
+                            <tr>
+                                <td><code>elm-VirtualBox</code></td>
+                                <td>De naam van de machine</td>
+                            </tr>
+                            <tr>
+                                <td><code>/home/elm</code></td>
+                                <td>De map waar je staat. Die is niet mee verhuisd</td>
+                            </tr>
+                            <tr>
+                                <td><code>$</code></td>
+                                <td>Een gewone gebruiker. Bij root staat hier <code>#</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+            <li>
+                <p>Keer terug naar de gebruiker van daarvoor met <code>exit</code>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">labopartner1@elm-VirtualBox:/home/elm$</span>
+                        <span class="term-cmd">exit</span>
+                    </div>
+                    <pre class="term-out"><span class="highlight">elm@elm-VirtualBox:~$</span></pre>
+                </div>
+                <p>Kijk vanaf nu bij elke oefening eerst naar je prompt. Meer dan de helft van de foutmeldingen op
+                    de volgende pagina's komt doordat je nog als de verkeerde gebruiker aan het werk bent.</p>
+            </li>
+        </ol>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

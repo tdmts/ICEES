@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Een gebruiker sudo-rechten geven</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Een gebruiker sudo-rechten geven</h1>
+
+        <p>Je twee nieuwe gebruikers bestaan, maar ze mogen nog niets aan het systeem veranderen. Op deze pagina
+            geef je ze dat recht, en je kijkt daarna na wie het op deze machine heeft.</p>
+
+        <h2 id="zonder">Wat er gebeurt zonder dat recht</h2>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>1. Meld je aan als labopartner1.</strong></p>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">su labopartner1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ol start="2">
+            <li>
+                <p>Probeer als labopartner1 een derde gebruiker aan te maken.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">labopartner1@elm-VirtualBox:/home/elm$</span>
+                        <span class="term-cmd">sudo adduser labopartner3</span>
+                    </div>
+                    <pre class="term-out">[sudo] password for labopartner1:
+<span class="highlight">labopartner1 is not in the sudoers file.  This incident will be reported.</span></pre>
+                </div>
+                <p>Het wachtwoord klopte, dus opnieuw proberen helpt niet. Wat ontbreekt is het recht om
+                    <code>sudo</code> te gebruiken, en dat hangt aan een groep die op Ubuntu ook
+                    <strong>sudo</strong> heet.</p>
+            </li>
+        </ol>
+
+        <h2 id="toevoegen">De gebruikers in de groep sudo zetten</h2>
+
+        <p>Iemand die dat recht al heeft, moet het geven. Dat is de gebruiker die je bij de installatie van Ubuntu
+            gemaakt hebt.</p>
+
+        <ol start="3">
+            <li>
+                <p>Keer eerst terug naar die gebruiker.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">labopartner1@elm-VirtualBox:/home/elm$</span>
+                        <span class="term-cmd">exit</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Zet allebei de gebruikers in de groep <code>sudo</code>. De <code>G</code> staat voor de groepen
+                    waar hij bij komt, en de <code>a</code> voor <em>append</em>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo usermod -aG sudo labopartner1</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo usermod -aG sudo labopartner2</span>
+                    </div>
+                </div>
+                <div class="info-box small">
+                    <div class="info-title warning">De <code>a</code> is niet optioneel</div>
+                    <p>Laat je hem weg, dan vervangt <code>usermod</code> alle groepen van die gebruiker door de
+                        ene die je opgeeft, en verliest hij zijn eigen groep.</p>
+                </div>
+            </li>
+        </ol>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>5. Meld je opnieuw aan als labopartner1 en maak nu wel de gebruiker labopartner3
+                        aan.</strong></p>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">su labopartner1</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">labopartner1@elm-VirtualBox:/home/elm$</span>
+                        <span class="term-cmd">sudo adduser labopartner3</span>
+                    </div>
+                    <pre class="term-out">To run a command as administrator (user "root"), use "sudo &lt;command&gt;".
+See "man sudo_root" for details.
+
+[sudo] password for labopartner1:
+Adding user `labopartner3' ...
+Adding new group `labopartner3' (1003) ...
+Adding new user `labopartner3' (1003) with group `labopartner3' ...
+Creating home directory `/home/labopartner3' ...
+Copying files from `/etc/skel' ...</pre>
+                </div>
+                <p>Vergeet daarna niet met <code>exit</code> terug te keren naar je eigen gebruiker.</p>
+            </div>
+        </div>
+
+        <h2 id="members">Nakijken wie in een groep zit</h2>
+
+        <p>Het commando <code>members</code> toont de gebruikers van een groep, maar het staat niet standaard op
+            Ubuntu.</p>
+
+        <ol start="6">
+            <li>
+                <p>Probeer het toch eens, en lees wat de terminal zegt.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">members sudo</span>
+                    </div>
+                    <pre class="term-out">Command 'members' not found, but can be installed with:
+
+<span class="highlight">sudo apt install members</span></pre>
+                </div>
+                <p>De terminal zegt zelf welk pakket je nodig hebt en met welk commando je het haalt.</p>
+            </li>
+            <li>
+                <p>Doe wat er staat.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo apt install members</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Probeer nu opnieuw.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">members sudo</span>
+                    </div>
+                    <pre class="term-out"><span class="highlight">elm labopartner1 labopartner2</span></pre>
+                </div>
+                <p>Drie gebruikers mogen op deze machine <code>sudo</code> gebruiken. labopartner3 staat er niet
+                    bij: die is door labopartner1 gemaakt, en dat geeft hem geen rechten.</p>
+            </li>
+        </ol>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

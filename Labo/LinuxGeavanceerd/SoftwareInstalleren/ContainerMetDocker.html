@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Een container met Docker</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Een container met Docker</h1>
+
+        <p>Je zet hier de webserver Apache in een container en je laat er je eigen bladzijde door serveren. Je haalt
+            eerst de kant-en-klare image van Docker Hub, je schrijft daarna een Dockerfile die er je eigen bestanden
+            in kopieert, en je start het geheel op poort 8080 van je machine.</p>
+
+        <h2 id="installeren">Docker installeren</h2>
+
+        <ol>
+            <li>
+                <p>Docker zelf komt gewoon uit de repository.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo apt update</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo apt install docker.io</span>
+                    </div>
+                </div>
+            </li>
+        </ol>
+
+        <h2 id="image">De image halen</h2>
+
+        <ol start="2">
+            <li>
+                <p>Surf naar <strong>hub.docker.com</strong> en zoek op <code>apache</code>. De officiële image
+                    heet <strong>httpd</strong>, naar de naam waaronder Apache als programma bekendstaat. Rechts op
+                    die bladzijde staat het commando om ze binnen te halen.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../../img/via-docker-image-9399716.png" class="img-fluid"
+                        alt="De bladzijde van de image httpd op Docker Hub, met rechts de keuze Linux x86 en het commando docker pull httpd">
+                    <figcaption class="figure-caption">Elke image op Docker Hub draagt rechts het commando om ze te
+                        halen</figcaption>
+                </figure>
+            </li>
+            <li>
+                <p>Haal de image op.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo docker pull httpd</span>
+                    </div>
+                    <pre class="term-out">Using default tag: latest
+latest: Pulling from library/httpd
+123275d6e508: Pull complete
+e984dd982a6e: Pull complete
+963280e5cf81: Pull complete
+6faf90d050b2: Pull complete
+962b56984bb0: Pull complete
+Digest: sha256:d5dc0d279039da76a8b490d89a5c96da83a33842493d4336b42ccdfbd36d7409
+<span class="highlight">Status: Downloaded newer image for httpd:latest</span></pre>
+                </div>
+                <p>De vijf regels met <em>Pull complete</em> zijn de lagen waaruit de image is opgebouwd. Je hebt nu
+                    een image op je machine, en nog geen draaiende container.</p>
+            </li>
+            <li>
+                <p>Lees op diezelfde bladzijde de handleiding, onder <strong>How to use this image</strong>. Daar
+                    staat welke map binnen de image je bladzijden verwacht, en hoe de Dockerfile eruit hoort te
+                    zien.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../../img/via-docker-image-9399718.png" class="img-fluid"
+                        alt="De handleiding van de httpd image, met de Dockerfile die begint met FROM httpd colon 2.4 en de map public-html aangeduid">
+                    <figcaption class="figure-caption">De handleiding zegt dat je map <code>public-html</code> moet
+                        heten</figcaption>
+                </figure>
+            </li>
+        </ol>
+
+        <h2 id="dockerfile">Je eigen image bouwen</h2>
+
+        <ol start="5">
+            <li>
+                <p>Maak een map voor je werk en open daarin een nieuw bestand met de naam
+                    <strong>Dockerfile</strong>, met een hoofdletter D en zonder extensie.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">cd ~</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">mkdir images</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">cd images</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/images$</span>
+                        <span class="term-cmd">nano Dockerfile</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Typ deze twee regels over, precies zoals ze in de handleiding staan. Sla op met
+                    <kbd>CTRL</kbd> + <kbd>O</kbd> en sluit af met <kbd>CTRL</kbd> + <kbd>X</kbd>.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../../img/via-docker-image-9399719.png" class="img-fluid"
+                        alt="Nano met het bestand Dockerfile open, met daarin FROM httpd colon 2.4 en COPY punt slash public-html slash naar slash usr slash local slash apache2 slash htdocs slash">
+                </figure>
+                <p>De schuine streep aan het einde van elk pad hoort erbij: hij zegt dat het om een map gaat en niet
+                    om een bestand.</p>
+            </li>
+            <li>
+                <p>Maak de map <strong>public-html</strong>, ga erin, en maak daar je bladzijde.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/images$</span>
+                        <span class="term-cmd">mkdir public-html</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/images$</span>
+                        <span class="term-cmd">cd public-html</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/images/public-html$</span>
+                        <span class="term-cmd">nano index.html</span>
+                    </div>
+                </div>
+                <div class="info-box small">
+                    <div class="info-title warning">Ga eerst in de map</div>
+                    <p>Sla je die <code>cd public-html</code> over, dan komt <code>index.html</code> naast de
+                        Dockerfile te staan in plaats van erin. De build slaagt dan wel, en je krijgt straks een
+                        lege webserver.</p>
+                </div>
+            </li>
+            <li>
+                <p>Typ je bladzijde en sla ze op met <kbd>CTRL</kbd> + <kbd>O</kbd> en
+                    <kbd>CTRL</kbd> + <kbd>X</kbd>.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../../img/via-docker-image-9399720.png" class="img-fluid"
+                        alt="Nano met index.html open in de map images slash public-html, met een html-bestand met de titel Hallo en de tekst Welkom op mijn eerste website">
+                </figure>
+            </li>
+            <li>
+                <p>Ga terug naar de map met de Dockerfile en bouw je image. De <code>-t</code> geeft ze een naam, en
+                    de punt achteraan zegt dat de Dockerfile in de map staat waar je nu bent.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/images/public-html$</span>
+                        <span class="term-cmd">cd ..</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/images$</span>
+                        <span class="term-cmd">sudo docker build -t my-apache2 .</span>
+                    </div>
+                    <pre class="term-out">Sending build context to Docker daemon  3.584kB
+Step 1/2 : FROM httpd:2.4
+ ---> bdc169d27d36
+Step 2/2 : COPY ./public-html/ /usr/local/apache2/htdocs/
+ ---> 74444b1cb224
+Successfully built 74444b1cb224
+<span class="highlight">Successfully tagged my-apache2:latest</span></pre>
+                </div>
+                <p>De twee stappen zijn de twee regels van je Dockerfile.</p>
+            </li>
+        </ol>
+
+        <h2 id="draaien">De container starten</h2>
+
+        <ol start="10">
+            <li>
+                <p>Start een container uit je image.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/images$</span>
+                        <span class="term-cmd">sudo docker run -dit --name my-running-app -p 8080:80
+                            my-apache2</span>
+                    </div>
+                    <pre class="term-out">18aab2d6102cb3143caa20c09571a17bbcec5c05de64fceddc8b15d4d3dee56f</pre>
+                </div>
+                <p>De lange reeks tekens is het nummer van je container. In <code>8080:80</code> staat links de
+                    poort van je machine en rechts die van de container: Apache luistert binnenin op 80.</p>
+            </li>
+            <li>
+                <p>Surf in Firefox naar <code>localhost:8080</code>.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../../img/via-docker-image-9399723.png" class="img-fluid"
+                        alt="Firefox op localhost dubbelpunt 8080 met de tekst Welkom op mijn eerste website en de titel Hallo in het tabblad">
+                    <figcaption class="figure-caption">Je eigen bladzijde, geserveerd door Apache in een
+                        container</figcaption>
+                </figure>
+            </li>
+            <li>
+                <p>Kijk na welke containers er draaien.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/images$</span>
+                        <span class="term-cmd">sudo docker ps</span>
+                    </div>
+                </div>
+            </li>
+        </ol>
+
+        <div class="info-box">
+            <div class="info-title remark">Je bladzijde zit in de image en niet in de container</div>
+            <p>Pas je <code>index.html</code> aan, dan verandert er niets aan wat je op poort 8080 ziet: die kopie
+                is bij het bouwen in de image terechtgekomen. Je zou de container moeten stoppen, opnieuw builden en
+                opnieuw starten. Dat een image niet meer verandert, is precies waarom ze op elke machine hetzelfde
+                draait.</p>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

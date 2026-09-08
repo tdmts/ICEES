@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Een eigen groep maken</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Een eigen groep maken</h1>
+
+        <p>De groep <code>sudo</code> bestond al. Hier maak je er zelf een, en dat is wat je in de praktijk doet
+            zodra een aantal mensen aan dezelfde bestanden moet kunnen: je maakt de groep, je zet er de gebruikers
+            in, en je zet daarna de rechten één keer op die groep.</p>
+
+        <h2 id="groupadd">De groep maken</h2>
+
+        <ol>
+            <li>
+                <p>Maak een groep met de naam <code>labopartners</code>. Ze heeft nog geen leden.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo groupadd labopartners</span>
+                    </div>
+                </div>
+                <p><code>groupadd</code> zegt niets wanneer het gelukt is. Dat is normaal in de terminal: alleen
+                    wat misloopt, meldt zich.</p>
+            </li>
+        </ol>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>2. Zet labopartner1 en labopartner2 in de groep labopartners. Het commando is hetzelfde
+                        als dat waarmee je ze in de groep sudo gezet hebt.</strong></p>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo usermod -aG labopartners labopartner1</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo usermod -aG labopartners labopartner2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>3. Kijk na welke gebruikers er nu in de groep labopartners zitten.</strong></p>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">members labopartners</span>
+                    </div>
+                    <pre class="term-out"><span class="highlight">labopartner1 labopartner2</span></pre>
+                </div>
+            </div>
+        </div>
+
+        <ol start="4">
+            <li>
+                <p>Kijk daarna nog eens naar de groep <code>sudo</code>. Die staat er nog altijd zoals hij was: een
+                    gebruiker zit in meer dan één groep tegelijk, en de ene komt niet in de plaats van de andere.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">members sudo</span>
+                    </div>
+                    <pre class="term-out">elm labopartner1 labopartner2</pre>
+                </div>
+                <p>Precies dat is wat de <code>a</code> in <code>-aG</code> doet.</p>
+            </li>
+        </ol>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

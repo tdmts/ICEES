@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software buiten de repository</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Software buiten de repository</h1>
+
+        <p>Staat een programma in geen enkele repository, dan haal je het rechtstreeks bij de maker. Er zijn daar
+            drie vormen voor, en ze liggen op een rij: bij elke stap doet de leverancier minder werk voor je en jij
+            meer. Bij alle drie geldt hetzelfde: wat je zo installeert, staat in geen enkele pakkettenlijst en wordt
+            dus door <code>apt upgrade</code> niet bijgewerkt.</p>
+
+        <h2 id="deb">Een .deb bestand</h2>
+
+        <p>Een <code>.deb</code> is een kant-en-klaar pakket dat je zelf downloadt, de tegenhanger van een
+            <code>setup.exe</code> op Windows. Het bevat de bestanden van het programma en een beschrijving van waar
+            ze horen te staan, en je installeert het met <code>dpkg</code>.</p>
+
+        <div class="terminal-window">
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~/Downloads$</span>
+                <span class="term-cmd">sudo dpkg -i google-chrome-stable_current_amd64.deb</span>
+            </div>
+        </div>
+
+        <p><code>dpkg</code> is de laag onder <code>apt</code>: hij pakt één pakket uit en zet het op zijn plaats.
+            Wat hij niet doet, is dependencies gaan halen. Ontbreekt er een bibliotheek, dan installeert hij het
+            pakket half en stopt hij met een foutmelding.</p>
+
+        <div class="terminal-window">
+            <pre class="term-out"><span class="highlight">dpkg: dependency problems prevent configuration of google-chrome-stable:</span>
+<span class="highlight"> google-chrome-stable depends on libappindicator1; however:</span>
+<span class="highlight">  Package libappindicator1 is not installed.</span>
+dpkg: error processing package google-chrome-stable (--install):
+ dependency problems - leaving unconfigured</pre>
+        </div>
+
+        <p>Dat repareer je met <code>apt</code>, die wél weet waar bibliotheken vandaan komen. De optie
+            <code>-f</code> staat voor <em>fix broken</em>: zoek uit wat er halfweg blijven steken is, haal wat
+            ontbreekt en maak de installatie af.</p>
+
+        <div class="terminal-window">
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~/Downloads$</span>
+                <span class="term-cmd">sudo apt-get install -f</span>
+            </div>
+        </div>
+
+        <h2 id="script">Een installer script</h2>
+
+        <p>Soms krijg je geen pakket maar een archief met daarin de bestanden en een script dat ze op hun plaats
+            zet, meestal <code>install.sh</code>. Dat script is een tekstbestand met commando's erin, en je voert
+            het uit als een programma.</p>
+
+        <p>Een archief pak je uit met <code>tar</code>. De extensie zegt hoe het ingepakt is en dus welke optie je
+            nodig hebt.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Twee soorten archief, en hoe je ze uitpakt</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Bestand</th>
+                        <th>Commando</th>
+                        <th>Wat de letters doen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>.tar.gz</code></td>
+                        <td><code>tar xvzf archief.tar.gz</code></td>
+                        <td><code>x</code> uitpakken, <code>v</code> toon elke naam, <code>z</code> gecomprimeerd met
+                            gzip, <code>f</code> uit dit bestand</td>
+                    </tr>
+                    <tr>
+                        <td><code>.tar.xz</code></td>
+                        <td><code>tar -xf archief.tar.xz</code></td>
+                        <td>Zonder <code>z</code>: <code>tar</code> herkent zelf dat het xz is</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Aan welk bestand in zo'n map het installer script is, zie je aan zijn naam en aan zijn rechten: de drie
+            <code>x</code>-en in <code>-rwxr-xr-x</code> zeggen dat het uitgevoerd mag worden.</p>
+
+        <div class="terminal-window">
+            <pre class="term-out">-rwxr-xr-x  1 elm  elm  5,8K Feb 13 10:32 arduino-linux-setup.sh
+drwxr-xr-x 13 elm  elm  4,0K Feb 13 10:32 examples
+<span class="highlight">-rwxr-xr-x  1 elm  elm   11K Feb 13 10:32 install.sh</span>
+drwxr-xr-x  6 elm  elm  4,0K Feb 11 13:00 java</pre>
+        </div>
+
+        <p>Je start het met <code>sudo ./install.sh</code>. De <code>./</code> ervoor zegt dat het script in de map
+            staat waar je nu bent, en <code>sudo</code> staat erbij omdat een installatie bestanden en instellingen
+            wegschrijft buiten je eigen map, waar een gewone gebruiker niet mag schrijven.</p>
+
+        <div class="info-box">
+            <div class="info-title warning">Een script uitvoeren is een programma van iemand anders vertrouwen</div>
+            <p>Wat er in <code>install.sh</code> staat, gebeurt met de rechten van root zodra je er
+                <code>sudo</code> voor zet. Haal zo'n script dus alleen bij de maker zelf, en niet uit een
+                zoekresultaat.</p>
+        </div>
+
+        <h2 id="broncode">Broncode compileren</h2>
+
+        <p>De laatste weg is de langste: de maker levert alleen de broncode, en jij maakt er zelf een uitvoerbaar
+            programma van. Je hebt daar een compiler voor nodig, en een programma dat weet in welke volgorde de
+            stukken vertaald en samengevoegd moeten worden. Dat tweede is <code>make</code>.</p>
+
+        <p><code>make</code> is dus zelf geen compiler: het leest een bestand met de naam <code>Makefile</code> dat
+            in de broncode zit, en roept op basis daarvan de compiler aan, op Linux meestal
+            <strong>gcc</strong>.</p>
+
+        <div class="terminal-window">
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~/Downloads/noip-2.1.9-1$</span>
+                <span class="term-cmd">sudo make</span>
+            </div>
+            <pre class="term-out"><span class="highlight">gcc -Wall -g -Dlinux -DPREFIX=\"/usr/local\" noip2.c -o noip2</span>
+noip2.c: In function 'dynamic_update':
+noip2.c:1595:6: warning: variable 'i' set but not used [-Wunused-but-set-variable]
+   int i, x, is_group, retval, response;</pre>
+        </div>
+
+        <p>Een <em>warning</em> is geen <em>error</em>. Een warning zegt dat de compiler iets vreemds ziet en toch
+            doorgaat; een error zegt dat hij het niet vertaald krijgt en stopt. Zolang er alleen warnings staan, is
+            je programma gemaakt.</p>
+
+        <p>Daarna zet <code>sudo make install</code> het resultaat op zijn plaats, meestal onder
+            <code>/usr/local/bin</code>. Waar dat precies is en hoe je het programma start, staat in het
+            tekstbestand dat bij de broncode zit, dikwijls <code>README</code> of <code>README.FIRST</code>
+            genaamd.</p>
+
+        <h2 id="afweging">De vijf wegen naast elkaar</h2>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Wat elke weg je kost en oplevert</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Weg</th>
+                        <th>Dependencies</th>
+                        <th>Blijft bijgewerkt</th>
+                        <th>Wanneer je ze neemt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Software Center, <code>apt</code>, <code>snap</code></td>
+                        <td>Automatisch</td>
+                        <td>Ja</td>
+                        <td>Altijd eerst proberen</td>
+                    </tr>
+                    <tr>
+                        <td>Repository van de leverancier</td>
+                        <td>Automatisch</td>
+                        <td>Ja, na het toevoegen</td>
+                        <td>Het pakket zit er niet in, de leverancier heeft een eigen server</td>
+                    </tr>
+                    <tr>
+                        <td><code>.deb</code> bestand</td>
+                        <td>Zelf, met <code>apt-get install -f</code></td>
+                        <td>Nee</td>
+                        <td>Er is een pakket maar geen repository</td>
+                    </tr>
+                    <tr>
+                        <td>Installer script</td>
+                        <td>Zelf, wat het script niet doet</td>
+                        <td>Nee</td>
+                        <td>De maker levert een archief met een script</td>
+                    </tr>
+                    <tr>
+                        <td>Broncode</td>
+                        <td>Zelf, voor je kan compileren</td>
+                        <td>Nee</td>
+                        <td>Er is alleen broncode</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

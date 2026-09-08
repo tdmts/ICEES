@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Je systeem up to date houden</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Je systeem up to date houden</h1>
+
+        <p>Je hebt op zes pagina's zeven programma's geïnstalleerd, langs vijf verschillende wegen. Op deze pagina
+            werk je je machine bij, en je kijkt na welk van die zeven daarin meegaat.</p>
+
+        <h2 id="vensters">Met de Software Updater</h2>
+
+        <ol>
+            <li>
+                <p>Klik op <strong>Activities</strong>, typ <code>software</code> en kies <strong>Software
+                        Updater</strong>. Dat is het pictogram met de ronde pijl, en niet Software &amp; Updates dat
+                    je op de Spotify-pagina gebruikt hebt.</p>
+            </li>
+            <li>
+                <p>Het programma kijkt eerst wat er te vernieuwen is en toont daarna een lijst. Klik op <strong>Install
+                        Now</strong> en geef je wachtwoord.</p>
+            </li>
+        </ol>
+
+        <h2 id="terminal">Met apt</h2>
+
+        <p>Hetzelfde in de terminal, met twee commando's die je alle twee al gezien hebt.</p>
+
+        <ol start="3">
+            <li>
+                <p>Haal eerst de lijst op van wat er in de repositories staat. Dit installeert nog niets.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo apt update</span>
+                    </div>
+                    <pre class="term-out">Hit:1 http://be.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://security.ubuntu.com/ubuntu focal-security InRelease
+Get:3 http://repository.spotify.com stable InRelease [3.499 B]
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+<span class="highlight">14 packages can be upgraded. Run 'apt list --upgradable' to see them.</span></pre>
+                </div>
+                <p>In de eerste regels staan de repositories die je machine kent, en die van Spotify staat erbij
+                    omdat je ze zelf toegevoegd hebt.</p>
+            </li>
+            <li>
+                <p>Installeer daarna van elk pakket de nieuwere versie.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo apt upgrade</span>
+                    </div>
+                </div>
+            </li>
+        </ol>
+
+        <h2 id="wat">Wat er meegaat en wat niet</h2>
+
+        <p>Kijk de lijst na die <code>apt upgrade</code> je toont, en leg ze naast wat je geïnstalleerd hebt.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De zeven programma's van dit labo, en wat er met hun updates
+                    gebeurt</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Programma</th>
+                        <th>Geïnstalleerd via</th>
+                        <th>Gaat mee met <code>apt upgrade</code></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Je editor uit de winkel</td>
+                        <td>Software Center</td>
+                        <td>Ja</td>
+                    </tr>
+                    <tr>
+                        <td><code>ssh</code></td>
+                        <td><code>apt</code></td>
+                        <td>Ja</td>
+                    </tr>
+                    <tr>
+                        <td>VLC</td>
+                        <td><code>snap</code></td>
+                        <td>Nee, snaps werken zichzelf apart bij</td>
+                    </tr>
+                    <tr>
+                        <td>Spotify</td>
+                        <td>Repository van de leverancier</td>
+                        <td>Ja, sinds je die repository toegevoegd hebt</td>
+                    </tr>
+                    <tr>
+                        <td>Google Chrome</td>
+                        <td><code>.deb</code> bestand</td>
+                        <td>Ja, want de installatie voegde de repository van Google toe</td>
+                    </tr>
+                    <tr>
+                        <td>Arduino IDE</td>
+                        <td>Installer script</td>
+                        <td>Nee</td>
+                    </tr>
+                    <tr>
+                        <td>no-ip DUC</td>
+                        <td>Broncode</td>
+                        <td>Nee</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>De twee laatste staan in geen enkele lijst van je machine, dus komt er een nieuwe versie uit, dan gaat
+            dat aan je voorbij tenzij je zelf gaat kijken. Bij een programma dat aan het internet hangt, is dat het
+            argument om zo lang mogelijk bij de eerste wegen te blijven.</p>
+
+        <div class="info-box">
+            <div class="info-title remark">Snaps werken zichzelf bij</div>
+            <p>Een snap staat los van <code>apt</code> en heeft zijn eigen mechanisme, dat een paar keer per dag
+                kijkt of er iets nieuws is. Je hoeft er dus niets voor te doen, en je ziet VLC daarom ook niet in de
+                lijst van <code>apt upgrade</code> staan. Wil je het toch met de hand doen, dan is dat
+                <code>sudo snap refresh</code>.</p>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

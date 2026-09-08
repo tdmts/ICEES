@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Docker</h1>
+
+        <p>De vijf wegen van de vorige pagina's zetten een programma tussen de andere programma's op je machine, met
+            de bibliotheken die het nodig heeft ernaast. Een container doet het anders: hij zet het programma en
+            alles wat het nodig heeft in een afgeschermd pakket, dat op elke machine hetzelfde draait. Docker is de
+            bekendste software om dat te doen.</p>
+
+        <h2 id="container">Wat een container is</h2>
+
+        <p>Een container schermt een programma af van de rest van de machine, net zoals een virtuele machine dat
+            doet, maar met dit verschil: alle containers op een machine delen hetzelfde besturingssysteem. Dat
+            besturingssysteem wordt dus niet telkens mee gevirtualiseerd, waardoor de overhead wegvalt en er ook
+            geen extra licentie bij komt. Een container start in seconden en draait aan bijna de snelheid van de
+            machine zelf.</p>
+
+        <figure class="figure-zoom" style="max-width: 620px">
+            <img src="../../../img/linuxgeavanceerd-vm-versus-container.svg" class="img-fluid"
+                alt="Twee stapels naast elkaar: links hardware, het besturingssysteem van de machine, VirtualBox en daarbovenop twee guests die elk een eigen Ubuntu met een programma dragen; rechts dezelfde hardware en hetzelfde besturingssysteem, Docker, en daarbovenop drie programma's zonder eigen besturingssysteem">
+            <figcaption class="figure-caption">Op de plaats waar een virtuele machine een volledig
+                besturingssysteem draagt, staat bij een container niets</figcaption>
+        </figure>
+
+        <p>Wat een container niet kan, is een ander besturingssysteem draaien dan dat van de machine waarop hij
+            staat. Een Linux-container draait dus niet op een Windows-machine zonder dat er ergens een Linux onder
+            zit, en daarvoor heb je een virtuele machine nodig.</p>
+
+        <h2 id="image">Een image en een container</h2>
+
+        <p>Dat zijn twee verschillende dingen, en het verschil telt zodra je met de commando's begint.</p>
+
+        <ul>
+            <li>Een <strong>image</strong> is het bevroren pakket: het programma en alles eromheen, klaar om te
+                starten. Je haalt het binnen of je maakt het, en het verandert daarna niet meer.</li>
+            <li>Een <strong>container</strong> is een image die draait. Van dezelfde image kan je er tien tegelijk
+                starten, en elk daarvan is zijn eigen container met zijn eigen naam.</li>
+        </ul>
+
+        <p>Op <strong>hub.docker.com</strong>, Docker Hub, staan de images die anderen gepubliceerd hebben, van
+            webservers tot databanken. Op de bladzijde van elke image staat het commando om ze binnen te halen en
+            een handleiding die zegt hoe ze verwacht gebruikt te worden.</p>
+
+        <h2 id="commandos">De vier commando's</h2>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Van Docker Hub tot een draaiende container</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Commando</th>
+                        <th>Wat het doet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>docker pull</code></td>
+                        <td>Haalt een image van Docker Hub naar je machine</td>
+                    </tr>
+                    <tr>
+                        <td><code>docker build</code></td>
+                        <td>Maakt van een Dockerfile een nieuwe image op je machine</td>
+                    </tr>
+                    <tr>
+                        <td><code>docker run</code></td>
+                        <td>Start een container uit een image</td>
+                    </tr>
+                    <tr>
+                        <td><code>docker ps</code></td>
+                        <td>Toont welke containers er op dit moment draaien</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Elk van die commando's praat met de dienst van Docker die op de achtergrond draait, en daar mag een
+            gewone gebruiker niet aan. Je zet er dus <code>sudo</code> voor, anders krijg je een melding dat de
+            toegang geweigerd is.</p>
+
+        <h2 id="dockerfile">De Dockerfile</h2>
+
+        <p>Wil je je eigen programma of je eigen bestanden in een image, dan schrijf je een <strong>Dockerfile</strong>:
+            een tekstbestand met de stappen die van een bestaande image de jouwe maken. Zo ziet er een uit die de
+            webserver Apache neemt en er je eigen bladzijden in kopieert.</p>
+
+        <div class="terminal-window">
+            <pre class="term-out">FROM httpd:2.4
+COPY ./public-html/ /usr/local/apache2/htdocs/</pre>
+        </div>
+
+        <p><code>FROM</code> zegt op welke image je verder bouwt, en <code>2.4</code> erachter is de versie.
+            <code>COPY</code> neemt een map van je eigen machine en zet ze op een plaats binnen de image; welke
+            plaats dat is, staat in de handleiding van die image en verschilt per programma.</p>
+
+        <h2 id="poorten">Poorten doorgeven</h2>
+
+        <p>Een container is afgeschermd, en dat geldt ook voor het netwerk: een webserver die erin draait, is van
+            buitenaf niet te bereiken tenzij je zegt dat hij dat mag. Dat doe je met de optie <code>-p</code>, die
+            een poort van je machine koppelt aan een poort in de container.</p>
+
+        <div class="terminal-window">
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                <span class="term-cmd">sudo docker run -dit --name my-running-app -p 8080:80 my-apache2</span>
+            </div>
+        </div>
+
+        <p>In <code>8080:80</code> staat links de poort van je machine en rechts die van de container. Apache
+            luistert binnenin op 80, en wie op je machine naar <code>localhost:8080</code> surft, komt daar dus
+            uit. De optie <code>-d</code> laat de container op de achtergrond draaien en <code>--name</code> geeft
+            hem een naam waarmee je hem later terugvindt.</p>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

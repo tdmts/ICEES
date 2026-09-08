@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test jezelf</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Test jezelf</h1>
+
+        <p>Beantwoord elke vraag eerst zelf en klap daarna pas het antwoord open. Bij elk antwoord staat op welke
+            theoriepagina het uitgelegd wordt, dus lees die opnieuw wanneer je ernaast zat. Er wordt niets
+            bijgehouden en er staat geen punt op.</p>
+
+        <h2 id="vragen">Vragen</h2>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>1. Je typt <code>sudo apt install ssh</code>. Wat gebeurt er met je gebruiker?</strong>
+                </p>
+                <ol type="a">
+                    <li>Je bent vanaf dat moment aangemeld als root, tot je <code>exit</code> typt</li>
+                    <li>Alleen dat ene commando loopt met de rechten van root, en daarna ben je weer jezelf</li>
+                    <li>Je gebruiker wordt permanent aan de groep root toegevoegd</li>
+                    <li>Je wachtwoord wordt vervangen door dat van root</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord b.</strong> <code>sudo</code> geldt voor de regel waar het voor staat en voor
+                    niets anders. Je blijft aangemeld als je eigen gebruiker, en het volgende commando dat je typt
+                    heeft opnieuw gewone rechten. Wisselen van gebruiker is iets anders en doe je met
+                    <code>su</code>. Zie <a href="GebruikersEnGroepen.html#sudo">Gebruikers en groepen</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>2. Van een bestand toont <code>ls -l</code> de tekens <code>-rw-r--r--</code>. Welke drie
+                        gelden voor other?</strong></p>
+                <ol type="a">
+                    <li>De laatste drie, <code>r--</code></li>
+                    <li>De eerste drie, <code>-rw</code></li>
+                    <li>De middelste drie, <code>-r-</code></li>
+                    <li>Alle negen, want other is iedereen</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord a.</strong> Het eerste teken zegt of het een map of een bestand is en hoort bij
+                    geen enkele klasse. Daarna volgen drie groepjes van drie, in de volgorde owner, group, other,
+                    dus other krijgt de laatste drie. Op dit bestand mag other alleen lezen. Zie
+                    <a href="Rechten.html#lezen">Rechten op een bestand</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>3. Wat zet <code>chmod 755 script.sh</code> op dat bestand?</strong></p>
+                <ol type="a">
+                    <li>De owner mag lezen en schrijven, de rest niets</li>
+                    <li>De owner mag alles, de group en other mogen lezen en uitvoeren</li>
+                    <li>De owner mag lezen en uitvoeren, other mag alles</li>
+                    <li>Iedereen mag alles, want 7 plus 5 plus 5 is meer dan 9</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord b.</strong> De drie cijfers staan in de volgorde owner, group, other, en elk is
+                    een groepje van drie op zich: 7 is <code>rwx</code>, 5 is <code>r-x</code>. Ze tellen niet bij
+                    elkaar op. Zie <a href="Rechten.html#cijfers">Rechten op een bestand</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>4. Op <code>/home/rechten1/tekst.txt</code>, eigendom van rechten1, staat
+                        <code>chmod 000</code>. Wie kan het bestand nog openen?</strong></p>
+                <ol type="a">
+                    <li>Niemand, ook root niet</li>
+                    <li>Alleen rechten1, want de owner staat boven de rechten</li>
+                    <li>Alleen root</li>
+                    <li>Iedereen, want 000 betekent dat er geen beperking is</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord c.</strong> De negen schakelaars gelden voor owner, group en other, en met
+                    <code>000</code> staan ze alle negen af, ook die van de eigenaar. Root valt buiten die drie
+                    klassen en mag elk bestand lezen en schrijven, wat er ook ingesteld staat. Zie
+                    <a href="Rechten.html#klassen">Rechten op een bestand</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>5. Je wil dat iedereen in de groep <code>rechten</code> aan een bestand kan. Welk
+                        commando zet die groep op het bestand?</strong></p>
+                <ol type="a">
+                    <li><code>sudo chown rechten tekst.txt</code></li>
+                    <li><code>sudo chmod rechten tekst.txt</code></li>
+                    <li><code>sudo chgrp rechten tekst.txt</code></li>
+                    <li><code>sudo usermod -aG rechten tekst.txt</code></li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord c.</strong> <code>chgrp</code> zet de group van een bestand, <code>chown</code>
+                    de owner en <code>chmod</code> de negen rechten. <code>usermod</code> gaat over een gebruiker en
+                    niet over een bestand. Na de <code>chgrp</code> moet je nog nakijken of het middelste groepje
+                    van drie de rechten geeft die je wil. Zie
+                    <a href="Rechten.html#chown-chgrp">Rechten op een bestand</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>6. Tien collega's moeten aan dezelfde map kunnen. Waarom zet je ze in een groep in
+                        plaats van de rechten per gebruiker te zetten?</strong></p>
+                <ol type="a">
+                    <li>Omdat een groep sterkere rechten geeft dan een gebruiker</li>
+                    <li>Omdat een bestand maar plaats heeft voor één owner en één group, en er dus geen tien namen
+                        op kunnen</li>
+                    <li>Omdat gebruikers in een groep elkaars wachtwoord kunnen zien</li>
+                    <li>Omdat Linux geen rechten per gebruiker kent</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord b.</strong> Op de regel van <code>ls -l</code> staat één owner en één group, en
+                    verder alleen other. Wil je tien mensen apart bedienen, dan gaat dat dus niet, en komt er bij
+                    elke elfde collega opnieuw werk bij. Zet je ze in een groep, dan pas je de rechten één keer aan.
+                    Zie <a href="GebruikersEnGroepen.html#groepen">Gebruikers en groepen</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>7. Je installeert een programma uit het Ubuntu Software Center. Wat gebeurt er met de
+                        updates ervan?</strong></p>
+                <ol type="a">
+                    <li>Het programma wordt mee bijgewerkt, want het komt uit een repository</li>
+                    <li>Je moet het programma zelf opnieuw downloaden bij elke nieuwe versie</li>
+                    <li>Het wordt alleen bijgewerkt wanneer je op de website van de maker kijkt</li>
+                    <li>Het wordt bijgewerkt tot je Ubuntu opnieuw opstart</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord a.</strong> Het Software Center is een venster op dezelfde repository die
+                    <code>apt</code> gebruikt, dus je machine kent het pakket en ziet een nieuwe versie
+                    verschijnen. Dat is precies wat je opgeeft zodra je software langs een <code>.deb</code>, een
+                    installer script of broncode binnenhaalt. Zie
+                    <a href="SoftwareUitDeRepository.html#softwarecenter">Software uit de repository</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>8. <code>sudo dpkg -i chrome.deb</code> stopt met de melding dat een pakket ontbreekt.
+                        Waarom gebeurt dat bij <code>apt install</code> niet?</strong></p>
+                <ol type="a">
+                    <li>Omdat het <code>.deb</code> bestand beschadigd is</li>
+                    <li>Omdat <code>dpkg</code> één pakket uitpakt en geen dependencies gaat halen, terwijl
+                        <code>apt</code> weet uit welke repository die komen</li>
+                    <li>Omdat <code>dpkg</code> alleen als root werkt en <code>apt</code> ook zonder</li>
+                    <li>Omdat een <code>.deb</code> bestand geen dependencies heeft</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord b.</strong> <code>dpkg</code> is de laag onder <code>apt</code> en kent alleen
+                    het bestand dat je hem geeft. Het pakket blijft dan half geïnstalleerd staan, en
+                    <code>sudo apt-get install -f</code> maakt het af door te halen wat ontbreekt. Zie
+                    <a href="SoftwareBuitenDeRepository.html#deb">Software buiten de repository</a>.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>9. Wat kan een virtuele machine wel en een container niet?</strong></p>
+                <ol type="a">
+                    <li>Een programma afschermen van de andere programma's op de machine</li>
+                    <li>Meer dan één programma tegelijk draaien</li>
+                    <li>Een ander besturingssysteem draaien dan dat van de machine eronder</li>
+                    <li>Bestanden van de machine eronder gebruiken</li>
+                </ol>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <p><strong>Antwoord c.</strong> Alle containers op een machine delen het besturingssysteem dat er
+                    al draait, en dat is precies waarom een container klein is en in seconden start. Dat delen is
+                    ook zijn grens: wil je een ander besturingssysteem, dan heb je een virtuele machine nodig, die
+                    er een volledig eigen exemplaar bovenop zet. Zie <a href="Docker.html#container">Docker</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

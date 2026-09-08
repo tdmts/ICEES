@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De owner aanpassen</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>De owner aanpassen</h1>
+
+        <p>Elk bestand en elke map heeft een owner, en dat is de gebruiker die ze aangemaakt heeft. Met
+            <code>chown</code> geef je dat eigendom aan iemand anders. Op deze pagina zie je waar de owner in de
+            uitvoer van <code>ls</code> staat en hoe je hem wijzigt.</p>
+
+        <h2 id="kolommen">Waar de owner staat</h2>
+
+        <ol>
+            <li>
+                <p>Toon de inhoud van <code>/home</code>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:/home$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 28K
+drwxr-xr-x  7 root         root         4,0K Apr 14 12:53 .
+drwxr-xr-x 24 root         root         4,0K Apr 12 10:31 ..
+drwxr-xr-x 23 elm          elm          4,0K Apr 14 12:06 elm
+drwxr-xr-x  3 labopartner1 labopartner1 4,0K Apr 12 10:57 labopartner1
+drwxr-xr-x  2 labopartner2 labopartner2 4,0K Apr 12 10:36 labopartner2
+<span class="highlight">drwxr-xr-x  4 rechten1     rechten1     4,0K Apr 14 13:31 rechten1</span>
+drwxr-xr-x  3 rechten2     rechten2     4,0K Apr 14 13:20 rechten2</pre>
+                </div>
+            </li>
+            <li>
+                <p>Er staan twee kolommen met namen naast elkaar. De linkse is de <strong>owner</strong>, de rechtse
+                    de <strong>group</strong>. Ze zijn hier gelijk omdat <code>adduser</code> bij elke gebruiker een
+                    groep met dezelfde naam aanmaakt, maar het zijn wel degelijk twee gegevens.</p>
+            </li>
+        </ol>
+
+        <h2 id="chown">De owner wijzigen</h2>
+
+        <ol start="3">
+            <li>
+                <p>Geef de map <code>rechten1</code> aan de gebruiker <code>rechten2</code>. Achter
+                    <code>chown</code> komt eerst de nieuwe owner en dan het bestand of de map.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:/home$</span>
+                        <span class="term-cmd">sudo chown rechten2 rechten1</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:/home$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 28K
+drwxr-xr-x  7 root         root         4,0K Apr 14 12:53 .
+drwxr-xr-x 24 root         root         4,0K Apr 12 10:31 ..
+drwxr-xr-x 23 elm          elm          4,0K Apr 14 12:06 elm
+drwxr-xr-x  3 labopartner1 labopartner1 4,0K Apr 12 10:57 labopartner1
+drwxr-xr-x  2 labopartner2 labopartner2 4,0K Apr 12 10:36 labopartner2
+<span class="highlight">drwxr-xr-x  4 rechten2     rechten1     4,0K Apr 14 13:31 rechten1</span>
+drwxr-xr-x  3 rechten2     rechten2     4,0K Apr 14 13:20 rechten2</pre>
+                </div>
+                <p>Alleen de linkse naam is veranderd. De group staat er nog zoals ze was, en de negen letters
+                    vooraan ook: <code>chown</code> raakt die niet aan.</p>
+            </li>
+            <li>
+                <p>Wat er wel verandert, is voor wie welk groepje van drie geldt. De gebruiker
+                    <code>rechten1</code> valt vanaf nu niet meer onder <code>owner</code> voor deze map, maar onder
+                    <code>group</code>, want hij zit in de groep die er nog aan hangt.</p>
+            </li>
+        </ol>
+
+        <div class="info-box">
+            <div class="info-title remark">Waarom hier <code>sudo</code> voor staat</div>
+            <p>Ook de eigenaar van een bestand mag zijn eigendom niet zomaar doorgeven. Zonder die regel zou je
+                bestanden aan iemand anders kunnen opdringen, en dat is net wat een systeem met meer dan één
+                gebruiker moet tegenhouden. Alleen root wijzigt de owner.</p>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

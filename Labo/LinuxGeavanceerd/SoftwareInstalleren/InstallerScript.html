@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Een installer script uitvoeren</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Een installer script uitvoeren</h1>
+
+        <p>De Arduino IDE komt niet als pakket maar als een archief: een map met daarin het programma en een script
+            dat het op zijn plaats zet. Je pakt het archief uit, je zoekt in de map het script, en je voert dat uit.
+            Er is hier geen enkel commando dat dependencies voor je haalt.</p>
+
+        <h2 id="downloaden">Downloaden</h2>
+
+        <ol>
+            <li>
+                <p>Surf vanaf je Ubuntu-machine naar <code>arduino.cc</code>, klik op <strong>Download</strong> en
+                    kies de <strong>Linux 64 bits</strong> versie.</p>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../../img/via-een-installer-script-image-9399733.png" class="img-fluid"
+                        alt="De downloadpagina van Arduino met rechts de keuzes Windows, Mac OS X en drie Linux-versies, waarvan Linux 64 bits aangeduid staat">
+                </figure>
+            </li>
+            <li>
+                <p>Arduino vraagt eerst een bijdrage. Klik op <strong>JUST DOWNLOAD</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../../img/via-een-installer-script-image-9399734.png" class="img-fluid"
+                        alt="De bijdragepagina van Arduino met bedragen van drie tot vijftig dollar en onderaan de link JUST DOWNLOAD">
+                </figure>
+            </li>
+            <li>
+                <p>Kies <strong>Save File</strong>. Het bestand komt in je map <strong>Downloads</strong>
+                    terecht.</p>
+                <figure class="figure-zoom" style="max-width: 480px">
+                    <img src="../../../img/via-een-installer-script-image-9399735.png" class="img-fluid"
+                        alt="Het venster van Firefox voor arduino-1.8.12-linux64 punt tar punt xz, met Save File aangeduid">
+                </figure>
+            </li>
+        </ol>
+
+        <h2 id="uitpakken">Het archief uitpakken</h2>
+
+        <ol start="4">
+            <li>
+                <p>Ga met de terminal naar je map <strong>Downloads</strong> en kijk wat er staat.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Downloads$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 123M
+drwxr-xr-x  2 elm elm 4,0K Apr 14 20:20 .
+drwxr-xr-x 23 elm elm 4,0K Apr 14 12:06 ..
+<span class="highlight">-rw-rw-r--  1 elm elm 123M Apr 14 20:19 arduino-1.8.12-linux64.tar.xz</span></pre>
+                </div>
+                <p>De extensie is <code>.tar.xz</code> en niet <code>.tar.gz</code>. Het is dus met xz ingepakt in
+                    plaats van met gzip, en dat verandert de opties die je aan <code>tar</code> geeft.</p>
+            </li>
+            <li>
+                <p>Pak het uit. Zonder de <code>z</code> herkent <code>tar</code> zelf welke compressie het
+                    tegenkomt.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Downloads$</span>
+                        <span class="term-cmd">tar -xf arduino-1.8.12-linux64.tar.xz</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Er staat nu een map naast het archief.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Downloads$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 123M
+drwxr-xr-x  3 elm elm 4,0K Apr 14 20:31 .
+drwxr-xr-x 23 elm elm 4,0K Apr 14 12:06 ..
+<span class="highlight">drwxr-xr-x 10 elm elm 4,0K Feb 13 10:32 arduino-1.8.12</span>
+-r--r--r--  1 elm elm 123M Apr 14 20:19 arduino-1.8.12-linux64.tar.xz</pre>
+                </div>
+            </li>
+        </ol>
+
+        <h2 id="uitvoeren">Het script uitvoeren</h2>
+
+        <ol start="7">
+            <li>
+                <p>Ga in die map en kijk wat erin staat.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Downloads$</span>
+                        <span class="term-cmd">cd arduino-1.8.12</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Downloads/arduino-1.8.12$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 18M
+-rwxr-xr-x  1 elm elm  882 Feb 13 10:32 arduino
+-rwxr-xr-x  1 elm elm  18M Feb 13 10:32 arduino-builder
+-rwxr-xr-x  1 elm elm 5,8K Feb 13 10:32 arduino-linux-setup.sh
+drwxr-xr-x 13 elm elm 4,0K Feb 13 10:32 examples
+drwxr-xr-x  4 elm elm 4,0K Feb 13 10:32 hardware
+<span class="highlight">-rwxr-xr-x  1 elm elm  11K Feb 13 10:32 install.sh</span>
+drwxr-xr-x  6 elm elm 4,0K Feb 11 13:00 java
+drwxr-xr-x  4 elm elm 4,0K Feb 13 10:32 lib
+drwxr-xr-x 21 elm elm 4,0K Feb 13 10:32 libraries
+drwxr-xr-x  4 elm elm 4,0K Feb 13 10:32 reference
+-rw-r--r--  1 elm elm  91K Feb 13 10:32 revisions.txt
+drwxr-xr-x  4 elm elm 4,0K Feb 13 10:32 tools
+-rwxr-xr-x  1 elm elm   86 Feb 13 10:32 uninstall.sh</pre>
+                </div>
+                <p><code>install.sh</code> is het script dat je zoekt, en aan zijn rechten zie je dat het
+                    uitgevoerd mag worden: er staat een <code>x</code> op alle drie de plaatsen van
+                    <code>-rwxr-xr-x</code>. Ernaast staat <code>uninstall.sh</code>, waarmee je het later weer
+                    weghaalt.</p>
+            </li>
+            <li>
+                <p>Voer het uit. De <code>./</code> ervoor zegt dat het script in de map staat waar je nu bent, en
+                    <code>sudo</code> staat erbij omdat de installatie bestanden en instellingen wegschrijft buiten
+                    je eigen map.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Downloads/arduino-1.8.12$</span>
+                        <span class="term-cmd">sudo ./install.sh</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Zoek Arduino IDE op tussen je toepassingen en start het.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../../img/via-een-installer-script-image-9399739.png" class="img-fluid"
+                        alt="Het zoekvenster van Ubuntu met arduino ingetypt en Arduino IDE als resultaat">
+                </figure>
+            </li>
+        </ol>
+
+        <div class="info-box">
+            <div class="info-title warning">Een script met sudo uitvoeren is een programma van iemand anders
+                vertrouwen</div>
+            <p>Wat er in <code>install.sh</code> staat, gebeurt met de rechten van root. Haal zo'n script dus altijd
+                bij de maker zelf en niet uit een zoekresultaat, en dat is precies waarom je hier op arduino.cc
+                begonnen bent.</p>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

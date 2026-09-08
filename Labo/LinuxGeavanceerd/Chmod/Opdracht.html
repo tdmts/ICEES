@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht chmod</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Opdracht chmod</h1>
+
+        <p class="lead">Je maakt twee gebruikers rechten1 en rechten2, en daarna een tekstbestand dat van de eerste
+            is. Met chmod zet je de negen rechten erop en telkens toon je met een screenshot wie het bestand nog
+            open krijgt en wie niet.</p>
+
+        <div class="download-container">
+            <a href="../../../downloads/Labo-LinuxGeavanceerd-Chmod-verslag.docx">Opdracht downloaden</a>
+            <ul>
+                <li>De volledige opdracht staat in dit document, met ruimte voor je antwoorden en je screenshots.
+                </li>
+                <li>Je dient het in via de opdracht op Orion, en dat mag zo vaak als je wil.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <div class="info-title tip">Alle commando's staan op het spiekblad</div>
+            <p>Bij Theorie staat een spiekblad met elk commando van dit labo, de rechtennotatie en de cijfers die
+                erbij horen. Zet dat in een tweede venster open terwijl je werkt.</p>
+        </div>
+
+        <h2 id="stappenplan">De begeleide oefening</h2>
+
+        <p>Op de vier pagina's hierna maak je gebruikers en groepen aan, geef je iemand het recht op
+            <code>sudo</code> en neem je het weer af. Ze bouwen op elkaar voort: de gebruiker die je op de eerste
+            pagina maakt, gebruik je op de tweede, dus doe ze in volgorde en sla er geen over. Werk ze af voor je
+            aan het document hierboven begint. <strong>Klik rechtsboven op Volgende om te beginnen.</strong></p>
+
+        <div class="info-box">
+            <div class="info-title warning">De gebruikers en het bestand van deze opdracht blijven staan</div>
+            <p>De opdrachten chown en chgrp werken verder op wat je hier maakt: dezelfde twee gebruikers en
+                hetzelfde bestand <code>tekst.txt</code>. Wis dus niets zolang je die twee niet ingediend hebt.</p>
+        </div>
+
+
+        <!-- verslag
+        Van dit blok maakt scripts/export-verslag.py het verslagsjabloon. Wijzig hier, draai
+        daarna het script, en commit de docx mee.
+
+        <p>Deze opdracht maak je op de virtuele machine met Ubuntu, nadat je de begeleide oefening afgewerkt hebt.
+            Vul dit document aan terwijl je werkt. Zorg dat je aangemeld bent als de gebruiker <code>elm</code>.</p>
+
+        <h2>Twee gebruikers en een bestand</h2>
+
+        <ol class="vragen">
+            <li>Maak twee nieuwe gebruikers, <code>rechten1</code> en <code>rechten2</code>. Gebruik voor allebei
+                het wachtwoord <code>mle</code>. Welke commando's heb je hiervoor gebruikt?</li>
+            <li class="screenshot">Ga naar de map <code>/home</code> en toon de inhoud ervan. Neem daarvan een
+                screenshot en plak die hieronder.</li>
+            <li>Meld je aan als de gebruiker <code>rechten1</code>. Welk commando heb je hiervoor gebruikt?</li>
+            <li>Maak met nano een nieuw bestand <code>tekst.txt</code> in de map <code>/home/rechten1/</code>. Welk
+                commando heb je hiervoor gebruikt?</li>
+            <li>De inhoud van het bestand wordt het woord <code>Automatisering</code>. Sla het bestand op en sluit
+                nano af. Welke sneltoetsen heb je daarvoor gebruikt?</li>
+            <li class="screenshot">Kijk de rechten van <code>tekst.txt</code> na met <code>ls -alh</code>. Neem
+                daarvan een screenshot en plak die hieronder.</li>
+        </ol>
+
+        <h2>De regel van ls lezen</h2>
+
+        <ol class="vragen">
+            <li>Welke user is owner van het bestand <code>tekst.txt</code>?</li>
+            <li>Bij welke group hoort het bestand <code>tekst.txt</code>?</li>
+            <li>Geef een voorbeeld van een gebruiker die voor dit bestand onder <code>other</code> valt.</li>
+            <li>Welke rechten heeft de user <code>rechten1</code> op het bestand <code>tekst.txt</code>?</li>
+            <li>Welke rechten heeft de user <code>rechten2</code> op het bestand <code>tekst.txt</code>?</li>
+            <li>Welke rechten heeft de user <code>elm</code> op het bestand <code>tekst.txt</code>?</li>
+            <li>Welke rechten heeft de user <code>root</code> op het bestand <code>tekst.txt</code>?</li>
+        </ol>
+
+        <h2>De rechten zetten met chmod</h2>
+
+        <ol class="vragen">
+            <li>Zorg ervoor dat enkel de owner het bestand kan lezen en schrijven. Welke commando's heb je hiervoor
+                gebruikt?</li>
+            <li>Test dit uit door het bestand als <code>rechten2</code> te proberen openen. Die gebruiker is geen
+                owner, dus je verwacht dat de inhoud niet getoond wordt. Welke commando's heb je gebruikt om dat uit
+                te testen? Wees volledig.</li>
+            <li class="screenshot">Neem een screenshot die aantoont dat de inhoud van het bestand niet getoond kon
+                worden, en plak die hieronder.</li>
+            <li>Meld je terug af en meld je daarna aan als <code>rechten1</code>. Welke commando's heb je hiervoor
+                gebruikt?</li>
+            <li>Zorg ervoor dat enkel de root gebruiker nog rechten heeft op het bestand. Welke commando's heb je
+                hiervoor gebruikt?</li>
+            <li>Test dit uit door het bestand als <code>rechten1</code> te proberen openen. Welke commando's heb je
+                hiervoor gebruikt?</li>
+            <li class="screenshot">Neem een screenshot die duidelijk toont of de inhoud van het bestand gelezen kon
+                worden, en plak die hieronder.</li>
+            <li>Meld je aan als <code>elm</code>. Zorg ervoor dat alle other gebruikers de map
+                <code>rechten1</code> kunnen lezen en uitvoeren, en laat de andere rechten ongewijzigd. Welke
+                commando's heb je hiervoor gebruikt?</li>
+            <li>Zorg ervoor dat alle gebruikers behalve de owner het bestand kunnen lezen en schrijven. Welke
+                commando's heb je hiervoor gebruikt?</li>
+            <li class="screenshot">Test dit uit door het bestand als <code>rechten2</code> te openen. Die gebruiker
+                is geen owner, dus je verwacht nu dat de inhoud wel getoond wordt. Neem daarvan een screenshot en
+                plak die hieronder.</li>
+        </ol>
+
+        <h2>Gebruikers beheren</h2>
+
+        <ol class="vragen">
+            <li>Maak een gebruiker <code>tijdelijk</code> aan en wis hem daarna weer, samen met zijn map onder
+                <code>/home</code>. Welke commando's heb je gebruikt, en welke optie is nodig om ook die map weg te
+                krijgen?</li>
+            <li>Verander het wachtwoord van <code>rechten2</code> naar iets anders. Welk commando heb je gebruikt,
+                en wat vraagt Linux extra wanneer je je eigen wachtwoord wijzigt in plaats van dat van iemand
+                anders?</li>
+        </ol>
+
+        <h2>Controle</h2>
+
+        <p>Laat dit controleren door de lector tijdens het labo.</p>
+        -->
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De group aanpassen</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>De group aanpassen</h1>
+
+        <p>Naast een owner hangt aan elk bestand een group, en de drie letters in het midden van de rechten gelden
+            voor iedereen die daarin zit. Met <code>chgrp</code> zet je een andere groep op een bestand, en daarmee
+            verander je in één keer wat een hele reeks gebruikers ermee mag.</p>
+
+        <h2 id="waar">Waar de group staat</h2>
+
+        <ol>
+            <li>
+                <p>Toon de inhoud van <code>/home</code>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">cd /home</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:/home$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 28K
+drwxr-xr-x  7 root         root         4,0K Apr 14 12:53 .
+drwxr-xr-x 24 root         root         4,0K Apr 12 10:31 ..
+drwxr-xr-x 23 elm          elm          4,0K Apr 14 12:06 elm
+drwxr-xr-x  3 labopartner1 labopartner1 4,0K Apr 12 10:57 labopartner1
+drwxr-xr-x  2 labopartner2 labopartner2 4,0K Apr 12 10:36 labopartner2
+<span class="highlight">drwxr-xr-x  4 rechten2     rechten1     4,0K Apr 14 13:31 rechten1</span>
+drwxr-xr-x  3 rechten2     rechten2     4,0K Apr 14 13:20 rechten2</pre>
+                </div>
+                <p>De rechtse van de twee naamkolommen is de group. Bij de map <code>rechten1</code> staan er nu
+                    twee verschillende namen, omdat je de owner op de vorige oefening gewijzigd hebt.</p>
+            </li>
+        </ol>
+
+        <h2 id="chgrp">De group wijzigen</h2>
+
+        <ol start="2">
+            <li>
+                <p>Zet de groep <code>elm</code> op de map <code>rechten1</code>. Achter <code>chgrp</code> komt
+                    eerst de nieuwe groep en dan het bestand of de map.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:/home$</span>
+                        <span class="term-cmd">sudo chgrp elm rechten1</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:/home$</span>
+                        <span class="term-cmd">ls -alh</span>
+                    </div>
+                    <pre class="term-out">total 28K
+drwxr-xr-x  7 root         root         4,0K Apr 14 12:53 .
+drwxr-xr-x 24 root         root         4,0K Apr 12 10:31 ..
+drwxr-xr-x 23 elm          elm          4,0K Apr 14 12:06 elm
+drwxr-xr-x  3 labopartner1 labopartner1 4,0K Apr 12 10:57 labopartner1
+drwxr-xr-x  2 labopartner2 labopartner2 4,0K Apr 12 10:36 labopartner2
+<span class="highlight">drwxr-xr-x  4 rechten2     elm          4,0K Apr 14 13:31 rechten1</span>
+drwxr-xr-x  3 rechten2     rechten2     4,0K Apr 14 13:20 rechten2</pre>
+                </div>
+                <p>Alleen de rechtse naam is veranderd. De letters <code>r-x</code> in het midden gelden vanaf nu
+                    voor iedereen in de groep <code>elm</code>, en de gebruikers van de groep
+                    <code>rechten1</code> vallen terug op <code>other</code>.</p>
+            </li>
+            <li>
+                <p>Zet ze weer terug, want de opdracht vertrekt van de toestand zoals ze was.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:/home$</span>
+                        <span class="term-cmd">sudo chgrp rechten1 rechten1</span>
+                    </div>
+                </div>
+            </li>
+        </ol>
+
+        <div class="info-box">
+            <div class="info-title tip">Twee commando's, twee gegevens</div>
+            <p><code>chgrp</code> raakt alleen de rechtse naam aan en <code>chown</code> alleen de linkse. Wil je
+                allebei tegelijk zetten, dan kan dat met één commando: <code>sudo chown rechten2:rechten tekst.txt</code>
+                geeft het bestand aan die owner en die group in één keer.</p>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

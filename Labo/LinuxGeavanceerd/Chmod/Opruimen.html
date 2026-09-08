@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Een gebruiker en een lidmaatschap wissen</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Een gebruiker en een lidmaatschap wissen</h1>
+
+        <p>De gebruiker <code>labopartner3</code> was er alleen om te tonen dat <code>sudo</code> werkt, en die mag
+            weg. Daarna haal je labopartner2 uit de groep <code>sudo</code>, zonder hem te wissen. Eén commando doet
+            die twee dingen: <code>deluser</code>.</p>
+
+        <h2 id="help">Wat deluser allemaal kan</h2>
+
+        <ol>
+            <li>
+                <p>Vraag het commando zelf. Bijna elk Linux-commando toont met <code>--help</code> zijn opties.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">deluser --help</span>
+                    </div>
+                    <pre class="term-out">deluser USER
+  remove a normal user from the system
+  example: deluser mike
+
+<span class="highlight">  --remove-home             remove the users home directory and mail spool</span>
+  --remove-all-files        remove all files owned by user
+
+deluser USER GROUP
+<span class="highlight">  remove the user from GROUP</span></pre>
+                </div>
+            </li>
+        </ol>
+
+        <h2 id="wissen">De gebruiker wissen</h2>
+
+        <p>Zonder opties haalt <code>deluser</code> de gebruiker weg en laat het zijn map onder <code>/home</code>
+            staan, met alles wat erin zit. Dat is met opzet: het systeem gooit niet ongevraagd bestanden weg waar
+            nog werk in kan zitten.</p>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>2. Wis labopartner3 samen met zijn map /home/labopartner3.</strong></p>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo deluser --remove-home labopartner3</span>
+                    </div>
+                    <pre class="term-out">[sudo] password for elm:
+Looking for files to backup/remove ...
+Removing files ...
+Removing user `labopartner3' ...
+<span class="highlight">Warning: group `labopartner3' has no more members.</span>
+Done.</pre>
+                </div>
+                <p>De waarschuwing onderaan gaat over de groep die bij het aanmaken vanzelf meekwam: die blijft nu
+                    leeg achter.</p>
+            </div>
+        </div>
+
+        <h2 id="groep">Een gebruiker uit een groep halen</h2>
+
+        <p>Zet je een groepsnaam achter de gebruikersnaam, dan wist <code>deluser</code> niets: het haalt alleen het
+            lidmaatschap weg.</p>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>3. Haal labopartner2 uit de groep sudo.</strong></p>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo deluser labopartner2 sudo</span>
+                    </div>
+                    <pre class="term-out"><span class="highlight">Removing user `labopartner2' from group `sudo' ...</span>
+Done.</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="spoiler-container">
+            <div class="basic">
+                <p><strong>4. Kijk na wie er nu nog in de groep sudo zit.</strong></p>
+            </div>
+            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
+            <div class="hidden">
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">members sudo</span>
+                    </div>
+                    <pre class="term-out"><span class="highlight">elm labopartner1</span></pre>
+                </div>
+                <p>labopartner2 bestaat nog gewoon en kan zich nog aanmelden. Wat hij kwijt is, is het recht om
+                    <code>sudo</code> te gebruiken.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-title tip">Je bent klaar voor de opdracht</div>
+            <p>Je kan nu gebruikers en groepen maken, wisselen met <code>su</code>, iemand <code>sudo</code> geven
+                en het weer afnemen. In de opdracht maak je twee nieuwe gebruikers en zet je de rechten van een
+                bestand. Ga daarvoor terug naar de eerste pagina van dit onderdeel.</p>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

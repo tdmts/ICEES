@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" width="720" height="280"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">Een virtuele machine draagt een eigen besturingssysteem, een container niet</title>
+    <rect width="720" height="280" fill="#ffffff" />
+
+    <text x="192" y="32" font-size="14" fill="#004d40" text-anchor="middle" font-weight="600">Virtuele
+        machines</text>
+    <text x="527" y="32" font-size="14" fill="#004d40" text-anchor="middle" font-weight="600">Containers</text>
+
+    <!-- links: de programma's -->
+    <g fill="#f5f7f7" stroke="#9bb0ac">
+        <rect x="48" y="44" width="140" height="34" />
+        <rect x="197" y="44" width="140" height="34" />
+    </g>
+    <text x="118" y="66" font-size="12" fill="#222" text-anchor="middle">programma</text>
+    <text x="267" y="66" font-size="12" fill="#222" text-anchor="middle">programma</text>
+
+    <!-- links: elke guest sleept een volledig besturingssysteem mee -->
+    <g fill="#004d40" stroke="#004d40">
+        <rect x="48" y="78" width="140" height="34" />
+        <rect x="197" y="78" width="140" height="34" />
+    </g>
+    <text x="118" y="100" font-size="12" fill="#ffffff" text-anchor="middle">Ubuntu (guest)</text>
+    <text x="267" y="100" font-size="12" fill="#ffffff" text-anchor="middle">Ubuntu (guest)</text>
+
+    <rect x="40" y="112" width="305" height="34" fill="#b2dfdb" stroke="#004d40" />
+    <text x="192" y="134" font-size="12" fill="#00332b" text-anchor="middle">VirtualBox</text>
+
+    <rect x="40" y="146" width="305" height="34" fill="#e0e7e5" stroke="#9bb0ac" />
+    <text x="192" y="168" font-size="12" fill="#222" text-anchor="middle">Besturingssysteem van de machine</text>
+
+    <rect x="40" y="180" width="305" height="34" fill="#9bb0ac" stroke="#9bb0ac" />
+    <text x="192" y="202" font-size="12" fill="#ffffff" text-anchor="middle">Hardware</text>
+
+    <!-- rechts: de programma's -->
+    <g fill="#f5f7f7" stroke="#9bb0ac">
+        <rect x="383" y="44" width="93" height="34" />
+        <rect x="483" y="44" width="93" height="34" />
+        <rect x="583" y="44" width="93" height="34" />
+    </g>
+    <g font-size="11" fill="#222" text-anchor="middle">
+        <text x="429" y="66">programma</text>
+        <text x="529" y="66">programma</text>
+        <text x="629" y="66">programma</text>
+    </g>
+
+    <!-- rechts: op dezelfde hoogte staat geen tweede besturingssysteem -->
+    <rect x="383" y="78" width="293" height="34" fill="#ffffff" stroke="#c0392b" stroke-dasharray="4 3" />
+    <text x="529" y="100" font-size="12" fill="#c0392b" text-anchor="middle">geen eigen besturingssysteem</text>
+
+    <rect x="375" y="112" width="305" height="34" fill="#b2dfdb" stroke="#004d40" />
+    <text x="527" y="134" font-size="12" fill="#00332b" text-anchor="middle">Docker</text>
+
+    <rect x="375" y="146" width="305" height="34" fill="#e0e7e5" stroke="#9bb0ac" />
+    <text x="527" y="168" font-size="12" fill="#222" text-anchor="middle">Besturingssysteem van de machine</text>
+
+    <rect x="375" y="180" width="305" height="34" fill="#9bb0ac" stroke="#9bb0ac" />
+    <text x="527" y="202" font-size="12" fill="#ffffff" text-anchor="middle">Hardware</text>
+
+    <!-- wat het verschil oplevert -->
+    <text x="40" y="238" font-size="11" fill="#222">Elke guest draait een volledig eigen besturingssysteem, dus</text>
+    <text x="40" y="254" font-size="11" fill="#222">het mag Linux zijn op een Windows-machine. Dat kost wel</text>
+    <text x="40" y="270" font-size="11" fill="#222">processortijd, geheugen en een licentie per guest.</text>
+
+    <text x="375" y="238" font-size="11" fill="#222">Elke container deelt het besturingssysteem van de machine,</text>
+    <text x="375" y="254" font-size="11" fill="#222">dus die overhead en die licentie vallen weg. De prijs is dat</text>
+    <text x="375" y="270" font-size="11" fill="#222">Linux er alleen op Linux draait.</text>
+</svg>

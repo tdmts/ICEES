@@ -316,7 +316,7 @@ wipes the read-flags of every student who has already been in it.
 | `Labo/Virtualiseren/` | WatIsVirtualisatie, VirtueleHardware, SchijfEnGeheugen, SoftwareInDeGuest, TestJezelf | no |
 | `Labo/Partitioneren/` | Partitietabellen, Bestandssystemen, Spiekblad, TestJezelf | yes |
 | `Labo/LinuxBasis/` | LinuxEnDistributies, DeTerminal, CommandoEnOpties, DeBestandsboom, GebruikersEnRechten, Spiekblad, TestJezelf | yes |
-| `Labo/LinuxGeavanceerd/` | GebruikersEnGroepen, Rechten, SoftwareUitDeRepository, SoftwareBuitenDeRepository, Docker | yes |
+| `Labo/LinuxGeavanceerd/` | GebruikersEnGroepen, Rechten, SoftwareUitDeRepository, SoftwareBuitenDeRepository, Docker, Spiekblad, TestJezelf | yes |
 | `Labo/EmbeddedSystems/` | WatIsEenEmbeddedSystem, RaspberryPiInstalleren, PiOpHetNetwerk, AlsHetNietLukt, CodesysInstalleren, CodesysProject, Docker, NodeRed, MqttBroker | yes |
 
 **The row for Linux Basis was rewritten on 7 September 2026, and it is the only one in this table
@@ -823,6 +823,183 @@ gebruiker elm ... aangemaakt". Labo Virtualiseren is now named once, on `overvie
 material requirement, the same treatment Partitioneren gives it. `InstallatieUbuntu.html` already
 fixes `elm` and `mle` and says the Linux labs use that account, so the data is right; only the
 reference is gone.
+
+## Labo Linux Geavanceerd, written 7 September 2026
+
+Fourth confirmation of the split, and the first module where the split test came out **negative** for
+a whole submodule. The theory reeks holds begrippen, the opdracht reeksen hold the click-through, and
+this lab adds a third kind of reeks.
+
+```
+Theorie (reeks theorie)            Software installeren (reeks software)
+  Theorie/reference.html             SoftwareInstalleren/Overzicht.html   <- wortel
+  GebruikersEnGroepen                  UitDeWinkel
+  Rechten                              EigenRepository
+  SoftwareUitDeRepository              DebBestand
+  SoftwareBuitenDeRepository           InstallerScript
+  Docker                               SourceCode
+  Spiekblad                            ContainerMetDocker
+  TestJezelf                           UpToDate
+
+Opdracht chmod (reeks chmod)       Opdracht chown (chown)   Opdracht chgrp (chgrp)
+  Chmod/Opdracht.html   <- wortel    Chown/Opdracht.html      Chgrp/Opdracht.html
+    GebruikersAanmaken                 OwnerAanpassen           GroupAanpassen
+    SudoRechten
+    EenEigenGroep
+    Opruimen
+```
+
+**Vijf reeksen, en de vijfde heeft geen dropbox.** Dat is nieuw in deze repo en het was de
+belangrijkste vraag van dit labo. De negen bronpagina's over software installeren zijn **geen state
+machine**: elk installeert een ander programma langs een andere weg op een verse machine, en geen
+enkele regel leunt op wat de vorige achterliet. De toets van Linux Basis valt hier dus negatief uit.
+De oudere toets van Virtualiseren en Partitioneren valt wel positief uit: vijf van de negen zijn een
+genummerde klikreeks van 7 tot 13 stappen met veertig schermafdrukken. Ze zijn dus stappenplan en
+geen theorie, en ze horen bij geen van de drie opdrachten, want geen van die drie gaat over software.
+
+Vandaar een eigen Orion-menu-item, `Software installeren`, wat ook precies is wat Brightspace vandaag
+heeft staan als submodule. **Een reeks is een menu-item en niet noodzakelijk een indienmoment**, en
+dat is de regel die dit labo toevoegt. In Orion telt dit labo negen items: Inleiding, Theorie,
+Software installeren, en per opdracht een pagina plus een dropbox.
+
+De wortel van zo'n reeks is de eerste manifestregel ervan, dus `SoftwareInstalleren/Overzicht.html`.
+Die naam is met opzet niet `overview.html`: `topic_van()` in `check-content.py` stuurt elke
+`overview.html` naar het item Inleiding, ook een in een submap, en dan zou regel 10 over elke link
+binnen deze reeks vallen.
+
+**De drie opdrachten zijn zelf een keten, en dat staat in geen enkele docx.** De chmod-opgave maakt
+`rechten1`, `rechten2` en `/home/rechten1/tekst.txt`; chown wijzigt de owner van dát bestand; chgrp
+de group ervan, en die vraagt bovendien of `labopartner1` erbij kan, de gebruiker uit de begeleide
+oefening van chmod. Elke `Opdracht.html` noemt daarom in één zin welke opdracht ervoor komt. Dat is
+binnen hetzelfde labo en dus geen patroon 17.
+
+**De gebruikersoefening hangt onder Chmod en niet onder een eigen reeks**, want de chmod-opgave
+begint met twee gebruikers aanmaken. De zeven bronpagina's 074 tot 080 zijn wél een state machine
+(`su` heeft de gebruiker van `adduser` nodig, `members sudo` heeft de `usermod` van twee pagina's
+eerder nodig) en werden vier stappenplanpagina's.
+
+**Vier beslissingen van de lector, genomen op 7 september 2026.**
+
+- De negen softwarepagina's krijgen een eigen reeks (hierboven).
+- **`passwd` wordt bijgeschreven.** Doelstelling 2 van 070 is "het wachtwoord van gebruikers
+  wijzigen", en het commando komt op geen van de 23 bronpagina's voor en in geen van de drie
+  opgaven. Het staat nu op `Theorie/GebruikersEnGroepen.html` en op het spiekblad, met een
+  verslagvraag in het chmod-verslag. Dat is bijgeschreven tekst die een herimport niet overleeft.
+- **De drie video's van 073 worden drie links op de theoriehub**, met `target="_blank"`, en geen
+  `iframe`. Geen enkele andere pagina in deze repo sluit een video in, en de afspraak voor de
+  lesopnames wijst dezelfde kant op. Ze staan onder de hubkaarten, buiten het manifest, want regel 2
+  weigert een absolute URL in een `href`. Regel 4 laat zo'n link toe: `DOCUMENT_RE` grijpt alleen op
+  een documentextensie.
+- **De Spotify-route is helemaal herschreven en gebruikt geen `apt-key` meer.** Zie hieronder.
+- **De drie terminals van 092 worden overgetypt met de prompt `elm@elm-VirtualBox`.** In de bron
+  staan ze op `tom@tom-VirtualBox`, een andere machine en een oudere Ubuntu, en één prompt door het
+  hele labo scheelt de student een zoektocht. De uitvoer eronder blijft letterlijk.
+
+**32 van de 64 afbeeldingen werden een `terminal-window`, 18 bleven beeld en 14 gingen eruit.** Wat
+bleef is wat een `<pre>` niet kan dragen: het Software Center, twee bladzijden van Spotify zelf, het
+bestandsvenster met zijn rechtsklikmenu, Docker Hub en zijn handleiding, en vier nano-vensters. Drie
+geannoteerde schermafdrukken kregen `span.highlight` in plaats van rode pijlen. Uiteindelijk bleven
+er 20 in `img/` staan en zijn er 44 geschrapt.
+
+**De veertien die eruit gingen, en waarom, want dit is de lijst die je bij een herimport opnieuw
+moet maken:** een Google-resultatenpagina **in het Frans** uit 2016 (076), een **South Park-meme**
+met `alt="Make install output"` (094), een VLC-venster met een spelletjestrailer op een oudere
+Ubuntu waarvan het bijschrift iets anders beloofde (089), een dubbele schermafdruk van dezelfde
+Spotify-bladzijde (090), drie die overgetypt werden, en **de zeven dialoogvensters van Software &
+Updates** (090), die met de herschreven repositoryroute geen stap meer illustreren. Eén schrapping
+is inhoudelijk en geen opruiming: het venster met de toegevoegde repository (090) toont de regel mét
+de tikfout `repository.spotifiy.com`, terwijl de tekst ernaast de juiste spelling voorschrijft.
+
+**Achttien inhoudelijke correcties, alle achttien gemeld voor ze doorgevoerd werden.** Geen ervan
+overleeft een herimport van `_incoming/`.
+
+| Waar | Wat de bron zegt | Wat het hier zegt |
+|---|---|---|
+| 091, Docker Hub | "Op **hub.docker.io** kan je alle **containers** terugvinden" | `hub.docker.com` (zoals op de schermafdruk ernaast; `hub.docker.io` bestaat niet), en wat er staat zijn **images** |
+| 091, stap 6 | `mkdir public-html` gevolgd door `nano index.html` | Er ontbreekt `cd public-html`. Zonder die regel landt het bestand in `~/images` en kopieert de build een lege map; de titelbalk van de schermafdruk zegt `~/images/public-html` |
+| 091, stap 9 | `docker run -dit ...` zonder sudo | `sudo docker run`. De schermafdruk eronder heeft sudo, en elk ander dockercommando ook |
+| 090, stap 6 | `download.spotifiy.com` | `download.spotify.com`. De schermafdruk van Spotify zelf, op diezelfde pagina, schrijft het correct |
+| 090, stap 5 | "omdat we de controle key nog niet hebben gedownload" | De melding gaat over een ontbrekende sleutel; de rest van de fout op de schermafdruk komt van de tikfout hierboven. De overgetypte uitvoer is de melding die je met de juiste host krijgt |
+| 090, de hele route | De sleutel importeren via Software & Updates, en `apt-key` op de bladzijde van Spotify | De sleutel in `/etc/apt/keyrings/` en `signed-by` in de APT-regel, zie hieronder |
+| 094, opening | "De compiler hier is niet Visual Studio maar wel **make**" | `make` is een bouwprogramma dat de compiler aanroept; de schermafdruk van `sudo make` toont `gcc` |
+| 089, figcaption 1 | "VLC Media Player interface" | De afbeelding is een spelletjestrailer in VLC. Beeld en bijschrift zijn weg |
+| 089, figcaption 2 | "Terminal output van snap installatie" | Het is het zoekvenster van Activities, geen terminal |
+| 090, laatste alt | "Spotify installatie succesvol" | Het is het installatiecommando zoals het op spotify.com staat. Stap 13 gaf zelf geen commando; dat staat er nu |
+| 094, alt | "Make output with warnings" | Staat onder een meme. Beeld weg |
+| 076 | "We Googelen de foutmelding", met een Franse schermafdruk | De pagina zegt zelf wat er moet gebeuren: `usermod -aG sudo`, en waarom die groep bestaat |
+| 085 tegen 083 | 085 begint met `rechten1 rechten1`, 083 eindigt op `rechten2 rechten1` | De overgetypte terminals sluiten wel op elkaar aan |
+| 093, 074, 088 | "In het vorig labo heb je gezien hoe je tar kan gebruiken", "Tijdens de installatie heb je elm aangemaakt", "Ssh gebruiken we straks" | Patroon 17: `tar` wordt hier zelf uitgelegd, elm wordt een materiaalvereiste op `overview.html`, en `ssh` komt nergens meer terug |
+| 070, doelstelling 2 | "Het wachtwoord van gebruikers wijzigen" | `passwd` is bijgeschreven, zie hierboven |
+| 092 | `tom@tom-VirtualBox` | `elm@elm-VirtualBox`, zie hierboven |
+| chown-opgave | Een schermafdruk van iemands privécollectie op `vulphere@arifuretaarch` | Eén overgetypte `ls -l` regel in het verslag. De vraag is of `vulphere` de owner of de group is, en daar heeft een muziekcollectie niets mee te maken |
+| chgrp-opgave | Een schermafdruk van de doeltoestand van `tekst.txt` | Diezelfde regel als tekst: `----rw---- 1 rechten2 rechten1 15 Jan 2 17:47 tekst.txt`. Zo staat ze ook in de docx, die geen afbeelding meer draagt |
+
+**De repositoryroute is herschreven, en dat is de grootste afwijking van de bron in dit labo.**
+`EigenRepository.html` volgde het grafische pad van Software & Updates, met dertien stappen en negen
+dialoogvensters, en de bladzijde van Spotify die de student ernaast leest, schrijft `apt-key` voor.
+Dat commando zette elke sleutel op één hoop, waardoor elke repository voor elke andere kon tekenen,
+en Ubuntu heeft het afgevoerd. Beslist op 8 september 2026: de pagina zet de sleutel nu in
+`/etc/apt/keyrings/` en bindt ze aan die ene repository met `signed-by` in de APT-regel, die als
+eigen bestand onder `/etc/apt/sources.list.d/` komt.
+
+Dat kost de negen schermafdrukken en het wordt een terminaloefening, en er komt iets voor in de
+plaats dat het grafische pad niet kon tonen: **een repository op je machine is twee bestanden**, en
+de student maakt ze allebei en leest ze met `ls` en `cat` terug. De schermafdruk van de
+Spotify-bladzijde blijft wel staan, met een kader erbij dat zegt welk van de twee commando's erop je
+niet overneemt en waarom. Dat leest beter dan de bron verzwijgen. `Theorie/SoftwareUitDeRepository.html`
+en het spiekblad zijn mee rechtgetrokken.
+
+**Twee commando's zijn gesplitst omdat ze buiten beeld liepen.** De `curl ... | sudo gpg --dearmor`
+van elke handleiding is hier twee stappen, en de APT-regel gaat met `sudo nano` in het bestand in
+plaats van met `echo ... | sudo tee`. Een `terminal-window` scrolt horizontaal, en in het smalle
+Orion-kader viel bij allebei precies de helft weg die de alinea eronder uitlegt. Wat onvermijdelijk
+blijft scrollen is de APT-regel zelf, want die is één regel. **Meet dus de lengte van een commando
+na**, en niet alleen of het klopt.
+
+**Het sleutelbestand in de tekst is `pubkey_0D811D58.gpg`**, de naam die op onze eigen schermafdruk
+van de Spotify-bladzijde staat. Die naam verandert wanneer Spotify de sleutel vervangt, en dat staat
+er met zoveel woorden bij: neem het adres over van hun bladzijde. Een naam die hier vastligt en daar
+niet, is anders een stille breuk midden in het semester.
+
+**Zes verslagvragen zijn bijgeschreven**, want de drie docx toetsen `chmod`, `chown` en `chgrp` en
+verder niets, terwijl 070 vijf doelstellingen belooft. Doelstelling 1 was maar half getoetst
+(toevoegen wel, wissen niet), en 2, 4 en 5 helemaal niet. Chmod kreeg er twee (een gebruiker maken en
+weer wissen mét zijn map, en `passwd`), chown vier (installeren uit het Software Center en met `apt`,
+daarna langs een `.deb` of een script met de vraag wat je opgeeft, en het systeem bijwerken), en
+chgrp één (welke van de vijf wegen je kiest voor dertig machines, en waarom de vier andere afvallen).
+Chown telde in de docx maar vier vragen en was daarmee veruit de dunste van de drie.
+
+**De vraag over `labopartner3` wissen werkt niet als verslagvraag**, want `Chmod/Opruimen.html` wist
+die gebruiker al in de begeleide oefening. De vraag maakt daarom een wegwerpgebruiker `tijdelijk` aan
+en wist die weer. Dat soort botsing tussen een stappenplan en zijn eigen verslag is precies wat je
+mist zolang je de twee niet naast elkaar leest.
+
+**Het kader "Zorg dat de machine draait voor de sessie begint" staat nergens meer.** Het stond
+woord voor woord op de hub van Linux Basis en kwam mee naar deze; op 8 september 2026 is het uit
+allebei weg. De virtuele machine staat al in de lijst Meebrengen naar het labo erboven, met de zin
+dat het werk van dit labo erop gebeurt, en het kader herhaalde dat in een rood vak. Het is de enige
+plaats waar de twee Linux-hubs van elkaar afweken, en ze doen dat nu niet meer.
+
+**`img/linuxgeavanceerd-vm-versus-container.svg` is de derde byte-voor-byte kopie van dezelfde
+tekening**, naast `virtualiseren-` en `syllabus-08-`. Docker staat in twee labo's en in de syllabus,
+en de afspraak is een eigen kopie per module, met `diff` nagekeken. **Wijzig er dus nooit een zonder
+de twee andere.**
+
+**`img/linuxgeavanceerd-rechten-posities.svg` is nieuw**, en het is de eerste eigen tekening van dit
+labo: de tien tekens van `drwxr-xr-x` uit elkaar getrokken, met de drie klassen erboven en de cijfers
+7, 5 en 5 eronder. Gerenderd met headless Edge voor ze vertrouwd werd, zoals elke SVG hier.
+
+**De zelftest telt negen meerkeuzevragen** en de afleiders zijn de misvattingen die de theorie
+rechtzet: dat `sudo` je permanent root maakt, dat de eerste drie tekens voor other zijn, dat 7, 5 en
+5 optellen, dat `chmod 000` ook root buitensluit, dat `chown` de rechten wijzigt, dat een groep
+sterkere rechten geeft, dat snap en apt hetzelfde doen, dat een `.deb` met een dependency-fout
+beschadigd is, en dat een container een ander besturingssysteem kan draaien.
+
+**Twee dingen die stil misgaan en hier niet misgegaan zijn.** Geen enkel veld in het
+`linuxgeavanceerd`-blok van `reference.js` draagt een apostrof, want regel 2 leest het manifest met
+`name:\s*'([^']*)'` en kapt de waarde daar af; "zeven programma's" in een blurb werd daarom
+herschreven. En de drie leads van de opdrachten zijn uitdrukkelijk uit elkaar geschreven, want regel
+12 valt over zeven opeenvolgende gedeelde woorden en dit labo heeft vijf leads.
 
 ## De syllabus, hoofdstuk 1 tot 11 ingevoerd 7 september 2026
 

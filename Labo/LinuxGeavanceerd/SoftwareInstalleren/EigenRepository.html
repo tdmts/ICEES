@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Een repository van de leverancier toevoegen</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Een repository van de leverancier toevoegen</h1>
+
+        <p>Spotify staat niet in de repository van Ubuntu, maar Spotify houdt er zelf een bij. Je voegt die toe aan
+            je machine, en daarna installeer je Spotify zoals elk ander pakket en blijft het bijgewerkt. Een
+            repository toevoegen is twee bestanden neerzetten: één met het adres en één met de sleutel waarmee de
+            leverancier zijn pakketten ondertekent.</p>
+
+        <h2 id="bron">Wat de leverancier zegt</h2>
+
+        <ol>
+            <li>
+                <p>Surf naar
+                    <a href="https://www.spotify.com/be-nl/download/linux/" target="_blank" rel="noopener">de
+                        downloadpagina van Spotify voor Linux</a>. Onderaan staan de commando's die zij
+                    voorschrijven, en daar haal je twee dingen uit: het adres van de sleutel en de APT-regel.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../../img/via-een-repository-image-9399708.png" class="img-fluid"
+                        alt="De downloadpagina van Spotify met twee commando's: het eerste haalt de sleutel op van download punt spotify punt com, het tweede schrijft de regel deb http repository punt spotify punt com stable non-free weg">
+                    <figcaption class="figure-caption">Het adres van de sleutel staat in het eerste commando, de
+                        APT-regel in het tweede</figcaption>
+                </figure>
+            </li>
+        </ol>
+
+        <div class="info-box">
+            <div class="info-title warning">Het eerste commando van Spotify neem je niet over</div>
+            <p>Er staat <code>| sudo apt-key add -</code> achter. Dat commando zette elke sleutel op één hoop, en
+                daardoor mocht elke repository de pakketten van elke andere ondertekenen. Ubuntu heeft het daarom
+                afgevoerd. Je zet de sleutel hieronder in een eigen bestand en je bindt haar aan deze ene
+                repository. De rest van wat op die bladzijde staat, klopt wel.</p>
+        </div>
+
+        <h2 id="sleutel">De sleutel binnenhalen</h2>
+
+        <ol start="2">
+            <li>
+                <p>Zorg dat de twee programma's die je nodig hebt aanwezig zijn.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo apt install curl gpg</span>
+                    </div>
+                </div>
+                <p><code>curl</code> haalt een bestand op van het internet zonder browser, en <code>gpg</code> is
+                    het programma dat met sleutels en handtekeningen werkt.</p>
+            </li>
+            <li>
+                <p>Maak de map waarin Ubuntu de sleutels van repositories verwacht.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo mkdir -p /etc/apt/keyrings</span>
+                    </div>
+                </div>
+                <p>De optie <code>-p</code> zorgt dat het commando niets zegt wanneer de map al bestaat.</p>
+            </li>
+            <li>
+                <p>Haal de sleutel op. Neem het adres over van de bladzijde van Spotify, en <code>-o</code> zegt
+                    onder welke naam het bestand bij jou terechtkomt.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">curl -sS -o spotify.key
+                            https://download.spotify.com/debian/pubkey_0D811D58.gpg</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Zet ze om naar de vorm waarin <code>apt</code> ze leest, en schrijf ze weg in de map van
+                    daarnet.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo gpg --dearmor -o /etc/apt/keyrings/spotify.gpg
+                            spotify.key</span>
+                    </div>
+                </div>
+                <p>Een sleutel bestaat in twee vormen: een die uit leesbare tekens bestaat en er onderweg door
+                    elk systeem heen komt, en een kale binaire. <code>--dearmor</code> maakt van de eerste de
+                    tweede, en dat is degene die <code>apt</code> wil.</p>
+                <div class="info-box small">
+                    <div class="info-title warning">Let op de spelling van het adres</div>
+                    <p>Er staat <code>spotify</code> en niet <code>spotifiy</code>. Bij een tikfout krijg je geen
+                        sleutel maar een foutbladzijde, en dan schrijft <code>gpg</code> een bestand weg waar
+                        <code>apt</code> straks niets mee kan. De naam van de sleutel verandert bovendien wanneer
+                        Spotify ze vervangt, dus neem hem over van hun bladzijde en typ hem niet uit je hoofd.</p>
+                </div>
+            </li>
+            <li>
+                <p>Kijk na of het bestand er staat.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">ls -alh /etc/apt/keyrings</span>
+                    </div>
+                    <pre class="term-out">total 12K
+drwxr-xr-x 2 root root 4,0K Apr 12 11:33 .
+drwxr-xr-x 8 root root 4,0K Apr 12 11:33 ..
+<span class="highlight">-rw-r--r-- 1 root root 1,7K Apr 12 11:33 spotify.gpg</span></pre>
+                </div>
+                <p>De owner is <code>root</code> en niet jij, want je hebt het commando met <code>sudo</code>
+                    uitgevoerd. De negen letters vooraan zeggen dat iedereen de sleutel mag lezen en alleen root
+                    haar mag wijzigen, en dat is precies wat je hier wil.</p>
+            </li>
+        </ol>
+
+        <h2 id="regel">Het adres van de repository toevoegen</h2>
+
+        <p>De adressen die je machine kent, staan als tekstbestanden onder <code>/etc/apt/sources.list.d/</code>.
+            Eén bestand per repository, en één regel erin.</p>
+
+        <ol start="7">
+            <li>
+                <p>Maak zo'n bestand voor Spotify. Het bestaat nog niet, dus nano opent het leeg. Er staat
+                    <code>sudo</code> voor, want in <code>/etc</code> mag een gewone gebruiker niet schrijven.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo nano /etc/apt/sources.list.d/spotify.list</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Typ deze ene regel. Ze is lang, en ze moet op één regel blijven staan.</p>
+                <div class="terminal-window">
+                    <pre class="term-out">deb [signed-by=/etc/apt/keyrings/spotify.gpg] http://repository.spotify.com stable non-free</pre>
+                </div>
+                <p>Sla op met <kbd>CTRL</kbd> + <kbd>O</kbd> en sluit af met <kbd>CTRL</kbd> + <kbd>X</kbd>.</p>
+            </li>
+            <li>
+                <p>Kijk na wat je gemaakt hebt.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">cat /etc/apt/sources.list.d/spotify.list</span>
+                    </div>
+                    <pre class="term-out">deb [signed-by=/etc/apt/keyrings/spotify.gpg] http://repository.spotify.com stable non-free</pre>
+                </div>
+                <p>Dit is een repository op je machine: één regel tekst. Ze bestaat uit vier stukken.</p>
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered align-middle">
+                        <caption class="table-caption">De vier stukken van een APT-regel</caption>
+                        <thead class="table-header-custom">
+                            <tr>
+                                <th>Wat er staat</th>
+                                <th>Wat het is</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>deb</code></td>
+                                <td>Het gaat om kant-en-klare pakketten. <code>deb-src</code> zou broncode zijn</td>
+                            </tr>
+                            <tr>
+                                <td><code>[signed-by=...]</code></td>
+                                <td>De sleutel waarmee deze ene repository mag ondertekenen, en geen andere</td>
+                            </tr>
+                            <tr>
+                                <td><code>http://repository.spotify.com</code></td>
+                                <td>De server, en daarachter <code>stable</code>, de tak die je volgt</td>
+                            </tr>
+                            <tr>
+                                <td><code>non-free</code></td>
+                                <td>De afdeling waarin het pakket zit</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+        </ol>
+
+        <h2 id="installeren">Spotify installeren</h2>
+
+        <ol start="10">
+            <li>
+                <p>Haal de lijst met pakketten opnieuw op. De repository van Spotify staat er nu bij, en er komt
+                    geen melding over een handtekening.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo apt update</span>
+                    </div>
+                    <pre class="term-out">Hit:1 http://be.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://security.ubuntu.com/ubuntu focal-security InRelease
+<span class="highlight">Get:3 http://repository.spotify.com stable InRelease [3.499 B]</span>
+Reading package lists... Done</pre>
+                </div>
+                <div class="info-box small">
+                    <div class="info-title remark">Staat er wel een melding met het woord <code>signed</code> in</div>
+                    <p>Dan klopt er iets niet aan de sleutel of aan het pad ernaar. Kijk de spelling van het adres
+                        in stap 4 na en of het pad in de APT-regel letterlijk overeenkomt met het bestand dat je in
+                        stap 6 gezien hebt.</p>
+                </div>
+            </li>
+            <li>
+                <p>Installeer Spotify. Vanaf nu is het een pakket als alle andere, en
+                    <code>sudo apt upgrade</code> houdt het bij.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                        <span class="term-cmd">sudo apt install spotify-client</span>
+                    </div>
+                </div>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../../img/via-een-repository-image-9399714.png" class="img-fluid"
+                        alt="De downloadpagina van Spotify met het installatiecommando sudo apt-get update en sudo apt-get install spotify-client">
+                    <figcaption class="figure-caption">Dit commando staat op de bladzijde van Spotify zelf, en dat
+                        is er een dat je wel overneemt</figcaption>
+                </figure>
+            </li>
+            <li>
+                <p>Zoek Spotify op tussen je toepassingen en start het.</p>
+            </li>
+        </ol>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

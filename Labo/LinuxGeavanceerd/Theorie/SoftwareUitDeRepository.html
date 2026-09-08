@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software uit de repository</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Software uit de repository</h1>
+
+        <p>Op Windows haal je een programma op bij de maker, in de vorm van een <code>setup.exe</code> die je zelf
+            uitvoert. Ubuntu werkt omgekeerd: de programma's staan op een centrale server, en je machine haalt ze
+            daar zelf op zodra je zegt welk je wil. Die server heet een <strong>repository</strong>, en zolang je
+            software eruit komt, blijft ze bijgewerkt zonder dat je er iets voor doet.</p>
+
+        <h2 id="repository">Wat een repository is</h2>
+
+        <p>Een repository is een opslagplaats met duizenden kant-en-klare pakketten, beheerd door de mensen achter de
+            distributie. Zet iemand er een nieuwe versie van een programma in, dan wordt die beschikbaar voor
+            iedereen die op die repository aangesloten is. Je machine kent de adressen van de repositories waar ze
+            op aangesloten is, en houdt daarvan een lijst bij van wat er te krijgen is en in welke versie.</p>
+
+        <p>Wat in de repository van Ubuntu staat, is nagekeken en op elkaar afgestemd, en dat heeft een prijs: het
+            is meestal niet de allernieuwste versie. Dat is de afweging die je bij elke weg in dit labo terugziet,
+            stabiliteit tegenover versheid.</p>
+
+        <h2 id="dependency">Dependencies</h2>
+
+        <p>Bijna geen programma staat op zichzelf. Het gebruikt bibliotheken die andere programma's ook gebruiken:
+            code om een venster te tekenen, om een netwerkverbinding op te zetten, om een afbeelding te lezen. Die
+            andere pakketten heten de <strong>dependencies</strong> van een programma.</p>
+
+        <p>Het stuk software dat de pakketten van een repository beheert, heet een <strong>package manager</strong>,
+            en zijn belangrijkste taak is precies die: uitzoeken wat een pakket nog nodig heeft en dat er meteen
+            bijhalen. Vraag je één programma, dan installeert hij er stilzwijgend vijf, en bij een update werkt hij
+            ze alle vijf bij.</p>
+
+        <h2 id="softwarecenter">Software Center</h2>
+
+        <p>Het Ubuntu Software Center is de winkel met vensters: je zoekt op naam, je klikt op Install, en de rest
+            gebeurt vanzelf. Achter dat venster zit dezelfde repository als achter de commando's hieronder, dus wat
+            je hier installeert, wordt ook automatisch bijgewerkt.</p>
+
+        <p>Niet alles staat erin. Grote leveranciers zetten hun software in de repository van Ubuntu, kleine vaak
+            niet, en dan heb je een van de wegen van de volgende pagina nodig.</p>
+
+        <h2 id="apt">apt</h2>
+
+        <p><code>apt</code> is de package manager van Debian, en dus ook van Ubuntu. De naam staat voor
+            <em>Advanced Packaging Tool</em>. Je gebruikt hem met twee commando's.</p>
+
+        <div class="terminal-window">
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                <span class="term-cmd">sudo apt update</span>
+            </div>
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                <span class="term-cmd">sudo apt install ssh</span>
+            </div>
+            <pre class="term-out">Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  ncurses-term openssh-server openssh-sftp-server ssh-import-id
+Suggested packages:
+  molly-guard monkeysphere rssh ssh-askpass
+The following NEW packages will be installed:
+  ncurses-term openssh-server openssh-sftp-server ssh ssh-import-id
+0 upgraded, 5 newly installed, 0 to remove and 8 not upgraded.
+Need to get 642 kB of archives.
+After this operation, 5.422 kB of additional disk space will be used.
+Do you want to continue? [Y/n]</pre>
+        </div>
+
+        <p><code>update</code> haalt de lijst op van wat er in de repositories te krijgen is; het installeert nog
+            niets. <code>install</code> haalt daarna het pakket zelf, en je ziet in de uitvoer meteen wat een
+            dependency doet: je vroeg <code>ssh</code> en er komen er vijf.</p>
+
+        <div class="info-box">
+            <div class="info-title tip">De hoofdletter in <code>[Y/n]</code> is het standaardantwoord</div>
+            <p>Bij <em>Do you want to continue?</em> hoef je alleen op <kbd>ENTER</kbd> te drukken. De
+                <code>Y</code> staat in hoofdletters en dat is wat er gebeurt als je niets typt. Wil je toch
+                antwoorden, dan typ je <code>y</code> gevolgd door <kbd>ENTER</kbd>.</p>
+        </div>
+
+        <h2 id="snap">snap</h2>
+
+        <p>Een snap is een pakket dat alles wat het nodig heeft zelf meebrengt, in plaats van het bij dependencies
+            op je machine te zoeken. Het is daarom groter, en het staat los van de versie van je distributie: waar
+            een pakket uit de gewone repository vaak pas bij een nieuwe Ubuntu vernieuwt, komt een snap bij zodra de
+            maker een nieuwe versie uitbrengt.</p>
+
+        <p>De makers van VLC raden hun snap om precies die reden aan. Het commando lijkt op dat van
+            <code>apt</code>.</p>
+
+        <div class="terminal-window">
+            <div class="term-line">
+                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                <span class="term-cmd">sudo snap install vlc</span>
+            </div>
+        </div>
+
+        <h2 id="eigen">Een repository van de leverancier</h2>
+
+        <p>Staat een programma in geen van de drie, dan heeft de leverancier soms een eigen repository. Je zet het
+            adres ervan bij de adressen die je machine al kent, en vanaf dan gedraagt zijn software zich als alle
+            andere: <code>apt</code> vindt ze en houdt ze bij.</p>
+
+        <p>De adressen die je machine kent, staan als tekstbestanden onder
+            <code>/etc/apt/sources.list.d/</code>, één bestand per repository. Zo'n regel heet een APT-regel en
+            ziet er zo uit:</p>
+
+        <div class="terminal-window">
+            <pre class="term-out">deb [signed-by=/etc/apt/keyrings/spotify.gpg] http://repository.spotify.com stable non-free</pre>
+        </div>
+
+        <p>Het woord <code>deb</code> zegt dat het om kant-en-klare pakketten gaat, tussen de haken staat de
+            sleutel, daarna komt de server, dan de tak die je volgt, en tot slot de afdeling waarin het pakket
+            zit.</p>
+
+        <h3 id="sleutel">Waarom er een sleutel bij hoort</h3>
+
+        <p>Elk pakket in een repository is digitaal ondertekend, en je machine controleert die handtekening voor ze
+            iets installeert. Zo weet ze dat het pakket van de leverancier komt en onderweg niet gewijzigd is. De
+            handtekeningen van Ubuntu staan er van bij de installatie in; die van een repository die je zelf
+            toevoegt niet, dus die haal je op bij de leverancier en zet je erbij.</p>
+
+        <p>Zo'n sleutel komt in een eigen bestand onder <code>/etc/apt/keyrings/</code>, en het stuk
+            <code>signed-by</code> in de APT-regel bindt haar aan die ene repository. Daardoor mag de sleutel van
+            Spotify alleen de pakketten van Spotify ondertekenen. Er bestond vroeger een commando
+            <code>apt-key</code> dat elke sleutel op één hoop zette, waardoor elke repository voor elke andere kon
+            tekenen; Ubuntu heeft dat afgevoerd, en je komt het nog tegen op bladzijden van leveranciers die hun
+            instructies niet bijgewerkt hebben.</p>
+
+        <p>Ontbreekt de sleutel, dan weigert <code>apt update</code> die repository, met een melding waarin het
+            woord <em>signed</em> valt. Het is geen netwerkfout en niet iets wat je met opnieuw proberen oplost.</p>
+
+        <h2 id="uptodate">Je systeem up to date houden</h2>
+
+        <p>Bijwerken doe je met twee commando's, of met de Software Updater die af en toe uit zichzelf verschijnt.
+            <code>sudo apt update</code> haalt eerst de lijst op, en <code>sudo apt upgrade</code> installeert
+            daarna van elk pakket de nieuwere versie.</p>
+
+        <p>Dat werkt alleen voor wat je uit een repository gehaald hebt. Software die je op een andere manier
+            geïnstalleerd hebt, staat in geen enkele lijst en wordt dus ook niet bijgewerkt. Dat is de reden waarom
+            de volgorde van dit labo de volgorde is waarin je de vijf wegen probeert.</p>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

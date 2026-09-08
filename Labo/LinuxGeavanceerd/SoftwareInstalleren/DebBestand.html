@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Een .deb bestand installeren</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Een .deb bestand installeren</h1>
+
+        <p>Google Chrome staat in geen enkele repository die je machine kent, maar Google levert wel een
+            <code>.deb</code> bestand. Je downloadt het zelf en je installeert het met <code>dpkg</code>. Onderweg
+            loop je tegen een dependency aan, en dat is de bedoeling: het is precies wat <code>apt</code> op de
+            vorige pagina's voor je deed.</p>
+
+        <h2 id="downloaden">Het pakket downloaden</h2>
+
+        <ol>
+            <li>
+                <p>Surf vanaf je Ubuntu-machine naar <code>google.be</code> en zoek de downloadpagina van Chrome.
+                    Kies <strong>64 bit .deb (voor Debian/Ubuntu)</strong>.</p>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../../img/via-een-deb-bestand-image-9399725.png" class="img-fluid"
+                        alt="De downloadpagina van Chrome voor Linux met twee keuzerondjes, waarvan 64 bit punt deb voor Debian en Ubuntu aangeduid staat">
+                    <figcaption class="figure-caption">De keuze tussen <code>.deb</code> en <code>.rpm</code> is de
+                        keuze tussen twee families van distributies</figcaption>
+                </figure>
+            </li>
+            <li>
+                <p>Firefox vraagt wat het met het bestand moet doen. Kies <strong>Save File</strong>, zodat het in
+                    je map <strong>Downloads</strong> terechtkomt in plaats van meteen in de winkel te openen.</p>
+                <figure class="figure-zoom" style="max-width: 480px">
+                    <img src="../../../img/via-een-deb-bestand-image-9399726.png" class="img-fluid"
+                        alt="Het venster van Firefox voor google-chrome-stable underscore current underscore amd64 punt deb, met Save File aangeduid">
+                </figure>
+            </li>
+            <li>
+                <p>Open je map <strong>Downloads</strong> in Files, klik met de rechtermuisknop op een lege plek en
+                    kies <strong>Open in Terminal</strong>. Zo start je terminal meteen in de goede map.</p>
+                <figure class="figure-zoom" style="max-width: 560px">
+                    <img src="../../../img/via-een-deb-bestand-image-9399727.png" class="img-fluid"
+                        alt="De map Downloads in Files met het rechtermuisknopmenu open en de keuze Open in Terminal">
+                </figure>
+            </li>
+        </ol>
+
+        <h2 id="installeren">Installeren met dpkg</h2>
+
+        <ol start="4">
+            <li>
+                <p>Installeer het pakket. De <code>-i</code> staat voor <em>install</em>.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Downloads$</span>
+                        <span class="term-cmd">sudo dpkg -i google-chrome-stable_current_amd64.deb</span>
+                    </div>
+                </div>
+                <div class="info-box small">
+                    <div class="info-title tip">Typ de naam niet uit</div>
+                    <p>Typ <code>go</code> en druk op <kbd>TAB</kbd>. De rest van de naam wordt aangevuld, en zo
+                        maak je ook geen tikfout in het versienummer.</p>
+                </div>
+            </li>
+            <li>
+                <p>De kans is groot dat het misloopt, en dan lees je in de uitvoer waarom.</p>
+                <div class="terminal-window">
+                    <pre class="term-out">Selecting previously unselected package google-chrome-stable.
+(Reading database ... 210304 files and directories currently installed.)
+Preparing to unpack google-chrome-stable_current_amd64.deb ...
+Unpacking google-chrome-stable (61.0.3163.91-1) ...
+<span class="highlight">dpkg: dependency problems prevent configuration of google-chrome-stable:</span>
+<span class="highlight"> google-chrome-stable depends on libappindicator1; however:</span>
+<span class="highlight">  Package libappindicator1 is not installed.</span>
+
+dpkg: error processing package google-chrome-stable (--install):
+ dependency problems - leaving unconfigured
+Errors were encountered while processing:
+ google-chrome-stable</pre>
+                </div>
+                <p>Chrome heeft een bibliotheek nodig die niet op je machine staat. <code>dpkg</code> pakt één
+                    pakket uit en gaat niets bijhalen, dus hij zet Chrome half geïnstalleerd neer en stopt.</p>
+            </li>
+            <li>
+                <p>Laat <code>apt</code> het afmaken. De optie <code>-f</code> staat voor <em>fix broken</em>: zoek
+                    uit wat er halverwege blijven steken is, haal wat ontbreekt en installeer verder.</p>
+                <div class="terminal-window">
+                    <div class="term-line">
+                        <span class="term-prompt">elm@elm-VirtualBox:~/Downloads$</span>
+                        <span class="term-cmd">sudo apt-get install -f</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Zoek Chrome op tussen je toepassingen en start het.</p>
+                <figure class="figure-zoom" style="max-width: 620px">
+                    <img src="../../../img/via-een-deb-bestand-image-9399731.png" class="img-fluid"
+                        alt="Het zoekvenster van Ubuntu met chrome ingetypt en Google Chrome als resultaat">
+                </figure>
+            </li>
+        </ol>
+
+        <div class="info-box">
+            <div class="info-title remark">Chrome doet zichzelf wat je op de vorige pagina met de hand deed</div>
+            <p>Op de downloadpagina van Google staat het onderaan: bij de installatie wordt de repository van Google
+                aan je machine toegevoegd, zodat Chrome vanaf dan wel automatisch bijgewerkt wordt. Dat is
+                uitzonderlijk voor een <code>.deb</code>, en het is de reden waarom Chrome hier wel bij blijft en
+                de programma's van de volgende twee pagina's niet.</p>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>

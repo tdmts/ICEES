@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiekblad</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Spiekblad</h1>
+
+        <p>Elk commando van dit labo, de rechtennotatie en de vijf wegen om software te installeren, in vier
+            tabellen. Houd deze pagina open in een tweede venster terwijl je in de terminal werkt.</p>
+
+        <h2 id="gebruikers">Gebruikers en groepen</h2>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De commando's voor gebruikers, groepen en rechten</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Commando</th>
+                        <th>Wat het doet</th>
+                        <th>Zoals je het hier gebruikt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>adduser</code></td>
+                        <td>Maakt een gebruiker, een groep met dezelfde naam en een map onder <code>/home</code></td>
+                        <td><code>sudo adduser labopartner1</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>deluser</code></td>
+                        <td>Wist een gebruiker, of haalt hem uit een groep</td>
+                        <td><code>sudo deluser --remove-home labopartner3</code><br>
+                            <code>sudo deluser labopartner2 sudo</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>passwd</code></td>
+                        <td>Wijzigt een wachtwoord</td>
+                        <td><code>passwd</code> voor jezelf<br><code>sudo passwd rechten2</code> voor iemand
+                            anders</td>
+                    </tr>
+                    <tr>
+                        <td><code>su</code></td>
+                        <td>Switch user: gaat in dezelfde terminal verder als een andere gebruiker</td>
+                        <td><code>su labopartner1</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>exit</code></td>
+                        <td>Keert terug naar de gebruiker van voor de <code>su</code></td>
+                        <td><code>exit</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>sudo</code></td>
+                        <td>Voert dit ene commando uit met de rechten van root</td>
+                        <td><code>sudo apt update</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>groupadd</code></td>
+                        <td>Maakt een groep zonder leden</td>
+                        <td><code>sudo groupadd labopartners</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>usermod</code></td>
+                        <td>Zet een gebruiker in een groep erbij</td>
+                        <td><code>sudo usermod -aG sudo labopartner1</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>members</code></td>
+                        <td>Toont wie in een groep zit. Installeer het eerst met <code>apt</code></td>
+                        <td><code>members sudo</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>ls -alh</code></td>
+                        <td>Toont per naam de rechten, de owner, de group, de grootte en de datum</td>
+                        <td><code>ls -alh /home</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>chmod</code></td>
+                        <td>Zet de negen rechten</td>
+                        <td><code>chmod 600 tekst.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>chown</code></td>
+                        <td>Zet de owner</td>
+                        <td><code>sudo chown rechten2 tekst.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>chgrp</code></td>
+                        <td>Zet de group</td>
+                        <td><code>sudo chgrp rechten tekst.txt</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="rechten">De rechten van een bestand</h2>
+
+        <p>De eerste tien tekens van een regel van <code>ls -l</code> zijn het soort en daarna drie groepjes van
+            drie. Een streepje betekent dat het recht op die plaats niet gegeven is.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De tien posities</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Positie</th>
+                        <th>1</th>
+                        <th>2 3 4</th>
+                        <th>5 6 7</th>
+                        <th>8 9 10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Voor wie</td>
+                        <td>Soort</td>
+                        <td>owner</td>
+                        <td>group</td>
+                        <td>other</td>
+                    </tr>
+                    <tr>
+                        <td>Voorbeeld</td>
+                        <td><code>d</code></td>
+                        <td><code>rwx</code></td>
+                        <td><code>r-x</code></td>
+                        <td><code>r-x</code></td>
+                    </tr>
+                    <tr>
+                        <td>In cijfers</td>
+                        <td></td>
+                        <td><code>7</code></td>
+                        <td><code>5</code></td>
+                        <td><code>5</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Elk groepje als cijfer: r weegt 4, w weegt 2 en x weegt 1</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Cijfer</th>
+                        <th><code>0</code></th>
+                        <th><code>1</code></th>
+                        <th><code>2</code></th>
+                        <th><code>3</code></th>
+                        <th><code>4</code></th>
+                        <th><code>5</code></th>
+                        <th><code>6</code></th>
+                        <th><code>7</code></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Letters</td>
+                        <td><code>---</code></td>
+                        <td><code>--x</code></td>
+                        <td><code>-w-</code></td>
+                        <td><code>-wx</code></td>
+                        <td><code>r--</code></td>
+                        <td><code>r-x</code></td>
+                        <td><code>rw-</code></td>
+                        <td><code>rwx</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Combinaties die je vaak nodig hebt</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Cijfers</th>
+                        <th>Letters</th>
+                        <th>Wie mag wat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>600</code></td>
+                        <td><code>rw-------</code></td>
+                        <td>Alleen de owner leest en schrijft</td>
+                    </tr>
+                    <tr>
+                        <td><code>640</code></td>
+                        <td><code>rw-r-----</code></td>
+                        <td>De owner leest en schrijft, de group leest mee, other niets</td>
+                    </tr>
+                    <tr>
+                        <td><code>644</code></td>
+                        <td><code>rw-r--r--</code></td>
+                        <td>De owner leest en schrijft, iedereen leest mee</td>
+                    </tr>
+                    <tr>
+                        <td><code>700</code></td>
+                        <td><code>rwx------</code></td>
+                        <td>Alleen de owner, en hij mag het uitvoeren</td>
+                    </tr>
+                    <tr>
+                        <td><code>755</code></td>
+                        <td><code>rwxr-xr-x</code></td>
+                        <td>De owner mag alles, de rest lezen en uitvoeren</td>
+                    </tr>
+                    <tr>
+                        <td><code>000</code></td>
+                        <td><code>---------</code></td>
+                        <td>Niemand, behalve root</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="software">Software installeren</h2>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">De vijf wegen, in de volgorde waarin je ze probeert</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Weg</th>
+                        <th>Commando</th>
+                        <th>Blijft bijgewerkt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Software Center</td>
+                        <td>Met vensters, geen commando</td>
+                        <td>Ja</td>
+                    </tr>
+                    <tr>
+                        <td><code>apt</code></td>
+                        <td><code>sudo apt update</code><br><code>sudo apt install ssh</code></td>
+                        <td>Ja</td>
+                    </tr>
+                    <tr>
+                        <td><code>snap</code></td>
+                        <td><code>sudo snap install vlc</code></td>
+                        <td>Ja, en sneller dan <code>apt</code></td>
+                    </tr>
+                    <tr>
+                        <td>Repository van de leverancier</td>
+                        <td>De sleutel in <code>/etc/apt/keyrings/</code> en de APT-regel in
+                            <code>/etc/apt/sources.list.d/</code>, daarna <code>sudo apt install</code></td>
+                        <td>Ja, na het toevoegen</td>
+                    </tr>
+                    <tr>
+                        <td><code>.deb</code> bestand</td>
+                        <td><code>sudo dpkg -i pakket.deb</code><br><code>sudo apt-get install -f</code></td>
+                        <td>Nee</td>
+                    </tr>
+                    <tr>
+                        <td>Installer script</td>
+                        <td><code>tar -xf archief.tar.xz</code><br><code>sudo ./install.sh</code></td>
+                        <td>Nee</td>
+                    </tr>
+                    <tr>
+                        <td>Broncode</td>
+                        <td><code>tar xvzf archief.tar.gz</code><br><code>sudo make</code><br>
+                            <code>sudo make install</code></td>
+                        <td>Nee</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Bijwerken, uitpakken en containers</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Commando</th>
+                        <th>Wat het doet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>sudo apt update</code></td>
+                        <td>Haalt de lijst op van wat er in de repositories staat</td>
+                    </tr>
+                    <tr>
+                        <td><code>sudo apt upgrade</code></td>
+                        <td>Installeert van elk pakket de nieuwere versie</td>
+                    </tr>
+                    <tr>
+                        <td><code>tar xvzf</code></td>
+                        <td>Pakt een <code>.tar.gz</code> uit</td>
+                    </tr>
+                    <tr>
+                        <td><code>tar -xf</code></td>
+                        <td>Pakt een <code>.tar.xz</code> uit</td>
+                    </tr>
+                    <tr>
+                        <td><code>sudo docker pull httpd</code></td>
+                        <td>Haalt een image van Docker Hub</td>
+                    </tr>
+                    <tr>
+                        <td><code>sudo docker build -t my-apache2 .</code></td>
+                        <td>Maakt een image uit de Dockerfile in deze map</td>
+                    </tr>
+                    <tr>
+                        <td><code>sudo docker run -dit --name app -p 8080:80 my-apache2</code></td>
+                        <td>Start een container en koppelt poort 8080 aan poort 80 erin</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../../../reference.js"></script>
+    <script src="../../../back-link.js"></script>
+</body>
+
+</html>
