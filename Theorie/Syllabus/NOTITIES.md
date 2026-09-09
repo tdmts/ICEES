@@ -4838,6 +4838,27 @@ toe. Patroon 17: de twee tracks zeggen hetzelfde twee keer en er linkt niets tus
   en wordt in 12.2 gebruikt. Het woord Moore valt hier niet, en dat is gelaten zoals het
   is.
 
+### 7. Een zin bijgeschreven over het woord chipset, op 9 september 2026
+
+Dit hoofdstuk stond niet fout maar onvolledig. 14.2 geeft de definitie in de tegenwoordige
+tijd ("In moederborden gemaakt voor 2011 bestaat de chipset uit een northbridge en een
+south bridge") en werkt ze daarna nooit bij, en 14.6 zegt hetzelfde in de verleden tijd
+zonder te zeggen wat het woord vandaag dekt. De student leest intussen op elke
+productpagina over de chipset van een modern bord.
+
+Er staat nu op `WatIsEenChipset.html`, vlak na de alinea over de moderne computer, dat het
+woord gebleven is, dat de verzameling ondersteunende chips voor 2011 twee leden telde en
+vandaag nog een, en dat het over die ene PCH gaat. **Die plaats is gekozen boven
+`PlatformControllerHubPch.html`**, want de pagina die "Wat is een chipset?" heet, hoort
+het antwoord volledig te geven, en ze komt in de leesvolgorde eerst; de PCH-pagina gaat
+over de chip en niet over het woord.
+
+**Er staan bewust geen productnamen in**, geen Z170 en geen X570, want die komen in geen
+enkele pagina van deze repo voor en de hertekende figuur van hoofdstuk 15 zet ze er ook
+niet op. Het is bijgeschreven tekst, dus een herimport van hoofdstuk 14 gooit ze weg, en
+ze is een alinea van twee zinnen lang: op 160mm zijn dat ongeveer twee gedrukte regels
+plus de ruimte tussen twee alinea's.
+
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
 De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
@@ -4898,7 +4919,7 @@ vier `alt`-teksten zijn met de hand geschreven na het openen van elk bestand, en
 bewust geen `figcaption` bij gezet, zoals hoofdstuk 14 dat ook niet doet. Een herimport
 gooit ze weg.
 
-### 1. Vier correcties en een hernoeming, alle vijf gemeld voor ze doorgevoerd werden
+### 1. Zeven correcties en een hernoeming, alle acht gemeld voor ze doorgevoerd werden
 
 Geen ervan overleeft een herimport van dit hoofdstuk.
 
@@ -4909,6 +4930,9 @@ Geen ervan overleeft een herimport van dit hoofdstuk.
 | 15.1, vijfde alinea | "In een industriële computer ga je geen externe grafische kaart aantreffen" | "ga je zelden een externe grafische kaart aantreffen", zie beslissing 3 |
 | 15.2, laatste alinea | "moeten niet langs de Process Control Hub langs" | "en moeten niet langs de Platform Controller Hub (PCH)" |
 | Figuur 15.2 | een resolutievergelijking met DCI 4K, 4K UHD, DCI 2K, 1080p, 720p, DVD en VCD | 720p, 1080p, 4K en 8K, zie beslissing 4 |
+| Kernpunt 1 | "De grafische kaart ingebouwd in de Accelerated Processing Unit van de processor" | "De grafische kern die in de processor zelf zit", zie beslissing 6 |
+| Studievraag 2 | "In welk onderdeel van de computer zit de ingebouwde grafische kaart precies?" | "Waar zit de ingebouwde grafische kaart precies?", zie beslissing 6 |
+| Het kader en 15.2 | "4k" en "8k" met een kleine k | "4K" en "8K", zie beslissing 7 |
 
 De DVI-correctie staat in een kader, en dat mag: de regel is dat de inhoud juist moet
 zijn en niet waar de zin staat. Ze weegt hier bovendien zwaar, want studievraag 5 vraagt
@@ -4965,20 +4989,27 @@ Het tekenwerk zelf is van een andere sessie; wat hier staat is de reden. De `alt
 figuur beschrijft nog het origineel en hoort mee herschreven te worden zodra de
 hertekening erin staat.
 
-### 5. Wat er nog openstaat
+### 5. Drie zinnen bijgeschreven om de twee figuren van 15.2 binnen te halen
 
-- **Hoeveel detail van het Z170-blokschema meegaat, is nog niet beslist.** Die figuur
-  (`-03`) draagt twee handgeschreven annotaties van de lector en is het enige beeld dat
-  de laatste alinea van 15.2 illustreert. Ze wordt hertekend, maar wat eraf mag hangt van
-  de lopende tekst af en ligt bij de lector.
-- **Kernpunt 1 en studievraag 2 zetten de APU neer als het onderdeel waar de ingebouwde
-  grafische kaart in zit**, en dat botst met 14.5 zoals dat op 9 september rechtgezet is.
-  Zie hieronder; niet aangeraakt in afwachting van de lector.
-- **De schrijfwijze 4k en 8k met een kleine k** staat in het kader en in 15.2, terwijl de
-  hertekende figuur ernaast 4K en 8K zal dragen. Zo drukt dezelfde bladzijde de naam op
-  twee manieren. Voorgelegd, niet aangeraakt.
+15.2 eindigde op een alinea van twee zinnen waar twee figuren van samen 248mm onder
+hingen, en geen van beide werd in de tekst genoemd. Dat leest als een bijlage. Beslist op
+9 september 2026: er komen drie zinnen bij die zeggen wat het blokschema toont, dat de
+grafische kaart met een x16 slot rechtstreeks aan de processor zit terwijl de trage
+apparaten aan de PCH hangen, dat de grafische kern van 15.1 in diezelfde processor zit,
+en dat het aangeduide slot op de foto eronder dat x16 slot is.
 
-### 6. De APU in kernpunt 1, en waarom die niet stil rechtgezet is
+**Die zinnen beschrijven de figuur zoals ze WORDT en niet zoals ze uit de Word kwam.** Het
+Z170-blokschema van Intel wordt hertekend tot een schema zonder merknamen, met de vijf
+aansluitingen die 14.6 al opsomt aan de PCH, en met "eigen verbinding" op de pijl tussen
+processor en PCH. **De naam DMI staat er bewust niet op**, om dezelfde reden waarom
+hoofdstuk 14 de System Agent niet invoert: een term die de student daarna nergens meer
+tegenkomt, kost meer dan ze opbrengt. Er is ook geen enkele nieuwe term ingevoerd; `x16
+slot` staat al in 11.9 en `eigen verbinding` in 14.6.
+
+**Dit is bijgeschreven tekst en ze staat alleen in de HTML**, dus een herimport gooit ze
+weg.
+
+### 6. De APU in kernpunt 1, gemeld en daarna rechtgezet
 
 Kernpunt 1 schrijft "De grafische kaart ingebouwd in de Accelerated Processing Unit van
 de processor is waar je het vaak mee moet doen", en studievraag 2 vraagt "In welk
@@ -4996,8 +5027,33 @@ Het hoofdstuk spreekt zichzelf hierin bovendien tegen: de Z170-figuur van 15.2 t
 Intel-processor met "Intel HD Graphics 530" erin, dus het kader generaliseert een
 merknaam die op de figuur van datzelfde hoofdstuk niet voorkomt.
 
-**Niet aangeraakt**, want het is inhoud en die wordt gemeld voor ze doorgevoerd wordt, en
-het raakt twee zinnen in een kader plus een studievraag. Ligt bij de lector.
+**Gemeld en daarna rechtgezet**, op 9 september 2026 door de lector goedgekeurd.
+Kernpunt 1 heet nu "De grafische kern die in de processor zelf zit is waar je het vaak mee
+moet doen" en studievraag 2 "Waar zit de ingebouwde grafische kaart precies?". Het woord
+APU komt in dit hoofdstuk dus niet meer voor, en dat is juist: wie het wil, vindt het in
+14.5, waar het uitgelegd staat als wat AMD zijn processoren noemt.
+
+**Dat het in een kader stond, was geen reden om het te laten staan.** De regel is dat de
+inhoud juist moet zijn en niet waar de zin staat, en hier stond dezelfde bewering in een
+kader en in een studievraag.
+
+### 7. 4K en 8K met een hoofdletter, in de hele syllabus
+
+De Word schrijft "4k, 8k" in het kader en "4k schermen" in 15.2, en
+`HardeSchijf/PciExpressPcie.html` schrijft "4k schermen die aangestuurd moeten worden".
+Dat zijn de enige drie plaatsen in de hele syllabus, en ze staan er alle drie nu met een
+hoofdletter.
+
+De aanleiding is dat de hertekende resolutiefiguur 4K en 8K draagt: laat je het kader
+staan, dan drukt dezelfde bladzijde de naam op twee manieren. **Dat is dezelfde redenering
+als bij een productnaam**, waar hoofdstuk 4 en 7 samen Windows 11 kregen en waar het kader
+wel meeging: bij een naam staat overal hetzelfde feit, dus overal dezelfde vorm. Het
+verschil met een tegenspraak binnen de tekst, waar het kader juist letterlijk blijft, is
+dat er hier niets tegengesproken wordt.
+
+**De derde plaats staat in hoofdstuk 11 en is dus een reeds gedrukt hoofdstuk.** Een
+hoofdletter meer verandert de regelval niet, maar het is wel een wijziging buiten dit
+hoofdstuk en ze staat daarom hier.
 
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
