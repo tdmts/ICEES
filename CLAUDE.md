@@ -1099,7 +1099,7 @@ beschadigd is, en dat een container een ander besturingssysteem kan draaien.
 herschreven. En de drie leads van de opdrachten zijn uitdrukkelijk uit elkaar geschreven, want regel
 12 valt over zeven opeenvolgende gedeelde woorden en dit labo heeft vijf leads.
 
-## De syllabus, hoofdstuk 1 tot 14 ingevoerd 7, 8 en 9 september 2026
+## De syllabus, hoofdstuk 1 tot 16 ingevoerd 7, 8 en 9 september 2026
 
 De theorietrack bestond hier nog niet: `Theorie/Syllabus/` was leeg en het manifest kende geen
 module `syllabus`. Wat er bij dit eerste hoofdstuk aan infrastructuur bij gekomen is, hoort erbij en
@@ -1529,9 +1529,34 @@ en de tabel is daarom weg in plaats van leeg. Van alles wat erop gestaan heeft i
 rij afgevoerd zonder hertekening**, de vergelijkingstabel van 9.4, die er nooit op had mogen staan en
 hierboven haar eigen alinea heeft; al de rest is hertekend. **De regels erboven blijven wel gelden**,
 want ze zeggen HOE er hertekend wordt en niet WAT er nog ligt: elke tekening die nog binnenkomt gaat
-langs dezelfde molen. **En er ligt nog werk**: hoofdstuk 15 draagt twee tekeningen en die kunnen pas
-na de import van dat hoofdstuk. Zet ze hier weer als een lijst neer zodra er meer dan een handvol
-openstaat; voor twee is een zin genoeg.
+langs dezelfde molen. **Er ligt nu niets meer open**: hoofdstuk 15 en 16 zijn op 9 september 2026
+ingevoerd en hun vijf tekeningen zijn diezelfde dag afgewerkt, dus de syllabus telt zestien
+hoofdstukken en van geen enkel hoofdstuk wacht er nog een figuur. Zet ze hier weer als een lijst
+neer zodra er meer dan een handvol openstaat; voor een paar is een zin genoeg.
+
+**Twee maten die uit die laatste ronde komen en die je kan NAREKENEN in plaats van beoordelen.**
+Allebei zijn ze bedoeld om een smaakdiscussie te vervangen door een som, en allebei gelden ze voor
+elke volgende tekening.
+
+- **Is de HOOGTE de beperking en niet de breedte, dan is de viewBox-hoogte de enige knop.** De
+  breedteregel `breedte_mm = 2,5 x W / f` geeft samen met een uniforme schaal `hoogte_mm = 2,5 x
+  H / f`: de W valt weg. Daaruit volgt de bruikbare vorm, **een tekening mag ten hoogste 38
+  labelhoogtes hoog zijn** als ze in 95mm moet passen (95 gedeeld door 2,5). Die vorm is
+  eenheidsloos, en dat is het punt: de px-maat van het lettertype heeft geen papier eraan, dus f
+  verkleinen levert NIETS op, want de breedteregel schaalt de hele figuur mee. Wie dat probeert,
+  maakt de figuur hoger in plaats van lager. De echte knoppen zijn de rijhoogte uitgedrukt in
+  labelhoogtes, of bewust onder de 2,5mm drukken, en dat laatste meld je.
+- **Een accentkleur in een tekening waar kleur een GEGEVEN is, toets je op haar helderheid en niet
+  op haar schoonheid.** Ze moet buiten het bereik van de gegevens vallen, anders leest ze als een
+  extra gegeven. Bij de ATX-connector van 16.2 zit het bandje op 0,84 en elke pinkleur tussen 0,33
+  en 0,42, dus het kan geen elfde draadkleur lijken.
+
+**Het gedempte palet is bij die ronde op negen kleuren compleet gekomen.** De afspraak "neem de
+waarden die er al zijn" liep vast toen de ATX-connector negen draadkleuren nodig had en `img/` er
+zeven droeg: `#9e2f26` rood, `#2a4d7c` blauw, `#222222` zwart, `#9bb0ac` grijs, `#3f7238` groen,
+`#b8951f` geel en wit. Oranje en paars zijn toen AFGELEID en niet verzonnen, met de hue van de
+draad en de verzadiging en helderheid uit het bereik waarin de zeven al lagen: `#9e622e` en
+`#6f358d`. Neem die twee over in plaats van opnieuw af te leiden.
 
 **De vijf RAID-tekeningen zijn op 9 september 2026 in een keer afgewerkt**, en dat was de reden dat
 ze als een rij op deze lijst stonden: ze kwamen uit drie bronnen in drie stijlen, en precies daar
