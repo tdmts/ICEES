@@ -3557,7 +3557,7 @@ de gedachtegang die er al staat en krijgen dus geen eigen kop, zoals bij 1, 5, 6
   andere instructieset te draaien."
 
 **Vraag 5 en 6 zijn het bijzondere geval, want ze leunden VOORUIT en niet op
-niets.** Hoofdstuk 14, Random Access Memory, beantwoordt ze allebei woordelijk: het
+niets.** Hoofdstuk 13, Random Access Memory, beantwoordt ze allebei woordelijk: het
 zegt daar "De aandachtige lezer zal opmerken dat de processor registers dan ook 64
 bit breed zijn in plaats van 32 bit" en "Het maximum operand adres is bepalend voor
 het aantal bits dat opgeslagen kan worden in het werkgeheugen". De theorietrack loopt
@@ -3566,12 +3566,12 @@ in volgorde, dus wie hoofdstuk 12 leest heeft 14 nog niet gehad, en de zelftest 
 dingen en niet meer: hij geeft het antwoord en verwijst door, in dezelfde richting
 als de zin over de performance gap die er al stond.
 
-**De twee getallen zijn met opzet 2^32 en 2^64 en geen bytes.** Hoofdstuk 14
+**De twee getallen zijn met opzet 2^32 en 2^64 en geen bytes.** Hoofdstuk 13
 schrijft daar "4 GB" en "16 exabytes", en dat zijn machten van twee met een
 kilo-etiket, dus het geval waar hoofdstuk 10 en 11 een KiB van maken. Zolang
-hoofdstuk 14 er niet staat, is die keuze niet te maken zonder de twee hoofdstukken
+hoofdstuk 13 er niet staat, is die keuze niet te maken zonder de twee hoofdstukken
 tegen elkaar te zetten; een aantal adressen is exact en ontloopt de vraag. **Reken
-dat na wanneer hoofdstuk 14 ingevoerd wordt**, en trek de twee dan samen recht.
+dat na wanneer hoofdstuk 13 ingevoerd wordt**, en trek de twee dan samen recht.
 `Theorie/Bestandssystemen/Formatteren.html` schrijft zo'n macht al als `2^8`, dus de
 notatie is die van de syllabus zelf en niet nieuw.
 
@@ -3786,7 +3786,7 @@ aan geen enkele labopagina iets veranderd.**
 - **Hoofdstuk 7, Besturingssystemen. Geen tegenspraak.** 7.3 Procesbeheer gaat over
   wie beslist welk proces de processor krijgt, 12.2 over hoeveel kernen er zijn om aan
   toe te wijzen. Twee helften.
-- **Hoofdstuk 14, Random Access Memory. Nog niet ingevoerd, en het draagt twee dingen
+- **Hoofdstuk 13, Random Access Memory. Nog niet ingevoerd, en het draagt twee dingen
   die met dit hoofdstuk moeten kloppen.** De registerbreedte en de adresgrens, zie
   beslissing 2, en de kilo/kibi-vraag die daarbij hoort.
 

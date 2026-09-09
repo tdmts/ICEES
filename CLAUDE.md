@@ -1523,8 +1523,15 @@ ziet, dus het bestand wordt niet eens geschreven, en bij een Heading 3 wordt het
 niet geplaatst, waarna regel 16 over het weesbestand valt. En een afbeelding die in een TABELCEL
 zit verdwijnt zodra `lege_kolommen()` die tabel als invulruimte leest. In hoofdstuk 11 kostte dat de
 QR-code naast de kop van 11.4 en de drie tekeningen waar vraag 5 naar verwijst, en die vraag was
-daarmee onbeantwoordbaar. **De importer is niet aangepast**, dus tel na elke import de `a:blip` in
-het hoofdstuk tegen wat er in `img/` staat.
+daarmee onbeantwoordbaar. **De importer is niet aangepast**, dus tel na elke import de afbeeldingen
+in het hoofdstuk tegen wat er in `img/` staat.
+
+**Tel daarbij `r:embed` en niet `<a:blip`**, rechtgezet bij hoofdstuk 13. `<a:blip` matcht ook
+`<a:blipFill` en de lege `<a:blip/>` die in een vulling zit, en dat scheelt: hoofdstuk 13 telt 21
+keer `<a:blip` en heeft er 19. De maat die klopt is
+`len(re.findall(r'<a:blip[^>]*r:embed=', xml))`. Trek daar de kadericoontjes van 5,4mm af, twee per
+hoofdstuk, want die gooit de importer weg; wat overblijft hoort in `img/` te staan. Bij hoofdstuk 12
+kwam de naieve telling toevallig ook uit, dus je merkt dit pas in een hoofdstuk waar het misgaat.
 
 **Een adres in de syllabus mag een QR-code naast zich krijgen, en die staat soms al in de Word.**
 11.4 hangt aan een YouTube-video en de tien vragen zijn er zonder niet te maken, dus het adres van
