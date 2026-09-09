@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Northbridge</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Northbridge</h1>
+
+        <p>In oudere (voor 2011 / Sandy Bridge) x86 computers was, voor de processor, de northbridge de primaire connectie met de rest van de machine.</p>
+
+        <p>De northbridge is verantwoordelijk voor de communicatie met &#x27;hoge snelheid&#x27; apparaten zoals bijvoorbeeld de grafische kaart (GPU) en het werkgeheugen (RAM).</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 135.0mm">
+            <img src="../../../../img/syllabus-14-chipset-blokschema.svg" class="img-fluid" alt="Blokschema van een moederbord van voor 2011. Bovenaan de processor, met daaronder via de Front Side Bus de northbridge en daar weer onder via de interne bus de southbridge; een stippellijn omsluit die twee als de chipset. Een klokgenerator hangt aan de Front Side Bus. Links van de northbridge het slot voor de grafische kaart over de snelle grafische bus, rechts de geheugensloten over de geheugenbus. Links van de southbridge de PCI-sloten over de PCI-bus, rechts kabels en poorten naar buiten voor IDE, SATA, USB, Ethernet, audiocodec en CMOS-geheugen. Onderaan hangen via de LPC-bus de flash ROM met de BIOS en de Super I/O, die de seriële poort, de parallelle poort, het diskettestation, het toetsenbord en de muis bedient.">
+        </figure>
+
+        <p>De communicatie tussen de processor en de northbridge gebeurt via de Front Side Bus of afgekort FSB. Deze bus is in principe niets meer of minder dan een reeks parallelle draden waarover bits worden uitgewisseld.</p>
+
+        <p>Het gebruik van northbridge en Front Side Bus heeft als gevolg dat de performantie van de processor hiervan erg afhankelijk is.</p>
+
+        <p>Om deze reden verving AMD in 2003 de northbridge al deels door de communicatie tussen werkgeheugen en processor rechtstreeks mogelijk te maken.</p>
+
+        <p>Intel volgde in 2008 en sindsdien werden de functies van de northbridge telkens verder afgebouwd en overgenomen door de processor.</p>
+
+        <p>In een moderne computer zal je dus geen northbridge en Front Side Bus meer terugvinden. De geheugencontroller en de aansluitingen voor PCI Express zitten nu in de processor zelf.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

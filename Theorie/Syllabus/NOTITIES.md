@@ -4194,3 +4194,176 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
 - **De dubbele spatie** in "0 en 4 operands.  Operands zijn" (13.1), "een bitfout kunnen
   detecteren.  Bij even pariteit" en "hamming distance van 5.  Iedere enkele" (13.10)
   staat zo in de Word.
+
+## Hoofdstuk 14, Chipset
+
+**Dit hoofdstuk heeft geen sectie Studievragen achteraan, en er is dus geen Test
+jezelf geschreven.** Het kader Studievragen vooraan telt er twee en staat samen met de
+Kernpunten op `Overzicht.html`.
+
+**Het is daarmee het derde hoofdstuk dat nergens een vraag stelt**, naast hoofdstuk 7
+en hoofdstuk 13. Dat is de maat die het blok van hoofdstuk 13 vastgelegd heeft: niet
+"heeft dit hoofdstuk een `TestJezelf.html`" maar "draagt het ergens vragen". Negen
+hoofdstukken hebben er een, hoofdstuk 10 heeft een `Oefeningen.html` en hoofdstuk 2 een
+`ol.vragen` midden in 2.1. Leg bij de beslissing na hoofdstuk 16 dus deze drie naast
+elkaar.
+
+**Zes secties, geen enkele Heading 3 of 4, 41 alinea's met tekst, twee tabellen en vijf
+afbeeldingsplaatsingen.** Veruit het kortste hoofdstuk sinds hoofdstuk 5. De twee
+tabellen zijn precies de twee kaders vooraan; er is geen enkele lege tabel, dus nergens
+invulruimte. Twee van de vijf afbeeldingen zijn de kadericoontjes van 5,4mm die de
+importer weggooit, dus `img/` kreeg er drie. **De import liet er geen enkele vallen**,
+nageteld met `r:embed`; hier gaf de naieve telling met `<a:blip` toevallig hetzelfde
+getal, dus dit hoofdstuk zou die valstrik niet aan het licht gebracht hebben.
+
+**Alle drie de afbeeldingen staan inline en geen enkele zweeft, en toch kreeg er geen
+een een bijschrift uit de Word.** Dat was hier vooraf anders ingeschat, en het is het
+noteren waard: inline zijn is niet genoeg, want de alinea rond de afbeelding is bij alle
+drie leeg. `figuur()` valt dan terug op "Afbeelding uit de syllabus", precies zoals bij
+de zeventien van hoofdstuk 13. De drie `alt`-teksten zijn met de hand geschreven na het
+openen van elk bestand, en een herimport gooit ze weg.
+
+### 1. Zes correcties, alle zes gemeld voor ze doorgevoerd werden
+
+Geen ervan overleeft een herimport van dit hoofdstuk. De eerste vier hangen samen en
+staan onder beslissing 2.
+
+| Waar | Wat de Word zegt | Wat het hier zegt |
+|---|---|---|
+| Kernpunt 6 | "De northbridge werd vervangen door de Accelerated Processing Unit (binnen de processor)" | "De northbridge is verdwenen: zijn taken zitten nu in de processor zelf" |
+| Studievraag 1 | "Waarom werd de Northbridge vervangen door de APU?" | "Waarom verdween de northbridge, en waar zitten zijn taken nu?" |
+| 14.1, 14.2 en 14.6 | drie zinnen die de APU als de opvolger van de northbridge neerzetten | de taken van de northbridge, de geheugencontroller en PCI Express, zitten in de processor zelf |
+| 14.5, eerste en derde alinea | "De bedoeling van de APU is om de taken van de northbridge onder te brengen", en de grafische kern als iets waar een APU "vaak ook" mee uitgerust is | omgekeerd: die grafische kern is juist wat AMD een APU noemt, en ze gaat niet noodzakelijk samen met de opgeslorpte northbridge |
+| 14.3 | "Gangbare snelheden waren 66 MHz tot 1250 MHz" en "werd de kloksnelheid van de bus telkens opgedreven" | 66 MT/s tot 1250 MT/s, en opgedreven werd het aantal overdrachten per seconde, zowel met een hogere klok als met meer overdrachten per klokpuls |
+| 14.3 | "Zie ook het hoofdstuk Accelerated Processing Unit (APU)." | "Zie ook de sectie ... verderop in dit hoofdstuk", want het is een sectie van dit hoofdstuk en staat in geen inhoudstafel als hoofdstuk |
+
+### 2. De APU is niet de opvolger van de northbridge
+
+Dit is waar dit hoofdstuk om vroeg, en het loopt door zes zinnen heen. Een Accelerated
+Processing Unit is bij AMD, sinds 2011, een processor die naast zijn gewone kernen een
+grafische kern aan boord heeft; dat is de definitie en niet een extraatje. Wat de
+northbridge overgenomen heeft is iets anders: de geheugencontroller en de PCI
+Express-aansluitingen, en die verhuisden onafhankelijk van welke grafische kern er al
+dan niet naast ligt. **Een processor zonder grafische kern slikte de northbridge net zo
+goed in en is per definitie geen APU**, dus de twee gelijkstellen maakt de zin onwaar
+voor een groot deel van de processoren die de student zal tegenkomen.
+
+Het hoofdstuk spreekt zichzelf hierin tegen, en dat gaf de doorslag: 14.2 zegt zelf al
+het juiste, "sindsdien werden de functies van de northbridge telkens verder afgebouwd en
+overgenomen door de processor". Ook 9.3 gebruikt het woord APU wel correct, namelijk
+voor de ingebakken grafische kern.
+
+**Intels eigen naam voor het opgeslorpte blok, de System Agent, is met opzet NIET
+ingevoerd**, en dat is een beslissing van de lector op 9 september 2026. Het woord komt
+in geen enkel hoofdstuk voor, en het invoeren ervan kost twee termen (System Agent en
+uncore) om een sectie recht te zetten die de student daarna nergens meer tegenkomt; dat
+is patroon 20. 14.5 zegt nu dus wat er gebeurd is en wie APU zegt, zonder de
+Intel-tegenhanger te benoemen. **Wil je die later toch invoeren, doe het dan in
+hoofdstuk 12 en niet hier**, want daar wordt de processor uit elkaar gehaald.
+
+De sectietitel blijft wel Accelerated Processing Unit (APU), want de sectie legt de APU
+nu correct uit en 9.3 verwijst er met die naam naar.
+
+### 3. De FSB in MHz, dezelfde eenheid als bij DDR4
+
+De getallen van 14.3 kloppen onderling met een bus van 64 bit: 66 x 8 = 533 MB/s en
+1250 x 8 = 10000 MB/s. Alleen haalden de late FSB'en dat niet met een hogere klok maar
+door vier overdrachten per klokpuls te sturen, dus 1250 is een transfersnelheid en geen
+busklok. **Dat is woord voor woord de eenheidsverwarring die 13.8 net rechtgezet
+heeft**, waar DDR4 in MHz stond terwijl het MT/s waren, en die de labopagina
+`Labo/Assemblage/Theorie/Componenten.html` ook al in MT/s schrijft. De 66 MHz blijft wel
+staan: die vroegste bus stuurde er echt een per klokpuls, en dat staat er nu bij als het
+onderscheid.
+
+### 4. De PCH beantwoordde zijn eigen studievraag niet
+
+14.6 telde twee zinnen en zei alleen DAT de PCH de southbridge vervangt, terwijl
+studievraag 2 vooraan naar het NUT vraagt en 14.4 nog belooft dat je er later meer over
+leert. Er is daarom een alinea bijgeschreven, kort gehouden omdat dit hoofdstuk zelf
+kort is: alle trage aansluitingen op een chip, die met een eigen verbinding aan de
+processor hangt, zodat het werkgeheugen en de grafische kaart geen bus meer delen met de
+trage apparaten, en de keuze van de PCH bepaalt wat een bord te bieden heeft. Zelfde
+geval als de wet van Moore in hoofdstuk 1. **Die alinea staat alleen in de HTML**, dus
+ze kan in de Word bijgeschreven worden.
+
+### 5. De figuren
+
+**Een van de drie is hertekend en twee zijn gebleven**, en dat is precies de grens die
+de beslissing van 9 september trekt.
+
+- **`img/syllabus-14-chipset-blokschema.svg`** vervangt `-03`, het blokschema van een
+  moederbord van voor 2011. Het is een tekening en geen schermafdruk, en ze stond
+  volledig in het Engels (Front-side bus, Memory Slots, Cables and ports leading
+  off-board, en een Super I/O met Floppy Disk en Keyboard) in een Nederlandse tekst.
+  Alle negentien gegevens van het origineel staan erin: de processor, de klokgenerator,
+  de stippelomtrek Chipset, northbridge en southbridge met hun ondertitel, de vier
+  bussen (Front Side Bus, interne bus, PCI-bus, LPC-bus), de grafische bus met zijn
+  slot, de geheugenbus met de vier sloten, de zes I/O-namen, de kabels naar buiten, de
+  flash ROM met de BIOS, en de Super I/O met zijn vijf poorten. Palet van OrionCSS,
+  gerenderd met headless Edge voor ze vertrouwd werd. **Twee botsingen kwamen pas uit
+  die render**: de stippelomtrek liep door het label LPC-bus, en het bijschrift van de
+  grafische bus lag op zijn eigen lijn. Ze staat op 135,0mm, gekozen zodat haar tekst
+  van 14px op 2,49mm drukt en dus even groot is als de lopende tekst.
+- **`-01` en `-02` blijven foto's.** Allebei zijn het geannoteerde foto's van een echt
+  moederbord, en de regel van 9 september zegt dat zo een foto een foto blijft:
+  natekenen levert een bord op dat lijkt op wat de student ziet zonder het te zijn. De
+  aanwijzingen erop zijn bovendien niet Engels maar kleuren en het woord PCH, en de
+  lopende tekst verwijst er met die kleuren naar ("Omcirkeld in het oranje", "in het
+  blauw", "in het groen"). `-01` staat op 97 dpi en is niet versmald: de grens van 98 is
+  een diagnose, en een millimeter versmallen levert op papier niets op, dezelfde
+  afweging als bij de vier figuren van hoofdstuk 11 en de drie van hoofdstuk 13.
+
+**Geen van de drie hoeft in `ONAANGEROERD`.** De SVG valt buiten `KRIMPBAAR`, dat alleen
+op png en jpg grijpt, en gaat dus als vector mee; nagekeken in de PDF, waar bladzijde
+170 haar labels als echte tekst draagt. `-01` is met 511 pixels op 134,2mm te klein om
+te krimpen, dus het script laat ze staan. `-02` is gekrompen van 1083 naar 945 pixels,
+wat exact 160,0mm op 150 dpi is, en er valt niets in af te lezen.
+
+### 6. Waar dit hoofdstuk en de rest van dit vak naast elkaar staan
+
+Dit hoofdstuk overlapt met drie hoofdstukken die er al staan, meer dan enig ander tot nu
+toe. Patroon 17: de twee tracks zeggen hetzelfde twee keer en er linkt niets tussen.
+
+- **Hoofdstuk 13, Random Access Memory. Een echte tegenspraak, en ze is in hoofdstuk 13
+  rechtgezet.** 13.3 schreef "Na 2011 werd de FSB afgeschaft ten voordele van point to
+  point verbindingen tussen CPU en RAM. Intel gebuikt hiervoor bijvoorbeeld QuickPath
+  Interconnect en AMD HyperTransport." QPI en HyperTransport zijn geen CPU-RAM
+  verbindingen: die lopen van processor naar processor en naar de I/O-hub. Wat de
+  processor met het werkgeheugen verbindt is zijn eigen geheugencontroller over de
+  DDR-kanalen, en dat is precies wat 14.2 vertelt met AMD in 2003 en Intel in 2008. De
+  zin noemt nu allebei de helften. **Dit is de tweede wijziging aan een hoofdstuk dat al
+  gedrukt stond en die niet uit een eigen fout maar uit een later hoofdstuk voortkomt**,
+  na de zin over word en double word in 10.4; een herimport van hoofdstuk 13 gooit ze
+  weg. De typfout "gebuikt", die hierboven bij hoofdstuk 13 als onaangeroerd genoteerd
+  staat, is daarmee vanzelf verdwenen. De scharnierdatum spreekt elkaar niet tegen: 13.3
+  zegt 2011 en kernpunt 1 van 14 zegt omstreeks 2011, en 14.1 noemt dat zelf een
+  didactische vereenvoudiging, waarna 14.2 de echte data geeft.
+- **Hoofdstuk 9, Moederbord. Geen tegenspraak, wel een verwijzing rechtgezet.** 9.3
+  wijst vooruit met "Zie ook het hoofdstuk Accelerated Processing Unit", en dat is een
+  sectie van dit hoofdstuk en geen hoofdstuk; er staat nu "de sectie ... in het
+  hoofdstuk Chipset". Inhoudelijk sluit 9.3 wel aan: het gebruikt APU voor de ingebakken
+  grafische kern, wat de juiste betekenis is, en 2.1 laat de chipset onder zijn
+  koellichaam aanwijzen zonder er iets over te beweren.
+- **Hoofdstuk 12, Central Processing Unit. Geen tegenspraak.** Kernpunt 4 van dit
+  hoofdstuk is de wet van Moore in andere woorden, en die staat uitgelegd in hoofdstuk 1
+  en wordt in 12.2 gebruikt. Het woord Moore valt hier niet, en dat is gelaten zoals het
+  is.
+
+### Wat er in de tekst opviel, en niet aangeraakt is
+
+De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
+
+- **"south bridge" en "north bridge" los geschreven** in 14.1 en twee keer in 14.6,
+  terwijl de rest van het hoofdstuk southbridge en northbridge aaneen schrijft.
+- **"In een moederbord die gemaakt werd voor 2011"** in 14.6, waar dat hoort te staan.
+- **De ".;" achteraan kernpunt 2**, een punt en een puntkomma na elkaar. De andere
+  kernpunten eindigen op een puntkomma en het eerste en het laatste op een punt, dus de
+  lijst is ook onderling niet gelijk.
+- **"véél"** in 14.1, met accenten in de brontekst.
+- **"Northbridge" met een hoofdletter** midden in studievraag 1, waar de rest van het
+  hoofdstuk northbridge schrijft. Die vraag is intussen om een andere reden herschreven,
+  zie beslissing 2.
+- **De dubbele spatie** in "ingebouwde grafische processor.  Voorbeelden hiervan" (14.5)
+  staat zo in de Word. Die alinea is intussen herschreven.
+- **"In een moderne computer (> 2011)"** staat twee keer met dezelfde formulering, in
+  14.1 en in 14.5.

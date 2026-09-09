@@ -1099,7 +1099,7 @@ beschadigd is, en dat een container een ander besturingssysteem kan draaien.
 herschreven. En de drie leads van de opdrachten zijn uitdrukkelijk uit elkaar geschreven, want regel
 12 valt over zeven opeenvolgende gedeelde woorden en dit labo heeft vijf leads.
 
-## De syllabus, hoofdstuk 1 tot 13 ingevoerd 7, 8 en 9 september 2026
+## De syllabus, hoofdstuk 1 tot 14 ingevoerd 7, 8 en 9 september 2026
 
 De theorietrack bestond hier nog niet: `Theorie/Syllabus/` was leeg en het manifest kende geen
 module `syllabus`. Wat er bij dit eerste hoofdstuk aan infrastructuur bij gekomen is, hoort erbij en
@@ -1730,3 +1730,12 @@ dan terug op "Afbeelding uit de syllabus", en dat is geen beschrijving. De vijf 
 hoofdstuk 1 zijn met de hand geschreven na het openen van elk bestand, zoals de figuren van Labo
 Partitioneren. **Een nieuwe import van hetzelfde hoofdstuk gooit ze weg**; dat is dezelfde afspraak
 als voor elke andere handmatige correctie, want na de import is de HTML de bron.
+
+**Inline zijn is geen garantie op een bijschrift, en dat is de scherpere formulering.** De regel
+hierboven laat zich lezen als "zwevend betekent geen bijschrift, inline betekent wel een", en die
+tweede helft klopt niet: wat `figuur()` als bijschrift neemt is de TEKST van de alinea rond de
+afbeelding, en die alinea kan gewoon leeg zijn. In hoofdstuk 14 stonden alle drie de afbeeldingen
+inline en geen enkele zweefde, en toch kreeg geen een een bijschrift, want alle drie de alinea's
+droegen enkel het beeld. Hoofdstuk 13 had hetzelfde bij zijn zeventien. **Tel dus na de import
+hoeveel figuren er "Afbeelding uit de syllabus" dragen** in plaats van het uit de verankering af te
+leiden, en schrijf voor elk daarvan een `alt` met de hand na het openen van het bestand.

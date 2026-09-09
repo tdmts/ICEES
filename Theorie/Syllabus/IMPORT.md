@@ -230,3 +230,8 @@ letterlijk overgenomen.
 ## Random Access Memory (RAM) > Single, dual en quad channel
 
 - afbeelding syllabus-13-random-access-memory-ram-16.jpeg zweeft naast haar alinea (wrapSquare); die alinea blijft lopende tekst en de figuur krijgt geen bijschrift uit de Word
+
+## Chipset (opening)
+
+- kader "Kernpunten" werd een info-box met data-kader="kernpunten"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+- kader "Studievragen" werd een info-box met data-kader="studievragen"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet

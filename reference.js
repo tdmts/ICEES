@@ -786,6 +786,54 @@ window.LAB_REFERENCE = {
                         href: 'RandomAccessMemoryRam/SingleDualEnQuadChannel.html'
                     }
                 ]
+            },
+            {
+                name: 'Chipset',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'chipset-overzicht',
+                        name: 'Kernpunten en studievragen',
+                        blurb: 'Waarom een moederbord van voor 2011 er anders uitziet dan een van erna, en welke chip welke apparaten bedient.',
+                        href: 'Chipset/Overzicht.html'
+                    },
+                    {
+                        id: 'chipset-wat',
+                        name: 'Wat is een chipset?',
+                        blurb: 'Het kruispunt waar alles samenkomt: een northbridge en een southbridge op een oud bord, een PCH op een nieuw.',
+                        href: 'Chipset/WatIsEenChipset.html'
+                    },
+                    {
+                        id: 'chipset-northbridge',
+                        name: 'Northbridge',
+                        blurb: 'De chip voor de snelle apparaten, en hoe zijn taken tussen 2003 en 2011 in de processor zelf terechtkwamen.',
+                        href: 'Chipset/Northbridge.html'
+                    },
+                    {
+                        id: 'chipset-fsb',
+                        name: 'Front Side Bus',
+                        blurb: 'De bus tussen processor en northbridge: zijn breedte, zijn snelheid, en waarom hij de bottleneck werd.',
+                        href: 'Chipset/FrontSideBus.html'
+                    },
+                    {
+                        id: 'chipset-southbridge',
+                        name: 'Southbridge',
+                        blurb: 'De chip voor de tragere apparaten, die bepaalde welke aansluitingen een moederbord te bieden had.',
+                        href: 'Chipset/Southbridge.html'
+                    },
+                    {
+                        id: 'chipset-apu',
+                        name: 'Accelerated Processing Unit (APU)',
+                        blurb: 'Wat er van de northbridge in de processor terechtkwam, en wat AMD met de naam APU eigenlijk aanduidt.',
+                        href: 'Chipset/AcceleratedProcessingUnitApu.html'
+                    },
+                    {
+                        id: 'chipset-pch',
+                        name: 'Platform Controller Hub (PCH)',
+                        blurb: 'De opvolger van de southbridge: alle trage aansluitingen op een chip, aan de processor met een eigen verbinding.',
+                        href: 'Chipset/PlatformControllerHubPch.html'
+                    }
+                ]
             }
         ]
     },

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wat is een chipset?</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Wat is een chipset?</h1>
+
+        <p>De volledige werking van de chipset bespreken zou ons véél te ver leiden. Het enige wat je voorlopig moet onthouden is dat we een onderscheid maken tussen moederborden die gemaakt zijn voor +- 2011 en moederborden die gemaakt zijn erna. Deze vergelijking gaat natuurlijk niet helemaal op maar we beschouwen dit als een didactische vereenvoudiging.</p>
+
+        <p>In moederborden gemaakt voor 2011 bestaat de chipset uit een northbridge en een south bridge.</p>
+
+        <p>De northbridge staat in direct contact met de snelle apparaten zoals de processor (CPU), het werkgeheugen (RAM) en de grafische kaart (GPU).</p>
+
+        <p>De southbridge staat dan weer in direct contact met de tragere apparaten zoals de BIOS, de PCI Express bus, USB poorten, de harde schijven, het CD-ROM station, ...</p>
+
+        <p>Op een moederbord zijn de north- en southbridge telkens heel eenvoudig te herkennen.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 134.2mm">
+            <img src="../../../../img/syllabus-14-chipset-01.png" class="img-fluid" alt="Een moederbord van voor 2011, schuin van boven gefotografeerd. Oranje omcirkeld rechtsboven de processorsocket, blauw ernaast de northbridge onder zijn koellichaam, en groen onderaan het midden de southbridge.">
+        </figure>
+
+        <p>Omcirkeld in het oranje zie je de plaats waar de processor komt te zitten ofwel de socket genoemd.</p>
+
+        <p>In het blauw zie je de northbridge. Deze staat altijd in de nabijheid van de processor, het RAM geheugen, de aansluiting voor de grafische kaart en de PCI-Express aansluitingen.</p>
+
+        <p>In het groen zie je de southbridge. Deze staat altijd in de nabijheid van de BIOS (Basic Input Output System), de aansluitingen voor de harde schijven en de aansluitingen voor Universal Serial Bus (USB).</p>
+
+        <p>Het belang van de chipset is niet te onderschatten, het is een kruispunt waar alles samenkomt. Werkt de chipset niet naar behoren, dan heeft een snel werkende processor weinig zin. Het spreekt voor zich dat de mogelijkheden van een computer ook afhangen van de chipset.</p>
+
+        <p>In een moderne computer (&gt; 2011) zijn northbridge en southbridge ondertussen verdwenen. De taken van de northbridge zitten nu in de processor zelf, en die van de southbridge in een enkele chip op het moederbord, de Platform Controller Hub (PCH). De trend is om alle logica onder te brengen binnenin de processor zelf. Dit verlaagt het energieverbruik en verhoogt de snelheid.</p>
+
+        <p>In onderstaande figuur van een modern moederbord zie je rechts de processorsocket en links de PCH.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-14-chipset-02.png" class="img-fluid" alt="Een modern ATX-moederbord, recht van boven gefotografeerd. Rechts de processorsocket met de geheugensloten ernaast, links een rode pijl met het label PCH naar de vierkante chip tussen de PCI Express-sloten en de SATA-poorten.">
+        </figure>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>
