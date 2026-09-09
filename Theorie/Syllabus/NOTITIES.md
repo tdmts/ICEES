@@ -5334,12 +5334,36 @@ onder het blok van twintig hangt. **Dat tweede is bovendien precies waar de alin
 over gaat**, 20 tegen 24 pinnen, dus het is geen decoratie: de bovenste tien rijen ZIJN de
 20-pins connector en de twee eronder zijn de uitbreiding.
 
-**De pijl is een omlijning geworden.** Het gegeven is welke pin aangewezen wordt en niet
-het pijlglyph, en in een tekening op 50mm is een omlijning van 2,5 breed om het pinvierkant
-plus het label in dezelfde kleur duidelijker dan een pijl die zich tussen de pinnen en de
-labels moet wringen. De aanwijzing staat in `#9e2f26` en niet in het oranje van de bron,
-want over de kleur van een AANWIJZING beweert het beeld niets en daar geldt het palet
-gewoon.
+**De pijl is een bandje onder de hele rij geworden, en dat is de tweede poging.** Het
+gegeven is welke pin aangewezen wordt en niet het pijlglyph, dus de pijl van de bron viel af:
+op 50mm moet ze zich tussen de pinnen en de labels wringen. Alleen was de eerste vervanging,
+een omlijning van 2,5 om het pinvierkant plus het label in dezelfde kleur, te zacht. Het
+oog vond het woord en niet de pin, want twaalf pinvierkanten hebben zelf al een rand en
+daar valt een dertiende niet tussen op.
+
+**Wat er nu staat is een bandje in `#e8c9c4` achter het label EN zijn pinvierkant samen**,
+met de omlijning erbovenop. De twee doen verschillende dingen: het bandje wijst de rij aan
+en de omlijning zegt welke van de twee pinnen op die rij het is. Bij PS_ON staat links op
+dezelfde rij een rode +5V, dus zonder de omlijning moet de lezer dat zelf uitmaken.
+
+**Het bandje stopt tussen de twee kolommen en loopt niet over de volle breedte**, en dat is
+een correctie en geen bezuiniging. Op de rij van PWR_OK staat rechts N/C, dus een bandje
+over de hele rij zou PWR_OK aan N/C koppelen en precies de koppeling onwaar maken die de
+figuur moet tonen. De zwarte wand van de behuizing wordt over het bandje heen opnieuw
+getrokken, zodat de connector er niet door openbreekt.
+
+**De tint is de sterkste van drie die naast elkaar gerenderd zijn**, `#f3e4e2`, `#eed7d3`
+en `#e8c9c4`, alle drie lichte tinten van `#9e2f26`. De twee lichtere vielen op 50mm nog
+altijd weg. Dat ze niet met de pinnen concurreert is na te rekenen en niet te beoordelen:
+haar helderheid is 0,84 en elke pinkleur ligt tussen 0,33 en 0,42, dus ze kan naast een
+rode of een groene pin geen derde signaal lijken. **Dat is de toets bij een accentkleur in
+een tekening waar kleur een gegeven is**: niet of ze mooi is, maar of ze buiten het bereik
+van de gegevens valt.
+
+De aanwijzing staat in `#9e2f26` en niet in het oranje van de bron, want over de kleur van
+een AANWIJZING beweert het beeld niets en daar geldt het palet gewoon. Het bandje kost de
+hoogte niets: het past binnen de bestaande rijafstand, dus de figuur staat nog op 36,0
+labelhoogtes.
 
 **Over de kleur van een PIN beweert het beeld wel iets, dus daar wijkt het palet.** De
 kleur van een draad is de spanning, dezelfde uitzondering als bij de SATA- en PATA-kabels

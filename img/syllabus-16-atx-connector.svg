@@ -7,6 +7,8 @@
     .pin { stroke: #222222; stroke-width: 1.2; }
     .stip { stroke: #222222; stroke-width: 1.6; stroke-dasharray: 3 3; }
     .ring { fill: none; stroke: #9e2f26; stroke-width: 2.5; }
+    .band { fill: #e8c9c4; }
+    .wand { stroke: #222222; stroke-width: 2; fill: none; }
   </style>
   <rect x="0" y="0" width="260" height="468" fill="#ffffff"/>
 

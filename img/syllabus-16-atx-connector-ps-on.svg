@@ -7,6 +7,8 @@
     .pin { stroke: #222222; stroke-width: 1.2; }
     .stip { stroke: #222222; stroke-width: 1.6; stroke-dasharray: 3 3; }
     .ring { fill: none; stroke: #9e2f26; stroke-width: 2.5; }
+    .band { fill: #e8c9c4; }
+    .wand { stroke: #222222; stroke-width: 2; fill: none; }
   </style>
   <rect x="0" y="0" width="260" height="468" fill="#ffffff"/>
 
@@ -25,6 +27,10 @@
   <path class="huis" d="M162 212 H176 V244 H162"/>
   <path d="M162 214 V242" stroke="#ffffff" stroke-width="2.5" fill="none"/>
   <rect x="166" y="220" width="6" height="16" fill="#ffffff" stroke="#222222" stroke-width="1.2"/>
+
+  <!-- de aanwijzing: het label en zijn pin op een bandje -->
+  <rect class="band" x="129" y="132" width="123" height="32"/>
+  <path class="wand" d="M162 132 V164"/>
 
   <!-- pin 1 tot 12 -->
   <rect class="pin" x="102" y="41" width="22" height="22" rx="3" fill="#9e622e"/>
