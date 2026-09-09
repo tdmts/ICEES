@@ -3463,6 +3463,34 @@ gegeven dat de figuur erbij krijgt in plaats van er een dat wegvalt.
 want een keten van vier kaders naast en onder elkaar is compacter dan vier vlakken in
 perspectief. Dat kan niet meer plaats kosten, alleen minder, maar reken de bladzijde na
 bij de eerstvolgende export.
+
+**De twee figuren van 11.7 zijn `img/syllabus-11-pata-kabel.svg` (85,0mm) en
+`img/syllabus-11-jumperinstelling.svg` (78,1mm) geworden**, allebei op hun bestaande
+breedte. Ze horen bij elkaar, want ze gaan allebei over PATA, en ze zijn daarom in een
+keer gedaan.
+
+**De drie kleuren van de kabel blijven, en dat is met opzet.** Zwart, grijs en blauw
+zijn hier geen opsmuk maar de kleurcodering van een echte PATA-kabel, en het origineel
+zette er drie kleurstalen onder om precies dat te leren. Ze weglaten zou een gegeven
+laten vallen. Ze staan wel gedempt, zoals de fragmentatiefiguur van hoofdstuk 6:
+`#222222`, `#9bb0ac` en `#2a4d7c`, en die laatste stond al in het palet. **De
+kleurstalen zelf zijn geschrapt**, want de connector draagt de kleur nu zelf en een
+staal eronder herhaalt hetzelfde gegeven. De drie Engelse bijschriften ("Plug into
+master") zijn Nederlands geworden.
+
+**De jumpertabel is vertaald en op een punt explicieter gemaakt.** "General Pin
+Setting" werd Jumperinstelling, en de drie regels werden "Master: jumpertje op A en B",
+"Slave: geen jumpertje" en "Cable select: jumpertje op E en F". Dat "geen jumpertje"
+staat niet in het origineel: daar is de middelste rij gewoon een tekening zonder
+jumpertje, en de lezer moet zelf zien dat er niets staat. De letters AB en EF komen wel
+uit het origineel. **Het label "Circuit Board" is weg**, onder de regel van deze dag dat
+een figuur alleen aanduidt wat elders terugkomt: 11.7 noemt de printplaat nergens. Wat
+er wel bij kwam is een grijs kadertje "achterkant van de harde schijf" boven het
+onderste paneel, want zonder dat weet de lezer niet waar hij naar kijkt; dat is
+orientatie en geen onderdeelnaam.
+
+**De kabel wordt lager (53 naar 38mm) en de jumperfiguur iets hoger (59,3 naar
+62,5mm)**, allebei bij gelijke breedte.
 **Vier blijven staan op 96 dpi, en dat is een beslissing.** De jumperinstelling van
 11.7 (78,1mm), de SATA-kabels van 11.8 (79,4mm), het RAID 5-schema van 11.13
 (107,1mm) en de NAS-foto van 11.15 (70,1mm) zitten alle vier op 96 en niet eronder.

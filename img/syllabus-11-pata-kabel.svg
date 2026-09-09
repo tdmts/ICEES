@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 250" width="560" height="250" role="img">
+  <style>
+    text { font-family: "Segoe UI", Helvetica, Arial, sans-serif; fill: #222222; }
+    .lab { font-size: 16px; }
+    .geleider { stroke: #9bb0ac; stroke-width: 1; }
+  </style>
+  <rect x="0" y="0" width="560" height="250" fill="#ffffff"/>
+
+  <!-- de lintkabel zelf -->
+  <rect x="40" y="60" width="460" height="80" fill="#e0e7e5" stroke="#9bb0ac" stroke-width="1.5"/>
+  <path class="geleider" d="M 40,64 L 500,64 M 40,68 L 500,68 M 40,72 L 500,72 M 40,76 L 500,76 M 40,80 L 500,80 M 40,84 L 500,84 M 40,88 L 500,88 M 40,92 L 500,92 M 40,96 L 500,96 M 40,100 L 500,100 M 40,104 L 500,104 M 40,108 L 500,108 M 40,112 L 500,112 M 40,116 L 500,116 M 40,120 L 500,120 M 40,124 L 500,124 M 40,128 L 500,128 M 40,132 L 500,132 M 40,136 L 500,136"/>
+
+  <!-- drie connectoren, elk in de kleur die ze op een echte kabel heeft -->
+  <g id="master">
+    <rect x="44" y="38" width="30" height="124" rx="3" fill="#222222" stroke="#004d40" stroke-width="1.5"/>
+  </g>
+  <g id="slave">
+    <rect x="258" y="38" width="30" height="124" rx="3" fill="#9bb0ac" stroke="#004d40" stroke-width="1.5"/>
+  </g>
+  <g id="controller">
+    <rect x="458" y="38" width="30" height="124" rx="3" fill="#2a4d7c" stroke="#004d40" stroke-width="1.5"/>
+  </g>
+
+  <!-- veertig pinnen per connector, twee rijen van twintig -->
+  <g fill="#f5f7f7">
+    <rect x="52" y="44" width="4" height="4"/><rect x="62" y="44" width="4" height="4"/>
+    <rect x="52" y="50" width="4" height="4"/><rect x="62" y="50" width="4" height="4"/>
+    <rect x="52" y="56" width="4" height="4"/><rect x="62" y="56" width="4" height="4"/>
+    <rect x="52" y="62" width="4" height="4"/><rect x="62" y="62" width="4" height="4"/>
+    <rect x="52" y="68" width="4" height="4"/><rect x="62" y="68" width="4" height="4"/>
+    <rect x="52" y="74" width="4" height="4"/><rect x="62" y="74" width="4" height="4"/>
+    <rect x="52" y="80" width="4" height="4"/><rect x="62" y="80" width="4" height="4"/>
+    <rect x="52" y="86" width="4" height="4"/><rect x="62" y="86" width="4" height="4"/>
+    <rect x="52" y="92" width="4" height="4"/><rect x="62" y="92" width="4" height="4"/>
+    <rect x="52" y="98" width="4" height="4"/><rect x="62" y="98" width="4" height="4"/>
+    <rect x="52" y="104" width="4" height="4"/><rect x="62" y="104" width="4" height="4"/>
+    <rect x="52" y="110" width="4" height="4"/><rect x="62" y="110" width="4" height="4"/>
+    <rect x="52" y="116" width="4" height="4"/><rect x="62" y="116" width="4" height="4"/>
+    <rect x="52" y="122" width="4" height="4"/><rect x="62" y="122" width="4" height="4"/>
+    <rect x="52" y="128" width="4" height="4"/><rect x="62" y="128" width="4" height="4"/>
+    <rect x="52" y="134" width="4" height="4"/><rect x="62" y="134" width="4" height="4"/>
+    <rect x="52" y="140" width="4" height="4"/><rect x="62" y="140" width="4" height="4"/>
+    <rect x="52" y="146" width="4" height="4"/><rect x="62" y="146" width="4" height="4"/>
+    <rect x="52" y="152" width="4" height="4"/><rect x="62" y="152" width="4" height="4"/>
+  </g>
+  <g fill="#f5f7f7" transform="translate(214 0)">
+    <rect x="52" y="44" width="4" height="4"/><rect x="62" y="44" width="4" height="4"/>
+    <rect x="52" y="50" width="4" height="4"/><rect x="62" y="50" width="4" height="4"/>
+    <rect x="52" y="56" width="4" height="4"/><rect x="62" y="56" width="4" height="4"/>
+    <rect x="52" y="62" width="4" height="4"/><rect x="62" y="62" width="4" height="4"/>
+    <rect x="52" y="68" width="4" height="4"/><rect x="62" y="68" width="4" height="4"/>
+    <rect x="52" y="74" width="4" height="4"/><rect x="62" y="74" width="4" height="4"/>
+    <rect x="52" y="80" width="4" height="4"/><rect x="62" y="80" width="4" height="4"/>
+    <rect x="52" y="86" width="4" height="4"/><rect x="62" y="86" width="4" height="4"/>
+    <rect x="52" y="92" width="4" height="4"/><rect x="62" y="92" width="4" height="4"/>
+    <rect x="52" y="98" width="4" height="4"/><rect x="62" y="98" width="4" height="4"/>
+    <rect x="52" y="104" width="4" height="4"/><rect x="62" y="104" width="4" height="4"/>
+    <rect x="52" y="110" width="4" height="4"/><rect x="62" y="110" width="4" height="4"/>
+    <rect x="52" y="116" width="4" height="4"/><rect x="62" y="116" width="4" height="4"/>
+    <rect x="52" y="122" width="4" height="4"/><rect x="62" y="122" width="4" height="4"/>
+    <rect x="52" y="128" width="4" height="4"/><rect x="62" y="128" width="4" height="4"/>
+    <rect x="52" y="134" width="4" height="4"/><rect x="62" y="134" width="4" height="4"/>
+    <rect x="52" y="140" width="4" height="4"/><rect x="62" y="140" width="4" height="4"/>
+    <rect x="52" y="146" width="4" height="4"/><rect x="62" y="146" width="4" height="4"/>
+    <rect x="52" y="152" width="4" height="4"/><rect x="62" y="152" width="4" height="4"/>
+  </g>
+  <g fill="#f5f7f7" transform="translate(414 0)">
+    <rect x="52" y="44" width="4" height="4"/><rect x="62" y="44" width="4" height="4"/>
+    <rect x="52" y="50" width="4" height="4"/><rect x="62" y="50" width="4" height="4"/>
+    <rect x="52" y="56" width="4" height="4"/><rect x="62" y="56" width="4" height="4"/>
+    <rect x="52" y="62" width="4" height="4"/><rect x="62" y="62" width="4" height="4"/>
+    <rect x="52" y="68" width="4" height="4"/><rect x="62" y="68" width="4" height="4"/>
+    <rect x="52" y="74" width="4" height="4"/><rect x="62" y="74" width="4" height="4"/>
+    <rect x="52" y="80" width="4" height="4"/><rect x="62" y="80" width="4" height="4"/>
+    <rect x="52" y="86" width="4" height="4"/><rect x="62" y="86" width="4" height="4"/>
+    <rect x="52" y="92" width="4" height="4"/><rect x="62" y="92" width="4" height="4"/>
+    <rect x="52" y="98" width="4" height="4"/><rect x="62" y="98" width="4" height="4"/>
+    <rect x="52" y="104" width="4" height="4"/><rect x="62" y="104" width="4" height="4"/>
+    <rect x="52" y="110" width="4" height="4"/><rect x="62" y="110" width="4" height="4"/>
+    <rect x="52" y="116" width="4" height="4"/><rect x="62" y="116" width="4" height="4"/>
+    <rect x="52" y="122" width="4" height="4"/><rect x="62" y="122" width="4" height="4"/>
+    <rect x="52" y="128" width="4" height="4"/><rect x="62" y="128" width="4" height="4"/>
+    <rect x="52" y="134" width="4" height="4"/><rect x="62" y="134" width="4" height="4"/>
+    <rect x="52" y="140" width="4" height="4"/><rect x="62" y="140" width="4" height="4"/>
+    <rect x="52" y="146" width="4" height="4"/><rect x="62" y="146" width="4" height="4"/>
+    <rect x="52" y="152" width="4" height="4"/><rect x="62" y="152" width="4" height="4"/>
+  </g>
+
+  <text class="lab" x="59" y="196" text-anchor="middle">In de master</text>
+  <text class="lab" x="273" y="196" text-anchor="middle">In de slave</text>
+  <text class="lab" x="473" y="196" text-anchor="middle">In de controllerkaart</text>
+  <text class="lab" x="473" y="216" text-anchor="middle">of het moederbord</text>
+</svg>

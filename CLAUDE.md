@@ -1498,8 +1498,6 @@ niet opnieuw op**, en lees hetzelfde argument bij hoofdstuk 9 in NOTITIES.md.
 
 | Hoofdstuk | Bestand | Wat het is |
 |---|---|---|
-| 11.7 | `syllabus-11-harde-schijf-16.png` | de PATA-kabel met master, slave en controller |
-| 11.7 | `syllabus-11-harde-schijf-18.png` | General Pin Setting, de jumpertabel |
 | 11.10 | `syllabus-11-harde-schijf-22.png` | HDD tegen SATA tegen NVMe, geleende meting |
 
 **De vijf RAID-tekeningen zijn op 9 september 2026 in een keer afgewerkt**, en dat was de reden dat
@@ -1538,6 +1536,20 @@ andere: inhoudelijk klopte alles, maar de commit zegt iets anders dan hij draagt
 sessies hetzelfde bestand, dan is de enige die er iets aan verandert de laatste die commit, en de
 afspraak hoort dus te zijn dat een gedeeld bestand aan EEN van de twee toebehoort tot het gecommit
 is. Kijk na wat je commit met `git show --stat` en niet alleen wat je gestaged dacht te hebben.
+
+**Er is een TWEEDE valkuil naast die, en ze werkt net andersom: de index is ook gedeeld.** Gevonden
+op 9 september 2026, later diezelfde dag en met twee tekensessies tegelijk. Een kale `git commit`
+commit de HELE index, dus ook wat de andere sessie er intussen in gezet heeft: er landden zo twee
+bestanden van hoofdstuk 11.8 in de commit van 11.5. **Selectief `git add` beschermt je dus niet**,
+want jouw `add` bepaalt alleen wat er bij komt en niet wat er al in staat. De twee valkuilen samen:
+`--only <pad>` neemt te veel uit de WERKBOOM, en een kale commit neemt te veel uit de INDEX.
+
+Wat wel werkt is `git commit -- <alle paden>` met elk pad expliciet genoemd, want dat sluit de index
+van de ander uit. Voor je eigen bestanden kan dat altijd. Voor een bestand dat twee sessies
+bewerken helpt geen enkele git-vorm, en daar is de afspraak een token: EEN sessie tegelijk schrijft
+in `CLAUDE.md` en in `Theorie/Syllabus/NOTITIES.md`, en een derde sessie deelt dat token uit. Kijk
+elke commit na met `git show --stat`; zit er een bestand in dat niet van jou is, commit dan niet
+maar meld het.
 
 **Dat hoofdstuk heeft ook de eerste uitzondering op deze beslissing opgeleverd, en ze is door de
 lector toegestaan.** De geannoteerde foto van de DIMM-sloten in 13.11 is `img/syllabus-13-channels.svg`
