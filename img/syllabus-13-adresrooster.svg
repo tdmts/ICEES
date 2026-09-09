@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 392" width="260" height="392"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">Twaalf adressen onder elkaar, genummerd 0 tot en met 11. Achter elk adres staan acht
+        vakjes, een per cel van 1 bit, en de maatpijl onder de onderste rij zegt dat die acht cellen samen
+        8 bits zijn.</title>
+    <rect width="260" height="392" fill="#ffffff" />
+
+    <defs>
+        <marker id="pijl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#004d40" />
+        </marker>
+        <marker id="pijl-terug" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
+            orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#004d40" />
+        </marker>
+    </defs>
+
+    <text x="8" y="22" font-size="13" fill="#222222">Adres</text>
+
+    <!-- twaalf rijen: het adres, en erachter de acht cellen die er samen aan hangen -->
+    <g stroke="#004d40" stroke-width="1" fill="#ffffff">
+        <rect x="60" y="38" width="23" height="20" /> <rect x="83" y="38" width="23" height="20" /> <rect x="106" y="38" width="23" height="20" /> <rect x="129" y="38" width="23" height="20" />
+        <rect x="152" y="38" width="23" height="20" /> <rect x="175" y="38" width="23" height="20" /> <rect x="198" y="38" width="23" height="20" /> <rect x="221" y="38" width="23" height="20" />
+        <rect x="60" y="64" width="23" height="20" /> <rect x="83" y="64" width="23" height="20" /> <rect x="106" y="64" width="23" height="20" /> <rect x="129" y="64" width="23" height="20" />
+        <rect x="152" y="64" width="23" height="20" /> <rect x="175" y="64" width="23" height="20" /> <rect x="198" y="64" width="23" height="20" /> <rect x="221" y="64" width="23" height="20" />
+        <rect x="60" y="90" width="23" height="20" /> <rect x="83" y="90" width="23" height="20" /> <rect x="106" y="90" width="23" height="20" /> <rect x="129" y="90" width="23" height="20" />
+        <rect x="152" y="90" width="23" height="20" /> <rect x="175" y="90" width="23" height="20" /> <rect x="198" y="90" width="23" height="20" /> <rect x="221" y="90" width="23" height="20" />
+        <rect x="60" y="116" width="23" height="20" /> <rect x="83" y="116" width="23" height="20" /> <rect x="106" y="116" width="23" height="20" /> <rect x="129" y="116" width="23" height="20" />
+        <rect x="152" y="116" width="23" height="20" /> <rect x="175" y="116" width="23" height="20" /> <rect x="198" y="116" width="23" height="20" /> <rect x="221" y="116" width="23" height="20" />
+        <rect x="60" y="142" width="23" height="20" /> <rect x="83" y="142" width="23" height="20" /> <rect x="106" y="142" width="23" height="20" /> <rect x="129" y="142" width="23" height="20" />
+        <rect x="152" y="142" width="23" height="20" /> <rect x="175" y="142" width="23" height="20" /> <rect x="198" y="142" width="23" height="20" /> <rect x="221" y="142" width="23" height="20" />
+        <rect x="60" y="168" width="23" height="20" /> <rect x="83" y="168" width="23" height="20" /> <rect x="106" y="168" width="23" height="20" /> <rect x="129" y="168" width="23" height="20" />
+        <rect x="152" y="168" width="23" height="20" /> <rect x="175" y="168" width="23" height="20" /> <rect x="198" y="168" width="23" height="20" /> <rect x="221" y="168" width="23" height="20" />
+        <rect x="60" y="194" width="23" height="20" /> <rect x="83" y="194" width="23" height="20" /> <rect x="106" y="194" width="23" height="20" /> <rect x="129" y="194" width="23" height="20" />
+        <rect x="152" y="194" width="23" height="20" /> <rect x="175" y="194" width="23" height="20" /> <rect x="198" y="194" width="23" height="20" /> <rect x="221" y="194" width="23" height="20" />
+        <rect x="60" y="220" width="23" height="20" /> <rect x="83" y="220" width="23" height="20" /> <rect x="106" y="220" width="23" height="20" /> <rect x="129" y="220" width="23" height="20" />
+        <rect x="152" y="220" width="23" height="20" /> <rect x="175" y="220" width="23" height="20" /> <rect x="198" y="220" width="23" height="20" /> <rect x="221" y="220" width="23" height="20" />
+        <rect x="60" y="246" width="23" height="20" /> <rect x="83" y="246" width="23" height="20" /> <rect x="106" y="246" width="23" height="20" /> <rect x="129" y="246" width="23" height="20" />
+        <rect x="152" y="246" width="23" height="20" /> <rect x="175" y="246" width="23" height="20" /> <rect x="198" y="246" width="23" height="20" /> <rect x="221" y="246" width="23" height="20" />
+        <rect x="60" y="272" width="23" height="20" /> <rect x="83" y="272" width="23" height="20" /> <rect x="106" y="272" width="23" height="20" /> <rect x="129" y="272" width="23" height="20" />
+        <rect x="152" y="272" width="23" height="20" /> <rect x="175" y="272" width="23" height="20" /> <rect x="198" y="272" width="23" height="20" /> <rect x="221" y="272" width="23" height="20" />
+        <rect x="60" y="298" width="23" height="20" /> <rect x="83" y="298" width="23" height="20" /> <rect x="106" y="298" width="23" height="20" /> <rect x="129" y="298" width="23" height="20" />
+        <rect x="152" y="298" width="23" height="20" /> <rect x="175" y="298" width="23" height="20" /> <rect x="198" y="298" width="23" height="20" /> <rect x="221" y="298" width="23" height="20" />
+        <rect x="60" y="324" width="23" height="20" /> <rect x="83" y="324" width="23" height="20" /> <rect x="106" y="324" width="23" height="20" /> <rect x="129" y="324" width="23" height="20" />
+        <rect x="152" y="324" width="23" height="20" /> <rect x="175" y="324" width="23" height="20" /> <rect x="198" y="324" width="23" height="20" /> <rect x="221" y="324" width="23" height="20" />
+    </g>
+    <g font-size="13" fill="#222222" text-anchor="end">
+        <text x="48" y="53">0</text>
+        <text x="48" y="79">1</text>
+        <text x="48" y="105">2</text>
+        <text x="48" y="131">3</text>
+        <text x="48" y="157">4</text>
+        <text x="48" y="183">5</text>
+        <text x="48" y="209">6</text>
+        <text x="48" y="235">7</text>
+        <text x="48" y="261">8</text>
+        <text x="48" y="287">9</text>
+        <text x="48" y="313">10</text>
+        <text x="48" y="339">11</text>
+    </g>
+
+    <!-- de acht cellen achter een adres zijn samen 8 bits -->
+    <path d="M 60 368 L 244 368" stroke="#004d40" stroke-width="1.4" fill="none"
+        marker-start="url(#pijl-terug)" marker-end="url(#pijl)" />
+    <text x="152" y="387" font-size="13" fill="#222222" text-anchor="middle">8 bits</text>
+</svg>

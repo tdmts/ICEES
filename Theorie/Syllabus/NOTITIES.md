@@ -4054,9 +4054,10 @@ labo. Wat wegvalt is het woord "verdubbelt", en dat is met opzet: het was onwaar
 
 ### 5. De figuren
 
-**Vier zijn aangepakt en dertien zijn gebleven.** De beslissing van 9 september dat elke
+**Zes zijn aangepakt en elf zijn gebleven.** De beslissing van 9 september dat elke
 tekening hertekend wordt, kwam er tijdens deze import bij; wat hier al gedaan was, valt
-eronder, en de vijf die overblijven staan op de worklijst in CLAUDE.md.
+eronder. Vier zijn tijdens de import zelf gedaan, en `-01` en `-04` in een parallelle
+sessie op dezelfde dag; de drie die overblijven staan op de worklijst in CLAUDE.md.
 
 - **`img/syllabus-13-sdr-sdram.svg`** vervangt `-06`, 274 bij 84 pixels op 94,0mm ofwel
   **74 dpi**, de laagste van dit hoofdstuk, met Memory Core en I/O in het Engels.
@@ -4071,6 +4072,24 @@ eronder, en de vijf die overblijven staan op de worklijst in CLAUDE.md.
 - **`-12`, de foto van een DDR4-module**, stond met 400 bij 96 pixels op 160,0mm op
   **63 dpi** en is versmald naar **104,0mm**, wat haar op ongeveer 98 dpi brengt. Dat is
   de regel van hoofdstuk 9: bij een foto is de breedte de enige knop.
+- **`img/syllabus-13-adresrooster.svg`** vervangt `-01`, het adresrooster van 13.1, 190
+  bij 486 pixels op 50,4mm ofwel 96 dpi. De dpi is de reden niet: de figuur draagt
+  **Address** boven de adreskolom in een Nederlandse tekst, en het is een tekening, dus ze
+  valt onder de beslissing van 9 september. De kop heet nu **Adres**; 8 bits blijft staan,
+  want dat schrijft de lopende tekst er zelf ook zo. Geen enkel gegeven valt weg: twaalf
+  adressen 0 tot en met 11, acht vakjes per adres, en de maatpijl eronder. Ze staat op
+  **51,0mm**, gekozen zodat haar tekst van 13px op 2,55mm drukt, dezelfde rekensom als bij
+  `-06` en `-16`.
+- **`img/syllabus-13-emmers.svg`** vervangt `-04`, de emmers van 13.2, 647 bij 191 pixels
+  op 160,0mm ofwel 103 dpi, dus boven de grens. Ook hier is het de beslissing van 9
+  september: het is een tekening, en ze stond in een ander palet en in een andere stijl dan
+  de rest. **Het gat is nu getekend en niet alleen verondersteld.** Het origineel zet een
+  wolk stippen boven en naast elke volle emmer, wat evengoed opspattend water kan zijn,
+  terwijl de alinea ernaast zegt dat er een gat in de emmer zit waardoor het water
+  wegstroomt. Elke emmer heeft nu een onderbroken wand, en waar nog water in zit lopen er
+  druppels uit weg. De acht bits blijven 1 0 1 1 0 0 0 1, de vier volle emmers blijven de
+  enen, en de regel eronder blijft woord voor woord staan. Ze staat op **151,0mm**, zelfde
+  rekensom.
 - **`-14` en `-15`, de twee Hamming-tabellen**, bestonden alleen als beeld en zijn
   overgetypt, zoals de kibi-tabel van 10.4. Vier rijen op vijf kolommen, dus ruim binnen
   de omvang waar die regel voor geldt. Overtypen is nakijken, en anders dan bij die
@@ -4095,11 +4114,12 @@ dpi, dus de krimp kost ze wel wat maar niet genoeg om ze te beschermen. **Doe di
 en beslis niet op de dpi alleen**, want de leesbaarheid hangt aan de grootte van de
 letters in het beeld en niet aan de resolutie ervan.
 
-**`-01`, `-03` en `-04` staan op 96, 96 en 103 dpi en zijn niet versmald.** De grens van
-98 is een diagnose: twee millimeter versmallen tilt ze formeel over de grens en levert
-op papier niets op, en dat is dezelfde afweging als bij de vier figuren van hoofdstuk 11
-die op 96 bleven staan. Ze staan wel op de worklijst, want daar is de reden de taal en
-de herkomst en niet de dpi.
+**`-03` staat op 96 dpi en is niet versmald.** De grens van 98 is een diagnose: twee
+millimeter versmallen tilt de figuur formeel over de grens en levert op papier niets op,
+en dat is dezelfde afweging als bij de vier figuren van hoofdstuk 11 die op 96 bleven
+staan. Het is een foto van een SO-DIMM, dus ze blijft. **`-01` en `-04` stonden op 96 en
+103 dpi en zijn om dezelfde reden niet versmald**; daar was de dpi ook de reden niet, en
+ze zijn hierboven hertekend.
 
 ### 6. Waar dit hoofdstuk en de rest van dit vak naast elkaar staan
 

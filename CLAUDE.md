@@ -1488,8 +1488,6 @@ is.
 | 12.2 | `syllabus-12-central-processing-unit-cpu-02.png` | het ALU-trapezium |
 | 12.2 | `syllabus-12-central-processing-unit-cpu-04.jpeg` | Processor-Memory Performance Gap, geleende meting |
 | 12.3 | `syllabus-12-central-processing-unit-cpu-06.png` | System Peak Power, tom's hardware, geleende meting |
-| 13.1 | `syllabus-13-random-access-memory-ram-01.png` | het adresrooster, twaalf adressen van elk acht cellen |
-| 13.2 | `syllabus-13-random-access-memory-ram-04.png` | de emmertjes met bits die weglekken |
 | 13.3 | `syllabus-13-random-access-memory-ram-05.png` | de RAS/CAS-matrix |
 | 13.5 | `syllabus-13-random-access-memory-ram-08.jpg` | SDR tegen DDR, een overdracht tegen twee per klokperiode |
 | 13.7 | `syllabus-13-random-access-memory-ram-11.png` | het DDR3-blokschema met de prefetch buffer van acht |

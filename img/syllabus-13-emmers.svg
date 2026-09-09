@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 770 180" width="770" height="180"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">Acht emmers naast elkaar, elk met een gat in de wand. Vier emmers staan nog voor de
+        helft vol en dragen het cijfer 1, met druppels die uit het gat wegstromen; de vier andere zijn
+        leeggelopen en dragen het cijfer 0.</title>
+    <rect width="770" height="180" fill="#ffffff" />
+
+    <!-- emmer 1: nog water, dus een 1 -->
+    <path d="M 11.0 64 L 18 100 L 70 100 L 77.0 64 z" fill="#b2dfdb" />
+    <path d="M 6 38 L 18 100 L 70 100 L 72.7 86" fill="none" stroke="#004d40" stroke-width="2.5"
+        stroke-linejoin="round" />
+    <path d="M 75.0 74 L 82 38" fill="none" stroke="#004d40" stroke-width="2.5" />
+    <circle cx="82.0" cy="79.0" r="2.6" fill="#b2dfdb" stroke="#004d40" stroke-width="1" />
+    <circle cx="88.0" cy="86.0" r="2.3" fill="#b2dfdb" stroke="#004d40" stroke-width="1" />
+    <circle cx="93.0" cy="95.0" r="2.0" fill="#b2dfdb" stroke="#004d40" stroke-width="1" />
+    <circle cx="97.0" cy="106.0" r="1.8" fill="#b2dfdb" stroke="#004d40" stroke-width="1" />
+    <text x="44" y="130" font-size="18" fill="#222222" text-anchor="middle">1</text>
+
+    <!-- emmer 2: leeggelopen, dus een 0 -->
+    <path d="M 100 38 L 112 100 L 164 100 L 166.7 86" fill="none" stroke="#004d40" stroke-width="2.5"
+        stroke-linejoin="round" />
+    <path d="M 169.0 74 L 176 38" fill="none" stroke="#004d40" stroke-width="2.5" />
+    <text x="138" y="130" font-size="18" fill="#222222" text-anchor="middle">0</text>
+
+    <!-- emmer 3: nog water, dus een 1 -->
+    <path d="M 199.0 64 L 206 100 L 258 100 L 265.0 64 z" fill="#b2dfdb" />
+    <path d="M 194 38 L 206 100 L 258 100 L 260.7 86" fill="none" stroke="#004d40" stroke-width="2.5"
+        stroke-linejoin="round" />
+    <path d="M 263.0 74 L 270 38" fill="none" stroke="#004d40" stroke-width="2.5" />
+    <circle cx="270.0" cy="79.0" r="2.6" fill="#b2dfdb" stroke="#004d40" stroke-width="1" />
+    <circle cx="276.0" cy="86.0" r="2.3" fill="#b2dfdb" stroke="#004d40" stroke-width="1" />
+    <circle cx="281.0" cy="95.0" r="2.0" fill="#b2dfdb" stroke="#004d40" stroke-width="1" />
+    <circle cx="285.0" cy="106.0" r="1.8" fill="#b2dfdb" stroke="#004d40" stroke-width="1" />
+    <text x="232" y="130" font-size="18" fill="#222222" text-anchor="middle">1</text>
+
+    <!-- emmer 4: nog water, dus een 1 -->
+    <path d="M 293.0 64 L 300 100 L 352 100 L 359.0 64 z" fill="#b2dfdb" />
+    <path d="M 288 38 L 300 100 L 352 100 L 354.7 86" fill="none" stroke="#004d40" stroke-width="2.5"
+        stroke-linejoin="round" />
+    <path d="M 357.0 74 L 364 38" fill="none" stroke="#004d40" stroke-width="2.5" />
+    <circle cx="364.0" cy="79.0" r="2.6" fill="#b2dfdb" stroke="#004d40" stroke-width="1" />
+    <circle cx="370.0" cy="86.0" r="2.3" fill="#b2dfdb" stroke="#004d40" stroke-width="1" />
+    <circle cx="375.0" cy="95.0" r="2.0" fill="#b2dfdb" stroke="#004d40" stroke-width="1" />
+    <circle cx="379.0" cy="106.0" r="1.8" fill="#b2dfdb" stroke="#004d40" stroke-width="1" />
+    <text x="326" y="130" font-size="18" fill="#222222" text-anchor="middle">1</text>
+
+    <!-- emmer 5: leeggelopen, dus een 0 -->
+    <path d="M 382 38 L 394 100 L 446 100 L 448.7 86" fill="none" stroke="#004d40" stroke-width="2.5"
+        stroke-linejoin="round" />
+    <path d="M 451.0 74 L 458 38" fill="none" stroke="#004d40" stroke-width="2.5" />
+    <text x="420" y="130" font-size="18" fill="#222222" text-anchor="middle">0</text>
+
+    <!-- emmer 6: leeggelopen, dus een 0 -->
+    <path d="M 476 38 L 488 100 L 540 100 L 542.7 86" fill="none" stroke="#004d40" stroke-width="2.5"
+        stroke-linejoin="round" />
+    <path d="M 545.0 74 L 552 38" fill="none" stroke="#004d40" stroke-width="2.5" />
+    <text x="514" y="130" font-size="18" fill="#222222" text-anchor="middle">0</text>
+
+    <!-- emmer 7: leeggelopen, dus een 0 -->
+    <path d="M 570 38 L 582 100 L 634 100 L 636.7 86" fill="none" stroke="#004d40" stroke-width="2.5"
+        stroke-linejoin="round" />
+    <path d="M 639.0 74 L 646 38" fill="none" stroke="#004d40" stroke-width="2.5" />
+    <text x="608" y="130" font-size="18" fill="#222222" text-anchor="middle">0</text>
+
+    <!-- emmer 8: nog water, dus een 1 -->
+    <path d="M 669.0 64 L 676 100 L 728 100 L 735.0 64 z" fill="#b2dfdb" />
+    <path d="M 664 38 L 676 100 L 728 100 L 730.7 86" fill="none" stroke="#004d40" stroke-width="2.5"
+        stroke-linejoin="round" />
+    <path d="M 733.0 74 L 740 38" fill="none" stroke="#004d40" stroke-width="2.5" />
+    <circle cx="740.0" cy="79.0" r="2.6" fill="#b2dfdb" stroke="#004d40" stroke-width="1" />
+    <circle cx="746.0" cy="86.0" r="2.3" fill="#b2dfdb" stroke="#004d40" stroke-width="1" />
+    <circle cx="751.0" cy="95.0" r="2.0" fill="#b2dfdb" stroke="#004d40" stroke-width="1" />
+    <circle cx="755.0" cy="106.0" r="1.8" fill="#b2dfdb" stroke="#004d40" stroke-width="1" />
+    <text x="702" y="130" font-size="18" fill="#222222" text-anchor="middle">1</text>
+
+    <text x="385" y="164" font-size="13" fill="#222222" text-anchor="middle" font-style="italic">Een volle emmer = 1, een lege emmer = 0</text>
+</svg>
