@@ -1584,19 +1584,36 @@ De maat die telt is niet 160,1mm maar wat er op die plaats overblijft. `ol > li`
 `--kolom-breedte` uit de Word meer optelt. De vijf bestaande `invulkolom`-tabellen in de syllabus
 staan op 142,0mm, en dat is dus meteen de maat die je neemt.
 
-**Kijk het na in de PDF en niet met het oog.** Elke bladzijde opent met `q\n<schaal> 0 0 <schaal>
-... cm`, en `3.1249194` is de ongekrompen maat (0,75, de omrekening van CSS-pixels naar punten).
-Staat er iets anders, dan overloopt er ergens iets. Doe dat na elk hoofdstuk, want dit is precies
-het soort fout dat er op het scherm perfect uitziet.
+**Kijk het na in de PDF en niet met het oog, en let op WELKE matrix je leest.** Elke bladzijde
+opent met `q\n.23999999 0 0 -.23999999 0 841.91998 cm`, de omrekening van het papier, en die is op
+elke bladzijde dezelfde. De schaal die je zoekt is de TWEEDE matrix, `3.1249194 0 0 3.1249194`
+(0,75, de omrekening van CSS-pixels naar punten). **Die tweede matrix is alleen 3.1249194 wanneer de
+bladzijde met tekst begint**: begint ze met een figuur, dan lees je de eigen schaal van die figuur
+en niet die van de bladzijde, en dan lijkt er iets gekrompen terwijl er niets aan de hand is. Op 9
+september 2026 zijn twee sessies daar op dezelfde ochtend in gelopen.
+
+Wat wel werkt, en wat de controle is: **elke bladzijde opent met `.23999999 0 0 -.23999999`, en
+elke bladzijde draagt ERGENS `3.1249194 0 0 3.1249194`** tenzij ze helemaal uit beeld bestaat.
+Overloopt er iets, dan is die tweede reeks nergens te vinden en staat er een kleinere in de plaats.
+Doe dat na elk hoofdstuk, want dit is precies het soort fout dat er op het scherm perfect uitziet.
 
 **Lees die schaal met `pypdf` en niet met een regex over de ruwe bytes**, aangevuld bij hoofdstuk
 12. De inhoudsbladzijden zitten in objectstreams, dus een grep over de gedecomprimeerde streams
-vindt er vijf van de 153, en dat zijn net de vijf voorwerkbladzijden, die met `3.125` een eigen
-afdrukronde zijn en dus nooit iets zouden melden. `PdfReader(...).pages[n].get_contents()
-.get_data()` geeft ze wel alle 153. Drie bladzijden vol beeld dragen helemaal geen
-schaaltransformatie, en dat is geen fout. Vergelijk de verdeling met die van de vorige PDF
-(`git show HEAD:downloads/...pdf`) in plaats van met een getal, want dan zie je meteen ook of de
-hoofdstukken ervoor verschoven zijn.
+vindt er maar een handvol, en dat zijn net de voorwerkbladzijden, die een eigen afdrukronde zijn en
+dus nooit iets zouden melden. `PdfReader(...).pages[n].get_contents().get_data()` geeft ze wel
+allemaal. Drie bladzijden vol beeld dragen helemaal geen tekstschaal, en dat is geen fout.
+Vergelijk de verdeling met die van de vorige PDF (`git show HEAD:downloads/...pdf`) in plaats van
+met een getal, want dan zie je meteen ook of de hoofdstukken ervoor verschoven zijn.
+
+**Het voorwerk groeit mee, en sinds hoofdstuk 13 zijn het zes bladzijden en geen vijf.** De
+inhoudstafel loopt over vier bladzijden en de twaalf rijen van dat hoofdstuk pasten er niet meer
+bij, dus hoofdstuk 1 tot 12 zijn er allemaal een opgeschoven. **Dat is geen fout en het is ook niet
+te vermijden**, maar het betekent wel dat "de hoofdstukken ervoor staan op exact dezelfde
+bladzijde" niet meer de toets is. De toets is dat alle oude rijen er nog staan en dat de
+verschuiving voor elke rij dezelfde is: leg de inhoudstafel dus rij voor rij naast de vorige met
+die verschuiving erbij, in plaats van op gelijkheid te vergelijken. Verspringt een enkele rij
+anders dan de rest, dan is dat een hoofdstuk dat een bladzijde gewonnen of verloren heeft, en dat
+wil je weten.
 
 **De importer laat twee soorten afbeelding vallen, en meldt geen van beide.** Ook dat kwam bij
 hoofdstuk 11 boven, waar de Word er 44 plaatst en `img/` er 38 kreeg. Een afbeelding die aan een
