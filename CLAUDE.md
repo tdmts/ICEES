@@ -1488,9 +1488,6 @@ is.
 | 12.2 | `syllabus-12-central-processing-unit-cpu-02.png` | het ALU-trapezium |
 | 12.2 | `syllabus-12-central-processing-unit-cpu-04.jpeg` | Processor-Memory Performance Gap, geleende meting |
 | 12.3 | `syllabus-12-central-processing-unit-cpu-06.png` | System Peak Power, tom's hardware, geleende meting |
-| 13.3 | `syllabus-13-random-access-memory-ram-05.png` | de RAS/CAS-matrix |
-| 13.5 | `syllabus-13-random-access-memory-ram-08.jpg` | SDR tegen DDR, een overdracht tegen twee per klokperiode |
-| 13.7 | `syllabus-13-random-access-memory-ram-11.png` | het DDR3-blokschema met de prefetch buffer van acht |
 
 **De vijf RAID-tekeningen zijn een familie en horen in een keer af**, of anders vlak na elkaar: ze
 staan nu in drie stijlen uit drie bronnen, en precies daar moet de student ze naast elkaar kunnen
@@ -1506,7 +1503,16 @@ hertekening minder toont dan het origineel. Neem ze niet samen met een tweede.
 **Hoofdstuk 13, Random Access Memory, is op 9 september 2026 in een parallelle sessie ingevoerd**,
 en die sessie heeft er meteen drie van zijn eigen gevallen afgewerkt: het blokschema van SDR SDRAM
 werd `img/syllabus-13-sdr-sdram.svg`, en de twee Hamming-tabellen van 13.10 werden overgetypte
-HTML-tabellen. De vijf die overblijven staan in de lijst hierboven.
+HTML-tabellen. De vijf die daarna overbleven zijn op diezelfde dag afgewerkt, in twee sessies naast
+elkaar, en van dit hoofdstuk staat er dus niets meer op de lijst: `-01` werd
+`img/syllabus-13-adresrooster.svg`, `-04` werd `img/syllabus-13-emmers.svg`, `-05` werd
+`img/syllabus-13-ras-cas.svg`, `-08` werd `img/syllabus-13-sdr-tegen-ddr.svg` en `-11` werd
+`img/syllabus-13-ddr3-prefetch.svg`. **Dat er twee sessies tegelijk in dezelfde werkboom aan een
+en dezelfde lijst werkten, is wat het afstemmen kostte** en niet het tekenen: de lijst zelf, het
+blok van hoofdstuk 13 in NOTITIES.md en `downloads/` zijn met zijn drieen de plaatsen waar twee
+sessies elkaar overschrijven. Wat werkte was per rij afspreken wie hem vasthoudt, een gedeeld
+bestand opnieuw inlezen vlak voor je erin schrijft, committen met `git commit --only` en een
+pathspec, en de export aan een van de twee laten.
 
 **Dat hoofdstuk heeft ook de eerste uitzondering op deze beslissing opgeleverd, en ze is door de
 lector toegestaan.** De geannoteerde foto van de DIMM-sloten in 13.11 is `img/syllabus-13-channels.svg`

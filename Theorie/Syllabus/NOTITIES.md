@@ -4054,10 +4054,10 @@ labo. Wat wegvalt is het woord "verdubbelt", en dat is met opzet: het was onwaar
 
 ### 5. De figuren
 
-**Zes zijn aangepakt en elf zijn gebleven.** De beslissing van 9 september dat elke
+**Zeven zijn aangepakt en tien zijn gebleven.** De beslissing van 9 september dat elke
 tekening hertekend wordt, kwam er tijdens deze import bij; wat hier al gedaan was, valt
 eronder. Vier zijn tijdens de import zelf gedaan, en `-01` en `-04` in een parallelle
-sessie op dezelfde dag; de drie die overblijven staan op de worklijst in CLAUDE.md.
+sessie op dezelfde dag; de twee die overblijven staan op de worklijst in CLAUDE.md.
 
 - **`img/syllabus-13-sdr-sdram.svg`** vervangt `-06`, 274 bij 84 pixels op 94,0mm ofwel
   **74 dpi**, de laagste van dit hoofdstuk, met Memory Core en I/O in het Engels.
@@ -4090,6 +4090,27 @@ sessie op dezelfde dag; de drie die overblijven staan op de worklijst in CLAUDE.
   druppels uit weg. De acht bits blijven 1 0 1 1 0 0 0 1, de vier volle emmers blijven de
   enen, en de regel eronder blijft woord voor woord staan. Ze staat op **151,0mm**, zelfde
   rekensom.
+- **`img/syllabus-13-sdr-tegen-ddr.svg`** vervangt `-08`, de vergelijking van 13.5, 300
+  bij 179 pixels op 74,7mm ofwel 102 dpi. Boven de grens, dus ook hier is het de
+  beslissing van 9 september, en er is een tweede reden: de figuur staat **volledig in
+  het Engels** (SDR, 1 transfer per clock cycle, Clock Freq, Data Freq) in een
+  Nederlandse tekst, en het is net de figuur waar de lopende tekst met zoveel woorden
+  naar wijst ("zoals je ook op de tekening duidelijk kan zien"). De woorden komen uit de
+  tekst zelf: overdracht, klokperiode, opgaande en neergaande flank. De driehoekjes op de
+  flanken zijn dezelfde als in `syllabus-13-sdr-sdram.svg` van 13.4, in hetzelfde
+  `#c0392b`, zodat de twee figuren van dit hoofdstuk dezelfde taal spreken. Ze staat op
+  **120,0mm**, zelfde rekensom als de andere drie.
+
+  **De datasnelheid staat er als MT/s en niet als MHz, en dat is een inhoudelijke
+  correctie.** Het origineel schrijft "Data Freq = 100MHz" en "Data Freq = 200MHz",
+  terwijl 200 MT/s bij een klok van 100 MHz de juiste lezing is: de klok blijft 100 MHz,
+  er gaan alleen twee overdrachten in een periode. Dat is exact de verwarring die
+  beslissing 4 hierboven in 13.8 al rechtzette ("gaf DDR4 in transfers maar noemde het
+  MHz"), en `syllabus-13-sdr-sdram.svg` drukt op de uitgang al MT/s. Zonder deze ingreep
+  is dit de enige plaats in het hoofdstuk waar een overdrachtssnelheid nog in MHz staat.
+  **Alle vier de getallen van het origineel blijven staan** (100, 100, 100 en 200), er
+  verandert alleen de eenheid op de twee dataregels. Gemeld aan de lector; een herimport
+  draait ze terug.
 - **`-14` en `-15`, de twee Hamming-tabellen**, bestonden alleen als beeld en zijn
   overgetypt, zoals de kibi-tabel van 10.4. Vier rijen op vijf kolommen, dus ruim binnen
   de omvang waar die regel voor geldt. Overtypen is nakijken, en anders dan bij die

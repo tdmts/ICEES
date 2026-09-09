@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 280" width="612" height="280"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">Twee blokgolven onder elkaar, allebei op 100 MHz. Bij SDR staat er een driehoekje op
+        elke opgaande flank, dus een overdracht per klokperiode en 100 MT/s. Bij DDR staat er een
+        driehoekje op elke opgaande en elke neergaande flank, dus twee overdrachten per klokperiode en
+        200 MT/s bij dezelfde klok.</title>
+    <rect width="612" height="280" fill="#ffffff" />
+
+    <!-- SDR: 1 overdracht per klokperiode -->
+    <text x="12" y="44" font-size="30" font-weight="bold" fill="#004d40">SDR</text>
+    <text x="12" y="72" font-size="13" fill="#222222">1 overdracht</text>
+    <text x="12" y="90" font-size="13" fill="#222222">per klokperiode</text>
+    <path d="M 255 60 L 255 24 L 298 24 L 298 60 L 341 60 L 341 24 L 384 24 L 384 60 L 427 60 L 427 24 L 470 24 L 470 60 L 513 60 L 513 24 L 556 24 L 556 60 L 599 60" fill="none" stroke="#004d40" stroke-width="2" stroke-linejoin="round" />
+    <g fill="#c0392b"><path d="M 255 64 l -4.5 9 l 9 0 z" /> <path d="M 341 64 l -4.5 9 l 9 0 z" /> <path d="M 427 64 l -4.5 9 l 9 0 z" /> <path d="M 513 64 l -4.5 9 l 9 0 z" /></g>
+    <text x="255" y="95" font-size="13" fill="#222222">klokfrequentie 100 MHz</text>
+    <text x="255" y="113" font-size="13" fill="#222222">datasnelheid 100 MT/s</text>
+
+    <!-- DDR: 2 overdrachten per klokperiode -->
+    <text x="12" y="194" font-size="30" font-weight="bold" fill="#004d40">DDR</text>
+    <text x="12" y="222" font-size="13" fill="#222222">2 overdrachten</text>
+    <text x="12" y="240" font-size="13" fill="#222222">per klokperiode</text>
+    <path d="M 255 210 L 255 174 L 298 174 L 298 210 L 341 210 L 341 174 L 384 174 L 384 210 L 427 210 L 427 174 L 470 174 L 470 210 L 513 210 L 513 174 L 556 174 L 556 210 L 599 210" fill="none" stroke="#004d40" stroke-width="2" stroke-linejoin="round" />
+    <g fill="#c0392b"><path d="M 255 214 l -4.5 9 l 9 0 z" /> <path d="M 298 214 l -4.5 9 l 9 0 z" /> <path d="M 341 214 l -4.5 9 l 9 0 z" /> <path d="M 384 214 l -4.5 9 l 9 0 z" /> <path d="M 427 214 l -4.5 9 l 9 0 z" /> <path d="M 470 214 l -4.5 9 l 9 0 z" /> <path d="M 513 214 l -4.5 9 l 9 0 z" /> <path d="M 556 214 l -4.5 9 l 9 0 z" /></g>
+    <text x="255" y="245" font-size="13" fill="#222222">klokfrequentie 100 MHz</text>
+    <text x="255" y="263" font-size="13" fill="#222222">datasnelheid 200 MT/s</text>
+
+</svg>
