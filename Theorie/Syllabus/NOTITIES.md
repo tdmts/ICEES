@@ -5289,6 +5289,87 @@ power connector"). Dat is een gebrek dat genoteerd wordt en niet opgelost: het z
 en deze repo bewerkt geen beeld. `-02` heeft daarbij een bijschrift dat de tekst niet
 uitlegt, Alternate Power Connector.
 
+### 6. Hoe de familie van drie getekend is
+
+De drie heten `img/syllabus-16-atx-connector.svg`, `-ps-on.svg` en `-pwr-ok.svg`, en de
+drie PNG's die ze vervangen zijn geschrapt. Alle drie staan ze op **50.0mm**, waar de Word
+106.7, 97.6 en 105.2mm had: bij een gedeelde schaal is de breedte geen knop meer per
+figuur. De drie `alt` zijn met de hand geschreven en verschillen in precies een zin.
+
+**Bij deze familie is de HOOGTE de beperking en niet de breedte, en dat is nieuw hier.**
+`PsOn.html` en `PwrOk.html` zijn gewone secties, dus ze krijgen in `syllabus.css` geen
+`page-break-before` en 16.2 en 16.3 lopen in de PDF achter elkaar door. Tussen de twee
+figuren zit alleen een kop en zeven regels, samen ongeveer 41mm, dus twee figuren van
+hoogte H passen samen op een blad zolang 2H + 41 onder de 240 blijft. Dat geeft H onder de
+99mm, en met lucht 95mm.
+
+**De maat die je daarvoor nodig hebt is eenheidsloos: een tekening mag ten hoogste 38
+labelhoogtes hoog zijn.** De afleiding is kort. De schaal is s = breedte / viewBox-breedte,
+en de breedteregel legt fontsize x s = 2,5mm op, dus s = 2,5 / fontsize. De gedrukte hoogte
+is dan viewBox-hoogte x s = 2,5 x H / f, waar de BREEDTE volledig uit weggevallen is. 95mm
+gedeeld door 2,5mm is 38, en deze tekening zit op 468/13 = 36,0 en dus 90,0mm.
+
+**Reken dat nooit in pixels, want de px-maat heeft geen papier eraan.** De verleiding is om
+bij plaatsgebrek de fontsize te verkleinen; dat levert nul millimeter op, want de
+breedteregel schrompelt de schaal dan mee en de letter drukt nog altijd 2,5mm. Alleen de
+verhouding H/f telt. Van 470 op 13px naar 456 op 12px gaan maakt de figuur HOGER, van 36,2
+naar 38,0 labelhoogtes, en dat is precies de verkeerde kant op. Loopt een tekening over,
+dan is de rijhoogte de echte knop: van 2,6 naar 2,4 labelhoogtes per rij scheelt hier zes
+millimeter.
+
+**De drie zijn uit een generator geschreven, en die staat niet in de repo**, net zomin als
+die van de RAID-familie: de SVG's zijn de bron. Wat de generator koopt is dat de gedeelde
+helft niet KAN driften. Nagekeken met `diff`: elk familielid verschilt van het schone in
+precies twee regels, een `rect class="ring"` erbij en een `class="aan"` op een label.
+**Het driftrisico is hier groter dan bij de drie kopieen van `vm-versus-container.svg`**,
+want die liggen in drie tracks en worden zelden samen aangeraakt, terwijl deze drie binnen
+twintig regels van elkaar staan en dus wel samen bewerkt worden. Wijzig er dus nooit een
+zonder de twee andere, en controleer het met `diff`.
+
+**De fotohelft is gevallen en er is geen gegeven mee gevallen.** De linkerhelft van het
+origineel was een scan van de connector met zijn kabelbundel, drie keer herhaald. De twee
+dingen die ze toonde staan wel in de tekening: de twee rijen met de vergrendeling
+halverwege aan de rechterkant, en het aparte blokje van vier pinnen dat met een stippellijn
+onder het blok van twintig hangt. **Dat tweede is bovendien precies waar de alinea ernaast
+over gaat**, 20 tegen 24 pinnen, dus het is geen decoratie: de bovenste tien rijen ZIJN de
+20-pins connector en de twee eronder zijn de uitbreiding.
+
+**De pijl is een omlijning geworden.** Het gegeven is welke pin aangewezen wordt en niet
+het pijlglyph, en in een tekening op 50mm is een omlijning van 2,5 breed om het pinvierkant
+plus het label in dezelfde kleur duidelijker dan een pijl die zich tussen de pinnen en de
+labels moet wringen. De aanwijzing staat in `#9e2f26` en niet in het oranje van de bron,
+want over de kleur van een AANWIJZING beweert het beeld niets en daar geldt het palet
+gewoon.
+
+**Over de kleur van een PIN beweert het beeld wel iets, dus daar wijkt het palet.** De
+kleur van een draad is de spanning, dezelfde uitzondering als bij de SATA- en PATA-kabels
+van hoofdstuk 11. Zes van de negen tinten stonden al in `img/` en zijn overgenomen:
+`#9e2f26` rood, `#2a4d7c` blauw, `#222222` zwart, `#9bb0ac` grijs, `#3f7238` groen uit
+`syllabus-06-fragmentatie.svg` en `#b8951f` geel uit `syllabus-11-sata-kabels.svg`, plus
+wit dat wit blijft. **Twee bestonden nog niet en zijn afgeleid, niet verzonnen**:
+`#9e622e` voor oranje en `#6f358d` voor paars. Ze zijn op dezelfde manier gemaakt als de
+zes die er al waren, met de hue van de draad en een verzadiging en helderheid uit het
+bereik waarin die zes liggen (S tussen 0,34 en 0,61, L tussen 0,33 en 0,42). Het oranje
+deelt daarbij niet toevallig zijn rode kanaal met `#9e2f26` en valt tussen dat rood en het
+geel in. **Neem die twee over wanneer er een volgende draadtekening komt**, in plaats van
+opnieuw af te leiden.
+
+**De labellijst is van het bestand afgelezen voor er getekend werd**, met een uitsnede op
+vier keer vergroot, en ze klopte met de lijst die ernaast lag. Links pin 1 tot 12: +3.3V,
++3.3V, COM, +5V, COM, +5V, COM, PWR_OK, +5VSB, +12V1, en in het blokje van vier +12V1 en
++3.3V. Rechts pin 13 tot 24: +3.3V, -12V, COM, PS_ON, COM, COM, COM, N/C, +5V, +5V, en in
+het blokje van vier +5V en COM. Dat komt overeen met de standaard ATX-belegging, wat een
+tweede controle is die niets kost. **De -12V staat er dus op**, en dat is de enige plaats
+in het hoofdstuk waar de negatieve spanningen van 16.1 te zien zijn.
+
+**Gerenderd voor ze vertrouwd werd, en de eerste render kostte een tweede ronde.** De
+vergrendeling stond als een los blokje naast de behuizing omdat de rand van de behuizing er
+dwars doorheen liep; ze is nu een pad zonder linkerzijde met de naad wit overgeschilderd.
+Geen enkele `A`-boog in de drie bestanden. **En kijk een kleur na door de render te
+BEMONSTEREN en niet door ernaar te kijken**: de pinnummers leken in de samengestelde render
+blauw en waren gewoon `#222222`, wat de subpixelrand van de antialiasing bleek te zijn. Dat
+kost anders een correctie aan een bestand waar niets mis mee is.
+
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
 De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
