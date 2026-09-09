@@ -179,30 +179,45 @@ match in DeN.
   rule 13) and one handout PDF per deck (derived by `export-handout.py`). All committed, because
   Pages serves only tracked files.
 
-**De syllabus-PDF staat sinds 8 september 2026 op `skip-worktree`, en dat is onzichtbaar.** Elke
-regeneratie legt er een volledige kopie van 56 MB bij in `.git` (git delta-comprimeert een PDF
-niet), en met vijf hoofdstukken te gaan loopt dat tegen de grenzen van GitHub aan. Daarom telt het
-bestand voorlopig niet meer mee:
+**De syllabus-PDF ging op 9 september 2026 van 56,5 naar 11,1 MB, en `skip-worktree` staat sinds
+dan weer uit.** Ze wordt dus gewoon meegecommit en Pages serveert de actuele versie. Wat er tussen
+8 en 9 september op `skip-worktree` stond was een noodrem; die is opgeheven, en `git ls-files -v
+downloads/` hoort voor dit bestand een `H` te tonen en geen `S`. **Zet hem niet opnieuw aan** zonder
+te beseffen dat `git status` daarna over dat bestand zwijgt ook als het veranderd is: je draait
+`export-syllabus.py`, alles ziet er goed uit, en er gaat niets omhoog.
 
-```
-git update-index --skip-worktree downloads/Industriele-computers-en-embedded-systems-syllabus.pdf
-```
+Waar het gewicht vandaan kwam, want allebei de oorzaken zitten in `export-syllabus.py` en allebei
+komen ze terug als je eraan werkt:
 
-Wat dat doet en niet doet. De PDF **blijft in HEAD**, dus Pages serveert ze en de downloadknop van
-`Theorie/Syllabus/overview.html` blijft werken; wat er staat, is de versie van hoofdstuk 1 tot 11.
-Wat je lokaal opnieuw genereert, komt er niet meer bij. **`git status` zwijgt dan over het bestand**,
-ook als het wel degelijk veranderd is, en dat is de val: je draait `export-syllabus.py`, alles ziet
-er goed uit, en er gaat niets omhoog. Regel 13 blijft wel werken, want die leest de mtime op schijf
-en niet de index.
+- **`stempel()` maakte een canvas per bladzijde**, dus reportlab bedde het HOGENT-logo 148 keer in,
+  telkens op zijn volle 3490 bij 1968 pixels terwijl het op 19,4mm gedrukt wordt. Dat waren 148
+  identieke objecten van 99 kB, samen **14,3 MB**, een derde van het bestand. Het is nu EEN canvas
+  met `showPage()` per bladzijde, want reportlab deelt een afbeelding binnen een canvas, plus een
+  logo dat via `stempellogo()` op 300 dpi voor zijn eigen vakje geschaald wordt. Unieke
+  beeldobjecten gingen van 262 naar 115.
+- **Chrome zet elke afbeelding lossless in de PDF**, dus de 22 MB PNG waar de syllabus naar wijst
+  werd daar ruim 50 MB. `absolute_paden()` wijst een rasterafbeelding nu naar een kopie in de
+  werkmap, geschaald op `KRIMP_DPI` (150) voor de breedte die de figuur zelf opgeeft in
+  `--figuur-breedte`, en opgeslagen als JPEG. **`img/` blijft ongemoeid**, want `figure-zoom` heeft
+  de volle resolutie op de site wel nodig.
 
-Het is per checkout ingesteld, dus **een verse kloon draagt het niet** en commit de PDF weer gewoon
-mee. Zet het daar opnieuw met hetzelfde commando, of zet het hier uit met
-`--no-skip-worktree` wanneer de PDF wel weer mee moet. Kijk het na met `git ls-files -v downloads/`:
-een `S` vooraan betekent dat het aan staat.
+**Dat tweede is meteen waarom dit beter uitkomt dan een nabewerking van de PDF achteraf**, met
+Ghostscript of wat dan ook: de doel-dpi volgt PER FIGUUR uit haar gedrukte breedte, dus een foto op
+160mm mag naar 150 dpi terwijl een tabel die een oefening moet kunnen lezen haar volle resolutie
+houdt. Die staan in `ONAANGEROERD` in het script, met per bestand de reden: de ASCII-tabel van 10.3
+en de zes datasheetbladzijden van 9.5. **Zet je er iets bij of haal je er iets af, kijk het dan na
+IN de gedrukte PDF** en niet op het scherm.
 
-Dit is een noodrem en geen oplossing. De echte staat in NOTITIES.md en in de sessienotitie: de PDF
-verkleinen met Ghostscript voor hoofdstuk 12, en pas daarna eventueel de geschiedenis opschonen.
-**Nooit via Git LFS**, want Pages lost LFS-pointers niet op en serveert dan het pointerbestand.
+Wat er na zo'n ingreep nagekeken hoort te worden, en wat op 9 september groen was: het aantal
+bladzijden, de inhoudstafel rij voor rij tegen de vorige PDF, de schaalfactoren (zie de regel
+daarover verderop), of de voettekst en het logo nog op elke bladzijde staan, en of de zeven
+beschermde afbeeldingen nog op ware grootte in de PDF zitten. Dat laatste lees je met `pypdf` uit
+`/Resources /XObject` en leg je naast de pixelmaten van de bestanden in `img/`.
+
+**De geschiedenis is nog niet opgeschoond.** In `.git` staan nog zestien blobs van de oude, grote
+PDF, samen zo'n 310 MB van de 400. Beslist op 9 september 2026: dat wacht tot de syllabus af is,
+want `git filter-repo` herschrijft elke commit-hash en vraagt een force-push. **Nooit via Git LFS**,
+want Pages lost LFS-pointers niet op en serveert dan het pointerbestand.
 
 **A handout's filename is an agreement with Orion, so it is fixed.** The lecture track has no
 landing page: its Orion topic links straight at
@@ -1084,7 +1099,7 @@ beschadigd is, en dat een container een ander besturingssysteem kan draaien.
 herschreven. En de drie leads van de opdrachten zijn uitdrukkelijk uit elkaar geschreven, want regel
 12 valt over zeven opeenvolgende gedeelde woorden en dit labo heeft vijf leads.
 
-## De syllabus, hoofdstuk 1 tot 11 ingevoerd 7 september 2026
+## De syllabus, hoofdstuk 1 tot 12 ingevoerd 7 en 8 september 2026
 
 De theorietrack bestond hier nog niet: `Theorie/Syllabus/` was leeg en het manifest kende geen
 module `syllabus`. Wat er bij dit eerste hoofdstuk aan infrastructuur bij gekomen is, hoort erbij en
@@ -1136,6 +1151,14 @@ weg**; welke het zijn, staat per hoofdstuk in NOTITIES.md, zodat ze in de Word
 bijgeschreven kunnen worden. Dat geldt net zo voor een rechtgetrokken spelling: de
 importer vertaalt opmaak en nooit woorden, dus elke woordcorrectie is per definitie
 een handmatige die een herimport niet overleeft.
+
+**Code is een `<pre><code>`, en `syllabus.css` was er al op voorbereid.** De importer maakt van
+elke regel code een eigen `<p>`, inspringing en al kwijt, en van een schermafdruk van een listing
+een figuur. Het stijlblad draagt sinds DeN een regel `code, pre, kbd, samp` van 9pt Consolas met
+`white-space: pre-wrap`, en **hoofdstuk 12 is het eerste hoofdstuk dat ze gebruikt**: de C-lus van
+12.2 en de overgetypte assemblerlijst van 12.3. Dat `pre-wrap` is meteen ook waarom een lange
+regel de bladspiegel niet kan doen overlopen. Meet toch de langste regel na: 9pt Consolas is
+ongeveer 1,75mm per teken, dus 91 tekens is de grens.
 
 **Een oefening in tabelvorm wordt een `ol.vragen`, en dat is de enige plaats waar regel 14 een gat
 heeft.** 2.1 Hardware herkennen is in de Word geen genummerde lijst maar drie tabellen: een rij
@@ -1483,6 +1506,15 @@ staan op 142,0mm, en dat is dus meteen de maat die je neemt.
 ... cm`, en `3.1249194` is de ongekrompen maat (0,75, de omrekening van CSS-pixels naar punten).
 Staat er iets anders, dan overloopt er ergens iets. Doe dat na elk hoofdstuk, want dit is precies
 het soort fout dat er op het scherm perfect uitziet.
+
+**Lees die schaal met `pypdf` en niet met een regex over de ruwe bytes**, aangevuld bij hoofdstuk
+12. De inhoudsbladzijden zitten in objectstreams, dus een grep over de gedecomprimeerde streams
+vindt er vijf van de 153, en dat zijn net de vijf voorwerkbladzijden, die met `3.125` een eigen
+afdrukronde zijn en dus nooit iets zouden melden. `PdfReader(...).pages[n].get_contents()
+.get_data()` geeft ze wel alle 153. Drie bladzijden vol beeld dragen helemaal geen
+schaaltransformatie, en dat is geen fout. Vergelijk de verdeling met die van de vorige PDF
+(`git show HEAD:downloads/...pdf`) in plaats van met een getal, want dan zie je meteen ook of de
+hoofdstukken ervoor verschoven zijn.
 
 **De importer laat twee soorten afbeelding vallen, en meldt geen van beide.** Ook dat kwam bij
 hoofdstuk 11 boven, waar de Word er 44 plaatst en `img/` er 38 kreeg. Een afbeelding die aan een

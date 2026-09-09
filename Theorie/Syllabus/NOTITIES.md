@@ -3490,3 +3490,347 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
   gebleven.
 - **De dubbele spaties** in "Naast een aantal  dataschijven" (11.13) en "moet de ene
   ingesteld worden" (11.7) staan zo in de Word.
+
+## Hoofdstuk 12, Central Processing Unit (CPU)
+
+**De sectie Studievragen achteraan heet hier Test jezelf**, zoals in hoofdstuk 1,
+3, 4, 5, 6, 8, 9 en 11. Het kader Studievragen vooraan houdt zijn eigen naam en
+staat samen met de Kernpunten op `Overzicht.html`. De pagina heet
+`TestJezelf.html`; de importer schreef `Studievragen.html`.
+
+**Vier secties, zeven Heading 3's, drie tabellen en acht afbeeldingsplaatsingen,
+en elf gedrukte bladzijden, 143 tot en met 153.** Geen enkele Heading 4. De drie
+tabellen zijn de twee kaders vooraan en de lege tabel van een rij onder "Schrijf
+ALU voluit". Twee van de acht afbeeldingen zijn de kadericoontjes van 5,4mm die de
+importer weggooit, dus `img/` kreeg er zes, alle zes inline en geen enkele
+zwevend. **De import liet er dus geen enkele vallen**, anders dan bij hoofdstuk 11;
+nageteld door de `a:blip` in het hoofdstuk tegen `img/` te leggen, wat sinds dat
+hoofdstuk de vaste controle is.
+
+**De vragen die dit hoofdstuk openliet, zijn op 8 en 9 september 2026 door de
+lector beslist.** Elke correctie hieronder staat alleen in de HTML en een
+herimport draait ze terug.
+
+### 1. Vraag 3 had vier juiste antwoorden en is een open vraag geworden
+
+"Uit wat bestaat een processorkern?" met ALU, CU, Registers en Cache heeft er vier
+juist, en regel 14 en `export-syllabus.py` eisen er precies een: zonder ingreep
+drukt het hele hoofdstuk geen Oplossingen. Dat is het geval van de drie vragen van
+hoofdstuk 3, en de twee vormen die daar vastgelegd zijn, zijn allebei voorgelegd.
+
+Het werd de open vraag: **"Uit welke vier onderdelen bestaat een processorkern?"**
+met vier invulregels en een `<div class="oplossing">`. De vier mogelijkheden zijn
+samen het antwoord geworden. Ze sluit daarmee aan bij studievraag 2 van het kader,
+die de student datzelfde schema laat tekenen. **De prijs is een meerkeuzevraag**,
+en die is uitdrukkelijk aanvaard: de Brightspace-test van elk labo is meerkeuze met
+giscorrectie, dus elke open vraag is er een die daar niet meer op voorbereidt.
+
+Omkeren was de andere uitkomst en is niet gekozen. Anders dan in hoofdstuk 3, waar
+vier van de vijf mogelijkheden juist waren en de vraagzin alleen omgedraaid moest
+worden, zijn hier **alle vier** de mogelijkheden juist, dus omkeren had een vijfde
+mogelijkheid gevraagd die niet in de Word staat.
+
+### 2. Drie vragen steunden op niets, en er is tekst voor bijgeschreven
+
+Vraag 5 (bepaalt het processortype de lengte van de registers), vraag 6 (bepaalt
+die lengte de maximum grootte van het RAM) en vraag 8 (compileren vertaalt naar een
+instructieset) waren met geen enkele zin van dit hoofdstuk te beantwoorden. Dat is
+het gat van de wet van Moore in hoofdstuk 1, van de bottleneck in 5, van het
+partitieschema in 6, van realtime in 7, van de nadelen van ATX in 9, van het woord
+kibibyte in 10 en van RAID 5 en 6 in 11, en de uitkomst is dezelfde. Ze passen in
+de gedachtegang die er al staat en krijgen dus geen eigen kop, zoals bij 1, 5, 6,
+9, 10 en 11 en anders dan bij 7.
+
+- **12.2 > Registers**, na de alinea over de functies van elk register: "De breedte
+  van die registers volgt uit het type processor: een 32 bit processor heeft
+  registers van 32 bits en een 64 bit processor registers van 64 bits. Omdat een
+  operand een geheugenadres is dat in zo'n register moet passen, legt die breedte
+  meteen ook vast hoeveel werkgeheugen de processor kan aanspreken: met 32 bits zijn
+  er 2^32 adressen en met 64 bits 2^64. Waar de grens dan precies ligt zie je bij
+  Random Access Memory."
+- **12.3 > CISC**, na de alinea over assembler en machinetaal: "Vandaag schrijf je
+  een programma in een hogere programmeertaal en laat je een compiler dat naar
+  machinetaal vertalen. Compileren is dus vertalen naar de instructieset van een
+  processor: de compiler zoekt bij elke regel die je schreef de opcodes die die ene
+  processor kent. Daarmee ligt een gecompileerd programma vast op een instructieset,
+  en moet dezelfde broncode opnieuw gecompileerd worden om op een processor met een
+  andere instructieset te draaien."
+
+**Vraag 5 en 6 zijn het bijzondere geval, want ze leunden VOORUIT en niet op
+niets.** Hoofdstuk 14, Random Access Memory, beantwoordt ze allebei woordelijk: het
+zegt daar "De aandachtige lezer zal opmerken dat de processor registers dan ook 64
+bit breed zijn in plaats van 32 bit" en "Het maximum operand adres is bepalend voor
+het aantal bits dat opgeslagen kan worden in het werkgeheugen". De theorietrack loopt
+in volgorde, dus wie hoofdstuk 12 leest heeft 14 nog niet gehad, en de zelftest van
+12 was op dat moment niet te maken. De bijgeschreven zin doet daarom precies twee
+dingen en niet meer: hij geeft het antwoord en verwijst door, in dezelfde richting
+als de zin over de performance gap die er al stond.
+
+**De twee getallen zijn met opzet 2^32 en 2^64 en geen bytes.** Hoofdstuk 14
+schrijft daar "4 GB" en "16 exabytes", en dat zijn machten van twee met een
+kilo-etiket, dus het geval waar hoofdstuk 10 en 11 een KiB van maken. Zolang
+hoofdstuk 14 er niet staat, is die keuze niet te maken zonder de twee hoofdstukken
+tegen elkaar te zetten; een aantal adressen is exact en ontloopt de vraag. **Reken
+dat na wanneer hoofdstuk 14 ingevoerd wordt**, en trek de twee dan samen recht.
+`Theorie/Bestandssystemen/Formatteren.html` schrijft zo'n macht al als `2^8`, dus de
+notatie is die van de syllabus zelf en niet nieuw.
+
+### 3. De virtuele kern van hyperthreading emuleert niets
+
+Het kernpunt zei "een 'virtuele' kern die een hardware kern emuleert", en de lopende
+tekst van 12.2 zei dat je met hyperthreading "in theorie dubbel zoveel werk aan[kan]
+als met een single core processor", woord voor woord dezelfde belofte als voor een
+echte tweede kern. Allebei rechtgezet.
+
+**Emuleren is in deze syllabus al twee keer vastgelegd**, in hoofdstuk 5 en in
+hoofdstuk 8, als het vertalen van de ene instructieset naar de andere. Een logische
+kern doet dat niet: hij heeft zijn eigen registers en deelt de rekeneenheden van de
+hardwarekern waar hij op zit. Dat is dus een tegenspraak binnen de syllabus, zoals
+de twee kernpunten van hoofdstuk 8 die host en guest omdraaiden, en de formulering
+is overgenomen in plaats van een tweede te verzinnen. Het kernpunt luidt nu "... ook
+een 'virtuele' kern die de rekeneenheden van die hardwarekern deelt."
+
+De tweede alinea van 12.2 > Kernen en hyperthreading luidt nu: "Een processor met
+hyperthreading heeft, in de plaats van een extra hardware processor een extra
+virtuele processor in dezelfde behuizing. Die virtuele processor heeft zijn eigen
+registers maar deelt de rekeneenheden van de hardwarekern waarop hij zit. Het
+besturingssysteem ziet er daardoor twee, en zolang de ene op het werkgeheugen wacht
+kan de andere rekenen. Dat levert winst op, maar minder dan een echte tweede kern."
+Hoofdstuk 1 zegt in 1.7 al dat meer kernen niet automatisch meer prestaties oplevert,
+dus het hoofdstuk sprak ook hoofdstuk 1 half tegen. **Het kernpunt "Een dual core
+processor met hyperthreading heeft voor het besturingssysteem 4 kernen" is niet
+aangeraakt**, want dat zegt met zoveel woorden "voor het besturingssysteem" en dat
+klopt nu ook met de lopende tekst.
+
+### 4. Twee figuren zijn aangepakt en vier zijn gebleven
+
+- **`img/syllabus-12-processorschema.svg`** vervangt het blokschema van 12.2, 800 bij
+  423 pixels op 160.0mm, oftewel 127 dpi. Dat is boven de grens, dus de dpi is hier de
+  reden niet: het origineel staat **volledig in het Engels** (Internal memory, Input
+  devices, Output devices, Memory) in een Nederlandse tekst, het is een gescande
+  lijntekening met korrel, en het is net de figuur die studievraag 2 de student laat
+  natekenen. Dat is het geval van image86 van hoofdstuk 10, waar de korrel van de
+  fotokopie de doorslag gaf boven de grens. **De woorden komen uit de tekst zelf en
+  uit hoofdstuk 5** (patroon 20): INVOER, UITVOER en OPSLAG staan zo ook in
+  `img/syllabus-05-von-neumann-schema.svg`, en WERKGEHEUGEN is het woord dat 12.2 zelf
+  gebruikt waar het origineel Internal memory schrijft. Palet en markers zijn die van
+  dat Von Neumann-schema. **Gerenderd met headless Edge voor ze vertrouwd werd**, en
+  bij de eerste render bleken de twee verticale pijlen te kort: de twee punten liepen
+  in elkaar tot een ruit. De verbindingen zijn nu 34px, de maat die het Von
+  Neumann-schema al gebruikt. `syllabus-12-central-processing-unit-cpu-01.png` is
+  geschrapt en **een herimport zet ze terug**, waarna regel 1 en 16 falen tot ze
+  opnieuw weg is.
+
+  **De schikking wijkt sinds 9 september 2026 af van het origineel, en dat is een
+  inhoudelijke correctie.** De Word hangt Internal memory boven de CPU en External
+  memory eronder, elk met een eigen lijn naar de CPU, en de eerste hertekening nam dat
+  over. Zo leest de figuur dat de processor rechtstreeks van de schijf haalt, terwijl
+  dezelfde sectie vier alinea's verder de geheugenhierarchie uitlegt (registers, cache,
+  werkgeheugen, met de vergelijking Post-it, boek, kast, bibliotheek) en de CU de
+  operands uitdrukkelijk uit het werkgeheugen haalt. Gemeld door de lector, die de
+  schikking koos: de drie blokken staan nu onder elkaar, de CPU bovenaan met de invoer
+  en de uitvoer opzij, daaronder het WERKGEHEUGEN en daaronder de OPSLAG. De tekening
+  zegt daarmee hetzelfde als de tekst eronder, hoe verder van de CPU hoe trager. Twee
+  andere schikkingen zijn afgewogen en afgevallen: het werkgeheugen boven laten staan
+  met een lijn van de opslag eromheen (drukker, en de hierarchie is dan niet af te
+  lezen) en de figuur laten zoals de Word ze tekent. De maten van de tekening
+  veranderen niet, 740 bij 428 op 160.0mm, dus de bladspiegel schuift niet op. De
+  `alt`-tekst van de figuur is mee herschreven. **Ook dit overleeft een herimport
+  niet.**
+- **De assemblerlijst van 12.3 is overgetypt.** 491 bij 264 pixels op 160.0mm is **78
+  dpi**, de laagste van dit hoofdstuk, en versmallen is hier de knop niet: de
+  inkthoogte van een tekstregel is nagemeten op **1,63mm** tegen 2,5mm voor de lopende
+  tekst, dus dezelfde pixels op minder millimeter maken het erger in plaats van beter.
+  Het zijn vijftien regels monospace, dus het valt onder de regel van hoofdstuk 10:
+  een tabel of lijst die alleen als afbeelding bestaat, typ je over zolang de omvang
+  het toelaat. **De winst is scherpte en geen formaat**: gedrukt staat de lijst nu in
+  Consolas van 9pt, met een kapitaalhoogte van ongeveer 2,0mm, maar als vectortekst in
+  plaats van als raster van 78 dpi. De debuggermarkeringen (de cursorbalk bij
+  `0040102C` en het pijltje bij `00401038`) zijn vensterversiering en zijn niet
+  meegetypt; de vijftien regels zelf staan er letterlijk, uitlijning inbegrepen.
+  `syllabus-12-central-processing-unit-cpu-05.png` is geschrapt, met hetzelfde gevolg
+  bij een herimport.
+
+**`syllabus.css` draagt sinds DeN een regel `code, pre, kbd, samp` van 9pt Consolas
+met `white-space: pre-wrap`, en hoofdstuk 12 is het eerste dat ze gebruikt.** Naast de
+assemblerlijst gaat ook de C-lus van 12.2 > Cache er nu in; de importer had die vier
+regels als vier losse `<p>` neergezet, inspringing en al kwijt. Dat is opmaak en geen
+correctie. De regel is niet aangepast en hoefde dat ook niet: de langste regel van de
+lijst is 47 tekens, ruim binnen de bladspiegel, en `pre-wrap` vangt de rest op.
+
+**Vier afbeeldingen blijven staan.** De ALU-trapezium van 12.2 (1569 bij 866 op
+116,4mm, **342 dpi**, veruit de scherpste van de hele Word), de registertekening van
+12.2 (960 bij 720 op 160,0mm, 152 dpi), de performance gap-grafiek (800 bij 549 op
+160,0mm, 127 dpi) en de staafgrafiek van tom's hardware (789 bij 380 op 160,0mm, 125
+dpi). Alle vier boven de grens. **De eerste drie staan wel in het Engels**, en dat is
+bij alle drie afgewogen: bij de ALU-tekening zijn Integer Operand, Opcode en Status
+precies de woorden die de alinea ernaast zelf invoert, bij de registertekening zijn
+EAX tot EBP en AH tot DL registernamen die geen vertaling hebben, en de performance
+gap-grafiek is een **meting** met een bronvermelding eronder, en een meting hertekenen
+betekent haar getallen overschrijven. **De staafgrafiek draagt het logo van tom's
+hardware**, een leesbare naam, en mag dus blijven volgens de toets van hoofdstuk 9.
+
+**De zes `alt`-teksten zijn met de hand geschreven na het openen van elk bestand**, en
+een nieuwe import gooit ze weg.
+
+### De twaalf vragen van Test jezelf
+
+Elf uit de Word en een bijgeschreven. **Tien meerkeuze, alle tien nageteld op precies
+een juist antwoord**, en twee open met elk een `<div class="oplossing">`. De lijst
+staat op `numId` 74 met de keuzes op 62, doorlopend van 1 tot 12, zonder enkele
+`start=`.
+
+| Vraag | Antwoord | Waarop het steunt |
+|---|---|---|
+| 1 Intel 32 bit | a, x86 | 12.3, de drie hoofdvarianten van x86; hoofdstuk 5 zegt hetzelfde |
+| 2 Intel 64 bit | b, x64 | 12.3, "Deze laatste wordt ook wel de x64 of amd64 instructieset genoemd" |
+| 3 Uit welke vier onderdelen | open, ALU, CU, registers, cache | 12.2, de opsomming waarmee de sectie opent; zie beslissing 1 |
+| 4 ALU voluit | open, Arithmetic and Logic Unit | 12.2, eerste zin van de sectie ALU |
+| 5 Registerlengte volgt uit het processortype | a, Ja | de bijgeschreven zin, zie beslissing 2 |
+| 6 Registerlengte begrenst het RAM | a, Ja | de bijgeschreven zin, zie beslissing 2 |
+| 7 Wat is geen instructieset | d, RISC / CISC | 12.3 opent met "twee verschillende instructiesetarchitecturen"; x86, amd64 en ARM zijn wel instructiesets |
+| 8 Compileren vertaalt naar een instructieset | a, Waar | de bijgeschreven alinea, zie beslissing 2 |
+| 9 64 bit is niet vanzelf x64 | b, Nee, ook ARM | 12.3, ARM en x86 zijn twee instructiesets die los staan van de breedte |
+| 10 Instructieset van een CISC processor | b, x86 / amd64 | 12.3, "Het voorbeeld bij uitstek van CISC is de x86 instructieset" |
+| 11 Bij RISC is de compiler complex | a, Waar | 12.3 > RISC, minder transistoren plus "geavanceerde compilers" |
+| 12 Waarom een groter cache helpt | a, minder verkeer met het trage werkgeheugen | 12.2 > Cache, de cache hit en de vergelijking met de Post-IT; zie hieronder |
+
+**Vraag 12 is bijgeschreven, want studievraag 5 werd door niets getoetst.** Het kader
+vooraan vraagt "Verklaar waarom de grootte van het cache geheugen een grote invloed
+heeft op de prestaties van een processor", de hele sectie Cache antwoordt daarop, en
+geen van de elf vragen ging erover. Dat is het geval van hoofdstuk 1, waar er een
+zesde vraag bijkwam voor de studievraag die niets toetste. **De drie afleiders zijn de
+misvattingen die de tekst zelf rechtzet**: dat cache sneller is dan de registers (12.2
+zegt "Ze werken iets trager dan de registers"), dat een grotere cache de kloksnelheid
+verhoogt, en dat cache het werkgeheugen vervangt. Ze staat achteraan en niet
+thematisch tussengevoegd, zodat elke vraag uit de Word op haar eigen nummer blijft
+staan en een herimport leesbaar blijft.
+
+**Studievraag 4 van het kader wordt nog altijd door niets getoetst**, en dat is
+gelaten: "Op basis van een probleemstelling moet je zelf een geschikt type processor
+(x64 / ARM) kunnen kiezen" is een oefening met een casus en geen meerkeuzevraag, en
+hoofdstuk 9 en 11 dragen daar allebei al een `Oefening` voor. Genoteerd, niet
+gerepareerd.
+
+### 5. De Core 9 bestaat niet en is geschrapt
+
+Nagekomen beslissing van de lector, 9 september 2026. 12.1 schreef "Intel met zijn Core
+3, 5, 7 en 9 serie". Intel liet de i uit de naam vallen in 2023, dus Core 3, Core 5 en
+Core 7 zijn de huidige vorm, maar **een Core 9 bestaat in geen van beide reeksen**: dat
+heette Core i9 en heet nu Core Ultra 9. Dat is de regel van hoofdstuk 4 en 7 over een
+productnaam die veroudert, alleen viel er hier niets elders gelijk te trekken: **geen
+enkel ander hoofdstuk en geen enkele labopagina noemt een Core-reeks**, nagekeken met
+grep.
+
+Van de drie uitkomsten is de kleinste gekozen: **alleen de 9 valt weg**, dus 12.1 leest
+nu "Core 3, 5 en 7 serie". Dat maakt het hoofdstuk meteen gelijk aan zichzelf, want 12.2
+noemde de 9 al niet ("van het type Core 3, Core 5 of Core 7"), en het is de huidige
+schrijfwijze van de eigenaar. Teruggaan naar i3, i5, i7 en i9 zou de vorige naam
+invoeren, en Core Ultra 9 erbij zetten zou een tweede reeksnaam invoeren die het
+hoofdstuk verder nergens gebruikt.
+
+### De schrijfwijze van x86, x64, amd64 en ARM
+
+Het hoofdstuk schreef ze door elkaar: **`arm`** als mogelijkheid bij vraag 7 en
+**`X86/amd64`** bij vraag 10, terwijl de lopende tekst van datzelfde hoofdstuk overal
+`x86`, `x64` en `ARM` schrijft. Nagekeken met grep tegen hoofdstuk 4, 5 en 9, die het
+alle drie ook zo schrijven, en `amd64` komt in geen enkel ander hoofdstuk voor. Het
+zijn dus `x86`, `amd64`, `ARM` en `x86 / amd64` geworden. **Dat is spelling en geen
+inhoudelijke correctie**, en het valt onder de regel dat de vorm van een productnaam
+die van zijn eigenaar is, alleen viel er hier niets elders gelijk te trekken.
+**`amd64` blijft klein**, want zo schrijft de lopende tekst van 12.3 het zelf en zo
+heet de architectuur ook bij Debian en de BSD's; AMD64 zou de enige kapitalenvorm in
+de hele syllabus zijn.
+
+### De bladspiegel van dit hoofdstuk
+
+Elf bladzijden, 143 tot en met 153, met de gedrukte 12.5 Oplossingen als laatste.
+Nagerekend **na** de redactionele ronde.
+
+**Hoofdstuk 1 tot 11 zijn geen bladzijde verschoven**, alle 97 rijen van de
+inhoudstafel staan op hun oude nummer en de zes nieuwe rijen pasten nog binnen de vijf
+bladzijden voorwerk. Nagerekend door de inhoudstafel van deze PDF rij voor rij naast
+die van de vorige te leggen.
+
+**De schaalfactor is nagekeken en er krimpt niets**, de controle die hoofdstuk 11 hier
+neergezet heeft. Alle inhoudsbladzijden openen met `3.1249194` en de vijf
+voorwerkbladzijden met `3.125`, precies dezelfde verdeling als de vorige PDF; drie
+bladzijden vol beeld dragen zoals eerder helemaal geen schaaltransformatie. **Lees dat
+met `pypdf` en niet met een regex over de ruwe bytes**: pypdf haalt de stream van elke
+bladzijde uit haar objectstream, en zonder dat zie je er vijf van de 153.
+
+**Bladzijde 152 draagt vraag 12 alleen.** Dat is het geval van vraag 9 van hoofdstuk 3
+en vraag 24 van hoofdstuk 11: `ol.vragen > li` houdt elke vraag heel, en de vier lange
+mogelijkheden van die vraag passen niet meer onder vraag 11. De vraag verplaatsen lost
+dat niet op, want de hoogte van de lijst blijft dezelfde.
+
+### Waar dit hoofdstuk en de rest van dit vak naast elkaar staan
+
+Patroon 17: de twee tracks zeggen hetzelfde twee keer en er linkt niets tussen. **Er is
+aan geen enkele labopagina iets veranderd.**
+
+- **Hoofdstuk 5, De Von Neumann architectuur. Geen tegenspraak, en dit is de zwaarste
+  overlap.** 5.2 heet Processor: x86 vs x64 vs ARM en de hele sectie 12.3 gaat
+  daarover, net als vijf van de twaalf vragen. Ze sluiten aan: 5.2 zegt "x64 is de 64
+  bit processor variant terwijl x86 (of ook i386) de 32 bit voorganger was" en 12.3
+  zegt dat x86 drie hoofdvarianten heeft waarvan de 64 bits-variant x64 heet. Dat is
+  dezelfde stand van zaken van twee kanten bekeken, en vraag 1 en 2 van Test jezelf
+  steunen op allebei. Ook "geen 32 bit processor meer te koop" staat woordelijk in
+  allebei. **Wat 12.3 erbij heeft is CISC en RISC**, en wat 5.2 erbij heeft is de
+  emulatie en de reden waarom een virtuele machine geen andere instructieset draait.
+  Dat is een gat aan weerskanten en geen tegenspraak.
+- **Hoofdstuk 1, Generaties. Half tegengesproken, en rechtgezet.** Zie beslissing 3.
+  Wat 1.7 verder over threads en kernen zegt ("meer kernen niet automatisch
+  performanter", "parallellisme heeft enkel nut als programma's threads gebruiken")
+  staat naast het kernpunt over threads van dit hoofdstuk en spreekt het niet tegen.
+- **Hoofdstuk 7, Besturingssystemen. Geen tegenspraak.** 7.3 Procesbeheer gaat over
+  wie beslist welk proces de processor krijgt, 12.2 over hoeveel kernen er zijn om aan
+  toe te wijzen. Twee helften.
+- **Hoofdstuk 14, Random Access Memory. Nog niet ingevoerd, en het draagt twee dingen
+  die met dit hoofdstuk moeten kloppen.** De registerbreedte en de adresgrens, zie
+  beslissing 2, en de kilo/kibi-vraag die daarbij hoort.
+
+**Labo Assemblage. Geen tegenspraak.** `Labo/Assemblage/Theorie/Componenten.html`
+draagt onder de id `processor` precies dit onderwerp en noemt vier gegevens: het aantal
+cores, de kloksnelheid, het cachegeheugen en het energieverbruik. Het kernpunt van dit
+hoofdstuk noemt er drie van de vier (kloksnelheid, kernen, cache) en 12.2 legt ze uit.
+**Het labo zegt er iets bij dat de syllabus niet heeft**, namelijk dat L1 per core zit
+en L3 door alle cores gedeeld wordt; 12.2 zegt alleen dat L2 en L3 groter en trager
+zijn. Een gat en geen tegenspraak. Het labo noemt geen instructieset en geen
+hyperthreading, dus daar viel niets naast te leggen.
+
+**Wat hoofdstuk 13 tot 16 niet mogen tegenspreken.** 12.2 zegt nu dat de virtuele kern
+van hyperthreading de rekeneenheden van zijn hardwarekern deelt en minder oplevert dan
+een tweede kern; 12.2 > Registers zegt dat de registerbreedte uit het processortype
+volgt en het adresseerbare werkgeheugen begrenst; en 12.3 zegt dat compileren vertalen
+naar een instructieset is. Alle drie zijn hier bijgeschreven en staan niet in de Word.
+
+### Wat er in de tekst opviel, en niet aangeraakt is
+
+De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
+
+- **"De meest bekende RISC instructieset is de ARM instructieset ARM staat voluit voor
+  Acorn RISC Machine."** in 12.3. Er ontbreekt een punt tussen de twee zinnen.
+- **"Het hoge energie maakt het gebruik van CISC processoren ... onmogelijk"** in 12.3,
+  waar energieverbruik hoort te staan.
+- **"Om CPU-RAM performance gap te dichten"** in 12.2, waar de ontbreekt.
+- **"De functies van ieder individueel register overstijgt het bereik"** in 12.2, waar
+  overstijgen hoort te staan.
+- **"Wanneer een programma instructie uitgevoerd wordt"** in 12.2, waar
+  programma-instructie hoort te staan.
+- **"Door complexe operaties in een instructie te stoppen leverde dat kleinere
+  programma's ... op"** in 12.3, met een onderwerp te veel.
+- **"Post-IT"** in de vergelijking van 12.2 > Cache. 3M schrijft Post-it. Het is een
+  merknaam en zou dus onder de eigenaarsregel vallen, maar hij komt een keer voor, in
+  een vergelijking, en is geen term van dit vak; hoofdstuk 11 liet op dezelfde grond
+  "mer cel" en "utizien" staan.
+- **De dubbele spatie** in "op de PCB van de processor.  Ze werken" (12.2) staat zo in
+  de Word.
+- **"men"** staat in 12.2 ("gebruikt men cache geheugens") en in 12.3, de vorm die
+  SCHRIJFSTIJL.md voor eigen tekst naar de je-vorm stuurt. Dat geldt niet voor de
+  brontekst.
+- **"Als het budget toelaat kies je best een Core 7 processor"** in 12.2 is een
+  aanbeveling zonder criterium, en **"trachten te ontcijferen..."** in 12.3 is patroon
+  14. Ze zouden weggaan als deze tekst hier geschreven was.
+- **"x86-instructieset" met een streepje** in 12.3, terwijl dezelfde alinea verderop
+  "de x86 instructieset" los schrijft.

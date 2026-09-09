@@ -204,3 +204,16 @@ letterlijk overgenomen.
 
 - lege tabel van 1 rijen overgenomen als invulruimte
 - lege tabel van 1 rijen overgenomen als invulruimte
+
+## Central Processing Unit (CPU) (opening)
+
+- kader "Kernpunten" werd een info-box met data-kader="kernpunten"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+- kader "Studievragen" werd een info-box met data-kader="studievragen"; het icoontje uit de Word valt weg en het vet, want de hele inhoud stond vet
+
+## Central Processing Unit (CPU) > Onderdelen
+
+- afbeelding syllabus-12-central-processing-unit-cpu-01.png stond tussen een vraag en haar keuzes en is in de vraag gezet
+
+## Central Processing Unit (CPU) > Studievragen
+
+- lege tabel van 1 rijen overgenomen als invulruimte

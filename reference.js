@@ -672,6 +672,42 @@ window.LAB_REFERENCE = {
                         href: 'HardeSchijf/TestJezelf.html'
                     }
                 ]
+            },
+            {
+                name: 'Central Processing Unit (CPU)',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'cpu-overzicht',
+                        name: 'Kernpunten en studievragen',
+                        blurb: 'De twee types processor, waaruit een processorkern bestaat, en waarom kloksnelheid, kernen en cache de prestaties bepalen.',
+                        href: 'CentralProcessingUnitCpu/Overzicht.html'
+                    },
+                    {
+                        id: 'cpu-inleiding',
+                        name: 'Inleiding',
+                        blurb: 'De klassieke processoren met x86 of x64 en de mobiele met ARM, en wie ze maakt.',
+                        href: 'CentralProcessingUnitCpu/Inleiding.html'
+                    },
+                    {
+                        id: 'cpu-onderdelen',
+                        name: 'Onderdelen',
+                        blurb: 'De ALU, de CU, de registers en de cache, en wat kernen en hyperthreading daaraan toevoegen.',
+                        href: 'CentralProcessingUnitCpu/Onderdelen.html'
+                    },
+                    {
+                        id: 'cpu-instructieset',
+                        name: 'Instructieset',
+                        blurb: 'CISC bouwt complexe instructies in transistoren en RISC laat de compiler het werk doen, en dat is het verschil tussen x86 en ARM.',
+                        href: 'CentralProcessingUnitCpu/Instructieset.html'
+                    },
+                    {
+                        id: 'cpu-test-jezelf',
+                        name: 'Test jezelf',
+                        blurb: 'Twaalf vragen over de instructiesets, de onderdelen van een kern, de lengte van de registers en het nut van cache.',
+                        href: 'CentralProcessingUnitCpu/TestJezelf.html'
+                    }
+                ]
             }
         ]
     },

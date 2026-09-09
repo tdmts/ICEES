@@ -272,18 +272,99 @@ def verplaats_koppen(fragment):
     return re.sub(r"<(/?)h([1-5])([^>]*)>", een, fragment)
 
 
+# ------------------------------------------------------- afbeeldingen krimpen
+#
+# Chrome zet elke afbeelding op ware grootte en zonder verlies in de PDF, dus de
+# 22 MB aan PNG waar de syllabus naar wijst wordt daar ruim 50 MB. Dat is puur
+# gewicht: een PNG van 2254 pixels die op 160mm gedrukt wordt is 358 dpi, en een
+# drukker haalt daar niets meer uit dan uit 150.
+#
+# Krimpen gebeurt HIER en niet in img/, want de site heeft de volle resolutie
+# wel nodig: figure-zoom laat de student inzoomen. De bundel wijst dus naar een
+# kopie in de werkmap, en img/ blijft wat het is.
+#
+# De doel-dpi volgt uit --figuur-breedte van de figuur zelf, en dat is meteen
+# waarom dit beter uitkomt dan een blanco nabewerking van de PDF achteraf: een
+# foto op 160mm mag naar 150 dpi, maar de ASCII-tabel van 10.3 en de zes
+# datasheetbladzijden van 9.5 dragen tekst die een oefening moet kunnen lezen.
+# Die staan in ONAANGEROERD en gaan ongewijzigd mee. Zet je er iets bij, kijk
+# het dan na IN de gedrukte PDF en niet op het scherm.
+KRIMP_DPI = 150
+ONAANGEROERD = {
+    # 10.3, de ASCII-tabel: oefening 5 van 10.6 laat er drie letters in opzoeken
+    "syllabus-10-informatievoorstelling-02.png",
+    # 9.5, de zes datasheetbladzijden waarop de oefening beantwoord wordt
+    "syllabus-09-moederbord-16.png", "syllabus-09-moederbord-17.png",
+    "syllabus-09-moederbord-20.png", "syllabus-09-moederbord-21.png",
+    "syllabus-09-moederbord-25.png", "syllabus-09-moederbord-26.png",
+}
+KRIMPBAAR = re.compile(r"[.](png|jpe?g)$", re.I)
+krimpmap = None
+gekrompen = {}
+
+
+def krimp(bron, breedte_mm):
+    """Een kleinere kopie in de werkmap, of het origineel als dat niet loont."""
+    if krimpmap is None or not KRIMPBAAR.search(bron.name):
+        return bron
+    if bron.name in ONAANGEROERD or not bron.exists():
+        return bron
+    if bron in gekrompen:
+        return gekrompen[bron]
+    try:
+        from PIL import Image
+    except ImportError:
+        return bron
+    with Image.open(bron) as im:
+        w, h = im.size
+        doel_w = min(w, int(round((breedte_mm or 160.0) / 25.4 * KRIMP_DPI)))
+        # Ook zonder schalen loont het: Chrome zet een PNG als FlateDecode in de
+        # PDF, en dat is voor een foto vier tot acht keer zwaarder dan JPEG.
+        klein = im.convert("RGB")
+        if doel_w < w:
+            klein = klein.resize((doel_w, max(1, round(h * doel_w / w))),
+                                 Image.LANCZOS)
+    uit = krimpmap / f"{len(gekrompen):03d}-{bron.stem}.jpg"
+    klein.save(uit, "JPEG", quality=82, optimize=True)
+    # Een JPEG van een schermafdruk kan zwaarder uitvallen dan de PNG; dan niet.
+    if uit.stat().st_size >= bron.stat().st_size:
+        uit.unlink()
+        uit = bron
+    gekrompen[bron] = uit
+    return uit
+
+
+FIGUUR_BREEDTE = re.compile(r"--figuur-breedte:\s*([\d.]+)mm")
+
+
 def absolute_paden(fragment, pagina):
     """src en href relatief aan de pagina worden absolute file:-URL's.
 
     De bundel staat in een tijdelijke map, dus elk relatief pad zou daar zoeken.
+    Een rasterafbeelding wijst daarbij naar haar gekrompen kopie; zie krimp().
     """
+    # De breedte staat op de <figure> en het pad op de <img> erin, dus het
+    # fragment wordt per figuur doorlopen en de breedte onthouden.
+    breedte = [None]
+
     def een(m):
         attr, waarde = m.group(1), m.group(2)
         if re.match(r"(https?:|file:|data:|mailto:|#)", waarde):
             return m.group(0)
         doel = Path(os.path.normpath(pagina.parent / waarde))
+        if attr == "src":
+            doel = krimp(doel, breedte[0])
         return f'{attr}="{doel.as_uri()}"'
-    return re.sub(r'\b(src|href)="([^"]+)"', een, fragment)
+
+    uit = []
+    for stuk in re.split(r"(<figure\b[^>]*>|</figure>)", fragment):
+        if stuk.startswith("<figure"):
+            b = FIGUUR_BREEDTE.search(stuk)
+            breedte[0] = float(b.group(1)) if b else None
+        elif stuk == "</figure>":
+            breedte[0] = None
+        uit.append(re.sub(r'\b(src|href)="([^"]+)"', een, stuk))
+    return "".join(uit)
 
 
 def naamruimte_ids(fragment, prefix):
@@ -664,6 +745,30 @@ def zoek_bladzijden(pdf_pad, koppen):
 
 # ------------------------------------------------------- kop- en voettekst
 
+def stempellogo():
+    """Het logo op de maat waarop het gedrukt wordt, of None als het er niet is.
+
+    In de voettekst staat het op 19.4mm breed, en het bestand is 3490 pixels
+    breed: dat is 4570 dpi. Een kopie op 300 dpi is 229 pixels en scheelt in
+    de PDF een factor twintig. img/ blijft ongemoeid, want de cover gebruikt
+    hetzelfde bestand wel op ware grootte.
+    """
+    if not LOGO.exists():
+        return None
+    try:
+        from PIL import Image
+        from reportlab.lib.utils import ImageReader
+    except ImportError:
+        return str(LOGO)
+    with Image.open(LOGO) as im:
+        doel_w = int(round(19.4 / 25.4 * 300))
+        if doel_w >= im.width:
+            return str(LOGO)
+        klein = im.convert("RGBA").resize(
+            (doel_w, max(1, round(im.height * doel_w / im.width))), Image.LANCZOS)
+    return ImageReader(klein)
+
+
 def stempel(bron_pdf, hoofdstuk_per_bladzijde, verschuiving):
     """Paginanummer bovenaan, hoofdstuktitel onderaan, zoals in de Word.
 
@@ -672,12 +777,22 @@ def stempel(bron_pdf, hoofdstuk_per_bladzijde, verschuiving):
     """
     lezer = PdfReader(str(bron_pdf))
     schrijver = PdfWriter()
+    _, vet = stempelletters()
+
+    # EEN canvas voor alle bladzijden, niet een per bladzijde. Dat is geen
+    # opruiming maar de zwaarste post van het hele document: reportlab deelt
+    # een afbeelding binnen een canvas en embedt ze dus een keer, terwijl een
+    # canvas per bladzijde het logo 148 keer meestuurde, telkens op zijn volle
+    # 3490 bij 1968 pixels. Dat was 14,3 van de 42 MB.
+    buffer = io.BytesIO()
+    eerste = lezer.pages[0]
+    c = rl_canvas.Canvas(buffer, pagesize=(float(eerste.mediabox.width),
+                                           float(eerste.mediabox.height)))
+    logo = stempellogo()
     for i, bladzijde in enumerate(lezer.pages):
         breedte = float(bladzijde.mediabox.width)
         hoogte = float(bladzijde.mediabox.height)
-        buffer = io.BytesIO()
-        c = rl_canvas.Canvas(buffer, pagesize=(breedte, hoogte))
-        _, vet = stempelletters()
+        c.setPageSize((breedte, hoogte))
 
         # Maten van de bestaande syllabus afgemeten: het nummer rechtsboven op
         # 185.1mm, de hoofdstuktitel linksonder in grijs, en het logo rechts
@@ -691,12 +806,16 @@ def stempel(bron_pdf, hoofdstuk_per_bladzijde, verschuiving):
             c.setFont(vet, 9.5)
             c.setFillGray(0.45)
             c.drawString(27.8 * mm, 19.6 * mm, titel)
-        if LOGO.exists():
-            c.drawImage(str(LOGO), 165.7 * mm, 16.0 * mm, width=19.4 * mm,
+        if logo is not None:
+            c.drawImage(logo, 165.7 * mm, 16.0 * mm, width=19.4 * mm,
                         height=10.7 * mm, mask="auto")
-        c.save()
-        buffer.seek(0)
-        bladzijde.merge_page(PdfReader(buffer).pages[0])
+        c.showPage()
+    c.save()
+    buffer.seek(0)
+
+    stempels = PdfReader(buffer).pages
+    for i, bladzijde in enumerate(lezer.pages):
+        bladzijde.merge_page(stempels[i])
         schrijver.add_page(bladzijde)
     return schrijver
 
@@ -727,6 +846,9 @@ def main():
         sys.exit("geen enkel hoofdstuk gevonden")
 
     werk = Path(tempfile.mkdtemp(prefix="syllabus-"))
+    global krimpmap
+    krimpmap = werk / "klein"
+    krimpmap.mkdir()
     inhoud_html = werk / "inhoud.html"
     inhoud_html.write_text(bundel(bouw_inhoud(structuur)), encoding="utf-8")
 
