@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 330" width="700" height="330"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">Een geheugencontroller met twee channels. Elk channel bedient twee sloten, en de twee modules staan een in channel A en een in channel B, zodat de controller ze tegelijk kan lezen en schrijven</title>
+    <rect width="700" height="330" fill="#ffffff" />
+
+    <defs>
+        <marker id="punt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#004d40" />
+        </marker>
+    </defs>
+    <rect x="205" y="14" width="290" height="48" fill="#004d40" />
+    <text x="350" y="44" font-size="15" fill="#ffffff" text-anchor="middle">Geheugencontroller in de processor</text>
+    <path d="M 290 62 L 290 84 L 175 84 L 175 112" stroke="#004d40" stroke-width="2.5" fill="none"
+        marker-end="url(#punt)" />
+    <path d="M 410 62 L 410 84 L 525 84 L 525 112" stroke="#004d40" stroke-width="2.5" fill="none"
+        marker-end="url(#punt)" />
+    <text x="232" y="78" font-size="14" fill="#004d40" text-anchor="middle">channel A</text>
+    <text x="468" y="78" font-size="14" fill="#004d40" text-anchor="middle">channel B</text>
+    <rect x="40" y="122" width="270" height="184" fill="#e0e7e5" stroke="#9bb0ac" />
+    <rect x="64" y="150" width="222" height="44" fill="#ffffff" stroke="#9bb0ac"
+        stroke-dasharray="5 4" />
+    <text x="175" y="178" font-size="14" fill="#555555" text-anchor="middle">slot A1, leeg</text>
+    <rect x="64" y="226" width="222" height="44" fill="#004d40" stroke="#004d40" />
+    <text x="175" y="254" font-size="14" fill="#ffffff" text-anchor="middle">slot A2 met module</text>
+    <rect x="390" y="122" width="270" height="184" fill="#e0e7e5" stroke="#9bb0ac" />
+    <rect x="414" y="150" width="222" height="44" fill="#ffffff" stroke="#9bb0ac"
+        stroke-dasharray="5 4" />
+    <text x="525" y="178" font-size="14" fill="#555555" text-anchor="middle">slot B1, leeg</text>
+    <rect x="414" y="226" width="222" height="44" fill="#004d40" stroke="#004d40" />
+    <text x="525" y="254" font-size="14" fill="#ffffff" text-anchor="middle">slot B2 met module</text>
+</svg>

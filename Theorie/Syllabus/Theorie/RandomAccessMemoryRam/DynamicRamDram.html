@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic RAM (DRAM)</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Dynamic RAM (DRAM)</h1>
+
+        <p>Een dynamic RAM module is een matrix van kleine cellen waarbij elke cel één transistor en een condensator bevat. De condensator kan geladen of ontladen zijn, waardoor er een nul of een één kan worden opgeslagen. In een cel wordt dus 1 bit opgeslagen.</p>
+
+        <p>Omdat een condensator niet in staat is om zijn waarde constant te behouden, lekken de bits weg! Je kan dit misschien vergelijken met emmers gevuld met water die bits voorstellen. In de emmers zit er een gat waardoor het water wegstroomt en de toestand van de bits verloren gaat.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-13-random-access-memory-ram-04.png" class="img-fluid"
+                alt="Acht emmers naast elkaar, elk met een gat waaruit water spat. Vier emmers staan halfvol en dragen het cijfer 1, vier staan leeg en dragen het cijfer 0, met eronder de regel: een volle emmer is 1, een lege emmer is 0.">
+        </figure>
+
+        <p>Iedere bit in een dynamic RAM module moet dus om de paar milliseconden worden ververst (memory refresh) om te voorkomen dat de data weglekt. Dit zal gebeuren op het ritme van een klok.</p>
+
+        <p>Tijdens het verversen is de geheugencel niet beschikbaar om gelezen of beschreven te kunnen worden. Dit is uiteraard nadelig voor de snelheid. Daarbij komt ook nog dat als de cel uitgelezen wordt de toestand 0 wordt. Na het uitlezen moet de originele waarde dus worden hersteld.</p>
+
+        <p>Het voordeel is uiteraard dat er slechts twee componenten moeten worden gebruikt om 1 bit voor te stellen. Er kunnen dus veel meer bits op een bepaalde oppervlakte waardoor dynamic RAM zeer goedkoop is.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

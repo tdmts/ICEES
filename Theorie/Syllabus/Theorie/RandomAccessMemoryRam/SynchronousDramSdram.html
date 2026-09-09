@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchronous DRAM (SDRAM)</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Synchronous DRAM (SDRAM)</h1>
+
+        <p>In oudere computers werd meestal asynchronous DRAM gebruikt. De naam van dit type RAM geheugen verwijst naar het feit dat het geheugen niet gesynchroniseerd is met de klok van de bus waarover bits getransporteerd worden van en naar de processor.</p>
+
+        <p>In moederborden voor 2011 was de kloksnelheid van het geheugen gesynchroniseerd met de kloksnelheid van de Front Side Bus. Na 2011 werd de FSB afgeschaft ten voordele van point to point verbindingen tussen CPU en RAM. Intel gebuikt hiervoor bijvoorbeeld QuickPath Interconnect en AMD HyperTransport.</p>
+
+        <p>Het principe is echter hetzelfde: iedere klokpuls worden bits over een bus getransporteerd tussen processor en werkgeheugen. Hoeveel bits worden getransporteerd is dus afhankelijk van:</p>
+
+        <ol>
+            <li>de snelheid van het werkgeheugen</li>
+            <li>de snelheid van de bus</li>
+            <li>de breedte van de bus</li>
+        </ol>
+
+        <p>Bits opgeslagen in SDRAM worden geordend in een matrix patroon met rijen en kolommen. De data die wordt opgeslagen in SDRAM kan je zien als blokken die een aantal bits breed zijn, gedefinieerd door de coördinaten van de rij en kolom.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 60.9mm">
+            <img src="../../../../img/syllabus-13-random-access-memory-ram-05.png" class="img-fluid"
+                alt="Een matrix van vier rijen op vier kolommen. De rijen A tot D lopen als rode lijnen naar rechts en dragen samen het opschrift RAS, de kolommen 1 tot 4 lopen als groene lijnen naar beneden en dragen samen het opschrift CAS. Op elk kruispunt staat een geheugencel, en de cel op rij B en kolom 2 is met een kruis aangeduid.">
+        </figure>
+
+        <p>Als je geheugen wil uitlezen of er data naartoe wil schrijven moet je telkens een rij en kolomadres meegeven.</p>
+
+        <p>Het adresseren van de rij of row access strobe neemt het meest tijd in beslag. De column access strobe of het adresseren van de kolom neemt veel minder tijd in beslag.</p>
+
+        <p>Omdat geheugen vaak sequentieel wordt gelezen (dezelfde rij, aanliggende kolommen) wordt er in moderne geheugens een zogenaamde prefetch buffer gebruikt om de adressering sneller te maken.</p>
+
+        <p>Met sequentieel uitlezen bedoelen we eigenlijk dat de processor heel vaak de aanliggende geheugenblokken ook nodig heeft en deze dus uiteindelijk ook zal opvragen.</p>
+
+        <p>De prefetch buffer is een cache geheugen op de RAM module. Als er na het adresseren aanliggende data uitgelezen moet worden, dan moeten we niet de data opvragen uit het RAM geheugen (en adresseren) maar kunnen we dit zeer snel uit de prefetch buffer halen.</p>
+
+        <p>Een prefetch buffer is dus eigenlijk een simpel trucje om de doorvoersnelheid van RAM geheugen op te krikken. Het werkt echter enkel maar als de aanliggende geheugenblokken ook effectief moeten worden opgevraagd. Indien dat niet zo is, dan heeft een prefetch buffer geen effect.</p>
+
+        <p>Maar... ook op het niveau van RAM geheugen kan er fragmentering ontstaan. Dit betekent dat niet alle data die logisch bij elkaar hoort zich ook fysisch naast elkaar bevindt in het RAM geheugen. Wanneer er fragmentering in het RAM ontstaat dan heeft de prefetch buffer uiteraard weinig zin. De aanliggende opgevraagde data is dan immers niet relevant.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

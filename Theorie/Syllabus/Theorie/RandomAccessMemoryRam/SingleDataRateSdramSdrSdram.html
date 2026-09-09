@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Data Rate SDRAM (SDR SDRAM)</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Single Data Rate SDRAM (SDR SDRAM)</h1>
+
+        <p>Synchrone geheugens werken op een bepaalde frequentie, meestal is dat dezelfde als die van de bus waarover de gegevens worden getransporteerd.</p>
+
+        <p>Typische SDR SDRAM frequenties zijn 100MHz of 133MHz. Bij Single Data Rate SDRAM wordt enkel de opgaande flank of rising edge gebruikt. Dit betekent dat lezen en schrijven naar het RAM geheugen gebeurt op het ritme van de klok maar dit is uiteraard enkel bij een opgaande flank.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 110.0mm">
+            <img src="../../../../img/syllabus-13-sdr-sdram.svg" class="img-fluid"
+                alt="Een kader SDR SDRAM met daarin een blok Geheugenkern en een blok I/O, met een pijl van het ene naar het andere en een pijl die de module verlaat. Boven de drie plaatsen staat telkens dezelfde blokgolf: 133 MHz boven de kern, 133 MHz tussen de kern en de I/O, en 133 MT/s op de uitgang, waar een pijltje elke opgaande flank aanduidt.">
+        </figure>
+
+        <p>Op onderstaande afbeelding kan je twee dingen afleiden: de frequentie is 100 MHz (PC100) en de capaciteit is 64 MB.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-13-random-access-memory-ram-07.png" class="img-fluid"
+                alt="Een SDR-module van voren met acht geheugenchips op een groene printplaat. Op het witte etiket links staat IRL DEM DP100-064082A en daaronder PC100-222-620 64MB.">
+        </figure>
+
+        <p>SDR SDRAM is ondertussen reeds lang achterhaald, dit type geheugen kan je niet meer terugvinden in de winkel.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

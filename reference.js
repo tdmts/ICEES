@@ -708,6 +708,84 @@ window.LAB_REFERENCE = {
                         href: 'CentralProcessingUnitCpu/TestJezelf.html'
                     }
                 ]
+            },
+            {
+                name: 'Random Access Memory (RAM)',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'ram-overzicht',
+                        name: 'Kernpunten en studievragen',
+                        blurb: 'Hoe een bit in een cel bewaard wordt, waarom hij ververst moet worden, en wat er bij elke generatie DDR beter aan is.',
+                        href: 'RandomAccessMemoryRam/Overzicht.html'
+                    },
+                    {
+                        id: 'ram-werking',
+                        name: 'Hoe werkt RAM geheugen?',
+                        blurb: 'Een cel, een adres en een woord, en waarom de breedte van de processor vastlegt hoeveel werkgeheugen hij kan aanspreken.',
+                        href: 'RandomAccessMemoryRam/HoeWerktRamGeheugen.html'
+                    },
+                    {
+                        id: 'ram-dram',
+                        name: 'Dynamic RAM (DRAM)',
+                        blurb: 'Een transistor en een condensator per bit, de lading die weglekt, en wat memory refresh kost aan snelheid.',
+                        href: 'RandomAccessMemoryRam/DynamicRamDram.html'
+                    },
+                    {
+                        id: 'ram-sdram',
+                        name: 'Synchronous DRAM (SDRAM)',
+                        blurb: 'De klok van de bus, het rij- en kolomadres met RAS en CAS, en wat een prefetch buffer oplevert en wanneer niet.',
+                        href: 'RandomAccessMemoryRam/SynchronousDramSdram.html'
+                    },
+                    {
+                        id: 'ram-sdr',
+                        name: 'Single Data Rate SDRAM (SDR SDRAM)',
+                        blurb: 'Een overdracht per klokperiode, op de opgaande flank, en hoe je de frequentie en de capaciteit van het etiket afleest.',
+                        href: 'RandomAccessMemoryRam/SingleDataRateSdramSdrSdram.html'
+                    },
+                    {
+                        id: 'ram-ddr',
+                        name: 'Double Data Rate SDRAM (DDR SDRAM)',
+                        blurb: 'Ook de neergaande flank gebruiken verdubbelt de doorvoer, en de inkeping zorgt dat een module in geen ander slot past.',
+                        href: 'RandomAccessMemoryRam/DoubleDataRateSdramDdrSdram.html'
+                    },
+                    {
+                        id: 'ram-ddr2',
+                        name: 'DDR2 SDRAM',
+                        blurb: 'De prefetch buffer gaat naar vier, en op het etiket staat voortaan de transfersnelheid in plaats van de kloksnelheid.',
+                        href: 'RandomAccessMemoryRam/Ddr2Sdram.html'
+                    },
+                    {
+                        id: 'ram-ddr3',
+                        name: 'DDR3 SDRAM',
+                        blurb: 'Een prefetch buffer van acht, een lagere spanning van 1,5 V en een hogere bitdensiteit dan DDR2.',
+                        href: 'RandomAccessMemoryRam/Ddr3Sdram.html'
+                    },
+                    {
+                        id: 'ram-ddr4',
+                        name: 'DDR4 SDRAM',
+                        blurb: 'Vier keer zoveel per module, 1,2 V, en een bus die van 1066 MHz tot 1600 MHz loopt.',
+                        href: 'RandomAccessMemoryRam/Ddr4Sdram.html'
+                    },
+                    {
+                        id: 'ram-ddr5',
+                        name: 'DDR5 SDRAM',
+                        blurb: 'De jongste generatie: sneller, dichter en zuiniger, en niet achterwaarts compatibel met DDR4.',
+                        href: 'RandomAccessMemoryRam/Ddr5Sdram.html'
+                    },
+                    {
+                        id: 'ram-ecc',
+                        name: 'Error Correcting Code RAM (ECC RAM)',
+                        blurb: 'Extra bits naast de data, de hamming distance, en waarom pariteit een fout wel ziet maar niet herstelt.',
+                        href: 'RandomAccessMemoryRam/ErrorCorrectingCodeRamEccRam.html'
+                    },
+                    {
+                        id: 'ram-channels',
+                        name: 'Single, dual en quad channel',
+                        blurb: 'Wat een channel is, waarom twee modules in twee verschillende channels horen, en waar de kleuren op het bord voor dienen.',
+                        href: 'RandomAccessMemoryRam/SingleDualEnQuadChannel.html'
+                    }
+                ]
             }
         ]
     },

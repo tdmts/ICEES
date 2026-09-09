@@ -1099,7 +1099,7 @@ beschadigd is, en dat een container een ander besturingssysteem kan draaien.
 herschreven. En de drie leads van de opdrachten zijn uitdrukkelijk uit elkaar geschreven, want regel
 12 valt over zeven opeenvolgende gedeelde woorden en dit labo heeft vijf leads.
 
-## De syllabus, hoofdstuk 1 tot 12 ingevoerd 7 en 8 september 2026
+## De syllabus, hoofdstuk 1 tot 13 ingevoerd 7, 8 en 9 september 2026
 
 De theorietrack bestond hier nog niet: `Theorie/Syllabus/` was leeg en het manifest kende geen
 module `syllabus`. Wat er bij dit eerste hoofdstuk aan infrastructuur bij gekomen is, hoort erbij en
@@ -1488,6 +1488,11 @@ is.
 | 12.2 | `syllabus-12-central-processing-unit-cpu-02.png` | het ALU-trapezium |
 | 12.2 | `syllabus-12-central-processing-unit-cpu-04.jpeg` | Processor-Memory Performance Gap, geleende meting |
 | 12.3 | `syllabus-12-central-processing-unit-cpu-06.png` | System Peak Power, tom's hardware, geleende meting |
+| 13.1 | `syllabus-13-random-access-memory-ram-01.png` | het adresrooster, twaalf adressen van elk acht cellen |
+| 13.2 | `syllabus-13-random-access-memory-ram-04.png` | de emmertjes met bits die weglekken |
+| 13.3 | `syllabus-13-random-access-memory-ram-05.png` | de RAS/CAS-matrix |
+| 13.5 | `syllabus-13-random-access-memory-ram-08.jpg` | SDR tegen DDR, een overdracht tegen twee per klokperiode |
+| 13.7 | `syllabus-13-random-access-memory-ram-11.png` | het DDR3-blokschema met de prefetch buffer van acht |
 
 **De vijf RAID-tekeningen zijn een familie en horen in een keer af**, of anders vlak na elkaar: ze
 staan nu in drie stijlen uit drie bronnen, en precies daar moet de student ze naast elkaar kunnen
@@ -1502,10 +1507,18 @@ hertekening minder toont dan het origineel. Neem ze niet samen met een tweede.
 
 **Hoofdstuk 13, Random Access Memory, is op 9 september 2026 in een parallelle sessie ingevoerd**,
 en die sessie heeft er meteen drie van zijn eigen gevallen afgewerkt: het blokschema van SDR SDRAM
-werd `img/syllabus-13-sdr-sdram.svg`, de geheugenkanalen `img/syllabus-13-geheugenkanalen.svg`, en de
-twee Hamming-tabellen van 13.10 werden overgetypte HTML-tabellen. **Vijf staan er nog open**, en ze
-horen bij de lijst hierboven zodra het hoofdstuk gecommit is: `-01` (het adresrooster), `-04` (de
-emmertjes met bits), `-05` (de RAS/CAS-matrix), `-08` (SDR tegen DDR) en `-11` (het DDR3-blokschema).
+werd `img/syllabus-13-sdr-sdram.svg`, en de twee Hamming-tabellen van 13.10 werden overgetypte
+HTML-tabellen. De vijf die overblijven staan in de lijst hierboven.
+
+**Dat hoofdstuk heeft ook de eerste uitzondering op deze beslissing opgeleverd, en ze is door de
+lector toegestaan.** De geannoteerde foto van de DIMM-sloten in 13.11 is `img/syllabus-13-channels.svg`
+geworden, terwijl de regel hierboven zegt dat een geannoteerde foto een foto blijft. De reden is niet
+de taal van de callouts maar hun inhoud: ze groeperen de twee gelijkgekleurde sloten als een channel,
+en de lopende tekst is diezelfde dag rechtgezet naar een module per channel, dus de foto stuurde de
+lezer precies de verkeerde kant op. **De uitzondering geldt dan ook alleen daarvoor**: wat een
+geannoteerde foto vervangt is geen natekening van die foto maar een tekening van het begrip, en de
+toets is of de aanwijzingen op het beeld de tekst ernaast tegenspreken. Staat er alleen Engels op,
+dan blijft het een foto.
 
 **Twee gevallen zijn afgewogen en blijven staan, en dat is geen vergetelheid.** De illustratie van de
 kat van Schrodinger in 1.6 is een prent en geen schema: hertekenen maakt er iets anders van. En de
@@ -1624,6 +1637,36 @@ gesneden en de twee helften staan onder elkaar, elk op 160mm, wat de druk verdub
 3,95mm. **Meet dat na en gok het niet**: de inkthoogte van een regel is te tellen in de
 bronafbeelding, en de vergelijking met de 2,5mm van de lopende tekst en de 3,18mm van het artikel
 van hoofdstuk 3 zegt of het nog leest. De prijs is bladzijden, en die is hier aanvaard.
+
+**Een kilo-etiket op een macht van twee wordt IEC waar de syllabus zelf rekent, en blijft GB waar ze
+een fabrikant citeert.** Dat is de grens die hoofdstuk 13 getrokken heeft voor het geval dat
+hoofdstuk 12 had opengelaten, en ze is scherper dan "elke macht van twee wordt KiB". 13.1 rekent
+zelf uit hoeveel een processor kan aanspreken, dus 2^32 bytes wordt `4 GiB` en 2^64 bytes wordt
+`16 EiB`; "16 exabytes" was daar decimaal 18,4 en dus gewoon fout. Maar "vaak 16 GB tot 32 GB
+werkgeheugen aangetroffen" is wat er verkocht wordt, en "de capaciteit is 64 MB" leest een etiket op
+een foto af. Die blijven staan, om dezelfde reden als waarom een afgedrukte bladzijde niet bewerkt
+wordt. **Wat de twee helften bij elkaar houdt is een bijgeschreven alinea**: een geheugenfabrikant
+rekent zelf ook in machten van twee maar drukt GB op de module, net zoals Windows dat doet in
+hoofdstuk 10. Zonder die alinea staat er GiB naast GB in dezelfde sectie en weet niemand waarom.
+Reken die grens dus na per zin, en kijk daarbij ook de hoofdstukken ernaast na: hoofdstuk 9 bleef
+onaangeraakt omdat elk getal daar aan de fabrikantskant staat.
+
+**Een naam met twee betekenissen is iets anders dan een bewering met twee waarheden, en de uitkomst
+verschilt.** 10.4 zegt "Een word zijn 16 bits" en 13.1 zegt dat een woord de breedte van de
+processor is. Allebei kloppen ze, elk in hun eigen wereld: in de computerarchitectuur is een woord de
+natuurlijke breedte, en in assembler voor x86 zijn WORD en DWORD sinds de 8086 op 16 en 32 bits
+blijven staan. De fout was dus niet een van de twee zinnen maar dat 10.4 een conventie als algemene
+definitie gaf. **Allebei de hoofdstukken krijgen dan een zin die naar de andere betekenis wijst, en
+geen van beide verliest een voorbeeld**, anders dan bij hoofdstuk 5 en 8, waar de ene passage
+gewoon fout stond en herschreven werd. Toets welke van de twee het is voor je iets schrapt.
+
+**Kijk een figuur die tekst draagt na in de KRIMP, en niet op haar dpi.** `ONAANGEROERD` in
+`export-syllabus.py` is er voor beeld waarvan een lezer de tekst moet kunnen lezen, en de verleiding
+is om dat op de bron-dpi te beslissen. Dat is de verkeerde maat: wat telt is hoe groot de letters IN
+het beeld zijn. De drie modulefoto's van 13.4, 13.5 en 13.6 staan op 269 en twee keer 220 dpi en
+laten de student PC100-222-620 64MB aflezen; op `KRIMP_DPI` nagebootst met PIL en bekeken, is dat
+moeiteloos leesbaar, dus er hoefde niets beschermd te worden. Doe die proef, ze kost drie regels
+Python, en zet alleen in `ONAANGEROERD` wat ze niet doorstaat.
 
 ### Wat de eerste hoofdstukimport aan de importer veranderd heeft
 

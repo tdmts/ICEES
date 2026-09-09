@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single, dual en quad channel</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Single, dual en quad channel</h1>
+
+        <p>Als je het labo Assemblage + BIOS/UEFI al hebt voltooid heb je misschien gemerkt dat je meerdere RAM slots had op het moederbord. Je hebt je misschien afgevraagd als je je DIMM module in om het even welk slot mocht steken. Of waarom er verschillende kleuren werden gebruikt op het moederbord of wat je moet doen als je meerdere DIMM modules hebt…</p>
+
+        <p>Het antwoord op die vragen hangt er vanaf als je een moederbord hebt dat single, dual of quad channel ondersteunt. Bij single channel maakt het allemaal niet veel uit. In dat geval lees je best op het moederbord welk het eerste slot is en dan plug je daar je module in.</p>
+
+        <p>Bij dual en quad channel maakt het wel uit. Een channel is een eigen verbinding tussen de
+            geheugencontroller in de processor en een groep sloten. Een moederbord dat dual channel ondersteunt heeft
+            er twee, en een dat quad channel ondersteunt vier. Bij vier sloten en dual channel horen er dus telkens
+            twee sloten bij hetzelfde channel.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 130.0mm">
+            <img src="../../../../img/syllabus-13-channels.svg" class="img-fluid"
+                alt="Een geheugencontroller in de processor met twee pijlen eronder, een naar channel A en een naar channel B. Elk channel is een vlak met twee sloten erin: het bovenste slot staat leeg en in het onderste zit een module. Er zit dus een module in channel A en een in channel B.">
+            <figcaption class="figure-caption">Twee modules op een moederbord met dual channel: een per channel</figcaption>
+        </figure>
+
+        <p>Als je één DIMM module hebt plug je ze in het eerste slot. Heb je er twee dan doe je er goed aan om ze in
+            twee sloten van een verschillend channel te steken.</p>
+
+        <p>De reden hiervoor is dat je dan parallel kan lezen en schrijven. Staan ze allebei in hetzelfde channel,
+            dan loopt al het verkeer over die ene verbinding en heb je van het tweede channel niets. Bij quad channel
+            geldt hetzelfde met vier modules: een per channel.</p>
+
+        <p>Welk fysiek slot bij welk channel hoort, verschilt van moederbord tot moederbord en staat in de
+            handleiding. Daar dienen ook die kleuren voor waar je je in het labo misschien over verwonderde: het bord
+            duidt met de kleur van de sloten aan welke twee je samen moet gebruiken.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 97.9mm">
+            <img src="../../../../img/syllabus-13-random-access-memory-ram-17.jpeg" class="img-fluid"
+                alt="Drie keer hetzelfde moederbord met vier geheugensloten naast elkaar. Links een module van 16 GB in een enkel slot. In het midden twee modules van 8 GB in twee sloten die tegen elkaar aan liggen, met een rood kruis erover. Rechts diezelfde twee modules met een leeg slot ertussen, met een groen vinkje erover.">
+        </figure>
+
+        <p>Verder is het een goed idee om in ieder slot RAM modules te stoppen van hetzelfde type. We bedoelen hiermee hetzelfde merk, dezelfde capaciteit en dezelfde kloksnelheid.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

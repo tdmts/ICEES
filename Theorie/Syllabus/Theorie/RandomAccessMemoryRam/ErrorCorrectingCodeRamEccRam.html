@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Correcting Code RAM (ECC RAM)</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Error Correcting Code RAM (ECC RAM)</h1>
+
+        <p>Computergeheugens kunnen af en toe fouten maken. De redenen hiervoor zijn veranderingen in de spanning op de voedingslijnen of elektromagnetische interferentie van buitenaf. Dit is dan ook één van de redenen waarom een goede computerkast en een goede computervoeding belangrijk is. Hierop komen we later, in het hoofdstuk Power Supply Unit, nog terug.</p>
+
+        <p>Een fout is een bit die omgedraaid wordt. Een 1 wordt een 0 of omgekeerd.</p>
+
+        <p>Dit leidt tot het verkeerd uitlezen en verkeerd opslaan van gegevens. ECC werkgeheugen kan deze fouten detecteren en corrigeren. Het spreekt voor zich dat dit type geheugen iets duurder is en voornamelijk gebruikt wordt in een server of bedrijfskritisch machine. In een particuliere omgeving zal je niet snel ECC werkgeheugen terugvinden.</p>
+
+        <p>Bij ECC werkgeheugen wordt er redundantie toegevoegd aan de data. Dit betekent dat er extra bits worden toegevoegd aan een woord. Deze extra bits dienen enkel om de opgeslagen bits te controleren en te corrigeren. Ze bevatten geen nuttige informatie.</p>
+
+        <p>Wanneer je kijkt naar onderstaande figuur zie je ook duidelijk dat er bij ECC RAM meer geheugenchips worden gebruikt dan bij het conventioneel type RAM.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-13-random-access-memory-ram-13.png" class="img-fluid"
+                alt="Twee geheugenmodules onder elkaar. De bovenste draagt het opschrift ECC en telt negen geheugenchips, de onderste draagt NON-ECC en telt er acht.">
+        </figure>
+
+        <p>Om te begrijpen hoe fouten afgehandeld kunnen worden moeten we eerst goed kijken naar wat een fout eigenlijk is.</p>
+
+        <p>Veronderstel dat we in een woord m bits kunnen opslaan. Hier voegen we r bits aan toe zodanig dat we de fout kunnen detecteren en corrigeren. Het totaal aantal bits is dan n.</p>
+
+        <p>Veronderstel deze twee woorden met lengte m = 8: 10001001 en 10110001</p>
+
+        <p>Er zijn drie bits verschillend. Dit wordt ook wel de Hamming distance d genoemd. De twee codewoorden zijn een hamming distance van 3 van elkaar verwijderd. Er zijn 3 single bit errors nodig om het ene codewoord te converteren naar het andere.</p>
+
+        <p>Als eenvoudig voorbeeld nemen we de pariteitscontrole. Op de data passen we een even of oneven pariteitsbit toe zodanig dat we een bitfout kunnen detecteren.  Bij even pariteit moet het totaal aantal 1&#x27;en van zowel data als pariteitbit even zijn. Bij oneven pariteit moet het totaal aantal 1&#x27;en oneven zijn.</p>
+
+        <p>Onderstel 10001001 met even pariteit. Dit wordt dan: 10001001 1</p>
+
+        <p>De pariteitscontrole heeft een hamming distance van 2. Iedere enkele bitfout wordt gedetecteerd en er moeten minstens 2 fouten optreden vooraleer de detectie omzeild wordt.</p>
+
+        <p>Immers: 10001000 1 &lt; detectie | maar: 10000000 1 &lt; geen detectie</p>
+
+        <p>Correctie is hier niet mogelijk gezien we op geen enkele manier kunnen weten welke bit er fout is.</p>
+
+        <p>Onderstel een zelfgemaakte controle waarin enkel volgende toestanden geldig zijn:</p>
+
+        <p><code style="color: inherit"><strong style="color: #9e2f26">0000</strong><span style="color: #222222">00</span><strong style="color: #9e2f26">0000</strong>, <strong style="color: #9e2f26">0000</strong><span style="color: #222222">01</span><strong style="color: #9e2f26">1111</strong>, <strong style="color: #9e2f26">1111</strong><span style="color: #222222">10</span><strong style="color: #9e2f26">0000</strong>, <strong style="color: #9e2f26">1111</strong><span style="color: #222222">11</span><strong style="color: #9e2f26">1111</strong></code></p>
+
+        <p>De bits in het rood zijn redundant, de rest is de eigenlijke data. De code heeft een hamming distance van 5.  Iedere enkele bitfout wordt gedetecteerd en er moeten minstens 5 fouten optreden vooraleer de detectie omzeild wordt.</p>
+
+        <p>Stel nu dat 0000 01 1111 verzonden wordt maar 0000 00 0111 aankomt bij de ontvanger.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered">
+                <thead class="table-header-custom">
+                    <tr><th>&nbsp;</th><th>Toestand 1</th><th>Toestand 2</th><th>Toestand 3</th><th>Toestand 4</th></tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Code</th><td><code style="color: inherit">0000 00 0111</code></td><td><code style="color: inherit">0000 00 0111</code></td><td><code style="color: inherit">0000 00 0111</code></td><td><code style="color: inherit">0000 00 0111</code></td></tr>
+                    <tr><th scope="row">Toestand</th><td><code style="color: inherit">0000 00 0000</code></td><td><code style="color: inherit">0000 01 1111</code></td><td><code style="color: inherit">1111 10 0000</code></td><td><code style="color: inherit">1111 11 1111</code></td></tr>
+                    <tr><th scope="row">XOR</th><td><code style="color: inherit">0000 00 0111</code></td><td><code style="color: inherit">0000 01 1000</code></td><td><code style="color: inherit">1111 10 0111</code></td><td><code style="color: inherit">1111 11 1000</code></td></tr>
+                    <tr><th scope="row">Hamming distance</th><td>3</td><td>2</td><td>8</td><td>7</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>We detecteren dat er een fout is opgetreden want de code die aankomt is geen geldige toestand. Maar: ongeacht de twee enkele bitfouten kan de code nog gecorrigeerd worden naar 0000 01 1111.</p>
+
+        <p>Stel nu dat 0000 01 1111 verzonden wordt maar 0000 00 0011 aankomt bij de ontvanger.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered">
+                <thead class="table-header-custom">
+                    <tr><th>&nbsp;</th><th>Toestand 1</th><th>Toestand 2</th><th>Toestand 3</th><th>Toestand 4</th></tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Code</th><td><code style="color: inherit">0000 00 0011</code></td><td><code style="color: inherit">0000 00 0011</code></td><td><code style="color: inherit">0000 00 0011</code></td><td><code style="color: inherit">0000 00 0011</code></td></tr>
+                    <tr><th scope="row">Toestand</th><td><code style="color: inherit">0000 00 0000</code></td><td><code style="color: inherit">0000 01 1111</code></td><td><code style="color: inherit">1111 10 0000</code></td><td><code style="color: inherit">1111 11 1111</code></td></tr>
+                    <tr><th scope="row">XOR</th><td><code style="color: inherit">0000 00 0011</code></td><td><code style="color: inherit">0000 01 1100</code></td><td><code style="color: inherit">1111 10 0011</code></td><td><code style="color: inherit">1111 11 1100</code></td></tr>
+                    <tr><th scope="row">Hamming distance</th><td>2</td><td>3</td><td>7</td><td>8</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>We detecteren dat er een fout is opgetreden want de code die aankomt is geen geldige toestand. Maar: door de drie enkele bitfouten kan de code niet meer correct gecorrigeerd worden naar 0000 01 1111. De code wordt verkeerdelijk gecorrigeerd naar 0000 00 0000.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

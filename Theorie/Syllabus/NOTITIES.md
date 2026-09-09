@@ -3901,3 +3901,250 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
   14. Ze zouden weggaan als deze tekst hier geschreven was.
 - **"x86-instructieset" met een streepje** in 12.3, terwijl dezelfde alinea verderop
   "de x86 instructieset" los schrijft.
+
+## Hoofdstuk 13, Random Access Memory (RAM)
+
+**Dit hoofdstuk heeft geen sectie Studievragen achteraan, en er is dus geen Test
+jezelf geschreven.** Het is na hoofdstuk 2 het tweede dat er geen heeft. Of elk
+hoofdstuk er een hoort te hebben, wordt na hoofdstuk 16 in een keer beslist, en dit is
+de tweede rij in die tabel. Het kader Studievragen vooraan telt wel zes vragen en
+staat samen met de Kernpunten op `Overzicht.html`.
+
+**Elf secties, geen enkele Heading 3 of 4, twee tabellen en negentien
+afbeeldingsplaatsingen.** De twee tabellen zijn precies de twee kaders vooraan; er is
+geen enkele lege tabel, dus nergens invulruimte. Twee van de negentien zijn de
+kadericoontjes van 5,4mm die de importer weggooit, dus `img/` kreeg er zeventien,
+waarvan twee zwevend (`wrapSquare`): `-01` naast de alinea over het adres van 8 cellen
+in 13.1, en `-16` naast "Bij dual en quad channel maakt het wel uit" in 13.11. **De
+import liet er geen enkele vallen**, nageteld met `r:embed` en niet met de naieve
+telling, die hier 21 zou geven in plaats van 19.
+
+**Geen enkele figuurparagraaf in dit hoofdstuk droeg tekst, dus geen enkele figuur
+kreeg een bijschrift uit de Word.** Alle `alt`-teksten zijn met de hand geschreven na
+het openen van elk bestand, en een herimport gooit ze alle zeventien weg.
+
+### 1. Zeven correcties, alle zeven gemeld voor ze doorgevoerd werden
+
+Geen ervan overleeft een herimport van dit hoofdstuk.
+
+| Waar | Wat de Word zegt | Wat het hier zegt |
+|---|---|---|
+| 13.10, eerste ECC-voorbeeld | "ongeacht de **drie** enkele bitfouten" | **twee**. 0000011111 tegen 0000000111 verschilt op bit 6 en 7, en de tabel eronder zegt zelf hamming distance 2 |
+| 13.10, tweede ECC-voorbeeld | "door de **vier** enkele bitfouten" | **drie**. Tegen 0000000011 verschilt bit 6, 7 en 8, en de tabel zegt 3 |
+| 13.1 | "het grootste geheel getal is dan 2^31" | 2^31 - 1. Drie alinea's verder schrijft het hoofdstuk zelf 2^64 - 1 en 2^32 - 1 |
+| 13.1 | "Een cell is 8 bits" | Achter elk adres zitten 8 cellen van elk 1 bit. 13.1 en 13.2 zeggen allebei dat een cel 1 bit draagt, en figuur `-01` tekent precies dat |
+| 13.1 | "de limiet van 4 GB" en "16 exabytes" | 4 GiB en 16 EiB, zie beslissing 2 |
+| 13.8 | "Deze verdubbelt in vergelijking met DDR3 tot minstens 2133 MHz" | DDR4 loopt van 1066 MHz tot 1600 MHz, ofwel 2133 tot 3200 MT/s, zie beslissing 4 |
+| 13.11 | "beiden in een slot van hetzelfde channel" | in twee sloten van een **verschillend** channel, zie beslissing 3 |
+
+**De twee ECC-fouten hangen samen, en pas met twee en drie klopt het hoofdstuk met
+zichzelf.** Een code met hamming distance 5 corrigeert tot 2 fouten en zit vanaf 3
+fout, en dat is precies wat de twee voorbeelden tonen: het eerste wordt goed
+gecorrigeerd, het tweede verkeerd. Met drie en vier zou het eerste voorbeeld buiten
+het correctiebereik vallen en toch goed uitkomen. **Alle acht de XOR-rijen van de twee
+tabellen zijn nagerekend en kloppen.**
+
+### 2. De kilo-etiketten van 13.1, en waar de grens ligt
+
+Dit is het geval dat bij hoofdstuk 12 vooruitgeschoven was, met de opdracht om het te
+beslissen zodra hoofdstuk 13 er stond. De byte-aantallen liggen vast en alleen het
+etiket verschilt: 2^32 adressen van een byte zijn exact 4 294 967 296 bytes ofwel
+**4 GiB**, en 2^64 bytes zijn exact **16 EiB**. "16 exabytes" is decimaal 18,4 en dus
+gewoon fout. Die twee zijn de eigen rekensom van het hoofdstuk en gaan dus naar de
+IEC-eenheid, precies zoals de zes page- en blockgroottes van 11.5 en de clusters van
+6.2.
+
+**Waar de syllabus een fabrikant citeert, blijft GB staan**, en dat is de grens. "vaak
+16 GB tot 32 GB werkgeheugen aangetroffen" (13.1), "8 tot 64 GB DDR4 of DDR5" (13.9),
+"16 GB per DIMM" en "64 GB per DIMM" (13.8) en de drie capaciteiten die van een etiket
+op een foto afgelezen worden (64MB, 256MB, 2GB in 13.4, 13.5 en 13.6) zijn allemaal
+wat er verkocht of gedrukt wordt. Een afgedrukte bladzijde bewerken doet deze repo
+niet, en dat geldt net zo goed voor een etiket op een module.
+
+**Wat die twee helften bij elkaar houdt is een bijgeschreven alinea in 13.1**, na de
+zin over het theoretische maximum: dat 32 bits precies 4 294 967 296 bytes geven, dat
+een geheugenfabrikant zelf ook in machten van twee rekent maar GB op de module drukt,
+en dat GB op een etiket of in een winkel dus gibibyte betekent. Zonder die alinea
+staat in dezelfde sectie GiB naast GB zonder dat de student weet waarom. Ze verwijst
+naar het hoofdstuk Informatievoorstelling, dat hetzelfde over Windows zegt.
+
+**Hoofdstuk 9 is niet aangeraakt.** 9.3 schrijft "minstens 8 GB DDR4 werkgeheugen" en
+9.5 rekent met 1 GB, 2 GB en 4 GB uit de datasheets van Beckhoff. Dat eerste is wat er
+verkocht wordt en het tweede staat op een afgedrukte bladzijde, dus allebei vallen ze
+aan de fabrikantskant van de grens hierboven. **Er is dus geen enkele plaats waar twee
+hoofdstukken hetzelfde getal anders etiketteren.**
+
+### 3. Dual channel stond omgekeerd, en de foto ging mee
+
+13.11 zei "Heb je er twee dan doe je er goed aan om ze beiden in een slot te steken van
+hetzelfde channel", met als reden "dat je dan parallel kan lezen en schrijven". Die
+reden weerlegt de zin: parallel lezen kan alleen over twee channels, en twee modules in
+hetzelfde channel leveren single channel op met twee ranks. De eigen figuur `-17` van
+datzelfde hoofdstuk zet twee aanliggende sloten op een rood kruis.
+
+**De geannoteerde foto `-16` is vervangen door `img/syllabus-13-channels.svg`, en dat
+is een uitzondering op de regel van 9 september dat een geannoteerde foto een foto
+blijft.** Haar labels Channel One en Channel Two groeperen de twee gelijkgekleurde
+sloten als een channel, en een lezer die na de correctie "verschillende channels"
+leest, komt daarmee uit op "dus twee verschillend gekleurde sloten", wat op de meeste
+borden precies fout is. De vervanging tekent daarom niet de foto na maar het begrip:
+een geheugencontroller, twee channels van elk twee sloten, en een module in elk
+channel. De lector heeft die uitzondering uitdrukkelijk toegestaan.
+
+**Twee dingen zijn erbij geschreven omdat het hoofdstuk ze beloofde en nooit gaf.** De
+openingsalinea vraagt "waarom er verschillende kleuren werden gebruikt op het
+moederbord" en kwam daar nooit op terug; en studievraag 6 vraagt naar single, dual **en
+quad**, terwijl quad channel alleen in de kop en in een half zinnetje voorkomt. Er
+staat nu bij wat een channel is, dat een quad-channelbord er vier heeft en dan vier
+modules vraagt, en dat het bord met de kleur van de sloten aanduidt welke twee je samen
+gebruikt. **`Labo/Assemblage/Theorie/Componenten.html` is niet aangeraakt** (patroon
+17); die pagina zegt onder `id="werkgeheugen"` al het juiste, namelijk dat je bij vier
+sloten meestal het tweede en het vierde gebruikt.
+
+### 4. Woord betekent hier iets anders dan in hoofdstuk 10
+
+10.4 schrijft "Een word zijn 16 bits" en "Een double word zijn 32 bits"; 13.1 schrijft
+dat een woord 32 bits is op een 32 bit processor en 64 bits op een 64 bit processor.
+Allebei kloppen ze, maar geen van beide is universeel: in de computerarchitectuur is
+een woord de natuurlijke breedte van de processor, en in assembler voor x86 zijn de
+namen WORD en DWORD sinds de 8086 op 16 en 32 bits blijven staan. 10.4 gaf de
+x86-conventie als algemene definitie, en dat is wat rechtgezet is.
+
+**Allebei de hoofdstukken dragen nu een zin die naar de andere betekenis wijst**, en
+geen van beide verliest een voorbeeld. Dat is bewust een andere uitkomst dan bij
+hoofdstuk 5 en 8, waar een van de twee passages gewoon fout stond: hier is het een naam
+met twee betekenissen en niet een bewering met twee waarheden. **De zin in 10.4 is de
+eerste wijziging aan een hoofdstuk dat al gedrukt stond en die niet uit een fout maar
+uit een later hoofdstuk voortkomt**; een herimport van hoofdstuk 10 gooit ze weg.
+
+**13.8 spreekt de labotrack niet meer tegen.** 13.7 geeft DDR3 in buskloksnelheid (400
+tot 1066 MHz) en 13.8 gaf DDR4 in transfers maar noemde het MHz, waardoor "de
+kloksnelheid verdubbelt tot 2133 MHz" een eenheid verwart: DDR4-2133 heeft een busklok
+van 1066 MHz, precies waar DDR3 ophoudt.
+`Labo/Assemblage/Theorie/Componenten.html` schrijft datzelfde getal als 2133 MT/s, dus
+dezelfde bladzijde en de labopagina drukten hetzelfde getal in twee eenheden. Er staat
+nu 1066 tot 1600 MHz met de MT/s-waarde erbij, en dat sluit aan op de tabel van het
+labo. Wat wegvalt is het woord "verdubbelt", en dat is met opzet: het was onwaar.
+
+### 5. De figuren
+
+**Vier zijn aangepakt en dertien zijn gebleven.** De beslissing van 9 september dat elke
+tekening hertekend wordt, kwam er tijdens deze import bij; wat hier al gedaan was, valt
+eronder, en de vijf die overblijven staan op de worklijst in CLAUDE.md.
+
+- **`img/syllabus-13-sdr-sdram.svg`** vervangt `-06`, 274 bij 84 pixels op 94,0mm ofwel
+  **74 dpi**, de laagste van dit hoofdstuk, met Memory Core en I/O in het Engels.
+  Versmallen is hier de knop niet: de tekst is met 2,4mm inkthoogte al groot genoeg en
+  alleen onscherp, dus het is de winst van hoofdstuk 12, scherpte en geen formaat. De
+  tekening zegt er iets bij dat het origineel niet toonde, een pijltje op elke opgaande
+  flank van de uitgangsklok, want dat is precies wat de alinea ernaast beweert. Ze staat
+  op 110,0mm, gekozen zodat haar tekst van 13px op 2,55mm drukt en dus even groot is als
+  de lopende tekst.
+- **`img/syllabus-13-channels.svg`** vervangt `-16`, zie beslissing 3. Op 130,0mm,
+  zelfde rekensom.
+- **`-12`, de foto van een DDR4-module**, stond met 400 bij 96 pixels op 160,0mm op
+  **63 dpi** en is versmald naar **104,0mm**, wat haar op ongeveer 98 dpi brengt. Dat is
+  de regel van hoofdstuk 9: bij een foto is de breedte de enige knop.
+- **`-14` en `-15`, de twee Hamming-tabellen**, bestonden alleen als beeld en zijn
+  overgetypt, zoals de kibi-tabel van 10.4. Vier rijen op vijf kolommen, dus ruim binnen
+  de omvang waar die regel voor geldt. Overtypen is nakijken, en anders dan bij die
+  kibi-tabel kloppen alle acht de XOR-rijen. De bitpatronen staan in een `code` met
+  `color: inherit`: `syllabus.css` maakt daar 9pt Consolas van in de PDF, wat de
+  kolommen laat uitlijnen, en de expliciete kleur houdt OrionCSS ervan af om ze op het
+  scherm rood te zetten.
+
+**De rode bits van 13.10 waren bij de import verloren gegaan, en dat is opmaak en geen
+correctie.** De Word zet de acht buitenste bits van de vier geldige toestanden in
+`C7254E`, en de alinea eronder zegt "De bits in het rood zijn redundant". De importer
+liet die kleur vallen en zette in de plaats de twee binnenste bits vet, dus precies
+omgekeerd. Ze staan nu in `#9e2f26` **en** vet, in monospace: het rood is het gedempte
+rood van hoofdstuk 6 zodat het niet uit de toon valt, en het vet zorgt dat een
+zwart-witafdruk het onderscheid ook toont.
+
+**De drie modulefoto's met een leesbaar etiket hoeven niet in `ONAANGEROERD`.** 13.4,
+13.5 en 13.6 laten de student de frequentie en de capaciteit van het etiket aflezen, dus
+`-07`, `-09` en `-10` zijn op `KRIMP_DPI` nagebootst en bekeken voor er iets beslist
+werd: op 150 dpi is PC100-222-620 64MB moeiteloos leesbaar. Ze staan op 269, 220 en 220
+dpi, dus de krimp kost ze wel wat maar niet genoeg om ze te beschermen. **Doe die proef
+en beslis niet op de dpi alleen**, want de leesbaarheid hangt aan de grootte van de
+letters in het beeld en niet aan de resolutie ervan.
+
+**`-01`, `-03` en `-04` staan op 96, 96 en 103 dpi en zijn niet versmald.** De grens van
+98 is een diagnose: twee millimeter versmallen tilt ze formeel over de grens en levert
+op papier niets op, en dat is dezelfde afweging als bij de vier figuren van hoofdstuk 11
+die op 96 bleven staan. Ze staan wel op de worklijst, want daar is de reden de taal en
+de herkomst en niet de dpi.
+
+### 6. Waar dit hoofdstuk en de rest van dit vak naast elkaar staan
+
+Patroon 17: de twee tracks zeggen hetzelfde twee keer en er linkt niets tussen. **Er is
+aan geen enkele labopagina iets veranderd.**
+
+- **Hoofdstuk 12, Central Processing Unit. Twee openstaande punten, allebei
+  gesloten.** De bijgeschreven zin in 12.2 > Registers zegt "met 32 bits zijn er 2^32
+  adressen en met 64 bits 2^64. Waar de grens dan precies ligt zie je bij Random Access
+  Memory", en 13.1 geeft die grens nu als 4 GiB en 16 EiB. Vraag 5 en 6 van de zelftest
+  van 12 zijn daarmee te maken zonder vooruit te lezen. En de vooruitwijzing in 12.2 >
+  Cache ("De reden hiervoor zie je later, wanneer we Random Access Memory bespreken")
+  wordt door 13.2 en 13.3 ingelost: de refresh waarin de cel niet beschikbaar is, het
+  uitlezen dat de waarde vernielt, en het rijadres dat het meeste tijd kost. Opcode,
+  operand en woord worden in 12.2 ingevoerd en 13.1 gebruikt ze zo.
+- **Hoofdstuk 10, Informatievoorstelling. Een echte tegenspraak, rechtgezet.** Zie
+  beslissing 4. Het kilo-etiket van 10.4 is geen tegenspraak maar een toepassing, zie
+  beslissing 2.
+- **Hoofdstuk 9, Moederbord. Geen tegenspraak.** 9.3 wijst met zoveel woorden vooruit
+  ("Over de werking van DDR leer je meer in het hoofdstuk Random Access Memory") en zegt
+  dat DDR4 niet in een DDR5-slot past; 13.5 zegt hetzelfde over de inkeping. 9.3 legt
+  DIMM en SO-DIMM uit en 13.1 noemt ze allebei opnieuw, in dezelfde betekenis. **De
+  schrijfwijze In-Line van 13.1 is niet gelijkgetrokken met In-line van 9.3**, en dat is
+  genoteerd en niet gerepareerd: het is spelling en geen merknaam.
+- **Hoofdstuk 5, De Von Neumann architectuur. Geen tegenspraak.** 5.1 zegt dat data en
+  instructies in het werkgeheugen moeten staan om uitgevoerd te kunnen worden, en dit
+  hoofdstuk legt uit hoe dat geheugen dat doet. Twee helften.
+- **Hoofdstuk 17, Power Supply Unit. Nog niet ingevoerd.** 13.10 wijst ernaar vooruit,
+  en die verwijzing heet nu bij naam in plaats van "het hoofdstuk voeding".
+
+**Labo Assemblage + BIOS/UEFI.** 13.11 heette het "het labo assembleren", een naam die
+niet bestaat, en noemt het nu voluit. Dat mag, zoals 7.4 het labo Linux Geavanceerd
+noemt, en er linkt niets naartoe. Inhoudelijk sluit
+`Labo/Assemblage/Theorie/Componenten.html` nu aan: die pagina en 13.8 geven allebei DDR4
+als 2133 tot 3200 MT/s, en vraag 15 van de zelftest van dat labo ("de breedte waarmee de
+processor het geheugen bereikt, verdubbelt") zegt hetzelfde als de gecorrigeerde 13.11.
+**Figuur `-17` is byte voor byte `img/dual-channel-dimm-slots.jpg` van dat labo**, het
+vierde zulke paar in deze repo na fragmentatie, first-best-worst-fit en
+vm-versus-container. Wijzig er dus nooit een zonder de andere.
+
+**Wat hoofdstuk 14 tot 17 niet mogen tegenspreken.** Een cel draagt 1 bit en een adres
+staat voor 8 cellen; een woord is de breedte van de processor; 32 bits geven 4 GiB en 64
+bits 16 EiB; DDR4 loopt op 1066 tot 1600 MHz ofwel 2133 tot 3200 MT/s; en dual channel
+vraagt een module per channel. Die vijf zijn hier bijgeschreven of rechtgezet en staan
+zo niet in de Word.
+
+### Wat er in de tekst opviel, en niet aangeraakt is
+
+De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
+
+- **"cell"** in 13.1 ("Iedere cell bestaat uit") en 13.2, waar de rest van het hoofdstuk
+  cel schrijft.
+- **"In moderne x86 / x64 / ARM computer"** in 13.1, waar een ontbreekt.
+- **"gebuikt"** in 13.3, waar gebruikt hoort te staan.
+- **"troughput"** in 13.6 en 13.7, twee keer, waar throughput hoort te staan.
+- **"DDR3 komt in snelheden van 400 MHz tot 1066 MHz)."** in 13.7, met een sluithaakje
+  te veel.
+- **"bedrijfskritisch machine"** in 13.10, waar bedrijfskritische hoort te staan.
+- **"maximaal 32 bits kan tellen !!!"** in 13.1, met een spatie en drie uitroeptekens.
+- **"Bij DDR II SDRAM"** in 13.6, terwijl de kop erboven DDR2 SDRAM schrijft en de rest
+  van het hoofdstuk DDR2, DDR3, DDR4 en DDR5.
+- **"Small Outline Dual In-Line Memory Module"** in 13.1, waar 9.3 In-line schrijft.
+- **"hangt er vanaf als je een moederbord hebt"** en **"afgevraagd als je je DIMM module
+  in om het even welk slot mocht steken"** in 13.11, waar ervan af of en of horen te
+  staan.
+- **"Er kunnen dus veel meer bits op een bepaalde oppervlakte"** in 13.2, zonder
+  werkwoord.
+- **"Daarom moet er een mechanisme zijn wat de lading periodiek ververst"** in 13.1,
+  waar dat hoort te staan.
+- **"men"** in 13.6 en in het kader Kernpunten, de vorm die SCHRIJFSTIJL.md voor eigen
+  tekst naar de je-vorm stuurt. Dat geldt niet voor de brontekst.
+- **De dubbele spatie** in "0 en 4 operands.  Operands zijn" (13.1), "een bitfout kunnen
+  detecteren.  Bij even pariteit" en "hamming distance van 5.  Iedere enkele" (13.10)
+  staat zo in de Word.

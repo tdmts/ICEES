@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Data Rate SDRAM (DDR SDRAM)</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Double Data Rate SDRAM (DDR SDRAM)</h1>
+
+        <p>Bij DDR SDRAM wordt, zoals je ook op de tekening duidelijk kan zien, ook de neergaande flank (falling edge) gebruikt om bits te versturen. Hierdoor kan de snelheid waarmee bits worden verstuurd, zonder de kloksnelheid te verhogen, worden verdubbeld.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 74.7mm">
+            <img src="../../../../img/syllabus-13-random-access-memory-ram-08.jpg" class="img-fluid"
+                alt="Twee blokgolven onder elkaar. Bovenaan SDR, met een pijl omhoog op elke opgaande flank en ernaast de regels een overdracht per klokperiode, klokfrequentie 100 MHz en datafrequentie 100 MHz. Onderaan DDR, met een pijl op elke opgaande en elke neergaande flank en ernaast twee overdrachten per klokperiode, klokfrequentie 100 MHz en datafrequentie 200 MHz.">
+        </figure>
+
+        <p>Vandaar ook de naam: double data rate. Vanaf hier wordt een prefetch buffer met diepte twee gebruikt. Er wordt dan een cel uitgelezen op de stijgende flank en een aanliggende cel uitgelezen op de dalende flank.</p>
+
+        <p>Zoals je merkt ziet DDR geheugen er vrij gelijkaardig uit aan SDR geheugen. Enkel de inkeping, onderaan, staat anders. Dit zorgt ervoor dat je geen DDR geheugen in een SDR geheugenslot kan stoppen en omgekeerd. Dit zal voor alle geheugens (DDR2, DDR3 en DDR4, DDR5) die nog volgen ook het geval zijn.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-13-random-access-memory-ram-09.jpeg" class="img-fluid"
+                alt="Een DDR-module van voren met acht geheugenchips op een groene printplaat. Op het witte etiket links staat PC2700U-25331-Z en daaronder 256MB DDR PC2700 CL2.5.">
+        </figure>
+
+        <p>Ook hier kan je twee dingen afleiden: de datatransferrate is 2700MB/s (PC2700) en de capaciteit is 256 MB. De aandachtige lezer zal gemerkt hebben dat het niet meer de kloksnelheid is, uitgedrukt in MHz, die geafficheerd wordt maar wel de transfersnelheid, uitgedrukt in MB/s.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>
