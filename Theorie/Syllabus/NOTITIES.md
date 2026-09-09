@@ -3924,10 +3924,17 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
 ## Hoofdstuk 13, Random Access Memory (RAM)
 
 **Dit hoofdstuk heeft geen sectie Studievragen achteraan, en er is dus geen Test
-jezelf geschreven.** Het is na hoofdstuk 2 het tweede dat er geen heeft. Of elk
-hoofdstuk er een hoort te hebben, wordt na hoofdstuk 16 in een keer beslist, en dit is
-de tweede rij in die tabel. Het kader Studievragen vooraan telt wel zes vragen en
-staat samen met de Kernpunten op `Overzicht.html`.
+jezelf geschreven.** Het kader Studievragen vooraan telt wel zes vragen en staat samen
+met de Kernpunten op `Overzicht.html`.
+
+**Voor de beslissing na hoofdstuk 16 telt niet "heeft dit hoofdstuk een Test jezelf"
+maar "draagt het ergens vragen".** Die twee lopen uiteen, en dit hoofdstuk is de
+aanleiding om dat op te schrijven. Negen hoofdstukken hebben een `TestJezelf.html`
+(1, 3, 4, 5, 6, 8, 9, 11 en 12); hoofdstuk 10 heeft in de plaats een `Oefeningen.html`
+en hoofdstuk 2 een `ol.vragen` midden in 2.1 Hardware herkennen, dus die twee toetsen
+wel degelijk. **Wat overblijft zijn hoofdstuk 7 en dit hoofdstuk: de enige twee die
+nergens een vraag stellen.** Leg die twee dus naast elkaar wanneer de beslissing valt,
+en niet de vier zonder `TestJezelf.html`.
 
 **Elf secties, geen enkele Heading 3 of 4, twee tabellen en negentien
 afbeeldingsplaatsingen.** De twee tabellen zijn precies de twee kaders vooraan; er is
