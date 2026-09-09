@@ -1481,6 +1481,21 @@ Meet dat na zoals je de schaalfactor nameet, met `page.get_contents().get_data()
 `len()` erop, en leg het naast de vorige PDF. Op het scherm zie je er niets van, en de figuur is
 correct: het is alleen het bestand dat groeit.
 
+**En verwacht niet dat hertekenen de PDF kleiner maakt, want het omgekeerde is waar.** Nagemeten op 9
+september 2026, bij de export die de hele worklijst in een keer meenam: 24 figuren gingen van raster
+naar vector, en het bestand ging van 13,21 naar 13,41 MB. De twee helften lopen tegen elkaar in. De
+BEELDEN werden lichter, van 118 unieke objecten en 6,25 MB naar 105 en 5,92 MB, dus de rasters die
+eruit gingen scheelden 0,33 MB. De CONTENTSTREAMS werden zwaarder, van 6,38 naar 6,92 MB, want daar
+zit een vectortekening in. Netto 0,20 MB erbij.
+
+Dat is geen fout en het is ook geen reden om iets terug te draaien: 13,41 MB is ruim binnen wat deze
+repo aankan, en de winst van een hertekening zit in de scherpte, de taal en het palet en niet in
+bytes. Maar het is wel de verwachting die je moet bijstellen. **`krimp()` heeft de rasters al op
+`KRIMP_DPI` gezet**, dus je vervangt geen dure foto maar een al gekrompen foto, en een gedetailleerde
+tekening kost makkelijk meer dan wat ze vervangt. Wil je weten waar een export naartoe is gegaan,
+splits het dan zoals hierboven, in beeldbytes en contentstreams; het totaal alleen zegt niets over
+welke van de twee bewoog.
+
 **De grens loopt in drieen en niet in tweeen.** Een foto blijft, en een SCHERMAFDRUK VAN EEN ECHT
 VENSTER blijft ook, want die natekenen levert een venster op dat lijkt op wat de student ziet zonder
 het te zijn, en dan gaat hij het verschil zoeken. Dat is Schijfbeheer, het BIOS-scherm, de
