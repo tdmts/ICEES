@@ -3980,6 +3980,43 @@ zoals in het origineel, waar de onderste punt een eindje boven die lijn blijft s
 bladspiegel kan alleen maar winnen. `syllabus-12-central-processing-unit-cpu-04.jpeg`
 is geschrapt, met hetzelfde gevolg bij een herimport.
 
+**`img/syllabus-12-piekverbruik.svg`** vervangt de staafgrafiek van 12.3, 900 bij 430
+op 160,0mm. Dit is de tweede geleende meting, en hier valt de bron wel te noemen: het
+logo van tom's hardware staat op het beeld. Het bijschrift luidt daarom "Meting van
+tom's hardware, System Peak Power met Prime95", en dat doet meteen twee dingen: het
+noemt de meter, en het bewaart de oorspronkelijke titel van de meting op de plaats waar
+ze hoort. **Het logo zelf gaat niet mee**, want dat is het merkteken van tom's hardware
+en geen gegeven van de meting; de naam in woorden vervangt het, precies zoals de regel
+van 9 september 2026 het zegt.
+
+**De vier waarden zijn nagemeten tegen de as en niet overgenomen op hun woord**, want
+overtypen is nakijken en de kibi-tabel van 10.4 heeft laten zien wat dat kan opleveren.
+De staven beginnen op x=433 en eindigen op 497, 506, 656 en 759, wat met de vier
+merktekens van de as neerkomt op 1,97 pixels per watt; de gedrukte 33, 37, 113 en 164
+kloppen daar alle vier op een pixel of twee mee. **Hier zat dus geen rekenfout in**, en
+dat is de moeite van het noteren waard, want zonder de meting was er niets om na te
+kijken.
+
+**De titel is vertaald en de productnamen niet.** Het origineel heet "System Peak Power
+/ using Prime 95 / Power Requirement [Watts]", en dat worden drie Nederlandse regels
+boven de figuur: "Piekverbruik van het systeem", "gemeten met Prime95" en "opgenomen
+vermogen in watt". De vier staaflabels houden hun productnaam letterlijk (de vorm van
+de eigenaar), maar `2 Cores 4 Threads` wordt `2 kernen, 4 threads`, want 12.2 schrijft
+zelf "meerdere kernen of cores" en "threads" (patroon 20). De komma in `1,66 GHz` is de
+huisstijl van deze syllabus, die elders al 3,2 GHz en 1,2 GHz schrijft. **De waarden
+staan naast de staaf in plaats van erin**, wat opmaak is en geen gegeven; ze staan in
+het origineel als witte tekst binnen de staaf, en bij 33 en 37 is dat op 160mm krap.
+**Gerenderd met headless Edge voor ze vertrouwd werd.** De verhouding is 2,09 tegen
+2,08 van de PNG, dus de bladspiegel schuift niet.
+`syllabus-12-central-processing-unit-cpu-06.png` is geschrapt, met hetzelfde gevolg bij
+een herimport.
+
+**Daarmee draagt hoofdstuk 12 geen enkele bronafbeelding meer**: de zes bestanden die de
+import in `img/` zette, zijn alle zes vervangen of geschrapt (het processorschema, de
+registers, de ALU, de performance gap en het piekverbruik hertekend, en de
+assemblerlijst overgetypt). **Een herimport zet ze alle zes terug**, en dan falen regel
+1 en 16 tot ze opnieuw weg zijn.
+
 **De zes `alt`-teksten zijn met de hand geschreven na het openen van elk bestand**, en
 een nieuwe import gooit ze weg.
 

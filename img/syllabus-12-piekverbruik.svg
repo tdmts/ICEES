@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" width="900" height="430"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">Het piekverbruik van vier systemen: de twee Atom-processoren blijven onder de veertig watt, de
+        twee Pentium 4-processoren halen 113 en 164 watt</title>
+    <rect width="900" height="430" fill="#ffffff" />
+
+    <text x="450" y="32" font-size="17" font-weight="bold" fill="#00332b" text-anchor="middle">Piekverbruik van het
+        systeem</text>
+    <text x="450" y="56" font-size="14" fill="#00332b" text-anchor="middle">gemeten met Prime95</text>
+    <text x="450" y="76" font-size="14" fill="#00332b" text-anchor="middle">opgenomen vermogen in watt</text>
+
+    <!-- het rooster, een lijn per veertig watt -->
+    <g stroke="#e0e7e5" stroke-width="1">
+        <path d="M 535 110 V 320" />
+        <path d="M 630 110 V 320" />
+        <path d="M 725 110 V 320" />
+        <path d="M 820 110 V 320" />
+    </g>
+
+    <!-- de vier metingen -->
+    <g fill="#004d40">
+        <rect x="440" y="120" width="78.4" height="30" />
+        <rect x="440" y="170" width="87.9" height="30" />
+        <rect x="440" y="220" width="268.4" height="30" />
+        <rect x="440" y="270" width="389.5" height="30" />
+    </g>
+
+    <g font-size="14" fill="#00332b" text-anchor="end">
+        <text x="430" y="140">Intel Atom D510 @1,66 GHz (2 kernen, 4 threads)</text>
+        <text x="430" y="190">Intel Atom 230 @1,6 GHz (1 kern, 2 threads)</text>
+        <text x="430" y="240">Intel Pentium 4 2,2 GHz (1 kern, 1 thread)</text>
+        <text x="430" y="290">Intel Pentium 4 3,2 GHz (1 kern, 2 threads)</text>
+    </g>
+
+    <g font-size="15" font-weight="bold" fill="#00332b" text-anchor="start">
+        <text x="527" y="140">33</text>
+        <text x="536" y="190">37</text>
+        <text x="717" y="240">113</text>
+        <text x="838" y="290">164</text>
+    </g>
+
+    <!-- de as -->
+    <path d="M 440 110 V 320 H 850" stroke="#9bb0ac" stroke-width="2" fill="none" />
+
+    <g font-size="14" fill="#00332b" text-anchor="middle">
+        <text x="440" y="342">0</text>
+        <text x="535" y="342">40</text>
+        <text x="630" y="342">80</text>
+        <text x="725" y="342">120</text>
+        <text x="820" y="342">160</text>
+        <text x="645" y="370">watt</text>
+    </g>
+</svg>

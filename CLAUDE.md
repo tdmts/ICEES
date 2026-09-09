@@ -1503,7 +1503,6 @@ niet opnieuw op**, en lees hetzelfde argument bij hoofdstuk 9 in NOTITIES.md.
 | 11.7 | `syllabus-11-harde-schijf-18.png` | General Pin Setting, de jumpertabel |
 | 11.8 | `syllabus-11-harde-schijf-19.png` | Serial ATA power cable en data cable |
 | 11.10 | `syllabus-11-harde-schijf-22.png` | HDD tegen SATA tegen NVMe, geleende meting |
-| 12.3 | `syllabus-12-central-processing-unit-cpu-06.png` | System Peak Power, tom's hardware, geleende meting |
 
 **De vijf RAID-tekeningen zijn op 9 september 2026 in een keer afgewerkt**, en dat was de reden dat
 ze als een rij op deze lijst stonden: ze kwamen uit drie bronnen in drie stijlen, en precies daar
