@@ -3469,7 +3469,47 @@ bij de eerstvolgende export.
 Twee millimeter versmallen zou ze formeel boven de grens van 98 tillen en op papier
 niets opleveren, en hoofdstuk 9 versmalde foto's die op 56 tot 81 dpi stonden. **De
 grens van 98 dpi is een diagnose en geen drempel waar je overheen moet.** Het
-RAID 5-schema is intussen wel hertekend, maar niet om zijn dpi; zie hieronder.
+RAID 5-schema is intussen wel hertekend, maar niet om zijn dpi; zie hieronder. **En de
+SATA-kabels van 11.8 zijn dat ook**, om dezelfde reden en met dezelfde nuance; zie
+hieronder.
+
+**De SATA-kabels van 11.8 zijn `img/syllabus-11-sata-kabels.svg` geworden**, op hun
+bestaande **79,4mm**. De verhouding is 1,50 net als bij het origineel, dus de
+bladspiegel schuift geen millimeter. De dpi is hier de aanleiding niet: 96 is dezelfde
+waarde waarvoor de alinea hierboven zegt dat versmallen niets oplevert. Wat wel telt is
+dat het een **tekening** is en geen foto, dat alle drie de opschriften Engels waren
+(Serial ATA Power Cable, Serial ATA Data Cable, Hard Drive) in een Nederlandse tekst, en
+dat de beslissing van 9 september 2026 een tekening geen tweede reden meer vraagt.
+
+**Geen enkel gegeven van het origineel valt weg**, en dat is bij deze figuur een lijst
+die je moet aflopen, want ze bestaat bijna helemaal uit details: de achterkant van de
+schijf met haar twee sleuven, de langste voor de voeding en de kortere voor de data, de
+vergulde contacten in die tweede, de brede voedingsstekker die even lang is als haar
+sleuf, de smallere datastekker, de vier draden aan de voedingsstekker in hun volgorde
+geel, zwart, rood en blauw met hun contacten aan de stekkerkant, het rode lint van de
+datakabel, en de twee stippellijnen die elke stekker bij haar eigen aansluiting
+brengen. Dat de VOEDINGSaansluiting de langste van de twee is, is geen detail maar de
+enige aanwijzing in het beeld welke stekker waar hoort, en het is ook de reden dat de
+twee stekkers verschillend breed getekend zijn.
+
+**Twee dingen zijn wel losgelaten, en allebei met opzet.** Het origineel staat in een
+afgeronde kaderlijn, en die is opmaak van het bronbeeld en draagt niets. En **de
+L-vormige sleutel van een SATA-connector is niet getekend**: op 79,4mm meet die knik
+minder dan een millimeter, het origineel toont er zelf maar een paar pixels van, en een
+knik die je niet ziet leest als een onnauwkeurigheid in plaats van als een sleutel. Wie
+de figuur ooit breder zet, tekent ze er best bij.
+
+**De vier draadkleuren blijven hun eigen kleur en gaan niet naar het palet.** Dat is de
+uitzondering van 6.5, maar op een andere grond: daar legde de lopende tekst de kleuren
+vast, en hier doet geen enkele zin van 11.8 dat. Wat ze vastlegt is het onderwerp zelf,
+want de kleur van een draad in een voedingskabel is de spanning die erop staat; vier
+draden in vier tinten teal zijn geen voedingskabel meer. Ze staan wel gedempt, en
+**niet in een nieuw gedempt palet maar in het palet dat hoofdstuk 6 al vastgelegd
+heeft**: rood is `#9e2f26` en blauw is `#2a4d7c`, exact de twee waarden van
+`syllabus-06-fragmentatie.svg`, zwart is `#222` en geel is `#b8951f`. De vergulde
+contacten staan op `#a8842a`, om dezelfde reden: verguld is wat ze zijn. **Alles
+waarover het beeld niets beweert, staat wel gewoon in het palet**, dus de behuizing,
+de stekkers en de sleuven.
 
 **De vijf RAID-schema's van 11.13 zijn op 9 september 2026 in een keer hertekend**,
 onder de beslissing van die dag dat alles wat iemand getekend heeft naar een eigen SVG
