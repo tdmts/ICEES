@@ -884,7 +884,7 @@ window.LAB_REFERENCE = {
                     {
                         id: 'gpu-test-jezelf',
                         name: 'Test jezelf',
-                        blurb: 'Zeven vragen over de plaats van de grafische kern, het parallellisme van een GPU, Full HD en de aansluitingen.',
+                        blurb: 'Acht vragen over de plaats van de grafische kern, het parallellisme van een GPU, Full HD en de aansluitingen.',
                         href: 'GraphicsProcessingUnitGpu/TestJezelf.html'
                     }
                 ]

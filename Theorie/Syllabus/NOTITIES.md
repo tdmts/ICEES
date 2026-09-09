@@ -5328,13 +5328,34 @@ botsing in de eerste render, wat hier eerder uitzondering dan regel is. Geen enk
 neerkomt op 1,4mm en dus geen afvlakking uitlokt. Allebei blijven ze buiten `ONAANGEROERD`,
 want dat is een lijst voor rasterbeeld.
 
-### De zeven vragen van Test jezelf
+### 9. HDMI staat nu voluit in kernpunt 6, en daarom bestaat vraag 7
 
-**Alle zeven zijn bijgeschreven**, want dit hoofdstuk heeft in de Word geen sectie
+Studievraag 6 vraagt "Waarvoor staat HDMI?" en het hoofdstuk antwoordde daar nergens op:
+de woorden High-Definition Multimedia Interface stonden niet in dit hoofdstuk, en met
+grep ook nergens anders in de syllabus of in de labotrack. Bij het schrijven van Test
+jezelf op 9 september 2026 is dat gemeld en niet gerepareerd, want een vraag erover zou
+een feit invoeren dat de tekst niet geeft. De lector heeft diezelfde dag beslist dat de
+zin erbij komt.
+
+Kernpunt 6 begint nu met "HDMI staat voor High-Definition Multimedia Interface en bevat
+naast een video signaal ook een audio signaal". Alleen de naam voluit, geen enkele
+bewering erbij, en de rest van het kernpunt staat er woord voor woord zoals de Word ze
+heeft. **Het staat in het kader en niet in 15.3**, want kernpunt 5 doet precies hetzelfde
+voor DVI, en zo staan de twee namen op dezelfde plaats en in dezelfde vorm.
+
+**Dit is een woordtoevoeging aan de brontekst en ze staat alleen in de HTML**, dus een
+herimport van dit hoofdstuk gooit ze weg. Vraag 7 van Test jezelf blijft dan achter
+zonder antwoord in de tekst, en dat is precies de toestand waarin dit hoofdstuk stond
+voor deze beslissing. Ze kan in de Word bijgeschreven worden, net als de drie zinnen van
+beslissing 5.
+
+### De acht vragen van Test jezelf
+
+**Alle acht zijn bijgeschreven**, want dit hoofdstuk heeft in de Word geen sectie
 Studievragen achteraan; zie de beslissing van 9 september 2026. Dit is het kortste
-hoofdstuk van de zestien (903 woorden over drie secties), dus zeven vragen, de onderkant
-van de maat. **Zes meerkeuze, alle zes nageteld op precies een juist antwoord**, en een
-open vraag.
+hoofdstuk van de zestien (903 woorden over drie secties), dus acht vragen, de onderkant
+van de maat. **Zes meerkeuze, alle zes nageteld op precies een juist antwoord**, en twee
+open vragen. Er waren er zeven tot de lector over HDMI besliste; zie beslissing 9.
 
 | Vraag | Antwoord | Waarop het steunt |
 |---|---|---|
@@ -5344,30 +5365,36 @@ open vraag.
 | 4 Welke resolutie Full HD is | b, 1920 x 1080 | 15.2; studievraag 4 |
 | 5 Bits per pixel voor ware kleuren | d, 24 | 15.2 |
 | 6 DVI voluit | open, Digital Visual Interface | kernpunt 5; studievraag 5 |
-| 7 Een DVI uitgang op een HDMI scherm | a, ja, met een converter, al werk je daar niet handig mee | kernpunt 2; studievraag 3 |
+| 7 HDMI voluit | open, High-Definition Multimedia Interface | kernpunt 6 zoals bijgeschreven, zie beslissing 9; studievraag 6 |
+| 8 Een DVI uitgang op een HDMI scherm | a, ja, met een converter, al werk je daar niet handig mee | kernpunt 2; studievraag 3 |
 
-**Vraag 6 en 7 steunen op het kader Kernpunten en niet op de lopende tekst, en dat is
-beslist en niet toevallig.** De schermaansluitingen (VGA, DVI, HDMI, DisplayPort) komen in
+**Vraag 6, 7 en 8 steunen op het kader Kernpunten en niet op de lopende tekst, en dat
+is beslist en niet toevallig.** De schermaansluitingen (VGA, DVI, HDMI, DisplayPort) komen in
 15.1 tot 15.3 nergens voor en staan alleen vooraan in het kader. Dat kader wordt mee
 gedrukt op de openingsbladzijde van het hoofdstuk, dus de student heeft het antwoord voor
 zich. De eerste lezing was om er hoogstens een vraag op te bouwen, en die houdt hier geen
 stand: alle aansluitingen staan in dat kader, dus zo een regel zou dit hoofdstuk op vier
-vragen vastzetten. Beslist op 9 september 2026. Vraag 6 heeft de vorm van vraag 4 van
-hoofdstuk 12 (ALU voluit), een open vraag met een enkele invulregel.
+vragen vastzetten. Beslist op 9 september 2026. Vraag 6 en 7 hebben de vorm van vraag 4
+van hoofdstuk 12 (ALU voluit), een open vraag met een enkele invulregel.
+
+**Ze staan naast elkaar en de convertervraag staat erachter, en dat is de volgorde en niet
+de herkomst.** De HDMI-vraag kwam als laatste bij, dus achteraan bijplakken lag voor de
+hand, en dat zou de convertervraag tussen "Schrijf DVI voluit" en "Schrijf HDMI voluit"
+zetten terwijl ze juist allebei die namen gebruikt. Dat kan hier zonder iets te breken
+omdat alle acht de vragen bijgeschreven zijn: er ligt geen nummering uit de Word vast die
+een herimport moet terugvinden, zoals bij hoofdstuk 12 wel het geval was.
 
 **De afleider Platform Controller Hub bij vraag 1 is de misvatting die 15.2 rechtzet**:
 een moderne grafische kaart hangt juist met een x16 slot rechtstreeks aan de processor en
 gaat niet langs de PCH. Bij vraag 2 zegt het antwoord "zelden" en niet "geen", naar
 beslissing 3.
 
-**Studievraag 6, "Waarvoor staat HDMI?", wordt door niets getoetst, en dat blijft zo tot
-de lector erover beslist.** De woorden High-Definition Multimedia Interface staan nergens
-in dit hoofdstuk, en met grep ook nergens anders in de syllabus of in de labotrack; het
-kader zegt alleen wat HDMI draagt. Een vraag erover zou een feit invoeren dat de tekst
-niet geeft, dus er is niets bijgeschreven en niets verzonnen. Gemeld op 9 september 2026
-en voorgelegd aan de lector. Komt er een zin bij in 15.1 of in het kader, dan hoort er een
-achtste vraag bij. Zelfde soort geval als studievraag 4 van hoofdstuk 12, die ook
-genoteerd staat en niet gerepareerd is.
+**Studievraag 6, "Waarvoor staat HDMI?", is de enige vraag van dit hoofdstuk waarvoor de
+tekst eerst uitgebreid moest worden**, en die weg is bewust gelopen: eerst gemeld en niet
+gerepareerd, daarna door de lector beslist, en pas daarna de vraag. Beslissing 9 zegt wat
+er bijgeschreven is en wat een herimport ermee doet. Alle zeven de andere vragen stonden
+er al voor die beslissing, en geen ervan heeft ook maar een woord aan het hoofdstuk
+veranderd.
 
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
