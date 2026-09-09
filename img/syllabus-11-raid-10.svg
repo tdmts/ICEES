@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 524 430" width="524" height="430" role="img">
+  <style>
+    text { font-family: "Segoe UI", Helvetica, Arial, sans-serif; fill: #222222; }
+    .titel { font-size: 26px; font-weight: 700; fill: #004d40; }
+    .ondertitel { font-size: 17px; fill: #555555; }
+    .tak { font-size: 18px; font-weight: 600; fill: #004d40; }
+    .schijf { font-size: 17px; }
+    .blok { font-size: 18px; }
+    .blok-p { font-size: 18px; font-weight: 600; fill: #ffffff; }
+    .klein { font-size: 12px; }
+    .legende { font-size: 16px; }
+    .band { stroke: #004d40; stroke-width: 2; }
+    .draad { stroke: #004d40; stroke-width: 2; fill: none; }
+  </style>
+  <rect x="0" y="0" width="524" height="430" fill="#ffffff"/>
+  <text class="titel" x="262" y="30" text-anchor="middle">RAID 10 (RAID 1+0)</text>
+  <text class="ondertitel" x="262" y="52" text-anchor="middle">striping + mirroring</text>
+
+  <!-- bovenste niveau: RAID 0 verdeelt de blokken over de twee paren -->
+  <text class="tak" x="262" y="84" text-anchor="middle">RAID 0</text>
+  <path class="draad" d="M 119,94 L 405,94"/>
+  <path class="draad" d="M 119,94 L 119,124"/>
+  <path class="draad" d="M 405,94 L 405,124"/>
+
+  <!-- onderste niveau: elk paar is een RAID 1 -->
+  <text class="tak" x="109" y="148" text-anchor="end">RAID 1</text>
+  <path class="draad" d="M 59,158 L 179,158"/>
+  <path class="draad" d="M 119,158 L 119,124"/>
+  <path class="draad" d="M 59,158 L 59,193"/>
+  <path class="draad" d="M 179,158 L 179,193"/>
+  <text class="tak" x="395" y="148" text-anchor="end">RAID 1</text>
+  <path class="draad" d="M 345,158 L 465,158"/>
+  <path class="draad" d="M 405,158 L 405,124"/>
+  <path class="draad" d="M 345,158 L 345,193"/>
+  <path class="draad" d="M 465,158 L 465,193"/>
+
+  <!-- schijf 0 -->
+  <g>
+    <path class="band" fill="#b2dfdb" d="M 14,195 C 14,187.82 34.147,182 59,182 C 83.853,182 104,187.82 104,195 C 104,202.18 83.853,208 59,208 C 34.147,208 14,202.18 14,195 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 14,195 C 14,202.18 34.147,208 59,208 C 83.853,208 104,202.18 104,195 L 104,229 C 104,236.18 83.853,242 59,242 C 34.147,242 14,236.18 14,229 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 14,229 C 14,236.18 34.147,242 59,242 C 83.853,242 104,236.18 104,229 L 104,263 C 104,270.18 83.853,276 59,276 C 34.147,276 14,270.18 14,263 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 14,263 C 14,270.18 34.147,276 59,276 C 83.853,276 104,270.18 104,263 L 104,297 C 104,304.18 83.853,310 59,310 C 34.147,310 14,304.18 14,297 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 14,297 C 14,304.18 34.147,310 59,310 C 83.853,310 104,304.18 104,297 L 104,331 C 104,338.18 83.853,344 59,344 C 34.147,344 14,338.18 14,331 Z"/>
+    <path class="band" fill="#e0e7e5" d="M 14,331 C 14,338.18 34.147,344 59,344 C 83.853,344 104,338.18 104,331 L 104,381 C 104,388.18 83.853,394 59,394 C 34.147,394 14,388.18 14,381 Z"/>
+    <text class="blok" x="59" y="231" text-anchor="middle">A1</text>
+    <text class="blok" x="59" y="265" text-anchor="middle">A3</text>
+    <text class="blok" x="59" y="299" text-anchor="middle">A5</text>
+    <text class="blok" x="59" y="333" text-anchor="middle">A7</text>
+  </g>
+  <text class="schijf" x="59" y="420" text-anchor="middle">Disk 0</text>
+
+  <!-- schijf 1 -->
+  <g>
+    <path class="band" fill="#b2dfdb" d="M 134,195 C 134,187.82 154.147,182 179,182 C 203.853,182 224,187.82 224,195 C 224,202.18 203.853,208 179,208 C 154.147,208 134,202.18 134,195 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 134,195 C 134,202.18 154.147,208 179,208 C 203.853,208 224,202.18 224,195 L 224,229 C 224,236.18 203.853,242 179,242 C 154.147,242 134,236.18 134,229 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 134,229 C 134,236.18 154.147,242 179,242 C 203.853,242 224,236.18 224,229 L 224,263 C 224,270.18 203.853,276 179,276 C 154.147,276 134,270.18 134,263 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 134,263 C 134,270.18 154.147,276 179,276 C 203.853,276 224,270.18 224,263 L 224,297 C 224,304.18 203.853,310 179,310 C 154.147,310 134,304.18 134,297 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 134,297 C 134,304.18 154.147,310 179,310 C 203.853,310 224,304.18 224,297 L 224,331 C 224,338.18 203.853,344 179,344 C 154.147,344 134,338.18 134,331 Z"/>
+    <path class="band" fill="#e0e7e5" d="M 134,331 C 134,338.18 154.147,344 179,344 C 203.853,344 224,338.18 224,331 L 224,381 C 224,388.18 203.853,394 179,394 C 154.147,394 134,388.18 134,381 Z"/>
+    <text class="blok" x="179" y="231" text-anchor="middle">A1</text>
+    <text class="blok" x="179" y="265" text-anchor="middle">A3</text>
+    <text class="blok" x="179" y="299" text-anchor="middle">A5</text>
+    <text class="blok" x="179" y="333" text-anchor="middle">A7</text>
+  </g>
+  <text class="schijf" x="179" y="420" text-anchor="middle">Disk 1</text>
+
+  <!-- schijf 2 -->
+  <g>
+    <path class="band" fill="#b2dfdb" d="M 300,195 C 300,187.82 320.147,182 345,182 C 369.853,182 390,187.82 390,195 C 390,202.18 369.853,208 345,208 C 320.147,208 300,202.18 300,195 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 300,195 C 300,202.18 320.147,208 345,208 C 369.853,208 390,202.18 390,195 L 390,229 C 390,236.18 369.853,242 345,242 C 320.147,242 300,236.18 300,229 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 300,229 C 300,236.18 320.147,242 345,242 C 369.853,242 390,236.18 390,229 L 390,263 C 390,270.18 369.853,276 345,276 C 320.147,276 300,270.18 300,263 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 300,263 C 300,270.18 320.147,276 345,276 C 369.853,276 390,270.18 390,263 L 390,297 C 390,304.18 369.853,310 345,310 C 320.147,310 300,304.18 300,297 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 300,297 C 300,304.18 320.147,310 345,310 C 369.853,310 390,304.18 390,297 L 390,331 C 390,338.18 369.853,344 345,344 C 320.147,344 300,338.18 300,331 Z"/>
+    <path class="band" fill="#e0e7e5" d="M 300,331 C 300,338.18 320.147,344 345,344 C 369.853,344 390,338.18 390,331 L 390,381 C 390,388.18 369.853,394 345,394 C 320.147,394 300,388.18 300,381 Z"/>
+    <text class="blok" x="345" y="231" text-anchor="middle">A2</text>
+    <text class="blok" x="345" y="265" text-anchor="middle">A4</text>
+    <text class="blok" x="345" y="299" text-anchor="middle">A6</text>
+    <text class="blok" x="345" y="333" text-anchor="middle">A8</text>
+  </g>
+  <text class="schijf" x="345" y="420" text-anchor="middle">Disk 2</text>
+
+  <!-- schijf 3 -->
+  <g>
+    <path class="band" fill="#b2dfdb" d="M 420,195 C 420,187.82 440.147,182 465,182 C 489.853,182 510,187.82 510,195 C 510,202.18 489.853,208 465,208 C 440.147,208 420,202.18 420,195 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 420,195 C 420,202.18 440.147,208 465,208 C 489.853,208 510,202.18 510,195 L 510,229 C 510,236.18 489.853,242 465,242 C 440.147,242 420,236.18 420,229 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 420,229 C 420,236.18 440.147,242 465,242 C 489.853,242 510,236.18 510,229 L 510,263 C 510,270.18 489.853,276 465,276 C 440.147,276 420,270.18 420,263 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 420,263 C 420,270.18 440.147,276 465,276 C 489.853,276 510,270.18 510,263 L 510,297 C 510,304.18 489.853,310 465,310 C 440.147,310 420,304.18 420,297 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 420,297 C 420,304.18 440.147,310 465,310 C 489.853,310 510,304.18 510,297 L 510,331 C 510,338.18 489.853,344 465,344 C 440.147,344 420,338.18 420,331 Z"/>
+    <path class="band" fill="#e0e7e5" d="M 420,331 C 420,338.18 440.147,344 465,344 C 489.853,344 510,338.18 510,331 L 510,381 C 510,388.18 489.853,394 465,394 C 440.147,394 420,388.18 420,381 Z"/>
+    <text class="blok" x="465" y="231" text-anchor="middle">A2</text>
+    <text class="blok" x="465" y="265" text-anchor="middle">A4</text>
+    <text class="blok" x="465" y="299" text-anchor="middle">A6</text>
+    <text class="blok" x="465" y="333" text-anchor="middle">A8</text>
+  </g>
+  <text class="schijf" x="465" y="420" text-anchor="middle">Disk 3</text>
+</svg>

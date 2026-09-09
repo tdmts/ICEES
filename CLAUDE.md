@@ -1454,6 +1454,20 @@ origineel valt weg, de figuur wordt met headless Edge gerenderd voor je ze vertr
 OrionCSS geldt tenzij de lopende tekst een kleur bij naam noemt, en de bladspiegel wordt na de export
 nagerekend.
 
+**Teken een grote ronding als bezier en niet als `A`-boog, want een boog wordt duur in de PDF.**
+Gevonden op 9 september 2026 bij de vijf RAID-cilinders. Chrome vlakt bij `--print-to-pdf` elke
+`A`-boog af tot ongeveer zeventig `c`-operatoren en schrijft die alle zeventig weg: vier
+bladzijden van hoofdstuk 11 gingen van 18 tot 52 kB naar 137 tot 328 kB, en het HELE bestand groeide
+0,87 MB, meer dan de vijf schermafdrukken die eruit gingen ooit gewogen hebben. Dezelfde ronding als
+twee expliciete `C`-bogen per halve ellips (de constante is 0,5522847498) tekent er hetzelfde uit en
+kost niets. Een `<ellipse>` of een `<circle>` gaat langs dezelfde molen, dus een groot deksel schrijf
+je ook als pad; **het is de gedrukte GROOTTE die telt en niet het aantal bogen**, want de afvlakking
+volgt de straal, en een knoop van 3,5 eenheden in `syllabus-13-ras-cas.svg` kost niets.
+
+Meet dat na zoals je de schaalfactor nameet, met `page.get_contents().get_data()` per bladzijde en
+`len()` erop, en leg het naast de vorige PDF. Op het scherm zie je er niets van, en de figuur is
+correct: het is alleen het bestand dat groeit.
+
 **De grens loopt in drieen en niet in tweeen.** Een foto blijft, en een SCHERMAFDRUK VAN EEN ECHT
 VENSTER blijft ook, want die natekenen levert een venster op dat lijkt op wat de student ziet zonder
 het te zijn, en dan gaat hij het verschil zoeken. Dat is Schijfbeheer, het BIOS-scherm, de
@@ -1484,15 +1498,18 @@ is.
 | 11.7 | `syllabus-11-harde-schijf-18.png` | General Pin Setting, de jumpertabel |
 | 11.8 | `syllabus-11-harde-schijf-19.png` | Serial ATA power cable en data cable |
 | 11.10 | `syllabus-11-harde-schijf-22.png` | HDD tegen SATA tegen NVMe, geleende meting |
-| 11.13 | `syllabus-11-harde-schijf-31.png` tot `-35.png` | RAID 0, 1, 5, 6 en 10, uit drie bronnen in drie stijlen |
 | 12.2 | `syllabus-12-central-processing-unit-cpu-02.png` | het ALU-trapezium |
 | 12.2 | `syllabus-12-central-processing-unit-cpu-04.jpeg` | Processor-Memory Performance Gap, geleende meting |
 | 12.3 | `syllabus-12-central-processing-unit-cpu-06.png` | System Peak Power, tom's hardware, geleende meting |
 
-**De vijf RAID-tekeningen zijn een familie en horen in een keer af**, of anders vlak na elkaar: ze
-staan nu in drie stijlen uit drie bronnen, en precies daar moet de student ze naast elkaar kunnen
-leggen. Zolang de helft over is, staat die sectie in twee stijlen door elkaar en is ze slechter af
-dan voordien.
+**De vijf RAID-tekeningen zijn op 9 september 2026 in een keer afgewerkt**, en dat was de reden dat
+ze als een rij op deze lijst stonden: ze kwamen uit drie bronnen in drie stijlen, en precies daar
+moet de student ze naast elkaar kunnen leggen. Ze heten nu `img/syllabus-11-raid-0.svg` tot
+`-raid-10.svg`. **Wat een familie duurder maakt dan vijf losse tekeningen is dat de schaal gedeeld
+is**: een schijf is in alle vijf even breed en een blok even hoog, dus de gedrukte breedte volgt uit
+het aantal schijven en is geen knop meer per figuur. Wil je er een versmallen, dan versmal je ze
+alle vijf. De vijf zijn met een generator geschreven om precies dat te kunnen waarmaken; die staat
+niet in de repo, want de SVG's zijn de bron.
 
 **`syllabus-11-harde-schijf-01.png` is het zwaarste stuk van de lijst en staat er met een
 waarschuwing bij.** Het is geen schema maar een gedetailleerde doorsnedetekening met dertien

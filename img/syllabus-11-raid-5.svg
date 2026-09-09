@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 478 362" width="478" height="362" role="img">
+  <style>
+    text { font-family: "Segoe UI", Helvetica, Arial, sans-serif; fill: #222222; }
+    .titel { font-size: 26px; font-weight: 700; fill: #004d40; }
+    .ondertitel { font-size: 17px; fill: #555555; }
+    .tak { font-size: 18px; font-weight: 600; fill: #004d40; }
+    .schijf { font-size: 17px; }
+    .blok { font-size: 18px; }
+    .blok-p { font-size: 18px; font-weight: 600; fill: #ffffff; }
+    .klein { font-size: 12px; }
+    .legende { font-size: 16px; }
+    .band { stroke: #004d40; stroke-width: 2; }
+    .draad { stroke: #004d40; stroke-width: 2; fill: none; }
+  </style>
+  <rect x="0" y="0" width="478" height="362" fill="#ffffff"/>
+  <text class="titel" x="239" y="30" text-anchor="middle">RAID 5</text>
+
+  <!-- de beugel die de schijven tot een array bindt -->
+  <path class="draad" d="M 59,56 L 419,56"/>
+  <path class="draad" d="M 59,56 L 59,101"/>
+  <path class="draad" d="M 179,56 L 179,101"/>
+  <path class="draad" d="M 299,56 L 299,101"/>
+  <path class="draad" d="M 419,56 L 419,101"/>
+
+  <!-- schijf 0 -->
+  <g>
+    <path class="band" fill="#b2dfdb" d="M 14,103 C 14,95.82 34.147,90 59,90 C 83.853,90 104,95.82 104,103 C 104,110.18 83.853,116 59,116 C 34.147,116 14,110.18 14,103 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 14,103 C 14,110.18 34.147,116 59,116 C 83.853,116 104,110.18 104,103 L 104,137 C 104,144.18 83.853,150 59,150 C 34.147,150 14,144.18 14,137 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 14,137 C 14,144.18 34.147,150 59,150 C 83.853,150 104,144.18 104,137 L 104,171 C 104,178.18 83.853,184 59,184 C 34.147,184 14,178.18 14,171 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 14,171 C 14,178.18 34.147,184 59,184 C 83.853,184 104,178.18 104,171 L 104,205 C 104,212.18 83.853,218 59,218 C 34.147,218 14,212.18 14,205 Z"/>
+    <path class="band" fill="#004d40" d="M 14,205 C 14,212.18 34.147,218 59,218 C 83.853,218 104,212.18 104,205 L 104,239 C 104,246.18 83.853,252 59,252 C 34.147,252 14,246.18 14,239 Z"/>
+    <path class="band" fill="#e0e7e5" d="M 14,239 C 14,246.18 34.147,252 59,252 C 83.853,252 104,246.18 104,239 L 104,289 C 104,296.18 83.853,302 59,302 C 34.147,302 14,296.18 14,289 Z"/>
+    <text class="blok" x="59" y="139" text-anchor="middle">A1</text>
+    <text class="blok" x="59" y="173" text-anchor="middle">B1</text>
+    <text class="blok" x="59" y="207" text-anchor="middle">C1</text>
+    <text class="blok-p" x="59" y="241" text-anchor="middle">D<tspan class="klein" dy="4">p</tspan></text>
+  </g>
+  <text class="schijf" x="59" y="328" text-anchor="middle">Disk 0</text>
+
+  <!-- schijf 1 -->
+  <g>
+    <path class="band" fill="#b2dfdb" d="M 134,103 C 134,95.82 154.147,90 179,90 C 203.853,90 224,95.82 224,103 C 224,110.18 203.853,116 179,116 C 154.147,116 134,110.18 134,103 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 134,103 C 134,110.18 154.147,116 179,116 C 203.853,116 224,110.18 224,103 L 224,137 C 224,144.18 203.853,150 179,150 C 154.147,150 134,144.18 134,137 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 134,137 C 134,144.18 154.147,150 179,150 C 203.853,150 224,144.18 224,137 L 224,171 C 224,178.18 203.853,184 179,184 C 154.147,184 134,178.18 134,171 Z"/>
+    <path class="band" fill="#004d40" d="M 134,171 C 134,178.18 154.147,184 179,184 C 203.853,184 224,178.18 224,171 L 224,205 C 224,212.18 203.853,218 179,218 C 154.147,218 134,212.18 134,205 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 134,205 C 134,212.18 154.147,218 179,218 C 203.853,218 224,212.18 224,205 L 224,239 C 224,246.18 203.853,252 179,252 C 154.147,252 134,246.18 134,239 Z"/>
+    <path class="band" fill="#e0e7e5" d="M 134,239 C 134,246.18 154.147,252 179,252 C 203.853,252 224,246.18 224,239 L 224,289 C 224,296.18 203.853,302 179,302 C 154.147,302 134,296.18 134,289 Z"/>
+    <text class="blok" x="179" y="139" text-anchor="middle">A2</text>
+    <text class="blok" x="179" y="173" text-anchor="middle">B2</text>
+    <text class="blok-p" x="179" y="207" text-anchor="middle">C<tspan class="klein" dy="4">p</tspan></text>
+    <text class="blok" x="179" y="241" text-anchor="middle">D1</text>
+  </g>
+  <text class="schijf" x="179" y="328" text-anchor="middle">Disk 1</text>
+
+  <!-- schijf 2 -->
+  <g>
+    <path class="band" fill="#b2dfdb" d="M 254,103 C 254,95.82 274.147,90 299,90 C 323.853,90 344,95.82 344,103 C 344,110.18 323.853,116 299,116 C 274.147,116 254,110.18 254,103 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 254,103 C 254,110.18 274.147,116 299,116 C 323.853,116 344,110.18 344,103 L 344,137 C 344,144.18 323.853,150 299,150 C 274.147,150 254,144.18 254,137 Z"/>
+    <path class="band" fill="#004d40" d="M 254,137 C 254,144.18 274.147,150 299,150 C 323.853,150 344,144.18 344,137 L 344,171 C 344,178.18 323.853,184 299,184 C 274.147,184 254,178.18 254,171 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 254,171 C 254,178.18 274.147,184 299,184 C 323.853,184 344,178.18 344,171 L 344,205 C 344,212.18 323.853,218 299,218 C 274.147,218 254,212.18 254,205 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 254,205 C 254,212.18 274.147,218 299,218 C 323.853,218 344,212.18 344,205 L 344,239 C 344,246.18 323.853,252 299,252 C 274.147,252 254,246.18 254,239 Z"/>
+    <path class="band" fill="#e0e7e5" d="M 254,239 C 254,246.18 274.147,252 299,252 C 323.853,252 344,246.18 344,239 L 344,289 C 344,296.18 323.853,302 299,302 C 274.147,302 254,296.18 254,289 Z"/>
+    <text class="blok" x="299" y="139" text-anchor="middle">A3</text>
+    <text class="blok-p" x="299" y="173" text-anchor="middle">B<tspan class="klein" dy="4">p</tspan></text>
+    <text class="blok" x="299" y="207" text-anchor="middle">C2</text>
+    <text class="blok" x="299" y="241" text-anchor="middle">D2</text>
+  </g>
+  <text class="schijf" x="299" y="328" text-anchor="middle">Disk 2</text>
+
+  <!-- schijf 3 -->
+  <g>
+    <path class="band" fill="#004d40" d="M 374,103 C 374,95.82 394.147,90 419,90 C 443.853,90 464,95.82 464,103 C 464,110.18 443.853,116 419,116 C 394.147,116 374,110.18 374,103 Z"/>
+    <path class="band" fill="#004d40" d="M 374,103 C 374,110.18 394.147,116 419,116 C 443.853,116 464,110.18 464,103 L 464,137 C 464,144.18 443.853,150 419,150 C 394.147,150 374,144.18 374,137 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 374,137 C 374,144.18 394.147,150 419,150 C 443.853,150 464,144.18 464,137 L 464,171 C 464,178.18 443.853,184 419,184 C 394.147,184 374,178.18 374,171 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 374,171 C 374,178.18 394.147,184 419,184 C 443.853,184 464,178.18 464,171 L 464,205 C 464,212.18 443.853,218 419,218 C 394.147,218 374,212.18 374,205 Z"/>
+    <path class="band" fill="#b2dfdb" d="M 374,205 C 374,212.18 394.147,218 419,218 C 443.853,218 464,212.18 464,205 L 464,239 C 464,246.18 443.853,252 419,252 C 394.147,252 374,246.18 374,239 Z"/>
+    <path class="band" fill="#e0e7e5" d="M 374,239 C 374,246.18 394.147,252 419,252 C 443.853,252 464,246.18 464,239 L 464,289 C 464,296.18 443.853,302 419,302 C 394.147,302 374,296.18 374,289 Z"/>
+    <text class="blok-p" x="419" y="139" text-anchor="middle">A<tspan class="klein" dy="4">p</tspan></text>
+    <text class="blok" x="419" y="173" text-anchor="middle">B3</text>
+    <text class="blok" x="419" y="207" text-anchor="middle">C3</text>
+    <text class="blok" x="419" y="241" text-anchor="middle">D3</text>
+  </g>
+  <text class="schijf" x="419" y="328" text-anchor="middle">Disk 3</text>
+
+  <!-- legende: wat de gekleurde blokken zijn -->
+  <rect x="70.3" y="339" width="26" height="16" fill="#004d40" stroke="#004d40" stroke-width="2"/>
+  <text class="legende" x="104.3" y="352">pariteitsblok, geen kopie van de data</text>
+</svg>

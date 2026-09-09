@@ -3349,7 +3349,70 @@ Nederlands staan, en dat teken je niet na.
 (107,1mm) en de NAS-foto van 11.15 (70,1mm) zitten alle vier op 96 en niet eronder.
 Twee millimeter versmallen zou ze formeel boven de grens van 98 tillen en op papier
 niets opleveren, en hoofdstuk 9 versmalde foto's die op 56 tot 81 dpi stonden. **De
-grens van 98 dpi is een diagnose en geen drempel waar je overheen moet.**
+grens van 98 dpi is een diagnose en geen drempel waar je overheen moet.** Het
+RAID 5-schema is intussen wel hertekend, maar niet om zijn dpi; zie hieronder.
+
+**De vijf RAID-schema's van 11.13 zijn op 9 september 2026 in een keer hertekend**,
+onder de beslissing van die dag dat alles wat iemand getekend heeft naar een eigen SVG
+gaat. Ze stonden **in drie stijlen uit drie bronnen**: `-31` en `-32` (RAID 0 en 1)
+waren gele cilinders, `-33` en `-34` (RAID 5 en 6) waren cilinders met een eigen
+kleur per rij, en `-35` (RAID 10) was een stockbeeld in teal op een grijze achtergrond
+met `BLOCK 1` en `DISK1` in kapitalen. Dat is precies de sectie waar de student de vijf
+naast elkaar moet leggen, dus de stijl was daar niet neutraal maar hinderlijk. Ze heten
+nu `img/syllabus-11-raid-0.svg`, `-raid-1.svg`, `-raid-5.svg`, `-raid-6.svg` en
+`-raid-10.svg`, en de vijf PNG's zijn geschrapt. **Een herimport zet die vijf terug en
+laat regel 1 en 16 vallen tot ze opnieuw weg zijn.**
+
+**Wat een familie duurder maakt is de gedeelde schaal.** Een schijf is in alle vijf
+90 eenheden breed, een blok 34 hoog en de ongebruikte ruimte eronder 50, dus de
+gedrukte breedte volgt uit het aantal schijven en is geen knop meer per figuur. De
+schaal is vastgelegd op de breedste, RAID 6 met vijf schijven, op **130,0mm**; daaruit
+volgen 51,7mm voor RAID 0 en 1, 103,9mm voor RAID 5 en 113,9mm voor RAID 10. De vijf
+zijn met een generator geschreven zodat die gelijkheid geen kwestie van overtypen is.
+Wil je er een versmallen, versmal ze dan alle vijf.
+
+**De kleur zegt nu iets anders dan in het origineel, en dat is de winst.** In `-33` en
+`-34` groepeerden de kleuren de rijen, wat de uitlijning en de letter A tot E al doen;
+p en q waren daar niet van de data te onderscheiden. Hier is een datablok `#b2dfdb` en
+een pariteitsblok `#004d40` met witte tekst, dus de trap die de pariteit over de
+schijven maakt is te zien in plaats van na te tellen, en dat is net wat de alinea's
+eronder beweren ("de pariteiten worden opnieuw gespreid over de verschillende harde
+schijven"). Onder RAID 5 en 6 staat een legende die zegt wat een gekleurd blok is.
+Geen enkel gegeven van het origineel valt weg: alle blokletters, alle schijfnamen en
+de ongebruikte ruimte onderaan elke cilinder staan er.
+
+**p en q dragen NIET dezelfde kleur, en dat is een beslissing van de lector van 9
+september 2026.** De eerste versie kleurde allebei `#004d40`, en dan leest de figuur
+als "twee keer pariteit" terwijl RAID 6 juist twee tegelijk uitgevallen schijven
+overleeft omdat p en q anders berekend worden. q is daarom `#4d8b7f`, een middentoon
+uit dezelfde tealfamilie, en de legende van RAID 6 telt twee regels: "pariteitsblok p"
+en "pariteitsblok q, anders berekend". **RAID 5 heeft alleen p en is niet aangeraakt**,
+zodat dezelfde soort blok in de twee figuren dezelfde kleur draagt.
+
+**De middentoon is gerekend en niet gekozen.** In L\* liggen de drie op 85,7 (`#b2dfdb`),
+53,6 (`#4d8b7f`) en 28,6 (`#004d40`), dus 32,1 en 25,0 punten uit elkaar; `#00796b`
+lag met 40,4 en 16,7 veel te dicht tegen p aan. Nagemeten in de gerenderde figuur zelf
+zijn de grijswaarden **209, 119 en 52**, gaten van 90 en 67 op 255, dus op een
+zwart-witafdruk staan de drie ruim uit elkaar en hoefde q geen arcering of rand te
+krijgen. Rood was hier geen optie: `#9e2f26` betekent in deze syllabus annotatie of de
+rest die ongebruikt blijft. De witte tekst haalt op `#4d8b7f` een contrast van 3,95,
+genoeg voor de 18px halfvette letter in het blok. **Gemeten in dezelfde afdruk**: de
+ongebruikte ruimte staat op 229 tegen 209 voor een datablok, twintig punten uit elkaar;
+wat die twee scheidt is de lijn ertussen en niet de tint.
+
+**Drie dingen aan RAID 10 zijn met opzet veranderd.** Het was het enige beeld uit een
+andere bron. De blokken heetten `BLOCK 1` tot `BLOCK 8` en heten nu A1 tot A8, dezelfde
+namen als in RAID 0, zodat te zien is dat de bovenste laag van RAID 10 exact de
+verdeling van RAID 0 is; de afbeelding van de schijven ging van `DISK1` tot `DISK4` naar
+`Disk 0` tot `Disk 3`, zoals de vier andere; en de ondertitel `Stripe + Mirror` werd
+`striping + mirroring`, de woorden die 11.13 zelf gebruikt. Dat laatste is meteen een
+spellingcorrectie: de lopende tekst schrijft "mirrorring" met twee r'en, en de tekening
+neemt die tikfout niet over. **De tekst zelf is niet aangeraakt.**
+
+**Wat alleen op het scherm te zien was:** bij RAID 10 liep de verticale draad van de
+RAID 0-beugel dwars door allebei de labels "RAID 1". Ze staan nu naast de draad, zoals
+het bronbeeld ze ook zette. Vijf keer gerenderd met headless Edge voor ze vertrouwd
+werden.
 
 **Twee watermerken blijven staan, met de bron in het bijschrift.** De CHS-tekening
 van 11.2 draagt "©2000 How Stuff Works" en de rooster-tekening van 11.5 draagt het
@@ -3523,7 +3586,9 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
   RAID 5 los en RAID-6, RAID-10, RAID-0 en RAID-1 met een streepje, soms in dezelfde
   alinea. De koppen schrijven het alle vijf los.
 - **mirrorring, mirroring, mirrorred en gemirrorde** staan alle vier in 11.13, en
-  Test jezelf schrijft twee keer Mirrorring.
+  Test jezelf schrijft twee keer Mirrorring. De lopende tekst is niet aangeraakt, maar
+  de ondertitel van `img/syllabus-11-raid-10.svg` schrijft "striping + mirroring" met
+  een r: een tikfout die je noteert is iets anders dan een die je in een figuur zet.
 - **"SSDs"** in 11.9 tegen **"SSD's"** overal elders.
 - **"Onwaarschijnlijk, denk je misschien... Maar helaas, niets is minder waar."** en
   **"Een aanrader!"** en **"Wie geen centen heeft"** in 11.13, en **"Een nieuwe
