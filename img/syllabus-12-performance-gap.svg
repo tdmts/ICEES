@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">De performance gap tussen processor en werkgeheugen: de prestaties van de processor lopen na 2010
+        steil weg van die van het werkgeheugen</title>
+    <rect width="900" height="600" fill="#ffffff" />
+
+    <defs>
+        <marker id="gappunt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#9e2f26" />
+        </marker>
+        <marker id="gappunt-terug" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#9e2f26" />
+        </marker>
+    </defs>
+
+    <text x="380" y="32" font-size="17" font-weight="bold" fill="#00332b" text-anchor="middle">De performance gap
+        tussen processor en werkgeheugen</text>
+
+    <!-- het rooster, een lijn per twee eenheden -->
+    <g stroke="#e0e7e5" stroke-width="1">
+        <path d="M 100 60 H 660" />
+        <path d="M 100 102 H 660" />
+        <path d="M 100 144 H 660" />
+        <path d="M 100 186 H 660" />
+        <path d="M 100 228 H 660" />
+        <path d="M 100 270 H 660" />
+        <path d="M 100 312 H 660" />
+        <path d="M 100 354 H 660" />
+        <path d="M 100 396 H 660" />
+        <path d="M 100 438 H 660" />
+    </g>
+
+    <!-- de assen -->
+    <path d="M 100 60 V 480 H 660" stroke="#9bb0ac" stroke-width="2" fill="none" />
+
+    <g font-size="14" fill="#00332b" text-anchor="end">
+        <text x="90" y="485">0</text>
+        <text x="90" y="443">2</text>
+        <text x="90" y="401">4</text>
+        <text x="90" y="359">6</text>
+        <text x="90" y="317">8</text>
+        <text x="90" y="275">10</text>
+        <text x="90" y="233">12</text>
+        <text x="90" y="191">14</text>
+        <text x="90" y="149">16</text>
+        <text x="90" y="107">18</text>
+        <text x="90" y="65">20</text>
+    </g>
+
+    <text x="32" y="270" font-size="15" fill="#00332b" text-anchor="middle"
+        transform="rotate(-90 32 270)">Genormaliseerde groei</text>
+
+    <g font-size="14" fill="#00332b" text-anchor="middle">
+        <text x="100" y="504">2000</text>
+        <text x="262.6" y="504">2005</text>
+        <text x="425.3" y="504">2010</text>
+        <text x="588" y="504">2015</text>
+    </g>
+
+    <!-- de twee metingen -->
+    <path d="M 120.2 469.3 L 246.1 453.3 L 309.8 427.3 L 374.2 375.0 L 534.3 320.6 L 634.8 291.4" fill="none"
+        stroke="#4d8b7f" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 124.7 476.4 L 308.8 455.9 L 440.6 404.4 L 567.5 253.0 L 625.7 60.0" fill="none" stroke="#004d40"
+        stroke-width="4" stroke-linejoin="round" stroke-linecap="round" />
+
+    <text x="365" y="340" font-size="14" fill="#4d8b7f" text-anchor="end">prestaties van het werkgeheugen</text>
+    <path d="M 370 344 L 392 366" stroke="#4d8b7f" stroke-width="1.5" fill="none" />
+
+    <text x="545" y="191" font-size="14" fill="#004d40" text-anchor="end">prestaties van de processor</text>
+    <path d="M 552 186 L 584 186" stroke="#004d40" stroke-width="1.5" fill="none" />
+
+    <!-- de kloof zelf, de annotatie van het origineel -->
+    <path d="M 650 60 V 278" stroke="#9e2f26" stroke-width="2" fill="none" marker-start="url(#gappunt-terug)"
+        marker-end="url(#gappunt)" />
+    <g font-size="14" fill="#9e2f26">
+        <text x="672" y="140">De kloof tussen processor</text>
+        <text x="672" y="160">en werkgeheugen wordt</text>
+        <text x="672" y="180">groter naarmate de tijd</text>
+        <text x="672" y="200">vordert</text>
+    </g>
+
+    <!-- de voetnoot van het origineel -->
+    <g font-size="13" fill="#00332b" text-anchor="middle">
+        <text x="380" y="548">*Grafiek afgeleid uit benaderde, samengevoegde meetgegevens van de prestaties van</text>
+        <text x="380" y="568">processoren en geheugens uit ASIC-gegevens. Bevat prognoses voor de toekomst.</text>
+    </g>
+</svg>

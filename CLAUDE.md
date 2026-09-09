@@ -1487,15 +1487,22 @@ ASCII-tabel van 10.3, die om haar omvang al buiten deze regel viel.
 tekeningen per sessie is wat er in een context past zonder dat de kwaliteit zakt. Streep af wat af
 is.
 
+**De rij van 9.4 is er op 9 september 2026 afgehaald zonder dat er iets hertekend is, en ze had er
+nooit op mogen staan.** `syllabus-09-moederbord-15.png` is een bladzijde uit een datasheet van
+Beckhoff, en de uitzondering hierboven noemt die met zoveel woorden. De verleiding was de
+leesbaarheid: de tabel drukt op 82,3mm, dus haar tekst staat er ongeveer 1,3mm hoog tegen 2,5mm voor
+de lopende tekst, en dat is de afweging die verloren heeft. Wat zwaarder weegt, is dat je aan die
+tabel ZIET dat ze uit een datasheet komt, en dat is zelf een gegeven: het toont de student dat die
+cijfers echt zijn en niet door ons bedacht. Overtypen maakt er onze tabel van. **Zet de rij er dus
+niet opnieuw op**, en lees hetzelfde argument bij hoofdstuk 9 in NOTITIES.md.
+
 | Hoofdstuk | Bestand | Wat het is |
 |---|---|---|
-| 9.4 | `syllabus-09-moederbord-15.png` | vergelijkingstabel van drie panel-pc's, alleen als beeld |
 | 11.5 | `syllabus-11-harde-schijf-08.png` | page, block, plane en chip, Hardware.Info |
 | 11.7 | `syllabus-11-harde-schijf-16.png` | de PATA-kabel met master, slave en controller |
 | 11.7 | `syllabus-11-harde-schijf-18.png` | General Pin Setting, de jumpertabel |
 | 11.8 | `syllabus-11-harde-schijf-19.png` | Serial ATA power cable en data cable |
 | 11.10 | `syllabus-11-harde-schijf-22.png` | HDD tegen SATA tegen NVMe, geleende meting |
-| 12.2 | `syllabus-12-central-processing-unit-cpu-04.jpeg` | Processor-Memory Performance Gap, geleende meting |
 | 12.3 | `syllabus-12-central-processing-unit-cpu-06.png` | System Peak Power, tom's hardware, geleende meting |
 
 **De vijf RAID-tekeningen zijn op 9 september 2026 in een keer afgewerkt**, en dat was de reden dat

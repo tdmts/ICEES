@@ -2477,6 +2477,32 @@ die alt-teksten weg.**
   staan, want wat er wel op staat (het scherm, de processor, het moederbord van 3,5
   duim, het geheugen) is precies wat de alinea ernaast zegt dat je moet vergelijken.
 
+  **Op 9 september 2026 stond ze even op de worklijst van de hertekenbeslissing, en ze
+  is er dezelfde dag weer afgehaald.** De redenering die haar erop zette was die van
+  hoofdstuk 10: een tabel die alleen als afbeelding bestaat, typ je over zolang de
+  omvang het toelaat, en tien rijen bij drie kolommen is klein genoeg. Het argument was
+  bovendien te meten en het blijft waar: de tabel drukt op **82,3mm**, dus haar tekst
+  staat er ongeveer **1,3mm** hoog tegen 2,5mm voor de lopende tekst, en dat leest niet
+  goed.
+
+  **Ze is er toch afgehaald, en de reden van de lector is inhoudelijk.** Dat je aan deze
+  tabel ZIET dat ze uit een datasheet komt, met haar eigen kleuren, haar eigen
+  koppenrij, het Engels en de ®- en ™-tekens van Beckhoff, is zelf een gegeven: het
+  toont de student dat die cijfers echt zijn en niet door ons bedacht. Typ je ze over,
+  dan wordt het onze tabel en verdwijnt dat. Dat verlies weegt zwaarder dan de
+  leesbaarheidswinst.
+
+  **En de rij had er nooit op mogen staan.** CLAUDE.md zondert onder diezelfde
+  beslissing al uitdrukkelijk een AFGEDRUKTE BLADZIJDE uit, met de datasheets van
+  Beckhoff als eerste voorbeeld, en dit IS er zo een. Dat staat nu ook bij de worklijst
+  zelf, zodat niemand de rij er later opnieuw op zet.
+
+  **Wat er wel open blijft, is de afsnijding.** De tabel loopt in het origineel door en
+  we weten niet welke rijen er ontbreken. Overtypen zou dat gat niet gedicht hebben, dus
+  het is geen argument voor of tegen; wat het wel is, is een reden om ooit de volle
+  bladzijde uit de Beckhoff-catalogus op te halen, zoals 9.5 dat met de zes
+  datasheetbladzijden van de CX-reeks al doet.
+
 ### De bladspiegel van dit hoofdstuk
 
 Zeventien bladzijden, 73 tot en met 89, met de gedrukte 9.7 Oplossingen als laatste.
@@ -3896,6 +3922,63 @@ pagina staat. **Gerenderd met headless Edge voor ze vertrouwd werd.** De verhoud
 de bladspiegel schuift niet. `syllabus-12-central-processing-unit-cpu-02.png` is
 geschrapt en **een herimport zet ze terug**, waarna regel 1 en 16 falen tot ze opnieuw
 weg is.
+
+**`img/syllabus-12-performance-gap.svg`** vervangt de grafiek van de performance gap,
+900 bij 600 op 160,0mm. Dit is de eerste **geleende meting** die hier hertekend is, en
+de regel daarvoor is dat de getallen blijven wat ze zijn en nooit bijgewerkt worden;
+wat verandert is de taal van de assen en het palet, en onder de figuur komt in woorden
+te staan waar de meting vandaan komt.
+
+**De knikpunten zijn uit de pixels van het origineel gelezen en niet afgeschat**, want
+een meting overschrijven is precies wat hier niet mag. De assen zijn eerst geijkt (de
+y-as staat op x=74 en de x-as op y=442, tien rasterlijnen op 40,7 pixels uit elkaar
+geven 20,3 pixels per eenheid, en de vier jaartallen onder de as geven 35,35 pixels per
+jaar), daarna is elke lijn op kleur gevolgd en zijn de knikpunten met een
+kleinste-kwadratenpassing per segment bepaald. De rest van de fit blijft onder de halve
+pixel, dus dit zijn de knikpunten van het origineel en geen benadering ervan:
+
+| | 2000,6 | 2004,5 | 2006,4 | 2008,4 | 2010,5 | 2013,4 | 2014,4 | 2016,2 | 2016,4 |
+|---|---|---|---|---|---|---|---|---|---|
+| werkgeheugen | 0,51 | 1,27 | 2,51 | 5,00 | | 7,59 | | | 8,98 |
+| processor | 0,17 | | 1,15 | | 3,60 | | 10,81 | 20,00 | |
+
+**Twee knikken zijn nagerekend omdat ze er geen hoefden te zijn.** Die van het
+werkgeheugen in 2013,4 wijkt maar 0,15 eenheid af van een rechte lijn tussen haar
+buren, en dat is 3 pixels: net genoeg om echt te zijn. Die van de processor rond 2001,9
+verbeterde de passing met minder dan een pixel en is dus **niet** overgenomen, want dat
+is de ronding van het lijnbegin en geen meetpunt.
+
+**De voetnoot van het origineel gaat mee**, vertaald, want ze zegt dat de grafiek uit
+benaderde en samengevoegde gegevens is afgeleid en dat er een prognose in verwerkt zit.
+Zonder die zin leest de rechterhelft van de grafiek als meting.
+
+**Het bijschrift noemt geen auteur, en dat is een beslissing van de lector van 9
+september 2026.** Er staat geen logo en geen naam op het beeld, en de voetnoot noemt er
+ook geen, dus er valt geen bron te noemen die na te kijken is. Het bijschrift luidt
+daarom "Naar een grafiek uit de cursustekst; de meetwaarden zijn ongewijzigd
+overgenomen": dat zegt wat er te controleren valt en claimt niets. Dat is iets anders
+dan bij `syllabus-12-tom-s-hardware-verbruik.svg` hieronder, waar het logo op het beeld
+staat en de naam dus wel genoemd wordt. **Er staat ook geen jaartal bij vanaf wanneer
+de prognose loopt**, want de voetnoot zegt dat niet en het is uit de grafiek niet af te
+lezen.
+
+**De titel is Nederlands en houdt het woord dat de tekst zelf gebruikt.** Het origineel
+heet "Processor-Memory Performance Gap", en de alinea onder de figuur schrijft "Om
+CPU-RAM performance gap te dichten". De figuur heet daarom "De performance gap tussen
+processor en werkgeheugen" (patroon 20): een volledig Nederlandse titel zou de figuur
+losknippen van de zin die haar aanhaalt.
+
+**De twee lijnen zijn `#004d40` voor de processor en `#4d8b7f` voor het werkgeheugen,
+en de pijl van de kloof is `#9e2f26`.** De lopende tekst noemt geen enkele kleur bij
+naam, dus de uitzondering van 6.5 geldt hier niet en het palet gewoon wel. De labels
+staan naast hun eigen lijn met een kort aanwijsstreepje in dezelfde kleur, in plaats
+van gedraaid op de lijn zoals in het origineel; dat is opmaak en geen gegeven. **De
+pijl loopt van 20 tot 9,6 en dus niet tot aan de lijn van het werkgeheugen**, precies
+zoals in het origineel, waar de onderste punt een eindje boven die lijn blijft steken.
+**Gerenderd met headless Edge voor ze vertrouwd werd.** De verhouding is 1,50 tegen
+1,46 van de JPEG, dus de figuur is op dezelfde 160,0mm ruim 3mm minder hoog en de
+bladspiegel kan alleen maar winnen. `syllabus-12-central-processing-unit-cpu-04.jpeg`
+is geschrapt, met hetzelfde gevolg bij een herimport.
 
 **De zes `alt`-teksten zijn met de hand geschreven na het openen van elk bestand**, en
 een nieuwe import gooit ze weg.
