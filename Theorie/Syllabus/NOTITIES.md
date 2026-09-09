@@ -4635,7 +4635,7 @@ aan geen enkele labopagina iets veranderd.**
 - **Hoofdstuk 5, De Von Neumann architectuur. Geen tegenspraak.** 5.1 zegt dat data en
   instructies in het werkgeheugen moeten staan om uitgevoerd te kunnen worden, en dit
   hoofdstuk legt uit hoe dat geheugen dat doet. Twee helften.
-- **Hoofdstuk 17, Power Supply Unit. Nog niet ingevoerd.** 13.10 wijst ernaar vooruit,
+- **Hoofdstuk 16, Power Supply Unit. Nog niet ingevoerd.** 13.10 wijst ernaar vooruit,
   en die verwijzing heet nu bij naam in plaats van "het hoofdstuk voeding".
 
 **Labo Assemblage + BIOS/UEFI.** 13.11 heette het "het labo assembleren", een naam die
@@ -4693,8 +4693,9 @@ Kernpunten op `Overzicht.html`.
 en hoofdstuk 13. Dat is de maat die het blok van hoofdstuk 13 vastgelegd heeft: niet
 "heeft dit hoofdstuk een `TestJezelf.html`" maar "draagt het ergens vragen". Negen
 hoofdstukken hebben er een, hoofdstuk 10 heeft een `Oefeningen.html` en hoofdstuk 2 een
-`ol.vragen` midden in 2.1. Leg bij de beslissing na hoofdstuk 16 dus deze drie naast
-elkaar.
+`ol.vragen` midden in 2.1. Leg bij de beslissing na hoofdstuk 16 dus deze naast
+elkaar. **Hoofdstuk 15 kwam er als vierde bij**; de bijgewerkte telling staat in het blok
+van dat hoofdstuk.
 
 **Zes secties, geen enkele Heading 3 of 4, 41 alinea's met tekst, twee tabellen en vijf
 afbeeldingsplaatsingen.** Veruit het kortste hoofdstuk sinds hoofdstuk 5. De twee
@@ -4855,3 +4856,164 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
   staat zo in de Word. Die alinea is intussen herschreven.
 - **"In een moderne computer (> 2011)"** staat twee keer met dezelfde formulering, in
   14.1 en in 14.5.
+
+## Hoofdstuk 15, Graphics Processing Unit (GPU)
+
+**Twee secties, geen enkele Heading 3 of 4, 32 body-elementen.** Daarmee is dit het
+kortste hoofdstuk van de hele syllabus, korter nog dan hoofdstuk 14. `Overzicht.html`
+draagt de twee kaders, `DeGrafischeKaart.html` is 15.1 en `ResolutieEnFramerate.html` is
+15.2. Verder is er niets.
+
+**Twee tabellen in het hele hoofdstuk, en dat zijn precies de twee kaders.** Er is geen
+enkele invultabel, dus er staat hier niets dat breder dan de bladspiegel kan worden. De
+valkuil van hoofdstuk 11, waar een enkele invultabel het hele gedrukte document deed
+krimpen, speelt hier dus niet.
+
+**Geen sectie Studievragen achteraan, dus geen `TestJezelf.html`.** Het kader
+Studievragen vooraan telt de vragen en staat samen met de Kernpunten op `Overzicht.html`.
+
+**Het is daarmee het vierde hoofdstuk dat nergens een vraag stelt die beantwoord wordt**,
+naast hoofdstuk 7, 13 en 14. De maat blijft die van het blok van hoofdstuk 13: niet
+"heeft dit hoofdstuk een `TestJezelf.html`" maar "draagt het ergens vragen". Zo staat de
+telling er nu voor, en dit is de lijst die na hoofdstuk 16 naast elkaar gelegd wordt:
+
+- **Negen hoofdstukken hebben een `TestJezelf.html`**: 1, 3, 4, 5, 6, 8, 9, 11 en 12.
+- **Hoofdstuk 11 draagt daarnaast twee oefeningen**, over de mechanische harde schijf en
+  over de SSD, en hoofdstuk 9 een `Oefening.html`.
+- **Hoofdstuk 10 heeft alleen een `Oefeningen.html`** en geen zelftest, en hoofdstuk 2
+  alleen een `ol.vragen` midden in 2.1.
+- **Vier hoofdstukken dragen nergens een vraag**: 7, 13, 14 en 15.
+
+**Zes `r:embed` in het hoofdstuk, waarvan vier figuren en twee kadericoontjes, en `img/`
+kreeg er vier.** De import liet er dus niets vallen. Geteld over de body-elementen 1825
+tot 1857 met de telling die het blok van hoofdstuk 13 voorschrijft, op `r:embed` en niet
+op `a:blip` kaal. IMPORT.md meldt voor dit hoofdstuk ook niets anders dan de twee kaders:
+geen geraden kopregel, geen lege tabel, geen zwevende afbeelding.
+
+**Alle vier de afbeeldingen staan inline en geen enkele zweeft, en toch kreeg er geen
+een een bijschrift uit de Word**, want alle vier staan ze in een alinea die verder leeg
+is. Dat is precies het geval dat hoofdstuk 13 en 14 al hadden, en het is de reden dat de
+regel niet "zwevend tegen inline" heet maar "draagt de alinea rond het beeld tekst". De
+vier `alt`-teksten zijn met de hand geschreven na het openen van elk bestand, en er is
+bewust geen `figcaption` bij gezet, zoals hoofdstuk 14 dat ook niet doet. Een herimport
+gooit ze weg.
+
+### 1. Vier correcties en een hernoeming, alle vijf gemeld voor ze doorgevoerd werden
+
+Geen ervan overleeft een herimport van dit hoofdstuk.
+
+| Waar | Wat de Word zegt | Wat het hier zegt |
+|---|---|---|
+| De kop van het hoofdstuk | "Graphical Processing Unit (GPU)" | "Graphics Processing Unit (GPU)", zie beslissing 2 |
+| Kernpunt 5 | "DVI staat voor Digital Video Interface" | "Digital Visual Interface" |
+| 15.1, vijfde alinea | "In een industriële computer ga je geen externe grafische kaart aantreffen" | "ga je zelden een externe grafische kaart aantreffen", zie beslissing 3 |
+| 15.2, laatste alinea | "moeten niet langs de Process Control Hub langs" | "en moeten niet langs de Platform Controller Hub (PCH)" |
+| Figuur 15.2 | een resolutievergelijking met DCI 4K, 4K UHD, DCI 2K, 1080p, 720p, DVD en VCD | 720p, 1080p, 4K en 8K, zie beslissing 4 |
+
+De DVI-correctie staat in een kader, en dat mag: de regel is dat de inhoud juist moet
+zijn en niet waar de zin staat. Ze weegt hier bovendien zwaar, want studievraag 5 vraagt
+letterlijk "Waarvoor staat DVI?", dus dit is het antwoord dat de student meeneemt.
+
+De PCH-correctie zijn twee woorden in een naam waar sectie 14.6 een eigen pagina aan
+wijdt, en de handgeschreven annotatie van de lector op de Z170-figuur van dit hoofdstuk
+schrijft zelf "Via de PCH". Die zin liep ook niet ("langs ... langs"), en dat is meteen
+rechtgetrokken.
+
+### 2. De kop wordt Graphics en niet Graphical, en de map heet ernaar
+
+Het hoofdstuk spreekt zichzelf in zijn eerste twee regels tegen: de Word zet Graphical in
+de H1 en de eerste zin van 15.1 schrijft "De Graphics Processing Unit ofwel GPU".
+Graphics is de vorm van de eigenaar, want NVIDIA muntte de term in 1999, en dat is
+dezelfde regel die hoofdstuk 4, 7 en 9 al toepassen op CODESYS, EtherCAT en Raspberry Pi.
+
+**Praktisch betekent dat een hernoeming na de import**, want de importer draait op de
+Word. Hij schreef `GraphicalProcessingUnitGpu/` en
+`img/syllabus-15-graphical-processing-unit-gpu-NN`; de map heet nu
+`GraphicsProcessingUnitGpu/`, de vier bestanden `syllabus-15-graphics-...`, en de vier
+`img src` zijn mee bijgewerkt. Daarna is de mapnaam gewoon weer `pascal()` van de kop
+zoals die op de pagina staat, en wijkt ze alleen af van de Word.
+
+**Het is pas de tweede bestandsnaam in de syllabus die niet uit de Word volgt**, na
+`DeUefiOmgeving.html` in hoofdstuk 3. Het verschil met dat geval is dat daar de kop bleef
+staan en alleen de bestandsnaam wijzigde, en hier de kop zelf verandert en de
+bestandsnaam hem volgt. **Een herimport zet allebei terug**, dus dit is de eerste stap na
+een nieuwe run van de importer op dit hoofdstuk.
+
+### 3. Van "geen" naar "zelden" externe grafische kaart
+
+Het hoofdstuk spreekt zichzelf tegen op drie plaatsen. Het kader zegt "Toch een externe
+grafische kaart nodig? Controleer dan de aansluiting", studievraag 1 vraagt waarom je er
+"niet vaak" een terugvindt, en 15.1 zegt vlakaf "geen". Twee van de drie zijn het eens,
+dus de lopende tekst draait bij en de twee kaders blijven letterlijk. Dezelfde ingreep
+als bij hoofdstuk 6, waar kernpunt 5 gelijk had en 6.3 bijgedraaid is: wat beslist is
+welke van de zinnen waar is, en de rest van het hoofdstuk koos hier al partij.
+
+### 4. De resolutiefiguur wordt geen getrouwe hertekening
+
+`img/syllabus-15-graphics-processing-unit-gpu-02.png` toont zeven in elkaar geschoven
+rechthoeken: DCI 4K, 4K UHD, DCI 2K, 1080p, 720p, DVD en VCD. De hertekening toont er
+vier, **720p, 1080p, 4K en 8K**, en dat is met opzet geen getrouwe kopie.
+
+De reden staat in het kader Kernpunten, dat precies die vier noemt ("HD ready (720p),
+Full HD (1080p), 4k, 8k") terwijl het origineel drie formaten toont die de tekst nergens
+uitlegt en de 8K die het kader wel noemt juist mist. Het origineel is bovendien
+aangesneden: VCD loopt rechts van het beeld af. **Dit is dus geen hertekening onder de
+gewone regel** dat elk gegeven van het origineel behouden blijft, maar een figuur die de
+tekst ernaast volgt in plaats van de Word.
+
+Het tekenwerk zelf is van een andere sessie; wat hier staat is de reden. De `alt` van die
+figuur beschrijft nog het origineel en hoort mee herschreven te worden zodra de
+hertekening erin staat.
+
+### 5. Wat er nog openstaat
+
+- **Hoeveel detail van het Z170-blokschema meegaat, is nog niet beslist.** Die figuur
+  (`-03`) draagt twee handgeschreven annotaties van de lector en is het enige beeld dat
+  de laatste alinea van 15.2 illustreert. Ze wordt hertekend, maar wat eraf mag hangt van
+  de lopende tekst af en ligt bij de lector.
+- **Kernpunt 1 en studievraag 2 zetten de APU neer als het onderdeel waar de ingebouwde
+  grafische kaart in zit**, en dat botst met 14.5 zoals dat op 9 september rechtgezet is.
+  Zie hieronder; niet aangeraakt in afwachting van de lector.
+- **De schrijfwijze 4k en 8k met een kleine k** staat in het kader en in 15.2, terwijl de
+  hertekende figuur ernaast 4K en 8K zal dragen. Zo drukt dezelfde bladzijde de naam op
+  twee manieren. Voorgelegd, niet aangeraakt.
+
+### 6. De APU in kernpunt 1, en waarom die niet stil rechtgezet is
+
+Kernpunt 1 schrijft "De grafische kaart ingebouwd in de Accelerated Processing Unit van
+de processor is waar je het vaak mee moet doen", en studievraag 2 vraagt "In welk
+onderdeel van de computer zit de ingebouwde grafische kaart precies?", waarop de APU het
+verwachte antwoord is.
+
+**Dat is de definitie die hoofdstuk 14 op 9 september net rechtgezet heeft.** 14.5 zegt
+nu dat een Accelerated Processing Unit de naam is die AMD geeft aan een PROCESSOR die
+naast zijn gewone kernen een grafische kern aan boord heeft, en dat Intel diezelfde kern
+inbouwt onder de naam HD Graphics zonder het woord APU te gebruiken. Onder die definitie
+is de APU niet een onderdeel IN de processor waar de grafische kaart in zit, maar de
+processor zelf, en dan alleen bij AMD.
+
+Het hoofdstuk spreekt zichzelf hierin bovendien tegen: de Z170-figuur van 15.2 toont een
+Intel-processor met "Intel HD Graphics 530" erin, dus het kader generaliseert een
+merknaam die op de figuur van datzelfde hoofdstuk niet voorkomt.
+
+**Niet aangeraakt**, want het is inhoud en die wordt gemeld voor ze doorgevoerd wordt, en
+het raakt twee zinnen in een kader plus een studievraag. Ligt bij de lector.
+
+### Wat er in de tekst opviel, en niet aangeraakt is
+
+De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
+
+- **"De Graphics Processing Unit ofwel GPU is het hart van de grafische
+  verwerkingseenheid"** is rond: de GPU is het hart van de GPU.
+- **De studievragen tellen er zes in vijf alinea's**, want "Waarvoor staat DVI? Waarvoor
+  staat HDMI?" staan in de Word in een alinea. Dat zijn twee lijstitems geworden, zodat
+  het kader er zes toont; dat is opmaak en geen woordcorrectie.
+- **"video signaal", "audio signaal", "TV schermen" en "computer monitors"** staan los
+  geschreven waar het Nederlands ze aaneenschrijft, alle vier in het kader Kernpunten.
+- **"Megabit" en "MegaByte" met een hoofdletter B** in 15.2, en het decimale punt in
+  "16.7 miljoen", "6.25 MegaByte" en "156.25 MegaByte per seconde".
+- **"2^24"** staat als gewone tekst in de lopende zin, zonder superscript.
+- **"omwille dat we als framerate vaak 50 Hz nemen"** in 15.2.
+- **"op het aantal pixels..."** eindigt met drie puntjes in 15.2.
+- **De dubbele spatie** in "zoals TV schermen,  beamers" staat zo in de Word, en de
+  spatie voor de komma erin.

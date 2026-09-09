@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolutie en framerate</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Resolutie en framerate</h1>
+
+        <p>In onderstaand rekenvoorbeeld staan we even stil bij die grote hoeveelheden data die door de GPU verwerkt moeten worden.</p>
+
+        <p>Laat ons even uitgaan van de volgende waarden:</p>
+
+        <p>Full HD (1080p) = 1920 pixels horizontaal x 1080 pixels verticaal =&gt; 2 073 600 pixels in het totaal en het spreekt voor zich dat hoe hoger je de resolutie maakt, hoe meer pixels je nodig hebt.</p>
+
+        <p>In de praktijk wordt meestal gekozen voor Full HD. In de figuur zie je meteen wat voor impact 4k schermen hebben op het aantal pixels...</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-15-graphics-processing-unit-gpu-02.png" class="img-fluid" alt="Zeven rechthoeken die resoluties op ware schaal in elkaar geschoven tonen, elk met zijn naam erin. Van groot naar klein: DCI 4K als smalle roze strook links, 4K UHD in het rood, DCI 2K als lichtgroene verticale strook, 1080p in het felgroen, 720p in het donkergroen, DVD in het cyaan en helemaal rechtsonder VCD, dat buiten de rand van de afbeelding valt.">
+        </figure>
+
+        <p>Iedere pixel moet een bepaalde kleur kunnen voorstellen. In het slechtste geval hebben we te maken met een zwart / wit scherm. In die situatie hebben we 1 bit nodig per pixel (0= wit, 1 = zwart).</p>
+
+        <p>Hoe meer kleuren je wil zien, hoe meer bits per pixel je nodig hebt om de kleuren voor te stellen. Meestal worden 24 bits per pixel gebruikt om ‘ware kleuren’ voor te stellen. Hiermee kan je 2^24 = 16.7 miljoen verschillende kleuren afbeelden per pixel.</p>
+
+        <p>Als je het volledig scherm wil ‘kleuren’ dan komt dit neer op 2 073 600 pixels * 24 bits = 49 766 400 bits. Ongeveer 50 miljoen bits ~= 50 Megabit ~= 6.25 MegaByte.</p>
+
+        <p>Een mens heeft ongeveer 25 beelden per seconde nodig om dit te aanzien als een vloeiend geheel. We noemen dit ook wel de framerate. Rekening houdend hiermee moet de GPU dus minstens 25 * 6.25 = 156.25 MegaByte per seconde genereren. In de praktijk is dit heel vaak het dubbele omwille dat we als framerate vaak 50 Hz nemen.</p>
+
+        <p>Daarnaast kan het zijn dat er meerdere schermen aangesloten worden. Ook dit verhoogt de nodige data die per seconde gegenereerd moet worden.</p>
+
+        <p>Het spreekt voor zich dat de framerate, de grootte van de resolutie en het aantal kleuren een invloed hebben op de benodigde rekenkracht van de GPU. Ook de berekeningen die gemaakt moeten worden bij spellen en CAD/CAM toepassingen hebben een grote impact op de GPU.</p>
+
+        <p>Moderne grafische kaarten worden aangesloten via PCI Express. Deze krijgen een rechtstreekse link met de processor en moeten niet langs de Platform Controller Hub (PCH).</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-15-graphics-processing-unit-gpu-03.png" class="img-fluid" alt="Blokschema van het Intel Z170-platform. Bovenaan de Intel Core i7-6700K-processor met Intel HD Graphics 530 erin; links ervan de lijnen PCI Express 3.0 voor de grafische kaart, te gebruiken als 1 keer 16, 2 keer 8 of 1 keer 8 en 2 keer 4 lijnen, en rechts twee aansluitingen DDR4/DDR3L-geheugen tot 2133/1600 MHz. Onder de processor hangt via DMI 3.0 de Z170-chipset, met rechts audio, zes SATA-poorten en opslag over PCI Express, en links tot twintig lijnen PCI Express 3.0 van 8 Gb/s elk, USB 3.0- en USB 2.0-poorten, de ingebouwde netwerkaansluiting en de SMBus. Twee rode pijlen met een handgeschreven bijschrift van de lector: PCIe graphics (rechtstreeks op CPU) wijst naar de lijnen bovenaan links, en PCIe voor netwerkkaarten etc. Via de PCH wijst naar de twintig lijnen aan de chipset.">
+        </figure>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-15-graphics-processing-unit-gpu-04.png" class="img-fluid" alt="Een moederbord recht van boven gefotografeerd, een GIGABYTE GA-AB350 Gaming 3. Rechts de AM4-socket met de vier DDR4-geheugensloten eronder, links vijf uitbreidingssloten met hun opschriften PCIEX1_3, PCIEX1_2, PCIEX4, PCIEX1_1 en PCIEX16 erboven. Een rode pijl met het bijschrift PCIe slot voor GPU wijst naar het lange slot PCIEX16.">
+        </figure>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

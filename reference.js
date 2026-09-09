@@ -834,6 +834,30 @@ window.LAB_REFERENCE = {
                         href: 'Chipset/PlatformControllerHubPch.html'
                     }
                 ]
+            },
+            {
+                name: 'Graphics Processing Unit (GPU)',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'gpu-overzicht',
+                        name: 'Kernpunten en studievragen',
+                        blurb: 'Waarom een industriële computer het met de ingebouwde grafische kaart doet, en welke aansluiting je op het scherm nakijkt.',
+                        href: 'GraphicsProcessingUnitGpu/Overzicht.html'
+                    },
+                    {
+                        id: 'gpu-grafische-kaart',
+                        name: 'De grafische kaart',
+                        blurb: 'De GPU ingebakken in de processor of op een eigen kaart, en waarom hij grote hoeveelheden data sneller aankan dan een processor.',
+                        href: 'GraphicsProcessingUnitGpu/DeGrafischeKaart.html'
+                    },
+                    {
+                        id: 'gpu-resolutie',
+                        name: 'Resolutie en framerate',
+                        blurb: 'Uitgerekend hoeveel data een scherm per seconde vraagt, van het aantal pixels over de kleurdiepte tot de framerate.',
+                        href: 'GraphicsProcessingUnitGpu/ResolutieEnFramerate.html'
+                    }
+                ]
             }
         ]
     },
