@@ -1451,8 +1451,21 @@ tegenspraak met de tekst waren tot dan de redenen om te hertekenen, en die blijv
 geen voorwaarde meer. Een tekening die er alleen maar uitziet alsof ze uit een ander document komt,
 is reden genoeg. **De regels waaronder het gebeurt veranderen niet**: geen enkel gegeven van het
 origineel valt weg, de figuur wordt met headless Edge gerenderd voor je ze vertrouwt, het palet van
-OrionCSS geldt tenzij de lopende tekst een kleur bij naam noemt, en de bladspiegel wordt na de export
+OrionCSS geldt tenzij de kleur zelf een gegeven is, en de bladspiegel wordt na de export
 nagerekend.
+
+**Die kleurregel is op 9 september 2026 verruimd, en dit is de enige plaats waar ze staat.** Ze luidde
+"tenzij de lopende TEKST een kleur bij naam noemt", naar het geval van 6.5, waar de syllabus zelf
+schrijft "bestand 1 = rood, bestand 2 = blauw". Twee figuren van hoofdstuk 11 lieten zien dat dat te
+eng is: bij de SATA-kabels van 11.8 en de PATA-kabel van 11.7 noemt geen enkele zin een kleur, en toch
+kan het palet er niet gelden, want de kleur van een draad in zo'n kabel IS de spanning of de plaats aan
+de kabel. Vier draden in vier tinten teal zijn geen voedingskabel meer, en dan valt er een gegeven weg.
+**Het palet wijkt dus wanneer de tekst een kleur vastlegt of wanneer het onderwerp dat doet**, en in
+beide gevallen blijft alleen de hue overeind: de verzadiging gaat omlaag, zodat de figuur niet staat te
+schreeuwen naast de teal van elke andere tekening. **Verzin daarbij geen nieuw gedempt palet**, maar
+neem de waarden die er al zijn, `#9e2f26` voor rood en `#2a4d7c` voor blauw uit
+`syllabus-06-fragmentatie.svg`, `#222222` voor zwart en `#9bb0ac` voor grijs. Alles waarover het beeld
+niets beweert, staat gewoon in het palet.
 
 **Teken een grote ronding als bezier en niet als `A`-boog, want een boog wordt duur in de PDF.**
 Gevonden op 9 september 2026 bij de vijf RAID-cilinders. Chrome vlakt bij `--print-to-pdf` elke
@@ -1496,9 +1509,14 @@ tabel ZIET dat ze uit een datasheet komt, en dat is zelf een gegeven: het toont 
 cijfers echt zijn en niet door ons bedacht. Overtypen maakt er onze tabel van. **Zet de rij er dus
 niet opnieuw op**, en lees hetzelfde argument bij hoofdstuk 9 in NOTITIES.md.
 
-| Hoofdstuk | Bestand | Wat het is |
-|---|---|---|
-| 11.10 | `syllabus-11-harde-schijf-22.png` | HDD tegen SATA tegen NVMe, geleende meting |
+**De lijst is op 9 september 2026 leeggewerkt**, in de laatste ronde door drie sessies naast elkaar,
+en de tabel is daarom weg in plaats van leeg. Van alles wat erop gestaan heeft is er precies **een
+rij afgevoerd zonder hertekening**, de vergelijkingstabel van 9.4, die er nooit op had mogen staan en
+hierboven haar eigen alinea heeft; al de rest is hertekend. **De regels erboven blijven wel gelden**,
+want ze zeggen HOE er hertekend wordt en niet WAT er nog ligt: elke tekening die nog binnenkomt gaat
+langs dezelfde molen. **En er ligt nog werk**: hoofdstuk 15 draagt twee tekeningen en die kunnen pas
+na de import van dat hoofdstuk. Zet ze hier weer als een lijst neer zodra er meer dan een handvol
+openstaat; voor twee is een zin genoeg.
 
 **De vijf RAID-tekeningen zijn op 9 september 2026 in een keer afgewerkt**, en dat was de reden dat
 ze als een rij op deze lijst stonden: ze kwamen uit drie bronnen in drie stijlen, en precies daar
@@ -1550,6 +1568,13 @@ bewerken helpt geen enkele git-vorm, en daar is de afspraak een token: EEN sessi
 in `CLAUDE.md` en in `Theorie/Syllabus/NOTITIES.md`, en een derde sessie deelt dat token uit. Kijk
 elke commit na met `git show --stat`; zit er een bestand in dat niet van jou is, commit dan niet
 maar meld het.
+
+**Twee details die elk een mislukte poging kosten.** `--` moet NA `-m` en zijn boodschap staan, want
+anders leest git de `-m` zelf als pad en faalt de commit met "pathspec '-m' did not match any file".
+En wil je alleen `check-content.py` groen krijgen, waar regel 1 valt over een bestand dat nog niet in
+git zit, gebruik dan `git add -N` en geen echte `git add`: intent-to-add zet het pad in de index zonder
+er inhoud in te leggen. **Stagen en dan doorwerken is precies hoe je werk in andermans commit belandt**,
+want het venster tussen je `add` en je `commit` is het venster waarin de ander commit.
 
 **Dat hoofdstuk heeft ook de eerste uitzondering op deze beslissing opgeleverd, en ze is door de
 lector toegestaan.** De geannoteerde foto van de DIMM-sloten in 13.11 is `img/syllabus-13-channels.svg`

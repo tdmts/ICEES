@@ -3296,8 +3296,28 @@ de vierde bijgeschreven zin van dit hoofdstuk.
 ### De afbeeldingen
 
 Vierenveertig plaatsingen in de Word, waarvan twee de kadericoontjes van 5,4mm die
-de importer weggooit. Van de 42 andere zijn er nu 45 bestanden in `img/`, want vier
-schermafdrukken zijn in twee gesplitst en drie tekeningen zijn hertekend. **Elk
+de importer weggooit, dus 42 die ertoe doen.
+
+**De stand van vandaag, 9 september 2026, geteld en niet afgeleid: 45 bestanden met het
+voorvoegsel `syllabus-11-` in `img/`, 45 verwijzingen ernaar op de bladzijden van dit
+hoofdstuk, en dus precies een verwijzing per bestand.** Daarvan zijn er **19 een SVG**,
+alle negentien hertekend, en **26 raster**: 17 die nog hun importnaam
+`syllabus-11-harde-schijf-NN` dragen, de acht productfoto's van de oefeningen en de
+QR-code. Van de tekeningen staat er dus geen enkele meer als raster in dit hoofdstuk;
+wat raster bleef zijn foto's, schermafdrukken van echte vensters en afgedrukte
+bladzijden.
+
+**Deze zin is herteld omdat de vorige scheefgegroeid was**, en de manier waarop is het
+onthouden waard. Ze rekende van 42 naar 45 met een reden erbij ("vier schermafdrukken
+zijn in twee gesplitst en drie tekeningen zijn hertekend"), en zo'n afleiding klopt
+alleen op de dag dat je ze schrijft: elke splitsing, elke hertekening en elke
+schrapping erna maakt haar een beetje valser, terwijl het eindgetal toevallig kan
+blijven kloppen. Vandaag stond er nog altijd 45 en waren zowel de samenstelling als de
+reden achterhaald. **Tel het dus opnieuw in plaats van het bij te werken**, met
+`ls img/syllabus-11-* | wc -l` naast
+`grep -rho 'img/syllabus-11-[^"]*' Theorie/Syllabus/Theorie/HardeSchijf/*.html | sort -u | wc -l`;
+lopen die twee gelijk, dan wijst elke bladzijde naar een bestaand bestand en ligt er
+geen weesbestand, precies wat regel 1 en 16 van de contentcheck bewaken. **Elk
 bestand is opengedaan voor het `alt` erbij geschreven werd, en een nieuwe import
 gooit die alt-teksten weg.**
 
@@ -3527,17 +3547,66 @@ minder dan een millimeter, het origineel toont er zelf maar een paar pixels van,
 knik die je niet ziet leest als een onnauwkeurigheid in plaats van als een sleutel. Wie
 de figuur ooit breder zet, tekent ze er best bij.
 
-**De vier draadkleuren blijven hun eigen kleur en gaan niet naar het palet.** Dat is de
-uitzondering van 6.5, maar op een andere grond: daar legde de lopende tekst de kleuren
-vast, en hier doet geen enkele zin van 11.8 dat. Wat ze vastlegt is het onderwerp zelf,
-want de kleur van een draad in een voedingskabel is de spanning die erop staat; vier
-draden in vier tinten teal zijn geen voedingskabel meer. Ze staan wel gedempt, en
-**niet in een nieuw gedempt palet maar in het palet dat hoofdstuk 6 al vastgelegd
-heeft**: rood is `#9e2f26` en blauw is `#2a4d7c`, exact de twee waarden van
-`syllabus-06-fragmentatie.svg`, zwart is `#222` en geel is `#b8951f`. De vergulde
-contacten staan op `#a8842a`, om dezelfde reden: verguld is wat ze zijn. **Alles
-waarover het beeld niets beweert, staat wel gewoon in het palet**, dus de behuizing,
-de stekkers en de sleuven.
+**De vier draadkleuren blijven hun eigen kleur en gaan niet naar het palet**, want de
+kleur van een draad in een voedingskabel is de spanning die erop staat. **Deze figuur is
+samen met de PATA-kabel van 11.7 de aanleiding geweest om de kleurregel te verruimen**,
+en die verruiming staat in CLAUDE.md onder "Elke tekening wordt hertekend": het palet
+wijkt niet alleen wanneer de lopende TEKST een kleur noemt, zoals in 6.5, maar ook
+wanneer het ONDERWERP ze vastlegt. Lees ze daar en niet hier, want ze geldt voor elk
+hoofdstuk dat nog komt.
+
+Wat hier staat is alleen wat aan deze figuur eigen is. Geel is `#b8951f` en zwart is
+`#222`, rood is `#9e2f26` en blauw is `#2a4d7c`, die laatste twee exact de waarden van
+`syllabus-06-fragmentatie.svg`. De vergulde contacten in de datapoort staan op
+`#a8842a`, om dezelfde grond: verguld is wat ze zijn. **Alles waarover het beeld niets
+beweert, staat wel gewoon in het palet**, dus de behuizing, de stekkers en de sleuven.
+
+**De snelheidsgrafiek van 11.10 is `img/syllabus-11-hdd-sata-nvme.svg` geworden**, op
+haar bestaande 160,0mm, 900 bij 490 tegen de 1000 bij 543 van het origineel en dus
+dezelfde verhouding; de bladspiegel schuift niet. De titel, de ondertitel en de legende
+zijn Nederlands geworden ("HDD tegen SATA tegen NVMe", "maximale theoretische
+snelheden", "sequentieel lezen" en "sequentieel schrijven"), en de drie categorieen
+houden hun naam, want HDD, SATA en NVMe zijn namen en geen woorden, net als de
+registernamen van hoofdstuk 12.
+
+**Ze staat op de worklijst als geleende meting en ze is er strikt genomen geen.** De
+ondertitel zegt "Maximum Theoretical Speeds", dus dit zijn opgegeven maxima en geen
+gemeten waarden. Dat verandert niets aan de behandeling, want de regel is dezelfde:
+getallen exact overnemen en nooit bijwerken. Het verandert wel het bijschrift, dat
+daarom "de waarden" zegt en niet "de meetwaarden".
+
+**De zes waarden zijn nagemeten tegen de as**, zoals bij de twee grafieken van
+hoofdstuk 12. De asnummers staan 69,2 pixels uit elkaar per 500 eenheden en de nullijn
+ligt op y=489, en daaruit volgt voor de zes staven 152, 130, 527, 527, 2522 en 997
+tegen de gedrukte 150, 130, 550, 550, 2500 en 1000. **Vijf van de zes kloppen binnen
+een procent**, en het SATA-paar staat 3 pixels te laag, wat op 4 procent neerkomt. Dat
+is tekenonnauwkeurigheid in de bron en geen fout getal: de twee SATA-staven zijn
+onderling exact even hoog, en 550 MB/s is precies wat de bladzijde ernaast beweert,
+want die noemt 600 MB/s als de theoretische limiet van SATA III. **Het cijfer is dus
+het gegeven en de staaf is de tekening ervan**, en er is niets rechtgezet. Dit is de
+derde grafiek op rij waar dat nagerekend is en de tweede waar er niets uit kwam.
+
+**Er staat geen naam en geen logo op het beeld**, dus het bijschrift claimt er geen,
+net als bij de performance gap van 12.2 en anders dan bij de staafgrafiek van tom's
+hardware.
+
+**De twee kleuren zijn `#4d8b7f` voor lezen en `#004d40` voor schrijven.** Anders dan
+bij de SATA-kabels een bladzijde eerder betekenen de kleuren hier niets buiten de
+legende om, dus het palet geldt gewoon; het lichtblauw en het groen van het origineel
+zijn willekeurig gekozen en de tekst noemt ze niet.
+
+**Het origineel draagt geen eenheid en de hertekening wel: MB/s staat op de as.** Een
+eenheid bijschrijven is een gegeven TOEVOEGEN en geen vertaling, dus het is voorgelegd
+en op 9 september 2026 door de lector goedgekeurd. Het argument is dat de bladzijde
+ernaast zelf in MB/s rekent ("SATA III met zijn transfersnelheid van 600 MB/s"), net als
+de SATA-bladzijde met haar 150 en 300 MB/s, en dat de 550 van de grafiek daar precies op
+past. **Dit is bijgeschreven tekst en een herimport gooit ze weg.**
+
+**Dat de eenheid ontbrak hangt samen met het punt hierboven**, dat dit geen meting is
+maar een opgave. Bij een meting hoort de eenheid vanzelf bij de as, want zonder eenheid
+is er niets gemeten; bij een lijstje opgegeven maxima staat het getal in de tekst
+ernaast en draagt de grafiek het alleen nog als versiering. Daarom moest hier
+bijgeschreven worden wat bij de twee grafieken van hoofdstuk 12 vanzelf sprak.
 
 **De vijf RAID-schema's van 11.13 zijn op 9 september 2026 in een keer hertekend**,
 onder de beslissing van die dag dat alles wat iemand getekend heeft naar een eigen SVG
