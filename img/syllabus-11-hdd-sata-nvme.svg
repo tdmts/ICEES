@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 490" width="900" height="490"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">De maximale theoretische snelheden van een harde schijf, een SSD op SATA en een SSD op NVMe,
+        sequentieel lezen naast sequentieel schrijven</title>
+    <rect width="900" height="490" fill="#ffffff" />
+
+    <text x="395" y="32" font-size="19" font-weight="bold" fill="#00332b" text-anchor="middle">HDD tegen SATA tegen
+        NVMe</text>
+    <text x="395" y="58" font-size="16" fill="#00332b" text-anchor="middle">maximale theoretische snelheden</text>
+
+    <!-- het rooster, een lijn per vijfhonderd -->
+    <g stroke="#e0e7e5" stroke-width="1">
+        <path d="M 100 90 H 690" />
+        <path d="M 100 152 H 690" />
+        <path d="M 100 214 H 690" />
+        <path d="M 100 276 H 690" />
+        <path d="M 100 338 H 690" />
+    </g>
+
+    <g font-size="14" fill="#00332b" text-anchor="end">
+        <text x="90" y="95">2500</text>
+        <text x="90" y="157">2000</text>
+        <text x="90" y="219">1500</text>
+        <text x="90" y="281">1000</text>
+        <text x="90" y="343">500</text>
+        <text x="90" y="405">0</text>
+    </g>
+
+    <text x="32" y="245" font-size="15" fill="#00332b" text-anchor="middle"
+        transform="rotate(-90 32 245)">MB/s</text>
+
+    <!-- de zes metingen -->
+    <g fill="#4d8b7f">
+        <rect x="146" y="381.4" width="48" height="18.6" />
+        <rect x="343" y="331.8" width="48" height="68.2" />
+        <rect x="540" y="90" width="48" height="310" />
+    </g>
+    <g fill="#004d40">
+        <rect x="202" y="383.9" width="48" height="16.1" />
+        <rect x="399" y="331.8" width="48" height="68.2" />
+        <rect x="596" y="276" width="48" height="124" />
+    </g>
+
+    <g font-size="14" fill="#00332b" text-anchor="middle">
+        <text x="170" y="375">150</text>
+        <text x="226" y="377.5">130</text>
+        <text x="367" y="325.5">550</text>
+        <text x="423" y="325.5">550</text>
+        <text x="564" y="83.5">2500</text>
+        <text x="620" y="269.5">1000</text>
+    </g>
+
+    <!-- de as, met een scheiding tussen de drie groepen -->
+    <path d="M 100 90 V 400 H 690" stroke="#9bb0ac" stroke-width="2" fill="none" />
+    <g stroke="#9bb0ac" stroke-width="2">
+        <path d="M 296.7 400 V 418" />
+        <path d="M 493.3 400 V 418" />
+    </g>
+
+    <g font-size="19" font-weight="bold" fill="#00332b" text-anchor="middle">
+        <text x="198" y="444">HDD</text>
+        <text x="395" y="444">SATA</text>
+        <text x="592" y="444">NVMe</text>
+    </g>
+
+    <!-- de legende -->
+    <rect x="720" y="200" width="22" height="22" fill="#4d8b7f" />
+    <text x="752" y="217" font-size="14" fill="#00332b">sequentieel lezen</text>
+    <rect x="720" y="250" width="22" height="22" fill="#004d40" />
+    <text x="752" y="267" font-size="14" fill="#00332b">sequentieel schrijven</text>
+</svg>
