@@ -5055,6 +5055,100 @@ dat er hier niets tegengesproken wordt.
 hoofdletter meer verandert de regelval niet, maar het is wel een wijziging buiten dit
 hoofdstuk en ze staat daarom hier.
 
+### 8. Hoe de twee figuren getekend zijn
+
+De twee hertekeningen heten `img/syllabus-15-resoluties.svg` en
+`img/syllabus-15-grafische-kaart-op-pci-express.svg`, en de twee PNG's die ze vervangen
+zijn uit `img/` geschrapt. De `alt` van allebei is opnieuw geschreven naar wat de
+tekening toont, zoals beslissing 4 vroeg. **Een herimport zet de twee PNG's terug en de
+`img src` van 15.2 met hen**, dus dit is samen met de hernoeming van beslissing 2 de
+eerste stap na een nieuwe run van de importer.
+
+**De blokschematekening staat op 135.0mm, en dat is niet berekend maar overgenomen.**
+`img/syllabus-14-chipset-blokschema.svg` heeft dezelfde viewBox van 760 en dezelfde
+labels van 14px, dus dezelfde breedte levert dezelfde gedrukte lettergrootte van 2,49mm.
+Dat is meteen de winst van deze figuur: hoofdstuk 14 tekent alleen het bord van voor 2011
+en zegt de vijf beweringen over erna enkel in woorden, en de twee figuren drukken nu even
+groot, zodat de student ze naast elkaar kan leggen. De resolutievergelijking staat op
+121.4mm, wat wel gewoon 2,5 x 680 / 14 is.
+
+**De vormtaal is die van hoofdstuk 14, tot in de klassenamen**, want twee blokschema's
+van hetzelfde vak horen dezelfde tekening te zijn: `.chip` voor een chip in het groen met
+witte `.titel` en `.ondertitel`, `.slot` voor een insteekslot, `.bus` cursief op een lijn,
+en `.lijn` van 2,5 breed. **Wat de bladspiegel gered heeft is een gewoonte uit die
+figuur**: de southbridge daar drukt zijn aansluitingen als `.klein chiptekst` BINNEN het
+blok, in twee kolommen, in plaats van er losse blokjes omheen te hangen. Zo dragen USB,
+SATA, het netwerk en de firmwarechip hier geen vier extra kaders, en past het geheel in
+760 bij 410.
+
+**De snoeiregel van het blokschema komt uit 14.6 en niet uit een eigen afweging.** Die
+sectie somt zelf op wat er op de PCH samenkomt: USB, SATA, het netwerk, de PCI
+Express-sloten voor uitbreidingskaarten en de chip met de firmware. Vijf, niet meer, en
+dus valt audio weg, dat op de dia twee blokken heeft. Wat blijft zijn elf blokken: de
+processor met de grafische kern erin, het slot voor de grafische kaart, twee blokken
+werkgeheugen, de PCH, de verbinding ertussen, en de vijf van 14.6.
+
+**Dertien merkgebonden labels vallen weg, en geen ervan komt ergens in de syllabus voor.**
+Nageteld met woordgrens over `Theorie/Syllabus/Theorie/`: Z170, Core i7, SMBus,
+Thunderbolt, SATA Express, Rapid Storage en `lane` staan er nul keer, en daarnaast gingen
+Smart Sound, High Definition Audio, ME 11, Extreme Tuning, Boot Guard, de twee
+Ethernet-blokken en de twee alternatieve lanesplitsingen eruit. Die samenval is de
+verantwoording: de blokken die de tekst nodig heeft zijn ook de blokken waarvan het
+vocabulaire al bekend is. **Wat wegvalt is niet ruis maar bewering 5 van hoofdstuk 14**,
+dat de keuze van de PCH bepaalt wat een bord te bieden heeft, en die hoort bij hoofdstuk
+14 en niet bij 15.
+
+**De twee rode aantekeningen van de lector zijn niet geschrapt maar de structuur van de
+figuur geworden.** Ze zeggen "PCIe graphics (rechtstreeks op CPU)" en "PCIe voor
+netwerkkaarten etc... Via de PCH", en dat is precies de tegenstelling die de tekening nu
+zelf maakt: twee lijnen die allebei PCI Express heten, de ene van het slot voor de
+grafische kaart naar de processor met `PCI Express x16` erop, de andere van de sloten voor
+uitbreidingskaarten naar de PCH met `PCI Express` erop. Daarom moesten die sloten blijven:
+zonder tweede weg is er niets om "niet langs de PCH" mee te tonen.
+
+**Het woord chipset staat met opzet NIET om de PCH**, anders dan in de figuur van
+hoofdstuk 14, waar een stippelomtrek met dat woord om northbridge en southbridge heen
+ligt. Hoofdstuk 14 definieert de chipset als die twee samen en zegt nergens dat de PCH de
+chipset is, dus een omtrek hier zou iets bevestigen wat het vak niet beweert. Beslist door
+de lector op 9 september 2026, samen met de twee andere vragen van deze figuur: de pijl
+draagt `eigen verbinding` en niet DMI (beslissing 5 legt uit waarom), en de grafische kern
+blijft in de processor staan omdat studievraag 2 er letterlijk naar vraagt.
+
+**Een ondertitel `(geheugencontroller)` onder Processor is overwogen en niet gezet.** De
+northbridge in de figuur van hoofdstuk 14 draagt die ondertitel, en de processor hier
+overneemt precies die taak, dus de echo zou bewering 1 tonen in plaats van ze te
+impliceren. Het is alleen een gegeven dat noch op de dia noch in de goedgekeurde
+blokkenlijst staat, dus het is niet stilzwijgend toegevoegd. De processor draagt nu
+`(CPU)`, wat dezelfde ondertitel is als in hoofdstuk 14 en niets nieuws beweert.
+
+**De figuur draagt twee dingen die de drie bijgeschreven zinnen van beslissing 5 niet
+noemen**, de firmwarechip en het werkgeheugen. Dat is geen tegenspraak: die zinnen sommen
+op wat aan de PCH hangt zonder te zeggen dat het er alles is, en allebei staan ze in 14.6
+en in de goedgekeurde blokkenlijst. Verder dekken de zinnen en de tekening elkaar woord
+voor woord, `x16 slot` en `eigen verbinding` inbegrepen.
+
+**Bij een oppervlaktevergelijking kies je de tint op de OPPERVLAKTE en niet op de rang.**
+De resolutiefiguur schuift 720p, 1080p, 4K en 8K in elkaar vanuit dezelfde linkeronderhoek,
+elk op exact een twaalfde van zijn pixelmaten, en elk vlak draagt zijn naam in de rand die
+het toevoegt. De eerste versie liep van licht binnen naar `#004d40` buiten, want naar
+buiten toe horen het er meer te worden. Alleen beslaat het buitenste vlak hier de helft
+van de figuur, dus dat leverde het donkerste vlak van de hele syllabus op een bladzijde
+van 121mm. Het buitenste is nu `#4d8b7f` en het binnenste wit; de volgorde klopt nog
+steeds en de bladzijde niet meer zwaar. **De gewone reflex, donker is belangrijk, keert
+hier dus om.**
+
+**De vier vlakken dragen alleen hun naam en geen pixelmaten**, zoals het origineel. De
+maten toevoegen is overwogen, want de alinea ernaast rekent 1920 bij 1080 voor, maar dat
+is tekst bijschrijven in een figuur en dus een inhoudelijke keuze die niet gevraagd was.
+Wie ze er ooit bij wil, zet ze als een tweede regel onder elke naam; de banden zijn er
+breed genoeg voor, behalve die van 1080p, die maar 30 eenheden hoog is.
+
+**Allebei gerenderd met headless Edge voor ze vertrouwd werden**, en allebei zonder
+botsing in de eerste render, wat hier eerder uitzondering dan regel is. Geen enkele
+`A`-boog in de twee bestanden: de enige rondingen zijn de `rx` van de blokken, die op 135mm
+neerkomt op 1,4mm en dus geen afvlakking uitlokt. Allebei blijven ze buiten `ONAANGEROERD`,
+want dat is een lijst voor rasterbeeld.
+
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
 De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
