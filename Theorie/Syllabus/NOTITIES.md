@@ -7,6 +7,25 @@ een hoofdstuk dat er wel een gehad heeft, met wat er beslist is en waarom.
 Wat de omzetting zelf moest raden of liet vallen, staat in
 [IMPORT.md](IMPORT.md), en dat bestand wordt door de importer geschreven.
 
+**Elk gedrukt bladzijdenummer hieronder geldt voor de PDF zoals ze was toen dat
+hoofdstuk ingevoerd werd, en niet voor de PDF van vandaag.** Ze zijn met opzet
+niet bijgewerkt. Het voorwerk groeit namelijk mee: op 9 september 2026 pasten de
+twaalf inhoudstafelrijen van hoofdstuk 13 niet meer op vier tabelbladzijden, de
+inhoudstafel werd er vijf, en daardoor schoof alles in hoofdstuk 1 tot en met 12
+een bladzijde op. Elk nummer dat hier voor die dag genoteerd is, staat dus een
+te laag, en hetzelfde gebeurt opnieuw zodra hoofdstuk 14, 15 of 16 erbij komt.
+
+Ze ophogen zou dat maar tot het volgende hoofdstuk oplossen, en het zou verbergen
+wat deze nummers zijn: het verslag van een controle op een bepaald moment, en geen
+inhoudsopgave. **Erger nog, een bijgewerkt nummer zou niet meer kloppen met de
+meting waar het bij hoort**, want dit bestand noteert per hoofdstuk de bladspiegel
+zoals die toen gemeten is: waar een figuur landde, waar een vragenlijst overliep,
+hoeveel millimeter er onder een alinea overbleef. Dat nummer optrekken en die
+meting laten staan levert een notitie op die zichzelf tegenspreekt. **Wil je weten waar iets vandaag staat, kijk dan in de PDF zelf**,
+en vergelijk na een export met de vorige PDF (`git show HEAD:downloads/...`) in
+plaats van met een getal dat hier staat. Dat laatste is trouwens ook waarom die
+verschuiving opgemerkt is.
+
 ## Hoofdstuk 1, Generaties
 
 **De sectie Studievragen achteraan heet hier Test jezelf.** In dit hoofdstuk
