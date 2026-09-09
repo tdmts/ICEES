@@ -424,6 +424,12 @@ window.LAB_REFERENCE = {
                         name: 'Procesbeheer',
                         blurb: 'Ready, running en blocked, het verschil tussen cooperative en preemptive multitasking, vijf scheduling algoritmes met hun starvation, en wat een realtime prioriteit kost.',
                         href: 'Besturingssystemen/Procesbeheer.html'
+                    },
+                    {
+                        id: 'besturingssystemen-test-jezelf',
+                        name: 'Test jezelf',
+                        blurb: 'Tien vragen over Windows en Linux, de rechten van een gebruiker, swapping en de process scheduler.',
+                        href: 'Besturingssystemen/TestJezelf.html'
                     }
                 ]
             },
@@ -562,6 +568,12 @@ window.LAB_REFERENCE = {
                         name: 'Oefeningen',
                         blurb: 'Negen vragen over bits, bytes en octetten, de tekst eLm opzoeken in de ASCII tabel, en wat een schijf van 1 TB in Windows toont.',
                         href: 'Informatievoorstelling/Oefeningen.html'
+                    },
+                    {
+                        id: 'informatievoorstelling-test-jezelf',
+                        name: 'Test jezelf',
+                        blurb: 'Negen vragen over waarom een computer binair werkt, de afspraak achter een binair getal, de twee betekenissen van word en kibi tegen kilo.',
+                        href: 'Informatievoorstelling/TestJezelf.html'
                     }
                 ]
             },
@@ -908,7 +920,7 @@ window.LAB_REFERENCE = {
                     {
                         id: 'psu-test-jezelf',
                         name: 'Test jezelf',
-                        blurb: 'Een vraag over het verschil tussen een modulaire en een niet modulaire voeding.',
+                        blurb: 'Tien vragen over de aankoop van een voeding, het vermogen, de UPS, PS_ON en PWR_OK.',
                         href: 'PowerSupplyUnitPsu/TestJezelf.html'
                     }
                 ]

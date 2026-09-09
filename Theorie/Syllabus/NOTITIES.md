@@ -1805,6 +1805,64 @@ hoofdstukken terug.**
   in de Word gewone apostrofs en zijn dat hier gebleven. Dat is opmaak en geen
   tekst, net als de drie punten in "gebruikersbeheer, bestandsbeheer,
   geheugenbeheer, ... ." in 7.2, die daar met een spatie voor de punt staan.
+### De tien vragen van Test jezelf
+
+Het hoofdstuk had geen sectie Studievragen achteraan, dus alle tien de vragen zijn
+bijgeschreven, onder de beslissing van 9 september 2026 dat elk hoofdstuk op
+hoofdstuk 2 na met een Test jezelf afsluit. **Een herimport gooit ze weg.**
+
+| Vraag | Antwoord | Waarop het steunt |
+|---|---|---|
+| 1 Waarin verschilt Windows 11 IoT Enterprise LTSC van Windows 11 Enterprise | b, dezelfde versie met een aangepast updatebeleid en lange ondersteuning | 7.1, "In principe een exacte kopie van Windows 11 Enterprise maar met een aangepast update beleid en een lange gegarandeerde ondersteuning". Studievraag 3 |
+| 2 Wat is Linux precies | b, een kernel waarop een distributie verder bouwt | 7.2, "Op zich is Linux geen echt besturingssysteem zoals Windows maar is het enkel een kernel ... Het is de distributie (Ubuntu, Debian, Android, ...) die verder uitbreidt" |
+| 3 Machine beschermen tegen wijzigingen door de gebruiker | b, hem heel weinig rechten geven, bijvoorbeeld geen software laten installeren | 7.3, "Vaak wordt het recht afgenomen om programma's te installeren zodat de configuratie niet kan worden gewijzigd". Studievraag 4 |
+| 4 Hoe blijft het bestand van de ene gebruiker beschermd | c, het krijgt rechten, en geen rechten is geen toegang | 7.4, "bestanden die aangemaakt zijn door een gebruiker ook bepaalde rechten te geven ... Geen rechten = geen toegang" |
+| 5 Wat is swapping | c, weinig gebruikte actieve programma's uit het werkgeheugen halen en hun status op de schijf zetten | 7.5, de twee laatste alinea's. Studievraag 5. Mogelijkheid a is context switching en mogelijkheid b is de fragmentatiealinea van diezelfde sectie, dus een fout antwoord wijst een alinea aan |
+| 6 Proces staat blocked en de I/O is klaar | b, het komt in de ready queue en wacht op de process scheduler | 7.6, "Merk op dat een proces niet rechtstreeks uit de blocked status naar de running status kan gaan" |
+| 7 Wie geeft bij cooperative multitasking de processor af | b, het proces zelf | 7.6, "Bij cooperative multitasking wordt het process schedulen uitgevoerd door de processen zelf" |
+| 8 Welk algoritme heeft geen last van starvation | d, round robin | 7.6: FCFS "kan starvation optreden", SJF "geen starvation meer voor kleine jobs maar wel voor grote", PBS "starvation van processen met lage prioriteit mogelijk", RRS "heeft geen last van starvation". De drie afleiders staan dus elk met zoveel woorden in de tekst |
+| 9 Welk algoritme gebruikt Windows | d, de multilevel feedback queue | 7.6, "Windows gebruikt een combinatie van alle bovenstaande scheduling technieken die men onder de noemer multilevel feedback queue classificeert". Studievraag 9 |
+| 10 Waarom niet zomaar realtime | c, het duwt alles eronder naar achteren en er staat per definitie niets meer boven dat kan ingrijpen | 7.6, Prioriteit en realtime, de voorlaatste alinea. Studievraag 10 |
+
+**Alle tien de vragen hebben precies een juist antwoord, en dat is nageteld.** Het
+probleem van hoofdstuk 3, waar vier van de vijf mogelijkheden juist waren, speelt
+hier bij geen enkele vraag, dus er is geen enkele open vraag en geen enkele
+`<div class="oplossing">`.
+
+**Tien vragen voor het langste hoofdstuk van de syllabus**, 2612 woorden over zes
+secties, en dat is bewust meer dan de vijf tot negen waarmee deze ronde gekalibreerd
+werd. Elke vraag hangt aan een andere sectie of aan een andere studievraag van het
+kader vooraan, dus een elfde zou een sectie een tweede keer toetsen en een tiende
+schrappen kost dekking.
+
+**Twee vragen zijn geschreven en weer geschrapt**, en de reden staat hier omdat ze
+er bij een volgende ronde anders zo weer bij komen. De ene vroeg waarom gegevens
+die bij elkaar horen op aanliggende adressen staan (fragmentatie en de prefetch
+buffer, 7.5); dat is het fijnste detail van het hoofdstuk en 7.5 wordt al door
+vraag 5 gedekt. De andere vroeg of de klasse Realtime een waarborg geeft; die
+overlapte met vraag 10, die dezelfde alinea beter toetst.
+
+**Vraag 10 steunt op bijgeschreven tekst**, de sectie Prioriteit en realtime die
+zelf niet in de Word staat. Twee lagen bijgeschreven tekst dus, en allebei
+verdwijnen ze bij een herimport.
+
+### Studievraag 8 vraagt een schets die de tekst niet voordoet
+
+Ze vraagt vier scheduling algoritmes te noemen en "kort aan de hand van een schets"
+te verduidelijken. Het hoofdstuk tekent geen enkel algoritme: de drie figuren van
+7.6 gaan over de processtatussen en over cooperative tegen preemptive. Een
+tekenvraag zou dus vragen wat de tekst nergens voordoet, en daarom toetsen vraag 8
+en 9 de algoritmes op hun eigenschappen in plaats van op een tekening.
+
+**De lector heeft op 9 september 2026 beslist dat er vijf figuren bijkomen**, een
+schema per algoritme (FCFS, SJF, PBS, RRS en PMFQ). Dat is een eigen tekensessie
+langs de gewone molen: het palet van OrionCSS, renderen met headless Edge voor je
+ze vertrouwt, en de bladspiegel nameten na de export. **Zodra die er zijn, hoort er
+een tekenvraag met een `.tekenkader` bij**, zoals vraag 2 van hoofdstuk 5 er een
+heeft, en dan wordt studievraag 8 wel getoetst. De hoogte van zo'n kader wordt
+afgeleid uit de gedrukte hoogte van de figuur die nagetekend moet worden en niet
+gekozen; meet ze na in de PDF.
+
 ## Hoofdstuk 8, Virtual machines en containers
 
 **De sectie Studievragen achteraan heet hier Test jezelf**, zoals in hoofdstuk 1,
@@ -2991,6 +3049,57 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
 - **De ellipsen** in 10.2 ("In groepjes van 4, 8, 16, ... ."), in 10.3 en in oefening 9 zijn
   in de Word het teken en geen drie punten, terwijl oefening 8 wel drie losse punten
   schrijft. Dat is opmaak en is zo gebleven.
+
+### De negen vragen van Test jezelf, naast de oefeningen van 10.6
+
+Het hoofdstuk had geen sectie Studievragen achteraan maar wel een sectie
+Oefeningen, en het krijgt onder de beslissing van 9 september 2026 toch een Test
+jezelf. **Alle negen de vragen zijn bijgeschreven en een herimport gooit ze weg.**
+
+**De weging die dat besluit draagt.** 10.6 telt acht oefeningen van samen 265
+woorden tegen 1378 woorden theorie over vijf secties, en die acht zijn
+omrekeningen: bits per byte, bytes per kibibyte, ASCII van een woord, en wat
+Windows van een schijf van 1 TB toont. Ze raken de begrippen eronder niet. Test
+jezelf stelt daarom **geen negende omrekening**, maar toetst de begrippen: waarom
+binair, wat een afspraak doet, de twee betekenissen van word, kibi tegen kilo als
+eenheid, en bit tegen byte in een afkorting.
+
+| Vraag | Antwoord | Waarop het steunt |
+|---|---|---|
+| 1 Hoofdreden om binair te werken | b, de betrouwbaarheid | 10.1, "De hoofdreden om met het binair talstelsel te werken is de betrouwbaarheid" |
+| 2 Waardoor wordt een hoog voorgesteld bij TTL | c, minimum 2.4 V | 10.1, "een laag of 0 voorgesteld door maximaal 0.4 V en een hoog of 1 door minimum 2.4 V". Mogelijkheid b is de drempel van een laag, dus een fout antwoord wijst dezelfde zin aan |
+| 3 Hoe weet een computer dat 0100 0001 een A is | d, uit de afspraak (ASCII) en het gegevenstype | 10.3, "het is de afspraak die bepaalt hoe dit getal geinterpreteerd wordt", en de alinea over gegevenstypes erboven |
+| 4 Wat gebruik je voor letters met een accent | a, een andere afspraak zoals UTF | 10.3, "Hiervoor zijn er dan weer andere tabellen zoals UTF" |
+| 5 Word is hier 16 bits en in hoofdstuk 13 processorbreed | a, allebei kloppen, 16 en 32 bits zijn de namen uit assembler voor x86 sinds de 8086 | 10.2, de alinea die bij de invoering van hoofdstuk 13 is bijgeschreven |
+| 6 Wat kan een qubit dat een bit niet kan | c, tegelijkertijd 0 en 1 zijn | 10.2, laatste alinea |
+| 7 SD kaart van 16 GB toont 14.8 GB | d, de fabrikant rekent met 1000 en Windows deelt door 1024; hetzelfde aantal bytes | 10.4, "Beiden hebben echter hetzelfde aantal bytes ter beschikking, enkel de eenheid die gebruikt wordt is verschillend", en het voorbeeld van de 16 GB SD kaart in de eerste twee alinea's |
+| 8 Hoe schrijf je 1024 bytes correct | c, KiB | 10.4, "Wie 1024 bedoelt, schrijft dus KiB, MiB, GiB of TiB, en wie 1000 bedoelt kB, MB, GB of TB" |
+| 9 Verschil tussen kb/s en kB/s | b, kilobit tegen kilobyte per seconde, een factor 8 | 10.5, de hele sectie. Mogelijkheid d keert de zin van 10.5 om (in een computer kB/s, in een netwerk kb/s) |
+
+**Alle negen de vragen hebben precies een juist antwoord, en dat is nageteld.** Er
+is geen enkele open vraag en geen enkele `<div class="oplossing">`.
+
+**Een afleider is bewust vervangen, en dit is het soort val waar een volgende
+schrijver weer in loopt.** Vraag 7 had eerst "een deel van de kaart is gereserveerd
+voor het bestandssysteem" als mogelijkheid. Die is buiten deze syllabus
+verdedigbaar, dus ze zou een stil TWEEDE juist antwoord zijn geweest: de vraag ziet
+er volstrekt normaal uit, de export klaagt niet, en het hele hoofdstuk zou zonder
+Oplossingen drukken zodra er een tweede `class="juist"` bij hoort. Ze is vervangen
+door drie mogelijkheden die het hoofdstuk uitdrukkelijk uitsluit, waaronder "de
+fabrikant meet in bits en Windows in bytes", die meteen de verwarring van 10.5
+aanwijst. **Toets een afleider dus niet alleen aan het hoofdstuk maar ook aan wat
+buiten de syllabus waar is.**
+
+**De eenheden in de vragen volgen de grens van hoofdstuk 13**, die zegt dat er KiB
+of GiB staat waar de syllabus zelf rekent en kB of GB waar ze een fabrikant of
+Windows citeert. Vraag 7 citeert allebei die kanten en houdt dus GB; vraag 8 vraagt
+naar de eenheid zelf en is het enige antwoord met KiB erin.
+
+**Vraag 5 noemt een ander hoofdstuk en is toch uit dit hoofdstuk te beantwoorden**:
+10.2 draagt zelf de alinea die naar de tweede betekenis van word verwijst. Ze
+toetst precies wat anders als een tegenspraak leest, en dat is waarom ze er staat.
+De syllabus mag een ander deel bij naam noemen en linkt er nooit naar; dat geldt
+hier ook binnen de theorietrack.
 
 ## Hoofdstuk 11, Harde schijf
 
@@ -5521,3 +5630,61 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
   waarin ze flexibeler is.
 - **De negatieve spanningen van 16.1** worden genoemd en daarna nergens meer gebruikt; de
   24-pins tekening toont wel de -12V.
+
+### Een zin bijgeschreven in 16.1: de twee zaken bij aankoop
+
+Studievraag 1 vraagt "met welke twee zaken ga je rekening moeten houden wanneer je
+een desktop voeding koopt", en het hoofdstuk pinde dat tweetal nergens vast. Er
+stonden drie kandidaten: 16.1 rekent het vermogen uit, kernpunt 2 noemt daarnaast
+de vormfactor ATX, en dezelfde sectie behandelt ook nog de modulariteit.
+
+**Beslist door de lector op 9 september 2026: het zijn het vermogen en de
+vormfactor.** De modulariteit valt af, want die is comfort en geen pasvorm. De
+openingszin van de aankoopalinea in 16.1 zegt dat nu, en ze sluit aan op de woorden
+die er al stonden in plaats van er een tweede formulering naast te zetten:
+
+> Wie een voeding wil aankopen moet met twee zaken rekening houden: de vormfactor
+> en het gewenste vermogen. De vormfactor bepaalt of de voeding in de kast past, en
+> bij een desktop is dat bijna altijd ATX.
+
+De vormfactor staat vooraan omdat de rest van de sectie over het vermogen gaat: zo
+wordt de vormfactor in een zin afgehandeld en loopt de alinea zonder sprong door in
+de wattages. ATX is niet bijverzonnen, dat staat in kernpunt 2. **Dit is
+bijgeschreven tekst en een herimport gooit ze weg.**
+
+Het is ook een redactionele ronde op een pagina met vier figuren onder zich, dus de
+bladspiegel van dit hoofdstuk hoort na de eerstvolgende export nagerekend te
+worden; een enkel woord dat een alinea een regel langer maakt, duwt een figuur naar
+een eigen bladzijde zoals bij hoofdstuk 4 gebeurd is.
+
+### Test jezelf gaat van een naar tien vragen
+
+**Vraag 1 komt uit de Word, de negen andere zijn bijgeschreven** onder de beslissing
+van 9 september 2026. De vraag uit de Word blijft ongewijzigd staan, met haar drie
+invulregels en haar `<div class="oplossing">`, en ze blijft de eerste vraag. **De
+negen bijgeschreven vragen overleven een herimport niet.**
+
+| Vraag | Antwoord | Waarop het steunt |
+|---|---|---|
+| 1 Verschil modulair en niet modulair (open) | de oplossing uit de Word | 16.1, de alinea over niet modulair, modulair en semi modulair. Dit is de vraag uit de Word |
+| 2 Met welke twee zaken houd je rekening bij aankoop | b, het vermogen en de vormfactor | de zin die hierboven in 16.1 bijgeschreven is. Studievraag 1. Mogelijkheid a is de modulariteit, precies de kandidaat die de lector heeft laten afvallen |
+| 3 Wat zegt de 500 Watt van een GTX 1080 | a, een aanbeveling voor de hele computer, niet op te tellen bij de processor | 16.1, "Die 500 Watt is wel een aanbeveling voor de HELE computer en niet voor de kaart alleen, dus je mag ze niet optellen bij het verbruik van de processor". Dat is de misvatting die de tekst zelf rechtzet, en mogelijkheid b is precies de fout die ze verbiedt |
+| 4 Waarom 750 W voor 375 W nodig | b, het beste rendement rond de helft van de belasting | 16.1, "de meeste voedingen halen hun beste rendement wanneer je hen maar voor de helft belast" |
+| 5 Uitgangsspanning van een industriele voeding | d, 24V | kernpunt 3, "Een industriële voeding is vaak gemonteerd op een DIN rail ... De uitgangsspanning is 24 V". De drie afleiders zijn de drie spanningen van een desktopvoeding uit kernpunt 2 |
+| 6 Waarvoor dient de batterij in een UPS | c, tijd geven om de machine gecontroleerd stil te leggen en af te sluiten | 16.1, de twee laatste alinea's, "Ze moet de computer genoeg tijd geven om de machine gecontroleerd stil te leggen en zichzelf daarna netjes af te sluiten". Studievraag 5 en 6 |
+| 7 Alleen de stekker in het stopcontact | b, de voeding is actief, vaak met een groen lampje, maar de computer start niet op | 16.2, de eerste twee alinea's |
+| 8 Wanneer krijgt de computer spanning | c, wanneer PS_ON van HOOG naar LAAG geschakeld wordt | 16.2, "geschakeld wordt van HOOG naar LAAG". Mogelijkheid b keert de richting om en d verwisselt PS_ON met PWR_OK, de twee misvattingen die dit hoofdstuk kan opleveren |
+| 9 Wat meldt PWR_OK | b, dat de uitgangsspanningen hun waarde bereikt hebben en die kunnen aanhouden | 16.3, "een Power Good (PWR_OK) signaal dat het moederbord laat weten dat de voltages die aangeleverd worden correct zijn" |
+| 10 PWR_OK heeft alleen bij het opstarten nut | b, niet waar, ook tijdens de werking | 16.3, "Niet enkel maar tijdens het opstarten heeft dit PWR_OK signaal zijn nut ... under en overvoltage protection" |
+
+**De negen bijgeschreven vragen hebben elk precies een juist antwoord, en dat is
+nageteld.** Er is geen tweede open vraag bijgekomen: de meerkeuzevorm heeft de
+voorkeur, want de labotest van dit vak is meerkeuze met giscorrectie.
+
+**Vraag 10 is een waar/niet waar en houdt twee mogelijkheden.** Een verzonnen derde
+zou een woord invoeren dat het hoofdstuk niet kent, dezelfde afweging als bij vraag
+2 van hoofdstuk 8. De gokkans van een op twee is bewust aanvaard.
+
+**Een vraag is geschreven en weer geschrapt**: welke connector de voeding met het
+moederbord verbindt. Het antwoord (de 24-pins ATX-connector) staat in 16.1 en op
+drie figuren, en de vraag toetste daardoor niets wat de student niet al ziet.

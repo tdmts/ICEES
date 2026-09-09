@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test jezelf</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Test jezelf</h1>
+
+        <ol class="vragen">
+            <li>Waarin verschilt Windows 11 IoT Enterprise LTSC van Windows 11 Enterprise?
+                <ul>
+                    <li>Het is een uitgeklede versie waaruit de meeste functies weggelaten zijn</li>
+                    <li class="juist">Het is in principe dezelfde versie, maar met een aangepast updatebeleid en een
+                        lange gegarandeerde ondersteuning</li>
+                    <li>Het draait op een andere instructieset, gemaakt voor industriële hardware</li>
+                    <li>Het krijgt elke maand alle updates, zodat een machine altijd bij is</li>
+                </ul>
+            </li>
+            <li>Wat is Linux precies?
+                <ul>
+                    <li>Een volwaardig besturingssysteem zoals Windows, met een eigen grafische schil</li>
+                    <li class="juist">Een kernel, waarop een distributie zoals Ubuntu, Debian of Android verder
+                        bouwt</li>
+                    <li>Een distributie van Ubuntu</li>
+                    <li>De command line waarmee je een besturingssysteem bedient</li>
+                </ul>
+            </li>
+            <li>Hoe bescherm je een machine tegen ongewenste wijzigingen door de gebruiker die ermee werkt?
+                <ul>
+                    <li>Door hem in de groep Administrators of root te zetten</li>
+                    <li class="juist">Door hem heel weinig rechten te geven, bijvoorbeeld door het recht af te nemen
+                        om programma&#x27;s te installeren</li>
+                    <li>Door hem zich met een vingerafdruk te laten aanmelden in plaats van met een wachtwoord</li>
+                    <li>Door zijn wachtwoord regelmatig te laten wijzigen</li>
+                </ul>
+            </li>
+            <li>Een gebruiker maakt een bestand aan. Hoe zorgt het besturingssysteem ervoor dat een andere gebruiker
+                het niet zomaar kan aanpassen?
+                <ul>
+                    <li>Het versleutelt het bestand met het wachtwoord van die gebruiker</li>
+                    <li>Het houdt het bestand in het werkgeheugen van die gebruiker</li>
+                    <li class="juist">Het geeft het bestand rechten, en geen rechten betekent geen toegang</li>
+                    <li>Het verbergt het bestand voor alle andere gebruikers</li>
+                </ul>
+            </li>
+            <li>Wat is swapping?
+                <ul>
+                    <li>De processor om beurten aan het ene en dan aan het andere proces geven</li>
+                    <li>Gegevens die bij elkaar horen op aanliggende adressen in het werkgeheugen plaatsen</li>
+                    <li class="juist">Programma&#x27;s die wel actief zijn maar weinig gebruikt worden uit het
+                        werkgeheugen halen en hun status op de harde schijf opslaan</li>
+                    <li>Het werkgeheugen wissen zodra het vol is</li>
+                </ul>
+            </li>
+            <li>Een proces staat in de blocked status omdat het op een I/O operatie wacht. Die operatie is nu klaar.
+                Wat gebeurt er?
+                <ul>
+                    <li>Het proces gaat rechtstreeks naar running, want het wachten is voorbij</li>
+                    <li class="juist">Het proces komt in de ready queue en wacht tot de process scheduler het kiest</li>
+                    <li>Het proces begint opnieuw van bij het begin</li>
+                    <li>Het proces blijft blocked tot de gebruiker het opnieuw start</li>
+                </ul>
+            </li>
+            <li>Wie beslist bij cooperative multitasking wanneer een proces de processor weer afgeeft?
+                <ul>
+                    <li>De process scheduler van het besturingssysteem</li>
+                    <li class="juist">Het proces zelf</li>
+                    <li>De processor, zodra de CPU slice op is</li>
+                    <li>De gebruiker, via de Task Manager</li>
+                </ul>
+            </li>
+            <li>Welk van deze scheduling algoritmes heeft geen last van starvation?
+                <ul>
+                    <li>First come first served</li>
+                    <li>Shortest job first</li>
+                    <li>Priority based scheduling</li>
+                    <li class="juist">Round robin scheduling</li>
+                </ul>
+            </li>
+            <li>Welk scheduling algoritme gebruikt Windows?
+                <ul>
+                    <li>First come first served</li>
+                    <li>Shortest job first</li>
+                    <li>Round robin scheduling</li>
+                    <li class="juist">Een combinatie van de andere technieken, de multilevel feedback queue</li>
+                </ul>
+            </li>
+            <li>Waarom laat je een proces niet zomaar in de klasse Realtime draaien?
+                <ul>
+                    <li>Omdat een realtime proces trager wordt uitgevoerd dan een gewoon proces</li>
+                    <li>Omdat die klasse alleen op een industriële pc bestaat</li>
+                    <li class="juist">Omdat een realtime proces dat de processor niet loslaat alles eronder naar
+                        achteren duwt, en er per definitie niets meer boven staat dat kan ingrijpen</li>
+                    <li>Omdat de process scheduler realtime processen als laatste behandelt</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+    <script src="../../../../oplossingen.js"></script>
+</body>
+
+</html>

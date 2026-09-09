@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test jezelf</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Test jezelf</h1>
+
+        <ol class="vragen">
+            <li>Wat is de hoofdreden om in een computer met het binair talstelsel te werken?
+                <ul>
+                    <li>Binaire getallen nemen minder plaats in dan decimale</li>
+                    <li class="juist">De betrouwbaarheid: er mag heel wat misgaan met het signaal voor het niet meer
+                        als een hoog herkend wordt</li>
+                    <li>Een processor rekent sneller met twee cijfers dan met tien</li>
+                    <li>Een computer kan maar twee soorten gegevens opslaan, tekst en getallen</li>
+                </ul>
+            </li>
+            <li>De voedingsspanning van een TTL chip is 5 V. Waardoor wordt een hoog of 1 voorgesteld?
+                <ul>
+                    <li>Door precies 5 V</li>
+                    <li>Door maximaal 0.4 V</li>
+                    <li class="juist">Door minimum 2.4 V</li>
+                    <li>Door elke spanning boven 0 V</li>
+                </ul>
+            </li>
+            <li>Alles wordt opgeslagen als een binair getal. Hoe weet een computer dan dat 0100 0001 een hoofdletter
+                A voorstelt en niet iets anders?
+                <ul>
+                    <li>Aan het aantal bits: letters zijn altijd 8 bits en getallen altijd 16</li>
+                    <li>Aan een extra bit die aangeeft of het om een letter of om een getal gaat</li>
+                    <li>Letters worden in een apart deel van het geheugen bewaard</li>
+                    <li class="juist">Aan de afspraak waarmee het getal geïnterpreteerd wordt, hier de ASCII tabel,
+                        en aan het gegevenstype in het programma</li>
+                </ul>
+            </li>
+            <li>In de ASCII tabel staan geen letters met een accent zoals é, ê of à. Wat gebruik je daarvoor?
+                <ul>
+                    <li class="juist">Een andere afspraak, zoals UTF</li>
+                    <li>Het mp3 formaat, dat ook tekst aankan</li>
+                    <li>Een double word in plaats van een byte</li>
+                    <li>Het decimale talstelsel, want binair volstaat daar niet voor</li>
+                </ul>
+            </li>
+            <li>Een word is in dit hoofdstuk 16 bits, terwijl het hoofdstuk Random Access Memory een woord de breedte
+                noemt waarmee de processor van nature werkt. Hoe zit dat?
+                <ul>
+                    <li class="juist">Allebei kloppen: 16 en 32 bits zijn de namen die assembler voor x86 sinds de
+                        8086 gebruikt, en die zijn niet meegegroeid met de processor</li>
+                    <li>Het hoofdstuk Random Access Memory heeft gelijk en deze 16 bits is een vergissing</li>
+                    <li>Een word is 16 bits in Windows en processorbreed in Linux</li>
+                    <li>Het gaat over qubits: in een quantumcomputer is een woord even breed als de processor</li>
+                </ul>
+            </li>
+            <li>Wat kan een qubit dat een bit niet kan?
+                <ul>
+                    <li>Meer dan één letter tegelijk voorstellen</li>
+                    <li>Zichzelf herstellen wanneer de spanning te ver zakt</li>
+                    <li class="juist">Tegelijkertijd 0 en 1 zijn</li>
+                    <li>Een waarde tussen 0 en 9 aannemen</li>
+                </ul>
+            </li>
+            <li>Je koopt een SD kaart van 16 GB, en Windows verkenner toont er 14.8 GB. Hoe komt dat?
+                <ul>
+                    <li>De kaart is in werkelijkheid kleiner dan wat de verpakking belooft</li>
+                    <li>Windows houdt een stuk van de kaart vrij om naar te swappen</li>
+                    <li>De fabrikant meet in bits en Windows in bytes</li>
+                    <li class="juist">De fabrikant rekent met 1000 en Windows deelt diezelfde bytes door 1024; het
+                        aantal bytes is gelijk, alleen de eenheid verschilt</li>
+                </ul>
+            </li>
+            <li>Hoe schrijf je 1024 bytes correct?
+                <ul>
+                    <li>kB</li>
+                    <li>kb</li>
+                    <li class="juist">KiB</li>
+                    <li>Kb</li>
+                </ul>
+            </li>
+            <li>Wat is het verschil tussen kb/s en kB/s?
+                <ul>
+                    <li>Er is geen verschil, het zijn twee schrijfwijzen voor hetzelfde</li>
+                    <li class="juist">kb/s is kilobit per seconde en kB/s kilobyte per seconde, een factor 8
+                        verschil</li>
+                    <li>kb/s is kilobit per seconde en kB/s kibibyte per seconde, een factor 1024 verschil</li>
+                    <li>kb/s wordt gebruikt binnen een computer en kB/s in een netwerk</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+    <script src="../../../../oplossingen.js"></script>
+</body>
+
+</html>
