@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 490" width="960" height="490" role="img">
+  <style>
+    text { font-family: "Segoe UI", Helvetica, Arial, sans-serif; fill: #222222; }
+    .lab { font-size: 16px; }
+    .nr { font-size: 16px; font-weight: 700; fill: #004d40; }
+    .draad { stroke: #9bb0ac; stroke-width: 1.5; fill: none; }
+    .rand { stroke: #004d40; stroke-width: 2; }
+    .dun { stroke: #004d40; stroke-width: 1.2; fill: none; }
+  </style>
+  <rect x="0" y="0" width="960" height="490" fill="#ffffff"/>
+
+  <!-- de behuizing, van boven met het deksel eraf -->
+  <rect class="rand" x="250" y="60" width="500" height="340" rx="12" fill="#f5f7f7"/>
+  <circle cx="268" cy="78" r="6" fill="#ffffff" stroke="#9bb0ac" stroke-width="1.5"/>
+  <circle cx="732" cy="78" r="6" fill="#ffffff" stroke="#9bb0ac" stroke-width="1.5"/>
+  <circle cx="268" cy="382" r="6" fill="#ffffff" stroke="#9bb0ac" stroke-width="1.5"/>
+  <circle cx="732" cy="382" r="6" fill="#ffffff" stroke="#9bb0ac" stroke-width="1.5"/>
+
+  <!-- de voorrand van de behuizing, met daaronder de rand van de printplaat -->
+  <path class="rand" fill="#cfdad7" d="M 250,400 L 750,400 L 750,428 A 6,6 0 0 1 744,434 L 256,434 A 6,6 0 0 1 250,428 Z"/>
+  <rect x="246" y="434" width="224" height="16" rx="2" fill="#e0e7e5" stroke="#004d40" stroke-width="1.5"/>
+  <path d="M 470,442 L 754,442" stroke="#9bb0ac" stroke-width="1.5" stroke-dasharray="7 6" fill="none"/>
+  <rect x="470" y="406" width="110" height="22" rx="2" fill="#e0e7e5" stroke="#004d40" stroke-width="1.5"/>
+  <path class="dun" d="M 482,410 L 482,424 M 494,410 L 494,424 M 506,410 L 506,424 M 518,410 L 518,424 M 530,410 L 530,424 M 542,410 L 542,424 M 554,410 L 554,424 M 566,410 L 566,424"/>
+  <rect x="600" y="406" width="70" height="22" rx="2" fill="#e0e7e5" stroke="#004d40" stroke-width="1.5"/>
+  <path class="dun" d="M 614,410 L 614,424 M 628,410 L 628,424 M 642,410 L 642,424 M 656,410 L 656,424"/>
+
+  <!-- de plaat, met in het midden de naaf en de as -->
+  <circle class="rand" cx="560" cy="230" r="140" fill="#e0e7e5"/>
+  <circle class="dun" cx="560" cy="230" r="132"/>
+  <circle class="rand" cx="560" cy="230" r="44" fill="#b2dfdb"/>
+  <circle cx="590" cy="230" r="5" fill="#ffffff" stroke="#004d40" stroke-width="1.2"/>
+  <circle cx="575" cy="256" r="5" fill="#ffffff" stroke="#004d40" stroke-width="1.2"/>
+  <circle cx="545" cy="256" r="5" fill="#ffffff" stroke="#004d40" stroke-width="1.2"/>
+  <circle cx="530" cy="230" r="5" fill="#ffffff" stroke="#004d40" stroke-width="1.2"/>
+  <circle cx="545" cy="204" r="5" fill="#ffffff" stroke="#004d40" stroke-width="1.2"/>
+  <circle cx="575" cy="204" r="5" fill="#ffffff" stroke="#004d40" stroke-width="1.2"/>
+  <circle cx="560" cy="230" r="9" fill="#004d40"/>
+
+  <!-- de arm: de spoel achteraan, het draaipunt, de voorversterker, vooraan de kop -->
+  <path class="rand" fill="#b2dfdb"
+        d="M 297.3,351 L 269.6,367 A 64,64 0 0 1 269.6,303 L 297.3,319 A 32,32 0 0 0 297.3,351 Z"/>
+  <path class="dun" d="M 288.6,356 A 42,42 0 0 1 288.6,314"/>
+  <path class="dun" d="M 278.2,362 A 54,54 0 0 1 278.2,308"/>
+  <path class="rand" fill="#e0e7e5" d="M 312.4,322.2 L 337.6,347.8 L 466.9,205 L 457.1,195 Z"/>
+  <circle class="rand" cx="325" cy="335" r="24" fill="#b2dfdb"/>
+  <circle cx="325" cy="335" r="8" fill="#004d40"/>
+  <rect x="336" y="306" width="24" height="12" rx="2" transform="rotate(-44.6 348 312)" fill="#004d40"/>
+  <path fill="#9bb0ac" stroke="#004d40" stroke-width="1"
+        d="M 458,196 L 470,184 L 477,190 L 465,202 Z"/>
+  <rect x="470" y="176" width="20" height="12" rx="2" transform="rotate(-44.6 480 182)" fill="#004d40"/>
+
+  <!-- ============ de dertien onderdelen ============ -->
+  <path class="draad" d="M 241,100 L 251,165"/>
+  <circle cx="251" cy="165" r="2.5" fill="#004d40"/>
+  <text class="lab" x="235" y="105" text-anchor="end"><tspan class="nr">9.</tspan> Chassis</text>
+
+  <path class="draad" d="M 241,200 L 480,182"/>
+  <circle cx="480" cy="182" r="2.5" fill="#ffffff"/>
+  <text class="lab" x="235" y="205" text-anchor="end"><tspan class="nr">4.</tspan> Lees/schrijfkoppen</text>
+
+  <path class="draad" d="M 241,240 L 393,267"/>
+  <circle cx="393" cy="267" r="2.5" fill="#004d40"/>
+  <text class="lab" x="235" y="245" text-anchor="end"><tspan class="nr">3.</tspan> Flextor head assembly</text>
+
+  <path class="draad" d="M 241,295 L 348,312"/>
+  <circle cx="348" cy="312" r="2.5" fill="#ffffff"/>
+  <text class="lab" x="235" y="300" text-anchor="end"><tspan class="nr">2.</tspan> Voorversterker</text>
+
+  <path class="draad" d="M 241,345 L 270,322"/>
+  <circle cx="270" cy="322" r="2.5" fill="#004d40"/>
+  <text class="lab" x="235" y="350" text-anchor="end"><tspan class="nr">1.</tspan> Spoelen</text>
+
+  <path class="draad" d="M 241,387 L 338,350"/>
+  <circle cx="338" cy="350" r="2.5" fill="#004d40"/>
+  <text class="lab" x="235" y="392" text-anchor="end"><tspan class="nr">5.</tspan> E-block</text>
+
+  <path class="draad" d="M 241,441 L 330,441"/>
+  <circle cx="330" cy="441" r="2.5" fill="#004d40"/>
+  <text class="lab" x="235" y="446" text-anchor="end"><tspan class="nr">10.</tspan> Elektronica</text>
+
+  <path class="draad" d="M 759,135 L 556,224"/>
+  <circle cx="556" cy="224" r="2.5" fill="#ffffff"/>
+  <text class="lab" x="765" y="140"><tspan class="nr">8.</tspan> Assen</text>
+
+  <path class="draad" d="M 759,200 L 672,200"/>
+  <circle cx="672" cy="200" r="2.5" fill="#004d40"/>
+  <text class="lab" x="765" y="205"><tspan class="nr">6.</tspan> Platen</text>
+
+  <path class="draad" d="M 759,295 L 660,290"/>
+  <circle cx="660" cy="290" r="2.5" fill="#004d40"/>
+  <text class="lab" x="765" y="300"><tspan class="nr">7.</tspan> Thin film</text>
+
+  <path class="draad" d="M 759,367 L 560,268"/>
+  <circle cx="560" cy="268" r="2.5" fill="#004d40"/>
+  <text class="lab" x="765" y="372"><tspan class="nr">11.</tspan> Motor</text>
+
+  <path class="draad" d="M 525,460 L 525,430"/>
+  <circle cx="525" cy="430" r="2.5" fill="#004d40"/>
+  <text class="lab" x="525" y="476" text-anchor="middle"><tspan class="nr">12.</tspan> Bus</text>
+
+  <path class="draad" d="M 635,460 L 635,430"/>
+  <circle cx="635" cy="430" r="2.5" fill="#004d40"/>
+  <text class="lab" x="635" y="476" text-anchor="middle"><tspan class="nr">13.</tspan> Stroomtoevoer</text>
+</svg>

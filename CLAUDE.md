@@ -1490,9 +1490,6 @@ is.
 | Hoofdstuk | Bestand | Wat het is |
 |---|---|---|
 | 9.4 | `syllabus-09-moederbord-15.png` | vergelijkingstabel van drie panel-pc's, alleen als beeld |
-| 11.1 | `syllabus-11-harde-schijf-01.png` | de opengewerkte schijf met dertien genummerde onderdelen |
-| 11.2 | `syllabus-11-harde-schijf-03.png` | cylinder head sector, How Stuff Works |
-| 11.4 | `syllabus-11-track.png`, `-disk-sector.png`, `-track-sector.png` | de drie schijfjes bij vraag 5, samen een familie |
 | 11.5 | `syllabus-11-harde-schijf-08.png` | page, block, plane en chip, Hardware.Info |
 | 11.7 | `syllabus-11-harde-schijf-16.png` | de PATA-kabel met master, slave en controller |
 | 11.7 | `syllabus-11-harde-schijf-18.png` | General Pin Setting, de jumpertabel |

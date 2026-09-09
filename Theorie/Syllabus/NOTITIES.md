@@ -3342,7 +3342,58 @@ rij gelijk aan die van de vorige PDF, en geen enkele bladzijde is gekrompen.
 **Een is versmald.** De doorsnedetekening van 11.1 is 559 bij 397 pixels op 159,6mm,
 oftewel 89 dpi, en gaat naar **145,0mm** voor ongeveer 98 dpi. Ze is niet hertekend:
 het is een gedetailleerde scan met dertien genummerde onderdelen die al in het
-Nederlands staan, en dat teken je niet na.
+Nederlands staan, en dat teken je niet na. **Dat laatste geldt niet meer**: onder de
+beslissing van 9 september 2026 is ze wel hertekend, zie hieronder.
+
+**De opengewerkte schijf van 11.1 is `img/syllabus-11-onderdelen-harde-schijf.svg`
+geworden**, op 150,0mm. Alle dertien nummers staan erop met dezelfde nummering. **Wat
+verdween is de isometrische kijk en niet een gegeven**: het origineel gebruikte de
+schuine hoek alleen om de voorrand met de bus en de stroomtoevoer te kunnen tonen, en
+de tekening is nu een bovenaanzicht met het deksel eraf plus die voorrand als een
+aparte band eronder, met de rand van de printplaat die eronderuit steekt. De stapel
+platen is geen verlies, want de tweede figuur van diezelfde bladzijde
+(`syllabus-11-cilinder-en-koppen.svg`) toont die van opzij.
+
+**Drie dingen aan die tekening gingen alleen op het scherm mis**, en ze zijn de reden
+dat je rendert voor je vertrouwt. De kop lag in de eerste versie op de motornaaf in
+plaats van boven de plaat, doordat de arm te lang was: de kop hoort op ongeveer 95
+eenheden van het middelpunt en lag op 38, binnen de naaf van 44. Een taartpunt die de
+plaat eronder moest tonen, las als een gemarkeerde sector en is geschrapt; 6 wijst nu
+naar de plaat zelf, precies zoals het origineel doet. En het tweede paneel had een
+andere breedte dan de schijf erboven, wat leest als een tweede toestel; het is nu de
+voorrand van dezelfde behuizing.
+
+**Vier labelkwesties zijn op 9 september 2026 aan de lector voorgelegd**, want de
+labels zijn bij deze figuur de inhoud. Drie ervan zijn spelling en zijn zonder overleg
+rechtgezet: VOOR VERSTERKER werd Voorversterker, ELEKTRONIKA werd Elektronica, en
+LEES/SCHRIJF KOPPEN werd Lees/schrijfkoppen, de schrijfwijze van de lopende tekst. De
+andere drie liggen bij de lector: **PLATEN tegen platters**, want de lopende tekst van
+11.1 schrijft drie keer platters en patroon 20 zegt dat het woord van de tekst wint;
+**THIN FILM**, het enige Engelse label tussen twaalf Nederlandse, waar de tekst
+"magneet coating" voor heeft; en **FLEXTOR HEAD ASSEMBLY**, want Flextor lijkt geen
+bestaande term en de gangbare naam is flexure, dus het kan een fout in de bron zijn.
+
+**De CHS-tekening van 11.2 is `img/syllabus-11-cylinder-head-sector.svg` geworden**,
+van 60,0 naar 97,0mm. Daarmee vervalt het watermerk "©2000 How Stuff Works" en het
+bijschrift dat de bron noemde; de afspraak dat zo'n watermerk met een leesbare naam
+mag blijven, gold zolang het beeld geleend was. **Het origineel markeerde een sector en
+deze markeert er twee**, een in een buitenste track en een in een binnenste, allebei
+met het label "sector van 512 byte". Dat is bijgetekend en niet overgenomen, en het is
+de toets die hoofdstuk 6 vastlegde: de alinea ernaast beweert dat een sector buitenaan
+langer is dan een sector binnenaan terwijl allebei 512 byte dragen, en met een enkele
+markering moest de lezer dat geloven. De acht radialen en de concentrische tracks
+komen wel uit het origineel, dat er ook acht heeft.
+
+**De drie schijfjes van 11.4 zijn `img/syllabus-11-track.svg`, `-disk-sector.svg` en
+`-track-sector.svg` geworden**, alle drie op hun bestaande 45,0mm, want ze staan in een
+tabel van drie kolommen. Ze zijn met een generator geschreven, zodat de basistekening
+in de drie letterlijk dezelfde is; het origineel was drie keer dezelfde CAD-render met
+een andere markering, dus dat is de vorm die het al had. **Wat wel verbeterd is: de
+ring, de taartpunt en het vakje liggen nu op precies dezelfde plaats**, dus het derde
+schijfje is zichtbaar de doorsnede van de eerste twee, en dat is net wat de vraag
+toetst. De kleuren rood, groen en blauw zijn weg, want geen enkele zin bij die vraag
+noemt een kleur en elk schijfje draagt maar een markering; alle drie staan ze in
+`#004d40`. De grijze gradient van de CAD-render is weg.
 
 **Vier blijven staan op 96 dpi, en dat is een beslissing.** De jumperinstelling van
 11.7 (78,1mm), de SATA-kabels van 11.8 (79,4mm), het RAID 5-schema van 11.13

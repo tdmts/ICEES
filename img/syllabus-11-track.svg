@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" width="420" height="420" role="img">
+  <style>
+    .rooster { stroke: #9bb0ac; stroke-width: 2.5; fill: none; }
+  </style>
+  <rect x="0" y="0" width="420" height="420" fill="#ffffff"/>
+  <circle cx="210" cy="210" r="182" fill="#f5f7f7"/>
+  <path fill="#004d40" fill-rule="evenodd" d="M 210,210 m -160,0 a 160,160 0 1 0 320,0 a 160,160 0 1 0 -320,0 M 210,210 m -138,0 a 138,138 0 1 0 276,0 a 138,138 0 1 0 -276,0"/>
+
+  <!-- de tracks -->
+  <circle class="rooster" cx="210" cy="210" r="28"/>
+  <circle class="rooster" cx="210" cy="210" r="50"/>
+  <circle class="rooster" cx="210" cy="210" r="72"/>
+  <circle class="rooster" cx="210" cy="210" r="94"/>
+  <circle class="rooster" cx="210" cy="210" r="116"/>
+  <circle class="rooster" cx="210" cy="210" r="138"/>
+  <circle class="rooster" cx="210" cy="210" r="160"/>
+  <circle class="rooster" cx="210" cy="210" r="182" stroke-width="3"/>
+
+  <!-- zestien radialen, die elke track in even veel sectoren delen -->
+  <path class="rooster" d="M 210,210 L 392,210"/>
+  <path class="rooster" d="M 210,210 L 378.1,279.6"/>
+  <path class="rooster" d="M 210,210 L 338.7,338.7"/>
+  <path class="rooster" d="M 210,210 L 279.6,378.1"/>
+  <path class="rooster" d="M 210,210 L 210,392"/>
+  <path class="rooster" d="M 210,210 L 140.4,378.1"/>
+  <path class="rooster" d="M 210,210 L 81.3,338.7"/>
+  <path class="rooster" d="M 210,210 L 41.9,279.6"/>
+  <path class="rooster" d="M 210,210 L 28,210"/>
+  <path class="rooster" d="M 210,210 L 41.9,140.4"/>
+  <path class="rooster" d="M 210,210 L 81.3,81.3"/>
+  <path class="rooster" d="M 210,210 L 140.4,41.9"/>
+  <path class="rooster" d="M 210,210 L 210,28"/>
+  <path class="rooster" d="M 210,210 L 279.6,41.9"/>
+  <path class="rooster" d="M 210,210 L 338.7,81.3"/>
+  <path class="rooster" d="M 210,210 L 378.1,140.4"/>
+</svg>
