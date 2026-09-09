@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 410" width="760" height="410" role="img">
+  <style>
+    text { font-family: "Segoe UI", Helvetica, Arial, sans-serif; fill: #222; }
+    .chip { fill: #004d40; }
+    .chiptekst { fill: #ffffff; }
+    .titel { font-size: 20px; font-weight: 600; }
+    .ondertitel { font-size: 13px; }
+    .label { font-size: 14px; }
+    .klein { font-size: 13px; }
+    .bus { font-size: 14px; font-style: italic; }
+    .lijn { stroke: #222; stroke-width: 2.5; fill: none; }
+    .slot { fill: #b2dfdb; stroke: #004d40; stroke-width: 1.5; }
+    .blok { fill: #e0e7e5; stroke: #004d40; stroke-width: 1.5; }
+    .kern { fill: #4d8b7f; stroke: #004d40; stroke-width: 1.5; }
+  </style>
+  <rect x="0" y="0" width="760" height="410" fill="#ffffff"/>
+
+  <!-- slot voor de grafische kaart, rechtstreeks aan de processor -->
+  <rect class="slot" x="28" y="60" width="16" height="60"/>
+  <path class="lijn" d="M44 90 H290"/>
+  <text class="bus" x="167" y="80" text-anchor="middle">PCI Express x16</text>
+  <text class="label" x="15" y="142">Slot voor de</text>
+  <text class="label" x="15" y="158">grafische kaart</text>
+
+  <!-- processor, met de grafische kern erin -->
+  <rect class="chip" x="290" y="45" width="200" height="120" rx="8"/>
+  <text class="titel chiptekst" x="390" y="78" text-anchor="middle">Processor</text>
+  <text class="ondertitel chiptekst" x="390" y="98" text-anchor="middle">(CPU)</text>
+  <rect class="kern" x="306" y="115" width="168" height="37" rx="6"/>
+  <text class="klein chiptekst" x="390" y="139" text-anchor="middle">grafische kern</text>
+
+  <!-- werkgeheugen, rechtstreeks aan de processor -->
+  <path class="lijn" d="M490 100 H540 M540 72 V138 M540 72 H580 M540 138 H580"/>
+  <rect class="blok" x="580" y="52" width="160" height="40" rx="6"/>
+  <text class="klein" x="660" y="77" text-anchor="middle">werkgeheugen (DDR4)</text>
+  <rect class="blok" x="580" y="118" width="160" height="40" rx="6"/>
+  <text class="klein" x="660" y="143" text-anchor="middle">werkgeheugen (DDR4)</text>
+
+  <!-- de eigen verbinding tussen processor en pch -->
+  <path class="lijn" d="M390 165 V250"/>
+  <text class="bus" x="402" y="210">eigen verbinding</text>
+
+  <!-- de pch, met de trage aansluitingen erin -->
+  <rect class="chip" x="270" y="250" width="240" height="140" rx="8"/>
+  <text class="titel chiptekst" x="390" y="284" text-anchor="middle">PCH</text>
+  <text class="ondertitel chiptekst" x="390" y="305" text-anchor="middle">Platform Controller Hub</text>
+  <text class="klein chiptekst" x="288" y="345">USB</text>
+  <text class="klein chiptekst" x="288" y="366">SATA</text>
+  <text class="klein chiptekst" x="392" y="345">netwerk</text>
+  <text class="klein chiptekst" x="392" y="366">firmwarechip</text>
+
+  <!-- sloten voor uitbreidingskaarten, aan de pch -->
+  <rect class="slot" x="20" y="260" width="14" height="64"/>
+  <rect class="slot" x="39" y="260" width="14" height="64"/>
+  <rect class="slot" x="58" y="260" width="14" height="64"/>
+  <path class="lijn" d="M72 292 H270"/>
+  <text class="bus" x="171" y="282" text-anchor="middle">PCI Express</text>
+  <text class="label" x="15" y="344">Sloten voor</text>
+  <text class="label" x="15" y="360">uitbreidingskaarten</text>
+</svg>

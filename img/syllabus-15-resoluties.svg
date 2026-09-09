@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" width="680" height="400" role="img">
+  <style>
+    text { font-family: "Segoe UI", Helvetica, Arial, sans-serif; }
+    .label { font-size: 14px; font-weight: 600; }
+    .op { fill: #ffffff; }
+    .in { fill: #222222; }
+    .vlak { stroke: #004d40; stroke-width: 1.5; }
+  </style>
+  <rect x="0" y="0" width="680" height="400" fill="#ffffff"/>
+
+  <!-- de vier resoluties op schaal, genest vanuit de linkeronderhoek -->
+  <rect class="vlak" x="20" y="20"  width="640"    height="360" fill="#4d8b7f"/>
+  <rect class="vlak" x="20" y="200" width="320"    height="180" fill="#b2dfdb"/>
+  <rect class="vlak" x="20" y="290" width="160"    height="90"  fill="#e0e7e5"/>
+  <rect class="vlak" x="20" y="320" width="106.67" height="60"  fill="#ffffff"/>
+
+  <text class="label op" x="32" y="44">8K</text>
+  <text class="label in" x="32" y="224">4K</text>
+  <text class="label in" x="32" y="310">1080p</text>
+  <text class="label in" x="32" y="344">720p</text>
+</svg>

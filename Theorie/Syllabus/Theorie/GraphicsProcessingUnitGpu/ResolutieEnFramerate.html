@@ -21,8 +21,8 @@
 
         <p>In de praktijk wordt meestal gekozen voor Full HD. In de figuur zie je meteen wat voor impact 4K schermen hebben op het aantal pixels...</p>
 
-        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
-            <img src="../../../../img/syllabus-15-graphics-processing-unit-gpu-02.png" class="img-fluid" alt="Zeven rechthoeken die resoluties op ware schaal in elkaar geschoven tonen, elk met zijn naam erin. Van groot naar klein: DCI 4K als smalle roze strook links, 4K UHD in het rood, DCI 2K als lichtgroene verticale strook, 1080p in het felgroen, 720p in het donkergroen, DVD in het cyaan en helemaal rechtsonder VCD, dat buiten de rand van de afbeelding valt.">
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 121.4mm">
+            <img src="../../../../img/syllabus-15-resoluties.svg" class="img-fluid" alt="Vier resoluties op ware schaal in elkaar geschoven, met dezelfde linkeronderhoek. Van klein naar groot: 720p als wit vlak linksonder, daaromheen 1080p in lichtgrijs, daaromheen 4K in lichtblauwgroen, en als grootste vlak 8K in groen. Elk vlak draagt zijn naam linksboven in de rand die het toevoegt.">
         </figure>
 
         <p>Iedere pixel moet een bepaalde kleur kunnen voorstellen. In het slechtste geval hebben we te maken met een zwart / wit scherm. In die situatie hebben we 1 bit nodig per pixel (0= wit, 1 = zwart).</p>
@@ -41,8 +41,8 @@
 
         <p>In het blokschema hieronder zie je dat verschil: de grafische kaart zit met een x16 slot rechtstreeks aan de processor, terwijl USB, SATA, het netwerk en de sloten voor uitbreidingskaarten aan de PCH hangen, die op zijn beurt met een eigen verbinding aan de processor vastzit. In diezelfde processor zit ook de grafische kern waarmee je het zonder externe kaart moet doen. Op de foto eronder is dat x16 slot met een pijl aangeduid.</p>
 
-        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
-            <img src="../../../../img/syllabus-15-graphics-processing-unit-gpu-03.png" class="img-fluid" alt="Blokschema van het Intel Z170-platform. Bovenaan de Intel Core i7-6700K-processor met Intel HD Graphics 530 erin; links ervan de lijnen PCI Express 3.0 voor de grafische kaart, te gebruiken als 1 keer 16, 2 keer 8 of 1 keer 8 en 2 keer 4 lijnen, en rechts twee aansluitingen DDR4/DDR3L-geheugen tot 2133/1600 MHz. Onder de processor hangt via DMI 3.0 de Z170-chipset, met rechts audio, zes SATA-poorten en opslag over PCI Express, en links tot twintig lijnen PCI Express 3.0 van 8 Gb/s elk, USB 3.0- en USB 2.0-poorten, de ingebouwde netwerkaansluiting en de SMBus. Twee rode pijlen met een handgeschreven bijschrift van de lector: PCIe graphics (rechtstreeks op CPU) wijst naar de lijnen bovenaan links, en PCIe voor netwerkkaarten etc. Via de PCH wijst naar de twintig lijnen aan de chipset.">
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 135.0mm">
+            <img src="../../../../img/syllabus-15-grafische-kaart-op-pci-express.svg" class="img-fluid" alt="Blokschema van een moederbord van na 2011. Bovenaan in het midden de processor, met de grafische kern erin getekend. Links ervan hangt over PCI Express x16 het slot voor de grafische kaart rechtstreeks aan de processor, rechts ervan twee blokken werkgeheugen (DDR4). Onder de processor hangt over een eigen verbinding de PCH, de Platform Controller Hub, met daarin USB, SATA, netwerk en firmwarechip. Links van de PCH hangen over PCI Express de sloten voor uitbreidingskaarten. De grafische kaart gaat dus niet langs de PCH, de uitbreidingskaarten wel.">
         </figure>
 
         <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
