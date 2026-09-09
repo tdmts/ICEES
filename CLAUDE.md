@@ -1511,8 +1511,16 @@ elkaar, en van dit hoofdstuk staat er dus niets meer op de lijst: `-01` werd
 en dezelfde lijst werkten, is wat het afstemmen kostte** en niet het tekenen: de lijst zelf, het
 blok van hoofdstuk 13 in NOTITIES.md en `downloads/` zijn met zijn drieen de plaatsen waar twee
 sessies elkaar overschrijven. Wat werkte was per rij afspreken wie hem vasthoudt, een gedeeld
-bestand opnieuw inlezen vlak voor je erin schrijft, committen met `git commit --only` en een
-pathspec, en de export aan een van de twee laten.
+bestand opnieuw inlezen vlak voor je erin schrijft, en de export aan een van de twee laten.
+
+**`git commit --only` met een pathspec houdt de andere sessie er NIET buiten, en dat is precies
+verkeerd om wat je verwacht.** Het commit de WERKBOOMVERSIE van elk bestand dat je noemt, dus het
+beschermt de bestanden die je niet noemt en niet jouw eigen hunk in een bestand dat je wel noemt.
+Op 9 september is zo de wijziging van de ene sessie aan `CLAUDE.md` meegegaan in de commit van de
+andere: inhoudelijk klopte alles, maar de commit zegt iets anders dan hij draagt. Noemen twee
+sessies hetzelfde bestand, dan is de enige die er iets aan verandert de laatste die commit, en de
+afspraak hoort dus te zijn dat een gedeeld bestand aan EEN van de twee toebehoort tot het gecommit
+is. Kijk na wat je commit met `git show --stat` en niet alleen wat je gestaged dacht te hebben.
 
 **Dat hoofdstuk heeft ook de eerste uitzondering op deze beslissing opgeleverd, en ze is door de
 lector toegestaan.** De geannoteerde foto van de DIMM-sloten in 13.11 is `img/syllabus-13-channels.svg`

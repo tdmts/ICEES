@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" width="700" height="320" role="img">
+  <style>
+    text { font-family: "Segoe UI", Helvetica, Arial, sans-serif; fill: #222; }
+    .titel { font-size: 20px; font-weight: 700; fill: #004d40; }
+    .kop { font-size: 16px; font-weight: 600; fill: #004d40; }
+    .kern { font-size: 16px; font-weight: 600; fill: #ffffff; }
+    .bij { font-size: 14px; }
+    .draad { stroke: #004d40; stroke-width: 2.5; fill: none; }
+    .bit { fill: #9e2f26; }
+    .leider { stroke: #004d40; stroke-width: 1.4; fill: none; }
+  </style>
+  <rect x="0" y="0" width="700" height="320" fill="#ffffff"/>
+
+  <text class="titel" x="350" y="28" text-anchor="middle">DDR3 SDRAM</text>
+
+  <!-- de chip -->
+  <rect x="20" y="46" width="400" height="252" rx="6" fill="#e0e7e5" stroke="#004d40" stroke-width="2"/>
+  <text class="kop" x="36" y="72">DRAM</text>
+
+  <!-- de kern -->
+  <rect x="45" y="110" width="120" height="130" rx="10" fill="#004d40"/>
+  <text class="kern" x="105" y="170" text-anchor="middle">DRAM-</text>
+  <text class="kern" x="105" y="192" text-anchor="middle">kern</text>
+
+  <!-- acht draden naar de uitgang, elk met een bit erop -->
+  <line class="draad" x1="165" y1="120" x2="316" y2="120"/>
+  <line class="draad" x1="165" y1="135" x2="316" y2="135"/>
+  <line class="draad" x1="165" y1="150" x2="316" y2="150"/>
+  <line class="draad" x1="165" y1="165" x2="316" y2="165"/>
+  <line class="draad" x1="165" y1="180" x2="316" y2="180"/>
+  <line class="draad" x1="165" y1="195" x2="316" y2="195"/>
+  <line class="draad" x1="165" y1="210" x2="316" y2="210"/>
+  <line class="draad" x1="165" y1="225" x2="316" y2="225"/>
+  <circle class="bit" cx="188" cy="120" r="5.5"/>
+  <circle class="bit" cx="188" cy="135" r="5.5"/>
+  <circle class="bit" cx="188" cy="150" r="5.5"/>
+  <circle class="bit" cx="188" cy="165" r="5.5"/>
+  <circle class="bit" cx="188" cy="180" r="5.5"/>
+  <circle class="bit" cx="188" cy="195" r="5.5"/>
+  <circle class="bit" cx="188" cy="210" r="5.5"/>
+  <circle class="bit" cx="188" cy="225" r="5.5"/>
+
+  <!-- de trechter die de acht op een draad zet -->
+  <polygon points="316,104 352,140 352,205 316,241" fill="#b2dfdb" stroke="#004d40" stroke-width="2"/>
+
+  <!-- 8n bits -->
+  <rect x="150" y="256" width="86" height="28" rx="6" fill="#b2dfdb" stroke="#004d40" stroke-width="1.5"/>
+  <text class="bij" x="193" y="275" text-anchor="middle">8n bits</text>
+  <path class="leider" d="M193 256 L188 232"/>
+
+  <!-- de uitgang -->
+  <text class="kop" x="470" y="80">DRAM-interface</text>
+  <path class="draad" d="M352 172 H650"/>
+  <polygon points="668,172 648,164 648,180" fill="#004d40"/>
+  <circle class="bit" cx="470" cy="172" r="5.5"/>
+  <circle class="bit" cx="490" cy="172" r="5.5"/>
+  <circle class="bit" cx="510" cy="172" r="5.5"/>
+  <circle class="bit" cx="530" cy="172" r="5.5"/>
+  <circle class="bit" cx="550" cy="172" r="5.5"/>
+  <circle class="bit" cx="570" cy="172" r="5.5"/>
+  <circle class="bit" cx="590" cy="172" r="5.5"/>
+  <circle class="bit" cx="610" cy="172" r="5.5"/>
+
+  <rect x="495" y="226" width="110" height="28" rx="6" fill="#b2dfdb" stroke="#004d40" stroke-width="1.5"/>
+  <text class="bij" x="550" y="245" text-anchor="middle">8x zo snel</text>
+  <path class="leider" d="M550 226 L550 180"/>
+</svg>

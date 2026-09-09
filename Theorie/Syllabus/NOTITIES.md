@@ -4054,10 +4054,11 @@ labo. Wat wegvalt is het woord "verdubbelt", en dat is met opzet: het was onwaar
 
 ### 5. De figuren
 
-**Zeven zijn aangepakt en tien zijn gebleven.** De beslissing van 9 september dat elke
+**Negen zijn aangepakt en acht zijn gebleven.** De beslissing van 9 september dat elke
 tekening hertekend wordt, kwam er tijdens deze import bij; wat hier al gedaan was, valt
-eronder. Vier zijn tijdens de import zelf gedaan, en `-01` en `-04` in een parallelle
-sessie op dezelfde dag; de twee die overblijven staan op de worklijst in CLAUDE.md.
+eronder. Vier zijn tijdens de import zelf gedaan en de vijf andere op dezelfde dag, in
+twee sessies naast elkaar. **Van dit hoofdstuk staat er dus niets meer op de worklijst in
+CLAUDE.md**, en het is daarmee het eerste hoofdstuk waarvan elke tekening hertekend is.
 
 - **`img/syllabus-13-sdr-sdram.svg`** vervangt `-06`, 274 bij 84 pixels op 94,0mm ofwel
   **74 dpi**, de laagste van dit hoofdstuk, met Memory Core en I/O in het Engels.
@@ -4111,6 +4112,32 @@ sessie op dezelfde dag; de twee die overblijven staan op de worklijst in CLAUDE.
   **Alle vier de getallen van het origineel blijven staan** (100, 100, 100 en 200), er
   verandert alleen de eenheid op de twee dataregels. Gemeld aan de lector; een herimport
   draait ze terug.
+- **`img/syllabus-13-ras-cas.svg`** vervangt `-05`, de RAS/CAS-matrix van 13.3, 350 bij
+  351 pixels op 60,9mm ofwel 146 dpi. Ruim boven de grens, dus ook hier is het de
+  beslissing van 9 september en niet de scherpte: het is een tekening, en ze staat in rood
+  en groen op wit in een stijl die nergens anders in deze syllabus voorkomt. Geen enkel
+  gegeven valt weg: zestien cellen op vier rijen A tot D en vier kolommen 1 tot 4, de
+  opschriften RAS en CAS, en de aanduiding van de cel op rij B en kolom 2. **Wat erbij
+  komt is dat de figuur nu toont wat de alinea ernaast beweert**, namelijk dat je een rij-
+  en een kolomadres meegeeft: rij B en kolom 2 zijn dik getekend en alle andere lijnen
+  bleek, zodat het kruispunt de cel aanwijst in plaats van dat een kruisje dat doet. Bij
+  RAS staat rijadres en bij CAS kolomadres, want de lopende tekst voert row access strobe
+  en column access strobe pas in de zin daarna in. De rode ring en de rode knoop zijn het
+  gedempte `#9e2f26` van hoofdstuk 6, verder het palet van OrionCSS. Ze staat op
+  **85,0mm**, gekozen zodat haar tekst van 14px op 2,59mm drukt.
+- **`img/syllabus-13-ddr3-prefetch.svg`** vervangt `-11`, het blokschema van 13.7, 611 bij
+  329 pixels op 88,3mm ofwel 176 dpi. Ook hier is de dpi de reden niet. Twee andere wel:
+  de figuur staat **in het Engels** (DRAM Core, DRAM Interface, 8x rate) in een
+  Nederlandse tekst, en ze is de enige figuur in dit hoofdstuk die in het blauwe
+  verloopjespalet van een presentatiesjabloon staat, naast vier tekeningen die intussen in
+  het palet van de syllabus staan. Alle gegevens blijven: het opschrift DDR3 SDRAM, het
+  kader DRAM met de kern erin, de acht draden met een bit op elk, de trechter, het
+  bijschrift 8n bits, de interface met dezelfde acht bits achter elkaar en een pijl, en
+  het bijschrift 8x rate, dat nu 8x zo snel heet. **8n bits blijft staan zoals het er
+  staat**, want dat is de notatie van het origineel en de lopende tekst spreekt ze niet
+  tegen; ze telt zelf de acht af als 4 op de stijgende en 4 op de dalende flank. De bits
+  zijn `#9e2f26`, hetzelfde gedempte rood, en de rest is het palet van OrionCSS. Ze staat
+  op **125,0mm**, gekozen zodat haar tekst van 14px op 2,50mm drukt.
 - **`-14` en `-15`, de twee Hamming-tabellen**, bestonden alleen als beeld en zijn
   overgetypt, zoals de kibi-tabel van 10.4. Vier rijen op vijf kolommen, dus ruim binnen
   de omvang waar die regel voor geldt. Overtypen is nakijken, en anders dan bij die
