@@ -3389,15 +3389,40 @@ naar de plaat zelf, precies zoals het origineel doet. En het tweede paneel had e
 andere breedte dan de schijf erboven, wat leest als een tweede toestel; het is nu de
 voorrand van dezelfde behuizing.
 
-**Vier labelkwesties zijn op 9 september 2026 aan de lector voorgelegd**, want de
-labels zijn bij deze figuur de inhoud. Drie ervan zijn spelling en zijn zonder overleg
-rechtgezet: VOOR VERSTERKER werd Voorversterker, ELEKTRONIKA werd Elektronica, en
-LEES/SCHRIJF KOPPEN werd Lees/schrijfkoppen, de schrijfwijze van de lopende tekst. De
-andere drie liggen bij de lector: **PLATEN tegen platters**, want de lopende tekst van
-11.1 schrijft drie keer platters en patroon 20 zegt dat het woord van de tekst wint;
-**THIN FILM**, het enige Engelse label tussen twaalf Nederlandse, waar de tekst
-"magneet coating" voor heeft; en **FLEXTOR HEAD ASSEMBLY**, want Flextor lijkt geen
-bestaande term en de gangbare naam is flexure, dus het kan een fout in de bron zijn.
+**De figuur telt zeven aanduidingen en niet dertien, en dat is een nieuwe regel.**
+Beslist door de lector op 9 september 2026, naar aanleiding van drie labelvragen over
+deze figuur, en het antwoord viel breder uit dan de vragen: **een figuur duidt alleen
+aan wat later in de tekst, het labo of de slides ook echt terugkomt.** De tekening zelf
+verandert daar niet van, en daar blijft gelden dat geen enkel gegeven van het origineel
+wegvalt: de spoel, het draaipunt, de voorversterker, het chassis en de printplaat staan
+er nog, ze dragen alleen geen naam meer.
+
+Geteld in hoofdstuk 11, in `Labo/` en in `Hoorcollege/`: platter komt 22 keer voor, arm
+18 keer, lees/schrijfkop doorlopend, magneet(coating) 2 keer, motor een keer in een
+antwoord van Test jezelf, en bus en stroomtoevoer krijgen elk een eigen sectie in 11.7
+en 11.8. **Voorversterker, e-block, chassis, assen, elektronika en flextor komen nul
+keer voor.**
+
+**Blijven, zeven:** Platters, Magneetlaag, Lees/schrijfkoppen, Actuatorarm, Motor, Bus,
+Stroomtoevoer. **Vallen weg, vijf:** Spoelen, Voorversterker, Assen, Chassis en
+Elektronika. **En twee zijn er een geworden:** wat het origineel Flextor head assembly
+en E-block noemt, is samen het armsamenstel, en dat heet nu **Actuatorarm**, een label
+dat het origineel niet had. Dat is de vondst van deze ronde: arm is na platter het
+meest gebruikte woord van het hoofdstuk en Test jezelf vraagt letterlijk hoe de
+actuatorarm beweegt, terwijl de arm op de figuur naamloos was. De nummering loopt
+daarom opnieuw van 1 tot 7; niets in de tekst verwijst naar die nummers.
+
+Daarmee vervielen de drie vragen die hier openstonden: PLATEN werd Platters (patroon
+20, de lopende tekst schrijft het 22 keer zo), THIN FILM werd Magneetlaag, en FLEXTOR
+HEAD ASSEMBLY is weg. Drie spellingcorrecties waren al zonder overleg doorgevoerd en
+zijn goedgekeurd: Voorversterker aaneen, Elektronica en Lees/schrijfkoppen; van die
+drie overleeft alleen de laatste deze ronde.
+
+**Twee aanduidingen wezen eerst allebei ergens midden op de plaat**, wat ze niet van
+elkaar onderscheidt. Platters wijst nu naar de rand van de schijf en Magneetlaag naar
+het vlak erop, zodat elk van de twee iets anders aanduidt. De figuur ging daarbij van
+150,0 naar **140,0mm**, want met zes labels minder is er links en rechts minder marge
+nodig.
 
 **De CHS-tekening van 11.2 is `img/syllabus-11-cylinder-head-sector.svg` geworden**,
 van 60,0 naar 97,0mm. Daarmee vervalt het watermerk "©2000 How Stuff Works" en het
