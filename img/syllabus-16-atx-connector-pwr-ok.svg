@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 468" width="260" height="468" role="img">
+  <style>
+    text { font-family: "Segoe UI", Helvetica, Arial, sans-serif; fill: #222; font-size: 13px; }
+    .nr { font-size: 13px; }
+    .aan { fill: #9e2f26; font-weight: 600; }
+    .huis { fill: #ffffff; stroke: #222222; stroke-width: 2; }
+    .pin { stroke: #222222; stroke-width: 1.2; }
+    .stip { stroke: #222222; stroke-width: 1.6; stroke-dasharray: 3 3; }
+    .ring { fill: none; stroke: #9e2f26; stroke-width: 2.5; }
+  </style>
+  <rect x="0" y="0" width="260" height="468" fill="#ffffff"/>
+
+  <!-- pinnummers -->
+  <text class="nr" x="113" y="26" text-anchor="middle">1</text>
+  <text class="nr" x="145" y="26" text-anchor="middle">13</text>
+  <text class="nr" x="113" y="462" text-anchor="middle">12</text>
+  <text class="nr" x="145" y="462" text-anchor="middle">24</text>
+
+  <!-- het blok van twintig en het aparte blokje van vier -->
+  <rect class="huis" x="96" y="36" width="66" height="320" rx="3"/>
+  <rect class="huis" x="96" y="380" width="66" height="64" rx="3"/>
+  <path class="stip" d="M100 356 V380 M158 356 V380"/>
+
+  <!-- de vergrendeling halverwege -->
+  <path class="huis" d="M162 212 H176 V244 H162"/>
+  <path d="M162 214 V242" stroke="#ffffff" stroke-width="2.5" fill="none"/>
+  <rect x="166" y="220" width="6" height="16" fill="#ffffff" stroke="#222222" stroke-width="1.2"/>
+
+  <!-- pin 1 tot 12 -->
+  <rect class="pin" x="102" y="41" width="22" height="22" rx="3" fill="#9e622e"/>
+  <text x="86" y="56" text-anchor="end">+3.3V</text>
+  <rect class="pin" x="102" y="73" width="22" height="22" rx="3" fill="#9e622e"/>
+  <text x="86" y="88" text-anchor="end">+3.3V</text>
+  <rect class="pin" x="102" y="105" width="22" height="22" rx="3" fill="#222222"/>
+  <text x="86" y="120" text-anchor="end">COM</text>
+  <rect class="pin" x="102" y="137" width="22" height="22" rx="3" fill="#9e2f26"/>
+  <text x="86" y="152" text-anchor="end">+5V</text>
+  <rect class="pin" x="102" y="169" width="22" height="22" rx="3" fill="#222222"/>
+  <text x="86" y="184" text-anchor="end">COM</text>
+  <rect class="pin" x="102" y="201" width="22" height="22" rx="3" fill="#9e2f26"/>
+  <text x="86" y="216" text-anchor="end">+5V</text>
+  <rect class="pin" x="102" y="233" width="22" height="22" rx="3" fill="#222222"/>
+  <text x="86" y="248" text-anchor="end">COM</text>
+  <rect class="pin" x="102" y="265" width="22" height="22" rx="3" fill="#9bb0ac"/>
+  <rect class="ring" x="98.5" y="261.5" width="29.0" height="29.0" rx="6"/>
+  <text class="aan" x="86" y="280" text-anchor="end">PWR_OK</text>
+  <rect class="pin" x="102" y="297" width="22" height="22" rx="3" fill="#6f358d"/>
+  <text x="86" y="312" text-anchor="end">+5VSB</text>
+  <rect class="pin" x="102" y="329" width="22" height="22" rx="3" fill="#b8951f"/>
+  <text x="86" y="344" text-anchor="end">+12V1</text>
+  <rect class="pin" x="102" y="385" width="22" height="22" rx="3" fill="#b8951f"/>
+  <text x="86" y="400" text-anchor="end">+12V1</text>
+  <rect class="pin" x="102" y="417" width="22" height="22" rx="3" fill="#9e622e"/>
+  <text x="86" y="432" text-anchor="end">+3.3V</text>
+
+  <!-- pin 13 tot 24 -->
+  <rect class="pin" x="134" y="41" width="22" height="22" rx="3" fill="#9e622e"/>
+  <text x="186" y="56">+3.3V</text>
+  <rect class="pin" x="134" y="73" width="22" height="22" rx="3" fill="#2a4d7c"/>
+  <text x="186" y="88">-12V</text>
+  <rect class="pin" x="134" y="105" width="22" height="22" rx="3" fill="#222222"/>
+  <text x="186" y="120">COM</text>
+  <rect class="pin" x="134" y="137" width="22" height="22" rx="3" fill="#3f7238"/>
+  <text x="186" y="152">PS_ON</text>
+  <rect class="pin" x="134" y="169" width="22" height="22" rx="3" fill="#222222"/>
+  <text x="186" y="184">COM</text>
+  <rect class="pin" x="134" y="201" width="22" height="22" rx="3" fill="#222222"/>
+  <text x="186" y="216">COM</text>
+  <rect class="pin" x="134" y="233" width="22" height="22" rx="3" fill="#222222"/>
+  <text x="186" y="248">COM</text>
+  <rect class="pin" x="134" y="265" width="22" height="22" rx="3" fill="#ffffff"/>
+  <text x="186" y="280">N/C</text>
+  <rect class="pin" x="134" y="297" width="22" height="22" rx="3" fill="#9e2f26"/>
+  <text x="186" y="312">+5V</text>
+  <rect class="pin" x="134" y="329" width="22" height="22" rx="3" fill="#9e2f26"/>
+  <text x="186" y="344">+5V</text>
+  <rect class="pin" x="134" y="385" width="22" height="22" rx="3" fill="#9e2f26"/>
+  <text x="186" y="400">+5V</text>
+  <rect class="pin" x="134" y="417" width="22" height="22" rx="3" fill="#222222"/>
+  <text x="186" y="432">COM</text>
+
+</svg>
