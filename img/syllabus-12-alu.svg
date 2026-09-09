@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 390" width="700" height="390"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">Het schema van een arithmetic and logic unit: bovenaan komen de twee operands A en B binnen,
+        links de status en de opcode, rechts gaat een status buiten en onderaan het resultaat Y</title>
+    <rect width="700" height="390" fill="#ffffff" />
+
+    <defs>
+        <marker id="punt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#004d40" />
+        </marker>
+    </defs>
+
+    <!-- de ALU zelf, het klassieke trapezium met een inkeping bovenaan -->
+    <path d="M 150 110 L 325 110 L 350 152 L 375 110 L 550 110 L 482 262 L 218 262 Z" fill="#b2dfdb"
+        stroke="#004d40" stroke-width="2" />
+
+    <text x="250" y="147" font-size="17" fill="#00332b" text-anchor="middle">A</text>
+    <text x="450" y="147" font-size="17" fill="#00332b" text-anchor="middle">B</text>
+    <text x="350" y="247" font-size="17" fill="#00332b" text-anchor="middle">Y</text>
+
+    <!-- de twee operands komen bovenaan binnen -->
+    <text x="250" y="26" font-size="15" fill="#00332b" text-anchor="middle">Operand</text>
+    <text x="250" y="46" font-size="13" fill="#00332b" text-anchor="middle">(geheel getal)</text>
+    <path d="M 250 60 L 250 106" stroke="#004d40" stroke-width="2" fill="none" marker-end="url(#punt)" />
+
+    <text x="450" y="26" font-size="15" fill="#00332b" text-anchor="middle">Operand</text>
+    <text x="450" y="46" font-size="13" fill="#00332b" text-anchor="middle">(geheel getal)</text>
+    <path d="M 450 60 L 450 106" stroke="#004d40" stroke-width="2" fill="none" marker-end="url(#punt)" />
+
+    <!-- de status en de opcode komen links binnen -->
+    <text x="62" y="160" font-size="15" fill="#00332b" text-anchor="end">Status</text>
+    <path d="M 70 155 L 167 155" stroke="#004d40" stroke-width="2" fill="none" marker-end="url(#punt)" />
+
+    <text x="62" y="215" font-size="15" fill="#00332b" text-anchor="end">Opcode</text>
+    <path d="M 70 210 L 192 210" stroke="#004d40" stroke-width="2" fill="none" marker-end="url(#punt)" />
+
+    <!-- de status gaat rechts buiten -->
+    <path d="M 519 185 L 600 185" stroke="#004d40" stroke-width="2" fill="none" marker-end="url(#punt)" />
+    <text x="608" y="190" font-size="15" fill="#00332b" text-anchor="start">Status</text>
+
+    <!-- het resultaat verlaat de ALU onderaan -->
+    <path d="M 350 264 L 350 310" stroke="#004d40" stroke-width="2" fill="none" marker-end="url(#punt)" />
+    <text x="350" y="336" font-size="15" fill="#00332b" text-anchor="middle">Resultaat</text>
+    <text x="350" y="356" font-size="13" fill="#00332b" text-anchor="middle">(geheel getal)</text>
+</svg>

@@ -3816,10 +3816,35 @@ precies zoals in de Word, ook al zijn die twee in de x86-architectuur even goed
 algemeen bruikbaar. Dat is een indeling van de brontekst en geen tikfout, dus ze is
 niet aangeraakt.
 
-**De drie andere afbeeldingen van dit hoofdstuk blijven wel staan**, en de afweging
-hierboven geldt voor hen onveranderd: de ALU-tekening voert met Integer Operand,
-Opcode en Status net de woorden op die de alinea ernaast zelf invoert, en de twee
-grafieken zijn metingen met een bron.
+**De drie andere afbeeldingen zijn op 9 september 2026 alsnog hertekend, en daarmee
+staat er van dit hoofdstuk geen enkele bronafbeelding meer.** De afweging hierboven is
+niet fout geworden, ze is niet langer beslissend: de beslissing van die dag is dat
+alles wat iemand getekend heeft naar een eigen SVG gaat, en dat de dpi, de taal van de
+labels en een tegenspraak met de tekst wel redenen blijven maar geen voorwaarde meer
+zijn. Wat hierboven staat, is dus te lezen als de afweging van voor die beslissing, net
+zoals bij de registertekening.
+
+**`img/syllabus-12-alu.svg`** vervangt de ALU-tekening, 700 bij 390 op 116,4mm. Het
+origineel was met 342 dpi veruit de scherpste afbeelding van de hele Word, dus de dpi
+was hier het argument niet en is het nog altijd niet; wat overbleef is het Engels. De
+afweging hierboven zegt dat Integer Operand, Opcode en Status net de woorden zijn die
+de alinea ernaast invoert, en dat klopt maar half. **De alinea voert `operand` en
+`opcode` in en verder niets**: ze schrijft "Dit worden ook wel de operands genoemd" en
+"Dit wordt de opcode genoemd", en over Integer Operand, Integer Result en Status zegt
+ze niets. Wat ze wel zegt, is dat een ALU rekent op "binaire gehele getallen" en dat
+een FPU er is voor de kommagetallen, en dat is precies wat het woord Integer in die
+tekening doet. De labels zijn daarom `Operand (geheel getal)` en `Resultaat (geheel
+getal)`, met de woorden van de alinea zelf (patroon 20), en `Opcode` en `Status`
+blijven staan zoals ze zijn: het eerste omdat de tekst het zo schrijft, het tweede
+omdat het in het Nederlands hetzelfde woord is. A, B en Y blijven de letters van het
+origineel, en de inkeping bovenaan blijft, want dat is de vorm waaraan het symbool
+herkend wordt. Palet, lijndikte en pijlpunt zijn die van
+`img/syllabus-12-processorschema.svg`, dat een halve bladzijde hoger op diezelfde
+pagina staat. **Gerenderd met headless Edge voor ze vertrouwd werd.** De verhouding is
+1,79 tegen 1,81 van de PNG, dus de figuur is op dezelfde 116,4mm even hoog als eerst en
+de bladspiegel schuift niet. `syllabus-12-central-processing-unit-cpu-02.png` is
+geschrapt en **een herimport zet ze terug**, waarna regel 1 en 16 falen tot ze opnieuw
+weg is.
 
 **De zes `alt`-teksten zijn met de hand geschreven na het openen van elk bestand**, en
 een nieuwe import gooit ze weg.

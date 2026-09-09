@@ -1498,7 +1498,6 @@ is.
 | 11.7 | `syllabus-11-harde-schijf-18.png` | General Pin Setting, de jumpertabel |
 | 11.8 | `syllabus-11-harde-schijf-19.png` | Serial ATA power cable en data cable |
 | 11.10 | `syllabus-11-harde-schijf-22.png` | HDD tegen SATA tegen NVMe, geleende meting |
-| 12.2 | `syllabus-12-central-processing-unit-cpu-02.png` | het ALU-trapezium |
 | 12.2 | `syllabus-12-central-processing-unit-cpu-04.jpeg` | Processor-Memory Performance Gap, geleende meting |
 | 12.3 | `syllabus-12-central-processing-unit-cpu-06.png` | System Peak Power, tom's hardware, geleende meting |
 
