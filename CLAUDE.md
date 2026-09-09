@@ -1197,10 +1197,43 @@ omrekeningen die de begrippen eronder niet raken. Hoofdstuk 9 en 11 dragen om de
 Test jezelf NAAST hun oefeningen. **Weeg dus de omvang van de oefening tegen die van de theorie, en
 kijk of de oefening toetst wat de theorie invoert.**
 
-**Wat daaruit nog te schrijven staat**, en het is het enige dat na 9 september 2026 nog openligt aan
-de syllabus: hoofdstuk 7, 10, 13, 14 en 15 hebben nog geen Test jezelf, en die van hoofdstuk 16
-telt een enkele vraag uit de Word terwijl elk ander hoofdstuk er vijf tot negen heeft. Vul die aan
-tot dezelfde maat.
+**Elk hoofdstuk heeft nu zijn Test jezelf, op hoofdstuk 2 na.** De laatste zes zijn op 9 september
+2026 geschreven, in een ronde met een coordinator en twee schrijfsessies: hoofdstuk 7 kreeg er tien,
+10 negen, 13 negen, 14 zeven, 15 acht en 16 ging van een naar tien. Aan de syllabus ligt daarmee
+geen schrijfwerk meer open; wat er nog ligt is tekenwerk en het staat hieronder.
+
+**Een hoofdstuk dat nog geen enkele vraag had, kreeg er TWEE secties bij en niet een.** Zonder
+vragen is er ook geen sectie Oplossingen, en `section[data-sectie="test-jezelf"]` en
+`section[data-sectie="oplossingen"]` beginnen allebei op een nieuw blad. Voor hoofdstuk 7, 13, 14 en
+15 kostte dat dus minstens twee bladzijden elk. Reken daarop als je ergens een vragenlijst toevoegt,
+en reken de inhoudstafel mee: elke nieuwe sectie is een rij erbij, en loopt die over naar een extra
+bladzijde voorwerk, dan schuift het HELE document nog een bladzijde op, zoals bij hoofdstuk 13
+gebeurd is.
+
+**Twee zinnen zijn in die ronde aan de brontekst bijgeschreven**, allebei omdat een studievraag iets
+vroeg wat het hoofdstuk nergens zei. HDMI staat nu voluit in kernpunt 6 van hoofdstuk 15,
+symmetrisch met DVI in kernpunt 5 en zonder dat er een bewering bij gekomen is; en 16.1 pint nu vast
+dat je bij een desktopvoeding op het vermogen EN de vormfactor let, waarbij de modulariteit afvalt
+omdat dat comfort is en geen pasvorm. Allebei voorgelegd voor ze doorgevoerd zijn, allebei genoteerd
+in NOTITIES.md, en allebei gooit een herimport ze weg, waarna de vraag die erop steunt zonder
+antwoord in de tekst achterblijft.
+
+**Vijf scheduling-figuren voor hoofdstuk 7 staan nog open, en het is het enige dat nog openligt.**
+Studievraag 8 vraagt "Geef de naam van vier proces scheduling algoritmes en verduidelijk kort aan de
+hand van een schets", en 7.6 tekent er geen enkele: de drie figuren van die sectie gaan over de
+processtatussen en over cooperative tegen preemptive. Beslist op 9 september 2026 door de lector: er
+komt een schema per algoritme (FCFS, SJF, priority, round robin en PMFQ), langs dezelfde molen als
+elke tekening hier, en daarna hoort er een tekenvraag met een `.tekenkader` bij zoals vraag 2 van
+hoofdstuk 5 er een heeft. De Test jezelf van hoofdstuk 7 heeft er niet op gewacht: vraag 8 en 9
+toetsen de vijf algoritmes op hun eigenschappen, wie last heeft van starvation en wat Windows
+gebruikt.
+
+**Twee hoofdstukken met evenveel vragen geven botsende ankers in NOTITIES.md.** Gevonden op 9
+september 2026: het blok van hoofdstuk 14 en dat van hoofdstuk 15 openden allebei met de kop "De
+zeven vragen van Test jezelf" en met dezelfde openingszin, dus een vervanging die op die kop grijpt
+raakt allebei en schrijft er stilzwijgend een om. Snijd het stuk tussen de HOOFDSTUKKOPPEN eruit en
+werk daarbinnen, en zet elke vervanging op een `assert count == 1`, zodat ze afslaat in plaats van
+te raden.
 
 **Een meerkeuzevraag met meer dan een juist antwoord is een beslissing van de lector, niet van jou.**
 Regel 14 en `export-syllabus.py` eisen per vraag precies een `<li class="juist">`, en bij een enkele
