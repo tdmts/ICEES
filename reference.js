@@ -858,6 +858,42 @@ window.LAB_REFERENCE = {
                         href: 'GraphicsProcessingUnitGpu/ResolutieEnFramerate.html'
                     }
                 ]
+            },
+            {
+                name: 'Power Supply Unit (PSU)',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'psu-overzicht',
+                        name: 'Kernpunten en studievragen',
+                        blurb: 'Waar een desktopvoeding en een industriële voeding in verschillen, en waarom je altijd wat marge rekent.',
+                        href: 'PowerSupplyUnitPsu/Overzicht.html'
+                    },
+                    {
+                        id: 'psu-voeding',
+                        name: 'De voeding',
+                        blurb: 'De spanningen die eruit komen, de connectoren die eraan hangen, en hoe je uitrekent hoeveel Watt je nodig hebt.',
+                        href: 'PowerSupplyUnitPsu/DeVoeding.html'
+                    },
+                    {
+                        id: 'psu-ps-on',
+                        name: 'PS_ON',
+                        blurb: 'Waarom een voeding aan het stopcontact nog geen computer doet starten, en welk signaal dat wel doet.',
+                        href: 'PowerSupplyUnitPsu/PsOn.html'
+                    },
+                    {
+                        id: 'psu-pwr-ok',
+                        name: 'PWR_OK',
+                        blurb: 'Het signaal waarmee de voeding meldt dat haar spanningen kloppen, bij het opstarten en tijdens de werking.',
+                        href: 'PowerSupplyUnitPsu/PwrOk.html'
+                    },
+                    {
+                        id: 'psu-test-jezelf',
+                        name: 'Test jezelf',
+                        blurb: 'Een vraag over het verschil tussen een modulaire en een niet modulaire voeding.',
+                        href: 'PowerSupplyUnitPsu/TestJezelf.html'
+                    }
+                ]
             }
         ]
     },

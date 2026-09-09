@@ -5167,3 +5167,141 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
 - **"op het aantal pixels..."** eindigt met drie puntjes in 15.2.
 - **De dubbele spatie** in "zoals TV schermen,  beamers" staat zo in de Word, en de
   spatie voor de komma erin.
+
+## Hoofdstuk 16, Power Supply Unit (PSU)
+
+**Het laatste hoofdstuk van de syllabus.** De H1 staat op body-index 1857 en de `sectPr`
+op 1897, dus het hoofdstuk loopt tot het einde van het document.
+
+**Drie secties plus een sectie Studievragen achteraan, geen enkele Heading 3 of 4.**
+`Overzicht.html` draagt de twee kaders, en daaronder hangen `DeVoeding.html`, `PsOn.html`,
+`PwrOk.html` en `TestJezelf.html`.
+
+**De sectie Studievragen achteraan is `TestJezelf.html` geworden met de kop "Test
+jezelf"**, zoals de regel voorschrijft, want in dit hoofdstuk heet Studievragen twee
+dingen: het kader vooraan met zes vragen, en deze lijst achteraan. Die lijst telt precies
+EEN vraag. Ze is met de hand een `ol class="vragen"` geworden en de pagina laadt
+`oplossingen.js` onder `back-link.js`; zonder dat eerste ziet de export geen vragen en
+drukt ze zwijgend geen Oplossingen.
+
+**De invulruimte telt drie regels en geen een.** De importer schrijft een tabel van een
+rij, en dat is te weinig voor een antwoord dat een verschil moet uitleggen: de student
+schrijft hier twee uitvoeringen en hun gevolg op.
+
+**Acht `r:embed`, min twee kadericoontjes, dus zes figuren, en `img/` kreeg er zes.** De
+import liet dus niets vallen. IMPORT.md meldt voor dit hoofdstuk alleen de twee kaders en
+de lege tabel bij de vraag: geen geraden kopregel, geen zwevende afbeelding.
+
+**Drie van de zes figuren dragen nog `alt="Afbeelding uit de syllabus"`, en dat is met
+opzet.** Het zijn `-03`, `-05` en `-06`, de drie die samen een tekenfamilie worden; de
+tekensessie wisselt daar de `src`, de breedte en de `alt`. De drie andere hebben een met
+de hand geschreven `alt` gekregen na het openen van het bestand. **Ze staan op drie
+VERSCHILLENDE pagina's** (`DeVoeding.html`, `PsOn.html` en `PwrOk.html`), anders dan bij
+hoofdstuk 15, waar allebei de hertekeningen op een pagina stonden.
+
+### 1. Zes correcties, alle zes gemeld voor ze doorgevoerd werden
+
+Geen ervan overleeft een herimport van dit hoofdstuk.
+
+| Waar | Wat de Word zegt | Wat het hier zegt |
+|---|---|---|
+| Kernpunt 1 | "UPS staat voor Uninteruptable Power Supply" | "Uninterruptible Power Supply" |
+| 16.1, de kabels | "kabels die verzameld zijn in groepjes met op het uiteinde een molex connector. Eén van de belangrijkste is degene die op het moederbord wordt aangesloten" | de moederbordstekker is de 24-pins ATX-connector, en de Molex is de vierpolige stekker voor randapparaten |
+| 16.1, het rekenvoorbeeld | "Tel deze twee bij elkaar op en je komt aan een voeding van minstens 600 Watt" | een rekensom op werkelijk verbruik, zie beslissing 3 |
+| 16.3 | "de uitgangsspanningen (12V / 24V, 5V, 3.3V)" | "(12V, 5V, 3.3V)" |
+| Studievraag 6 | "Beschrijf in eigen woorden de basiswerking van een UPS?" | een punt, want het is een imperatief |
+| 16.3, het signaal | "Power Good", "PWR_OK" en "Power_Good" in twee alinea's | "Power Good (PWR_OK)" bij de eerste vermelding en PWR_OK daarna |
+
+Twee kapotte zinnen zijn meteen rechtgetrokken: "gezien je de dan de ingebouwde grafische
+processor" had een dubbel woord, en "Wanneer een totaal vermogen nodig van bijvoorbeeld
+400 Watt dan kan je" miste een werkwoord. Die tweede zin is met het rekenvoorbeeld
+herschreven en bestaat dus niet meer.
+
+### 2. De Molex is de stekker van een randapparaat, niet van het moederbord
+
+Een Molex-connector is de vierpolige stekker waarmee schijven en ventilatoren gevoed
+worden. De 24-pins stekker die op het moederbord gaat, is de ATX-connector, en de Word
+noemt de twee in een adem. **Het hoofdstuk weerlegt zichzelf een bladzijde verder**: de
+legende op de foto van de harde schijf zet "1: SATA power connector" naast "3: 4-pin Molex
+power connector", dus het onderscheid staat er al, alleen niet in de lopende tekst.
+
+### 3. Het rekenvoorbeeld telde de processor dubbel
+
+De Word telt 95 Watt (het verbruik van de processor) op bij 500 Watt (de voeding die de
+kaartfabrikant voor de HELE computer aanraadt) en komt zo aan 600 Watt. Een aanbeveling
+van een kaartfabrikant is geen verbruik van de kaart: ze slaat al op het hele systeem, de
+processor inbegrepen, dus optellen telt dezelfde processor twee keer.
+
+**Twee dingen in het hoofdstuk kiezen partij voor de verbruiksmethode.** Het kader zegt
+zelf "dan ga je zelf moeten rekenen hoeveel vermogen de individuele componenten
+verbruiken", en de alinea erna rekent al zo, met een last van 400 Watt en een voeding van
+750 Watt.
+
+Het rekenvoorbeeld is dus: 95 Watt processor, zo'n 180 Watt voor de GTX 1080, en ongeveer
+100 Watt voor het moederbord, het geheugen, de schijven, de USB-apparaten en de
+ventilatoren. Samen ongeveer 375 Watt op het drukste moment, en op halve belasting een
+voeding van 750 Watt. **Dat landt op precies het getal dat de volgende alinea al noemde**,
+dus de twee alinea's zijn aan elkaar geschreven en het losse voorbeeld van 400 Watt is
+verdwenen. De 180 Watt is de enige nieuwe waarde en staat op dezelfde productpagina als
+de 500 Watt.
+
+De zin die uitlegt waarom je een aanbeveling niet optelt, is bijgeschreven en toetst
+precies wat studievraag 3 vraagt.
+
+### 4. Twee onderwerpen bijgeschreven, want het hoofdstuk vraagt ernaar en antwoordt niet
+
+Precedent is hoofdstuk 1, waar Test jezelf twee vragen stelde waarop de tekst nergens
+antwoordde. **Zulke alinea's staan alleen in de HTML en niet in de Word, dus een herimport
+gooit ze weg.**
+
+- **Modulair tegen niet modulair.** De afsluitende vraag van dit hoofdstuk gaat daarover
+  en het woord modulair komt in de hele Word niet voor. Er staat nu een alinea in 16.1,
+  vlak voor het aankoopverhaal, die de drie uitvoeringen uit elkaar houdt: niet modulair
+  (alle kabels vast), modulair (alleen de bundels die je nodig hebt) en semi modulair (de
+  24-pins ATX-connector en de processorkabel vast, de rest los).
+- **Wat een UPS doet.** Studievraag 5 en 6 vooraan gaan over stroomuitval en over de
+  basiswerking van een UPS, en het woord staat alleen in het kader. Er staan nu twee
+  alinea's achteraan 16.1: dat de batterij het overneemt zonder onderbreking, en dat ze
+  het niet lang volhoudt en dat ook niet hoeft, want ze moet alleen tijd geven voor een
+  gecontroleerde stilstand en een nette shutdown. Dat laatste is precies wat kernpunt 7
+  belooft.
+
+**De plaats is gekozen en niet gevonden**: allebei horen ze in 16.1, want dat is de sectie
+over de voeding zelf, terwijl 16.2 en 16.3 over twee signalen gaan. De UPS-alinea staat
+achteraan het aankoopverhaal, want ze is de industriële voortzetting ervan.
+
+### 5. De figuren
+
+**`-04` blijft op 160.0mm staan, ondanks 92 dpi.** Dat is onder de grens van 98 uit
+hoofdstuk 3, en versmallen werkt hier de verkeerde kant op: het beeld draagt een ingebakken
+legende, dus minder millimeter maakt die tekst kleiner terwijl 92 tegen 98 op papier
+nauwelijks scheelt. Zelfde afweging als de vier figuren van hoofdstuk 11 die op 96 dpi
+zijn blijven staan.
+
+**`-03`, `-05` en `-06` zijn drie keer hetzelfde beeld**, samen 707 kB, en ze verschillen
+alleen in waar de oranje pijl wijst: nergens, naar PS_ON, naar PWR_OK. Ze worden een
+familie met een gedeelde tekening en drie uitvoeringen, zoals de vijf RAID-tekeningen van
+hoofdstuk 11. Wat een familie duur maakt is dat de schaal gedeeld is, dus versmal je er
+een, dan versmal je ze alle drie.
+
+**`-02` en `-04` dragen allebei Engelse aanwijzingen** ("+12V Power Connector", "1: SATA
+power connector"). Dat is een gebrek dat genoteerd wordt en niet opgelost: het zijn foto's,
+en deze repo bewerkt geen beeld. `-02` heeft daarbij een bijschrift dat de tekst niet
+uitlegt, Alternate Power Connector.
+
+### Wat er in de tekst opviel, en niet aangeraakt is
+
+De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
+
+- **Kernpunt 5 eindigt op een puntkomma** waar de zes andere op een punt eindigen.
+- **"molex" met een kleine letter** stond in de Word; het is een merknaam en staat in de
+  herschreven zin nu als Molex, maar dat is onderdeel van die correctie en geen aparte.
+- **"stroom vretende apparaten"** los geschreven in 16.1.
+- **"onder en overvoltage protection"** in 16.3, half Engels en zonder streepje, en het is
+  de enige plaats in het hoofdstuk waar die twee begrippen vallen.
+- **"Wattage" met een hoofdletter** in twee studievragen, en "Watt" overal als eenheid
+  voluit in plaats van W.
+- **"Deze met 24 pinnen is de meest recente en is flexibeler in het gebruik"** zegt niet
+  waarin ze flexibeler is.
+- **De negatieve spanningen van 16.1** worden genoemd en daarna nergens meer gebruikt; de
+  24-pins tekening toont wel de -12V.

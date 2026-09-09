@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De voeding</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>De voeding</h1>
+
+        <p>De specificaties van een doorsnee pc-voeding geven aan dat de voeding niet alleen +3.3V, +5V en +12V levert, maar ook -5V en -12V.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 61.8mm">
+            <img src="../../../../img/syllabus-16-power-supply-unit-psu-01.png" class="img-fluid" alt="Een ATX-voeding, schuin van voren gefotografeerd: een grijze metalen kast met links het rooster van de ventilator, in het midden de stekkeringang met het opschrift INPUT 220VAC 50Hz 7.0A en daaronder de aan-uitschakelaar. Rechtsboven komt de kabelbundel eruit, met daarin onder meer twee witte vierpolige Molex-connectoren.">
+        </figure>
+
+        <p>De negatieve spanningen spelen slechts een heel beperkte rol. Negatieve spanningen werden vroeger gebruikt in oude diskettestations maar vandaag de dag blijft dit beperkt tot de, op het moederbord geïntegreerde, seriële poorten als deze al aanwezig zouden zijn. Bij een industriële computer kan dit wel nog eens het geval zijn, bij een gewone computer niet.</p>
+
+        <p>De voeding wordt gebruikt om het moederbord en alle overige componenten te voorzien van voldoende spanning en stroom. Daarvoor zijn meestal één, twee of zelfs nog meer aansluitingen aanwezig op het moederbord. Extra aansluitingen zijn vaak nodig zodat er meer vermogen kan stromen naar het moederbord en bijgevolg één van de meest stroom vretende apparaten: de processor.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 122.1mm">
+            <img src="../../../../img/syllabus-16-power-supply-unit-psu-02.png" class="img-fluid" alt="Een moederbord recht van boven gefotografeerd, met drie rode pijlen en Engelse bijschriften. De bovenste wijst naar de vierkante aansluiting boven de processorsocket, +12V Power Connector; de middelste naar een aansluiting daar vlakbij, Alternate Power Connector; en de onderste naar de lange rij pinnen onderaan het bord, 24-pin Main Power Connector.">
+        </figure>
+
+        <p>Uit de voeding komen heel wat kabels die verzameld zijn in groepjes, elk met een connector op het uiteinde. Eén van de belangrijkste is degene die op het moederbord wordt aangesloten: de 24-pins ATX-connector. De vierpolige stekker waarmee randapparaten gevoed worden, is een andere en heet een Molex-connector.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 106.7mm">
+            <img src="../../../../img/syllabus-16-power-supply-unit-psu-03.png" class="img-fluid" alt="Afbeelding uit de syllabus">
+        </figure>
+
+        <p>Er zijn twee uitvoeringen van deze connector: één met 20 pinnen en één met 24 pinnen. Deze met 24 pinnen is de meest recente en is flexibeler in het gebruik.</p>
+
+        <p>Ook op SATA harde schijven is plaats voorzien om ze te verbinden met de voeding. Harde schijven met een M.2 aansluiting worden rechtstreeks op het moederbord gemonteerd.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-16-power-supply-unit-psu-04.png" class="img-fluid" alt="Een SATA harde schijf van opzij gefotografeerd, met drie genummerde aanwijzingen en een Engelse legende ernaast. Nummer 1 wijst naar de voedingsaansluiting op de schijf, de SATA power connector; nummer 2 naar de rode datakabel, de SATA interface cable; en nummer 3 naar de witte vierpolige stekker met zijn gele, zwarte en rode draden, de 4-pin Molex power connector.">
+        </figure>
+
+        <p>Voedingen verschillen ook in hoe die kabels vastzitten. Bij een niet modulaire voeding komen alle kabels vast uit de behuizing, ook de bundels die je in deze computer niet gebruikt: die blijven ergens in de kast liggen en zitten de luchtstroom in de weg. Bij een modulaire voeding zitten de aansluitingen op de voeding zelf en steek je alleen de bundels in die je nodig hebt. Daartussen bestaat de semi modulaire voeding, waarbij de 24-pins ATX-connector en de kabel naar de processor vast zitten en de rest los is. Modulair bouwt netter en kost meestal wat meer.</p>
+
+        <p>Wie een voeding wil aankopen moet rekening houden met het gewenste vermogen. Het vermogen is uiteraard afhankelijk van de componenten die je in een computer gaat plaatsen. De grootste verbruikers zijn de processor en de grafische kaart.</p>
+
+        <p>Een Intel Core i7 8700K Coffee Lake verbruikt bijvoorbeeld maximaal 95 Watt terwijl een Intel Core i3 8100 Coffee Lake slechts maximaal 65 Watt verbruikt. Deze gegevens kan je terugvinden in de datasheet van de processor maar ze staan ook veelal vermeld in de productspecificaties wanneer je online zou bestellen.</p>
+
+        <p>Een bescheiden MSI GeForce GT710 2GB heeft een voeding nodig die minstens 300 Watt kan leveren terwijl een Asus GeForce Strix GTX 1080 A8G Gaming een voeding nodig heeft van minstens 500 Watt. Gebruik je geen externe grafische kaart dan hoef je hier uiteraard geen rekening mee te houden gezien je dan de ingebouwde grafische processor zou gebruiken van de CPU.</p>
+
+        <p>Die 500 Watt is wel een aanbeveling voor de HELE computer en niet voor de kaart alleen, dus je mag ze niet optellen bij het verbruik van de processor. Reken daarom met wat de onderdelen zelf verbruiken: 95 Watt voor deze processor en zo'n 180 Watt voor de GTX 1080.</p>
+
+        <p>Ook het moederbord, het geheugen, de harde schijven, de USB apparaten en de ventilatoren nemen een bepaald vermogen op. Reken hiervoor op zo&#x27;n 100 Watt. Samen kom je zo op ongeveer 375 Watt op het drukste moment. Daarnaast halen de meeste voedingen hun beste rendement wanneer je hen maar voor de helft belast, dus indien het budget het toelaat kies je ruimer: voor deze machine is dat een voeding van 750 Watt.</p>
+
+        <p>In de industrie stopt het daar niet. Valt de netspanning weg, dan valt een gewone computer meteen uit, en een machine die halverwege een beweging stilvalt kan schade maken. Daarom hangt er vaak een UPS tussen, een Uninterruptible Power Supply. Dat is een voeding met een batterij erin: zolang het net er is, voedt ze de computer en houdt ze die batterij vol, en valt het net weg, dan neemt de batterij het over zonder dat de computer er iets van merkt.</p>
+
+        <p>Zo&#x27;n batterij houdt het niet lang vol, en dat hoeft ook niet. Ze moet de computer genoeg tijd geven om de machine gecontroleerd stil te leggen en zichzelf daarna netjes af te sluiten. Een UPS meldt de stroomuitval daarom aan de computer, zodat die de shutdown zelf kan starten.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>

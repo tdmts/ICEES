@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWR_OK</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>PWR_OK</h1>
+
+        <p>Als we de voeding net aangezet hebben dan zijn de uitgangsspanningen (12V, 5V, 3.3V) nog niet onmiddellijk beschikbaar op de uitgangen van de 24 pin connector. De spanningsniveaus verhogen gradueel tot ze hun juiste waardes aangenomen hebben. Dit duurt niet lang, zo&#x27;n 20 ms maar we willen natuurlijk niet dat onze machine onvoldoende vermogen heeft want dit zou schade kunnen veroorzaken of het opstartproces verhinderen.</p>
+
+        <p>Om dit te voorkomen heeft de voeding een Power Good (PWR_OK) signaal dat het moederbord laat weten dat de voltages die aangeleverd worden correct zijn en kunnen gebruikt worden om continu voldoende vermogen te leveren.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 105.2mm">
+            <img src="../../../../img/syllabus-16-power-supply-unit-psu-06.png" class="img-fluid" alt="Afbeelding uit de syllabus">
+        </figure>
+
+        <p>Niet enkel maar tijdens het opstarten heeft dit PWR_OK signaal zijn nut. Ook tijdens de werking van de computer is het belangrijk dat de voeding voldoende vermogen kan blijven leveren en de spanning niet teveel zakt of stijgt. We noemen dit ook wel under en overvoltage protection.</p>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+</body>
+
+</html>
