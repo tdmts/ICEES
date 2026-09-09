@@ -1443,6 +1443,75 @@ drukken scherper. Hoofdstuk 9 heeft dat op vier foto's gedaan, van 81, 66, 62 en
 ongeveer 98. **Open het bestand dus voor je beslist wat de ingreep is**: alle vier zagen ze er in de
 lijst uit als schema's en het waren alle vier close-ups van een moederbord.
 
+### Elke tekening wordt hertekend, beslist 9 september 2026
+
+**Alles wat iemand getekend heeft, gaat naar een eigen SVG.** Dat is een beslissing van de lector en
+ze vervangt de afweging per figuur die hierboven staat: de dpi, de taal van de labels en een
+tegenspraak met de tekst waren tot dan de redenen om te hertekenen, en die blijven waar, maar ze zijn
+geen voorwaarde meer. Een tekening die er alleen maar uitziet alsof ze uit een ander document komt,
+is reden genoeg. **De regels waaronder het gebeurt veranderen niet**: geen enkel gegeven van het
+origineel valt weg, de figuur wordt met headless Edge gerenderd voor je ze vertrouwt, het palet van
+OrionCSS geldt tenzij de lopende tekst een kleur bij naam noemt, en de bladspiegel wordt na de export
+nagerekend.
+
+**De grens loopt in drieen en niet in tweeen.** Een foto blijft, en een SCHERMAFDRUK VAN EEN ECHT
+VENSTER blijft ook, want die natekenen levert een venster op dat lijkt op wat de student ziet zonder
+het te zijn, en dan gaat hij het verschil zoeken. Dat is Schijfbeheer, het BIOS-scherm, de
+rechtenvensters van Windows, de webwinkelbladzijden en de speedtest. Wat wel gaat: tekeningen,
+schema's, grafieken en een tabel die alleen als afbeelding bestaat. Een geannoteerde foto blijft een
+foto, ook als de aanwijzingen erop Engels zijn; dat is een gebrek dat je noteert en niet oplost door
+de foto na te tekenen.
+
+**Een geleende meting wordt hertekend met haar bron in woorden.** Ook beslist op 9 september 2026, en
+het is een uitzondering op de toets van hoofdstuk 9 dat een watermerk met een leesbare naam mag
+blijven. De getallen blijven wat ze zijn en worden nooit bijgewerkt; wat verandert is de taal van de
+assen en het palet, en onder de figuur komt te staan van wie de meting is. Een AFGEDRUKTE BLADZIJDE
+valt daar niet onder en blijft beeld: de datasheets van Beckhoff, het artikel van TechPulse en de
+ASCII-tabel van 10.3, die om haar omvang al buiten deze regel viel.
+
+**De worklijst, en ze wordt afgewerkt in stappen van twee per sessie.** Dat tempo is bewust: twee
+tekeningen per sessie is wat er in een context past zonder dat de kwaliteit zakt. Streep af wat af
+is.
+
+| Hoofdstuk | Bestand | Wat het is |
+|---|---|---|
+| 9.4 | `syllabus-09-moederbord-15.png` | vergelijkingstabel van drie panel-pc's, alleen als beeld |
+| 11.1 | `syllabus-11-harde-schijf-01.png` | de opengewerkte schijf met dertien genummerde onderdelen |
+| 11.2 | `syllabus-11-harde-schijf-03.png` | cylinder head sector, How Stuff Works |
+| 11.4 | `syllabus-11-track.png`, `-disk-sector.png`, `-track-sector.png` | de drie schijfjes bij vraag 5, samen een familie |
+| 11.5 | `syllabus-11-harde-schijf-08.png` | page, block, plane en chip, Hardware.Info |
+| 11.7 | `syllabus-11-harde-schijf-16.png` | de PATA-kabel met master, slave en controller |
+| 11.7 | `syllabus-11-harde-schijf-18.png` | General Pin Setting, de jumpertabel |
+| 11.8 | `syllabus-11-harde-schijf-19.png` | Serial ATA power cable en data cable |
+| 11.10 | `syllabus-11-harde-schijf-22.png` | HDD tegen SATA tegen NVMe, geleende meting |
+| 11.13 | `syllabus-11-harde-schijf-31.png` tot `-35.png` | RAID 0, 1, 5, 6 en 10, uit drie bronnen in drie stijlen |
+| 12.2 | `syllabus-12-central-processing-unit-cpu-02.png` | het ALU-trapezium |
+| 12.2 | `syllabus-12-central-processing-unit-cpu-04.jpeg` | Processor-Memory Performance Gap, geleende meting |
+| 12.3 | `syllabus-12-central-processing-unit-cpu-06.png` | System Peak Power, tom's hardware, geleende meting |
+
+**De vijf RAID-tekeningen zijn een familie en horen in een keer af**, of anders vlak na elkaar: ze
+staan nu in drie stijlen uit drie bronnen, en precies daar moet de student ze naast elkaar kunnen
+leggen. Zolang de helft over is, staat die sectie in twee stijlen door elkaar en is ze slechter af
+dan voordien.
+
+**`syllabus-11-harde-schijf-01.png` is het zwaarste stuk van de lijst en staat er met een
+waarschuwing bij.** Het is geen schema maar een gedetailleerde doorsnedetekening met dertien
+genummerde onderdelen, en NOTITIES.md had bij hoofdstuk 11 genoteerd dat je dat niet natekent. Onder
+deze beslissing gaat ze wel mee, maar ze is geen tekening van een uur en het risico is dat de
+hertekening minder toont dan het origineel. Neem ze niet samen met een tweede.
+
+**Hoofdstuk 13, Random Access Memory, is op 9 september 2026 in een parallelle sessie ingevoerd**,
+en die sessie heeft er meteen drie van zijn eigen gevallen afgewerkt: het blokschema van SDR SDRAM
+werd `img/syllabus-13-sdr-sdram.svg`, de geheugenkanalen `img/syllabus-13-geheugenkanalen.svg`, en de
+twee Hamming-tabellen van 13.10 werden overgetypte HTML-tabellen. **Vijf staan er nog open**, en ze
+horen bij de lijst hierboven zodra het hoofdstuk gecommit is: `-01` (het adresrooster), `-04` (de
+emmertjes met bits), `-05` (de RAS/CAS-matrix), `-08` (SDR tegen DDR) en `-11` (het DDR3-blokschema).
+
+**Twee gevallen zijn afgewogen en blijven staan, en dat is geen vergetelheid.** De illustratie van de
+kat van Schrodinger in 1.6 is een prent en geen schema: hertekenen maakt er iets anders van. En de
+callouts op de CX9020-foto van 4.2 staan in het Engels, maar het is een foto, dus de enige uitweg zou
+bewerken van het beeld zijn en dat doet deze repo niet.
+
 **De dpi-grens zegt wanneer je moet hertekenen, niet wanneer het mag.** Een gescande tekening in
 grijstinten mag ook boven die grens hertekend worden, en hoofdstuk 10 is het eerste dat het doet:
 image86 van 10.1 droeg geen watermerk, stond in het Nederlands en drukte op 152 dpi, en NOTITIES.md

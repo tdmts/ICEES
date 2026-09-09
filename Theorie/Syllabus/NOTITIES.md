@@ -3286,6 +3286,40 @@ Hun alinea blijft lopende tekst en ze dragen geen bijschrift uit de Word.
   4 KiB zegt. Dezelfde 4 KiB staat er nu vier keer, genummerd, op vier verschillende
   pages, met de reden eronder.
 
+**Een vierde is op 9 september 2026 hertekend, en bij die is de dpi juist geen
+argument.** `img/syllabus-11-cilinder-en-koppen.svg` vervangt
+`syllabus-11-harde-schijf-02.png`, de platterstapel van 11.1, 422 bij 334 pixels op
+76,6mm en dus 140 dpi, ruim boven de grens. Twee andere redenen gaven de doorslag.
+Alle labels stonden in het Engels (Sector, Platter 1 tot 4, Track X, Cylinder X) in
+een Nederlandse tekst. En de tekening toonde **geen enkele arm**, terwijl de drie
+alinea's eronder zeggen dat elke kant zijn eigen arm en kop heeft, dat alle armen
+met elkaar verbonden zijn zodat ze samen bewegen, en dat de tracks die bij een
+bepaalde armstand horen samen de cilinder vormen. Dat is de toets die hoofdstuk 6
+vastlegde: een figuur toont wat de alinea ernaast beweert, en die alinea's hadden
+hier niets om naar te wijzen.
+
+De hertekening is daarom twee figuren naast elkaar. **Links** dezelfde stapel als het
+origineel, schuin van boven: vier platters op een as, per platter dezelfde track als
+track X, een stuk van die track op de bovenste platter ingekleurd als sector, en de
+vier tracks samen als een wand door de stapel, cilinder X. Geen enkel gegeven van het
+origineel valt weg. **Rechts** dezelfde stapel van opzij, met een blok naast de
+stapel waar acht armen aan vastzitten, twee per platter, elk met een kop die net
+boven of net onder een oppervlak hangt, en alle acht op dezelfde afstand van de as.
+De twee panelen liggen op dezelfde hoogtes, zodat de vier platters links en rechts
+op een lijn staan.
+
+**Acht is niet gekozen maar gerekend**: vier platters, en de tekst zegt zelf dat 6 tot
+12 platters 12 tot 24 opnamevlakken geven, dus elke kant telt mee. **De acht armen
+staan in geen enkele afbeelding van de Word**; de lector heeft het bijtekenen op 9
+september 2026 goedgekeurd, en een herimport gooit de hele figuur weg. De rode regel
+onder de rechterfiguur ("Omdat alle armen aan hetzelfde blok vastzitten, staan de
+acht koppen altijd op dezelfde track") is de zin die de cilinder verklaart, in de
+kleur die hoofdstuk 6 voor zo'n gevolg gebruikt.
+
+De figuur gaat van 76,6mm naar **150,0mm**, want ze draagt nu twee panelen. Nagekeken
+na de export: de syllabus telt nog altijd 153 bladzijden, de inhoudstafel is rij voor
+rij gelijk aan die van de vorige PDF, en geen enkele bladzijde is gekrompen.
+
 **Een is versmald.** De doorsnedetekening van 11.1 is 559 bij 397 pixels op 159,6mm,
 oftewel 89 dpi, en gaat naar **145,0mm** voor ongeveer 98 dpi. Ze is niet hertekend:
 het is een gedetailleerde scan met dertien genummerde onderdelen die al in het
@@ -3669,6 +3703,39 @@ EAX tot EBP en AH tot DL registernamen die geen vertaling hebben, en de performa
 gap-grafiek is een **meting** met een bronvermelding eronder, en een meting hertekenen
 betekent haar getallen overschrijven. **De staafgrafiek draagt het logo van tom's
 hardware**, een leesbare naam, en mag dus blijven volgens de toets van hoofdstuk 9.
+
+**De registertekening is op 9 september 2026 alsnog hertekend, en dat draait de
+beslissing hierboven terug.** `img/syllabus-12-registers.svg` vervangt
+`syllabus-12-central-processing-unit-cpu-03.png`. De afweging hierboven keek naar de
+registernamen, en die klopt: EAX tot EBP en AH tot DL zijn namen en geen woorden, dus
+daar valt niets aan te vertalen. Wat over het hoofd gezien was, is dat de rest van
+het beeld wel gewone tekst draagt: **General-purpose Registers** langs de accolade, en
+**16 bits**, **8 bits** en **32 bits** bij de maatpijlen. Dat is vijf keer Engels in
+een Nederlandse tekst, en het zijn net de vier woorden waar de alinea eronder over
+gaat, want die legt uit dat de breedte van een register uit het type processor volgt.
+De accolade heet nu "Registers voor algemeen gebruik"; stack pointer en base pointer
+blijven staan, want dat zijn de rollen van ESP en EBP en de tekst voert er geen
+Nederlands woord voor in (patroon 20).
+
+**En de plaats van AX was misleidend.** In het origineel staat AX rechts uitgelijnd in
+de brede gele cel, dus tegen AH aan maar er nog buiten, terwijl de pijl "16 bits"
+erboven wel precies AH plus AL overspant. Een lezer kan daaruit opmaken dat AX de
+bovenste 16 bits van EAX zijn, en dat is fout. De hertekening zet daarom elke rij als
+twee balken onder elkaar: de bovenste balk is EAX over de volle 32 bits, met zijn
+onderste 16 bits licht getint, en de balk eronder is AX, precies zo breed als dat
+getinte stuk en met AH en AL erin. De twee zijn met een streepje aan elkaar vast
+getekend. Geen enkel gegeven van het origineel valt weg en er komt niets bij; alleen
+de plaatsing is eenduidig gemaakt.
+
+Wat verder gelijk blijft: de accolade dekt EAX tot en met EDI en niet ESP en EBP,
+precies zoals in de Word, ook al zijn die twee in de x86-architectuur even goed
+algemeen bruikbaar. Dat is een indeling van de brontekst en geen tikfout, dus ze is
+niet aangeraakt.
+
+**De drie andere afbeeldingen van dit hoofdstuk blijven wel staan**, en de afweging
+hierboven geldt voor hen onveranderd: de ALU-tekening voert met Integer Operand,
+Opcode en Status net de woorden op die de alinea ernaast zelf invoert, en de twee
+grafieken zijn metingen met een bron.
 
 **De zes `alt`-teksten zijn met de hand geschreven na het openen van elk bestand**, en
 een nieuwe import gooit ze weg.

@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 510" width="740" height="510"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">De acht registers van een 32 bit processor. EAX, EBX, ECX en EDX zijn elk 32 bits breed en de
+        onderste 16 bits ervan dragen een eigen naam, AX tot DX, die op hun beurt uit twee bytes van 8 bits bestaan.
+        ESI, EDI, ESP en EBP zijn alleen als geheel aan te spreken.</title>
+    <rect width="740" height="510" fill="#ffffff" />
+
+    <defs>
+        <marker id="pijl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#004d40" />
+        </marker>
+        <marker id="pijl-terug" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
+            orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#004d40" />
+        </marker>
+    </defs>
+
+    <!-- bovenaan: hoe breed de twee genoemde stukken van EAX zijn -->
+    <text x="575" y="30" font-size="13" fill="#222222" text-anchor="middle">16 bits</text>
+    <path d="M 442 44 L 708 44" stroke="#004d40" stroke-width="1.4" fill="none" marker-start="url(#pijl-terug)"
+        marker-end="url(#pijl)" />
+    <text x="507.5" y="68" font-size="13" fill="#222222" text-anchor="middle">8 bits</text>
+    <text x="642.5" y="68" font-size="13" fill="#222222" text-anchor="middle">8 bits</text>
+
+    <!-- de twee grenzen doorgetrokken, zodat de maten hierboven bij de juiste kolommen horen -->
+    <g stroke="#004d40" stroke-width="0.9" stroke-dasharray="3 3" stroke-opacity="0.3">
+        <line x1="440" y1="52" x2="440" y2="324" />
+        <line x1="575" y1="52" x2="575" y2="324" />
+    </g>
+
+    <!-- de accolade: deze zes registers zijn voor algemeen gebruik -->
+    <path d="M 56 82 q -10 0 -10 10 L 46 226 q 0 10 -10 10 q 10 0 10 10 L 46 380 q 0 10 10 10" fill="none"
+        stroke="#555555" stroke-width="1.2" />
+    <text x="26" y="236" font-size="13" fill="#222222" text-anchor="middle"
+        transform="rotate(-90 26 236)">Registers voor algemeen gebruik</text>
+
+    <!-- EAX, EBX, ECX en EDX: 32 bits, met de onderste 16 bits apart benoemd -->
+    <g stroke-width="1">
+        <rect x="170" y="82" width="540" height="26" fill="#e0e7e5" stroke="#9bb0ac" />
+        <rect x="440" y="82" width="270" height="26" fill="#b2dfdb" fill-opacity="0.5" stroke="none" />
+        <line x1="440" y1="82" x2="440" y2="108" stroke="#004d40" stroke-opacity="0.5" />
+        <line x1="440" y1="108" x2="440" y2="112" stroke="#004d40" />
+        <line x1="710" y1="108" x2="710" y2="112" stroke="#004d40" />
+        <rect x="440" y="112" width="270" height="26" fill="#b2dfdb" stroke="#004d40" />
+        <line x1="575" y1="112" x2="575" y2="138" stroke="#004d40" />
+
+        <rect x="170" y="144" width="540" height="26" fill="#e0e7e5" stroke="#9bb0ac" />
+        <rect x="440" y="144" width="270" height="26" fill="#b2dfdb" fill-opacity="0.5" stroke="none" />
+        <line x1="440" y1="144" x2="440" y2="170" stroke="#004d40" stroke-opacity="0.5" />
+        <line x1="440" y1="170" x2="440" y2="174" stroke="#004d40" />
+        <line x1="710" y1="170" x2="710" y2="174" stroke="#004d40" />
+        <rect x="440" y="174" width="270" height="26" fill="#b2dfdb" stroke="#004d40" />
+        <line x1="575" y1="174" x2="575" y2="200" stroke="#004d40" />
+
+        <rect x="170" y="206" width="540" height="26" fill="#e0e7e5" stroke="#9bb0ac" />
+        <rect x="440" y="206" width="270" height="26" fill="#b2dfdb" fill-opacity="0.5" stroke="none" />
+        <line x1="440" y1="206" x2="440" y2="232" stroke="#004d40" stroke-opacity="0.5" />
+        <line x1="440" y1="232" x2="440" y2="236" stroke="#004d40" />
+        <line x1="710" y1="232" x2="710" y2="236" stroke="#004d40" />
+        <rect x="440" y="236" width="270" height="26" fill="#b2dfdb" stroke="#004d40" />
+        <line x1="575" y1="236" x2="575" y2="262" stroke="#004d40" />
+
+        <rect x="170" y="268" width="540" height="26" fill="#e0e7e5" stroke="#9bb0ac" />
+        <rect x="440" y="268" width="270" height="26" fill="#b2dfdb" fill-opacity="0.5" stroke="none" />
+        <line x1="440" y1="268" x2="440" y2="294" stroke="#004d40" stroke-opacity="0.5" />
+        <line x1="440" y1="294" x2="440" y2="298" stroke="#004d40" />
+        <line x1="710" y1="294" x2="710" y2="298" stroke="#004d40" />
+        <rect x="440" y="298" width="270" height="26" fill="#b2dfdb" stroke="#004d40" />
+        <line x1="575" y1="298" x2="575" y2="324" stroke="#004d40" />
+
+        <!-- ESI, EDI, ESP en EBP: alleen als geheel aan te spreken -->
+        <rect x="170" y="332" width="540" height="26" fill="#e0e7e5" stroke="#9bb0ac" />
+        <rect x="170" y="364" width="540" height="26" fill="#e0e7e5" stroke="#9bb0ac" />
+        <rect x="170" y="396" width="540" height="26" fill="#e0e7e5" stroke="#9bb0ac" />
+        <rect x="170" y="428" width="540" height="26" fill="#e0e7e5" stroke="#9bb0ac" />
+    </g>
+
+    <!-- de namen van de registers van 32 bits -->
+    <g font-size="14" fill="#222222" text-anchor="end" font-weight="600">
+        <text x="160" y="100">EAX</text>
+        <text x="160" y="162">EBX</text>
+        <text x="160" y="224">ECX</text>
+        <text x="160" y="286">EDX</text>
+        <text x="160" y="350">ESI</text>
+        <text x="160" y="382">EDI</text>
+        <text x="160" y="414">ESP</text>
+        <text x="160" y="446">EBP</text>
+    </g>
+
+    <!-- de namen van de stukken van 16 bits -->
+    <g font-size="14" fill="#00332b" text-anchor="end" font-weight="600">
+        <text x="430" y="130">AX</text>
+        <text x="430" y="192">BX</text>
+        <text x="430" y="254">CX</text>
+        <text x="430" y="316">DX</text>
+    </g>
+
+    <!-- de namen van de bytes -->
+    <g font-size="13" fill="#00332b" text-anchor="middle">
+        <text x="507.5" y="130">AH</text>
+        <text x="642.5" y="130">AL</text>
+        <text x="507.5" y="192">BH</text>
+        <text x="642.5" y="192">BL</text>
+        <text x="507.5" y="254">CH</text>
+        <text x="642.5" y="254">CL</text>
+        <text x="507.5" y="316">DH</text>
+        <text x="642.5" y="316">DL</text>
+    </g>
+
+    <text x="440" y="414" font-size="12.5" fill="#555555" text-anchor="middle">stack pointer</text>
+    <text x="440" y="446" font-size="12.5" fill="#555555" text-anchor="middle">base pointer</text>
+
+    <!-- onderaan: de breedte van een register op een 32 bit processor -->
+    <path d="M 172 478 L 708 478" stroke="#004d40" stroke-width="1.4" fill="none" marker-start="url(#pijl-terug)"
+        marker-end="url(#pijl)" />
+    <text x="440" y="500" font-size="13" fill="#222222" text-anchor="middle">32 bits</text>
+</svg>
