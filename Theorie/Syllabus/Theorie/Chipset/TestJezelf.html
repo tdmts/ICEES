@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test jezelf</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Test jezelf</h1>
+
+        <ol class="vragen">
+            <li>Waaruit bestond de chipset op een moederbord van voor 2011?
+                <ul>
+                    <li class="juist">Uit een northbridge en een southbridge</li>
+                    <li>Uit de processor en de northbridge</li>
+                    <li>Uit de Front Side Bus en de northbridge</li>
+                    <li>Uit een enkele chip, de Platform Controller Hub</li>
+                </ul>
+            </li>
+            <li>Met welke apparaten stond de northbridge in direct contact?
+                <ul>
+                    <li>De BIOS en de PCI sloten</li>
+                    <li>De USB poorten en de harde schijven</li>
+                    <li class="juist">Het werkgeheugen en de grafische kaart</li>
+                    <li>Het toetsenbord, de muis en het diskettestation</li>
+                </ul>
+            </li>
+            <li>Waar zitten de taken van de northbridge in een moderne computer?
+                <ul>
+                    <li class="juist">In de processor zelf: de geheugencontroller en de aansluitingen voor
+                        PCI Express</li>
+                    <li>In de Platform Controller Hub, samen met de taken van de southbridge</li>
+                    <li>In de Accelerated Processing Unit, een aparte chip naast de processor</li>
+                    <li>Nergens meer: ze zijn zonder vervanging verdwenen</li>
+                </ul>
+            </li>
+            <li>Wat is een Accelerated Processing Unit?
+                <ul>
+                    <li>De chip die de taken van de northbridge overgenomen heeft</li>
+                    <li>De opvolger van de southbridge op een modern moederbord</li>
+                    <li class="juist">De naam die AMD geeft aan een processor die naast zijn gewone kernen ook
+                        een grafische kern aan boord heeft</li>
+                    <li>Een externe grafische kaart die in een PCI Express slot gestoken wordt</li>
+                </ul>
+            </li>
+            <li>Wat verbond de Front Side Bus met elkaar?
+                <ul>
+                    <li class="juist">De processor en de northbridge</li>
+                    <li>De northbridge en de southbridge</li>
+                    <li>De processor en het werkgeheugen, rechtstreeks</li>
+                    <li>De southbridge en de PCI sloten</li>
+                </ul>
+            </li>
+            <li>Waarom wordt de snelheid van de latere Front Side Bus uitgedrukt in megatransfers per seconde
+                en niet in MHz?
+                <ul>
+                    <li>Omdat de bus 64 bit breed werd in plaats van 32 bit</li>
+                    <li class="juist">Omdat er vier overdrachten per klokpuls gebeurden, zodat het aantal
+                        overdrachten niet meer hetzelfde getal is als de klokfrequentie</li>
+                    <li>Omdat de bus niet langer gesynchroniseerd was met het werkgeheugen</li>
+                    <li>Omdat de getallen in MHz te groot werden om leesbaar te blijven</li>
+                </ul>
+            </li>
+            <li>Wat is het nut van een Platform Controller Hub?
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered invulruimte">
+                        <tbody>
+                            <tr><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="oplossing">Alle tragere aansluitingen komen samen op een enkele chip: USB, SATA,
+                    het netwerk, de PCI Express sloten voor uitbreidingskaarten en de chip met de firmware.
+                    Die ene chip hangt met een eigen verbinding aan de processor, zodat het werkgeheugen en de
+                    grafische kaart geen bus meer delen met de trage apparaten. Welke PCH een bordbouwer kiest,
+                    bepaalt daarmee grotendeels wat een moederbord te bieden heeft.</div>
+            </li>
+        </ol>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+    <script src="../../../../oplossingen.js"></script>
+</body>
+
+</html>

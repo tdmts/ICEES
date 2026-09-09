@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test jezelf</title>
+    <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
+    <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Test jezelf</h1>
+
+        <ol class="vragen">
+            <li>Waaruit bestaat een geheugencel in dynamic RAM?
+                <ul>
+                    <li class="juist">Uit een transistor en een condensator, samen goed voor 1 bit</li>
+                    <li>Uit een transistor en een weerstand, samen goed voor 1 bit</li>
+                    <li>Uit twee transistors, samen goed voor 1 bit</li>
+                    <li>Uit acht condensatoren, samen goed voor 1 byte</li>
+                </ul>
+            </li>
+            <li>Waarom moet een cel in dynamic RAM periodiek ververst worden, ook als er niets mee gebeurt?
+                <ul>
+                    <li>Omdat de klok van het geheugen anders uit de pas loopt met die van de bus</li>
+                    <li class="juist">Omdat de condensator na verloop van tijd zijn lading verliest, zodat de
+                        bit weglekt</li>
+                    <li>Omdat elektromagnetische interferentie anders bits omdraait</li>
+                    <li>Omdat de prefetch buffer anders volloopt met oude data</li>
+                </ul>
+            </li>
+            <li>Hoeveel werkgeheugen kan een computer aanspreken waarvan een adres 32 bits telt?
+                <ul>
+                    <li>4 MiB</li>
+                    <li class="juist">4 GiB</li>
+                    <li>32 GiB</li>
+                    <li>16 EiB</li>
+                </ul>
+            </li>
+            <li>Wat is het verschil tussen Single Data Rate en Double Data Rate SDRAM?
+                <ul>
+                    <li>DDR laat de kloksnelheid van het geheugen verdubbelen</li>
+                    <li>DDR gebruikt twee bussen naast elkaar naar de processor</li>
+                    <li class="juist">DDR verstuurt bits op de opgaande en op de neergaande flank, dus twee
+                        overdrachten per klokperiode bij dezelfde kloksnelheid</li>
+                    <li>DDR draagt twee keer zoveel geheugenchips op de module</li>
+                </ul>
+            </li>
+            <li>Hoe diep is de prefetch buffer bij DDR3 en bij DDR4?
+                <ul>
+                    <li>2 bij DDR3 en 4 bij DDR4</li>
+                    <li>4 bij DDR3 en 8 bij DDR4</li>
+                    <li class="juist">8 bij allebei</li>
+                    <li>8 bij DDR3 en 16 bij DDR4</li>
+                </ul>
+            </li>
+            <li>Wanneer levert een prefetch buffer niets op?
+                <ul>
+                    <li class="juist">Wanneer de aanliggende geheugenblokken niet opgevraagd worden,
+                        bijvoorbeeld door fragmentering in het RAM geheugen</li>
+                    <li>Wanneer het werkgeheugen bijna helemaal vol staat</li>
+                    <li>Wanneer er maar een module in het moederbord steekt</li>
+                    <li>Wanneer er op de neergaande flank gelezen wordt</li>
+                </ul>
+            </li>
+            <li>Welk type werkgeheugen overweeg je voor een industriële computer die in een omgeving met veel
+                elektromagnetische interferentie staat?
+                <ul>
+                    <li>Geheugen met een pariteitsbit, want dat detecteert een bitfout en corrigeert ze</li>
+                    <li class="juist">ECC RAM, want dat voegt redundante bits toe aan een woord waarmee een
+                        bitfout gedetecteerd en gecorrigeerd wordt</li>
+                    <li>DDR5, want een hogere transfersnelheid laat minder tijd voor fouten</li>
+                    <li>Een SO-DIMM, want die is kleiner en vangt dus minder interferentie op</li>
+                </ul>
+            </li>
+            <li>Je hebt twee DIMM modules en een moederbord dat dual channel ondersteunt. In welke sloten steek
+                je ze?
+                <ul>
+                    <li class="juist">Elk in een slot van een verschillend channel, want dan kan er parallel
+                        gelezen en geschreven worden</li>
+                    <li>Allebei in een slot van hetzelfde channel, want dan werken ze samen als een verbinding
+                        die twee keer zo breed is</li>
+                    <li>In om het even welk slot, want de geheugencontroller verdeelt het verkeer zelf</li>
+                    <li>In om het even welk slot, want channels bestaan alleen op een moederbord met quad
+                        channel</li>
+                </ul>
+            </li>
+            <li>Welke drie dingen probeert men bij iedere nieuwe generatie werkgeheugen te verbeteren?
+                <div class="table-responsive table-spacer">
+                    <table class="table table-bordered invulruimte">
+                        <tbody>
+                            <tr><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="oplossing">Een hogere transfersnelheid, een hogere bitdensiteit (meer bits op
+                    dezelfde oppervlakte) en een lager energieverbruik.</div>
+            </li>
+        </ol>
+    </div>
+
+    <script src="../../../../reference.js"></script>
+    <script src="../../../../back-link.js"></script>
+    <script src="../../../../oplossingen.js"></script>
+</body>
+
+</html>

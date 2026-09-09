@@ -4654,6 +4654,48 @@ bits 16 EiB; DDR4 loopt op 1066 tot 1600 MHz ofwel 2133 tot 3200 MT/s; en dual c
 vraagt een module per channel. Die vijf zijn hier bijgeschreven of rechtgezet en staan
 zo niet in de Word.
 
+### De negen vragen van Test jezelf
+
+**Alle negen zijn bijgeschreven**, want dit hoofdstuk heeft in de Word geen sectie
+Studievragen achteraan. Dat is de beslissing van 9 september 2026 dat elk hoofdstuk op
+hoofdstuk 2 na met een Test jezelf afsluit. **Acht meerkeuze, alle acht nageteld op
+precies een juist antwoord**, en een open vraag met een `<div class="oplossing">`.
+
+| Vraag | Antwoord | Waarop het steunt |
+|---|---|---|
+| 1 Waaruit een DRAM-cel bestaat | a, een transistor en een condensator | 13.2, eerste zin; kernpunt 2 zegt hetzelfde |
+| 2 Waarom een cel ververst wordt | b, de condensator verliest zijn lading | 13.2 met de emmerfiguur; kernpunt 3 |
+| 3 Adressen van 32 bits | b, 4 GiB | 13.1 en de bijgeschreven alinea van beslissing 2 |
+| 4 SDR tegen DDR | c, ook de neergaande flank, bij dezelfde kloksnelheid | 13.5, "zonder de kloksnelheid te verhogen", en de figuur sdr-tegen-ddr |
+| 5 Prefetch bij DDR3 en DDR4 | c, 8 bij allebei | 13.7 (verdubbeld tot 8) en 13.8 ("ongewijzigd gebleven op 8") |
+| 6 Wanneer prefetch niets oplevert | a, de aanliggende blokken worden niet opgevraagd | 13.3, de laatste twee alineas over fragmentering |
+| 7 Geheugen bij elektromagnetische interferentie | b, ECC RAM | 13.10; studievraag 5 vraagt dit letterlijk |
+| 8 Twee modules op een dual-channelbord | a, elk in een verschillend channel | 13.11 zoals rechtgezet, zie beslissing 3 |
+| 9 Drie verbeteringen per generatie | open, transfersnelheid, bitdensiteit, energieverbruik | 13.9 somt ze op; kernpunt 5 zegt hetzelfde |
+
+**Vier afleiders zijn de misvattingen die het hoofdstuk zelf rechtzet.** Bij vraag 2 dat
+een refresh met de klok of met interferentie te maken heeft, terwijl 13.2 de lekkende
+condensator als reden geeft; de vraag zegt daarom "ook als er niets mee gebeurt", zodat
+het herstellen na een uitlezing, dat een alinea verder staat, geen tweede juist antwoord
+wordt. Bij vraag 4 dat DDR de kloksnelheid verdubbelt, wat 13.5 met zoveel woorden
+ontkent. Bij vraag 7 dat een pariteitsbit een fout ook corrigeert, terwijl 13.10 besluit
+met "Correctie is hier niet mogelijk". En bij vraag 8 staat de zin zoals de Word ze had
+als afleider, met de reden erbij die haar weerlegt (beslissing 3).
+
+**Bij vraag 8 is er met opzet geen afleider over kleuren of aanliggende sloten.** 13.11
+zegt dat het bord met de kleur van de sloten aanduidt welke twee je samen gebruikt, en
+welk fysiek slot bij welk channel hoort verschilt van bord tot bord. Een afleider daarover
+zou dus op sommige borden waar zijn, en dan telt de vraag stil twee juiste antwoorden.
+
+**Vraag 9 is open en geen meerkeuze**, want het antwoord is een opsomming van drie: in een
+meerkeuzevraag staat die dan in een enkele mogelijkheid uitgeschreven en valt er niets
+meer te weten. Ze draagt drie invulregels, een per ding dat het antwoord telt.
+
+**Geen enkel getal in deze vragen staat aan de fabrikantskant van de grens van beslissing
+2.** De 4 GiB van vraag 3 is de eigen rekensom van het hoofdstuk en draagt dus de
+IEC-eenheid; geen enkele vraag citeert een etiket of een verkoopcapaciteit, zodat er
+nergens GB tegenover GiB komt te staan.
+
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
 De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
@@ -4858,6 +4900,34 @@ enkele pagina van deze repo voor en de hertekende figuur van hoofdstuk 15 zet ze
 niet op. Het is bijgeschreven tekst, dus een herimport van hoofdstuk 14 gooit ze weg, en
 ze is een alinea van twee zinnen lang: op 160mm zijn dat ongeveer twee gedrukte regels
 plus de ruimte tussen twee alinea's.
+
+### De zeven vragen van Test jezelf
+
+**Alle zeven zijn bijgeschreven**, want dit hoofdstuk heeft in de Word geen sectie
+Studievragen achteraan; zie de beslissing van 9 september 2026. **Zes meerkeuze, alle zes
+nageteld op precies een juist antwoord**, en een open vraag.
+
+| Vraag | Antwoord | Waarop het steunt |
+|---|---|---|
+| 1 De chipset voor 2011 | a, een northbridge en een southbridge | 14.1; kernpunt 2 |
+| 2 Apparaten aan de northbridge | c, het werkgeheugen en de grafische kaart | 14.1 en 14.2 |
+| 3 Waar de taken van de northbridge nu zitten | a, in de processor zelf | 14.2, 14.5 en 14.6; studievraag 1 |
+| 4 Wat een APU is | c, de naam die AMD aan een processor met een grafische kern geeft | 14.5 zoals rechtgezet, zie beslissing 2 |
+| 5 Wat de Front Side Bus verbond | a, de processor en de northbridge | 14.2 en 14.3 |
+| 6 Waarom MT/s en geen MHz | b, vier overdrachten per klokpuls | 14.3 zoals rechtgezet, zie beslissing 3 |
+| 7 Het nut van de PCH | open, drie dingen | 14.6, de alinea van beslissing 4; studievraag 2 |
+
+**De twee eerste afleiders van vraag 3 zijn precies de zinnen die bij de import rechtgezet
+zijn** (beslissing 2): dat de Platform Controller Hub de taken van de northbridge
+overneemt, en dat de Accelerated Processing Unit de opvolger van de northbridge is. Wie
+een van beide aanduidt, komt uit bij 14.5, waar de definitie nu wel klopt. De afleiders
+van vraag 2 zijn de apparaten die 14.1 juist aan de southbridge hangt.
+
+**Vraag 7 is open en geen meerkeuze**, om dezelfde reden als vraag 9 van hoofdstuk 13: het
+antwoord telt drie dingen (alle trage aansluitingen op een chip, een eigen verbinding naar
+de processor, en dat de keuze van de PCH bepaalt wat het bord te bieden heeft), en drie
+invulregels vragen ze alle drie. Het is ook de letterlijke studievraag 2, die tot de
+import onbeantwoord bleef.
 
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
@@ -5148,6 +5218,47 @@ botsing in de eerste render, wat hier eerder uitzondering dan regel is. Geen enk
 `A`-boog in de twee bestanden: de enige rondingen zijn de `rx` van de blokken, die op 135mm
 neerkomt op 1,4mm en dus geen afvlakking uitlokt. Allebei blijven ze buiten `ONAANGEROERD`,
 want dat is een lijst voor rasterbeeld.
+
+### De zeven vragen van Test jezelf
+
+**Alle zeven zijn bijgeschreven**, want dit hoofdstuk heeft in de Word geen sectie
+Studievragen achteraan; zie de beslissing van 9 september 2026. Dit is het kortste
+hoofdstuk van de zestien (903 woorden over drie secties), dus zeven vragen, de onderkant
+van de maat. **Zes meerkeuze, alle zes nageteld op precies een juist antwoord**, en een
+open vraag.
+
+| Vraag | Antwoord | Waarop het steunt |
+|---|---|---|
+| 1 Waar de grafische kern zit | a, in de processor zelf | 15.1; studievraag 2 |
+| 2 Waarom industrieel zelden een externe kaart | a, de visualisatie vraagt weinig | 15.1; studievraag 1 |
+| 3 Waarom een GPU grote hoeveelheden data aankan | a, een hoge graad aan parallellisme | 15.1 |
+| 4 Welke resolutie Full HD is | b, 1920 x 1080 | 15.2; studievraag 4 |
+| 5 Bits per pixel voor ware kleuren | d, 24 | 15.2 |
+| 6 DVI voluit | open, Digital Visual Interface | kernpunt 5; studievraag 5 |
+| 7 Een DVI uitgang op een HDMI scherm | a, ja, met een converter, al werk je daar niet handig mee | kernpunt 2; studievraag 3 |
+
+**Vraag 6 en 7 steunen op het kader Kernpunten en niet op de lopende tekst, en dat is
+beslist en niet toevallig.** De schermaansluitingen (VGA, DVI, HDMI, DisplayPort) komen in
+15.1 tot 15.3 nergens voor en staan alleen vooraan in het kader. Dat kader wordt mee
+gedrukt op de openingsbladzijde van het hoofdstuk, dus de student heeft het antwoord voor
+zich. De eerste lezing was om er hoogstens een vraag op te bouwen, en die houdt hier geen
+stand: alle aansluitingen staan in dat kader, dus zo een regel zou dit hoofdstuk op vier
+vragen vastzetten. Beslist op 9 september 2026. Vraag 6 heeft de vorm van vraag 4 van
+hoofdstuk 12 (ALU voluit), een open vraag met een enkele invulregel.
+
+**De afleider Platform Controller Hub bij vraag 1 is de misvatting die 15.2 rechtzet**:
+een moderne grafische kaart hangt juist met een x16 slot rechtstreeks aan de processor en
+gaat niet langs de PCH. Bij vraag 2 zegt het antwoord "zelden" en niet "geen", naar
+beslissing 3.
+
+**Studievraag 6, "Waarvoor staat HDMI?", wordt door niets getoetst, en dat blijft zo tot
+de lector erover beslist.** De woorden High-Definition Multimedia Interface staan nergens
+in dit hoofdstuk, en met grep ook nergens anders in de syllabus of in de labotrack; het
+kader zegt alleen wat HDMI draagt. Een vraag erover zou een feit invoeren dat de tekst
+niet geeft, dus er is niets bijgeschreven en niets verzonnen. Gemeld op 9 september 2026
+en voorgelegd aan de lector. Komt er een zin bij in 15.1 of in het kader, dan hoort er een
+achtste vraag bij. Zelfde soort geval als studievraag 4 van hoofdstuk 12, die ook
+genoteerd staat en niet gerepareerd is.
 
 ### Wat er in de tekst opviel, en niet aangeraakt is
 

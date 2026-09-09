@@ -784,6 +784,12 @@ window.LAB_REFERENCE = {
                         name: 'Single, dual en quad channel',
                         blurb: 'Wat een channel is, waarom twee modules in twee verschillende channels horen, en waar de kleuren op het bord voor dienen.',
                         href: 'RandomAccessMemoryRam/SingleDualEnQuadChannel.html'
+                    },
+                    {
+                        id: 'ram-test-jezelf',
+                        name: 'Test jezelf',
+                        blurb: 'Negen vragen over de cel en haar refresh, de grens van 32 bit, de prefetch buffer, ECC en dual channel.',
+                        href: 'RandomAccessMemoryRam/TestJezelf.html'
                     }
                 ]
             },
@@ -832,6 +838,12 @@ window.LAB_REFERENCE = {
                         name: 'Platform Controller Hub (PCH)',
                         blurb: 'De opvolger van de southbridge: alle trage aansluitingen op een chip, aan de processor met een eigen verbinding.',
                         href: 'Chipset/PlatformControllerHubPch.html'
+                    },
+                    {
+                        id: 'chipset-test-jezelf',
+                        name: 'Test jezelf',
+                        blurb: 'Zeven vragen over de northbridge en de southbridge, de Front Side Bus, de APU en het nut van de PCH.',
+                        href: 'Chipset/TestJezelf.html'
                     }
                 ]
             },
@@ -856,6 +868,12 @@ window.LAB_REFERENCE = {
                         name: 'Resolutie en framerate',
                         blurb: 'Uitgerekend hoeveel data een scherm per seconde vraagt, van het aantal pixels over de kleurdiepte tot de framerate.',
                         href: 'GraphicsProcessingUnitGpu/ResolutieEnFramerate.html'
+                    },
+                    {
+                        id: 'gpu-test-jezelf',
+                        name: 'Test jezelf',
+                        blurb: 'Zeven vragen over de plaats van de grafische kern, het parallellisme van een GPU, Full HD en de aansluitingen.',
+                        href: 'GraphicsProcessingUnitGpu/TestJezelf.html'
                     }
                 ]
             },
