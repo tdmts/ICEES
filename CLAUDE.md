@@ -1183,10 +1183,24 @@ is een knop waar je aan draait: in hoofdstuk 2 is het moederbord daarvoor van 16
 gegaan, wat de enige maat in dat hoofdstuk is die niet uit de Word komt. Hoofdstuk 5 legde er een
 derde regel bovenop, `.tekenkader`; die staat verderop bij dat hoofdstuk.
 
-**Een hoofdstuk zonder sectie Studievragen achteraan krijgt geen Test jezelf.** Hoofdstuk 2 heeft er
-geen, en er is er dus ook geen geschreven. Of elk hoofdstuk er een hoort te hebben, wordt na
-hoofdstuk 16 in een keer beslist, met alle zestien naast elkaar; tot dan noteert NOTITIES.md per
-hoofdstuk of het er een had.
+**Elk hoofdstuk sluit af met een Test jezelf, op hoofdstuk 2 na. Beslist op 9 september 2026**, met
+alle zestien naast elkaar, en dit vervangt de regel die hier stond dat een hoofdstuk zonder sectie
+Studievragen er geen krijgt. De Word bepaalt dus niet langer waar vragen staan: waar zij er geen
+heeft, worden ze bijgeschreven, met de reden in NOTITIES.md zoals elke bijgeschreven tekst.
+
+**Hoofdstuk 2 is de uitzondering, en de maat waarop dat besloten is, is na te rekenen.** Van zijn
+673 woorden zit bijna de helft in de invuloefening van 2.1 zelf, dus het hoofdstuk IS zijn oefening
+en elke vraag erachter zou dezelfde stof een tweede keer toetsen. Die toets is niet "heeft dit
+hoofdstuk al vragen": hoofdstuk 10 heeft ze ook en krijgt er wel een, want daar staat 1376 woorden
+theorie over vijf secties tegenover een oefenblad van 265 woorden, en die acht oefeningen zijn
+omrekeningen die de begrippen eronder niet raken. Hoofdstuk 9 en 11 dragen om dezelfde reden een
+Test jezelf NAAST hun oefeningen. **Weeg dus de omvang van de oefening tegen die van de theorie, en
+kijk of de oefening toetst wat de theorie invoert.**
+
+**Wat daaruit nog te schrijven staat**, en het is het enige dat na 9 september 2026 nog openligt aan
+de syllabus: hoofdstuk 7, 10, 13, 14 en 15 hebben nog geen Test jezelf, en die van hoofdstuk 16
+telt een enkele vraag uit de Word terwijl elk ander hoofdstuk er vijf tot negen heeft. Vul die aan
+tot dezelfde maat.
 
 **Een meerkeuzevraag met meer dan een juist antwoord is een beslissing van de lector, niet van jou.**
 Regel 14 en `export-syllabus.py` eisen per vraag precies een `<li class="juist">`, en bij een enkele
