@@ -3446,6 +3446,23 @@ toetst. De kleuren rood, groen en blauw zijn weg, want geen enkele zin bij die v
 noemt een kleur en elk schijfje draagt maar een markering; alle drie staan ze in
 `#004d40`. De grijze gradient van de CAD-render is weg.
 
+**Page, block, plane en chip van 11.5 is `img/syllabus-11-page-block-plane-chip.svg`
+geworden**, op zijn bestaande **92,1mm**. Daarmee vervalt het watermerk van
+Hardware.Info en het bijschrift dat de bron noemde. Het origineel was een stapel van
+vier vlakken in perspectief die in elkaar staken; dat is nu een inzoomketen van vier
+kaders met een pijl ertussen, en in elk kader is de eenheid gemarkeerd die het volgende
+kader uitvergroot. Dezelfde vier niveaus, dezelfde volgorde, en de page is nog altijd
+het enkele vakje onderaan.
+
+**Het block telt nu 128 pages en niet een onbepaald rooster**, zestien bij acht, en dat
+is de ondergrens die de alinea ernaast zelf noemt ("een blok beslaat uit 128 tot 256
+pagina's"). Het origineel tekende een rooster zonder telbaar aantal, dus dit is een
+gegeven dat de figuur erbij krijgt in plaats van er een dat wegvalt.
+
+**De figuur wordt wel een stuk lager: van 100,2mm naar 77,5mm bij dezelfde breedte**,
+want een keten van vier kaders naast en onder elkaar is compacter dan vier vlakken in
+perspectief. Dat kan niet meer plaats kosten, alleen minder, maar reken de bladzijde na
+bij de eerstvolgende export.
 **Vier blijven staan op 96 dpi, en dat is een beslissing.** De jumperinstelling van
 11.7 (78,1mm), de SATA-kabels van 11.8 (79,4mm), het RAID 5-schema van 11.13
 (107,1mm) en de NAS-foto van 11.15 (70,1mm) zitten alle vier op 96 en niet eronder.

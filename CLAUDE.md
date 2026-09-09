@@ -1498,7 +1498,6 @@ niet opnieuw op**, en lees hetzelfde argument bij hoofdstuk 9 in NOTITIES.md.
 
 | Hoofdstuk | Bestand | Wat het is |
 |---|---|---|
-| 11.5 | `syllabus-11-harde-schijf-08.png` | page, block, plane en chip, Hardware.Info |
 | 11.7 | `syllabus-11-harde-schijf-16.png` | de PATA-kabel met master, slave en controller |
 | 11.7 | `syllabus-11-harde-schijf-18.png` | General Pin Setting, de jumpertabel |
 | 11.8 | `syllabus-11-harde-schijf-19.png` | Serial ATA power cable en data cable |

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">De achterkant van een harde schijf met haar twee SATA-aansluitingen: de brede voedingskabel met
+        vier gekleurde draden en de smallere datakabel met haar rode lint</title>
+    <rect width="600" height="400" fill="#ffffff" />
+
+    <g stroke="#00332b" stroke-width="2" stroke-linejoin="round">
+
+        <!-- de harde schijf: bovenvlak, achtervlak met de twee poorten, en de zijkant -->
+        <path d="M 280 150 L 420 209 L 590 138 L 450 79 Z" fill="#e0e7e5" />
+        <path d="M 420 209 L 590 138 L 590 180 L 420 251 Z" fill="#4d8b7f" />
+        <path d="M 280 150 L 420 209 L 420 251 L 280 192 Z" fill="#b2dfdb" />
+
+        <!-- de voedingsaansluiting, de langste van de twee -->
+        <path d="M 291.2 165.2 L 352.8 191.2 L 352.8 212.2 L 291.2 186.2 Z" fill="#004d40" />
+
+        <!-- de data-aansluiting, korter, met haar vergulde contacten -->
+        <path d="M 364 195.9 L 403.2 212.4 L 403.2 233.4 L 364 216.9 Z" fill="#004d40" />
+        <g stroke="#a8842a" stroke-width="2.5">
+            <path d="M 371 205.5 L 371 222.5" />
+            <path d="M 379 208.9 L 379 225.9" />
+            <path d="M 387 212.2 L 387 229.2" />
+            <path d="M 395 215.6 L 395 232.6" />
+        </g>
+
+        <!-- de vier draden van de voedingskabel -->
+        <g fill="none" stroke-width="13" stroke-linecap="round">
+            <path d="M 113 225.5 C 75 240 45 265 18 300" stroke="#b8951f" />
+            <path d="M 139.4 236.5 C 101 252 71 280 30 320" stroke="#222222" />
+            <path d="M 165.8 247.5 C 127 265 95 296 44 342" stroke="#9e2f26" />
+            <path d="M 192.2 258.5 C 153 278 119 314 58 364" stroke="#2a4d7c" />
+        </g>
+
+        <!-- de stekker van de voedingskabel -->
+        <path d="M 95 205 L 215 255 L 263 235 L 143 185 Z" fill="#4d8b7f" />
+        <path d="M 215 255 L 263 235 L 263 261 L 215 281 Z" fill="#004d40" />
+        <path d="M 95 205 L 215 255 L 215 281 L 95 231 Z" fill="#004d40" />
+        <g stroke="#e0e7e5" stroke-width="3">
+            <path d="M 110 220 L 116 231" />
+            <path d="M 136.4 231 L 142.4 242" />
+            <path d="M 162.8 242 L 168.8 253" />
+            <path d="M 189.2 253 L 195.2 264" />
+        </g>
+
+        <!-- het lint van de datakabel -->
+        <path d="M 262 316 C 215 340 165 362 108 386" fill="none" stroke="#9e2f26" stroke-width="26"
+            stroke-linecap="round" />
+
+        <!-- de stekker van de datakabel -->
+        <path d="M 250 300 L 335 336 L 375 319 L 290 283 Z" fill="#4d8b7f" />
+        <path d="M 335 336 L 375 319 L 375 341 L 335 358 Z" fill="#004d40" />
+        <path d="M 250 300 L 335 336 L 335 358 L 250 322 Z" fill="#004d40" />
+    </g>
+
+    <!-- de stippellijnen die elke kabel bij haar eigen aansluiting brengen -->
+    <g stroke="#00332b" stroke-width="2" stroke-dasharray="2 5" stroke-linecap="round" fill="none">
+        <path d="M 252 238 L 296 190" />
+        <path d="M 362 318 L 378 228" />
+    </g>
+
+    <g font-size="19" fill="#00332b">
+        <text x="14" y="140">SATA-</text>
+        <text x="14" y="163">voedingskabel</text>
+        <text x="392" y="342">SATA-</text>
+        <text x="392" y="365">datakabel</text>
+        <text x="470" y="132" text-anchor="middle">harde schijf</text>
+    </g>
+</svg>
