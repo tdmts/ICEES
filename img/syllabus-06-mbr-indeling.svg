@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="720" height="300"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">De indeling van de eerste sector bij MBR</title>
+    <rect width="720" height="300" fill="#ffffff" />
+
+    <!-- maatlijn boven de sector -->
+    <path d="M40 30 L40 40 M680 30 L680 40 M40 35 L680 35" stroke="#666" stroke-width="1" fill="none" />
+    <rect x="288" y="24" width="144" height="22" fill="#ffffff" />
+    <text x="360" y="40" font-size="14" fill="#222" text-anchor="middle">512 bytes</text>
+
+    <!-- de eerste sector -->
+    <rect x="40" y="56" width="550" height="58" fill="#e0e7e5" stroke="#9bb0ac" />
+    <text x="315" y="82" font-size="15" fill="#222" text-anchor="middle">opstartcode</text>
+    <text x="315" y="102" font-size="13" fill="#555" text-anchor="middle">440 bytes</text>
+
+    <rect x="590" y="56" width="80" height="58" fill="#004d40" stroke="#004d40" />
+    <text x="630" y="82" font-size="13" fill="#ffffff" text-anchor="middle">partitie-</text>
+    <text x="630" y="98" font-size="13" fill="#ffffff" text-anchor="middle">tabel</text>
+
+    <rect x="670" y="56" width="10" height="58" fill="#f5f7f7" stroke="#9bb0ac" />
+
+    <text x="40" y="136" font-size="13" fill="#555">De eerste sector van de schijf</text>
+
+    <!-- uitvergroting van de 64 bytes -->
+    <path d="M590 118 L40 176 M670 118 L680 176" stroke="#004d40" stroke-width="1" stroke-dasharray="4 3"
+        fill="none" />
+
+    <rect x="40" y="176" width="160" height="60" fill="#b2dfdb" stroke="#004d40" />
+    <rect x="200" y="176" width="160" height="60" fill="#b2dfdb" stroke="#004d40" />
+    <rect x="360" y="176" width="160" height="60" fill="#b2dfdb" stroke="#004d40" />
+    <rect x="520" y="176" width="160" height="60" fill="#b2dfdb" stroke="#004d40" />
+
+    <text x="120" y="202" font-size="14" fill="#00332b" text-anchor="middle">partitie 1</text>
+    <text x="280" y="202" font-size="14" fill="#00332b" text-anchor="middle">partitie 2</text>
+    <text x="440" y="202" font-size="14" fill="#00332b" text-anchor="middle">partitie 3</text>
+    <text x="600" y="202" font-size="14" fill="#00332b" text-anchor="middle">partitie 4</text>
+
+    <text x="120" y="222" font-size="12" fill="#33564f" text-anchor="middle">16 bytes</text>
+    <text x="280" y="222" font-size="12" fill="#33564f" text-anchor="middle">16 bytes</text>
+    <text x="440" y="222" font-size="12" fill="#33564f" text-anchor="middle">16 bytes</text>
+    <text x="600" y="222" font-size="12" fill="#33564f" text-anchor="middle">16 bytes</text>
+
+    <text x="40" y="262" font-size="13" fill="#222">De partitietabel is 64 bytes groot: vier ingangen van 16 bytes,
+        met in elke ingang het</text>
+    <text x="40" y="282" font-size="13" fill="#222">beginadres, de grootte en het type van één partitie. Daarom
+        passen er in MBR vier partities.</text>
+</svg>

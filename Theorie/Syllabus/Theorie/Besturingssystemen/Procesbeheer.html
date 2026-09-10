@@ -13,90 +13,60 @@
     <div class="container">
         <h1>Procesbeheer</h1>
 
-        <p>Wanneer we te maken hebben met een multiple tasks besturingssysteem moet er een mechanisme zijn die kan schakelen tussen de verschillende processen. De gebruiker moet immers op zijn minst de ‘indruk’ krijgen dat er meerdere taken tegelijkertijd worden uitgevoerd.</p>
+        <p>Wanneer we te maken hebben met een multitasking besturingssysteem moet er een mechanisme zijn dat kan schakelen tussen de verschillende processen. De gebruiker moet immers op zijn minst de &#x27;indruk&#x27; krijgen dat er meerdere taken tegelijkertijd worden uitgevoerd.</p>
 
-        <p>In een computer met 1 processor die 1 kern heeft kan er eigenlijk op een gegeven moment X slechts aan 1 proces gewerkt worden.</p>
+        <p>In een computer met 1 processor die 1 kern heeft kan er eigenlijk op een gegeven moment X slechts aan 1 proces gewerkt worden.</p>
 
-        <p>Een process scheduler lost dit op door vliegensvlug tussen de verschillende processen te context switchen. Ieder proces dat uitgevoerd wordt krijgt slechts een heel kleine slice van de resources van de processor.</p>
+        <p>Een process scheduler lost dit op door vliegensvlug tussen de verschillende processen te wisselen. Ieder proces dat uitgevoerd wordt krijgt slechts een heel kleine slice van de resources van de processor.</p>
 
         <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
             <img src="../../../../img/syllabus-07-processtatussen.svg" class="img-fluid"
                 alt="De drie statussen van een proces: uit de ready queue kiest de process scheduler er een om running te worden, een running proces keert terug naar ready wanneer zijn CPU slice op is of gaat naar blocked wanneer het op I/O wacht, en uit blocked komt het alleen via ready weer aan de beurt">
         </figure>
 
-        <p>Om te kunnen context switchen moet het mogelijk zijn om een proces even in een wachtrij te plaatsen. In bovenstaand schema zie je duidelijk hoe dit in zijn werk gaat. Bij het starten van een proces komt het in een ready queue terecht. Daar wacht het proces tot het door de process scheduler gekozen wordt om uitgevoerd te worden.</p>
+        <p>Om te kunnen wisselen moet het mogelijk zijn om een proces even in een wachtrij te plaatsen. In bovenstaand schema zie je duidelijk hoe dit in zijn werk gaat. Bij het starten van een proces komt het in een ready queue terecht. Daar wacht het proces tot het door de process scheduler gekozen wordt om uitgevoerd te worden.</p>
 
         <p>Nadat het een CPU slice (een stukje tijd van de processor) heeft gekregen (running), keert het proces terug naar de ready queue.</p>
 
         <p>Het kan ook zijn dat een proces een lange tijd de processor niet nodig heeft. Dit kan bijvoorbeeld zijn wanneer het proces wacht om een I/O operatie (bijvoorbeeld een schrijf opdracht op de harde schijf) uit te voeren of wacht totdat een bepaalde I/O operatie compleet is.</p>
 
-        <p>Het zou dus geen zin hebben om constant dit proces opnieuw te laten uitvoeren als het toch niets te doen heeft. Om die reden kunnen processen ook in de blocked status terechtkomen. Merk op dat een proces niet rechtstreeks uit de blocked status naar de running status kan gaan. Een proces moet altijd gekozen worden door de process scheduler.</p>
+        <p>Het zou dus geen zin hebben om constant dit proces opnieuw te laten uitvoeren als het toch niets te doen heeft. Om die reden kunnen processen ook in de blocked status terechtkomen. Merk op dat een proces niet rechtstreeks uit de blocked status naar de running status kan gaan. Een proces moet altijd gekozen worden door de process scheduler.</p>
 
-        <h2>Cooperative multitasking</h2>
+        <h2>Context switching</h2>
 
-        <p>Bij cooperative multitasking wordt het process schedulen uitgevoerd door de processen zelf. Processen geven aan wanneer ze de processor niet meer nodig hebben en hevelen dan de controle aan een ander process over.</p>
+        <p>Een proces dat van running terug naar ready gaat, moet later verder kunnen waar het gebleven was. De processor werkt op een gegeven ogenblik immers maar aan één ding: hij houdt bij welke instructie aan de beurt is en met welke tussenwaarden hij aan het rekenen is, en die gegevens staan in een handvol snelle geheugenplaatsen in de processor zelf, de registers.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-07-context-switch.svg" class="img-fluid"
+                alt="Bovenaan een tijdlijn waarop proces A rekent, dan een smal rood blok context switch waarin de processor aan geen enkel proces rekent, en dan proces B; onderaan de processor met de instructie die aan de beurt is en de tussenwaarden, waarvan de inhoud eerst als context van proces A naar het werkgeheugen gaat en waarin daarna de context van proces B teruggezet wordt">
+        </figure>
+
+        <p>Bij een wissel bewaart het besturingssysteem die gegevens samen in het werkgeheugen. Dat pakketje heet de context van het proces. Daarna haalt het de context van het proces dat aan de beurt is uit het werkgeheugen terug in de processor, en dat proces gaat verder alsof er niets gebeurd is. Dat bewaren en terugzetten samen heet een context switch.</p>
+
+        <p>Een context switch kost zelf processortijd, en tijdens die tijd rekent de processor aan geen enkel proces. Hoe kleiner de slices die de scheduler uitdeelt, hoe vaker er gewisseld wordt en hoe meer van de processor er aan het wisselen zelf opgaat. Daar zit dus een evenwicht: te grote slices maken de machine schokkerig, te kleine maken ze traag.</p>
+
+        <h2>Cooperative en preemptive multitasking</h2>
+
+        <p>Er zijn twee manieren om te bepalen wanneer zo&#x27;n wissel plaatsvindt.</p>
+
+        <p>Bij cooperative multitasking doen de processen dat zelf. Een proces geeft aan wanneer het de processor niet meer nodig heeft en draagt de controle dan over aan een ander proces, zoals het stokje in een estafetteloop.</p>
+
+        <p>Dat werkt alleen zolang alle processen zich aan die afspraak houden. Een proces dat de controle niet meer afgeeft, door een fout of door slecht ontwerp, laat alle andere op hun honger zitten wachten op processortijd. Dit fenomeen noemen we starvation, en het kan uiteindelijk ook een crash van het besturingssysteem met zich meebrengen.</p>
 
         <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
             <img src="../../../../img/syllabus-07-cooperative-multitasking.svg" class="img-fluid"
-                alt="Drie processen die elk hun eigen lus draaien: proces A geeft de controle door aan proces C, C aan B en B weer aan A, telkens op een punt dat het proces zelf kiest">
+                alt="Twee tijdlijnen onder elkaar: proces 1 houdt de processor bezet tot het op een punt dat het zelf kiest afgeeft, en pas daar begint proces 2">
         </figure>
 
-        <p>Dit systeem kan je vergelijken met een estafetteloop. Het spreekt voor zich dat cooperative multitasking enkel werkt als de processen hiermee goed omspringen.</p>
-
-        <p>Het kan namelijk zijn dat een proces de controle niet meer wil afgeven. Dit fenomeen noemen we starvation. Andere procoessen blijven op hun honger zitten en wachten hopeloos op processor tijd. Dit kan uiteindelijk ook een crash van het besturingssysteem met zich teweeg brengen.</p>
-
-        <h2>Preemptive multitasking</h2>
-
-        <p>In de figuur kan je duidelijk het onderscheid zien tussen preemptive en cooperative multi tasking. Bij preemptive multitasking is het de <strong>process</strong><strong> </strong><strong>scheduler</strong> van het besturinggsysteem die beslist wanneer een proces toegang krijgt tot de processor en ook en hoeveel resources het van de processor mag gebruiken.</p>
+        <p>Bij preemptive multitasking is het de process scheduler van het besturingssysteem die beslist. Die deelt de tijd zelf in en onderbreekt een proces wanneer zijn slice op is, of dat proces daar nu klaar voor is of niet. E&eacute;n proces kan de machine zo niet meer gijzelen, en dat is de reden waarom elk hedendaags besturingssysteem op deze manier werkt.</p>
 
         <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
-            <img src="../../../../img/syllabus-07-preemptive-vs-cooperative.svg" class="img-fluid"
-                alt="Twee tijdlijnen naast elkaar: bovenaan verdeelt de process scheduler de tijd in gelijke stukjes en onderbreekt hij de twee processen om beurten, onderaan draait proces 1 door tot het zelf afgeeft en komt proces 2 pas daarna aan bod">
+            <img src="../../../../img/syllabus-07-preemptive-multitasking.svg" class="img-fluid"
+                alt="Dezelfde twee tijdlijnen, maar nu verdeelt de process scheduler de tijd in gelijke stukjes en onderbreekt hij de twee processen om beurten op de drie gemarkeerde momenten">
         </figure>
 
-        <p>Om dit te bepalen zijn er een aantal algoritmes uitgedokterd die je in onderstaande paragrafen kan nalezen. Bij preemptive multitasking worden, zoals je kan zien, processen abrupt onderbroken zonder dat ze daar zelf iets aan kunnen doen.</p>
+        <p>Waar de process scheduler naar kijkt wanneer hij uit de ready queue een proces kiest, is de prioriteit van dat proces.</p>
 
-        <p>We moeten benadrukken dat er niet één bepaald process scheduling algoritme is die superieur is ten opzichte van de andere, het hangt er telkens vanaf waarvoor het besturingssysteem moet worden ingezet.</p>
-
-        <h3>First come first served (FCFS)</h3>
-
-        <p>Bij first come, first served krijgen de processen aandacht van de processor naargelang de volgorde ze in de ready queue van de process scheduler zijn gekomen.</p>
-
-        <p>Ieder proces krijgt aandacht van de processor tot de taak die het moet vervullen volledig volbracht is. Het spreekt voor zich dat dit een zeer eenvoudig algoritme is. Men spreekt ook wel van First In First Out.</p>
-
-        <p>Processen kunnen geen prioriteit claimen waardoor ze niet kunnen voorkruipen in de queue. Dit betekent eigenlijk ook dat er kan starvation optreden als de taak van een proces nooit definitief kan volbracht worden. We denken hierbij aan het uitrekenen van de cijfers na de komma van PI of het grootste priemgetal berekenen.</p>
-
-        <h3>Shortest job first (SJF)</h3>
-
-        <p>Met dit algoritme probeert men het probleem van First Come First Served op te lossen. Processen die een kleine uitvoeringstijd hebben krijgen voorrang op andere processen.</p>
-
-        <p>Sterker nog, wanneer een proces met een kleinere uitvoeringstijd in de queue komt die een kortere uitvoeringstijd heeft dan het huidig proces, dan wordt deze laatste onderbroken en terug in de wachtrij gezet. Dit heeft als voordeel dat er geen starvation meer voorkomt voor kleine jobs maar wel voor grote.</p>
-
-        <p>Onderstel bijvoorbeeld dat er telkens nieuwe kleine jobs bijkomen, dan krijgt de job met de langste uitvoertijd nooit de kans om uit te voeren.</p>
-
-        <h3>Prioritiy based scheduling (PBS)</h3>
-
-        <p>Ook deze naam laat niet veel aan de verbeelding over. In de queue krijgt ieder proces een bepaalde prioriteit toegekend. Processen met een lage prioriteit worden onderbroken ten voordele van processen met een grote prioriteit. Ook hier is starvation van processen met lage prioriteit mogelijk wanneer er telkens processen bijkomen met een hoge prioriteit.</p>
-
-        <h3>Round robin scheduling (RRS)</h3>
-
-        <p>Eigenlijk komt dit heel goed overeen met Time Division Multiplexing of TDM. Ieder proces krijgt een vast timeframe toegekend en wordt dus gegarandeerd uitgevoerd. Alle processen krijgen evenveel resources toegekend waardoor er zeer veel onderbrekingen plaatsvinden. Dit zorgt ervoor dat er zeer veel overhead is. Processen moeten immers gepauzeerd en terug gestart worden. Round Robin heeft geen last van starvation maar is wel iets trager.</p>
-
-        <h3>Preemptive Multilevel Feedback Queue (PMFQ)</h3>
-
-        <p>Zoals we al in het begin hadden aangehaald is er geen process scheduling algoritme dat superieur is aan een ander. Elk hebben ze voordelen en nadelen.</p>
-
-        <p>Windows gebruikt een combinatie van alle bovenstaande scheduling technieken die men onder de noemer multilevel feedback queue classificeert. Beschrijven hoe dit algoritme juist werkt zou ons veel te ver buiten het bereik van deze cursus leiden maar de aandachtige lezer zal na het lezen van bovenstaande paragrafen misschien zichzelf herinneren dat we in de Windows Task Manager de prioriteit van een proces zelf kunnen bepalen.</p>
-
-        <h2>Prioriteit en realtime</h2>
-
-        <p>Sommige processen moeten niet zozeer snel zijn als wel op tijd. Het aansturen van een motor, lassen, verven of een CNC-machine is tijdskritisch: de berekening moet binnen een vaste tijd klaar zijn, want een stuurcommando dat te laat komt is even fout als een stuurcommando dat helemaal niet komt. Een berekening op de achtergrond mag gerust een halve seconde wachten. Een regelkring die om de milliseconde een nieuwe waarde naar de motor stuurt, mag dat niet.</p>
-
-        <p>Daarom kan je een proces een hogere prioriteit geven, en die prioriteit is precies waar de process scheduler op kijkt. In de Windows Task Manager loopt ze van Low tot Realtime, en Realtime is de hoogste klasse die er is: een proces in die klasse krijgt de processor v&oacute;&oacute;r alles wat eronder staat. Een echte garantie krijg je daarmee niet, want daarvoor bestaat er een real time operating system, dat kan waarborgen dat een taak binnen een zekere tijd afgehandeld is. Wat de prioriteitsklasse wel doet, is de kans zo klein mogelijk maken dat het proces moet wachten.</p>
-
-        <p>Dat is ook meteen de reden waarom je dat niet zomaar doet. Een realtime proces dat de processor vaker opeist dan het nodig heeft, of dat door een fout in een lus blijft draaien, duwt alles wat eronder staat naar achteren: de muis reageert niet meer, het scherm ververst niet meer, en de invoer waarmee je de machine zou stoppen komt niet meer aan. Dat is de starvation van hierboven, alleen kan je er nu niet meer omheen, want er is per definitie geen proces met een hogere prioriteit dat nog kan ingrijpen.</p>
-
-        <p>Een proces realtime laten uitvoeren is dus geen manier om een programma sneller te maken. Het is een keuze die je maakt voor een taak die werkelijk tijdskritisch is, en pas nadat je weet dat die taak de processor ook weer loslaat.</p>
     </div>
 
     <script src="../../../../reference.js"></script>

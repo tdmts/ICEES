@@ -26,6 +26,147 @@ en vergelijk na een export met de vorige PDF (`git show HEAD:downloads/...`) in
 plaats van met een getal dat hier staat. Dat laatste is trouwens ook waarom die
 verschuiving opgemerkt is.
 
+## De taalrondes van 10 september 2026
+
+Op een dag zijn de vijftien lijsten `Wat er in de tekst opviel, en niet aangeraakt is` afgewerkt,
+in vier rondes achter elkaar. Wat er per hoofdstuk gebeurd is, staat in het blok
+`Wat er in de tekst opviel, en op 10 september 2026 rechtgetrokken is` van dat hoofdstuk. Wat
+hieronder staat, is wat over de hoofdstukken heen liep en daar dus niet thuishoort. **Alles hiervan
+staat alleen in de HTML: een herimport draait het terug.**
+
+**Ronde 1, 62 taalfouten in 38 bestanden.** Tikfouten, ontbrekende woorden, congruentie, de Vlaamse
+`als` waar `of` hoort, en losse punctuatie. Geen overleg, want het is spelling en grammatica.
+
+**Ronde 2, vijf inhoudelijke correcties.** Voorgelegd en goedgekeurd. Per stuk in het hoofdstuk zelf.
+
+**Ronde 3, 51 schrijfwijzen die binnen een hoofdstuk wisselden.** Ook per hoofdstuk genoteerd.
+
+**Ronde 4, vier dingen die over de hele syllabus liepen.**
+
+- **De decimale komma.** 80 plaatsen. De redenering en de drie soorten punt die blijven staan
+  (versienummer, sectieverwijzing, overgetypte of afgedrukte tekst) staan in CLAUDE.md.
+- **De spatie tussen getal en eenheid.** 61 plaatsen, waaronder 30 labels in de drie
+  ATX-tekeningen. De labotrack schreef al overal een spatie en had dus niets te doen; de syllabus
+  schreef `12V` en `1,5V` vast. **`+5VSB` en `+12V1` zijn niet aangeraakt**, want dat zijn namen van
+  een rail en geen metingen, en zo staan ze ook op een echte connector. **`MSI GeForce GT710 2GB`
+  is niet aangeraakt**, want dat is de naam waaronder die kaart verkocht wordt, en de twee cellen
+  `1MB` en `1GB` in de overgetypte tabel van 10.4 ook niet, om dezelfde reden als de rest van die
+  tabel.
+- **De hoge komma's.** 44 keer werd `‘` of `’` een gewone apostrof `&#x27;`, de vorm die de rest
+  van de site gebruikt. **Vier tekens `”` staan er nog, en het zijn geen aanhalingstekens**: ze
+  staan als duimteken achter 3,5, 2,5 en 1,8 in 6.1 en achter 3,5 in 9.4. Het juiste teken
+  daarvoor is `″` en niet `”`, en voluit "duim" is wat 2.1 en 11.2 schrijven. Dat viel
+  buiten deze opdracht. Eentje van de 44 stond bovendien als de entiteit `&#x2019;` geschreven en
+  kwam pas boven in de gedrukte PDF.
+- **De ellipsen.** 65 stuks, en ze deden vier verschillende dingen, dus ze zijn per rol behandeld.
+  Vijftien stonden op de plaats van een gewone punt of lieten een zin wegsterven aan het eind van
+  een alinea, en die zijn een punt geworden. Twee waren een pauze midden in een zin ("Maar...
+  ondertussen zijn SSD's al zodanig geevolueerd") en zijn helemaal verdwenen. De 47 andere blijven,
+  want daar dragen ze betekenis: **rol A** is "en zo verder" achter een opsomming ("(Ubuntu, Debian,
+  Android, ...)"), **rol B** is het open einde van een zelftestvraag waar de mogelijkheden op volgen
+  ("De wet van Moore stelt dat..."). Alles wat blijft, schrijft nu drie losse punten; het teken
+  `…` komt in de syllabus niet meer voor.
+
+**Ronde 5, het duimteken.** De vormfactoren stonden in VIER notaties door elkaar: `3,5 duim`
+(acht keer), `3,5 inch` (twee keer), `3,5”` met een rechter aanhalingsteken (vier keer) en
+`2,5"` met een recht aanhalingsteken (een keer). Het is overal `3,5″` geworden, de dubbele
+prime, want dat is het duimteken; `”` en `"` zijn allebei een aanhalingsteken op die plaats.
+**Het teken wordt een keer uitgelegd**, in een kader boven de oefening van 2.1, want dat is waar het
+in gedrukte volgorde voor het eerst voorkomt. Dat kader zegt ook dat een schijf van 3,5″ niet
+drie en een halve duim breed is: het is de naam van een vormfactor en geen afmeting.
+
+**Wat in een `alt` staat, blijft wel woorden.** Elf alt-teksten schrijven `2,5 inch HDD` of
+`Samsung 870 EVO 2,5 inch`, en die beschrijven wat er op een productblad gedrukt staat. Zelfde regel
+als een overgetypte terminalregel. Drie alt-teksten in 6.1 beschrijven onze EIGEN foto's en droegen
+nog een decimale punt (`3.5 inch`); die zijn `3,5 duim` geworden.
+
+**Dit kader kost een bladzijde, en de verschuiving is nagerekend.** Het document ging van 202 naar
+203 bladzijden. De dertien inhoudstafelrijen tot en met 2.1 staan stil en de 130 rijen vanaf 2.2
+schuiven alle exact +1; geen enkele rij verspringt anders. De twee beeldbladzijden van hoofdstuk 11
+gingen van 121 en 125 naar 122 en 126, wat dezelfde +1 is.
+
+**Twee dingen die je bij zo'n ronde vergeet.** Een van de 65 ellipsen stond als de entiteit
+`&#x2026;` geschreven en werd door een zoektocht op het teken zelf niet gevonden; hij kwam pas boven
+toen de telling na afloop niet klopte. **Tel dus na, en unescape voor je telt.** En een van de
+zeventien te wijzigen zinnen droeg een harde spatie tussen "vooruitstrevend" en "is", waardoor de
+vervanging afsloeg: dat is de derde keer die dag dat een `&nbsp;` uit de Word een `assert count == 1`
+liet vallen.
+
+**Wat er na deze vier rondes nog op de lijsten staat**, en waarom: `men` (37 plaatsen, en dat is geen
+zoek-en-vervang maar 37 zinnen herschrijven), de dubbele spaties uit de Word (onzichtbaar in druk),
+de vormen die de brontekst nu eenmaal gebruikt en die geen fout zijn, en de plaatsen waar een
+opsomming of een schrijfwijze bewust bij de bron gehouden is.
+
+## Voorwoord
+
+**Ingevoerd op 10 september 2026, en het stond al die tijd in de Word.** De
+zestien importrondes liepen alle zestien met `--hoofdstuk N`, en `--voorwoord`
+is nooit gedraaid: `Theorie/Voorwoord.html` bestond niet, `reference.js` had er
+geen categorie voor, en de gedrukte syllabus begon bij 1 Generaties. De oude PDF
+die de student op Brightspace heeft (`ICEES Syllabus 20250912.pdf`) drukt het
+Voorwoord wel, op bladzijde 3. Dat is dus niets wat verdwenen is maar iets wat
+nooit meegekomen is.
+
+**De categorie draagt `genummerd: false` en is de enige in dit manifest.** De
+pagina ligt los in `Theorie/` en niet in een eigen map, want het Voorwoord heeft
+geen enkele Heading 2. Ze heet daarom ook geen `Overzicht.html`: die naam is de
+opening van een GENUMMERD hoofdstuk, en `hoofdstukken()` in `export-syllabus.py`
+neemt die tak alleen als er een nummer is. Zelfde vorm als in DeN, tot en met de
+plaats van `genummerd` achter `topics`.
+
+**Geen figuren, geen vragen.** Dus ook geen Test jezelf en geen Oplossingen, en
+niets in IMPORT.md: de importer had hier niets te raden.
+
+**De quote is met de hand een `<blockquote>` geworden, met een bronregel die
+niet in de Word staat.** Als gewone alinea was ze niet van de tekst erna te
+onderscheiden, terwijl de zin eronder met "Met deze quote" begint en dus naar
+iets verwijst wat er niet als quote uitzag. De opmaak zit in `syllabus.css`
+(zie hieronder), de bronregel is `Intel Museum, Santa Clara`. **Allebei
+handmatig, dus een herimport gooit ze weg.**
+
+**Waarom die bron, en wat er NIET onder mag staan.** Nagekeken op 10 september
+2026, want een toeschrijving is een bewering die de student meeneemt.
+
+- Wat na te rekenen viel: meerdere bronnen noemen deze woorden een paneel in het
+  Intel Museum, het bezoekerscentrum in Santa Clara. Een primaire publicatie van
+  Intel met deze zin is niet gevonden. De bronregel zegt daarom waar de quote
+  hangt en niet wie ze bedacht heeft.
+- **Gordon Moore is het niet.** Die toeschrijving circuleert en klopt niet.
+  Moore heeft twee gelijkaardige vergelijkingen op zijn naam, allebei met een
+  ander getal en allebei zonder harde primaire bron: de luchtvaartversie (een
+  toestel van 500 dollar dat de aarde rond gaat in 20 minuten op vijf gallon
+  brandstof, met als clou dat het zo groot als een schoenendoos zou zijn) en de
+  autoversie ("a Rolls Royce would get half a million miles per gallon, and it
+  would be cheaper to throw it away than to park it").
+- De quote zelf is niet in twijfel: alleen wie ze zei was onbekend.
+
+**De opmaak van een citaat is een nieuwe regel in `syllabus.css`**, en het is de
+vierde die DeN niet heeft, naast `ol.vragen > li`, `.vragen-bij-figuur` en
+`.tekenkader`. **Geen van de vier maten erin is gekozen**: de lijn is de
+afsluitlijn van het kader Studievragen (1.1mm turkoois), de inspringing is de
+eerste tabstop van een opsomming (8.4mm), de ondermarge is die van een alinea
+(4.3mm) en de bronregel is de figuurbijschriftregel (9pt grijs, 1.5mm eronder).
+Nagemeten in de PDF: de cursieve tekst begint op 34.3mm en de bronregel eindigt
+op 185.2mm, de rechtermarge. Op de site blijft het een gewone `blockquote`,
+want OrionCSS heeft geen opmaak voor een citaat; dat is geen gebrek, want van de
+syllabus bestaat voor de student alleen de PDF.
+
+**De leeswijzer noemt hoofdstuk 8 en 10 niet, en dat is zo gelaten.** Ze
+beschrijft de stof in vijf brokken (generaties, algemene werking en hardware,
+bestanden en cloud, besturingssystemen, en als laatste de componenten), en die
+volgorde klopt met de zestien hoofdstukken. Virtual machines en containers (8)
+en Informatievoorstelling (10) passen in geen van de vijf. Het is een leeswijzer
+en geen inhoudstafel, dus ze belooft niets wat er niet staat; wil je die twee er
+toch bij, dan is dat bijgeschreven tekst en dus iets voor de Word.
+
+**De bladspiegel na de invoering.** Het Voorwoord staat op gedrukte bladzijde 7,
+alleen op zijn blad, en 1 Generaties begint op 8. Het voorwerk bleef zes
+bladzijden, de inhoudstafel kreeg er een rij bij zonder nummer, en het document
+ging van 199 naar 200 bladzijden. **Alle 140 bestaande rijen schoven exact een
+op**, rij voor rij nagekeken tegen de vorige PDF; de tekstschaal is `3.1249194`
+op elke bladzijde op het voorwerk en de twee beeldbladzijden van hoofdstuk 11
+na, precies zoals ervoor.
+
 ## Hoofdstuk 1, Generaties
 
 **De sectie Studievragen achteraan heet hier Test jezelf.** In dit hoofdstuk
@@ -316,22 +457,24 @@ die vier late hoofdstukken wel. Laten staan of vooruitwijzen is jouw beslissing.
 gedrukt (Socket AM4), maar de tekst van 2.2 noemt alleen de processor socket,
 AMD en Intel.
 
+### Wat er in de tekst opviel, en op 10 september 2026 rechtgetrokken is
+
+Een taalfout is geen inhoudelijke correctie, dus deze ging zonder overleg door. Ze staat
+alleen in de HTML: een herimport draait ze terug.
+
+- **aansluting** in de opdrachtzin van 2.1 is **aansluiting** geworden, de spelling die
+  het hoofdstuk overal elders gebruikt.
+
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
 De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML:
 
-- **aansluting** in de opdrachtzin van 2.1, "Noteer bij ieder component, kabel of
-  aansluting de juiste naam". Overal elders in het hoofdstuk staat aansluiting.
-  Een tikfout, en ze staat er nog.
 - **Het kader Kernpunten zegt "een harde schijf"** waar 2.1 en 2.2 SSD's,
   M.2-schijven en harde schijven naast elkaar zetten. Als verzamelnaam kan het,
   maar het is wel het woord dat 2.2 voor iets anders gebruikt.
 - **De vierde studievraag is geen vraag** maar een instructie ("Op basis van een
   foto moet je kunnen ... herkennen en benoemen"), terwijl de andere drie wel
   vragen zijn. Zo staat het in de Word.
-- **De ellips aan het eind van de vierde alinea van 2.2** ("tot op een bepaalde
-  kloksnelheid...") is in de Word het teken en geen drie punten. Dat is opmaak en
-  is zo gebleven.
 
 ## Hoofdstuk 3, BIOS / UEFI
 
@@ -491,6 +634,29 @@ over het artikel hierboven, en anders dan de How Stuff Works-figuur van hoofdstu
 **Het originele `img/syllabus-03-bios-uefi-03.png` is geschrapt**, want de SVG
 staat in de plaats en niets verwijst er nog naar. Een herimport zet het terug.
 
+### Wat er in de tekst opviel, en op 10 september 2026 rechtgetrokken is
+
+Negen taalfouten, alle negen zonder overleg doorgevoerd omdat het spelling en grammatica
+is en geen inhoud. Ze staan alleen in de HTML: een herimport draait ze terug.
+
+- **"besturinggsysteem"** in mogelijkheid a van vraag 4 van Test jezelf.
+- **"op te starten.In de BIOS"** in 3.2 kreeg een spatie na de punt.
+- **"Zodra dit is gebeurt"** in 3.2 is **gebeurd** geworden.
+- **"energie verslindende"** in 3.2 is **energieverslindende** geworden.
+- **"om te zien als", "controleren als" en "om te weten als"** in 3.2 dragen nu **of**.
+  De zin met de derde droeg er een vierde in zich ("wordt gezocht als er een Master Boot
+  Record aanwezig is") en luidt nu "Om te weten of een opstartmedium geldig is of niet,
+  wordt gezocht of er een Master Boot Record aanwezig is."
+- **"Voor een modern besturingssysteem kunnen in die 440 bytes te weinig instructies om
+  het besturingssysteem van op te starten"** in 3.2 miste een werkwoord: **kunnen** is
+  **passen** geworden.
+- **"iedere recente computer die je nu koopt een heeft bovenvermelde nadelen niet"** in
+  3.3 draagt nu **en** in plaats van een.
+- **"Zoals je zopas hebt misschien kunnen afleiden"** in 3.3 is **"Zoals je zopas
+  misschien hebt kunnen afleiden"** geworden.
+- **"de computer absoluut nog niet weet hoe het de aanwezige hardware moet aanspreken"**
+  in 3.1 draagt nu **hij**.
+
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
 De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML:
@@ -504,31 +670,12 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML:
   hele tekst niet voorkomt: 3.2 heeft het over **thermal monitoring**. Dezelfde
   vraag schrijft SpeedStepping aaneen waar de tekst **speed stepping** los
   schrijft.
-- **"besturinggsysteem"** in mogelijkheid a van vraag 4 van Test jezelf.
-- **"op te starten.In de BIOS"** in 3.2, zonder spatie na de punt.
-- **"Zodra dit is gebeurt"** in 3.2, waar gebeurd hoort te staan.
-- **"Ontwikkeld door Intel, UEFI is tegenwoordig aanwezig op iedere recente
-  computer die je nu koopt een heeft bovenvermelde nadelen niet."** in 3.3: "een"
-  voor "en", en een zinsopener die uit het Engels komt.
-- **"Voor een modern besturingssysteem kunnen in die 440 bytes te weinig
-  instructies om het besturingssysteem van op te starten."** in 3.2. Er ontbreekt
-  een werkwoord; bedoeld is dat er te weinig instructies in passen.
-- **"Zoals je zopas hebt misschien kunnen afleiden"** in 3.3, met misschien op de
-  verkeerde plaats.
-- **"om te zien als", "controleren als", "om te weten als"** staan drie keer in
-  3.2 waar het standaard Nederlands "of" gebruikt. Dat is een vaste vorm in deze
-  hele Word.
-- **"de computer absoluut nog niet weet hoe het de aanwezige hardware moet
-  aanspreken"** in 3.1, met het waar hij of ze hoort te staan.
-- **"energie verslindende"** in 3.2, los geschreven.
 - **De syllabus schrijft "de Master Boot Record", het labo "het Master Boot
   Record".** Binnen dit hoofdstuk is het consequent de; het labo is niet
   aangeraakt.
 - **Studievraag 6 vooraan was een imperatief met een vraagteken**, "Geef enkele
   voordelen van UEFI?" Ze draagt sinds 7 september 2026 een punt; de regel en de
   reden staan bij hoofdstuk 4, dat de derde was die zo'n zin tegenkwam.
-- De hoge komma's rond booten, strijd en spammen zijn in de Word gewone
-  apostrofs en zijn dat hier gebleven. Dat is opmaak en geen tekst.
 
 ### Waar de syllabus en de labo's naast elkaar staan
 
@@ -808,8 +955,6 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML:
   drie alinea's.
 - **Dubbele spatie** na "vormfactor van het moederbord." in 4.1, en **"héél
   divers"** met een accent aigu als nadruk in dezelfde sectie.
-- De hoge komma's rond 'stevig' in het kader Kernpunten zijn in de Word gewone
-  apostrofs en zijn dat hier gebleven. Dat is opmaak en geen tekst.
 
 ### Wat het labo Embedded Systems straks niet mag tegenspreken
 
@@ -977,12 +1122,80 @@ en dat is precies wat niet klopt. Ze begint nu met "Een virtuele machine lost da
 niet op." De figuur ernaast blijft staan en blijft kloppen: ze toont twee virtuele
 machines op een gewone computer, en dat is wat de twee alinea's eronder uitleggen.
 
+**Deze passage staat sinds 9 september 2026 in hoofdstuk 8**, op de emulatie na; zie
+hierboven. Wat hieronder staat is waarom ze rechtgezet is, en dat geldt onverkort
+voor de plaats waar ze nu staat.
+
 **Studievraag 5 vooraan blijft beantwoord, en met twee zaken.** Ze vraagt wat je
 kan doen om een programma voor x64 toch op ARM werkend te krijgen, en noemt
 uitdrukkelijk twee dingen. Dat zijn nu emulatie, uit de rechtgezette passage, en
 het programma opnieuw laten schrijven voor ARM, uit de alinea vlak ervoor. Voor de
 correctie waren dat de virtuele machine en het opnieuw schrijven, en het eerste van
 die twee was fout.
+
+### Bijgeschreven om het hoofdstuk zelfstandig leesbaar te maken, 9 september 2026
+
+**Dit hoofdstuk wordt zelfstandig verwerkt**, dus zonder lector die bij de figuur
+vertelt wat er niet staat. Nagekeken op wat er dan ontbreekt, en drie dingen
+bijgeschreven of verplaatst. Alle drie staan ze alleen in de HTML en een herimport
+gooit ze weg.
+
+**5.1 kreeg een alinea die de zes onderdelen afgaat.** Studievraag 1 vraagt om de
+functionele onderdelen te bespreken aan de hand van een schema, en het antwoord
+stond alleen in de tekening: de woorden invoer en uitvoer kwamen in de lopende
+tekst van 5.1 niet voor, en systeembus stond nergens behalve als label in de SVG
+en in de oplossing van vraag 2. De alinea noemt de zes en geeft er per stuk een
+component bij (toetsenbord of muis, scherm of printer, de processor, een
+RAM-module, de banen op het moederbord, een SSD of harde schijf), en dat is precies
+wat Test jezelf vraag 2 vraagt en wat nergens in het hoofdstuk stond. Ze staat
+tussen de figuur en de bottleneck-alinea, want die begint met "Elk blok van dat
+schema".
+
+De woorden zijn die van de oplossing van vraag 2, en er is met opzet geen enkele
+term bijgekomen die dit hoofdstuk nog niet draagt (patroon 20). Daarom staat er
+"de banen tussen de twee" en niet processorsocket of geheugensloten: hoofdstuk 9
+voert die pas in. RAM mag wel, dat staat al in hoofdstuk 3 en 4.
+
+**5.2 kreeg een vergelijkingstabel.** Studievraag 3 en 4 vragen allebei naar het
+verschil, en het antwoord op de derde zat in een enkele zin midden in de sectie
+("x64 is de 64 bit variant terwijl x86 de 32 bit voorganger was"). De vijf rijen
+komen alle vijf uit de lopende tekst van 5.2 en er is geen feit bij verzonnen.
+**Fabrikanten zijn er met opzet geen rij**: de tekst noemt Intel en AMD voor x86 en
+x64, en aan de ARM kant noemt ze Apple en Microsoft, en dat zijn afnemers en geen
+fabrikanten. De rij heet daarom "Waar je ze aantreft".
+
+**De passage over de virtuele machine is naar hoofdstuk 8 verhuisd.** Zie hieronder.
+
+### De virtuele machine hoort in hoofdstuk 8 en staat daar nu
+
+Beslist op 9 september 2026 door de lector. 5.2 legde in drie alinea's uit wat een
+virtuele machine is, en hoofdstuk 8 doet dat een tweede keer en in het lang. Dat
+was al zo sinds de correctie hieronder, want die heeft de twee juist naar dezelfde
+bewoording toe geschreven. Voor een hoofdstuk dat zelfstandig gelezen wordt is dat
+de verkeerde plaats: de student krijgt drie hoofdstukken te vroeg een begrip dat
+hij hier niet nodig heeft.
+
+**Wat blijft, is de emulatie**, want studievraag 5 vraagt uitdrukkelijk naar twee
+zaken en dit is er een van. De drie alinea's zijn een geworden, en die staat nu
+vlak achter de alinea over het opnieuw laten schrijven, zodat de twee antwoorden
+op die vraag naast elkaar staan. **De zin waar Test jezelf vraag 5 op steunt, is
+woord voor woord blijven staan**: de processor doet de vertaling niet en geen
+enkele ARM processor voert x64 instructies uit. Zonder die zin wordt de derde
+afleider van die vraag onverdedigbaar; zie hierboven waarom ze zo geschreven is.
+
+**En de Parallels-schermafdruk is meeverhuisd naar 8.3.** Ze stond in 5.2 pal naast
+de zin "Een virtuele machine lost dat niet op", dus wie alleen las, zag een beeld
+van precies het ding dat de alinea afwees. In hoofdstuk 8 illustreert ze kernpunt 2
+(twee guests op een host), en die sectie had zelf geen enkele figuur: de twee
+foto's van dat hoofdstuk staan bij 8.1 en de SVG bij 8.4.
+
+**Het bestand heet nu `img/syllabus-08-virtual-machines-en-containers-03.jpeg`.**
+De hernoeming is niet cosmetisch: laat je de naam op `syllabus-05-` staan, dan
+schrijft een herimport van hoofdstuk 5 datzelfde bestand terug en wijst hoofdstuk 8
+stilzwijgend naar een heringevoerde figuur. Onder de nieuwe naam wordt zo een
+herimport een weesbestand waar regel 1 over valt, en dat is een luide fout in
+plaats van een stille. De figuur kreeg wel een bijschrift, dat ze in de Word niet
+had omdat ze daar zweefde.
 
 ### Het schema van 5.1 is hertekend
 
@@ -1014,7 +1227,9 @@ hierboven vult dat gat in de tekst; het kernpunt zelf is niet aangeraakt.
 
 ### De twee afbeeldingen
 
-**De tweede zweeft**, `syllabus-05-de-von-neumann-architectuur-02.jpeg` in 5.2, met
+**De tweede staat sinds 9 september 2026 in hoofdstuk 8** en heet daar
+`syllabus-08-virtual-machines-en-containers-03.jpeg`; hieronder staat hoe ze bij de
+import van dit hoofdstuk binnenkwam. Ze zweefde, met
 `wrapSquare` verankerd. De alinea ernaast blijft dus lopende tekst en de figuur
 krijgt geen bijschrift uit de Word; `IMPORT.md` meldt het. Het is een schermafdruk
 van een Windows-bureaublad met twee vensters van Parallels Desktop erop, in het ene
@@ -1063,10 +1278,6 @@ terug.**
 
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
-- **"Waarschijnlijk verwacht je dat ARM processoren 'recenter' zijn"**: de hoge
-  komma's zijn in de Word gewone apostrofs en zijn dat hier gebleven. Dat is opmaak
-  en geen tekst, net als de drie punten aan het eind van 5.2, die in de Word het
-  beletselteken zijn.
 - **"Een x64 Core 7 processor" in vraag 4 blijft staan.** Beslist op 7 september
   2026: zo noemt Intel die processoren sinds eind 2023, en zo staat het hier en
   twee keer in hoofdstuk 4.
@@ -1180,19 +1391,21 @@ nu aan het bestandssysteem in plaats van in een opsomming waarvan het eerste lid
 andere kant op wees. Het is een woordcorrectie, dus ze staat alleen in de HTML en
 een herimport draait ze terug.
 
-### De zeven vragen van Test jezelf, en de vier die een probleem hadden
+### De vragen van Test jezelf, en de vier die een probleem hadden
 
 | Vraag | Antwoord | Waarop het steunt |
 |---|---|---|
 | 1 Grootteorde van een nieuwe SSD | a, MB | omgekeerd, zie hieronder |
 | 2 Wat je eerst doet met een nieuwe schijf | a, partitioneren | 6.2, "Een harde schijf moeten we, voor we ze kunnen gebruiken, partitioneren", en 6.3, "partitioneren is niet voldoende voor het besturingssysteem" |
 | 3 Waar het bestandssysteem invloed op heeft | c, zowel bestands- als partitiegrootte | 6.3, "bepalend zal zijn voor de grootte van de partitie en de grootte van de bestanden" |
-| 4 C: en D: in Windows Verkenner | a, je weet zeker dat je twee partities hebt | 6.2, een partitie is wat het besturingssysteem als een aparte schijf aanbiedt; twee stationsletters kunnen op een of op twee schijven staan |
-| 5 Twee besturingssystemen op dezelfde partitie | c, nee | de alinea die hierboven in 6.2 bijgeschreven is |
-| 6 Bestandssysteem voor Windows | a, NTFS | 6.11, "In een Windows omgeving is het meest gebruikte bestandssysteem NTFS" |
-| 7 Bestandssysteem voor Linux | b, EXT4 | 6.12, "meer bepaald in Linux besturingssystemen ... het standaard bestandssysteem voor de meeste distributies sinds 2009" |
+| 4 Waarom sectoren geclusterd worden | a, dezelfde adresruimte dekt meer schijf | 6.4, bijgeschreven op 9 september 2026, zie hieronder |
+| 5 Een bestand van 412 bytes in een cluster van 64 KiB | c, 64 KiB | 6.4, idem |
+| 6 C: en D: in Windows Verkenner | a, je weet zeker dat je twee partities hebt | 6.2, een partitie is wat het besturingssysteem als een aparte schijf aanbiedt; twee stationsletters kunnen op een of op twee schijven staan |
+| 7 Twee besturingssystemen op dezelfde partitie | c, nee | de alinea die hierboven in 6.2 bijgeschreven is |
+| 8 Bestandssysteem voor Windows | a, NTFS | 6.11, "In een Windows omgeving is het meest gebruikte bestandssysteem NTFS" |
+| 9 Bestandssysteem voor Linux | b, EXT4 | 6.12, "meer bepaald in Linux besturingssystemen ... het standaard bestandssysteem voor de meeste distributies sinds 2009" |
 
-MACFS in vraag 6 en 7 is een verzonnen naam, zoals AUTOCAT in hoofdstuk 4. Alle
+MACFS in vraag 8 en 9 (voor 9 september 2026: 6 en 7) is een verzonnen naam, zoals AUTOCAT in hoofdstuk 4. Alle
 zeven de vragen zijn meerkeuze gebleven; dit hoofdstuk heeft dus geen enkele open
 vraag en geen enkele `<div class="oplossing">`.
 
@@ -1213,14 +1426,15 @@ opgeeft, en **defragmenteren** is 6.9. Allebei zijn het echte handelingen aan ee
 schijf, en allebei komen ze na het partitioneren. **Ze staan niet in de Word** en
 een herimport gooit ze weg; het juiste antwoord is niet veranderd.
 
-**Vraag 4 stond in het meervoud terwijl er maar een bewering waar is.** "Welke
+**Vraag 4 stond in het meervoud terwijl er maar een bewering waar is** (het is sinds 9
+september 2026 vraag 6). "Welke
 beweringen zijn WAAR?" is "Welke bewering is WAAR?" geworden. Dat is geen
 inhoudelijke wijziging: van de drie mogelijkheden is alleen "je weet zeker dat je
 twee partities hebt" juist, want twee stationsletters kunnen even goed op een als
 op twee schijven staan en zeggen niets over een tweede besturingssysteem. In
 dezelfde zin is **"ziet je" "zie je"** geworden.
 
-**Vraag 5 is blijven staan zoals ze was**, want het gat waar ze op steunde is met
+**Vraag 5, nu vraag 7, is blijven staan zoals ze was**, want het gat waar ze op steunde is met
 de bijgeschreven alinea in 6.2 gedicht. Omkeren of open maken was hier dus niet
 nodig; de vraag toetst nu iets wat de tekst zegt.
 
@@ -1345,14 +1559,165 @@ ongebruikte afbeelding; een herimport zet ze terug.
   het draait en niet iets over de schijf. Het bestand heet `vakantie.jpg` in plaats
   van SundayParty.JPEG, wat geen enkel gegeven kost.
 
+### 6.1 kreeg een figuur die niet uit de Word komt, 9 september 2026
+
+De alinea die de sector invoert stond zonder beeld. Ze doet drie beweringen die
+elk op zich abstract blijven: een medium is verdeeld in sectoren van meestal 512
+bytes, die sectoren zijn genummerd vanaf 0, en alles wat op het medium staat ligt
+in een of meer van die sectoren. Die derde is de zin die het meest van een
+tekening profiteert, want ze gaat over de plaats van dingen op het medium en niet
+over een getal.
+
+`img/syllabus-06-sectoren.svg` tekent een rij van negen genummerde vakjes, met een
+maatlijn van 512 bytes boven sector 0, en twee bestanden erin: 300 bytes in een
+enkele sector, en 1202 bytes over drie sectoren. Drie stippen achteraan zeggen dat
+de rij doorloopt.
+
+**Drie keuzes zijn afgewogen en dit is waarom ze zo uitgevallen zijn.**
+
+- **Een strook en geen schijfoppervlak met taartpunten.** Die tweede toont waar het
+  woord sector vandaan komt, maar ze voert spoor en cilinder in die deze alinea
+  niet noemt, en ze klopt alleen voor een mechanische schijf terwijl de tabel
+  erboven op diezelfde bladzijde een SSD en een M.2 zet en de alinea zelf
+  opslagmedium schrijft.
+- **Twee bestanden en niet een**, want de alinea zegt "een of meer van die
+  sectoren", en met een enkel bestand staat er maar een van de twee gevallen in
+  beeld.
+- **De maatlijn staat boven sector 0**, dat nu een gewone lege sector is. Zolang
+  sector 0 nog de partitietabel droeg, stond ze boven sector 1, want boven een
+  donkere sector 0 leest ze als de maat van die tabel in plaats van als de maat
+  van een sector.
+
+Geen figcaption: de alinea erboven zegt alles wat de figuur toont, en de andere
+figuren van dit hoofdstuk dragen er evenmin een.
+
+### Het woord vooraan is uit 6.1 geschrapt, 9 september 2026
+
+De alinea sloot af met "van de tabel met de partities vooraan tot het laatste
+bestand". Dat is dezelfde MBR-veronderstelling die uit de tekening gehaald is: bij
+GPT staat op sector 0 een protective MBR en ligt er achteraan nog een reservekopie
+van de tabel. De zin was daarmee niet fout (ook bij GPT staat de primaire tabel
+vooraan, op sector 1 tot 33) en ze las als een manier van spreken voor het eerste
+en het laatste ding op de schijf, maar het woord kostte niets om te schrappen en
+haalt de kleur van een enkel partitieschema uit een alinea die over elk medium
+gaat. Voorgelegd voor het doorgevoerd is. Woordcorrectie, dus alleen in de HTML:
+een herimport zet het terug.
+
+### Twee dingen die in de eerste versie van die figuur fout stonden
+
+Allebei door de lector gevonden op 9 september 2026, allebei het soort fout dat op
+het scherm nergens opvalt.
+
+- **Sector 0 was donker gekleurd als de tabel met de partities, en dat spreekt 6.2
+  tegen.** De alinea van 6.1 schrijft zelf "van de tabel met de partities vooraan",
+  dus de tekening leek de tekst te volgen. Maar bij GPT staat op sector 0 een
+  protective MBR, staat de tabel zelf op sector 1 tot 33 en ligt er achteraan nog
+  een reservekopie, en dat is precies wat `img/syllabus-06-gpt-indeling.svg` een
+  bladzijde verder tekent. De figuur zou dus in 6.1 iets beweren dat 6.2 weerlegt.
+  **Ze is er helemaal uit**, in plaats van ongekleurd te blijven staan: het haakje
+  eronder beweerde hetzelfde als de kleur. Wat de alinea in woorden over de tabel
+  zegt, blijft staan.
+- **Het bestand van 1,5 kB viel precies op drie sectoren, en dat leest als een
+  pasvorm.** 1536 is exact drie keer 512, dus de tekening suggereerde dat het
+  aantal sectoren uit een deling volgt in plaats van uit een afronding naar boven.
+  Het zijn nu 1202 bytes, waarvan de derde sector nog voor 178 bytes gebruikt
+  wordt, en het tweede bestand van 300 bytes vult zijn enige sector ook maar voor
+  ruim de helft. **De vulling toont dus de data en de omlijning de sector**: een
+  sector met een donkergroene rand hoort bij een bestand, ook waar hij leeg blijft.
+
+Dat tweede raakt aan de slack van 6.4, en dat is aanvaard: daar gaat het over
+clusters en hier over sectoren, en de tweede grijze regel onder de figuur ("Een
+bestand krijgt altijd hele sectoren, ook als het de laatste maar half vult") is de
+zin die 6.4 straks op clusterniveau herhaalt. Zonder die restruimte in beeld kan de
+figuur niet laten zien waarom een sector het kleinste stuk is dat in een keer
+geschreven wordt, wat de definitie is die de alinea zelf geeft.
+
+**De figuur kost geen bladzijde.** 197 bladzijden voor en na, en de inhoudstafel
+is rij voor rij identiek gebleven, dus er is geen enkel hoofdstuk verschoven. Wat
+er wel gebeurt: de twee openingsalinea's van 6.2 schuiven van bladzijde 51 naar 52.
+De tekstschaal `3.1249194` staat op dezelfde 189 bladzijden als voordien, dus er
+loopt niets over de bladspiegel.
+
+**Een herimport gooit ze weg**, zoals elke bijgeschreven tekst en elk hertekend
+beeld: de Word heeft hier geen afbeelding staan.
+
+**De labokopie is `img/partitioneren-sectoren.svg`** en ze staat op
+`Labo/Partitioneren/Theorie/Bestandssystemen.html`, onder de zin die de sector
+invoert en boven de clustertekening. Byte voor byte dezelfde als de syllabuskopie,
+zoals bij fragmentatie, MBR, primair/extended/logisch en GPT. **Wijzig er dus nooit
+een zonder de andere.** Wat er in de labotrack anders is, is alleen de figcaption:
+de labopagina zegt in haar lopende tekst niets over de nummering vanaf 0, dus dat
+gegeven staat daar in het bijschrift. Er is verder aan geen enkele labopagina iets
+veranderd.
+
+### 6.4 kreeg een figuur, en die is meteen de gedeelde versie geworden, 9 september 2026
+
+6.4 Clusters stond zonder beeld, met twee tabelletjes Adres/Sectoren uit de Word.
+De labotrack had wel al een tekening die precies dezelfde twee dingen toont, dus de
+vraag was niet wat er getekend moest worden maar hoe de twee tracks zich tot elkaar
+verhouden.
+
+**Het is een nieuwe tekening geworden die in allebei de tracks staat**, en de oude
+`img/partitioneren-cluster-en-slack.svg` is erdoor vervangen. Byte voor byte
+gelijk aan `img/syllabus-06-cluster-en-slack.svg`, zoals bij fragmentatie, MBR en
+de sectoren. **Wijzig er dus nooit een zonder de andere.**
+
+**De eenheid heeft eerst de verkeerde kant op gewerkt, en dat is dezelfde dag
+rechtgezet.** De syllabus rekent in KiB (6.4 schrijft zelf "64 KiB, dus 65 536
+bytes") en het labo schreef kB, en daar is eerst een regel uit afgeleid dat een
+gedeelde figuur geen kilo-etiket mag dragen. Dat was een verkeerd soort argument:
+4096 bytes is 4 KiB en geen 4 kB, dus het verschil tussen de twee tracks was een
+fout en geen randvoorwaarde. De labotrack is naar KiB gegaan (zie de laatste punten
+van de overlaplijst hieronder) en de regel is ingetrokken; wat ervoor in de plaats
+staat, staat in CLAUDE.md bij het achtste kopiepaar.
+
+**De tekening zegt wel nog altijd `512 bytes` en `4096 bytes`, en dat is nu een
+tekenkeuze.** De bovenste helft toont dat acht sectoren van 512 bytes samen een
+cluster geven, en dat is een som: 4096 laat die som zien en 4 KiB verbergt hem. De
+alinea's ernaast schrijven in allebei de tracks "4096 bytes, ofwel 4 KiB", dus de
+lezer heeft de twee vormen naast elkaar.
+
+**De vier keuzes, allemaal voorgelegd voor er getekend is.**
+
+- **Allebei de helften.** Bovenaan zestien sectoren die per acht onder een adres
+  komen, onderaan een bestand in een heel cluster. Dat zijn de twee dingen die de
+  sectie doet: eerst de winst in adresruimte, dan de prijs.
+- **De twee tabellen Adres/Sectoren blijven staan.** Ze komen uit de Word en tonen
+  de koppeling adres per adres, wat een tekening minder precies doet; de tekening
+  toont de verhouding, wat een tabel niet doet. De figuur komt erbij en vervangt
+  ze niet.
+- **De figuur staat onder de alinea over slack**, dus onder allebei de alinea's die
+  ze uitlegt, net zoals de fragmentatiefiguur onder haar drie alinea's staat.
+- **Het cluster in de slackhelft is 4096 bytes en is op schaal.** De sectie rekent
+  in haar voorbeeld met 64 KiB, maar 412 bytes is daarvan 0,6 procent: op 160.0mm
+  is dat een streepje van een halve millimeter, en dan is de tekening niet meer op
+  schaal. Bij 4096 bytes is het een tiende, en dat is te zien. Zelfde afweging als
+  bij de TTL-drempels van hoofdstuk 10.
+
+**Daardoor staat er wel een ander getal in de figuur dan in de alinea erboven, en
+dat is opgelost in de figuur en niet in de tekst.** De onderste regel zegt "Hier is
+het cluster 4096 bytes, de standaardwaarde", zodat 4096 leest als een keuze en niet
+als een tegenspraak met de 64 KiB van het voorbeeld. De alinea die er een verder
+staat bevestigt het ("Standaard wordt er 4096 bytes of 4 KiB gerekend"). Aan de
+lopende tekst is niets veranderd.
+
+**Deze figuur kost wel een bladzijde**, anders dan die van 6.1. Ze is 80mm hoog, en
+de syllabus ging van 197 naar 198 bladzijden. Nagekeken zoals het hoort: hoofdstuk 1
+tot 5 staan op dezelfde bladzijde, binnen hoofdstuk 6 herschikken de korte secties
+6.5 tot 6.9 zich over hun bladzijden, en **elke rij vanaf hoofdstuk 7 schuift exact
++1 op**, dus geen enkel ander hoofdstuk heeft een bladzijde gewonnen of verloren. De
+tekstschaal `3.1249194` staat op 190 van de 198 bladzijden, tegen 189 van de 197,
+dus er loopt niets over de bladspiegel.
+
 ### Waar dit hoofdstuk en Labo Partitioneren naast elkaar staan
 
 Dit is de zwaarste overlap met een labo tot nu toe.
 `Labo/Partitioneren/Theorie/Bestandssystemen.html` en `Partitietabellen.html` zijn
 uit dit hoofdstuk geschreven, en `Spiekblad.html` draagt dezelfde grenzen.
 Patroon 17: de twee tracks zeggen hetzelfde twee keer en er linkt niets tussen.
-**Er is aan geen enkele labopagina iets veranderd.** Nagekeken op tegenspraak, en
-dit kwam eruit.
+Nagekeken op tegenspraak, en dit kwam eruit. **Tot 9 september 2026 stond hier dat
+er aan geen enkele labopagina iets veranderd was**; sinds die dag klopt dat niet
+meer, en wat er wel veranderd is staat in de laatste twee punten van deze lijst.
 
 - **De getallen komen overeen.** FAT32 2 TB en 4 GB, NTFS 256 TB en 2 TB met MBR,
   EXT 1 EiB en 2 TB met MBR en 16 TB per bestand, een sector van 512 bytes, een
@@ -1362,20 +1727,39 @@ dit kwam eruit.
 - **Het spiekblad heeft exFAT en linux-swap erbij**, en de syllabus noemt die twee
   nergens. Dat is een gat en geen tegenspraak: het labo werkt in GParted, waar de
   keuzelijst die twee ook aanbiedt.
-- **Het labo zegt van FAT32 uitdrukkelijk dat het geen journaal heeft, de syllabus
-  niet.** 6.10 zwijgt over het journaal en 6.11 voert het pas in bij NTFS. Ook een
-  gat en geen tegenspraak.
+- **Het journaal staat alleen nog in het labo.** Tot 9 september 2026 voerde 6.11
+  het in bij NTFS terwijl 6.10 erover zweeg; sinds die dag noemt de syllabus het
+  woord nergens meer. Zie de laatste subsectie hieronder. Geen tegenspraak: het
+  labo legt iets uit wat de syllabus niet behandelt.
 - **De maximale bestandsgrootte van NTFS staat alleen in de syllabus**
   ("Theoretisch: 16 EiB, Praktisch 256 TB"); het spiekblad zet er 256 TB. Hetzelfde
   getal, alleen zonder de theoretische grens ernaast.
-- **Over first, best en worst fit zeggen de twee precies hetzelfde**, tot en met de
-  reden waarom uitgerekend worst fit het minst fragmenteert en waarom defragmenteren
-  op ext daardoor in de praktijk overbodig is.
+- **First, best en worst fit staan alleen nog in het labo.** De twee zeiden precies
+  hetzelfde tot 6.7 op 9 september 2026 geschrapt is, zie hieronder. Wat de syllabus
+  ervan overhoudt is dat defragmenteren op ext in principe overbodig is, en die zin
+  steunt nu op de grote blokken die 6.12 zelf al noemt in plaats van op worst fit.
 - **Het MBR-schema staat nu in allebei de tracks**, sinds de alinea's die hierboven
   in 6.2 bijgeschreven zijn. Ze zeggen hetzelfde als
   `Labo/Partitioneren/Theorie/Partitietabellen.html`, in het kort waar het labo het
   in het lang doet: vier tabelplaatsen, 2 TB, primair tegen extended tegen logisch,
   en 128 plaatsen bij GPT. Er linkt niets tussen.
+- **De clustertekening is sinds 9 september 2026 een gedeeld bestand**, byte voor
+  byte gelijk in allebei de tracks, en ze draagt daarom geen kB en geen KiB maar
+  alleen `512 bytes` en `4096 bytes`. Zie de subsectie over 6.4 hierboven.
+- **De eenheid is op 9 september 2026 gelijkgetrokken naar KiB.** Het labo schreef
+  `4 kB` en `64 kB` waar het zelf met machten van twee rekent, en de syllabus
+  schrijft daar KiB. Vijf plaatsen op drie labopagina's: de slackalinea en de
+  standaardclustergrootte op `Bestandssystemen.html`, de info-box van
+  `Spiekblad.html`, en vraag 6 en vraag 10 van `TestJezelf.html`. **Een getal moest
+  mee**, want mogelijkheid b van vraag 6 rekende `1000 x 64 kB` uit tot "bijna 64
+  MB", en met clusters van 64 KiB is de verloren ruimte 65 036 000 bytes, dus ruim
+  62 MiB. Dat is precies het soort gevolg dat je mist als je alleen het etiket
+  vervangt.
+- **De TB en GB in allebei de tracks zijn NIET aangeraakt**, en dat is bewust. De
+  2 TB van MBR, de 4 GB van FAT32 en de 256 TB van NTFS zijn geciteerde grenzen en
+  geen som die de tekst zelf maakt, de syllabus schrijft ze ook als TB en GB, en de
+  lijst hierboven bewaakt juist dat die negen getallen in allebei de tracks gelijk
+  staan. Een van de twee tracks omzetten zou die overeenkomst breken.
 - **De syllabus schrijft een bestandssysteem in kapitalen** (FAT32, NTFS, EXT4),
   het labo schrijft ext4 in kleine letters zoals Linux zelf. Allebei zijn ze binnen
   hun eigen track consequent, en geen van beide is aangeraakt.
@@ -1393,39 +1777,270 @@ is. **Deze correcties staan alleen in de HTML en een herimport draait ze terug.*
   zijn WAAR?"** is **"Welke bewering is WAAR?"**. Zie hierboven bij die vraag.
 - **De zin over wat wat bepaalt in 6.3** is omgedraaid. Zie hierboven.
 
+### Wat er in de tekst opviel, en op 10 september 2026 rechtgetrokken is
+
+Drie taalfouten, zonder overleg doorgevoerd. Ze staan alleen in de HTML.
+
+- **"Zoals je ziet kunnen we nu 8 keer meer sectoren kunnen adresseren"** in 6.4 droeg
+  kunnen twee keer; de tweede is weg.
+- **"Vooral USB sticks en SD kaartjes worden nog vaak geformatteerd in dit
+  bestandssysteem"** in 6.10 kreeg zijn punt.
+- **"En een derde reden is fragmentatie kan vermeden worden"** in 6.12 is **"is dat
+  fragmentatie"** geworden.
+
+**"Dit heeft te maken het algoritme dat wordt gebruikt" in 6.6 stond ook op de lijst en
+was al weg**, want die alinea is bij de herwerking van 9 september herschreven. Kijk zo'n
+lijst dus na tegen de HTML voor je hem afwerkt.
+
+**En een inhoudelijke correctie, voorgelegd en goedgekeurd op 10 september 2026.** 6.4 vroeg
+"Waarom dan geen clusters die 64, 128 of 1024 sectoren koppelen?" en rekende de alinea erna met
+"een clustergrootte van 64 KiB". Dat zijn sectoren tegen kilobytes: 64 sectoren van 512 bytes is
+32 KiB. Van de twee kanten is het ANTWOORD bijgedraaid en niet de vraagzin, want dan blijft de rest
+van de alinea staan zoals ze is: de 412 bytes, de zo'n 63 KiB slack en de vraag in Test jezelf die
+met 64 KiB rekent. Ze luidt nu "Stel nu dat we kiezen voor clusters van 128 sectoren, dus 64 KiB of
+65 536 bytes". 128 sectoren staat al in de vraagzin, dus er is ook geen getal bij verzonnen.
+
+**En de decimale komma, beslist 10 september 2026.** 6.1 schreef de vormfactoren als 3.5", 2.5"
+en 1.8" met een punt, terwijl de oefening van 11.2 en die van 2.1 al 3,5 duim en 2,5 duim
+schrijven. Ze dragen nu de komma. De algemene regel staat in CLAUDE.md.
+
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
-- **"Zoals je ziet kunnen we nu 8 keer meer sectoren kunnen adresseren"** in 6.4,
-  met kunnen twee keer.
-- **6.4 vraagt "Waarom dan geen clusters die 64, 128 of 1024 sectoren koppelen?" en
-  rekent de alinea erna met "een clustergrootte van 64 kB".** Dat zijn sectoren
-  tegen kilobytes: 64 sectoren van 512 bytes is 32 kB. De rekensom binnen die
-  alinea klopt wel op zichzelf, want een bestand van 412 bytes in een cluster van
-  64 kB laat inderdaad zo'n 63 kB liggen. Alleen de sprong van de vraagzin naar de
-  alinea erna klopt niet.
-- **"Vooral USB sticks en SD kaartjes worden nog vaak geformatteerd in dit
-  bestandssysteem"** in 6.10 mist een punt op het eind.
-- **"Per herpositionering is er dus een Seek Time en Rotational latency..."** in
-  6.6 schrijft Seek Time met twee hoofdletters en Rotational latency met een; 6.9
-  schrijft "(Seek Time + Rotational Latency)" met twee.
-- **"Dit heeft te maken het algoritme dat wordt gebruikt"** in 6.6, waar "te maken
-  met het algoritme" hoort te staan.
-- **"En een derde reden is fragmentatie kan vermeden worden"** in 6.12, waar "is
-  dat fragmentatie" hoort te staan.
-- **"ext2" in 6.6 tegen "EXT4" in de kernpunten en in 6.12.** Binnen het hoofdstuk
-  wisselt de schrijfwijze, en het is niet aangeraakt.
-- **De hoge komma's rond partitie, Schijfbeheer en Disk Management** zijn in de
-  Word gewone apostrofs en zijn dat hier gebleven. Dat is opmaak en geen tekst, net
-  als de apostrof in "zo'n 63 kB" in 6.4.
+Niets meer. Elke regel die hier gestaan heeft, is in de rondes van 10 september 2026
+rechtgezet; wat het waren en wat ermee gebeurd is, staat hierboven. Dit is voorlopig het
+enige hoofdstuk waarvan deze lijst leeg is.
 
+### Het hoofdstuk is herwerkt voor zelfstudie, 9 september 2026
+
+**De lector laat de studenten dit hoofdstuk zelfstandig verwerken uit de syllabus,
+en dat is de reden voor alles in deze subsectie.** Wat in een hoorcollege
+tussendoor gezegd wordt, moet dan op papier staan, en wat niet naar de leerdoelen
+leidt mag weg. De leerdoelen die hij daarbij genoemd heeft: welk bestandssysteem
+bij welk besturingssysteem hoort, wat clusters zijn en welke impact ze hebben.
+**Alles hieronder staat alleen in de HTML en een herimport gooit het weg.**
+
+**De sector is in 6.1 bijgeschreven, en de afbakening is van de lector.** Het
+hoofdstuk gebruikte het woord vanaf 6.3 ("op welke locaties (= op welke sectoren)")
+terwijl hoofdstuk 11 het pas invoert, en zonder de sector zijn 6.3 en 6.4 niet te
+volgen. Wat erbij komt is precies wat dit hoofdstuk nodig heeft: een medium is
+verdeeld in genummerde sectoren, een sector is het kleinste stuk dat in een keer
+gelezen of geschreven wordt, en hij is meestal 512 bytes groot. **Geen track, geen
+cilinder, geen kop**; dat blijft hoofdstuk 11. De alinea staat achter de zin die de
+afbakening zelf al maakt ("In het hoofdstuk Harde schijf gaan we gedetailleerd in
+op de interne werking"), en hij staat in 6.1 en niet in 6.3, omdat 6.2 het MBR al
+in de eerste sector legt.
+
+**Daardoor verklaren twee getallen zich nu**, en dat is de winst boven een
+definitie. 6.2 zei dat MBR schijven tot 2 TB beschrijft zonder waarom, en draagt nu
+de tweede grens: 32 bits per sectoradres, dus 2^32 sectoren van 512 bytes. En de
+512 in de rekensom van 6.3 (2^8 * 512 bytes) komt niet langer uit de lucht vallen.
+
+**Seek Time en Rotational Latency zijn geschrapt in plaats van uitgelegd.**
+Beslissing van de lector, en ze is juist: 6.6 zei "Per herpositionering is er dus
+een Seek Time en Rotational latency..." achter een zin die al zegt dat de arm
+meermaals opnieuw gepositioneerd moet worden, en 6.9 rekende "1x (Seek Time +
+Rotational Latency)". De twee namen waren daar een etiket op een redenering die
+zonder hen af is. Geen kernpunt, geen studievraag en geen vraag van Test jezelf
+steunde erop, en hoofdstuk 11 voert ze wel in, met een studievraag die om een
+schets vraagt. 6.6 verwijst nu naar dat hoofdstuk voor wat zo een herpositionering
+kost.
+
+**6.7 First fit, best fit, worst fit is helemaal geschrapt**, op beslissing van de
+lector: het leidt niet naar een van de drie leerdoelen.
+`FirstFitBestFitWorstFit.html` is weg, het topic `bestandssystemen-fits` is uit
+`reference.js`, en `img/syllabus-06-first-best-worst-fit.svg` is weg omdat regel 1
+over een ongebruikte afbeelding valt. **De labokopie
+`img/partitioneren-first-best-worst-fit.svg` blijft** en is daarmee geen paar meer;
+CLAUDE.md is daarop rechtgezet.
+
+Drie zinnen elders steunden erop en zijn mee bijgedraaid. 6.6 eindigde op "Dit
+heeft te maken het algoritme dat wordt gebruikt om bestanden op te slaan", een
+vooruitwijzing naar een sectie die er niet meer is; daar staat nu "de manier waarop
+een bestandssysteem een vrije plaats kiest", wat hetzelfde zegt zonder de
+vooruitwijzing en meteen de ontbrekende "met" repareert. 6.9 zei dat defragmenteren
+op ext overbodig is "door gebruik te maken van het worst fit algoritme", en steunt
+nu op de grote blokken die 6.12 zelf al noemt. En **een alinea is gered die niet
+over de fits ging**: "Op zich is fragmentatie helemaal niet erg ... het is de
+vertraging die ervoor zorgt dat fragmentatie als nadelig wordt ervaren" stond in
+6.7 en staat nu achteraan 6.6, waar ze thuishoort. **De head crash is er wel uit**:
+dat is een begrip van hoofdstuk 11 en het was in 6.7 al een terzijde.
+
+**Het journaal is helemaal weg uit 6.11 NTFS**, en dat is een keuze tussen twee die
+voorgelegd zijn: het woord kon ook als een enkele zin blijven staan, zodat NTFS een
+reden hield om beter te zijn dan FAT32. Weg is weg geworden. Dat kost de zin "Je
+beschikt ook over een journaal", vijf alinea's, en de figuur
+`img/syllabus-06-journaal.svg`, die op 7 september 2026 nog hertekend was om van
+een YouTube-schermafdruk af te raken. **De labokopie
+`img/partitioneren-journaal.svg` blijft.** Wat NTFS overhoudt is de grote
+adresruimte en de grote bestanden, en dat is genoeg voor de twee studievragen en
+voor vraag 6 van Test jezelf. De blurb in `reference.js` noemde het journaal en is
+herschreven.
+
+**Het schrappen verschuift de sectienummers: 6.8 tot 6.13 van de Word worden hier
+6.7 tot 6.12.** Dat breekt de afspraak hierboven dat de gedrukte nummering die van
+de Word volgt, en dat is de prijs die met deze beslissing meekomt. Wordt de sectie
+ooit in de Word geschrapt, dan lopen ze weer gelijk.
+
+**Drie figuren zijn erbij gekomen in 6.2, alle drie een byte-voor-byte kopie uit de
+labotrack**: `syllabus-06-mbr-indeling.svg`, `-primair-extended-logisch.svg` en
+`-gpt-indeling.svg`, alle drie op 160.0mm. Het hoofdstuk had over MBR en GPT geen
+enkele tekening, terwijl het er sinds 7 september 2026 wel twee alinea's over
+draagt. Hoofdstuk 3 tekent het master boot record ook
+(`syllabus-03-master-boot-record.svg`), maar als opstartmechanisme; de labotekening
+is gekozen omdat ze de vier ingangen van 16 bytes toont waar 6.2 over gaat, en
+omdat de twee andere er dan bij horen. **De drie zijn nu paren zoals fragmentatie
+dat al was**, dus wijzig er nooit een zonder de labokopie, en kijk het na met
+`diff`.
+
+**GPT en UEFI staan nu voluit in 6.2**, als GUID Partition Table en Unified
+Extensible Firmware Interface. GPT stond nergens voluit en UEFI alleen in hoofdstuk
+3, terwijl studievraag 3 letterlijk vraagt waar die afkortingen voor staan; voor
+zelfstudie is een antwoord drie hoofdstukken terug te ver weg. MBR stond al voluit
+in de alinea van 7 september.
+
+**KiB staat een keer voluit in 6.4**, bij het eerste gebruik: "64 KiB, dus 65 536
+bytes". Kibi tegen kilo komt pas in hoofdstuk 10, en dit is de kleinste ingreep die
+maakt dat je 6.4 zonder dat hoofdstuk kan lezen. Er is geen enkel getal veranderd,
+dus de syllabus en het spiekblad van Labo Partitioneren blijven gelijk.
+
+**Test jezelf toetste clusters niet, en telt nu negen vragen in plaats van zeven.** Dat viel op
+toen de leerdoelen op tafel lagen: welk bestandssysteem bij welk besturingssysteem hoort is
+tweemaal getoetst (vraag 8 en 9) en wat het bestandssysteem begrenst eenmaal (vraag 3), maar
+clusters en hun impact stonden er alleen in als afleider bij vraag 2. Voor een hoofdstuk dat
+zelfstandig verwerkt wordt is die lijst de enige terugkoppeling die de student heeft. Er staan nu
+twee vragen tussen 3 en de oude 4: **wat clusteren oplevert** (dezelfde adresruimte dekt een groter
+deel van de schijf) en **wat het kost** (een bestand van 412 bytes in een cluster van 64 KiB neemt
+64 KiB in). Allebei steunen ze woord voor woord op 6.4. De afleiders zijn de misvattingen die daar
+naast liggen: dat een sector er meer dan 512 bytes in kwijt kan, dat de inhoudstafel er plaatsen
+bij krijgt, en dat kleine bestanden er juist minder plaats mee innemen, wat het omgekeerde is van
+slack. **De nummers van de vier vragen erna zijn daardoor opgeschoven**, en de tabel hierboven
+draagt de nieuwe.
+
+**Twee verwijzingen stuurden de lezer naar het verkeerde hoofdstuk**, en dat merk je alleen als je
+het hoofdstuk alleen zit te lezen. 6.2 zei "In het hoofdstuk Bestandssystemen kom je hierover meer
+te weten" terwijl dit hoofdstuk 6 Bestandssystemen is, en 6.9 FAT zei over NTFS "Hierover leer je
+meer in volgend hoofdstuk" terwijl NTFS de volgende sectie is en het volgende hoofdstuk
+Besturingssystemen. Ze zijn nu "verderop in dit hoofdstuk" en "in de volgende sectie". Allebei
+komen ze uit de Word, waar de indeling anders lag, en allebei zet een herimport ze terug.
+
+**Een uitspraakkader staat in 6.2**, een gewone `info-box` met `info-title remark`
+zoals de bronkaders van hoofdstuk 3 en 9, achter de alinea over de benamingen
+partitie, volume en slice. De lector hoort studenten "par-ti-ti-o-neren" zeggen,
+met de drie letters van tio een voor een gelezen; het kader zet er
+"par-ti-sjo-nee-ren" tegenover, met conditioneren en functioneren als de twee
+woorden waar dezelfde klank in zit. Het is het eerste kader in deze syllabus dat
+over taal gaat en niet over de stof.
 ## Hoofdstuk 7, Besturingssystemen
 
-**Dit hoofdstuk heeft geen sectie Studievragen achteraan.** Er is hier dus geen
-`TestJezelf.html` en er wordt achteraan het hoofdstuk geen sectie Oplossingen
-gedrukt. Dat is het geval van hoofdstuk 2 en het tweede in zeven hoofdstukken.
-Het kader Studievragen vooraan bestaat wel, met tien vragen, en het staat samen
-met de Kernpunten op `Overzicht.html`. Of elk hoofdstuk er een hoort te krijgen,
-wordt beslist na hoofdstuk 16 en in een keer, niet hier.
+**Dit hoofdstuk had geen sectie Studievragen achteraan**, dus er stond hier
+oorspronkelijk geen `TestJezelf.html`. Op 9 september 2026 is beslist dat elk
+hoofdstuk er een krijgt op hoofdstuk 2 na, en die van hoofdstuk 7 telt tien
+vragen. Het kader Studievragen vooraan bestaat daarnaast, ook met tien vragen, en
+het staat samen met de Kernpunten op `Overzicht.html`.
+
+### Herwerkt voor zelfstudie, 9 september 2026
+
+De lector wil dit hoofdstuk zelfstandig door de studenten laten verwerken uit de
+syllabus. Nagekeken op die vraag zakte het op drie punten, en alle drie zijn ze
+rechtgezet.
+
+**Drie studievragen hadden geen antwoord in de lopende tekst.** Vraag 6 vroeg wat
+context switching is, terwijl het woord alleen als werkwoord in 7.6 stond
+("vliegensvlug context switchen") en nergens uitgelegd werd. Vraag 8 vroeg om een
+schets bij vier algoritmes, en er stond bij geen van de vijf een schets. Vraag 4
+vroeg naar bescherming tegen wijzigingen van de gebruiker EN van het
+besturingssysteem zelf, en 7.3 beantwoordde alleen de eerste helft. Dat is het gat
+van de wet van Moore in hoofdstuk 1 en van realtime hierboven.
+
+**Het hoofdstuk stond scheef.** Van de ongeveer 2650 woorden lopende tekst zat er
+1262 in 7.6 en drie van de vier figuren ook, terwijl 7.5 Geheugenbeheer 243
+woorden telde en geen enkele figuur had.
+
+**Wat er geschrapt is.** De vier secties First come first served, Shortest job
+first, Round robin scheduling en Preemptive Multilevel Feedback Queue, samen 447
+woorden. Priority based scheduling is niet geschrapt maar opgegaan in de nieuwe
+sectie 7.7. Geen van de vier doelstellingen van de studiefiche vraagt naar die
+algoritmes, en ze droegen de enige vijf Heading 4's van de hele Word plus de vijf
+figuren die nog getekend moesten worden. **De vijf Heading 4's bestaan hiermee
+niet meer**, dus die tak van de importer draait nergens meer; de meting die er in
+het blok hierboven over staat, blijft wel juist.
+
+**Cooperative en preemptive multitasking zijn gebleven**, samengevoegd tot een
+sectie van ongeveer 160 woorden. Preemptie is het mechanisme waarmee prioriteit
+werkt en cooperative is waar starvation vandaan komt, dus zonder die sectie staat
+7.7 in de lucht.
+
+**De vergelijkingsfiguur is gesplitst, en dat kostte geen bladzijde.** Ze stond
+eerst als een enkele `-preemptive-vs-cooperative.svg` met de twee mechanismen boven
+elkaar, en op vraag van de lector is ze `img/syllabus-07-cooperative-multitasking.svg`
+en `img/syllabus-07-preemptive-multitasking.svg` geworden, elk onder de alinea's
+die erbij horen. De oude is geschrapt, want een afbeelding waar geen pagina naar
+wijst valt over regel 16.
+
+**Die twee delen hun geometrie met opzet, en dat is de reden dat de vergelijking
+overeind blijft** ook al staan ze nu niet meer boven elkaar: allebei `viewBox
+0 0 770 156`, twee tijdbalken op y=50 en y=90 van 476 breed vanaf x=272, dezelfde
+pijlen en dezelfde blokhoogte van 24. **Verander je er een aan, verander dan de
+andere mee**, anders lijken de twee tijdlijnen een andere schaal te hebben terwijl
+ze hetzelfde tijdsverloop tonen. Wat wel verschilt is wie er links staat, en dat
+is zelf een gegeven: bij cooperative zijn dat de twee processen, bij preemptive de
+process scheduler.
+
+De splitsing pakte op de bladspiegel beter uit dan verwacht. Twee figuren van
+32,4mm passen waar een van 74,8mm dat niet deed, dus de realtimefiguur van 7.7
+staat nu op dezelfde bladzijde als haar alinea in plaats van op de volgende, en
+het gat onderaan blz. 69 is weg. Het document bleef op 199 bladzijden en geen
+enkele rij van de inhoudstafel verschoof.
+
+**Wat er bijgeschreven is**, en dat staat dus alleen in de HTML:
+
+- **7.6, sectie Context switching**, ongeveer 170 woorden plus
+  `img/syllabus-07-context-switch.svg`. Wat de processor bijhoudt (welke
+  instructie aan de beurt is en met welke tussenwaarden hij rekent, samen de
+  registers), dat dat pakketje de context heet, en dat een wissel zelf
+  processortijd kost, zodat te kleine slices de machine traag maken. Het woord
+  register komt in de syllabus verder alleen in hoofdstuk 13 voor, dus het wordt
+  hier ingevoerd met zijn betekenis erbij en niet als bekend verondersteld.
+- **7.5**, ongeveer 150 woorden plus `img/syllabus-07-swapping.svg`. Dat het
+  terughalen opnieuw een wissel kost, dat Windows daar een wisselbestand voor
+  heeft en Linux een swapbestand of swappartitie, en dat te weinig werkgeheugen
+  zich niet met een foutmelding maar met traagheid meldt. Dat laatste is
+  doelstelling 2 van de fiche, een verantwoorde hardwarekeuze maken.
+- **7.7 Prioriteit en realtime**, een eigen sectie van ongeveer 380 woorden plus
+  `img/syllabus-07-realtime-tegen-gewoon.svg`. Ze bevat de vier alinea's die hier
+  op 7 september al bijgeschreven waren, plus wat er van priority based scheduling
+  overbleef.
+- **7.3**, drie zinnen over rechten op de systeeminstellingen zelf, voor de tweede
+  helft van studievraag 4.
+
+**Twee woordcorrecties.** "de prefetch buffer" in 7.5 is weg: hoofdstuk 13 voert
+die term pas in, en de zin zegt nu dat aaneensluitende adressen sneller aangeleverd
+worden. En "Von Neuman" in de eerste zin van 7.5 is "Von Neumann" geworden, zoals
+de titel van hoofdstuk 5.
+
+**Het kader is aangepast.** Studievraag 8 en 9 gingen over de algoritmes en zijn
+vervangen door een vraag over wat er bij een context switch gebeurt en waarom de
+slices niet te klein mogen worden, en een over waaraan je te weinig werkgeheugen
+merkt. Het kader blijft op tien vragen. De typfout "eventuool" in vraag 4 is
+meteen rechtgezet.
+
+**Test jezelf is aangepast.** Vraag 8 ging over welk algoritme geen last heeft van
+starvation en vraag 9 over welk algoritme Windows gebruikt; die twee zijn vervangen
+door een vraag over de context switch en een over swapping. Tien vragen, elk met
+precies een `<li class="juist">`, nagerekend na de wissel.
+
+**De tekening van de reactietijden is het nakijken waard.** Zeven balken per rij
+tegen een verticale deadline: de gewone balken zijn gemiddeld 192 eenheden lang en
+een ervan schiet er met 487 ver voorbij, de RTOS-balken zijn gemiddeld 251 en
+blijven allemaal onder de 440 die de deadline is. De figuur toont dus dat een RTOS
+gemiddeld TRAGER is en toch altijd op tijd, en dat is precies de zin ernaast. Draai
+je aan die getallen, reken dat gemiddelde dan opnieuw na.
+
+**De export.** Van 198 naar 199 bladzijden. Hoofdstuk 7 ging van 62 tot 72 naar 62
+tot 73 en hoofdstuk 8 tot 16 schoven alle exact een bladzijde op, rij voor rij
+nagekeken; hoofdstuk 1 tot 6 stonden stil. De tekstschaal is overal `3.1249194`
+behalve op de twee beeldbladzijden van hoofdstuk 11, die in de vorige PDF op
+dezelfde plaats stonden.
 
 ### Heading 4 draaide hier voor het eerst, en de tak klopt
 
@@ -1801,10 +2416,6 @@ hoofdstukken terug.**
   multitasking het woord is dat de rest van de sectie gebruikt.
 - **"met zich teweeg brengen"** in Cooperative multitasking, een kruising van
   met zich meebrengen en teweegbrengen.
-- **De hoge komma's rond 'indruk' in 7.6 en rond 'gewone' en 'hart' in 7.2** zijn
-  in de Word gewone apostrofs en zijn dat hier gebleven. Dat is opmaak en geen
-  tekst, net als de drie punten in "gebruikersbeheer, bestandsbeheer,
-  geheugenbeheer, ... ." in 7.2, die daar met een spatie voor de punt staan.
 ### De tien vragen van Test jezelf
 
 Het hoofdstuk had geen sectie Studievragen achteraan, dus alle tien de vragen zijn
@@ -1820,8 +2431,8 @@ hoofdstuk 2 na met een Test jezelf afsluit. **Een herimport gooit ze weg.**
 | 5 Wat is swapping | c, weinig gebruikte actieve programma's uit het werkgeheugen halen en hun status op de schijf zetten | 7.5, de twee laatste alinea's. Studievraag 5. Mogelijkheid a is context switching en mogelijkheid b is de fragmentatiealinea van diezelfde sectie, dus een fout antwoord wijst een alinea aan |
 | 6 Proces staat blocked en de I/O is klaar | b, het komt in de ready queue en wacht op de process scheduler | 7.6, "Merk op dat een proces niet rechtstreeks uit de blocked status naar de running status kan gaan" |
 | 7 Wie geeft bij cooperative multitasking de processor af | b, het proces zelf | 7.6, "Bij cooperative multitasking wordt het process schedulen uitgevoerd door de processen zelf" |
-| 8 Welk algoritme heeft geen last van starvation | d, round robin | 7.6: FCFS "kan starvation optreden", SJF "geen starvation meer voor kleine jobs maar wel voor grote", PBS "starvation van processen met lage prioriteit mogelijk", RRS "heeft geen last van starvation". De drie afleiders staan dus elk met zoveel woorden in de tekst |
-| 9 Welk algoritme gebruikt Windows | d, de multilevel feedback queue | 7.6, "Windows gebruikt een combinatie van alle bovenstaande scheduling technieken die men onder de noemer multilevel feedback queue classificeert". Studievraag 9 |
+| 8 Wat doet het besturingssysteem bij een context switch | b, het bewaart de toestand van het lopende proces en herstelt die van het volgende | 7.6, de sectie Context switching, die zelf bijgeschreven is. Verving bij de herwerking van 9 september 2026 een vraag over welk algoritme geen last heeft van starvation |
+| 9 Machine met te weinig werkgeheugen wordt traag | c, de schijf wordt als extra werkgeheugen gebruikt | 7.5, de swappingalinea's, zelf bijgeschreven. Verving bij diezelfde herwerking een vraag over welk algoritme Windows gebruikt |
 | 10 Waarom niet zomaar realtime | c, het duwt alles eronder naar achteren en er staat per definitie niets meer boven dat kan ingrijpen | 7.6, Prioriteit en realtime, de voorlaatste alinea. Studievraag 10 |
 
 **Alle tien de vragen hebben precies een juist antwoord, en dat is nageteld.** Het
@@ -1832,7 +2443,9 @@ hier bij geen enkele vraag, dus er is geen enkele open vraag en geen enkele
 **Tien vragen voor het langste hoofdstuk van de syllabus**, 2612 woorden over zes
 secties, en dat is bewust meer dan de vijf tot negen waarmee deze ronde gekalibreerd
 werd. Elke vraag hangt aan een andere sectie of aan een andere studievraag van het
-kader vooraan, dus een elfde zou een sectie een tweede keer toetsen en een tiende
+kader vooraan, dus een elfde kan er alleen bij wanneer er stof bij komt. Dat is op
+9 september 2026 gebeurd met de soft PLC, zie hieronder; wie er een wil bijzetten
+zonder dat er tekst bij komt, toetst een sectie een tweede keer, en een tiende
 schrappen kost dekking.
 
 **Twee vragen zijn geschreven en weer geschrapt**, en de reden staat hier omdat ze
@@ -1854,14 +2467,54 @@ te verduidelijken. Het hoofdstuk tekent geen enkel algoritme: de drie figuren va
 tekenvraag zou dus vragen wat de tekst nergens voordoet, en daarom toetsen vraag 8
 en 9 de algoritmes op hun eigenschappen in plaats van op een tekening.
 
-**De lector heeft op 9 september 2026 beslist dat er vijf figuren bijkomen**, een
-schema per algoritme (FCFS, SJF, PBS, RRS en PMFQ). Dat is een eigen tekensessie
-langs de gewone molen: het palet van OrionCSS, renderen met headless Edge voor je
-ze vertrouwt, en de bladspiegel nameten na de export. **Zodra die er zijn, hoort er
-een tekenvraag met een `.tekenkader` bij**, zoals vraag 2 van hoofdstuk 5 er een
-heeft, en dan wordt studievraag 8 wel getoetst. De hoogte van zo'n kader wordt
-afgeleid uit de gedrukte hoogte van de figuur die nagetekend moet worden en niet
-gekozen; meet ze na in de PDF.
+**Die vijf figuren komen er niet, en deze alinea staat er nog omdat ze anders bij
+een volgende ronde opnieuw bedacht worden.** Er is op 9 september 2026 eerst
+beslist dat er een schema per algoritme bij zou komen (FCFS, SJF, PBS, RRS en
+PMFQ); later diezelfde dag zijn bij de herwerking voor zelfstudie de vier
+algoritmesecties zelf geschrapt, dus er valt niets meer te tekenen en studievraag 8
+bestaat niet meer. **Zet er geen algoritmefiguren meer bij.**
+
+### De soft PLC op de Raspberry Pi, bijgeschreven 9 september 2026
+
+**Twee alinea's achteraan 7.7 en een elfde vraag in Test jezelf, geen van beide in
+de Word.** De lector vroeg of de sectie over realtime iets kan zeggen over labo
+Embedded Systems, waar de student van een Raspberry Pi een PLC maakt met CODESYS.
+Dat past hier omdat het precies het geval is dat de sectie al beschrijft: de
+runtime van CODESYS is een gewoon proces op een gewoon Raspberry Pi OS dat zichzelf
+een hoge prioriteit geeft, dus het is dezelfde belofte als de klasse Realtime van de
+Windows Task Manager, en dat is geen waarborg.
+
+**Het woord soft PLC is niet ingevoerd maar opgepikt** (patroon 20). Hoofdstuk 4
+schrijft het al drie keer, in 4.1 en bij Control cabinet PC, samen met CODESYS,
+TwinCAT en de Raspberry Pi zelf. Daarom staat er ook geen definitie in 7.7 maar een
+terugverwijzing.
+
+**Een naam van een labo mag, een link niet**, zoals 7.4 dat al doet met labo Linux
+Geavanceerd. De syllabus noemt labo Embedded Systems dus een keer bij naam en linkt
+er niet naar; de labopagina's zijn niet aangeraakt (patroon 17).
+
+**De laatste zin is er om hoofdstuk 4 niet tegen te spreken.** Dat hoofdstuk
+presenteert de soft PLC op een industriele pc als een volwaardige industriele
+oplossing, dus mag deze sectie niet de indruk laten dat een soft PLC per definitie
+niet op tijd is. Er staat daarom bij dat van diezelfde software een uitvoering
+bestaat die met een eigen realtime kern onder het besturingssysteem gaat zitten, en
+dat het verschil dus niet in de soft PLC zelf zit maar in wat eronder draait.
+
+**Wat er bewust NIET in staat**, want de lector koos voor kort en eerlijk: jitter,
+cyclustijd als maat, een kernel met PREEMPT_RT en het vrijhouden van een kern voor
+de runtime. Er is om dezelfde reden geen figuur bij gekomen: de figuur van
+`syllabus-07-realtime-tegen-gewoon.svg` draagt de claim al, en de Pi zou er als
+derde rij balken met verzonnen meetwaarden bij staan.
+
+**Vraag 11 van Test jezelf toetst het**, met als afleiders dat de runtime zelf een
+RTOS zou zijn, dat een PLC altijd een vaste cyclustijd haalt, en dat een Raspberry
+Pi te traag zou zijn. Die laatste is de misvatting waar de hele sectie over gaat:
+op tijd is iets anders dan snel. Het kader vooraan blijft op tien studievragen.
+
+**Alles hierboven staat alleen in de HTML en een herimport gooit het weg**, en dan
+blijft vraag 11 achter zonder tekst die haar beantwoordt. Dat is de derde laag
+bijgeschreven tekst in dit hoofdstuk, boven op de sectie Prioriteit en realtime
+zelf en op de herwerking voor zelfstudie.
 
 ## Hoofdstuk 8, Virtual machines en containers
 
@@ -1870,10 +2523,88 @@ gekozen; meet ze na in de PDF.
 met de Kernpunten op `Overzicht.html`. De pagina heet `TestJezelf.html`; de
 importer schreef `Studievragen.html`.
 
-**Vier secties, 54 alinea's en zes gedrukte bladzijden.** Geen enkele Heading 3,
+**Vier secties, 54 alinea's en zes gedrukte bladzijden bij de import.** Geen enkele Heading 3,
 dus elke pagina draagt alleen haar eigen h1, en **geen enkele zwevende
 afbeelding**: de twee foto's staan inline in een tabel. `IMPORT.md` meldt dan ook
 maar een ding, de kopregel van die tabel.
+
+### Herwerkt voor zelfstudie, 9 september 2026
+
+**De aanleiding is dezelfde als bij hoofdstuk 6 en 7**: de student moet dit hoofdstuk
+zelfstandig uit de syllabus kunnen verwerken, en dan is er niemand om een gat mee te
+overbruggen. Feitelijk stond het hoofdstuk na de ronde van 7 september in orde, maar op die
+toets zakte het op vier punten, en het derde is er een dat de correctie van 7 september zelf
+gemaakt heeft.
+
+- **Vraag 3 van Test jezelf steunde op een zin die het hoofdstuk niet had.** Het juiste
+  antwoord is dat een virtuele machine niet blijft draaien als de hardware crasht, en de
+  onderbouw daarvoor ("de scheiding zit in de software en niet in de hardware") stond alleen
+  in de tabel hieronder en op `Labo/Virtualiseren/Theorie/WatIsVirtualisatie.html`. De
+  lopende tekst gaf het omgekeerde signaal: kernpunt 3 zegt "volledig gescheiden" en 8.3 zegt
+  "een crash van het ene heeft geen invloed op het andere". De woorden hardware defect,
+  stukgaan en scheiding kwamen in de hele lopende tekst niet voor, nagekeken met grep.
+- **Waar de overhead vandaan komt, stond nergens.** 8.4 zegt dat een virtuele machine traag is
+  omdat "het besturingssysteem telkens mee gevirtualiseerd wordt", en 8.3 geeft er een tweede,
+  andere reden voor (het delen van resources). Geen van beide legt uit wat dat kost. Het woord
+  overhead valt in 8.4 en in kernpunt 4 zonder ooit ingevoerd te zijn.
+- **En dat gat is scherper geworden door de correctie van 7 september.** 8.3 zegt sindsdien dat
+  de instructies rechtstreeks op de echte processor lopen, wat juist is, en wie dat goed leest
+  kan het niet meer rijmen met een traagheid die nergens verklaard wordt. Een correctie die een
+  passage waar maakt, kan dus een gat opentrekken een sectie verderop: **lees na een
+  inhoudelijke correctie het hele hoofdstuk opnieuw, en niet alleen de alinea.**
+- **Bij containers stond alleen wat ze opleveren en niet wat ze kosten.** Studievraag 2 vraagt
+  naar de voordelen, de tekst gaf er twee, en daarmee kon de student het hoofdstuk uitlezen met
+  de conclusie dat een container gewoon beter is. Dat een container geen ander besturingssysteem
+  kan draaien dan de machine eronder, stond alleen in de tekening ("geen eigen
+  besturingssysteem") en werd door geen enkele zin uitgesproken. Het is precies de afleider die
+  de zelftest van Labo Virtualiseren gebruikt, dus de labotrack bewaakte het wel en de
+  theorietrack niet.
+- **De brug van 8.2 naar 8.3 lag er niet.** 8.2 eindigt op "een heel dure aangelegenheid..." en
+  8.3 begint bij de omschrijving van Wikipedia. Geen enkele zin zei dat virtualisatie precies
+  dat oplost.
+
+**Het hoofdstuk stond ook scheef, en dat is na te rekenen.** 930 woorden lopende tekst over
+vier secties: 8.1 Server 226, 8.2 Nadelen 123, 8.3 Virtual machines 447, 8.4 Containers 134.
+De helft van de hoofdstuktitel kreeg dus 134 woorden. En Test jezelf telde **drie vragen, alle
+drie uit 8.3**, de dunste vragenlijst van de zestien hoofdstukken: hoofdstuk 15 haalt er acht
+uit 676 woorden. Containers, de instructiesetgrens en de secties 8.1 en 8.2 werden met geen
+enkele vraag getoetst.
+
+**Vijf ingrepen, alle vijf voorgelegd voor ze doorgevoerd werden, en alle vijf gooit een
+herimport ze weg.**
+
+1. **Achteraan 8.2 een brugzin**: "Wat we eigenlijk willen is elke taak zijn eigen machine geven
+   zonder voor elke taak een machine te kopen. Dat is precies wat virtualisatie doet."
+2. **In 8.3, achter de alinea over de scheiding**: "Die scheiding zit wel in de software en niet
+   in de hardware. Gaat de processor, het werkgeheugen of de schijf van de fysieke machine stuk,
+   dan vallen alle virtuele machines die erop draaien tegelijk uit." Dat is de zin waarop vraag 3
+   steunt. **Kernpunt 3 is niet aangeraakt**: "volledig gescheiden en geen invloed op elkaar"
+   gaat over onderlinge invloed en blijft waar.
+3. **Achteraan 8.3 een alinea over de overhead**, die hem in drieen uit elkaar legt: elke guest
+   draait een eigen besturingssysteem met een eigen kernel en eigen achtergrondprogramma's, elke
+   guest houdt een stuk werkgeheugen bezet ook wanneer hij niets doet, en de nagebootste
+   randapparaten lopen bij elke schijf- of netwerkbewerking langs de host. Ze voert het woord
+   overhead in voor 8.4 het gebruikt.
+4. **In 8.4 twee aanvullingen**: dat een container in seconden start waar een virtuele machine
+   eerst een besturingssysteem moet opstarten, en onder de figuur een alinea over wat een
+   container niet kan.
+5. **Test jezelf gaat van drie naar acht vragen**, zie de tabel hieronder.
+
+**Het woord kernel is gebruikt en niet ingevoerd, en dat mag.** 7.5 Linux voert het in als "het
+hart van een besturingssysteem", en hoofdstuk 7 komt hiervoor (patroon 20). **Het woord dienst is
+juist vermeden** voor de achtergrondprocessen van een guest: 8.1 gebruikt dat woord al in de
+netwerkbetekenis, dus er staat achtergrondprogramma's.
+
+**Er is geen figuur bij gekomen.** De economische kern van het hoofdstuk (tien halflege servers
+worden tien guests op een machine) heeft geen tekening en wordt alleen beweerd. Afgewogen op 9
+september 2026 en bewust zo gelaten: het hoofdstuk draagt er al vier, de besparing is met woorden
+te maken, en aan de syllabus lag op dat ogenblik geen tekenwerk meer open.
+
+**Twee dingen zijn afgewogen en niet gedaan.** 8.2 blijft de enige sectie zonder vraag; bij acht
+vragen was de keuze tussen een vraag over de server en een over waarom een server maar een taak
+krijgt, en de eerste heeft gewonnen omdat ze doelstelling 1 raakt. En **vraag 2 houdt haar twee
+mogelijkheden**, host of guest, zoals op 7 september beslist: de gokkans van een op twee blijft
+bewust aanvaard, want een verzonnen derde zou een woord invoeren dat het hoofdstuk niet kent.
 
 ### Het kader stond fout over host en guest, en is rechtgezet
 
@@ -1995,19 +2726,38 @@ afweging als de paginatabellen die in hoofdstuk 5 buiten de tekst bleven.
 
 **Deze alinea staat alleen in de HTML en een herimport gooit haar weg.**
 
-### De drie vragen van Test jezelf
+### De acht vragen van Test jezelf
 
 | Vraag | Antwoord | Waarop het steunt |
 |---|---|---|
 | 1 Wikipedia omschrijft een virtual machine als | c, een computerprogramma dat de werking van een echte, fysieke computer nabootst | 8.3, eerste zin, woord voor woord |
 | 2 Draait jouw computer virtuele machines, dan is hij | a, het host systeem | 8.3, "er is één host besturingssysteem waarop er 1 of meerdere guest besturingssystemen worden geïnstalleerd", en het rechtgezette kernpunt 2 |
 | 3 Welke bewering is NIET WAAR | d, als er hardware crasht blijft de virtuele machine gewoon verder werken | de drie andere staan in 8.3 (kostenbesparend, volledig gescheiden, trager); de scheiding zit in de software en niet in de hardware |
+| 4 Wat maakt van een computer een server | b, dat hij een dienst levert aan andere machines of gebruikers | 8.1, "De hardware in een server is eigenlijk onbelangrijk ... als hij ingezet wordt om een 'dienst' te leveren"; de afleiders zijn de twee dingen die 8.1 juist onbelangrijk noemt, de vormfactor en de zware hardware |
+| 5 Waarom is een virtuele machine trager | b, elke guest draait een eigen besturingssysteem dat zelf processortijd en geheugen vraagt, en de nagebootste randapparaten lopen langs de host | de bijgeschreven alinea achteraan 8.3; afleider a is precies de emulatiefout die op 7 september uit 8.3 gehaald is |
+| 6 Een besturingssysteem voor ARM op een x64 machine | b, emulatie, want een virtuele machine draait alleen dezelfde instructieset als de processor eronder | de alinea die 8.3 op 9 september kreeg, en hoofdstuk 5 waarnaar ze verwijst; afleider a is de misvatting die allebei rechtzetten |
+| 7 Wat is het voordeel van een container | b, het besturingssysteem wordt niet telkens mee gevirtualiseerd, dus de overhead en de extra licentie vallen weg | 8.4, de twee zinnen over de overhead en over de Windowslicentie; afleider c is de voor de hand liggende misgreep op "de overhead is bijgevolg weg" |
+| 8 Wat kan een virtuele machine wel en een container niet | b, een ander besturingssysteem draaien dan dat van de machine eronder | de alinea die 8.4 op 9 september onder de figuur kreeg, en de figuur zelf |
 
-**Alle drie de vragen hebben precies een juist antwoord, en dat is nageteld.** Het
-probleem van hoofdstuk 3, waar vier van de vijf mogelijkheden juist waren, speelt
-hier bij geen enkele vraag. Er is dus geen enkele open vraag en geen enkele
-`<div class="oplossing">` in dit hoofdstuk; alle drie zijn ze meerkeuze gebleven,
-zoals in hoofdstuk 6.
+**De eerste drie komen uit de Word, de vijf erna zijn op 9 september 2026
+bijgeschreven** bij de herwerking voor zelfstudie hierboven. Daarvoor telde deze
+lijst drie vragen die alle drie uit 8.3 kwamen; nu wordt elke sectie getoetst
+behalve 8.2.
+
+**Alle acht de vragen hebben precies een juist antwoord, en dat is nageteld** met
+een telling van `class="juist"` in het bestand. Het probleem van hoofdstuk 3, waar
+vier van de vijf mogelijkheden juist waren, speelt hier bij geen enkele vraag. Er is
+dus geen enkele open vraag en geen enkele `<div class="oplossing">` in dit
+hoofdstuk; alle acht zijn ze meerkeuze, zoals in hoofdstuk 6.
+
+**Vier van de vijf nieuwe afleiders zijn misvattingen die de tekst zelf rechtzet**,
+en dat is de afspraak van elke zelftest hier: een fout antwoord stuurt de student
+terug naar een alinea en niet naar de hele bladzijde.
+
+**Vraag 8 lijkt op vraag 3 van de zelftest van Labo Virtualiseren**, en dat mag: de
+twee tracks zeggen hetzelfde twee keer en er linkt niets tussen (patroon 17). Ze is
+wel anders geformuleerd, zodat de student niet twee keer dezelfde zin voorgeschoteld
+krijgt.
 
 **Vraag 2 houdt haar twee mogelijkheden**, host of guest, en er wordt er geen derde
 bijverzonnen. Beslist op 7 september 2026. Bij vraag 5 van hoofdstuk 5 en vraag 2
@@ -2049,6 +2799,34 @@ zijn met de hand geschreven na het openen van de gerenderde tekening, en ze zijn
 eigen tekst: de labopagina draagt haar eigen `alt` en die is niet overgenomen.
 **Er is geen tweede tekening bij 8.2 gemaakt**; het bleef bij deze ene.
 
+### 8.3 kreeg de grens van de instructieset, en de figuur van hoofdstuk 5
+
+Beslist op 9 september 2026 door de lector, toen hoofdstuk 5 nagekeken werd op
+zelfstandige leesbaarheid. De volledige redenering staat daar; hier staat wat dit
+hoofdstuk erdoor krijgt. **Allebei staan ze alleen in de HTML en een herimport
+gooit ze weg.**
+
+**Een bijgeschreven alinea zet de grens.** 8.3 zegt sinds de correctie hieronder
+dat de instructies van de virtuele machine rechtstreeks op de echte processor
+lopen, en trekt daar zelf geen gevolg uit. Dat gevolg is er wel een: een virtuele
+machine draait alleen een besturingssysteem met dezelfde instructieset als de
+processor eronder, dus een x64 machine draait geen ARM guest en omgekeerd. De
+alinea staat er nu, met emulatie als het antwoord voor wie dat toch wil en met
+"(zie hoofdstuk De Von Neumann architectuur)" erbij, in de vorm die 8.1 al twee
+keer gebruikt.
+
+**Dat is precies het misverstand dat 5.2 uit de weg ruimde**, en het staat nu op de
+plaats waar de lezer de woorden host en guest wel kent. Zonder deze alinea zegt
+hoofdstuk 8 nergens wat een virtuele machine niet kan.
+
+**De Parallels-schermafdruk staat nu in deze sectie**, als
+`img/syllabus-08-virtual-machines-en-containers-03.jpeg`, achter de alinea over de
+ene host met een of meer guests, die ze illustreert. 8.2 had zelf geen enkele
+figuur: de twee foto's van dit hoofdstuk staan bij 8.1 en de SVG bij 8.4. Ze houdt
+de 87.0mm die ze in de Word van hoofdstuk 5 had, en haalt daarmee 190 dpi. **Het
+bijschrift is bijgeschreven**, want in de Word zweefde ze en had ze er geen; het
+`alt` is dat van hoofdstuk 5 en is daar met de hand geschreven.
+
 ### De twee foto's van 8.1
 
 **Allebei opengedaan voor hun bijschrift geschreven werd.** Het zijn productfoto's
@@ -2089,10 +2867,29 @@ terug.**
 
 ### De bladspiegel van dit hoofdstuk
 
-Zes bladzijden, 63 tot en met 68, met de gedrukte 8.6 Oplossingen als laatste.
-Nagerekend na de redactionele ronde en niet alleen na de import, want de
-bijgeschreven alinea van 8.3 en de figuur van 8.4 kwamen er allebei na de import
-bij.
+**Zeven bladzijden, 74 tot en met 80**, met de gedrukte 8.6 Oplossingen als
+laatste. Bijgewerkt op 9 september 2026; hier stond "zes bladzijden, 63 tot en met
+68", en dat was op twee manieren achterhaald. De nummers zijn opgeschoven doordat
+hoofdstuk 3 tot 7 sindsdien gegroeid zijn, en de zevende bladzijde is erbij gekomen
+toen 8.3 de alinea over de instructieset en de Parallels-schermafdruk kreeg.
+Nagerekend na de redactionele ronde en niet alleen na de import.
+
+**De herwerking voor zelfstudie kostte geen enkele bladzijde**, en dat is
+nagemeten in plaats van geschat: de vorige stand is opnieuw gedrukt naar een
+werkmap en rij voor rij naast de nieuwe inhoudstafel gelegd. Van de 140 rijen
+bewoog er **een**, 8.4 Containers van 77 naar 78; het document bleef op 199
+bladzijden en hoofdstuk 9 tot 16 stonden stil. Test jezelf draagt zijn acht vragen
+op een bladzijde en Oplossingen past op de volgende, dus geen enkele vraag valt
+uiteen. De tekstschaal is `3.1249194` op elke bladzijde, op het voorwerk en de twee
+beeldbladzijden van hoofdstuk 11 na, zoals in de vorige druk.
+
+**Dat de vorige PDF ongecommit in de werkboom stond, kostte hier bijna de
+controle.** `git show HEAD:downloads/...pdf` gaf 196 bladzijden en dus een stand van
+voor de herwerking van hoofdstuk 6 en 7, en de nieuwe export overschreef intussen de
+enige kopie van de echte vorige druk. Wat werkte was de vijf ingrepen tijdelijk
+terugdraaien en met `--out` naar de werkmap drukken. **Druk de vorige stand dus
+opnieuw met `--out` in plaats van tegen `HEAD` te diffen** zolang de PDF niet
+gecommit is.
 
 **Er is aan geen enkele breedte gedraaid**, net als bij hoofdstuk 7. De fototabel
 van 8.1 staat heel op haar bladzijde, met de kop 8.2 en zijn eerste twee alinea's
@@ -2199,10 +2996,6 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
   onderbrekingen") en **een in 8.1** (achter de zin over de 1U server). Het zijn
   gewone spaties en geen harde, anders dan bij hoofdstuk 5 en 7, en ze vallen in de
   opmaak weg. Dat is opmaak en geen tekst.
-- **"Op die manier wordt dit echter wel een heel dure aangelegenheid..."** in 8.2
-  en **"Dit op zich neemt ook al processortijd in beslag..."** in 8.4 eindigen op
-  drie punten die in de Word het beletselteken zijn. Dat is opmaak en geen tekst,
-  net als de apostrofs rond 'dienst' in 8.1.
 - **"een virtuele harde schijf, etc."** in 8.3 schrijft etc. waar de rest van de
   Word het beletselteken gebruikt.
 - **8.2 verwijst naar "hoofdstuk Harde schijf" en "hoofdstuk Besturingssystemen".**
@@ -2673,13 +3466,34 @@ Dat is hetzelfde geval als de vergelijkingstabel van 6.1 en het spiegelbeeld van
 fototabel van 8.1, waar de benoemende rij juist **onder** de foto's stond en er dus
 geen kopregel kwam. **De toets is waar de rij staat en niet wat ze bevat.**
 
+### Wat er in de tekst opviel, en op 10 september 2026 rechtgetrokken is
+
+Vier taalfouten, zonder overleg doorgevoerd. Ze staan alleen in de HTML.
+
+- **"ieder type processor ... over andere eigenschappen beschikken en een andere interne
+  werking hebben"** in 9.3 draagt nu **beschikt** en **heeft**, want het onderwerp is
+  enkelvoudig.
+- **"Voor een PLC kan je een I/O eiland kopen die overweg kan"** in 9.2 draagt nu **dat**.
+- **"Maar je hoeft je geen zorgen te maken als alles compatibel is met elkaar"** in 9.4
+  draagt nu **of**, dezelfde vaste vorm als de vier gevallen in 3.2.
+- **"het aantal PCI Express slots:"** in 9.4 eindigt nu op een kommapunt, net als de vier
+  andere opsommingstekens ernaast.
+
+**En een inhoudelijke correctie, voorgelegd en goedgekeurd op 10 september 2026.** 9.3 kondigde
+"In de volgende hoofdstukken" aan, terwijl wat erop volgt de drie Heading 3's van diezelfde sectie
+zijn: Processor -> socket, Werkgeheugen -> DIMM slots en Grafische kaart -> PCI Express. Het is
+**"Hierna bespreken we kort"** geworden, en met opzet niet "in de drie stukken hierna": een getal
+in zo'n aankondiging moet mee zodra er een vierde bij komt.
+
+**En twee schrijfwijzen, beslist 10 september 2026.** "2GB RAM, 4GB RAM" in 9.2 schrijft de
+eenheid nu los van het getal, zoals 9.3 al deed met "8 GB DDR4". En 9.4 schreef de vormfactor als
+3.5" met een punt; dat is een komma geworden. **De productnaam "MSI GeForce GT710 2GB" in 16.1 is
+niet aangeraakt**, want zo heet die kaart in de winkel.
+
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
 De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
 
-- **"In de volgende hoofdstukken bespreken we kort hoe de processor, het werkgeheugen
-  en de grafische kaart aangesloten worden"** in 9.3. Het zijn geen hoofdstukken maar de
-  drie Heading 3's van diezelfde sectie, en ze volgen er meteen op.
 - **"Zie ook het hoofdstuk Accelerated Processing Unit"** en **"Over de werking van DDR
   leer je meer in het hoofdstuk Random Access Memory"**, allebei in 9.3. Die twee
   hoofdstukken bestaan nog niet en worden geen links, om dezelfde reden als de twee
@@ -2688,22 +3502,14 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
   printplaatje aansluitpunten hebben."** Duals met een hoofdletter en in het meervoud,
   en `printplaatje` als verkleinwoord, wat patroon 12 zou zijn als deze tekst hier
   geschreven was.
-- **"Dat komt omdat ieder type processor zoals Core 3, 5, 7, 9, Ryzen... over andere
-  eigenschappen beschikken"**, met een meervoud bij een enkelvoudig onderwerp. In
-  diezelfde zin staat **Core 3**, en Intel begint zijn reeks bij Core i3.
-- **"Voor een PLC kan je een I/O eiland kopen die overweg kan"** in 9.2, met die waar
-  dat hoort.
+- **"Core 3, 5, 7, 9, Ryzen..."** in 9.3 stond hier eerst als een fout, omdat Intel zijn
+  reeks bij Core i3 begon. Dat is geen fout meer: hoofdstuk 5 heeft op 7 september 2026
+  vastgelegd dat Intel die processoren sinds eind 2023 zonder de i schrijft.
 - **"Er zijn hier echter wel enkele opmerkingen die we moeten maken"** in 9.2, met de
   we-vorm die SCHRIJFSTIJL.md voor eigen tekst naar de je-vorm stuurt. Dat geldt niet
   voor de brontekst.
 - **"Let dus altijd goed op als je een behuizing koopt!"** in 9.2, het enige uitroepteken
   van het hoofdstuk.
-- **"2GB RAM, 4GB RAM"** in 9.2 schrijft de eenheid vast aan het getal, terwijl 9.3
-  "8 GB DDR4" met een spatie schrijft.
-- **"het aantal PCI Express slots:"** in 9.4 eindigt op een dubbele punt waar de vier
-  andere opsommingstekens een kommapunt dragen.
-- **"Maar je hoeft je geen zorgen te maken als alles compatibel is met elkaar"** in 9.4,
-  waar of hoort te staan, dezelfde vaste vorm als de drie gevallen in 3.2.
 - **"een uit de kluiten gewassen grafische kaart"** in 9.3, beeldspraak die patroon 15
   zou raken als deze tekst hier geschreven was.
 - **De pijl in de drie koppen van 9.3** staat in de Word als `->` en niet als een
@@ -3014,6 +3820,32 @@ niet nog eens.
   aaneen. In de Word stond het bovendien als twee `<strong>`-blokken naast elkaar
   (`quantum` en ` computers`), dus het is nu ook een enkel `<strong>`.
 
+### Wat er in de tekst opviel, en op 10 september 2026 rechtgetrokken is
+
+Zes taalfouten, zonder overleg doorgevoerd. Ze staan alleen in de HTML.
+
+- **"of ander opslagmedia"** in 10.4 is **andere** geworden.
+- **"Omdat die interpretatie over de hele wereld dezelfde zou zijn maakt men gebruik van
+  afspraken"** in 10.3 opent nu met **Opdat**.
+- **"aanziet Microsoft een kilobyte nog steeds als ... terwijl hardware fabrikanten 1
+  kilobyte aanzien als 1000 bytes"** in 10.4 luidt nu "beschouwt Microsoft ... terwijl
+  hardware fabrikanten 1 kilobyte als 1000 bytes beschouwen". Twee keer dezelfde fout in
+  een zin, dus ze zijn samen aangepakt.
+- **"Beiden hebben echter hetzelfde aantal bytes"** in 10.4 is **Beide** geworden, want
+  het gaat niet over personen.
+- **"Gezien de opslagruimte toen beperkt was"** in 10.4 opent nu met **Aangezien**.
+- **"De transfersnelheid (lees / schrijfsnelheid van deze harde schijf wordt uitgedrukt
+  in ..."** in oefening 8 opende een haakje dat nooit sloot; het sluit nu achter
+  schrijfsnelheid.
+
+**En de decimale komma plus twee eenheden, beslist 10 september 2026.** Dit hoofdstuk droeg de
+meeste punten: "14.8 GB", "9.76 kilobyte", "0.4 V" en "2.4 V" staan nu met een komma, en dat is
+meteen ook wat de overgetypte tabel ernaast al deed. "8GB" in oefening 6 kreeg zijn spatie, en
+"16 GigaByte SD kaart" in 10.4 is "16 GB SD kaart" geworden, want diezelfde zin schreef twee
+regels verder al "14,8 GB". **De tabel zelf is niet aangeraakt**: haar "kilo byte" los en "Mega
+byte" met een hoofdletter is wat er op de afbeelding stond, en die schrijfwijze blijft genoteerd
+staan.
+
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
 De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
@@ -3027,28 +3859,10 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
 - **De overgetypte tabel houdt diezelfde schrijfwijze**, "kilo byte" los en "Mega byte" en
   "Giga byte" met een hoofdletter, en "1kB" en "1MB" zonder spatie in de kolom HD. Dat is
   wat op de afbeelding stond, en alleen de drie foute getallen zijn veranderd.
-- **De decimale punt.** Het hoofdstuk schrijft "14.8 GB", "9.76 kilobyte", "0.4 V" en
-  "2.4 V" met een punt, terwijl de tabel ernaast komma's gebruikt en het Nederlands dat ook
-  doet. Zo staat het in de Word.
-- **"8GB" in oefening 6** schrijft de eenheid vast aan het getal, terwijl 10.4 "16 GigaByte"
-  met een spatie schrijft, en dat laatste zet byte dan weer met een hoofdletter midden in
-  het woord. Dezelfde soort inconsistentie als "2GB RAM" tegen "8 GB DDR4" in hoofdstuk 9.
 - **"een SD kaartje"** in oefening 6, een verkleinwoord dat patroon 12 zou raken als deze
   tekst hier geschreven was. 10.4 schrijft in dezelfde betekenis "SD kaart".
-- **"De transfersnelheid (lees / schrijfsnelheid van deze harde schijf wordt uitgedrukt in
-  ..."** in oefening 8 opent een haakje dat nooit sluit.
-- **"of ander opslagmedia"** in 10.4, met een meervoud achter een enkelvoudig lidwoord.
-- **"Omdat die interpretatie over de hele wereld dezelfde zou zijn maakt men gebruik van
-  afspraken"** in 10.3, waar Opdat hoort te staan.
-- **"aanziet Microsoft een kilobyte nog steeds als"** in 10.4, waar beschouwt als hoort te
-  staan; dezelfde zin schrijft "aanzien als" nog een tweede keer.
-- **"Beiden hebben echter hetzelfde aantal bytes"** in 10.4, met de vorm voor personen.
-- **"Gezien de opslagruimte toen beperkt was"** in 10.4, met gezien als voegwoord.
 - **"men"** staat vier keer in dit hoofdstuk (10.3 twee keer, 10.4 twee keer), de vorm die
   SCHRIJFSTIJL.md voor eigen tekst naar de je-vorm stuurt. Dat geldt niet voor de brontekst.
-- **De ellipsen** in 10.2 ("In groepjes van 4, 8, 16, ... ."), in 10.3 en in oefening 9 zijn
-  in de Word het teken en geen drie punten, terwijl oefening 8 wel drie losse punten
-  schrijft. Dat is opmaak en is zo gebleven.
 
 ### De negen vragen van Test jezelf, naast de oefeningen van 10.6
 
@@ -3564,6 +4378,36 @@ langer is dan een sector binnenaan terwijl allebei 512 byte dragen, en met een e
 markering moest de lezer dat geloven. De acht radialen en de concentrische tracks
 komen wel uit het origineel, dat er ook acht heeft.
 
+**De buitenste van die twee markeringen stond fout getekend, en ze is op 9 september 2026
+rechtgezet.** Haar buitenboog eindigde op `385,205`, de rand van de plaat, terwijl haar
+andere rand op track 170 lag: de band waaierde dus uit tot een taartpunt die over de
+buitenste track heen stak, terwijl de binnenste markering wel een gelijkmatige band
+tussen twee tracks was. Dat verschil in VORM is net wat deze figuur niet mag tonen, want
+de alinea ernaast laat de twee sectoren alleen in LENGTE verschillen. Het was een enkel
+getal: `385` werd `370`. **Reken de vier hoekpunten van zo'n markering dus na op hun
+afstand tot het middelpunt**, want alle vier horen ze op een van de getekende tracks te
+liggen. In de render is het wel te zien, maar alleen omdat er een juiste tweede markering
+naast stond om mee te vergelijken; had de figuur er maar een gedragen, zoals het origineel,
+dan was er niets om het aan af te meten. De lengteverhouding tussen de twee is 2,24, dus
+"ruim twee keer zo lang" in de alt-tekst blijft waar.
+
+**Bij diezelfde ingreep zijn de elf grote rondingen van bogen naar beziers gegaan.** De
+negen tracks, de plaat en de as stonden als `<circle>`, en die gaan bij `--print-to-pdf`
+langs dezelfde molen als een `A`-boog: bladzijde 110 telde **1108 `c`-operatoren** waar
+een bladzijde tekst er nul heeft, en woog 100 kB tegen een mediaan van 39 kB over het hele
+document. Ze zijn nu elk vier expliciete `C`-bogen met de constante 0,5522847498, en de
+twee sectormarkeringen elk twee, samen **48**. **De as van 9 eenheden en de twee
+aanwijspuntjes van 2,5 zijn met opzet `<circle>` gebleven**, want die drukken op 1,4 en
+0,4mm, en de afvlakking volgt de straal: dat is dezelfde afweging als bij de knoop van 3,5
+eenheden in `syllabus-13-ras-cas.svg`.
+
+**De tekening is er niet door verschoven, en dat is nagemeten en niet aangenomen.** Een
+kwartbezier wijkt ten hoogste 0,027% van de straal af, op r=185 dus 0,05 pixel. In een
+pixelvergelijking van de twee renders wijkt 0,4% van het beeld meer dan 20 af en zijn er
+vier pixels boven 80, allemaal op de dunne grijze lijnen: dat is antialiasing die op een
+randpixel kantelt, geen verplaatsing. **Doe die vergelijking ook**, want een bezier die
+ergens fout staat, ziet er op het oog even rond uit als een die klopt.
+
 **De drie schijfjes van 11.4 zijn `img/syllabus-11-track.svg`, `-disk-sector.svg` en
 `-track-sector.svg` geworden**, alle drie op hun bestaande 45,0mm, want ze staan in een
 tabel van drie kolommen. Ze zijn met een generator geschreven, zodat de basistekening
@@ -3928,33 +4772,45 @@ schrijfcycli haalt dan een MLC en een MLC meer dan een TLC; en 11.13 zegt dat RA
 minstens drie schijven vraagt en RAID 6 minstens vier. Die vier zijn hier
 bijgeschreven en staan niet in de Word.
 
+### Wat er in de tekst opviel, en op 10 september 2026 rechtgetrokken is
+
+Acht taalfouten, zonder overleg doorgevoerd. Ze staan alleen in de HTML.
+
+- **"een SSD met meerdere bits mer cel"** in 11.5 draagt nu **per**.
+- **"De waarden blijven behouden zelfs als wordt de harde schijf spanningsloos gezet"** in
+  11.5 staat nu in de goede volgorde: "zelfs als de harde schijf spanningsloos wordt
+  gezet".
+- **"heel gelijkaardig utizien"** in de probleemstelling van oefening 3 is **uitzien**
+  geworden.
+- **"doorvoorsnelheid"** in 11.8 bij SATA I is **doorvoersnelheid** geworden, zoals
+  dezelfde sectie verderop al schreef.
+- **"appararen aan- en afgeschakeld"** in 11.11 is **apparaten** geworden.
+- **"voor synoniemen aanzien"** in 11.7 is **"als synoniemen beschouwd"** geworden.
+- **"afhankelijk is als opeenvolgende sectoren uitgelezen kunnen worden"** in 11.9 draagt
+  nu **of**, dezelfde vaste vorm als de vier gevallen in 3.2.
+- **"heeft natuurlijk te maken in welke mate je je gegevens wil beschermen"** in 11.15
+  draagt nu **te maken met in welke mate**.
+
+**En een inhoudelijke correctie, voorgelegd en goedgekeurd op 10 september 2026.** 11.1 schreef
+"zo'n 3 tot 12cm" voor de diameter van de platters. 12cm hoort bij een schijf van 5,25 duim en 3cm
+bij de microdrive van 1 duim, allebei niet meer gemaakt. De zin noemt nu de twee vormfactoren die
+dit hoofdstuk zelf gebruikt: **"zo'n 6,5cm bij een 2,5 duim schijf en 9,5cm bij een 3,5 duim
+schijf"**. Die twee maten staan er dus met hun formaat bij in plaats van als een bereik, want de
+oefening van 11.2 vraagt naar precies die vormfactoren en `2,5 duim` en `3,5 duim` is de
+schrijfwijze die daar al staat.
+
+**En vier schrijfwijzen, beslist 10 september 2026.** RAID staat nu overal los geschreven, zoals
+de vijf koppen en de negenveertig andere plaatsen al deden: acht streepjes weg in 11.13.
+"mirrorring" is "mirroring" geworden en "mirrorred" is "mirrored", en Test jezelf schrijft twee keer
+"Mirroring" in plaats van "Mirrorring". "SSDs" in 11.9 draagt zijn apostrof. **"gemirrorde" blijft
+staan**: dat is geen Engelse vorm met een r te veel maar een Nederlands voltooid deelwoord van
+mirroren, en het is dus correct. **En de vijf RAID-0 tot RAID-10 in de `alt` van het NAS-productblad
+in 11.15 blijven met hun streepje**, want die alt beschrijft wat er op dat blad gedrukt staat.
+
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
 De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
 
-- **"Tegenwoordig is de diameter van deze platters zo'n 3 tot 12cm"** in 11.1. Een
-  schijf van 3,5 duim heeft platters van 9,5cm en een van 2,5 duim van 6,5cm; 12cm is
-  de maat van een 5,25 duim schijf, die al lang niet meer gemaakt wordt.
-- **"een SSD met meerdere bits mer cel"** in 11.5, waar per hoort te staan.
-- **"De waarden blijven behouden zelfs als wordt de harde schijf spanningsloos
-  gezet"** in 11.5, met de woorden in de verkeerde volgorde.
-- **"heel gelijkaardig utizien"** in de probleemstelling van oefening 3.
-- **"doorvoorsnelheid"** in 11.8, bij SATA I. Dezelfde sectie schrijft verderop wel
-  doorvoersnelheid.
-- **"appararen aan- en afgeschakeld"** in 11.11.
-- **"voor synoniemen aanzien"** in 11.7 en **"afhankelijk is als opeenvolgende
-  sectoren uitgelezen kunnen worden"** in 11.9, met als waar of hoort te staan.
-  Dezelfde vaste vorm als de drie gevallen in 3.2.
-- **"heeft natuurlijk te maken in welke mate je je gegevens wil beschermen"** in
-  11.15, waar met ontbreekt.
-- **RAID wordt met en zonder streepje geschreven.** 11.13 schrijft RAID 0, RAID 1 en
-  RAID 5 los en RAID-6, RAID-10, RAID-0 en RAID-1 met een streepje, soms in dezelfde
-  alinea. De koppen schrijven het alle vijf los.
-- **mirrorring, mirroring, mirrorred en gemirrorde** staan alle vier in 11.13, en
-  Test jezelf schrijft twee keer Mirrorring. De lopende tekst is niet aangeraakt, maar
-  de ondertitel van `img/syllabus-11-raid-10.svg` schrijft "striping + mirroring" met
-  een r: een tikfout die je noteert is iets anders dan een die je in een figuur zet.
-- **"SSDs"** in 11.9 tegen **"SSD's"** overal elders.
 - **"Onwaarschijnlijk, denk je misschien... Maar helaas, niets is minder waar."** en
   **"Een aanrader!"** en **"Wie geen centen heeft"** in 11.13, en **"Een nieuwe
   computer of laptop kopen zonder een SSD harde schijf is vrijwel nooit een goed
@@ -3968,9 +4824,6 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
 - **"Solid state harde schijven zijn voorlopig nog duurder"** in kernpunt 3, en
   **"SSD harde schijf"** in 11.5 en in oefening 1. Het eerste veroudert, het tweede
   is een pleonasme.
-- **De ellipsen** in 11.10 ("Maar... ondertussen"), in 11.13 en in vraag 20 van Test
-  jezelf zijn in de Word het teken en geen drie punten. Dat is opmaak en is zo
-  gebleven.
 - **De dubbele spaties** in "Naast een aantal  dataschijven" (11.13) en "moet de ene
   ingesteld worden" (11.7) staan zo in de Word.
 
@@ -4440,35 +5293,43 @@ een tweede kern; 12.2 > Registers zegt dat de registerbreedte uit het processort
 volgt en het adresseerbare werkgeheugen begrenst; en 12.3 zegt dat compileren vertalen
 naar een instructieset is. Alle drie zijn hier bijgeschreven en staan niet in de Word.
 
+### Wat er in de tekst opviel, en op 10 september 2026 rechtgetrokken is
+
+Zeven taalfouten, zonder overleg doorgevoerd. Ze staan alleen in de HTML.
+
+- **"De meest bekende RISC instructieset is de ARM instructieset ARM staat voluit voor
+  Acorn RISC Machine."** in 12.3 kreeg de ontbrekende punt tussen de twee zinnen.
+- **"Het hoge energie maakt het gebruik van CISC processoren ... onmogelijk"** in 12.3 is
+  **energieverbruik** geworden.
+- **"Om CPU-RAM performance gap te dichten"** in 12.2 draagt nu **de**.
+- **"De functies van ieder individueel register overstijgt het bereik"** in 12.2 is
+  **overstijgen** geworden.
+- **"Wanneer een programma instructie uitgevoerd wordt"** in 12.2 schrijft nu
+  **programma-instructie**.
+- **"Door complexe operaties in een instructie te stoppen leverde dat kleinere
+  programma's ... op"** in 12.3 had een onderwerp te veel en luidt nu "Complexe operaties
+  in een instructie stoppen leverde kleinere programma's ... op".
+- **"Post-IT"** in de vergelijking van 12.2 > Cache is **Post-it** geworden, de vorm van
+  3M. Het stond hier eerst genoteerd als iets dat mocht blijven omdat het een merknaam in
+  een terloopse vergelijking is; het is toch meegegaan, want de eigenaarsregel van
+  hoofdstuk 7 en 9 kent geen uitzondering voor een naam die maar een keer voorkomt.
+
+**En een schrijfwijze, beslist 10 september 2026.** 12.3 schreef twee keer "de x86 instructieset"
+los en een keer "x86-instructieset" met een streepje. Het is overal het streepje geworden, want dat
+is wat de Nederlandse spelling van een samenstelling met zo'n code vraagt. En het "160 Watt" van
+12.2 draagt nu een kleine w, zie hoofdstuk 16.
+
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
 De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
 
-- **"De meest bekende RISC instructieset is de ARM instructieset ARM staat voluit voor
-  Acorn RISC Machine."** in 12.3. Er ontbreekt een punt tussen de twee zinnen.
-- **"Het hoge energie maakt het gebruik van CISC processoren ... onmogelijk"** in 12.3,
-  waar energieverbruik hoort te staan.
-- **"Om CPU-RAM performance gap te dichten"** in 12.2, waar de ontbreekt.
-- **"De functies van ieder individueel register overstijgt het bereik"** in 12.2, waar
-  overstijgen hoort te staan.
-- **"Wanneer een programma instructie uitgevoerd wordt"** in 12.2, waar
-  programma-instructie hoort te staan.
-- **"Door complexe operaties in een instructie te stoppen leverde dat kleinere
-  programma's ... op"** in 12.3, met een onderwerp te veel.
-- **"Post-IT"** in de vergelijking van 12.2 > Cache. 3M schrijft Post-it. Het is een
-  merknaam en zou dus onder de eigenaarsregel vallen, maar hij komt een keer voor, in
-  een vergelijking, en is geen term van dit vak; hoofdstuk 11 liet op dezelfde grond
-  "mer cel" en "utizien" staan.
 - **De dubbele spatie** in "op de PCB van de processor.  Ze werken" (12.2) staat zo in
   de Word.
 - **"men"** staat in 12.2 ("gebruikt men cache geheugens") en in 12.3, de vorm die
   SCHRIJFSTIJL.md voor eigen tekst naar de je-vorm stuurt. Dat geldt niet voor de
   brontekst.
 - **"Als het budget toelaat kies je best een Core 7 processor"** in 12.2 is een
-  aanbeveling zonder criterium, en **"trachten te ontcijferen..."** in 12.3 is patroon
-  14. Ze zouden weggaan als deze tekst hier geschreven was.
-- **"x86-instructieset" met een streepje** in 12.3, terwijl dezelfde alinea verderop
-  "de x86 instructieset" los schrijft.
+  aanbeveling zonder criterium. Ze zou weggaan als deze tekst hier geschreven was.
 
 ## Hoofdstuk 13, Random Access Memory (RAM)
 
@@ -4805,29 +5666,38 @@ meer te weten. Ze draagt drie invulregels, een per ding dat het antwoord telt.
 IEC-eenheid; geen enkele vraag citeert een etiket of een verkoopcapaciteit, zodat er
 nergens GB tegenover GiB komt te staan.
 
+### Wat er in de tekst opviel, en op 10 september 2026 rechtgetrokken is
+
+Twaalf taalfouten, zonder overleg doorgevoerd. Ze staan alleen in de HTML.
+
+- **"Iedere cell bestaat uit"** in 13.1 is **cel** geworden. In 13.2 stond het woord al
+  goed; dat blok noteerde er twee.
+- **"In moderne x86 / x64 / ARM computer"** in 13.1 draagt nu **een**.
+- **"troughput"** in 13.6 en 13.7 is twee keer **throughput** geworden.
+- **"DDR3 komt in snelheden van 400 MHz tot 1066 MHz)."** in 13.7 verloor het sluithaakje
+  te veel.
+- **"bedrijfskritisch machine"** in 13.10 is **bedrijfskritische** geworden.
+- **"maximaal 32 bits kan tellen !!!"** in 13.1 eindigt nu op een punt.
+- **"Bij DDR II SDRAM"** in 13.6 is **DDR2** geworden, zoals de kop erboven en de rest van
+  het hoofdstuk.
+- **"hangt er vanaf als je een moederbord hebt"** in 13.11 is **"hangt ervan af of je"**
+  geworden, en **"afgevraagd als je je DIMM module ... mocht steken"** draagt nu **of**.
+- **"Er kunnen dus veel meer bits op een bepaalde oppervlakte"** in 13.2 miste een
+  werkwoord en luidt nu "... op een bepaalde oppervlakte staan".
+- **"Daarom moet er een mechanisme zijn wat de lading periodiek ververst"** in 13.1 draagt
+  nu **dat**.
+
+**"gebuikt" in 13.3 stond ook op de lijst en was al weg**, net als bij hoofdstuk 6.
+
+**En twee schrijfwijzen, beslist 10 september 2026.** 13.1 schreef twee keer "Dual In-Line Memory
+Module" met een hoofdletter L, waar 9.3 het twee keer als "In-line" schrijft. De vorm van hoofdstuk
+9 heeft gewonnen, en dat is een keuze en geen regel: er is geen eigenaar die het beslecht, dus het
+aantal geeft de doorslag. En "1.5V", "1.8V" en "1.2V" in 13.6 en 13.7 dragen nu een komma.
+
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
 De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
 
-- **"cell"** in 13.1 ("Iedere cell bestaat uit") en 13.2, waar de rest van het hoofdstuk
-  cel schrijft.
-- **"In moderne x86 / x64 / ARM computer"** in 13.1, waar een ontbreekt.
-- **"gebuikt"** in 13.3, waar gebruikt hoort te staan.
-- **"troughput"** in 13.6 en 13.7, twee keer, waar throughput hoort te staan.
-- **"DDR3 komt in snelheden van 400 MHz tot 1066 MHz)."** in 13.7, met een sluithaakje
-  te veel.
-- **"bedrijfskritisch machine"** in 13.10, waar bedrijfskritische hoort te staan.
-- **"maximaal 32 bits kan tellen !!!"** in 13.1, met een spatie en drie uitroeptekens.
-- **"Bij DDR II SDRAM"** in 13.6, terwijl de kop erboven DDR2 SDRAM schrijft en de rest
-  van het hoofdstuk DDR2, DDR3, DDR4 en DDR5.
-- **"Small Outline Dual In-Line Memory Module"** in 13.1, waar 9.3 In-line schrijft.
-- **"hangt er vanaf als je een moederbord hebt"** en **"afgevraagd als je je DIMM module
-  in om het even welk slot mocht steken"** in 13.11, waar ervan af of en of horen te
-  staan.
-- **"Er kunnen dus veel meer bits op een bepaalde oppervlakte"** in 13.2, zonder
-  werkwoord.
-- **"Daarom moet er een mechanisme zijn wat de lading periodiek ververst"** in 13.1,
-  waar dat hoort te staan.
 - **"men"** in 13.6 en in het kader Kernpunten, de vorm die SCHRIJFSTIJL.md voor eigen
   tekst naar de je-vorm stuurt. Dat geldt niet voor de brontekst.
 - **De dubbele spatie** in "0 en 4 operands.  Operands zijn" (13.1), "een bitfout kunnen
@@ -5038,16 +5908,25 @@ de processor, en dat de keuze van de PCH bepaalt wat het bord te bieden heeft), 
 invulregels vragen ze alle drie. Het is ook de letterlijke studievraag 2, die tot de
 import onbeantwoord bleef.
 
+### Wat er in de tekst opviel, en op 10 september 2026 rechtgetrokken is
+
+Twee taalfouten, zonder overleg doorgevoerd. Ze staan alleen in de HTML.
+
+- **"In een moederbord die gemaakt werd voor 2011"** in 14.6 draagt nu **dat**.
+- **De ".;" achteraan kernpunt 2** is een punt geworden. De rest van de lijst blijft
+  onderling ongelijk, zie hieronder.
+
+**En een schrijfwijze, beslist 10 september 2026.** "south bridge" en "north bridge" staan nu
+aaneen, vijf plaatsen over 14.1 en 14.6. 14.1 schreef in een en dezelfde zin "een northbridge en een
+south bridge", dus het hoofdstuk sprak zichzelf tegen binnen de regel.
+
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
 De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
 
-- **"south bridge" en "north bridge" los geschreven** in 14.1 en twee keer in 14.6,
-  terwijl de rest van het hoofdstuk southbridge en northbridge aaneen schrijft.
-- **"In een moederbord die gemaakt werd voor 2011"** in 14.6, waar dat hoort te staan.
-- **De ".;" achteraan kernpunt 2**, een punt en een puntkomma na elkaar. De andere
-  kernpunten eindigen op een puntkomma en het eerste en het laatste op een punt, dus de
-  lijst is ook onderling niet gelijk.
+- **De kernpunten eindigen onderling verschillend**: de meeste op een puntkomma, het
+  eerste en het laatste op een punt. Alleen de ".;" van kernpunt 2 is rechtgezet, want
+  dat was een fout en geen keuze.
 - **"véél"** in 14.1, met accenten in de brontekst.
 - **"Northbridge" met een hoofdletter** midden in studievraag 1, waar de rest van het
   hoofdstuk northbridge schrijft. Die vraag is intussen om een andere reden herschreven,
@@ -5056,6 +5935,27 @@ De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
   staat zo in de Word. Die alinea is intussen herschreven.
 - **"In een moderne computer (> 2011)"** staat twee keer met dezelfde formulering, in
   14.1 en in 14.5.
+
+### 8. De busbreedte van de FSB volgt de processor niet, 10 september 2026
+
+14.3 schreef "De FSB is bijvoorbeeld 32 bit breed bij een 32 bit processor en 64 bit
+breed bij een 64 bit processor", en dat is fout: de breedte van de bus en de breedte van
+de registers zijn twee verschillende dingen, en de FSB was vanaf de Pentium al 64 bit
+breed.
+
+**Het hoofdstuk rekent zichzelf ook tegen**, en dat is het argument dat je kan narekenen
+in plaats van geloven. De alinea eronder haalt uit een FSB van 66 MHz een doorvoer van
+533 MB/s, en 66 x 8 bytes is precies dat; met 32 bit zou het 266 MB/s zijn. Een FSB van
+66 MHz hoort bij de Pentium en de Pentium II, en dat waren 32 bit processoren. De zin en
+de som konden dus niet allebei waar zijn.
+
+**Gemeld en daarna geschrapt**, op 10 september 2026 door de lector beslist. Er is niets
+voor in de plaats gekomen: de zin ervoor, dat het aantal draden van de breedte van de bus
+afhangt, blijft staan en is waar, en de breedte zelf is een gegeven dat dit hoofdstuk
+verder nergens gebruikt. **Een herimport zet de zin terug.**
+
+Het hoofdstuk werd er een regel korter door, en 14.6 schoof daardoor een bladzijde naar
+voren. Verder verschoof er niets: hoofdstuk 1 tot 13 stonden stil.
 
 ## Hoofdstuk 15, Graphics Processing Unit (GPU)
 
@@ -5340,8 +6240,9 @@ zin erbij komt.
 Kernpunt 6 begint nu met "HDMI staat voor High-Definition Multimedia Interface en bevat
 naast een video signaal ook een audio signaal". Alleen de naam voluit, geen enkele
 bewering erbij, en de rest van het kernpunt staat er woord voor woord zoals de Word ze
-heeft. **Het staat in het kader en niet in 15.3**, want kernpunt 5 doet precies hetzelfde
-voor DVI, en zo staan de twee namen op dezelfde plaats en in dezelfde vorm.
+heeft. **Het stond in het kader en niet in een sectie**, want kernpunt 5 doet precies hetzelfde
+voor DVI, en zo staan de twee namen op dezelfde plaats en in dezelfde vorm. Sinds 10 september
+2026 staan ze allebei ook in 15.3 Aansluitingen; zie de beslissing onderaan dit blok.
 
 **Dit is een woordtoevoeging aan de brontekst en ze staat alleen in de HTML**, dus een
 herimport van dit hoofdstuk gooit ze weg. Vraag 7 van Test jezelf blijft dan achter
@@ -5369,8 +6270,8 @@ open vragen. Er waren er zeven tot de lector over HDMI besliste; zie beslissing 
 | 8 Een DVI uitgang op een HDMI scherm | a, ja, met een converter, al werk je daar niet handig mee | kernpunt 2; studievraag 3 |
 
 **Vraag 6, 7 en 8 steunen op het kader Kernpunten en niet op de lopende tekst, en dat
-is beslist en niet toevallig.** De schermaansluitingen (VGA, DVI, HDMI, DisplayPort) komen in
-15.1 tot 15.3 nergens voor en staan alleen vooraan in het kader. Dat kader wordt mee
+is beslist en niet toevallig.** De schermaansluitingen (VGA, DVI, HDMI, DisplayPort) kwamen in
+geen enkele sectie voor en stonden alleen vooraan in het kader. Dat kader wordt mee
 gedrukt op de openingsbladzijde van het hoofdstuk, dus de student heeft het antwoord voor
 zich. De eerste lezing was om er hoogstens een vraag op te bouwen, en die houdt hier geen
 stand: alle aansluitingen staan in dat kader, dus zo een regel zou dit hoofdstuk op vier
@@ -5396,24 +6297,75 @@ er bijgeschreven is en wat een herimport ermee doet. Alle zeven de andere vragen
 er al voor die beslissing, en geen ervan heeft ook maar een woord aan het hoofdstuk
 veranderd.
 
+### Wat er in de tekst opviel, en op 10 september 2026 rechtgetrokken is
+
+Een taalfout, zonder overleg doorgevoerd. Ze staat alleen in de HTML.
+
+- **"omwille dat we als framerate vaak 50 Hz nemen"** in 15.2 is **omdat** geworden.
+
+**En een inhoudelijke correctie, voorgelegd en goedgekeurd op 10 september 2026.** De openingszin
+van 15.1 was rond: Graphics Processing Unit IS de grafische verwerkingseenheid, dus de zin zei dat
+de GPU het hart van de GPU is. Ze luidt nu **"De Graphics Processing Unit ofwel GPU is de processor
+die het beeld berekent."** De andere kandidaat was "het hart van de grafische kaart", die het beeld
+van het hart houdt en ook waar is, maar de zin er meteen na zegt dat de GPU net zo goed in de
+processor kan zitten, en dan klopt de kaart niet meer.
+
+**En drie schrijfwijzen plus de decimale komma, beslist 10 september 2026.** Het kader schrijft nu
+videosignaal en audiosignaal aaneen en TV-schermen met een streepje, zoals de Nederlandse spelling
+vraagt van een samenstelling met een afkorting. In 15.2 is "50 Megabit" nu "50 Mbit" en "MegaByte"
+tweemaal "MB", en de punten in "16.7 miljoen", "6.25 MegaByte" en "156.25 MegaByte" zijn komma's.
+**"computer monitors" stond in de notitie maar niet in de tekst**, dus daar viel niets te doen.
+
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
 De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
 
-- **"De Graphics Processing Unit ofwel GPU is het hart van de grafische
-  verwerkingseenheid"** is rond: de GPU is het hart van de GPU.
 - **De studievragen tellen er zes in vijf alinea's**, want "Waarvoor staat DVI? Waarvoor
   staat HDMI?" staan in de Word in een alinea. Dat zijn twee lijstitems geworden, zodat
   het kader er zes toont; dat is opmaak en geen woordcorrectie.
-- **"video signaal", "audio signaal", "TV schermen" en "computer monitors"** staan los
-  geschreven waar het Nederlands ze aaneenschrijft, alle vier in het kader Kernpunten.
-- **"Megabit" en "MegaByte" met een hoofdletter B** in 15.2, en het decimale punt in
-  "16.7 miljoen", "6.25 MegaByte" en "156.25 MegaByte per seconde".
-- **"2^24"** staat als gewone tekst in de lopende zin, zonder superscript.
-- **"omwille dat we als framerate vaak 50 Hz nemen"** in 15.2.
-- **"op het aantal pixels..."** eindigt met drie puntjes in 15.2.
 - **De dubbele spatie** in "zoals TV schermen,  beamers" staat zo in de Word, en de
   spatie voor de komma erin.
+
+### 10. Een sectie 15.3 Aansluitingen, 10 september 2026
+
+**Dit trekt beslissing 9 en de noot bij vraag 6, 7 en 8 van Test jezelf recht.** Daar
+stond dat de schermaansluitingen met opzet alleen in het kader Kernpunten staan, omdat
+dat kader mee gedrukt wordt op de openingsbladzijde van het hoofdstuk. Die redenering
+houdt geen stand zodra de student dit hoofdstuk **zelfstandig** moet verwerken, en dat is
+wat de lector op 10 september 2026 voor hoofdstuk 14, 15 en 16 gevraagd heeft: dan is er
+niemand om een gat mee te overbruggen, en een kader is een samenvatting en geen tekst om
+uit te leren. Drie van de zes studievragen en drie van de acht testvragen hingen aan vier
+begrippen die in geen enkele sectie voorkwamen.
+
+**Dezelfde toets als bij hoofdstuk 5, 6 en 7**, die om dezelfde reden herwerkt zijn: elke
+studievraag moet in de tekst beantwoord worden. Het verschil is dat het daar om een
+ontbrekend mechanisme ging en hier om vier namen die de student in een bestelbon moet
+herkennen, wat doelstelling 2 van de studiefiche is.
+
+De sectie staat achter 15.2 en niet ervoor, zodat 15.1 en 15.2 hun nummer houden. Ze
+draagt VGA, DVI, HDMI en DisplayPort, elk in een alinea, plus twee alinea's over de
+converter en over het feit dat een passende stekker nog geen resolutie garandeert. Test
+jezelf is 15.4 geworden en Oplossingen 15.5; aan de vragen zelf is niets veranderd, want
+vraag 6, 7 en 8 steunen nu op de tekst in plaats van op het kader alleen.
+
+**Kernpunt 7 is in dezelfde ronde rechtgezet.** De Word schrijft "DisplayPort heeft een
+hogere bandbreedte dan HDMI", en dat is versieafhankelijk en dus niet betrouwbaar waar:
+HDMI 2.1 haalt 48 Gbit/s tegen 32,4 voor DisplayPort 1.4, terwijl DisplayPort 2.1 er weer
+80 haalt. De vergelijking is uit het kernpunt en uit de sectie gelaten. Wat overblijft is
+wat wel stabiel is, dat DisplayPort de aansluiting is die je op computerschermen
+terugvindt en dat allebei hoge resoluties dragen. **Dat is een keuze voor een zin die niet
+kan verouderen**, en het is dezelfde afweging als bij de productstatus van hoofdstuk 9:
+een argument dat aan een versienummer hangt, hoort niet in de tekst.
+
+**De hele sectie is bijgeschreven tekst en staat alleen in de HTML**, dus een herimport
+gooit ze weg, samen met kernpunt 7 in zijn nieuwe vorm. Wat er dan overblijft is
+precies de toestand die deze beslissing opheft.
+
+**Het hoofdstuk werd er een bladzijde dikker van**, van 186 tot 191 naar 186 tot 192, en
+hoofdstuk 16 schoof daardoor exact +1 op, van 192 naar 193. Er is geen figuur bij gekomen: de vier aansluitingen staan
+in geen enkel bestand in `img/`, en een tekening van vier stekkers zou een herkenning
+moeten leveren die een tekening niet geeft. Dat is het enige wat aan deze sectie nog
+openstaat.
 
 ## Hoofdstuk 16, Power Supply Unit (PSU)
 
@@ -5455,9 +6407,9 @@ Geen ervan overleeft een herimport van dit hoofdstuk.
 | Kernpunt 1 | "UPS staat voor Uninteruptable Power Supply" | "Uninterruptible Power Supply" |
 | 16.1, de kabels | "kabels die verzameld zijn in groepjes met op het uiteinde een molex connector. Eén van de belangrijkste is degene die op het moederbord wordt aangesloten" | de moederbordstekker is de 24-pins ATX-connector, en de Molex is de vierpolige stekker voor randapparaten |
 | 16.1, het rekenvoorbeeld | "Tel deze twee bij elkaar op en je komt aan een voeding van minstens 600 Watt" | een rekensom op werkelijk verbruik, zie beslissing 3 |
-| 16.3 | "de uitgangsspanningen (12V / 24V, 5V, 3.3V)" | "(12V, 5V, 3.3V)" |
+| 16.4 | "de uitgangsspanningen (12V / 24V, 5V, 3.3V)" | "(12V, 5V, 3.3V)" |
 | Studievraag 6 | "Beschrijf in eigen woorden de basiswerking van een UPS?" | een punt, want het is een imperatief |
-| 16.3, het signaal | "Power Good", "PWR_OK" en "Power_Good" in twee alinea's | "Power Good (PWR_OK)" bij de eerste vermelding en PWR_OK daarna |
+| 16.4, het signaal | "Power Good", "PWR_OK" en "Power_Good" in twee alinea's | "Power Good (PWR_OK)" bij de eerste vermelding en PWR_OK daarna |
 
 Twee kapotte zinnen zijn meteen rechtgetrokken: "gezien je de dan de ingebouwde grafische
 processor" had een dubbel woord, en "Wanneer een totaal vermogen nodig van bijvoorbeeld
@@ -5514,7 +6466,7 @@ gooit ze weg.**
   belooft.
 
 **De plaats is gekozen en niet gevonden**: allebei horen ze in 16.1, want dat is de sectie
-over de voeding zelf, terwijl 16.2 en 16.3 over twee signalen gaan. De UPS-alinea staat
+over de voeding zelf, terwijl 16.3 en 16.4 over twee signalen gaan. De UPS-alinea staat
 achteraan het aankoopverhaal, want ze is de industriële voortzetting ervan.
 
 ### 5. De figuren
@@ -5545,7 +6497,11 @@ figuur. De drie `alt` zijn met de hand geschreven en verschillen in precies een 
 
 **Bij deze familie is de HOOGTE de beperking en niet de breedte, en dat is nieuw hier.**
 `PsOn.html` en `PwrOk.html` zijn gewone secties, dus ze krijgen in `syllabus.css` geen
-`page-break-before` en 16.2 en 16.3 lopen in de PDF achter elkaar door. Tussen de twee
+`page-break-before` en 16.3 en 16.4 lopen in de PDF achter elkaar door. **Sinds 16.2 erbij
+gekomen is, delen ze geen bladzijde meer**: de twee tekeningen staan nu elk boven aan een eigen blad,
+198 en 199. De grens van 95mm is daarmee niet meer bindend en de figuren zouden groter kunnen. Ze zijn
+op 50.0mm gebleven, want een familie deelt haar schaal, dus je verbreedt ze met zijn drieen tegelijk;
+de rekenwijze hieronder blijft staan voor het geval er ooit weer een sectie tussenuit gaat. Tussen de twee
 figuren zit alleen een kop en zeven regels, samen ongeveer 41mm, dus twee figuren van
 hoogte H passen samen op een blad zolang 2H + 41 onder de 240 blijft. Dat geeft H onder de
 99mm, en met lucht 95mm.
@@ -5641,20 +6597,45 @@ BEMONSTEREN en niet door ernaar te kijken**: de pinnummers leken in de samengest
 blauw en waren gewoon `#222222`, wat de subpixelrand van de antialiasing bleek te zijn. Dat
 kost anders een correctie aan een bestand waar niets mis mee is.
 
+### Wat er in de tekst opviel, en op 10 september 2026 rechtgetrokken is
+
+Drie taalfouten, zonder overleg doorgevoerd. Ze staan alleen in de HTML.
+
+- **Kernpunt 5 eindigde op een puntkomma** waar de zes andere op een punt eindigen; het
+  draagt er nu ook een.
+- **"stroom vretende apparaten"** in 16.1 is **stroomvretende** geworden.
+- **"under en overvoltage protection"** in 16.4 kreeg het streepje van de samentrekking:
+  **under- en overvoltage protection**. De halve vertaling blijft staan, want die
+  vervangen is een woordkeuze en geen taalfout.
+
+**En een inhoudelijke correctie, voorgelegd en goedgekeurd op 10 september 2026.** 16.1 zei over
+de 24-pins ATX-connector dat ze "flexibeler in het gebruik" is, zonder te zeggen waarin. De vier
+pinnen die erbij kwamen zijn +3.3V, +5V, +12V en massa, toegevoegd in ATX12V 2.0 omdat PCI Express
+meer stroom over het moederbord trekt; ze vervingen de losse AUX-stekker. De zin zegt nu **"en
+levert meer stroom op de 12V-, 5V- en 3.3V-lijnen"**, wat de tekening van de 24-pins connector op
+de bladzijde erna zelf toont. De reden (PCI Express) is er bewust NIET bij gezet: de zin gaat over
+de connector en niet over de geschiedenis, en de bewering die er nu staat is af te lezen van de
+figuur ernaast. De spanningen staan met een decimale punt, want zo schrijft dit hoofdstuk ze overal.
+
+**En twee schrijfwijzen, beslist 10 september 2026.** De eenheid watt staat nu overal met een
+kleine w, achttien plaatsen in 16.1, in Test jezelf en in 12.2, en het kader schrijft twee keer
+"wattage" in plaats van "Wattage". **Het is dus het WOORD geworden en niet het symbool W**, terwijl
+de eerste formulering van dit voorstel W zei: de fout was de hoofdletter, want een eenheidsnaam
+schrijf je in het Nederlands klein, en "een voeding van 750 watt" leest in een lopende zin beter dan
+"750 W" terwijl geen enkele zin in dit hoofdstuk het symbool al gebruikte. En "+3.3V" is "+3,3V"
+geworden, in de vijf plaatsen van de tekst en in de twaalf labels van de drie ATX-tekeningen, die
+daarna opnieuw gerenderd zijn. **De spatie tussen getal en eenheid is een apart punt**: dit hoofdstuk
+schrijft "+3,3V" vast aaneen en `Labo/Assemblage/Theorie/Componenten.html` schrijft "+3,3 V" met een
+spatie. Dat is niet aangeraakt.
+
 ### Wat er in de tekst opviel, en niet aangeraakt is
 
 De tekst gaat er letterlijk in, dus dit staat hier en niet in de HTML.
 
-- **Kernpunt 5 eindigt op een puntkomma** waar de zes andere op een punt eindigen.
 - **"molex" met een kleine letter** stond in de Word; het is een merknaam en staat in de
   herschreven zin nu als Molex, maar dat is onderdeel van die correctie en geen aparte.
-- **"stroom vretende apparaten"** los geschreven in 16.1.
-- **"onder en overvoltage protection"** in 16.3, half Engels en zonder streepje, en het is
+- **"onder- en overvoltage protection"** in 16.4 blijft half Engels, en het is
   de enige plaats in het hoofdstuk waar die twee begrippen vallen.
-- **"Wattage" met een hoofdletter** in twee studievragen, en "Watt" overal als eenheid
-  voluit in plaats van W.
-- **"Deze met 24 pinnen is de meest recente en is flexibeler in het gebruik"** zegt niet
-  waarin ze flexibeler is.
 - **De negatieve spanningen van 16.1** worden genoemd en daarna nergens meer gebruikt; de
   24-pins tekening toont wel de -12V.
 
@@ -5699,10 +6680,10 @@ negen bijgeschreven vragen overleven een herimport niet.**
 | 4 Waarom 750 W voor 375 W nodig | b, het beste rendement rond de helft van de belasting | 16.1, "de meeste voedingen halen hun beste rendement wanneer je hen maar voor de helft belast" |
 | 5 Uitgangsspanning van een industriele voeding | d, 24V | kernpunt 3, "Een industriële voeding is vaak gemonteerd op een DIN rail ... De uitgangsspanning is 24 V". De drie afleiders zijn de drie spanningen van een desktopvoeding uit kernpunt 2 |
 | 6 Waarvoor dient de batterij in een UPS | c, tijd geven om de machine gecontroleerd stil te leggen en af te sluiten | 16.1, de twee laatste alinea's, "Ze moet de computer genoeg tijd geven om de machine gecontroleerd stil te leggen en zichzelf daarna netjes af te sluiten". Studievraag 5 en 6 |
-| 7 Alleen de stekker in het stopcontact | b, de voeding is actief, vaak met een groen lampje, maar de computer start niet op | 16.2, de eerste twee alinea's |
-| 8 Wanneer krijgt de computer spanning | c, wanneer PS_ON van HOOG naar LAAG geschakeld wordt | 16.2, "geschakeld wordt van HOOG naar LAAG". Mogelijkheid b keert de richting om en d verwisselt PS_ON met PWR_OK, de twee misvattingen die dit hoofdstuk kan opleveren |
-| 9 Wat meldt PWR_OK | b, dat de uitgangsspanningen hun waarde bereikt hebben en die kunnen aanhouden | 16.3, "een Power Good (PWR_OK) signaal dat het moederbord laat weten dat de voltages die aangeleverd worden correct zijn" |
-| 10 PWR_OK heeft alleen bij het opstarten nut | b, niet waar, ook tijdens de werking | 16.3, "Niet enkel maar tijdens het opstarten heeft dit PWR_OK signaal zijn nut ... under en overvoltage protection" |
+| 7 Alleen de stekker in het stopcontact | b, de voeding is actief, vaak met een groen lampje, maar de computer start niet op | 16.3, de eerste twee alinea's |
+| 8 Wanneer krijgt de computer spanning | c, wanneer PS_ON van HOOG naar LAAG geschakeld wordt | 16.3, "geschakeld wordt van HOOG naar LAAG". Mogelijkheid b keert de richting om en d verwisselt PS_ON met PWR_OK, de twee misvattingen die dit hoofdstuk kan opleveren |
+| 9 Wat meldt PWR_OK | b, dat de uitgangsspanningen hun waarde bereikt hebben en die kunnen aanhouden | 16.4, "een Power Good (PWR_OK) signaal dat het moederbord laat weten dat de voltages die aangeleverd worden correct zijn" |
+| 10 PWR_OK heeft alleen bij het opstarten nut | b, niet waar, ook tijdens de werking | 16.4, "Niet enkel maar tijdens het opstarten heeft dit PWR_OK signaal zijn nut ... under en overvoltage protection" |
 
 **De negen bijgeschreven vragen hebben elk precies een juist antwoord, en dat is
 nageteld.** Er is geen tweede open vraag bijgekomen: de meerkeuzevorm heeft de
@@ -5715,3 +6696,43 @@ zou een woord invoeren dat het hoofdstuk niet kent, dezelfde afweging als bij vr
 **Een vraag is geschreven en weer geschrapt**: welke connector de voeding met het
 moederbord verbindt. Het antwoord (de 24-pins ATX-connector) staat in 16.1 en op
 drie figuren, en de vraag toetste daardoor niets wat de student niet al ziet.
+
+### De industriele voeding wordt 16.2, 10 september 2026
+
+**Zelfde geval als 15.3, en op dezelfde dag beslist.** Kernpunt 3 en 5 dragen het hele
+industriele verhaal (op een DIN rail, dus extern, 24 V, en het vermogen uit de datasheet
+van de computer), en in 16.1 tot 16.3 kwam er geen woord van terug. Studievraag 2 en 3 en
+vraag 5 van Test jezelf hangen eraan. In een vak over industriele computers is dat het
+onderwerp van het hoofdstuk dat ontbreekt, en bij zelfstudie draagt het kader dat niet
+alleen.
+
+**De sectie staat achter 16.1 en niet achteraan**, want 16.1 eindigt op de twee
+UPS-alinea's en die zijn zelf al de industriele voortzetting van het aankoopverhaal. De
+UPS is er niet mee verhuisd: die alinea's blijven staan waar ze staan, wat de derde
+mogelijkheid was en niet gekozen is. **Dat kost wel een hernummering**: PS_ON is 16.3
+geworden en PWR_OK 16.4, Test jezelf 16.5 en Oplossingen 16.6, en elke verwijzing in dit
+blok is meegegaan.
+
+Wat de sectie zegt, en waar het vandaan komt: de plaats van de voeding en het praktische
+gevolg dat je ze loskoppelt zonder aan de computer te komen; de ene spanning van 24 V in
+plaats van drie, en dat de computer zelf maakt wat hij intern lager nodig heeft; en dat
+je hier niet optelt wat de onderdelen verbruiken, want je koopt een geheel en je kan er
+niets in vervangen, dus komt het getal uit de datasheet. De marge is de regel van 16.1 en
+wordt er niet opnieuw uitgelegd. **Alles ervan is bijgeschreven tekst en staat alleen in
+de HTML.**
+
+**De -5V is in dezelfde ronde rechtgezet.** De openingszin van 16.1 zei dat een doorsnee
+pc-voeding naast +3.3V, +5V en +12V ook -5V en -12V levert, terwijl de tekening van de
+24-pins connector op de bladzijde erna op pin 20 `N/C` draagt. -5V is in januari 2002 uit
+de ATX-standaard gehaald, en op de 24-pins connector van ATX12V 2.0 is die pin sindsdien
+niet aangesloten. De zin noemt nu -12V, zegt dat oudere voedingen daarnaast -5V leverden
+en dat die spanning verdwenen is, en wijst naar de N/C op de tekening. **Het waarom staat
+er niet bij**, want dat was voor ISA-kaarten en dat woord komt in de hele repo niet voor;
+dat is patroon 20. De alinea erna, over diskettestations en seriele poorten, sluit er
+ongewijzigd op aan.
+
+**Het hoofdstuk werd er een bladzijde dikker van.** Het document ging van 200 naar 202,
+waarvan er een van 15.3 komt. De inhoudstafel is rij voor rij nagelegd: 132 rijen stonden
+stil, 14.6 schoof -1 door de geschrapte zin in 14.3, en hoofdstuk 16 schoof +1. De
+tekstschaal is op elke bladzijde `3.1249194` op dezelfde acht na als in de vorige PDF, de
+zes voorwerkbladzijden en de twee beeldbladzijden 121 en 125.

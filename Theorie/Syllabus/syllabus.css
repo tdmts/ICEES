@@ -171,6 +171,47 @@ ol.vragen > li > ul > li::before { content: counter(keuze, lower-alpha) "."; }
    nummer ervoor is dat van de vraag. De letter erachter is het antwoord. */
 .oplossingen .keuze { font-weight: 700; margin-right: 1.6mm; }
 
+/* ------------------------------------------------------------------ citaat */
+
+/*
+ * Een citaat. Het Voorwoord opent met de vergelijking van het Intel Museum
+ * over een vlucht New York - Parijs, en als gewone alinea was die niet van de
+ * tekst erna te onderscheiden: de zin daaronder begint met "Met deze quote" en
+ * verwees naar een alinea die er niet als quote uitzag.
+ *
+ * GEEN VAN DEZE MATEN IS GEKOZEN. Ze zijn alle vier uit dit bestand geleend,
+ * want er is geen bestaand citaat in de syllabus om iets aan op te meten:
+ * de lijn is de afsluitlijn van het kader Studievragen (1.1mm turkoois), de
+ * inspringing is de eerste tabstop van een opsomming (8.4mm), de ondermarge is
+ * die van een alinea (4.3mm), en de bronregel is de figuurbijschriftregel
+ * (9pt grijs, 1.5mm eronder). Wie hier iets verandert, meet het na in de PDF.
+ *
+ * De bronregel staat rechts, want links eronder leest ze als een nieuwe alinea
+ * van het citaat zelf.
+ *
+ * Op de site is dit een gewone blockquote: OrionCSS heeft geen opmaak voor een
+ * citaat, dus daar springt ze alleen in. Dat is geen gebrek, want van de
+ * syllabus bestaat voor de student alleen de PDF.
+ */
+blockquote {
+    margin: 0 0 4.3mm 0;
+    padding-left: 8.4mm;
+    border-left: 1.1mm solid var(--turkoois);
+    font-style: italic;
+    break-inside: avoid;
+}
+
+blockquote > :last-child { margin-bottom: 0; }
+
+blockquote cite {
+    display: block;
+    font-style: normal;
+    font-size: 9pt;
+    color: var(--grijs-tekst);
+    text-align: right;
+    margin-top: 1.5mm;
+}
+
 /* ------------------------------------------------------------------ kaders */
 
 /*

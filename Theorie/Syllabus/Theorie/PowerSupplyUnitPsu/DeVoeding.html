@@ -13,7 +13,7 @@
     <div class="container">
         <h1>De voeding</h1>
 
-        <p>De specificaties van een doorsnee pc-voeding geven aan dat de voeding niet alleen +3.3V, +5V en +12V levert, maar ook -5V en -12V.</p>
+        <p>De specificaties van een doorsnee pc-voeding geven aan dat de voeding niet alleen +3,3 V, +5 V en +12 V levert, maar ook -12 V. Oudere voedingen leverden daarnaast -5 V. Die spanning is uit de standaard verdwenen, en op de tekening van de 24-pins connector verderop staat op die plaats dan ook N/C: niet aangesloten.</p>
 
         <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 61.8mm">
             <img src="../../../../img/syllabus-16-power-supply-unit-psu-01.png" class="img-fluid" alt="Een ATX-voeding, schuin van voren gefotografeerd: een grijze metalen kast met links het rooster van de ventilator, in het midden de stekkeringang met het opschrift INPUT 220VAC 50Hz 7.0A en daaronder de aan-uitschakelaar. Rechtsboven komt de kabelbundel eruit, met daarin onder meer twee witte vierpolige Molex-connectoren.">
@@ -21,7 +21,7 @@
 
         <p>De negatieve spanningen spelen slechts een heel beperkte rol. Negatieve spanningen werden vroeger gebruikt in oude diskettestations maar vandaag de dag blijft dit beperkt tot de, op het moederbord geïntegreerde, seriële poorten als deze al aanwezig zouden zijn. Bij een industriële computer kan dit wel nog eens het geval zijn, bij een gewone computer niet.</p>
 
-        <p>De voeding wordt gebruikt om het moederbord en alle overige componenten te voorzien van voldoende spanning en stroom. Daarvoor zijn meestal één, twee of zelfs nog meer aansluitingen aanwezig op het moederbord. Extra aansluitingen zijn vaak nodig zodat er meer vermogen kan stromen naar het moederbord en bijgevolg één van de meest stroom vretende apparaten: de processor.</p>
+        <p>De voeding wordt gebruikt om het moederbord en alle overige componenten te voorzien van voldoende spanning en stroom. Daarvoor zijn meestal één, twee of zelfs nog meer aansluitingen aanwezig op het moederbord. Extra aansluitingen zijn vaak nodig zodat er meer vermogen kan stromen naar het moederbord en bijgevolg één van de meest stroomvretende apparaten: de processor.</p>
 
         <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 122.1mm">
             <img src="../../../../img/syllabus-16-power-supply-unit-psu-02.png" class="img-fluid" alt="Een moederbord recht van boven gefotografeerd, met drie rode pijlen en Engelse bijschriften. De bovenste wijst naar de vierkante aansluiting boven de processorsocket, +12V Power Connector; de middelste naar een aansluiting daar vlakbij, Alternate Power Connector; en de onderste naar de lange rij pinnen onderaan het bord, 24-pin Main Power Connector.">
@@ -33,7 +33,7 @@
             <img src="../../../../img/syllabus-16-atx-connector.svg" class="img-fluid" alt="Tekening van de 24-pins ATX-connector, met de pinbezetting in twee kolommen van twaalf. Links pin 1 tot 12 van boven naar onder, rechts pin 13 tot 24, elk als een gekleurd vierkant met zijn functie ernaast. De bovenste tien rijen vormen samen het blok van twintig pinnen, met halverwege de vergrendeling aan de rechterkant; daaronder hangt met een stippellijn het aparte blokje van vier. Links staan twee keer +3.3V, COM, +5V, COM, +5V, COM, PWR_OK, +5VSB en +12V1, en in het blokje van vier +12V1 en +3.3V. Rechts staan +3.3V, -12V, COM, PS_ON, COM, COM, COM, N/C, +5V en +5V, en in het blokje van vier +5V en COM.">
         </figure>
 
-        <p>Er zijn twee uitvoeringen van deze connector: één met 20 pinnen en één met 24 pinnen. Deze met 24 pinnen is de meest recente en is flexibeler in het gebruik.</p>
+        <p>Er zijn twee uitvoeringen van deze connector: één met 20 pinnen en één met 24 pinnen. Deze met 24 pinnen is de meest recente en levert meer stroom op de lijnen van 12 V, 5 V en 3,3 V.</p>
 
         <p>Ook op SATA harde schijven is plaats voorzien om ze te verbinden met de voeding. Harde schijven met een M.2 aansluiting worden rechtstreeks op het moederbord gemonteerd.</p>
 
@@ -45,13 +45,13 @@
 
         <p>Wie een voeding wil aankopen moet met twee zaken rekening houden: de vormfactor en het gewenste vermogen. De vormfactor bepaalt of de voeding in de kast past, en bij een desktop is dat bijna altijd ATX. Het vermogen is uiteraard afhankelijk van de componenten die je in een computer gaat plaatsen. De grootste verbruikers zijn de processor en de grafische kaart.</p>
 
-        <p>Een Intel Core i7 8700K Coffee Lake verbruikt bijvoorbeeld maximaal 95 Watt terwijl een Intel Core i3 8100 Coffee Lake slechts maximaal 65 Watt verbruikt. Deze gegevens kan je terugvinden in de datasheet van de processor maar ze staan ook veelal vermeld in de productspecificaties wanneer je online zou bestellen.</p>
+        <p>Een Intel Core i7 8700K Coffee Lake verbruikt bijvoorbeeld maximaal 95 watt terwijl een Intel Core i3 8100 Coffee Lake slechts maximaal 65 watt verbruikt. Deze gegevens kan je terugvinden in de datasheet van de processor maar ze staan ook veelal vermeld in de productspecificaties wanneer je online zou bestellen.</p>
 
-        <p>Een bescheiden MSI GeForce GT710 2GB heeft een voeding nodig die minstens 300 Watt kan leveren terwijl een Asus GeForce Strix GTX 1080 A8G Gaming een voeding nodig heeft van minstens 500 Watt. Gebruik je geen externe grafische kaart dan hoef je hier uiteraard geen rekening mee te houden gezien je dan de ingebouwde grafische processor zou gebruiken van de CPU.</p>
+        <p>Een bescheiden MSI GeForce GT710 2GB heeft een voeding nodig die minstens 300 watt kan leveren terwijl een Asus GeForce Strix GTX 1080 A8G Gaming een voeding nodig heeft van minstens 500 watt. Gebruik je geen externe grafische kaart dan hoef je hier uiteraard geen rekening mee te houden gezien je dan de ingebouwde grafische processor zou gebruiken van de CPU.</p>
 
-        <p>Die 500 Watt is wel een aanbeveling voor de HELE computer en niet voor de kaart alleen, dus je mag ze niet optellen bij het verbruik van de processor. Reken daarom met wat de onderdelen zelf verbruiken: 95 Watt voor deze processor en zo'n 180 Watt voor de GTX 1080.</p>
+        <p>Die 500 watt is wel een aanbeveling voor de HELE computer en niet voor de kaart alleen, dus je mag ze niet optellen bij het verbruik van de processor. Reken daarom met wat de onderdelen zelf verbruiken: 95 watt voor deze processor en zo'n 180 watt voor de GTX 1080.</p>
 
-        <p>Ook het moederbord, het geheugen, de harde schijven, de USB apparaten en de ventilatoren nemen een bepaald vermogen op. Reken hiervoor op zo&#x27;n 100 Watt. Samen kom je zo op ongeveer 375 Watt op het drukste moment. Daarnaast halen de meeste voedingen hun beste rendement wanneer je hen maar voor de helft belast, dus indien het budget het toelaat kies je ruimer: voor deze machine is dat een voeding van 750 Watt.</p>
+        <p>Ook het moederbord, het geheugen, de harde schijven, de USB apparaten en de ventilatoren nemen een bepaald vermogen op. Reken hiervoor op zo&#x27;n 100 watt. Samen kom je zo op ongeveer 375 watt op het drukste moment. Daarnaast halen de meeste voedingen hun beste rendement wanneer je hen maar voor de helft belast, dus indien het budget het toelaat kies je ruimer: voor deze machine is dat een voeding van 750 watt.</p>
 
         <p>In de industrie stopt het daar niet. Valt de netspanning weg, dan valt een gewone computer meteen uit, en een machine die halverwege een beweging stilvalt kan schade maken. Daarom hangt er vaak een UPS tussen, een Uninterruptible Power Supply. Dat is een voeding met een batterij erin: zolang het net er is, voedt ze de computer en houdt ze die batterij vol, en valt het net weg, dan neemt de batterij het over zonder dat de computer er iets van merkt.</p>
 

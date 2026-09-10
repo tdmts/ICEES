@@ -59,11 +59,11 @@
 
         <h2>RAID 1</h2>
 
-        <p>Terwijl RAID 0 ook wel bekend staat als striping staat RAID 1 bekend als mirrorring.</p>
+        <p>Terwijl RAID 0 ook wel bekend staat als striping staat RAID 1 bekend als mirroring.</p>
 
         <p>Bij RAID 1 wordt de data twee keer (of meer) identiek op de verschillende schijven opgeslagen. Wanneer één harde schijf faalt zal het computersysteem hier geen hinder van ondervinden en gewoon blijven verder werken. De RAID controller vangt dit op door de andere schijven de I/O operaties te laten uitvoeren.</p>
 
-        <p>Het is echter geen goed idee om deze &#x27;defecte&#x27; toestand lang te laten aanslepen... Je weet immers dat een RAID opstelling typisch harde schijven bevat met dezelfde specificaties en dezelfde levensduur. Je vervangt best de defecte harde schijf zo snel mogelijk. De controller zal dan de inhoud van de nog correct werkende schijf kopiëren naar de nieuwe.</p>
+        <p>Het is echter geen goed idee om deze &#x27;defecte&#x27; toestand lang te laten aanslepen. Je weet immers dat een RAID opstelling typisch harde schijven bevat met dezelfde specificaties en dezelfde levensduur. Je vervangt best de defecte harde schijf zo snel mogelijk. De controller zal dan de inhoud van de nog correct werkende schijf kopiëren naar de nieuwe.</p>
 
         <p>Naast de redundantie van data heeft deze opstelling nog een tweede voordeel. Het lezen gebeurt hier op (minstens) het dubbele van de snelheid ten opzichte van een enkele schijf opstelling. Het schrijven gaat even snel als op 1 enkele schijf.</p>
 
@@ -99,9 +99,9 @@
 
         <p>Zowel RAID 1 als RAID 5 beschermen de gebruiker tegen het uitvallen van één harde schijf maar waar je vaak niet op rekent is het moment dat er twee harde schijven tegelijkertijd falen.</p>
 
-        <p>Onwaarschijnlijk, denk je misschien... Maar helaas, niets is minder waar. Alle schijven in een RAID array zijn meestal van dezelfde fabrikant, hetzelfde type, hebben al exact evenveel uren gedraaid en bewerkingen ondergaan. Als één schijf versleten is, zijn ze allemaal versleten. Het is dan ook van cruciaal belang dat als een RAID array begint te falen je deze zo snel mogelijk tracht te herstellen.</p>
+        <p>Onwaarschijnlijk, denk je misschien. Maar helaas, niets is minder waar. Alle schijven in een RAID array zijn meestal van dezelfde fabrikant, hetzelfde type, hebben al exact evenveel uren gedraaid en bewerkingen ondergaan. Als één schijf versleten is, zijn ze allemaal versleten. Het is dan ook van cruciaal belang dat als een RAID array begint te falen je deze zo snel mogelijk tracht te herstellen.</p>
 
-        <p>RAID-6 is een eerder ongewone configuratie en vind je niet vaak terug. Ze slaagt er echter er wel in om een tweevoudige schijfuitval moeiteloos te overleven.</p>
+        <p>RAID 6 is een eerder ongewone configuratie en vind je niet vaak terug. Ze slaagt er echter er wel in om een tweevoudige schijfuitval moeiteloos te overleven.</p>
 
         <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 130.0mm">
             <img src="../../../../img/syllabus-11-raid-6.svg" class="img-fluid"
@@ -114,11 +114,11 @@
 
         <p>Omdat we de pariteiten spreiden kunnen we ook parallel bestanden lezen en schrijven.</p>
 
-        <p>Zoals je al kan vermoeden is RAID-6 duur. Zowel de controller als de twee extra dataschijven zijn niet goedkoop maar als redundantie een must is, is RAID-6 een relatief veilige oplossing.</p>
+        <p>Zoals je al kan vermoeden is RAID 6 duur. Zowel de controller als de twee extra dataschijven zijn niet goedkoop maar als redundantie een must is, is RAID 6 een relatief veilige oplossing.</p>
 
         <h2>RAID 10</h2>
 
-        <p>Als we het beste van twee werelden willen combineren dan combineren we verschillende RAID configuraties. Bij RAID-10 worden RAID-0 (snel maar onveilig) en RAID-1 (veilig) gecombineerd tot snel en veilig.</p>
+        <p>Als we het beste van twee werelden willen combineren dan combineren we verschillende RAID configuraties. Bij RAID 10 worden RAID 0 (snel maar onveilig) en RAID 1 (veilig) gecombineerd tot snel en veilig.</p>
 
         <p>Met slechts 4 schijven heb je een systeem dat bestand is tegen de uitval van (minstens) een enkele schijf en zeer snelle schrijf- en leesoperaties toelaat. Het is natuurlijk ook een vrij complexe en dure opstelling.</p>
 
@@ -144,9 +144,9 @@
 
         <p>In een JBOD (Just a Bunch Of Disks) / spanned volume worden alle schijven samengevoegd tot 1 grote schijf. Bestanden worden sequentieel opgeslagen. Als de ene schijf vol is gaan we over naar een andere. Dit is dus geen echte RAID maar zorgt gewoon dat meerdere schijven als 1 logisch volume worden aanzien. Het levert geen redundantie en geen snelheidswinst op.</p>
 
-        <p>Met een striped volume simuleer je in feite RAID-0. Crasht één schijf, dan ben je alles kwijt. Een Windows striped volume kan in principe niet door een andere besturingssysteem worden gelezen. Het voordeel is uiteraard wel de performance boost. Regelmatig een backup nemen is de boodschap.</p>
+        <p>Met een striped volume simuleer je in feite RAID 0. Crasht één schijf, dan ben je alles kwijt. Een Windows striped volume kan in principe niet door een andere besturingssysteem worden gelezen. Het voordeel is uiteraard wel de performance boost. Regelmatig een backup nemen is de boodschap.</p>
 
-        <p>Een mirrorred volume bootst RAID-1 na. Ook hier is er een zekere snelheidswinst bij leesoperaties maar het grootste voordeel is uiteraard dat er één schijf mag uitvallen en dat je niet te kampen hebt met dataverlies. Een aanrader!</p>
+        <p>Een mirrored volume bootst RAID 1 na. Ook hier is er een zekere snelheidswinst bij leesoperaties maar het grootste voordeel is uiteraard dat er één schijf mag uitvallen en dat je niet te kampen hebt met dataverlies. Een aanrader!</p>
     </div>
 
     <script src="../../../../reference.js"></script>

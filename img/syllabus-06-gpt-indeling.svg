@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" width="720" height="240"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">De indeling van een schijf met een GPT-partitietabel</title>
+    <rect width="720" height="240" fill="#ffffff" />
+
+    <!-- maatlijn -->
+    <path d="M40 30 L40 40 M680 30 L680 40 M40 35 L680 35" stroke="#666" stroke-width="1" fill="none" />
+    <rect x="300" y="24" width="120" height="22" fill="#ffffff" />
+    <text x="360" y="40" font-size="14" fill="#222" text-anchor="middle">de hele schijf</text>
+
+    <!-- vooraan -->
+    <rect x="40" y="56" width="44" height="62" fill="#f5f7f7" stroke="#9bb0ac" />
+    <rect x="84" y="56" width="44" height="62" fill="#004d40" stroke="#004d40" />
+    <rect x="128" y="56" width="96" height="62" fill="#b2dfdb" stroke="#004d40" />
+
+    <!-- de partities zelf -->
+    <rect x="224" y="56" width="120" height="62" fill="#e0e7e5" stroke="#9bb0ac" />
+    <rect x="344" y="56" width="100" height="62" fill="#e0e7e5" stroke="#9bb0ac" />
+    <rect x="444" y="56" width="112" height="62" fill="#e0e7e5" stroke="#9bb0ac" />
+    <text x="284" y="93" font-size="14" fill="#222" text-anchor="middle">partitie 1</text>
+    <text x="394" y="93" font-size="14" fill="#222" text-anchor="middle">partitie 2</text>
+    <text x="500" y="93" font-size="14" fill="#222" text-anchor="middle">partitie 3</text>
+
+    <!-- achteraan -->
+    <rect x="556" y="56" width="96" height="62" fill="#b2dfdb" stroke="#004d40" />
+    <rect x="652" y="56" width="28" height="62" fill="#004d40" stroke="#004d40" />
+
+    <!-- bijschriften met leaders -->
+    <path d="M62 118 L62 140 L62 152" stroke="#9bb0ac" stroke-width="1" fill="none" />
+    <text x="40" y="168" font-size="12" fill="#555">beschermende</text>
+    <text x="40" y="182" font-size="12" fill="#555">MBR</text>
+
+    <path d="M106 118 L106 134" stroke="#004d40" stroke-width="1" fill="none" />
+    <text x="120" y="140" font-size="12" fill="#004d40">kop</text>
+
+    <path d="M176 118 L176 152" stroke="#004d40" stroke-width="1" fill="none" />
+    <text x="150" y="168" font-size="12" fill="#004d40">lijst met plaats voor</text>
+    <text x="150" y="182" font-size="12" fill="#004d40">128 partities</text>
+
+    <path d="M604 118 L604 152" stroke="#004d40" stroke-width="1" fill="none" />
+    <text x="560" y="168" font-size="12" fill="#004d40">reservekopie van</text>
+    <text x="560" y="182" font-size="12" fill="#004d40">de lijst en de kop</text>
+
+    <text x="40" y="216" font-size="13" fill="#222">Elke ingang in de lijst is gelijkwaardig, dus GPT kent geen
+        extended en geen logische</text>
+    <text x="40" y="234" font-size="13" fill="#222">partities. Raakt de lijst vooraan beschadigd, dan blijft de kopie
+        achteraan over.</text>
+</svg>

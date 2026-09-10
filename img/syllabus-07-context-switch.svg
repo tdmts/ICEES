@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 770 382" width="770" height="382"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">Een context switch: de processor stopt met rekenen, het besturingssysteem bewaart de registers
+        van het ene proces in het werkgeheugen en zet die van het andere proces ervoor in de plaats</title>
+    <rect width="770" height="382" fill="#ffffff" />
+
+    <defs>
+        <marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#004d40" />
+        </marker>
+    </defs>
+
+    <!-- tijdlijn -->
+    <text x="15" y="32" font-size="17" fill="#00332b" font-weight="bold">Op de processor</text>
+
+    <rect x="15" y="48" width="330" height="34" fill="#004d40" />
+    <text x="180" y="70" font-size="14" fill="#ffffff" text-anchor="middle">proces A rekent</text>
+
+    <rect x="345" y="48" width="80" height="34" fill="#ffffff" stroke="#c0392b" stroke-width="2" />
+
+    <rect x="425" y="48" width="330" height="34" fill="#b2dfdb" stroke="#004d40" />
+    <text x="590" y="70" font-size="14" fill="#00332b" text-anchor="middle">proces B rekent</text>
+
+    <path d="M 345 92 L 345 106 L 425 106 L 425 92" stroke="#c0392b" stroke-width="2" fill="none" />
+    <text x="385" y="125" font-size="13" fill="#c0392b" text-anchor="middle">context switch</text>
+    <text x="385" y="143" font-size="13" fill="#c0392b" text-anchor="middle">hier rekent de processor aan geen enkel proces</text>
+
+    <!-- processor -->
+    <rect x="40" y="206" width="250" height="126" fill="#e0e7e5" stroke="#004d40" />
+    <text x="165" y="232" font-size="16" fill="#00332b" text-anchor="middle" font-weight="bold">Processor</text>
+
+    <rect x="70" y="250" width="190" height="26" fill="#ffffff" stroke="#004d40" />
+    <text x="165" y="268" font-size="13" fill="#00332b" text-anchor="middle">instructie die aan de beurt is</text>
+    <rect x="70" y="282" width="190" height="26" fill="#ffffff" stroke="#004d40" />
+    <text x="165" y="300" font-size="13" fill="#00332b" text-anchor="middle">tussenwaarden</text>
+    <text x="165" y="352" font-size="13" fill="#004d40" text-anchor="middle">samen: de registers</text>
+
+    <!-- werkgeheugen -->
+    <rect x="500" y="182" width="255" height="192" fill="#ffffff" stroke="#004d40" />
+    <text x="627" y="206" font-size="16" fill="#00332b" text-anchor="middle" font-weight="bold">Werkgeheugen</text>
+
+    <rect x="525" y="222" width="205" height="58" fill="#004d40" />
+    <text x="627" y="246" font-size="14" fill="#ffffff" text-anchor="middle">context van</text>
+    <text x="627" y="266" font-size="14" fill="#ffffff" text-anchor="middle">proces A</text>
+
+    <rect x="525" y="296" width="205" height="58" fill="#b2dfdb" stroke="#004d40" />
+    <text x="627" y="320" font-size="14" fill="#00332b" text-anchor="middle">context van</text>
+    <text x="627" y="340" font-size="14" fill="#00332b" text-anchor="middle">proces B</text>
+
+    <!-- pijlen -->
+    <path d="M 296 244 L 516 244" stroke="#004d40" stroke-width="2" fill="none" marker-end="url(#p)" />
+    <text x="406" y="236" font-size="13" fill="#004d40" text-anchor="middle">1  bewaren</text>
+
+    <path d="M 516 320 L 296 320" stroke="#004d40" stroke-width="2" fill="none" marker-end="url(#p)" />
+    <text x="406" y="312" font-size="13" fill="#004d40" text-anchor="middle">2  herstellen</text>
+</svg>

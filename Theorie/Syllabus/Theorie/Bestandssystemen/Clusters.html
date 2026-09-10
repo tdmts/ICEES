@@ -48,9 +48,13 @@
             </table>
         </div>
 
-        <p>Zoals je ziet kunnen we nu 8 keer meer sectoren kunnen adresseren met dezelfde adresruimte! Dit betekent dan ook dat onze maximum partitiegrootte maar liefst 8 keer groter wordt!</p>
+        <p>Zoals je ziet kunnen we nu 8 keer meer sectoren adresseren met dezelfde adresruimte! Dit betekent dan ook dat onze maximum partitiegrootte maar liefst 8 keer groter wordt!</p>
 
-        <p>Waarom dan geen clusters die 64, 128 of 1024 sectoren koppelen? Je kan het misschien al raden, aan deze techniek zit ook een nadeel verbonden. Stel nu dat we kiezen voor een clustergrootte van 64 KiB en we slaan een bestand op van 412 bytes. Er wordt dan één adres gereserveerd om aan te duiden waar dat bestand staat maar dit maakt ook dat er zo&#x27;n 63 KiB aan opslagruimte verloren gaat. Dit wordt ook wel slack genoemd.</p>
+        <p>Waarom dan geen clusters die 64, 128 of 1024 sectoren koppelen? Je kan het misschien al raden, aan deze techniek zit ook een nadeel verbonden. Stel nu dat we kiezen voor clusters van 128 sectoren, dus 64 KiB of 65 536 bytes, en we slaan een bestand op van 412 bytes. Er wordt dan één adres gereserveerd om aan te duiden waar dat bestand staat maar dit maakt ook dat er zo&#x27;n 63 KiB aan opslagruimte verloren gaat. Dit wordt ook wel slack genoemd.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-06-cluster-en-slack.svg" class="img-fluid" alt="Bovenaan zestien genummerde sectoren van 512 bytes, per acht samengenomen tot twee clusters op adres 0 en adres 1. Onderaan een cluster van 4096 bytes waarvan alleen het eerste tiende gevuld is door een bestand van 412 bytes; de rest is gearceerd als slack">
+        </figure>
 
         <p>Bij het formatteren kan je opgeven hoe groot de clusters moeten zijn. Standaard wordt er 4096 bytes of 4 KiB gerekend. Als je veel kleine bestanden hebt kan je ervoor kiezen om kleinere clusters te maken. Heb je veel grote bestanden dan kies je best voor grotere clusters.</p>
     </div>

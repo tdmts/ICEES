@@ -228,6 +228,24 @@ def lijstalinea(par):
 
 # ---------------------------------------------------------------- inline
 
+# Vet uit de Word komt niet mee in de lopende tekst. Beslist 10 september 2026,
+# nadat de zestien hoofdstukken naast elkaar lagen: het vet in deze Word is geen
+# systeem. Tien van de 128 bladzijden droegen het, tien van de zestien
+# hoofdstukken hadden er nul (RAM, Besturingssystemen en Chipset onder meer), en
+# van de veertig stuks stonden er zestien op een enkele bladzijde, waar zowat elk
+# inhoudswoord vet stond. Waar het dicht staat werkt het dus niet, en waar het
+# ontbreekt suggereert het dat daar niets te onthouden valt. Patroon 10 van
+# SCHRIJFSTIJL.md laat vet alleen toe om een term, een pinnaam of een getal te
+# markeren en nooit om een zinsdeel; drie van die tien bladzijden zetten hele
+# zinnen vet. Het scanwerk doen de Kernpunten, de sectiekoppen en Test jezelf,
+# en de syllabus is bovendien papier.
+#
+# Dit staat hier en niet als handmatige correctie in de HTML, want zo overleeft
+# de beslissing een herimport en hoeft ze in geen enkele NOTITIES.md te staan.
+# Zet hem op True en het vet komt weer mee, hoofdstuk per hoofdstuk.
+VET_UIT_DE_WORD = False
+
+
 def run_delen(run):
     """(tekst, vet, cursief) van een run, of None als er geen tekst in staat."""
     tekst = "".join(t.text or "" for t in run.findall(qn("w:t")))
@@ -248,7 +266,7 @@ def delen_html(delen, ontvet=False):
     """
     gebundeld = []
     for tekst, vet, cursief in delen:
-        if ontvet:
+        if ontvet or not VET_UIT_DE_WORD:
             vet = False
         if gebundeld and gebundeld[-1][1] == vet and gebundeld[-1][2] == cursief:
             gebundeld[-1][0] += tekst
@@ -271,6 +289,9 @@ def alinea_html(par, rels, ontvet=False):
     ontvet=True laat het vet vallen. Dat is voor een kader waarvan de hele
     inhoud vet staat: daar is het vet de opmaak van het kader zelf, en de
     info-box tekent die opmaak al. Zie tabel_html.
+
+    Zolang VET_UIT_DE_WORD False staat valt het vet overal, en doet deze
+    schakelaar er niet toe.
     """
     stukken = []
     for kind in par._p.iterchildren():

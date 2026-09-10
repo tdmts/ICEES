@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 770 440" width="770" height="440"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">De reactietijd van zeven opeenvolgende opdrachten: op een gewoon besturingssysteem zijn ze
+        gemiddeld korter maar overschrijdt er een de deadline, op een real time operating system zijn ze gemiddeld
+        langer maar blijft elke opdracht binnen de deadline</title>
+    <rect width="770" height="440" fill="#ffffff" />
+
+    <path d="M 620 38 L 620 420" stroke="#c0392b" stroke-width="2" stroke-dasharray="5 4" fill="none" />
+    <text x="620" y="436" font-size="14" fill="#c0392b" text-anchor="middle">deadline</text>
+
+    <text x="15" y="30" font-size="16" fill="#00332b" font-weight="bold">Gewoon besturingssysteem</text>
+
+    <text x="15" y="112" font-size="13" fill="#004d40">reactietijd van</text>
+    <text x="15" y="130" font-size="13" fill="#004d40">elke opdracht</text>
+
+    <rect x="180" y="46" width="146" height="16" fill="#b2dfdb" stroke="#004d40" />
+    <rect x="180" y="68" width="118" height="16" fill="#b2dfdb" stroke="#004d40" />
+    <rect x="180" y="90" width="173" height="16" fill="#b2dfdb" stroke="#004d40" />
+    <rect x="180" y="112" width="131" height="16" fill="#b2dfdb" stroke="#004d40" />
+    <rect x="180" y="134" width="159" height="16" fill="#b2dfdb" stroke="#004d40" />
+    <rect x="180" y="156" width="487" height="16" fill="#c0392b" />
+    <rect x="180" y="178" width="127" height="16" fill="#b2dfdb" stroke="#004d40" />
+
+    <text x="677" y="169" font-size="13" fill="#c0392b">te laat</text>
+
+    <text x="15" y="250" font-size="16" fill="#00332b" font-weight="bold">Real time operating system</text>
+
+    <rect x="180" y="266" width="243" height="16" fill="#004d40" />
+    <rect x="180" y="288" width="257" height="16" fill="#004d40" />
+    <rect x="180" y="310" width="236" height="16" fill="#004d40" />
+    <rect x="180" y="332" width="264" height="16" fill="#004d40" />
+    <rect x="180" y="354" width="249" height="16" fill="#004d40" />
+    <rect x="180" y="376" width="271" height="16" fill="#004d40" />
+    <rect x="180" y="398" width="238" height="16" fill="#004d40" />
+
+    <text x="15" y="332" font-size="13" fill="#004d40">gemiddeld trager,</text>
+    <text x="15" y="350" font-size="13" fill="#004d40">maar altijd op tijd</text>
+</svg>

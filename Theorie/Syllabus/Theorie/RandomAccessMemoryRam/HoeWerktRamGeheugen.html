@@ -15,7 +15,7 @@
 
         <p>Het werkgeheugen is een plaats in de computer waar instructies en data tijdelijk worden opgeslagen. Typisch bevat het werkgeheugen enkel gegevens die op dat moment gebruikt worden.</p>
 
-        <p>Werkgeheugen bestaat uit een reeks cellen. Iedere cell bestaat uit een transistor en een condensator. Deze twee componenten kunnen één bit tijdelijk opslaan. Zoals je weet verliest de condensator zijn lading na verloop van tijd. Daarom moet er een mechanisme zijn wat de lading periodiek ververst. Dit wordt ook wel memory refresh genoemd. Wanneer de computer uitgezet wordt gaat de informatie in het werkgeheugen definitief verloren.</p>
+        <p>Werkgeheugen bestaat uit een reeks cellen. Iedere cel bestaat uit een transistor en een condensator. Deze twee componenten kunnen één bit tijdelijk opslaan. Zoals je weet verliest de condensator zijn lading na verloop van tijd. Daarom moet er een mechanisme zijn dat de lading periodiek ververst. Dit wordt ook wel memory refresh genoemd. Wanneer de computer uitgezet wordt gaat de informatie in het werkgeheugen definitief verloren.</p>
 
         <p>Om informatie uit het werkgeheugen te halen moet een adres worden opgegeven zodat de bijhorende data kan opgehaald worden.</p>
 
@@ -24,7 +24,7 @@
                 alt="Een kolom met de adressen 0 tot en met 11 onder elkaar. Naast elk adres staat een rij van acht vakjes, een per cel van 1 bit, en onder de onderste rij loopt een maatpijl met het bijschrift 8 bits.">
         </figure>
 
-        <p>In moderne x86 / x64 / ARM computer komt een adres overeen met 8 cellen ofwel 1 byte. Dit is belangrijk om te weten omdat dit de kleinste adresseerbare eenheid is.</p>
+        <p>In een moderne x86 / x64 / ARM computer komt een adres overeen met 8 cellen ofwel 1 byte. Dit is belangrijk om te weten omdat dit de kleinste adresseerbare eenheid is.</p>
 
         <p>De meeste instructies worden uitgevoerd op basis van words of woorden. Bijvoorbeeld ADD 0, 4.</p>
 
@@ -34,7 +34,7 @@
 
         <p>Een woord is dus de breedte waarmee de processor van nature werkt, en die volgt uit het type processor. In het hoofdstuk Informatievoorstelling staat een tweede betekenis van datzelfde woord: in assembler voor x86 bleef de naam WORD staan op de 16 bits van de 8086, en DWORD op 32 bits. Die namen zijn sindsdien niet meegegroeid. Waar hierna woord staat, bedoelen we de breedte van de processor.</p>
 
-        <p>Het resultaat wordt opnieuw opgeslagen in een woord. Het betekent ook dat een operand adres in principe maximaal 32 bits kan tellen !!! Dit zal later een heel belangrijk gegeven worden.</p>
+        <p>Het resultaat wordt opnieuw opgeslagen in een woord. Het betekent ook dat een operand adres in principe maximaal 32 bits kan tellen. Dit zal later een heel belangrijk gegeven worden.</p>
 
         <p>Het kleinste geheel getal dat zo kan opgeslagen worden is -2^31 of -2 miljard en het grootste geheel getal is dan 2^31 - 1 ofwel bijna +2 miljard. De eerste bit wordt gebruikt om het teken voor te stellen. In programmeertalen komt dit overeen met het datatype Integer.</p>
 
@@ -54,14 +54,14 @@
 
         <p>Om zeker te zijn hoeveel werkgeheugen je ongeveer nodig hebt kan je, bij normaal gebruik van je computer, taakbeheer openen en nagaan hoeveel werkgeheugen je typisch gebruikt. Merk je dat je op de limiet zit dan kan je eventueel nog het werkgeheugen uitbreiden.</p>
 
-        <p>In een desktop computer koop je dan een DIMM of Dual In-Line Memory Module van het type DDR4 of DDR5, afhankelijk van wat jouw systeem ondersteunt.</p>
+        <p>In een desktop computer koop je dan een DIMM of Dual In-line Memory Module van het type DDR4 of DDR5, afhankelijk van wat jouw systeem ondersteunt.</p>
 
         <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
             <img src="../../../../img/syllabus-13-random-access-memory-ram-02.png" class="img-fluid"
                 alt="Een DIMM van voren, met acht geheugenchips in twee groepen van vier op een groene printplaat en onderaan een contactstrip met een inkeping.">
         </figure>
 
-        <p>In een laptop zijn de afmetingen kleiner dus hier heb je een SO-DIMM of Small Outline Dual In-Line Memory Module nodig. Ook hier ga je moeten rekening houden met het type DDR geheugen dat je nodig hebt.</p>
+        <p>In een laptop zijn de afmetingen kleiner dus hier heb je een SO-DIMM of Small Outline Dual In-line Memory Module nodig. Ook hier ga je moeten rekening houden met het type DDR geheugen dat je nodig hebt.</p>
 
         <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 117.3mm">
             <img src="../../../../img/syllabus-13-random-access-memory-ram-03.png" class="img-fluid"

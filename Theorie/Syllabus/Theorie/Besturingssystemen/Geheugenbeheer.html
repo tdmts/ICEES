@@ -13,17 +13,26 @@
     <div class="container">
         <h1>Geheugenbeheer</h1>
 
-        <p>Zoals je weet zegt de Von Neuman architectuur dat een programma, om uitgevoerd te kunnen worden, in het werkgeheugen moet worden geladen.</p>
+        <p>Zoals je weet zegt de Von Neumann architectuur dat een programma, om uitgevoerd te kunnen worden, in het werkgeheugen moet worden geladen.</p>
 
-        <p>Hoe meer programma’s er worden uitgevoerd op een bepaald moment, hoe meer gegevens in het werkgeheugen worden geladen. Als een besturingssysteem performant wil zijn dan moet het ook opletten op welke adressen de data weggeschreven wordt naar het werkgeheugen.</p>
+        <p>Hoe meer programma&#x27;s er worden uitgevoerd op een bepaald moment, hoe meer gegevens in het werkgeheugen worden geladen. Als een besturingssysteem performant wil zijn dan moet het ook opletten op welke adressen de data weggeschreven wordt naar het werkgeheugen.</p>
 
-        <p>Zo is het beter om gegevens die bij elkaar horen ook op aanliggende adressen te plaatsen in het werkgeheugen. We doen dit uiteraard om fragmentatie te vermijden en zo optimaal gebruik te kunnen maken van de prefetch buffer.</p>
+        <p>Zo is het beter om gegevens die bij elkaar horen ook op aanliggende adressen te plaatsen in het werkgeheugen. Een reeks aaneensluitende adressen levert het geheugen namelijk sneller aan dan dezelfde hoeveelheid data die verspreid staat, en zo vermijdt het besturingssysteem meteen ook fragmentatie.</p>
 
         <p>Wanneer we te maken hebben met grote programma&#x27;s en bestanden kan het zijn dat het werkgeheugen helemaal vol is. In principe zouden er dan geen nieuwe bestanden meer kunnen worden geopend en geen programma&#x27;s meer kunnen worden uitgevoerd. Gelukkig heeft men hierop een handige workaround gevonden.</p>
 
-        <p>Vanuit het standpunt van de gebruiker zijn er altijd slechts een paar programma&#x27;s actief. De gebruiker kan namelijk slechts enkele taken tegelijkertijd uitvoeren. Het besturingssysteem gaat programma&#x27;s die actief zijn maar niet vaak gebruikt worden uit het werkgeheugen halen en hun status opslaan op de harde schijf.</p>
+        <p>Vanuit het standpunt van de gebruiker zijn er altijd slechts een paar programma&#x27;s actief. De gebruiker kan namelijk slechts enkele taken tegelijkertijd uitvoeren. Het besturingssysteem gaat programma&#x27;s die actief zijn maar niet vaak gebruikt worden uit het werkgeheugen halen en hun status opslaan op de harde schijf. Dit principe heet swapping.</p>
 
-        <p>Dit principe heet swapping. Het kopiëren van die grote hoeveelheid data is natuurlijk zeer negatief voor de prestaties van het systeem.</p>
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-07-swapping.svg" class="img-fluid"
+                alt="Bovenaan een vol werkgeheugen met de programma's A, B, C en D, waarnaast programma E niet meer past; de status van C, dat weinig gebruikt wordt, gaat naar het wisselbestand op de schijf, en onderaan staat E op de plaats die daardoor vrijkwam">
+        </figure>
+
+        <p>Wat er daarna gebeurt is wat swapping duur maakt. Zodra de gebruiker dat programma weer aanspreekt, moet de opgeslagen status van de schijf terug naar het werkgeheugen, en daarvoor moet er eerst opnieuw plaats gemaakt worden, dus verhuist er iets anders naar de schijf. Een schijf is vele malen trager dan werkgeheugen, en tijdens zo&#x27;n wissel staat het programma dat erop wacht gewoon stil.</p>
+
+        <p>Windows houdt die weggeschreven gegevens bij in een wisselbestand op de systeemschijf. Linux doet hetzelfde, in een swapbestand of in een aparte swappartitie.</p>
+
+        <p>Voor wie een machine samenstelt is dat de reden waarom te weinig werkgeheugen zich niet meldt met een foutmelding maar met traagheid. De machine blijft gewoon werken, maar ze is voortdurend aan het wisselen, en dat merk je pas wanneer de installatie al draait. Werkgeheugen bijsteken is dan bijna altijd goedkoper dan die traagheid ergens anders proberen weg te werken.</p>
     </div>
 
     <script src="../../../../reference.js"></script>

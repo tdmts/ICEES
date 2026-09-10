@@ -58,13 +58,13 @@
 
         <p>Registers zijn kleine geheugenplaatsen die aanwezig zijn op de PCB van de processor.  Ze werken op dezelfde kloksnelheid als de processor wat ze heel snel maakt. Ze zijn vele malen sneller dan de trage harde schijf en veel sneller dan het werkgeheugen.</p>
 
-        <p>Wanneer een programma instructie uitgevoerd wordt door de CU zal de opcode en de data eerst gekopieerd worden (vanuit het werkgeheugen / caches) naar de juiste registers. Zo onderscheiden we bijvoorbeeld data registers waar binaire gehele getallen en binaire komma getallen opgeslagen in worden en instructie registers voor de opcode die uitgevoerd moet worden.</p>
+        <p>Wanneer een programma-instructie uitgevoerd wordt door de CU zal de opcode en de data eerst gekopieerd worden (vanuit het werkgeheugen / caches) naar de juiste registers. Zo onderscheiden we bijvoorbeeld data registers waar binaire gehele getallen en binaire komma getallen opgeslagen in worden en instructie registers voor de opcode die uitgevoerd moet worden.</p>
 
         <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
             <img src="../../../../img/syllabus-12-registers.svg" class="img-fluid" alt="De registers van een 32 bit processor. Acht balken staan onder elkaar en zijn elk 32 bits breed: EAX, EBX, ECX, EDX, ESI, EDI, ESP en EBP. Een accolade langs de eerste zes noemt ze registers voor algemeen gebruik; bij ESP staat stack pointer en bij EBP base pointer. Bij de eerste vier is de onderste helft van de balk apart getekend en benoemd als de 16 bits AX, BX, CX en DX, en elk daarvan valt uiteen in twee bytes van 8 bits, AH en AL tot en met DH en DL.">
         </figure>
 
-        <p>De functies van ieder individueel register overstijgt het bereik van deze cursus. Onthoud enkel dat het register noodzakelijk is omdat daarin tijdelijk de opcode en data staat die uitgevoerd moet worden door de processor. Uiteindelijk wordt het resultaat van de bewerking dan terug gekopieerd naar de caches / werkgeheugen.</p>
+        <p>De functies van ieder individueel register overstijgen het bereik van deze cursus. Onthoud enkel dat het register noodzakelijk is omdat daarin tijdelijk de opcode en data staat die uitgevoerd moet worden door de processor. Uiteindelijk wordt het resultaat van de bewerking dan terug gekopieerd naar de caches / werkgeheugen.</p>
 
         <p>De breedte van die registers volgt uit het type processor: een 32 bit processor heeft registers van 32 bits en een 64 bit processor registers van 64 bits. Omdat een operand een geheugenadres is dat in zo&#x27;n register moet passen, legt die breedte meteen ook vast hoeveel werkgeheugen de processor kan aanspreken: met 32 bits zijn er 2^32 adressen en met 64 bits 2^64. Waar de grens dan precies ligt zie je bij Random Access Memory.</p>
 
@@ -80,7 +80,7 @@
                 overgenomen.</figcaption>
         </figure>
 
-        <p>Om CPU-RAM performance gap te dichten gebruikt men cache geheugens. Dit zijn kleine geheugens die ook aanwezig zijn op de PCB van de processor. Ze werken iets trager dan de registers maar zijn wel iets groter. We hebben het dan over bijvoorbeeld de Level 1 , Level 2 en Level 3 cache geheugens.</p>
+        <p>Om de CPU-RAM performance gap te dichten gebruikt men cache geheugens. Dit zijn kleine geheugens die ook aanwezig zijn op de PCB van de processor. Ze werken iets trager dan de registers maar zijn wel iets groter. We hebben het dan over bijvoorbeeld de Level 1 , Level 2 en Level 3 cache geheugens.</p>
 
         <p>Zelfs kleine cache geheugens zijn nuttig omdat moderne processoren zich bewust zijn van de programma&#x27;s die uitgevoerd worden. Ze proberen de flow van het programma te voorspellen en plaatsen de toekomstige instructies en data in het cache geheugen nog vooraleer deze aan beurt gekomen zijn. Ook het feit dat er in heel wat programma&#x27;s lussen voorkomen en de code zich gewoon herhaalt versnelt de uitvoering gevoelig.</p>
 
@@ -93,7 +93,7 @@
 
         <p>Processorfabrikanten passen deze truc een aantal keer toe. Naast L1 cache is er namelijk ook heel vaak L2 en soms L3 cache aanwezig. Hoe groter het cache geheugen, hoe meer instructies en data dicht tegen de processor opgeslagen kunnen worden. L2 en L3 cache zijn telkens iets groter maar trager.</p>
 
-        <p>Je kan het vergelijken met gegevens die opgehaald moeten worden uit Post-IT op je bureau (L1), een boek op je bureau (L2), een boek in de kast (L3) en de bibliotheek (RAM).</p>
+        <p>Je kan het vergelijken met gegevens die opgehaald moeten worden uit Post-it op je bureau (L1), een boek op je bureau (L2), een boek in de kast (L3) en de bibliotheek (RAM).</p>
 
         <h2>Kernen en hyperthreading</h2>
 

@@ -15,23 +15,37 @@
 
         <p>De encyclopedie Wikipedia omschrijft een virtuele machine als een computerprogramma dat de werking van een echte, fysieke computer nabootst.</p>
 
-        <p>Een deel van de hardware van de computer wordt geëmuleerd. Dit wil zeggen dat de werking van het diskettestation, USB, netwerk, … wordt nagebootst in software. De processor en het werkgeheugen horen daar niet bij. De instructies van de virtuele machine lopen rechtstreeks op de echte processor, en de hardware bewaakt daarbij dat ze niet buiten die virtuele machine komen. Ook het werkgeheugen is echt geheugen, waarvan de virtuele machine een stuk toegewezen krijgt.</p>
+        <p>Een deel van de hardware van de computer wordt geëmuleerd. Dit wil zeggen dat de werking van het diskettestation, USB, netwerk, ... wordt nagebootst in software. De processor en het werkgeheugen horen daar niet bij. De instructies van de virtuele machine lopen rechtstreeks op de echte processor, en de hardware bewaakt daarbij dat ze niet buiten die virtuele machine komen. Ook het werkgeheugen is echt geheugen, waarvan de virtuele machine een stuk toegewezen krijgt.</p>
+
+        <p>Daaruit volgt een grens: een virtuele machine draait alleen een besturingssysteem met dezelfde
+            instructieset als de processor eronder. Een x64 machine draait dus geen ARM guest en omgekeerd. Wie
+            een programma van de ene instructieset op de andere wil krijgen heeft emulatie nodig (zie hoofdstuk
+            De Von Neumann architectuur), en dat is iets anders dan virtualiseren.</p>
 
         <p>Een besturingssysteem dat geïnstalleerd is op een virtuele machine gedraagt zich net zoals het zich zou gedragen op een fysieke computer.</p>
 
         <p>Virtualiseren betekent ook dat er één host besturingssysteem is waarop er 1 of meerdere guest besturingssystemen worden geïnstalleerd. De resources van het host systeem worden dus gedeeld over de host en de verschillende guest systemen.</p>
 
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 87.0mm">
+            <img src="../../../../img/syllabus-08-virtual-machines-en-containers-03.jpeg" class="img-fluid" alt="Een Windows bureaublad met daarop twee vensters van Parallels Desktop. In het ene draait Windows XP met het startmenu open, in het andere Fedora 11. Onderaan staan de twee virtuele machines naast elkaar in de taakbalk van de computer waarop ze draaien.">
+            <figcaption class="figure-caption">Twee guests op een host: in het ene venster draait Windows XP, in het andere Fedora 11</figcaption>
+        </figure>
+
         <p>Ieder guest besturingssysteem krijgt een eigen virtuele processor, virtueel werkgeheugen en een virtuele harde schijf, etc. Wijzigingen in een guest besturingssysteem hebben geen enkele invloed op het host besturingssysteem of andere guest besturingssystemen!</p>
 
         <p>Programma's die een virtuele machine draaien zijn er in twee soorten. VirtualBox, VMware Workstation en Hyper-V installeer je op een gewoon besturingssysteem, dat daarmee de host wordt, en je blijft er ondertussen zelf op werken. Proxmox VE installeer je rechtstreeks op de kale hardware, zonder host besturingssysteem eronder, en zo een machine draait niets anders meer dan guests. Die tweede vorm tref je aan op een server, waar niemand aan het toestel zelf werkt.</p>
 
-        <p>Er zijn verschillende redenen waarom virtualisatie zeer interessant is. De meest belangrijke is ongetwijfeld de economische factor. De meeste computers benutten niet optimaal hun resources: de processor doet vaak niets, het werkgeheugen is niet volledig vol, … waardoor de capaciteit van de machine niet volledig wordt benut.</p>
+        <p>Er zijn verschillende redenen waarom virtualisatie zeer interessant is. De meest belangrijke is ongetwijfeld de economische factor. De meeste computers benutten niet optimaal hun resources: de processor doet vaak niets, het werkgeheugen is niet volledig vol, ... waardoor de capaciteit van de machine niet volledig wordt benut.</p>
 
         <p>Door te virtualiseren kan je op dezelfde hardware verschillende computersystemen laten draaien waardoor je enorm bespaart op hardware, onderhoud en energiekost.</p>
 
         <p>Een tweede reden is dat je verschillende systemen van elkaar kan scheiden op dezelfde hardware. What happens in the virtual machine, stays in the virtual machine. Een crash van het ene heeft geen invloed op het andere.</p>
 
+        <p>Die scheiding zit wel in de software en niet in de hardware. Gaat de processor, het werkgeheugen of de schijf van de fysieke machine stuk, dan vallen alle virtuele machines die erop draaien tegelijk uit.</p>
+
         <p>Het nadeel is dat een virtuele machine trager werkt dan een fysieke machine. Ze moet namelijk haar resources delen met de fysieke machine en eventueel andere virtuele machines.</p>
+
+        <p>Dat delen is niet de hele verklaring. Elke guest draait een volledig besturingssysteem, met een eigen kernel en eigen achtergrondprogramma's die processortijd vragen zonder dat jij er iets mee doet. Elke guest krijgt ook een eigen stuk werkgeheugen toegewezen, en dat stuk is voor de andere guests weg, ook wanneer de guest niets staat te doen. En de randapparaten die in software nagebootst worden, kosten bij elke schijf- of netwerkbewerking een omweg langs het host besturingssysteem. Die drie samen zijn de overhead van virtualisatie.</p>
     </div>
 
     <script src="../../../../reference.js"></script>

@@ -13,22 +13,22 @@
     <div class="container">
         <h1>Unified Extensible Firmware Interface (UEFI)</h1>
 
-        <p>Zoals je zopas hebt misschien kunnen afleiden heeft de BIOS enkele <strong>nadelen</strong>:</p>
+        <p>Zoals je zopas misschien hebt kunnen afleiden heeft de BIOS enkele nadelen:</p>
 
         <ul>
-            <li><strong>De BIOS is klein</strong> (~= 1MB) en dit maakt dat we hier niet veel instellingen in kwijt kunnen.</li>
-            <li>De BIOS heeft ook een zeer ernstig <strong>beveiligingsprobleem</strong>… Wat als iemand ervoor kan zorgen dat de eerste instructie niet een legitieme BIOS instructie is maar wel een kwaadaardige instructie die een virus uitvoert? Dit lijkt misschien onwaarschijnlijk maar er zijn heel wat BIOS virussen in omloop.</li>
-            <li>Het opstarten via BIOS – MBR – MBC - bootloader is vrij omslachtig en <strong>traag</strong>.</li>
-            <li>Ten slotte is de BIOS ook vrij oud (werkt nog met 16 bit in plaats van 64 bit instructies) en is deze <strong>niet in staat om een computer te laten opstarten van een harde schijf die groter is dan 2 TB</strong>.</li>
+            <li>De BIOS is klein (~= 1 MB) en dit maakt dat we hier niet veel instellingen in kwijt kunnen.</li>
+            <li>De BIOS heeft ook een zeer ernstig beveiligingsprobleem. Wat als iemand ervoor kan zorgen dat de eerste instructie niet een legitieme BIOS instructie is maar wel een kwaadaardige instructie die een virus uitvoert? Dit lijkt misschien onwaarschijnlijk maar er zijn heel wat BIOS virussen in omloop.</li>
+            <li>Het opstarten via BIOS – MBR – MBC - bootloader is vrij omslachtig en traag.</li>
+            <li>Ten slotte is de BIOS ook vrij oud (werkt nog met 16 bit in plaats van 64 bit instructies) en is deze niet in staat om een computer te laten opstarten van een harde schijf die groter is dan 2 TB.</li>
         </ul>
 
-        <p>Ontwikkeld door Intel, UEFI is tegenwoordig aanwezig op iedere recente computer die je nu koopt een heeft bovenvermelde nadelen niet.</p>
+        <p>Ontwikkeld door Intel, UEFI is tegenwoordig aanwezig op iedere recente computer die je nu koopt en heeft bovenvermelde nadelen niet.</p>
 
         <p>De UEFI firmware instructies die de computer helpen opstarten staan op een aparte ROM (Read Only Memory) chip op het moederbord. De capaciteit van deze chip is tientallen megabytes of meer.</p>
 
         <p>UEFI ondersteunt TPM (Trusted Platform Module). De werking hiervan overstijgt het bereik van de cursus maar het lost het beveiligingsprobleem waarmee de BIOS geconfronteerd werd op. Er kan dus niet meer geknoeid worden met het opstartproces van de computer.</p>
 
-        <p>In plaats van te werken met een Master Boot Record wordt gewerkt met een <strong>speciale partitie</strong> (= een stukje capaciteit van een opslagmedium, afgescheiden van andere partities dat vele sectoren groot kan zijn). Op die UEFI partitie staat een programma met als bestandsextensie .efi . Dit programma wordt gestart en gaat het besturingssysteem verder inladen.</p>
+        <p>In plaats van te werken met een Master Boot Record wordt gewerkt met een speciale partitie (= een stukje capaciteit van een opslagmedium, afgescheiden van andere partities dat vele sectoren groot kan zijn). Op die UEFI partitie staat een programma met als bestandsextensie .efi . Dit programma wordt gestart en gaat het besturingssysteem verder inladen.</p>
     </div>
 
     <script src="../../../../reference.js"></script>

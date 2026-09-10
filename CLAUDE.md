@@ -100,9 +100,10 @@ four engines and the eight scripts started as byte-for-byte copies with the DeN-
 rewritten. **Two scripts have since diverged for a reason that is not a string**, and both are
 recorded below: `import-brightspace.py` (the `rCode` casing, under "Where the content comes from")
 and `import-syllabus.py` (zwevende afbeeldingen, under "Wat de eerste hoofdstukimport ...").
-`Theorie/Syllabus/syllabus.css` was copied too and has since **gained three rules that DeN does not
-have**, all three under "De syllabus": a `ol.vragen > li` that stays whole, `.vragen-bij-figuur`,
-and `.tekenkader`, the drawing frame under a question that asks the student to draw. Read DeN's
+`Theorie/Syllabus/syllabus.css` was copied too and has since **gained four rules that DeN does not
+have**, all four under "De syllabus": a `ol.vragen > li` that stays whole, `.vragen-bij-figuur`,
+`.tekenkader`, the drawing frame under a question that asks the student to draw, and `blockquote`,
+the quote that opens the Voorwoord. Read DeN's
 `CLAUDE.md` for the reasoning behind any shared part; read this section before you copy anything
 across, in either direction.
 
@@ -1116,6 +1117,22 @@ komt er geen tweede keer:
 - **De module `syllabus` staat eerst in `reference.js`**, zoals in DeN. Een categorie is een
   hoofdstuk, een topic een sectie, en het hoofdstuknummer volgt uit de plaats in de lijst.
 
+**Het Voorwoord is er pas op 10 september 2026 bij gekomen, en het stond al die tijd in de Word.**
+De zestien importrondes liepen alle zestien met `--hoofdstuk N`, dus `--voorwoord` is nooit gedraaid
+en de gedrukte syllabus begon bij 1 Generaties, terwijl de oude PDF op Brightspace het wel op
+bladzijde 3 drukt. **Dat is het soort gat dat nergens faalt**: geen enkele regel van de contentcheck
+gaat over wat er NIET in het manifest staat, en de export drukt gewoon wat ze krijgt. Het is de
+enige categorie met `genummerd: false`, de pagina ligt los in `Theorie/` omdat het Voorwoord geen
+enkele Heading 2 heeft, en ze heet met opzet geen `Overzicht.html`: die naam is de opening van een
+GENUMMERD hoofdstuk en `hoofdstukken()` neemt die tak alleen als er een nummer is.
+
+**De quote erin is met de hand een `<blockquote>` geworden met een bronregel die niet in de Word
+staat**, en dat is de vierde regel die `syllabus.css` boven DeN uit heeft. Geen van haar maten is
+gekozen: ze zijn alle vier geleend van iets wat in dit document al opgemeten was, en dat staat er in
+het bestand bij. De bronregel is `Intel Museum, Santa Clara`, want dat is wat na te rekenen viel;
+**de toeschrijving aan Gordon Moore die je overal ziet, klopt niet**, en de redenering staat in
+NOTITIES.md. Allebei handmatig, dus een herimport gooit ze weg.
+
 **De syllabushub wordt met opzet door niets gelinkt, en dat is geen vergetelheid.** De
 theorietrack heeft in Orion een enkel menu-item, `Theorie/Syllabus/overview.html`, en dat biedt de
 PDF aan. `Theorie/Syllabus/Theorie/reference.html` en de hoofdstukpagina's eronder zijn op de site
@@ -1151,6 +1168,37 @@ weg**; welke het zijn, staat per hoofdstuk in NOTITIES.md, zodat ze in de Word
 bijgeschreven kunnen worden. Dat geldt net zo voor een rechtgetrokken spelling: de
 importer vertaalt opmaak en nooit woorden, dus elke woordcorrectie is per definitie
 een handmatige die een herimport niet overleeft.
+
+**De syllabus draagt geen vet in de lopende tekst, en dat is een importerregel geworden en geen
+opruiming.** Beslist op 10 september 2026, met de zestien hoofdstukken naast elkaar. Het vet dat uit
+de Word kwam was geen systeem: tien van de 128 bladzijden droegen het, tien van de zestien
+hoofdstukken hadden er nul (RAM met dertien bladzijden, Besturingssystemen met negen, Chipset met
+acht), en zestien van de vijfenveertig stuks stonden op een enkele bladzijde, waar zowat elk
+inhoudswoord vet stond. Waar het dicht staat werkt het dus niet, en waar het ontbreekt suggereert het
+dat daar niets te onthouden valt. Drie bladzijden zetten bovendien hele ZINNEN vet, wat patroon 10
+van `SCHRIJFSTIJL.md` uitdrukkelijk verbiedt, en waar geen enkele regel van de contentcheck over
+valt. Het scanwerk doen de Kernpunten, de sectiekoppen en Test jezelf, en de syllabus is bovendien
+papier: daar scan je op kop en op kader.
+
+**De schakelaar is `VET_UIT_DE_WORD` in `import-syllabus.py`, en dat is precies waarom dit GEEN
+handmatige correctie is.** Elke andere woordcorrectie hier staat in NOTITIES.md omdat een herimport
+ze weggooit; deze niet, want de importer laat het vet nu zelf vallen. Zet de constante op True en het
+komt hoofdstuk per hoofdstuk terug. De bestaande `ontvet`-parameter (voor een kader dat helemaal vet
+staat) blijft staan en doet er zolang niet toe.
+
+**Twee soorten vet zijn blijven staan, en allebei zijn ze geen nadruk.** De acht `<strong
+style="color: #9e2f26">` in 13.10 markeren de redundante bits in een codevoorbeeld, en de zin eronder
+zegt letterlijk "de bits in het rood zijn redundant": dat is een gegeven en geen klemtoon. En
+`<p><strong>Redeneervragen:</strong></p>` in de oefening van hoofdstuk 11 was een tussenkop die de
+vragenlijst in tweeen deelt; die is `<h2>Redeneervragen</h2>` geworden, de vorm die elke andere
+syllabuspagina al gebruikt. **Ontvet dus niet blind**: kijk per geval of het vet iets markeert waar
+de tekst ernaast naar verwijst.
+
+**De labotrack is hier niet in meegegaan**, en dat is een open punt en geen beslissing.
+`Labo/Assemblage/Theorie/` draagt 78 stuks, `Labo/LinuxBasis/Theorie/` 45 en
+`Labo/LinuxGeavanceerd/Theorie/` 40. Die bladzijden zijn hier met de hand geschreven, dus daar is het
+vet wel een eigen keuze geweest en de dichtheid is een andere. Tel het uit voor je er iets aan
+verandert, zoals hier gebeurd is, en beslis het dan apart.
 
 **Code is een `<pre><code>`, en `syllabus.css` was er al op voorbereid.** De importer maakt van
 elke regel code een eigen `<p>`, inspringing en al kwijt, en van een schermafdruk van een listing
@@ -1218,15 +1266,59 @@ omdat dat comfort is en geen pasvorm. Allebei voorgelegd voor ze doorgevoerd zij
 in NOTITIES.md, en allebei gooit een herimport ze weg, waarna de vraag die erop steunt zonder
 antwoord in de tekst achterblijft.
 
-**Vijf scheduling-figuren voor hoofdstuk 7 staan nog open, en het is het enige dat nog openligt.**
-Studievraag 8 vraagt "Geef de naam van vier proces scheduling algoritmes en verduidelijk kort aan de
-hand van een schets", en 7.6 tekent er geen enkele: de drie figuren van die sectie gaan over de
-processtatussen en over cooperative tegen preemptive. Beslist op 9 september 2026 door de lector: er
-komt een schema per algoritme (FCFS, SJF, priority, round robin en PMFQ), langs dezelfde molen als
-elke tekening hier, en daarna hoort er een tekenvraag met een `.tekenkader` bij zoals vraag 2 van
-hoofdstuk 5 er een heeft. De Test jezelf van hoofdstuk 7 heeft er niet op gewacht: vraag 8 en 9
-toetsen de vijf algoritmes op hun eigenschappen, wie last heeft van starvation en wat Windows
-gebruikt.
+**De vijf scheduling-figuren van hoofdstuk 7 zijn er nooit gekomen, want de algoritmes zelf zijn
+geschrapt.** Ze stonden hier als het laatste openstaande tekenwerk: een schema per algoritme, omdat
+studievraag 8 om een schets vroeg en 7.6 er geen enkele had. Op 9 september 2026 heeft de lector in
+plaats daarvan beslist dat FCFS, SJF, round robin en PMFQ eruit gaan en dat priority based scheduling
+opgaat in een eigen sectie 7.7. Zie "Hoofdstuk 7 is herwerkt voor zelfstudie" hieronder. **Zet er dus
+geen algoritmefiguren meer bij**, en lees die alinea voor je aan dit hoofdstuk werkt.
+
+### Hoofdstuk 7 is herwerkt voor zelfstudie, beslist 9 september 2026
+
+**De aanleiding is dat de student dit hoofdstuk zelfstandig moet kunnen verwerken uit de syllabus.**
+Dat is een andere toets dan "staat het erin": bij zelfstudie is er niemand om een gat mee te
+overbruggen, dus elke studievraag moet in de tekst beantwoord worden en elk mechanisme moet getekend
+zijn. Drie dingen zakten voor die toets. **Drie studievragen hadden geen antwoord** (6, wat context
+switching is, dat als werkwoord gebruikt werd en nergens uitgelegd; 8, die om een schets vroeg die
+niet bestond; en de tweede helft van 4, over het beschermen van het besturingssysteem zelf). **Het
+hoofdstuk stond scheef**: 1262 van de 2650 woorden lopende tekst en drie van de vier figuren zaten in
+7.6, terwijl geheugenbeheer 243 woorden en geen enkele figuur had. En **prefetch buffer** stond in 7.5
+terwijl hoofdstuk 13 die term pas invoert, wat patroon 20 is.
+
+**De vier algoritmesecties zijn geschrapt en priority based scheduling is opgegaan in een nieuwe
+sectie 7.7 Prioriteit en realtime.** Geen van de vier doelstellingen van de studiefiche vraagt naar
+FCFS, SJF, round robin of PMFQ; ze kostten 447 woorden, vijf Heading 4's (de enige van de hele Word)
+en vijf nog te tekenen figuren. **Cooperative en preemptive zijn wel gebleven**, ingekort tot een
+enkele sectie, want preemptie is het mechanisme waarmee prioriteit werkt en cooperative is waar
+starvation vandaan komt: schrap je die, dan verliest 7.7 zijn onderbouw. **De vergelijkingsfiguur is
+gesplitst in twee**, elk onder de alinea's die erbij horen, en de twee delen hun geometrie
+(`viewBox 0 0 770 156`, tijdbalken op y=50 en y=90) zodat ze vergelijkbaar blijven nu ze niet meer
+boven elkaar staan: **wijzig er dus nooit een zonder de andere.**
+
+Wat er in de plaats kwam: **context switching** als eigen sectie in 7.6 (wat er bewaard en hersteld
+wordt, en dat de wissel zelf processortijd kost), **swapping** uitgewerkt in 7.5 tot en met het
+wisselbestand en de swappartitie, met de gevolgtrekking voor doelstelling 2 dat te weinig
+werkgeheugen zich met traagheid meldt en niet met een foutmelding, en **7.7** zelf.
+
+**Drie nieuwe tekeningen**, alle drie in het palet van de twee figuren die het hoofdstuk al had:
+`img/syllabus-07-context-switch.svg`, `-swapping.svg` en `-realtime-tegen-gewoon.svg`. Die laatste is
+de enige die een claim toont die je met woorden moeilijk hard maakt: zeven balken reactietijd tegen
+een verticale deadline, waarbij de RTOS-balken gemiddeld LANGER zijn dan de gewone en er toch geen
+enkele over de lijn gaat. Op tijd is iets anders dan snel, en dat is in de figuur na te meten.
+**`img/syllabus-07-preemptive-vs-cooperative.svg` is geschrapt** toen die figuur gesplitst werd,
+want een weesbestand valt over regel 16.
+
+**Het kader en de Test jezelf zijn meegegaan.** Studievraag 8 en 9 gingen over de algoritmes en zijn
+vervangen door een vraag over de context switch en een over swapping; het kader blijft op tien. In de
+Test jezelf zijn vraag 8 en 9 om dezelfde reden vervangen, en die blijft ook op tien met precies een
+`juist` per vraag. **Alles hierboven staat alleen in de HTML en een herimport gooit het weg**, dus het
+staat per stuk in NOTITIES.md.
+
+**De export is nagerekend en de verschuiving is overal dezelfde.** Het document ging van 198 naar 199
+bladzijden: hoofdstuk 7 werd er een dikker (62 tot 72 wordt 62 tot 73) en hoofdstuk 8 tot 16 schoven
+alle **exact +1** op, rij voor rij nagekeken in de inhoudstafel; hoofdstuk 1 tot 6 stonden stil. De
+tekstschaal is op elke bladzijde `3.1249194` op de twee beeldbladzijden van hoofdstuk 11 na, en die
+twee stonden ook in de vorige PDF op precies dezelfde plaats.
 
 **Twee hoofdstukken met evenveel vragen geven botsende ankers in NOTITIES.md.** Gevonden op 9
 september 2026: het blok van hoofdstuk 14 en dat van hoofdstuk 15 openden allebei met de kop "De
@@ -1398,12 +1490,57 @@ regels eronder zijn daardoor geen legende meer maar drie definities, en ze staan
 zegt welk blok het algoritme neemt, en niet wat het gevolg is. Het gevolg (een bestand kan in het
 grootste blok nog groeien) staat in de lopende tekst van allebei de tracks. De labokopie heette
 `partitioneren-first-worst-best-fit.svg` en heet nu `...-first-best-worst-fit.svg`, zodat de twee
-namen dezelfde volgorde dragen als de tekening en als de sectietitel. **Het derde paar is
+namen dezelfde volgorde dragen als de tekening en als de sectietitel. **Dat tweede paar is op 9
+september 2026 weer uit elkaar gevallen**: sectie 6.7 van de syllabus is toen geschrapt omdat ze
+niet naar een leerdoel leidt, dus `img/syllabus-06-first-best-worst-fit.svg` is weg en de
+labokopie staat er alleen voor. De alinea hierboven blijft staan om wat ze over de voluitversie
+zegt, en niet omdat er nog een paar te bewaken valt. **Het derde paar is
 `img/virtualiseren-vm-versus-container.svg` en `img/syllabus-08-vm-versus-container.svg`**, en dat
 is het eerste dat niet uit de Word komt: hoofdstuk 8 heeft geen enkele tekening en 8.4 behandelt
 precies wat het labo al tekent, dus de labotekening is er ongewijzigd naartoe gekopieerd. Een
 hoofdstuk zonder figuur mag er dus een uit de labotrack krijgen, zolang de kopie byte voor byte
-dezelfde blijft.
+dezelfde blijft. **Er zijn op 9 september 2026 drie zulke paren bij gekomen, en alle drie om die
+reden**: `img/syllabus-06-mbr-indeling.svg`, `-primair-extended-logisch.svg` en
+`-gpt-indeling.svg` zijn ongewijzigde kopieen van hun `partitioneren-` tegenhanger. 6.2 draagt
+sinds 7 september twee alinea's over MBR en GPT en had er geen enkele tekening bij; het labo had
+ze alle drie klaar. **Wijzig er dus nooit een zonder de labokopie**, net als bij fragmentatie.
+**Het zevende paar loopt de andere kant op**: `img/syllabus-06-sectoren.svg` is op 9 september 2026
+voor 6.1 getekend, waar de alinea over de sector zonder beeld stond, en
+`img/partitioneren-sectoren.svg` is daar de ongewijzigde kopie van op
+`Labo/Partitioneren/Theorie/Bestandssystemen.html`. Een figuur mag dus in allebei de richtingen
+gekopieerd worden, zolang de kopie byte voor byte dezelfde blijft; wat per track wel verschilt is
+het bijschrift, want de labopagina noemt de nummering vanaf 0 niet in haar lopende tekst.
+
+**Het achtste paar is op dezelfde dag ontstaan en is de derde manier waarop dat kan**:
+`img/syllabus-06-cluster-en-slack.svg` en `img/partitioneren-cluster-en-slack.svg` zijn een NIEUWE
+tekening die de bestaande labotekening vervangt. 6.4 Clusters had geen enkele figuur en het labo had
+er al een over hetzelfde, dus er is er een getekend die in allebei de tracks past.
+
+**Er stond hier eerst een regel dat een gedeelde figuur geen kilo-etiket mag dragen, en die is
+dezelfde dag nog ingetrokken.** De reden die eronder stond was dat de syllabus in KiB rekent en het
+labo kB schrijft, zodat een byte-voor-byte kopie geen van beide kan gebruiken. Dat was een verkeerd
+soort argument: het maakte van een FOUT een randvoorwaarde om een tekening omheen te ontwerpen.
+4096 bytes is 4 KiB en geen 4 kB, dus er viel niets te omzeilen en er viel iets recht te zetten. De
+labotrack is diezelfde dag naar KiB gegaan (zie de IEC-regel verderop) en het verschil bestaat niet
+meer. **Loopt een gedeelde figuur op een verschil tussen de twee tracks vast, dan is de vraag dus
+welke van de twee fout is, en niet hoe je de figuur eromheen tekent.** Alleen waar allebei de vormen
+te verdedigen zijn houdt elke track de zijne, en dan kan die figuur inderdaad niet gedeeld worden.
+
+**Hier stond `ext4 tegen EXT4` als het voorbeeld van zo'n verdedigbaar verschil, en dat voorbeeld is
+op 10 september 2026 gesneuveld.** Het bestandssysteem heet `ext2`, `ext3` en `ext4`, klein, zoals de
+kernel, `mkfs` en `/proc/filesystems` het schrijven; `EXT4` is geen tweede vorm maar gewoon niet de
+naam. De syllabus schreef het zes keer met kapitalen tegen de labotrack die het achttien keer klein
+schrijft, en de syllabus is bijgedraaid, kop en inhoudstafelrij inbegrepen (`6.11 Extended File
+System (ext)`). **Dat is dezelfde uitkomst als bij KiB, en met dezelfde redenering**: wat een
+verdedigbaar verschil leek, was een fout zodra je vroeg hoe het ding heet. Er staat nu geen voorbeeld
+meer bij deze regel, en dat is eerlijker dan er een verzinnen: kom je er een tegen, kijk dan eerst of
+het er echt een is.
+
+**De tekening zegt wel nog altijd `512 bytes` en `4096 bytes`, en dat is nu een tekenkeuze en geen
+uitwijkmanoeuvre.** De bovenste helft toont dat acht sectoren van 512 bytes samen een cluster geven,
+en dat is een som: `4096` laat die som zien, `4 KiB` verbergt hem. Zelfde afweging als overal, dat
+een figuur haar claim toont in plaats van ze te captioneren. De alinea's ernaast schrijven in
+allebei de tracks "4096 bytes, ofwel 4 KiB", dus de lezer heeft de twee vormen naast elkaar staan.
 
 **Vier van de acht afbeeldingen van hoofdstuk 6 zijn hertekend**, meer dan in enig ander hoofdstuk
 tot nu toe, en de vier redenen staan per figuur in NOTITIES.md. Drie ervan tekenen iets wat
@@ -1490,6 +1627,236 @@ drukken scherper. Hoofdstuk 9 heeft dat op vier foto's gedaan, van 81, 66, 62 en
 ongeveer 98. **Open het bestand dus voor je beslist wat de ingreep is**: alle vier zagen ze er in de
 lijst uit als schema's en het waren alle vier close-ups van een moederbord.
 
+### Een kader is geen tekst om uit te leren, beslist 10 september 2026
+
+**Hoofdstuk 14, 15 en 16 moeten zelfstandig verwerkt kunnen worden**, net als 5, 6 en 7. De toets is
+dezelfde: elke studievraag wordt in de tekst beantwoord en elk mechanisme is getekend. Wat er hier
+bovenop kwam is een derde geval, en het is er een dat de contentcheck nooit ziet.
+
+**Een feit dat alleen in het kader Kernpunten staat, telt niet als behandeld.** Het kader wordt mee
+gedrukt op de openingsbladzijde van het hoofdstuk, dus het antwoord staat er, en dat was tot 10
+september 2026 het argument om het zo te laten. Bij zelfstudie houdt dat geen stand: een kader is een
+samenvatting van wat de tekst zegt, en een samenvatting van iets wat er niet staat is geen tekst om
+uit te leren. Twee hoofdstukken zakten voor die toets, allebei op hun eigen onderwerp.
+
+- **Hoofdstuk 15 had de schermaansluitingen nergens.** VGA, DVI, HDMI, DisplayPort en het woord
+  converter kwamen in geen enkele sectie voor. Drie van de zes studievragen en drie van de acht
+  testvragen hingen eraan, en het kiezen van een aansluiting is doelstelling 2 van de studiefiche.
+  Het is `15.3 Aansluitingen` geworden, achter 15.2 zodat de bestaande nummers blijven staan.
+- **Hoofdstuk 16 had de industriele voeding nergens.** DIN rail, extern, 24 V en het vermogen uit de
+  datasheet stonden in kernpunt 3 en 5 en nergens anders, terwijl dat in dit vak het onderwerp van
+  het hoofdstuk is. Het is `16.2 De industriele voeding` geworden, achter 16.1 omdat de UPS-alinea's
+  daar de brug vormen; **PS_ON en PWR_OK zijn daardoor 16.3 en 16.4**, en hun twee tekeningen delen
+  sinds die wissel geen bladzijde meer.
+
+**Grep dus per hoofdstuk wat er WEL in het kader staat en niet in een sectie.** Dat is een
+grep en geen leesoefening: neem de zelfstandige naamwoorden uit de kernpunten en de studievragen en
+kijk of ze in de lopende tekst voorkomen. Zo zijn deze twee gevonden, en zo vind je het volgende.
+
+**Twee feitelijke fouten kwamen uit dezelfde ronde, en allebei sprak het hoofdstuk zichzelf tegen.**
+Dat is het patroon dat je narekent in plaats van beoordeelt.
+
+- **14.3 zei dat de FSB de breedte van de processor volgt**, 32 bit bij een 32 bit processor. De
+  alinea eronder haalt uit 66 MHz een doorvoer van 533 MB/s, en dat kan alleen met 64 bit, terwijl
+  een FSB van 66 MHz bij de Pentium hoort en dat een 32 bit processor was. De zin is geschrapt.
+- **16.1 zei dat een doorsnee pc-voeding -5V levert**, terwijl de tekening van de 24-pins connector
+  op de bladzijde erna op pin 20 `N/C` draagt. -5V is in januari 2002 uit de ATX-standaard gehaald.
+  De zin noemt nu -12V en zegt dat -5V verdwenen is, met de N/C als bewijs op de tekening.
+
+**En een argument dat aan een versienummer hangt, hoort niet in de tekst.** Kernpunt 7 van hoofdstuk
+15 zei vlakaf dat DisplayPort een hogere bandbreedte heeft dan HDMI, en dat wisselt per versie: HDMI
+2.1 haalt 48 Gbit/s tegen 32,4 voor DisplayPort 1.4, en DisplayPort 2.1 er weer 80. De vergelijking
+is uit het kader en uit de nieuwe sectie gelaten. Zelfde soort regel als de productstatus van
+hoofdstuk 9, die om dezelfde reden uit een oplossing gehaald is.
+
+### De taalronde van 10 september 2026, en waarom die lijst er stond
+
+**Elke import noteerde wat er in de tekst opviel en raakte het niet aan**, per hoofdstuk in
+`Theorie/Syllabus/NOTITIES.md` onder de kop `Wat er in de tekst opviel, en niet aangeraakt is`.
+Vijftien van die blokken, hoofdstuk 2 tot en met 16. Dat was met opzet: tijdens een import is de
+aandacht bij de opmaak en de bladspiegel, en een taalronde die daar tussendoor loopt maakt een diff
+onleesbaar. Op 10 september 2026 zijn ze in een keer afgewerkt, **62 correcties in 38 bestanden**.
+
+**Wat er meeging is spelling en grammatica en niets anders**, en dat is precies de grens die de
+meldregel van 7 september trekt: een inhoudelijke correctie meld je voor je ze doorvoert, opmaak en
+spelling niet. Dus wel tikfouten (`aansluting`, `besturingssyteem`, `utizien`, `appararen`,
+`troughput`), ontbrekende woorden en werkwoorden, congruentie (`die` waar `dat` hoort, een meervoud
+bij een enkelvoudig onderwerp), de Vlaamse `als` waar het standaard Nederlands `of` gebruikt (acht
+plaatsen over vijf hoofdstukken), en losse punctuatie (`op te starten.In`, `.;`, een haakje dat
+nooit sluit). Niet: `men`, de dubbele spaties, de hoge komma's en de ellipsen, want dat is brontekst
+of opmaak. Die staan nog in `NOTITIES.md`.
+
+**Diezelfde dag is er een tweede ronde overheen gegaan, over de schrijfwijzen die BINNEN een
+hoofdstuk wisselden**, 51 vervangingen in 15 bestanden. `south bridge` naast `northbridge` in een en
+dezelfde zin van 14.1, `x86 instructieset` naast `x86-instructieset` in een alinea van 12.3,
+`In-Line` in hoofdstuk 13 tegen `In-line` in hoofdstuk 9, `2GB RAM` tegen `8 GB DDR4`, `16 GigaByte`
+tegen `14,8 GB` in dezelfde zin, RAID acht keer met een streepje tegen negenveertig keer zonder,
+`mirrorring` en `mirrorred`, `SSDs` tegen `SSD's`, en `video signaal` en `TV schermen` in het kader
+van hoofdstuk 15. **Waar er geen regel is die het beslecht, geeft het aantal de doorslag** en zeg je
+dat er in NOTITIES.md bij: zo won `In-line` van `In-Line` en won de losse RAID-vorm van de
+streepjesvorm. Waar er wel een regel is, wint die: een samenstelling met een code (`x86-instructieset`)
+of met een afkorting (`TV-schermen`) draagt in het Nederlands een streepje.
+
+**En de eenheid `Watt` is `watt` geworden en niet `W`.** Het voorstel zei eerst het symbool, en dat
+was de verkeerde diagnose: de fout was de hoofdletter, want een eenheidsNAAM schrijf je klein. Het
+symbool zou een notatiekeuze zijn geweest zonder winst, in een hoofdstuk waar geen enkele zin het al
+gebruikte en waar "een voeding van 750 watt" in een lopende zin beter leest. **Kijk dus na of het
+voorstel de fout raakt of alleen de vorm.**
+
+### Bij getallen een decimale KOMMA, beslist 10 september 2026
+
+**Een decimaal getal draagt een komma en geen punt.** Dat is de Nederlandse spelling, en het is
+daarmee dezelfde soort regel als de schrijfwijze van de eigenaar bij een merknaam: na te rekenen in
+plaats van een smaakkeuze. Het is diezelfde dag doorgevoerd, **80 plaatsen in de syllabus** plus
+twaalf labels in drie tekeningen.
+
+De maat die de knoop doorhakte is te tellen. **Overal waar deze repo zelf de tekst geschreven heeft,
+stond de komma al**: de labotrack telt 15 komma's in lopende tekst (`2,5-inch SSD`, `3,5 mm`,
+`DDR4 1,2 V`) en 0 punten, de met de hand geschreven syllabuspagina's schrijven `3,5 duim`, en de
+overgetypte tabel van 10.4 schrijft `1024,00`. De punten kwamen bijna allemaal uit de Word. Het is
+dus dezelfde soort erfenis als de Vlaamse `als` waar `of` hoort.
+
+**Drie soorten punt blijven staan, en ze zijn alle drie geen getal.**
+
+- **Een versienummer.** PCI Express 1.0 tot 7.0, en de zin "5.0 haalt over een x16 slot al 63 GB/s".
+  In de tabel van 11.10 is dat een KOLOM: de eerste kolom is de versie en houdt haar punt, de zes
+  kolommen erna zijn maten en dragen een komma. Een blinde vervanging in dat bestand is fout, want
+  `1.0` staat er zowel als versie als als `1.0 GB/s`.
+- **Een sectieverwijzing.** "Het schema van 5.1" in de zelftest van hoofdstuk 5.
+- **Alles wat overgetypt of afgedrukt is.** De 65 `4.0K` van `ls -lh` in Labo Linux Basis en
+  Geavanceerd, `3.584kB` uit een dockerbuild, `4.1-9.1ubuntu1` uit apt, en de `alt` van het
+  NAS-productblad in 11.15 die `RAID-0` tot `RAID-10` beschrijft zoals ze op dat blad staan.
+
+**Vervang alleen in TEKSTKNOPEN en nooit in een attribuut.** `--figuur-breedte: 160.0mm` staat in een
+`style` en is een CSS-waarde: een komma daarin breekt de bladspiegel zonder dat er iets faalt. Het
+script splitst daarom op `<[^>]*>` en raakt alleen de even stukken. Bij een SVG geldt hetzelfde en
+scherper: `stroke-width: 1.5` en `font-size: 13px` staan in het `<style>`-blok, dus een naieve telling
+meldt 28 getallen in 13 figuren terwijl er in werkelijkheid **maar een figuur decimale labels heeft**
+(`syllabus-12-piekverbruik.svg`, en die stond al op de komma). Beperk je tot de inhoud van `<text>` en
+`<tspan>`.
+
+**Let op een decimaal met de eenheid eraan vast.** `3.3V` en `1.5V` worden niet gevonden door een
+regex die op een woordgrens eindigt, en dat waren hier tien plaatsen die anders stil zouden zijn
+blijven staan, inclusief een die dezelfde dag zelf bijgeschreven was. Zoek dus twee keer: een keer op
+`\d+\.\d+` met een grens erachter, en een keer op `\d+\.\d+` gevolgd door een letter.
+
+**En een spatie tussen getal en eenheid**, beslist op dezelfde dag en om dezelfde reden. De
+labotrack schreef die al overal (109 keer los, 0 keer vast) en de syllabus wisselde: `12V` en `1,5V`
+vast tegenover 120 plaatsen met een spatie. De syllabus is bijgedraaid, 31 plaatsen in de tekst en
+30 labels in de drie ATX-tekeningen, die daarna opnieuw gerenderd zijn.
+
+**Drie soorten blijven vast, en ook die zijn geen meting.** `+5VSB` en `+12V1` zijn NAMEN van een
+rail en staan zo op een echte connector; `MSI GeForce GT710 2GB` is de naam waaronder die kaart
+verkocht wordt; en `1MB` en `1GB` staan in de overgetypte tabel van 10.4, die de schrijfwijze van
+haar afbeelding houdt. **Kijk dus per geval of het getal iets meet of iets benoemt.**
+
+### De hoge komma's en de ellipsen, beslist 10 september 2026
+
+**Een hoge komma uit de Word wordt een gewone apostrof.** 44 keer `‘` of `’` naar `&#x27;`, de vorm
+die de rest van de site gebruikt. Dat raakt twee dingen tegelijk, want dezelfde tekens stonden zowel
+rond een woord (`‘booten’`) als als apostrof midden in een woord (`zo’n`). **Vier tekens `”` staan er nog en
+het zijn GEEN aanhalingstekens**: ze staan als duimteken achter 3,5, 2,5 en 1,8 in 6.1 en 9.4, waar
+het juiste teken `″` is. Dat viel buiten de opdracht en staat genoteerd. **Eentje van de 44 stond
+als `&#x2019;` geschreven** en werd pas in de gedrukte PDF gevonden, wat de regel hieronder over
+entiteiten meteen een tweede keer bewijst.
+
+**Een ellips behandel je per ROL en nooit in een keer.** Er stonden er 65 in de syllabus, en ze deden
+vier verschillende dingen. Twee rollen dragen betekenis en blijven: **"en zo verder" achter een
+opsomming** (`(Ubuntu, Debian, Android, ...)`) en **het open einde van een zelftestvraag waar de
+mogelijkheden op volgen** (`De wet van Moore stelt dat...`, met de `<ul>` er meteen onder). Die
+tweede is de gevaarlijke: schrap je hem, dan valt de vraagzin uit elkaar, en in de kale tekst ziet
+hij eruit als elke andere. **De structuur verraadt hem, niet de tekst**: hij staat aan het eind van
+een `<li>` met een `<ul>` erachter.
+
+De twee andere rollen zijn weggewerkt. **Vijftien stonden op de plaats van een gewone punt** of
+lieten een zin wegsterven aan het eind van een alinea, en die zijn een punt geworden. **Twee waren
+een pauze midden in een zin** (`Maar... ondertussen zijn SSD's al zodanig geevolueerd`) en zijn
+helemaal verdwenen, want daar hoort geen punt. Wat blijft, schrijft drie losse punten; het teken `…`
+komt in de syllabus niet meer voor.
+
+**Zoek een ellips na op zijn ENTITEIT en niet alleen op het teken.** Eentje van de 65 stond als
+`&#x2026;` in de HTML en werd door een zoektocht op `…` niet gevonden. Hij kwam pas boven omdat de
+telling na afloop niet uitkwam: unescape voor je telt, en tel na.
+
+### Een duimmaat draagt het duimteken, beslist 10 september 2026
+
+**Een vormfactor schrijf je als `3,5″`**, met de dubbele prime `&#x2033;`. De syllabus had er VIER
+notaties voor door elkaar staan: `3,5 duim` acht keer, `3,5 inch` twee keer, `3,5”` met een rechter
+aanhalingsteken vier keer en `2,5"` met een recht aanhalingsteken een keer. Alleen de prime is het
+duimteken; `”` en `"` zijn allebei een aanhalingsteken dat ervoor doorgaat.
+
+**Het teken wordt precies een keer uitgelegd, en dat is waar het voor het eerst GEDRUKT wordt**, niet
+waar het inhoudelijk het beste past. Hier is dat een `info-box` boven de oefening van 2.1, want de
+Oplossingen van hoofdstuk 2 komen in het document voor de tabel van 6.1. Dat is patroon 20: de
+volgorde die telt is de volgorde waarin de lezer het tegenkomt. Het kader zegt er meteen bij dat een
+schijf van 3,5″ niet drie en een halve duim breed is maar in de plaats past die voor dat formaat
+voorzien is, want anders is de maat een bewering die niet klopt.
+
+**Dat kader kostte een bladzijde, en zo hoort zo'n verschuiving eruit te zien**: het document ging
+van 202 naar 203, de dertien inhoudstafelrijen tot en met 2.1 stonden stil en de 130 rijen vanaf 2.2
+schoven alle exact +1. Verspringt er een rij anders dan de rest, dan is er iets anders aan de hand.
+
+**Een `alt` is prose en valt dus WEL onder een tekstronde, anders dan een `style`.** De regel
+hierboven ("alleen tekstknopen") is er om een CSS-waarde te beschermen, niet om een alt over te
+slaan: drie alt-teksten in 6.1 beschrijven onze eigen foto's en droegen nog `3.5 inch` met een punt
+nadat de lopende tekst al op de komma stond. **Loop de alt-teksten dus apart na.** Wat er in een alt
+staat blijft wel woorden waar de alt een productblad of een schermafdruk beschrijft (`2,5 inch HDD`,
+`Samsung 870 EVO 2,5 inch`), om dezelfde reden als een overgetypte terminalregel; en een versienummer
+in een alt (`USB 2.0`, `PCI Express 3.0`) houdt zijn punt zoals overal.
+
+**De labotrack is meegegaan, met een EIGEN uitleg**, zes plaatsen in `Labo/Assemblage/`. Dat is
+dezelfde afspraak als bij een gedeelde figuur: de twee tracks zijn onafhankelijk, dus het labo mag
+niet leunen op het kader in 2.1 van de syllabus en krijgt zijn eigen kopie, op
+`Theorie/Componenten.html`. Die drie vormen die er stonden (`2,5 inch`, `3,5 inch`, `2,5-inch`) waren
+trouwens ook onderling ongelijk. **Let op de `3,5 mm` van de audiojacks op diezelfde bladzijde**: dat
+is een echte afmeting in millimeter en geen duimmaat.
+
+**Een verslagrij draagt zijn uitleg IN de rij, want een docx heeft geen kader.** De rij in het
+`<!-- verslag -->` blok van `Inventaris/Opdracht.html` luidt nu "Vormfactor (2,5″, 3,5″ of M.2; het
+teken ″ betekent duim)". Een info-box op de theoriepagina helpt daar niet: dat is een ander
+Orion-menu-item, en de docx draagt alleen wat er in dat blok staat. **Vergeet de docx dan ook niet**:
+regel 6 valt over een verslag dat ouder is dan zijn `Opdracht.html`, en het commando staat in de
+foutmelding (`python scripts/export-verslag.py Labo/Assemblage/Inventaris`).
+
+### Nog te doen: de 37 keer `men` in de syllabus
+
+**Dat is geen zoek-en-vervang en het is met opzet niet meegegaan in de taalrondes.**
+`SCHRIJFSTIJL.md` stuurt eigen tekst naar de je-vorm, en `men` staat er 37 keer, verspreid over
+hoofdstuk 10, 11, 12, 13 en het kader van 13. Elke zin vraagt een eigen oplossing: "gebruikt men
+cache geheugens" wordt "gebruik je" of "worden er", en welke van de twee het is hangt af van of de
+student zelf iets doet. Dat raakt de betekenis, dus het verdient een eigen sessie met de 37 zinnen
+naast elkaar, en een export met een bladspiegelcontrole erna, want een herschreven zin kan een regel
+langer worden. Beslist op 10 september 2026 om het apart te plannen. Tot dan staat het per hoofdstuk
+in `NOTITIES.md`.
+
+**Vijf inhoudelijke gevallen stonden op diezelfde lijsten en zijn apart voorgelegd**, want daarvoor
+geldt de meldregel wel: de platterdiameter van 11.1 (3 tot 12cm), de ronde zin van 15.1 (de GPU is
+het hart van de GPU), "In de volgende hoofdstukken" in 9.3 waar het Heading 3's van dezelfde sectie
+zijn, de sprong van 64 sectoren naar 64 KiB in 6.4, en "flexibeler in het gebruik" in 16.1 dat niet
+zegt waarin. Alle vijf zijn diezelfde dag goedgekeurd en doorgevoerd, elk met zijn afweging in
+`NOTITIES.md`. **Twee ervan hadden meer dan een verdedigbare uitkomst**, en dat is het soort keuze
+dat je voorlegt in plaats van zelf te nemen: bij 6.4 kan je de vraagzin of de rekensom bijdraaien
+(het werd de rekensom, want dan blijven de 412 bytes, de slack en de zelftestvraag staan), en bij
+15.1 is "het hart van de grafische kaart" even waar (het werd het niet, want de zin er meteen na
+zegt dat de GPU ook in de processor kan zitten).
+
+**Leg zo'n lijst na tegen de HTML voor je hem afwerkt, want de helft kan al weg zijn.** Zeven items
+waren dat: `eventuool`, `procoessen`, `Prioritiy`, `Von Neuman`, `met zich teweeg brengen` en een
+`die` verdwenen met de herwerking van hoofdstuk 7 op 9 september, `gebuikt` in 13.3 en de alinea met
+`te maken het algoritme` in 6.6 waren onderweg al herschreven. Ze stonden nog wel op de lijst.
+
+**Elke vervanging is op een `assert count == 1` gezet en het script schrijft niets zolang er een
+afslaat.** Dat is niet overdreven: `om te weten als` stond met een hoofdletter in de HTML en werd
+dus nul keer gevonden, en die ene mislukking bracht meteen een vierde `als` in dezelfde zin aan het
+licht die op geen enkele lijst stond. Bij `NOTITIES.md` geldt de anker-regel die hierboven al staat:
+de kop `Wat er in de tekst opviel, en niet aangeraakt is` staat er vijftien keer, dus je snijdt het
+stuk tussen twee HOOFDSTUKKOPPEN eruit en werkt daarbinnen.
+
+**Deze correcties overleven geen herimport**, zoals elke woordcorrectie hier, en ze staan daarom per
+hoofdstuk in `NOTITIES.md` onder een nieuwe kop `Wat er in de tekst opviel, en op 10 september 2026
+rechtgetrokken is`. Elf hoofdstukken hebben er een; hoofdstuk 4, 5, 8 en het Voorwoord hadden geen
+enkele taalfout op hun lijst.
+
 ### Elke tekening wordt hertekend, beslist 9 september 2026
 
 **Alles wat iemand getekend heeft, gaat naar een eigen SVG.** Dat is een beslissing van de lector en
@@ -1500,6 +1867,17 @@ is reden genoeg. **De regels waaronder het gebeurt veranderen niet**: geen enkel
 origineel valt weg, de figuur wordt met headless Edge gerenderd voor je ze vertrouwt, het palet van
 OrionCSS geldt tenzij de kleur zelf een gegeven is, en de bladspiegel wordt na de export
 nagerekend.
+
+**Er komen twee regels bij, allebei uit de sectorfiguur van 6.1 op 9 september 2026, en allebei zijn
+ze onzichtbaar op het scherm.** De eerste: **leg een tekening niet alleen naast haar eigen alinea
+maar ook naast de secties die erna komen.** Die figuur kleurde sector 0 als de partitietabel, precies
+zoals de alinea van 6.1 het schrijft, en 6.2 legt een bladzijde verder uit dat bij GPT op sector 0 een
+protective MBR staat en de tabel op sector 1 tot 33. De tekening klopte dus met de zin ernaast en
+sprak het volgende hoofdstukdeel tegen. De tweede: **kies de getallen in een figuur zo dat ze niet
+toevallig exact opgaan.** Een bestand van 1,5 kB over drie sectoren van 512 bytes leest als een
+pasvorm en laat de lezer denken dat het aantal sectoren uit een deling volgt; 1202 bytes over
+diezelfde drie sectoren laat zien dat er naar boven afgerond wordt. Reken een getal in een tekening
+dus na op wat het per ongeluk beweert.
 
 **Die kleurregel is op 9 september 2026 verruimd, en dit is de enige plaats waar ze staat.** Ze luidde
 "tenzij de lopende TEKST een kleur bij naam noemt", naar het geval van 6.5, waar de syllabus zelf
@@ -1820,6 +2198,16 @@ rekent zelf ook in machten van twee maar drukt GB op de module, net zoals Window
 hoofdstuk 10. Zonder die alinea staat er GiB naast GB in dezelfde sectie en weet niemand waarom.
 Reken die grens dus na per zin, en kijk daarbij ook de hoofdstukken ernaast na: hoofdstuk 9 bleef
 onaangeraakt omdat elk getal daar aan de fabrikantskant staat.
+
+**Die grens geldt sinds 9 september 2026 ook in de labotrack, en dat is geen per-track smaakkwestie.**
+`Labo/Partitioneren/` schreef `4 kB` en `64 kB` waar het zelf met machten van twee rekent, en dat is
+nu KiB, op vijf plaatsen over drie pagina's. Dit is iets anders dan ext4 tegen EXT4, waar allebei de
+schrijfwijzen te verdedigen zijn en elke track de zijne houdt: 4096 bytes is 4 KiB en geen 4 kB, dus
+er is maar een van de twee juist. **Reken bij zo'n omzetting elk afgeleid getal na**: de zelftest
+rekende `1000 x 64 kB` uit tot "bijna 64 MB", en met 64 KiB is de verloren ruimte 65 036 000 bytes,
+dus ruim 62 MiB. **De TB en GB blijven wel staan**, in allebei de tracks: dat zijn geciteerde grenzen
+(2 TB bij MBR, 4 GB bij FAT32, 256 TB bij NTFS) en geen som die de tekst zelf maakt, en NOTITIES.md
+bewaakt juist dat die getallen in de twee tracks gelijk staan.
 
 **Een naam met twee betekenissen is iets anders dan een bewering met twee waarheden, en de uitkomst
 verschilt.** 10.4 zegt "Een word zijn 16 bits" en 13.1 zegt dat een woord de breedte van de

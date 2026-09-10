@@ -1,56 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520" width="700" height="520"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 770 156" width="770" height="156"
     font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
-    <title id="titel">Cooperative multitasking: drie processen die elk hun eigen lus draaien en de controle om beurten
-        aan elkaar doorgeven</title>
-    <rect width="700" height="520" fill="#ffffff" />
+    <title id="titel">Cooperative multitasking: proces 1 houdt de processor bezet tot het zelf afgeeft, en pas dan
+        komt proces 2 aan de beurt</title>
+    <rect width="770" height="156" fill="#ffffff" />
 
     <defs>
-        <marker id="lus" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#004d40" />
-        </marker>
-        <marker id="over" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
             <path d="M 0 0 L 10 5 L 0 10 z" fill="#004d40" />
         </marker>
     </defs>
 
-    <!-- de drie lussen; de pijlpunt halverwege toont de richting waarin het proces zijn eigen werk afdraait -->
-    <ellipse cx="170" cy="140" rx="120" ry="80" fill="#b2dfdb" stroke="#004d40" stroke-width="2" />
-    <path d="M 50 140 A 120 80 0 0 1 170 60" fill="none" stroke="#004d40" stroke-width="2"
-        marker-end="url(#lus)" />
-    <text x="170" y="147" font-size="17" fill="#00332b" text-anchor="middle">Proces A</text>
+    <text x="15" y="24" font-size="17" fill="#00332b" font-weight="bold">Cooperative</text>
 
-    <ellipse cx="530" cy="155" rx="120" ry="80" fill="#b2dfdb" stroke="#004d40" stroke-width="2" />
-    <path d="M 410 155 A 120 80 0 0 1 530 75" fill="none" stroke="#004d40" stroke-width="2"
-        marker-end="url(#lus)" />
-    <text x="530" y="162" font-size="17" fill="#00332b" text-anchor="middle">Proces B</text>
+    <rect x="15" y="50" width="130" height="28" fill="#e0e7e5" stroke="#004d40" />
+    <text x="80" y="69" font-size="14" fill="#00332b" text-anchor="middle">Proces 1</text>
+    <rect x="15" y="90" width="130" height="28" fill="#e0e7e5" stroke="#004d40" />
+    <text x="80" y="109" font-size="14" fill="#00332b" text-anchor="middle">Proces 2</text>
 
-    <ellipse cx="350" cy="390" rx="120" ry="80" fill="#b2dfdb" stroke="#004d40" stroke-width="2" />
-    <path d="M 230 390 A 120 80 0 0 1 350 310" fill="none" stroke="#004d40" stroke-width="2"
-        marker-end="url(#lus)" />
-    <text x="350" y="397" font-size="17" fill="#00332b" text-anchor="middle">Proces C</text>
+    <path d="M 148 64 L 268 64" stroke="#004d40" stroke-width="2" fill="none" marker-end="url(#p)" />
+    <path d="M 148 104 L 268 104" stroke="#004d40" stroke-width="2" fill="none" marker-end="url(#p)" />
 
-    <!-- 1: A geeft de controle aan C -->
-    <path d="M 255 197 C 275 240, 280 290, 267 329" stroke="#004d40" stroke-width="3" fill="none"
-        marker-end="url(#over)" />
-    <circle cx="255" cy="197" r="6" fill="#004d40" />
-    <circle cx="298" cy="266" r="14" fill="#ffffff" stroke="#004d40" stroke-width="2" />
-    <text x="298" y="271" font-size="15" fill="#004d40" text-anchor="middle">1</text>
+    <rect x="272" y="50" width="476" height="28" fill="#ffffff" stroke="#d5dedc" />
+    <rect x="272" y="90" width="476" height="28" fill="#ffffff" stroke="#d5dedc" />
 
-    <!-- 2: C geeft de controle aan B -->
-    <path d="M 435 333 C 425 290, 430 250, 443 216" stroke="#004d40" stroke-width="3" fill="none"
-        marker-end="url(#over)" />
-    <circle cx="435" cy="333" r="6" fill="#004d40" />
-    <circle cx="394" cy="274" r="14" fill="#ffffff" stroke="#004d40" stroke-width="2" />
-    <text x="394" y="279" font-size="15" fill="#004d40" text-anchor="middle">2</text>
+    <rect x="274" y="52" width="335" height="24" fill="#004d40" />
+    <rect x="614" y="92" width="132" height="24" fill="#b2dfdb" stroke="#004d40" />
 
-    <!-- 3: B geeft de controle aan A -->
-    <path d="M 412 152 L 294 143" stroke="#004d40" stroke-width="3" fill="none" marker-end="url(#over)" />
-    <circle cx="412" cy="152" r="6" fill="#004d40" />
-    <circle cx="353" cy="118" r="14" fill="#ffffff" stroke="#004d40" stroke-width="2" />
-    <text x="353" y="123" font-size="15" fill="#004d40" text-anchor="middle">3</text>
-
-    <!-- legende -->
-    <circle cx="42" cy="482" r="6" fill="#004d40" />
-    <text x="58" y="487" font-size="14" fill="#222" text-anchor="start">Op dit punt geeft een proces de controle zelf af.</text>
-    <text x="58" y="507" font-size="14" fill="#222" text-anchor="start">Doet het dat niet, dan komt geen enkel ander proces aan de beurt.</text>
+    <path d="M 611 42 L 611 126" stroke="#004d40" stroke-width="2" stroke-dasharray="5 4" fill="none" />
+    <text x="611" y="144" font-size="13" fill="#004d40" text-anchor="middle">proces 1 geeft zelf af</text>
 </svg>

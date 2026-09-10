@@ -35,6 +35,46 @@
                     <li class="juist">Als er hardware (CPU / RAM / HD) crasht blijft de virtuele machine gewoon verder werken</li>
                 </ul>
             </li>
+            <li>Wat maakt van een computer een server?
+                <ul>
+                    <li>Dat hij in een 19&quot; rack past en 1U hoog is.</li>
+                    <li class="juist">Dat hij een dienst levert aan andere machines of gebruikers in het netwerk.</li>
+                    <li>Dat hij een krachtige processor, veel werkgeheugen en een snelle schijf heeft.</li>
+                    <li>Dat er geen scherm en geen toetsenbord op aangesloten zijn.</li>
+                </ul>
+            </li>
+            <li>Waarom is een virtuele machine trager dan dezelfde hardware zonder virtualisatie?
+                <ul>
+                    <li>Omdat de host elke instructie van de guest eerst vertaalt voor de processor ze uitvoert.</li>
+                    <li class="juist">Omdat elke guest een eigen besturingssysteem draait dat zelf processortijd en werkgeheugen vraagt, en omdat de nagebootste randapparaten langs de host lopen.</li>
+                    <li>Omdat een virtuele harde schijf altijd trager is dan een fysieke schijf.</li>
+                    <li>Omdat de processor op een lagere kloksnelheid gaat werken zodra er guests draaien.</li>
+                </ul>
+            </li>
+            <li>Je wil op een machine met een x64 processor een besturingssysteem voor ARM draaien. Wat heb je nodig?
+                <ul>
+                    <li>Niets bijzonders, een virtuele machine draait elk besturingssysteem.</li>
+                    <li class="juist">Emulatie, want een virtuele machine draait alleen een besturingssysteem met dezelfde instructieset als de processor eronder.</li>
+                    <li>Een container, want die deelt het besturingssysteem van de machine.</li>
+                    <li>Een tweede licentie voor het guest besturingssysteem.</li>
+                </ul>
+            </li>
+            <li>Wat is het voordeel van een container ten opzichte van een virtuele machine?
+                <ul>
+                    <li>Een container schermt programma&#x27;s beter van elkaar af.</li>
+                    <li class="juist">Het besturingssysteem wordt niet telkens mee gevirtualiseerd, waardoor de overhead en de extra licentie wegvallen.</li>
+                    <li>Een container heeft geen processortijd nodig van de machine waarop hij staat.</li>
+                    <li>Een container kan op hardware draaien zonder besturingssysteem eronder.</li>
+                </ul>
+            </li>
+            <li>Wat kan een virtuele machine wel en een container niet?
+                <ul>
+                    <li>Meerdere programma&#x27;s tegelijk draaien.</li>
+                    <li class="juist">Een ander besturingssysteem draaien dan dat van de machine eronder.</li>
+                    <li>Programma&#x27;s van elkaar afschermen.</li>
+                    <li>Op zowel Windows als Linux ge&#xEF;nstalleerd worden.</li>
+                </ul>
+            </li>
         </ol>
     </div>
 

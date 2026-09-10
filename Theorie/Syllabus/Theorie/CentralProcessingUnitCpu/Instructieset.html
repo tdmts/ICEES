@@ -28,7 +28,7 @@
 
         <p>Vandaag schrijf je een programma in een hogere programmeertaal en laat je een compiler dat naar machinetaal vertalen. Compileren is dus vertalen naar de instructieset van een processor: de compiler zoekt bij elke regel die je schreef de opcodes die die ene processor kent. Daarmee ligt een gecompileerd programma vast op een instructieset, en moet dezelfde broncode opnieuw gecompileerd worden om op een processor met een andere instructieset te draaien.</p>
 
-        <p>Om je een idee te geven van de complexiteit kan je onderstaand programma, geschreven in assembler, eens trachten te ontcijferen...</p>
+        <p>Om je een idee te geven van de complexiteit kan je onderstaand programma, geschreven in assembler, eens trachten te ontcijferen.</p>
 
 <pre><code>3:        int main() {
 00401020  push        ebp
@@ -51,11 +51,11 @@
 
         <p>Denk bijvoorbeeld aan de mul instructie (=multiply / vermenigvuldigen). In principe is een vermenigvuldiging niets meer dan het herhaaldelijk optellen van een getal. In plaats van de programmeur een lus te laten schrijven waarbij een getal herhaaldelijk werd opgeteld werd deze logica nu in de processor ingebakken met behulp van extra transistor schakelingen.</p>
 
-        <p>Door complexe operaties in één instructie te stoppen leverde dat kleinere programma&#x27;s en minder geheugenbenaderingen op. Dit was, in een tijd waar geheugen zeer duur was, enorm kostenbesparend.</p>
+        <p>Complexe operaties in één instructie stoppen leverde kleinere programma&#x27;s en minder geheugenbenaderingen op. Dit was, in een tijd waar geheugen zeer duur was, enorm kostenbesparend.</p>
 
-        <p>Het nadeel hiervan was dat het aantal transistoren op de processor toenam. Hieruit volgde dan ook dat deze meer plaats innamen en ze minder energiezuinig werden, … In die tijd speelde dat geen zo’n rol gezien er toch nog geen sprake was van mobiele apparaten maar vandaag de dag is dat een grote beperking.</p>
+        <p>Het nadeel hiervan was dat het aantal transistoren op de processor toenam. Hieruit volgde dan ook dat deze meer plaats innamen en ze minder energiezuinig werden, ... In die tijd speelde dat geen zo&#x27;n rol gezien er toch nog geen sprake was van mobiele apparaten maar vandaag de dag is dat een grote beperking.</p>
 
-        <p>Het voorbeeld bij uitstek van CISC is de x86 instructieset die gebruikt wordt bij klassieke Intel en AMD processoren.</p>
+        <p>Het voorbeeld bij uitstek van CISC is de x86-instructieset die gebruikt wordt bij klassieke Intel en AMD processoren.</p>
 
         <p>Er zijn drie hoofdvarianten van de x86-instructieset, de 16 bits-variant, de 32 bits-variant en de 64 bits-variant. Deze laatste wordt ook wel de x64 of amd64 instructieset genoemd.</p>
 
@@ -65,20 +65,20 @@
 
         <p>Ironisch gezien is wat vroeger beschouwd werd als een voordeel bij CISC nu een nadeel. De vele instructies die rechtstreeks aanwezig zijn op de processor, worden gemaakt met transistoren. Iedere transistor neemt ruimte in beslag en verbruikt energie.</p>
 
-        <p>Eén van Intel&#x27;s meest energieconsumerende CISC processoren, de oude Pentium 4 verbruikte maar liefst 160 Watt, het equivalent van zo’n drie gloeilampen.</p>
+        <p>Eén van Intel&#x27;s meest energieconsumerende CISC processoren, de oude Pentium 4 verbruikte maar liefst 160 watt, het equivalent van zo&#x27;n drie gloeilampen.</p>
 
         <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
             <img src="../../../../img/syllabus-12-piekverbruik.svg" class="img-fluid" alt="Een staafgrafiek van het piekverbruik van vier systemen, gemeten met Prime95 en uitgedrukt in watt. De Intel Atom D510 op 1,66 GHz met twee kernen en vier threads haalt 33 watt, de Intel Atom 230 op 1,6 GHz met een kern en twee threads 37 watt. Daar tegenover haalt de Intel Pentium 4 op 2,2 GHz met een kern en een thread 113 watt, en de Intel Pentium 4 op 3,2 GHz met een kern en twee threads 164 watt, bijna vijf keer zoveel als de eerste.">
             <figcaption class="figure-caption">Meting van tom&#x27;s hardware, System Peak Power met Prime95.</figcaption>
         </figure>
 
-        <p>Het hoge energie maakt het gebruik van CISC processoren in mobiele apparaten zoals tablets en smartphones zo goed als onmogelijk.</p>
+        <p>Het hoge energieverbruik maakt het gebruik van CISC processoren in mobiele apparaten zoals tablets en smartphones zo goed als onmogelijk.</p>
 
         <p>Vandaar dat de RISC instructiesetarchitectuur ontworpen werd. Met minder transistoren wordt in principe dezelfde functionaliteit aangeboden als bij de CISC architectuur. Gezien we nu ook beschikken over hogere programmeertalen en geavanceerde compilers hoeft de programmeur zich bijna niets meer aan te trekken van de onderliggende hardware.</p>
 
-        <p>De meest bekende RISC instructieset is de ARM instructieset ARM staat voluit voor Acorn RISC Machine.</p>
+        <p>De meest bekende RISC instructieset is de ARM instructieset. ARM staat voluit voor Acorn RISC Machine.</p>
 
-        <p>Spijtig genoeg kunnen programma&#x27;s die gemaakt zijn met de ARM instructieset enkel uitgevoerd worden op een ARM processor. Ook programma&#x27;s die gemaakt zijn voor de x86 instructieset kunnen enkel uitgevoerd worden op een x86 compatibele processor.</p>
+        <p>Spijtig genoeg kunnen programma&#x27;s die gemaakt zijn met de ARM instructieset enkel uitgevoerd worden op een ARM processor. Ook programma&#x27;s die gemaakt zijn voor de x86-instructieset kunnen enkel uitgevoerd worden op een x86 compatibele processor.</p>
 
         <p>Dit verklaart deels waarom onze desktops en laptops nog steeds x86 processoren hebben. Moesten we volledig overschakelen op ARM processoren dan wordt alle reeds geschreven software ineens onbruikbaar.</p>
 

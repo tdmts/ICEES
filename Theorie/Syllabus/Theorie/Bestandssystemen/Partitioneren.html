@@ -19,26 +19,65 @@
 
         <p>Partitioneren is het verdelen van een harde schijf in verschillende partities. Een partitie is een stuk aaneengesloten opslagruimte op een opslagmedium zoals een harde schijf of USB stick. Op die manier kan één fysiek opslagmedium gebruikt worden, alsof ze uit meerdere opslagmedia bestaat.</p>
 
-        <p>De naam ‘partitie’ is de gebruikelijke aanduiding bij de diverse versies van de Windows en Linux besturingssystemen. Soms wordt echter ook volume of slice gebruikt.</p>
+        <p>De naam &#x27;partitie&#x27; is de gebruikelijke aanduiding bij de diverse versies van de Windows en Linux besturingssystemen. Soms wordt echter ook volume of slice gebruikt.</p>
+
+        <div class="info-box">
+            <div class="info-title remark">Uitspraak</div>
+            <p>Partitioneren spreek je uit als par-ti-sjo-nee-ren, met de klemtoon op nee. De letters tio
+                klinken daarin als sjo, net zoals in conditioneren en functioneren. Wat je vaak hoort is
+                par-ti-ti-o-neren, waarbij die drie letters een voor een gelezen worden, en dat is niet
+                juist.</p>
+        </div>
 
         <p>Op een opslagmedium moet er altijd minstens 1 partitie aanwezig zijn.</p>
 
-        <p>Hoe die partities op het opslagmedium bijgehouden worden, ligt vast in het partitieschema. Er zijn er
-            twee. Het oudste heet MBR, naar het master boot record waarin de tabel staat: die tabel heeft vier
-            plaatsen en beschrijft schijven tot 2 TB. Het nieuwere heet GPT, het schema dat bij UEFI hoort, met
-            plaats voor 128 partities en zonder die grens van 2 TB.</p>
+        <p>Hoe die partities op het opslagmedium bijgehouden worden, ligt vast in het partitieschema. Er zijn
+            er twee. Het oudste heet MBR, naar het master boot record waarin de tabel staat.</p>
+
+        <p>Dat master boot record is de eerste sector van de schijf en is dus 512 bytes groot. Daarvan zijn
+            440 bytes opstartcode en 64 bytes de partitietabel zelf. In die 64 bytes passen vier
+            beschrijvingen van 16 bytes, en dat is de bekendste grens van dit schema: vier partities, niet
+            meer.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-06-mbr-indeling.svg" class="img-fluid" alt="De eerste sector van 512 bytes, verdeeld in 440 bytes opstartcode en 64 bytes partitietabel, met die 64 bytes uitvergroot tot vier ingangen van 16 bytes">
+            <figcaption class="figure-caption">De overige 8 bytes van de sector zijn een handtekening waaraan
+                de firmware ziet dat er een geldig master boot record staat.</figcaption>
+        </figure>
+
+        <p>Een tweede grens zit in de manier waarop MBR een sector aanduidt. Het gebruikt daarvoor 32 bits,
+            dus 2^32 sectoren van 512 bytes, en dat komt neer op ongeveer 2 TB. Een schijf die groter is,
+            kan je met MBR niet volledig indelen.</p>
 
         <p>Het MBR schema kent daarbij drie soorten partities. Een primaire partitie neemt een van de vier
             tabelplaatsen in en draagt een bestandssysteem. Wil je er meer dan vier, dan geef je een van die
-            plaatsen aan een extended partitie: die draagt zelf geen bestandssysteem maar dient als houder waarin
-            je zoveel logische partities aanmaakt als je nodig hebt. In het GPT schema bestaat dat onderscheid
-            niet, want daar zijn de 128 plaatsen aan elkaar gelijk.</p>
+            plaatsen aan een extended partitie: die draagt zelf geen bestandssysteem maar dient als houder
+            waarin je zoveel logische partities aanmaakt als je nodig hebt.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-06-primair-extended-logisch.svg" class="img-fluid" alt="Drie primaire partities die elk een tabelplaats innemen, naast een extended partitie op de vierde plaats met daarin drie logische partities">
+            <figcaption class="figure-caption">Elke primaire partitie draagt een bestandssysteem, de extended
+                niet</figcaption>
+        </figure>
+
+        <p>Het nieuwere partitieschema heet GPT, voluit GUID Partition Table. Het hoort bij UEFI, voluit
+            Unified Extensible Firmware Interface, de firmware die het BIOS opvolgt en die je in het
+            hoofdstuk BIOS / UEFI bent tegengekomen. GPT heeft plaats voor 128 partities en kent de grens
+            van 2 TB niet, want het gebruikt veel meer bits om een sector aan te duiden. Het onderscheid
+            tussen primaire, extended en logische partities bestaat er niet, want de 128 plaatsen zijn aan
+            elkaar gelijk.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-06-gpt-indeling.svg" class="img-fluid" alt="Een schijf met vooraan een beschermende MBR, de GPT-kop en de lijst met partities, dan de partities zelf, en achteraan een reservekopie van de lijst en de kop">
+            <figcaption class="figure-caption">De beschermende MBR vooraan zorgt dat oudere software de schijf
+                als bezet ziet in plaats van als leeg</figcaption>
+        </figure>
 
         <p>Als je een moderne versie van Windows installeert is er vaak één zichtbare partitie genaamd C:\ aangevuld met één of meerdere onzichtbare systeemgereserveerde partities zoals bijvoorbeeld de UEFI partitie. De onzichtbare partities hebben vaak als doel om eenvoudig een systeemherstel te kunnen uitvoeren of bevatten een bootloader.</p>
 
-        <p>De maximale grootte van een partitie wordt bepaald door het gebruikte bestandssysteem zoals FAT32, NTFS of EXT4. In het hoofdstuk Bestandssystemen kom je hierover meer te weten.</p>
+        <p>De maximale grootte van een partitie wordt bepaald door het gebruikte bestandssysteem zoals FAT32, NTFS of ext4. Verderop in dit hoofdstuk kom je hierover meer te weten.</p>
 
-        <p>Als je eens het partitie-overzicht in Windows wenst te bekijken voor jouw computer dan kan je het programma ‘Schijfbeheer’ (Engels: ‘Disk Management’) openen.</p>
+        <p>Als je eens het partitie-overzicht in Windows wenst te bekijken voor jouw computer dan kan je het programma &#x27;Schijfbeheer&#x27; (Engels: &#x27;Disk Management&#x27;) openen.</p>
 
         <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
             <img src="../../../../img/syllabus-06-bestandssystemen-04.png" class="img-fluid" alt="Het venster Disk Management van Windows. Bovenaan staan de volumes C:, DATA (F:) en System Reserved, alle drie NTFS. Onderaan staat Disk 0 van 232,88 GB als een balk met daarin System Reserved van 500 MB, C: van 183,57 GB en DATA (F:) van 48,83 GB, en daaronder een CD-ROM 0 zonder media">
@@ -46,7 +85,7 @@
 
         <p>Er zijn verschillende redenen waarom men kan kiezen om een harde schijf extra te partitioneren.</p>
 
-        <p>Een eerste reden is het scheiden van het besturingssysteem en de data. Het besturingssysteem en de programma’s worden geïnstalleerd op de ene partitie terwijl de data op een andere partitie staat. Het grote voordeel hiervan is dat, als men het besturingssysteem opnieuw wil installeren of als men wil overschakelen naar een nieuwere versie, de data veilig op haar eigen partitie staat. Na het formatteren en herinstalleren van de systeempartitie (partitie met het besturingssysteem) zullen alle bestanden op de data partitie gewoon beschikbaar zijn. Men hoeft dus geen backup terug te zetten om opnieuw over de data te beschikken.</p>
+        <p>Een eerste reden is het scheiden van het besturingssysteem en de data. Het besturingssysteem en de programma&#x27;s worden geïnstalleerd op de ene partitie terwijl de data op een andere partitie staat. Het grote voordeel hiervan is dat, als men het besturingssysteem opnieuw wil installeren of als men wil overschakelen naar een nieuwere versie, de data veilig op haar eigen partitie staat. Na het formatteren en herinstalleren van de systeempartitie (partitie met het besturingssysteem) zullen alle bestanden op de data partitie gewoon beschikbaar zijn. Men hoeft dus geen backup terug te zetten om opnieuw over de data te beschikken.</p>
 
         <p>Een tweede reden om partities aan te maken is als men van plan is om meerdere besturingssystemen te
             installeren. Elk besturingssysteem heeft daarvoor zijn eigen partitie nodig: het formatteert die

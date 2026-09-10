@@ -76,20 +76,24 @@
                     <li>De gebruiker, via de Task Manager</li>
                 </ul>
             </li>
-            <li>Welk van deze scheduling algoritmes heeft geen last van starvation?
+            <li>Wat doet het besturingssysteem wanneer het van het ene naar het andere proces wisselt?
                 <ul>
-                    <li>First come first served</li>
-                    <li>Shortest job first</li>
-                    <li>Priority based scheduling</li>
-                    <li class="juist">Round robin scheduling</li>
+                    <li>Het schrijft het hele programma naar de schijf en leest het volgende programma in</li>
+                    <li class="juist">Het bewaart de gegevens uit de registers van de processor in het werkgeheugen,
+                        en zet die van het volgende proces ervoor in de plaats</li>
+                    <li>Het start het volgende proces opnieuw op vanaf het begin</li>
+                    <li>Het wist de registers van de processor, zodat het volgende proces met een propere lei
+                        begint</li>
                 </ul>
             </li>
-            <li>Welk scheduling algoritme gebruikt Windows?
+            <li>Een machine met te weinig werkgeheugen wordt merkbaar traag. Wat is er aan de hand?
                 <ul>
-                    <li>First come first served</li>
-                    <li>Shortest job first</li>
-                    <li>Round robin scheduling</li>
-                    <li class="juist">Een combinatie van de andere technieken, de multilevel feedback queue</li>
+                    <li>Het besturingssysteem weigert nieuwe programma&#x27;s te starten tot er plaats vrijkomt</li>
+                    <li>De processor rekent trager zodra het werkgeheugen vol is</li>
+                    <li class="juist">Het besturingssysteem schuift de status van weinig gebruikte programma&#x27;s
+                        heen en weer tussen het werkgeheugen en de schijf, en dat kost telkens tijd</li>
+                    <li>De schijf wordt als extra werkgeheugen gebruikt, waardoor de programma&#x27;s er even snel
+                        op draaien</li>
                 </ul>
             </li>
             <li>Waarom laat je een proces niet zomaar in de klasse Realtime draaien?
@@ -99,6 +103,16 @@
                     <li class="juist">Omdat een realtime proces dat de processor niet loslaat alles eronder naar
                         achteren duwt, en er per definitie niets meer boven staat dat kan ingrijpen</li>
                     <li>Omdat de process scheduler realtime processen als laatste behandelt</li>
+                </ul>
+            </li>
+            <li>In het labo Embedded Systems draait CODESYS als soft PLC op een Raspberry Pi. Is die PLC daarmee
+                realtime?
+                <ul>
+                    <li>Ja, want de runtime van CODESYS is zelf een real time operating system</li>
+                    <li class="juist">Nee, want die runtime is een proces met een hoge prioriteit op een gewoon
+                        besturingssysteem: het komt als eerste aan de beurt, maar er is geen waarborg</li>
+                    <li>Ja, want een PLC voert zijn programma altijd in een vaste cyclustijd uit</li>
+                    <li>Nee, want een Raspberry Pi is te traag om een machine mee aan te sturen</li>
                 </ul>
             </li>
         </ol>

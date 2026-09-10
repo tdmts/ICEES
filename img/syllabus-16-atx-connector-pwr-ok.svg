@@ -34,17 +34,17 @@
 
   <!-- pin 1 tot 12 -->
   <rect class="pin" x="102" y="41" width="22" height="22" rx="3" fill="#9e622e"/>
-  <text x="86" y="56" text-anchor="end">+3.3V</text>
+  <text x="86" y="56" text-anchor="end">+3,3 V</text>
   <rect class="pin" x="102" y="73" width="22" height="22" rx="3" fill="#9e622e"/>
-  <text x="86" y="88" text-anchor="end">+3.3V</text>
+  <text x="86" y="88" text-anchor="end">+3,3 V</text>
   <rect class="pin" x="102" y="105" width="22" height="22" rx="3" fill="#222222"/>
   <text x="86" y="120" text-anchor="end">COM</text>
   <rect class="pin" x="102" y="137" width="22" height="22" rx="3" fill="#9e2f26"/>
-  <text x="86" y="152" text-anchor="end">+5V</text>
+  <text x="86" y="152" text-anchor="end">+5 V</text>
   <rect class="pin" x="102" y="169" width="22" height="22" rx="3" fill="#222222"/>
   <text x="86" y="184" text-anchor="end">COM</text>
   <rect class="pin" x="102" y="201" width="22" height="22" rx="3" fill="#9e2f26"/>
-  <text x="86" y="216" text-anchor="end">+5V</text>
+  <text x="86" y="216" text-anchor="end">+5 V</text>
   <rect class="pin" x="102" y="233" width="22" height="22" rx="3" fill="#222222"/>
   <text x="86" y="248" text-anchor="end">COM</text>
   <rect class="pin" x="102" y="265" width="22" height="22" rx="3" fill="#9bb0ac"/>
@@ -57,13 +57,13 @@
   <rect class="pin" x="102" y="385" width="22" height="22" rx="3" fill="#b8951f"/>
   <text x="86" y="400" text-anchor="end">+12V1</text>
   <rect class="pin" x="102" y="417" width="22" height="22" rx="3" fill="#9e622e"/>
-  <text x="86" y="432" text-anchor="end">+3.3V</text>
+  <text x="86" y="432" text-anchor="end">+3,3 V</text>
 
   <!-- pin 13 tot 24 -->
   <rect class="pin" x="134" y="41" width="22" height="22" rx="3" fill="#9e622e"/>
-  <text x="186" y="56">+3.3V</text>
+  <text x="186" y="56">+3,3 V</text>
   <rect class="pin" x="134" y="73" width="22" height="22" rx="3" fill="#2a4d7c"/>
-  <text x="186" y="88">-12V</text>
+  <text x="186" y="88">-12 V</text>
   <rect class="pin" x="134" y="105" width="22" height="22" rx="3" fill="#222222"/>
   <text x="186" y="120">COM</text>
   <rect class="pin" x="134" y="137" width="22" height="22" rx="3" fill="#3f7238"/>
@@ -77,11 +77,11 @@
   <rect class="pin" x="134" y="265" width="22" height="22" rx="3" fill="#ffffff"/>
   <text x="186" y="280">N/C</text>
   <rect class="pin" x="134" y="297" width="22" height="22" rx="3" fill="#9e2f26"/>
-  <text x="186" y="312">+5V</text>
+  <text x="186" y="312">+5 V</text>
   <rect class="pin" x="134" y="329" width="22" height="22" rx="3" fill="#9e2f26"/>
-  <text x="186" y="344">+5V</text>
+  <text x="186" y="344">+5 V</text>
   <rect class="pin" x="134" y="385" width="22" height="22" rx="3" fill="#9e2f26"/>
-  <text x="186" y="400">+5V</text>
+  <text x="186" y="400">+5 V</text>
   <rect class="pin" x="134" y="417" width="22" height="22" rx="3" fill="#222222"/>
   <text x="186" y="432">COM</text>
 

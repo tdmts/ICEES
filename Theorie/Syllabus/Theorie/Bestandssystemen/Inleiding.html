@@ -19,23 +19,33 @@
             <table class="table table-bordered">
                 <thead class="table-header-custom">
                     <tr><th><p>Mechanische harde schijf</p>
-        <p>3.5” vormfactor via SATA</p></th><th><p>Solid state harde schijf</p>
-        <p>2.5” vormfactor via SATA</p></th><th><p>Solid state harde schijf</p>
-        <p>1.8” vormfactor via M.2</p></th></tr>
+        <p>3,5&#x2033; vormfactor via SATA</p></th><th><p>Solid state harde schijf</p>
+        <p>2,5&#x2033; vormfactor via SATA</p></th><th><p>Solid state harde schijf</p>
+        <p>1,8&#x2033; vormfactor via M.2</p></th></tr>
                 </thead>
                 <tbody>
                     <tr><td><figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 46.4mm">
-            <img src="../../../../img/syllabus-06-bestandssystemen-01.jpeg" class="img-fluid" alt="Een opengewerkte mechanische harde schijf van 3.5 inch, met de spiegelende platter en de arm met de leeskop erboven">
+            <img src="../../../../img/syllabus-06-bestandssystemen-01.jpeg" class="img-fluid" alt="Een opengewerkte mechanische harde schijf van 3,5 duim, met de spiegelende platter en de arm met de leeskop erboven">
         </figure></td><td><figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 41.9mm">
-            <img src="../../../../img/syllabus-06-bestandssystemen-02.jpeg" class="img-fluid" alt="Een solid state harde schijf van 2.5 inch in een zwarte behuizing met een blauw-wit etiket, met de SATA-aansluiting aan de korte kant">
+            <img src="../../../../img/syllabus-06-bestandssystemen-02.jpeg" class="img-fluid" alt="Een solid state harde schijf van 2,5 duim in een zwarte behuizing met een blauw-wit etiket, met de SATA-aansluiting aan de korte kant">
         </figure></td><td><figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 36.8mm">
-            <img src="../../../../img/syllabus-06-bestandssystemen-03.png" class="img-fluid" alt="Een solid state harde schijf van 1.8 inch als een kale printplaat met geheugenchips erop en een M.2-connector aan het uiteinde">
+            <img src="../../../../img/syllabus-06-bestandssystemen-03.png" class="img-fluid" alt="Een solid state harde schijf van 1,8 duim als een kale printplaat met geheugenchips erop en een M.2-connector aan het uiteinde">
         </figure></td></tr>
                 </tbody>
             </table>
         </div>
 
         <p>In het hoofdstuk Harde schijf gaan we gedetailleerd in op de interne werking van de harde schijf. In dit hoofdstuk staan we vooral stil bij hoe de informatie wordt bijgehouden en hoe deze bruikbaar wordt voor het besturingssysteem.</p>
+
+        <p>Daarvoor heb je een enkel begrip uit dat hoofdstuk al nodig: de sector. Een opslagmedium is
+            verdeeld in sectoren, en een sector is het kleinste stuk dat in een keer gelezen of geschreven
+            wordt. Een sector is meestal 512 bytes groot en de sectoren zijn genummerd, te beginnen bij
+            sector 0. Alles wat op het medium staat, van de tabel met de partities tot het laatste
+            bestand, ligt in een of meer van die sectoren.</p>
+
+        <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
+            <img src="../../../../img/syllabus-06-sectoren.svg" class="img-fluid" alt="Een rij van negen genummerde sectoren, van 0 tot 8, waarvan er een 512 bytes meet. Sector 1 draagt een bestand van 300 bytes dat er ruim de helft van vult, en de sectoren 4, 5 en 6 dragen samen een bestand van 1202 bytes, waarvan de derde sector nog voor een derde gevuld is. De rij loopt door tot het einde van het medium">
+        </figure>
     </div>
 
     <script src="../../../../reference.js"></script>

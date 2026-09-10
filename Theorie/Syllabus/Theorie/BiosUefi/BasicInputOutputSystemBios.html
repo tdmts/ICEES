@@ -13,7 +13,7 @@
     <div class="container">
         <h1>Basic input output system (BIOS)</h1>
 
-        <p>De BIOS of het Basic Input Output System is een (klein ~= 1MB) stukje geheugen dat zich in een computer bevindt op een aparte chip op het moederbord, meestal in de buurt van de batterij.</p>
+        <p>De BIOS of het Basic Input Output System is een (klein ~= 1 MB) stukje geheugen dat zich in een computer bevindt op een aparte chip op het moederbord, meestal in de buurt van de batterij.</p>
 
         <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
             <img src="../../../../img/syllabus-03-bios-uefi-01.png" class="img-fluid" alt="Vijf foto's van moederborden waarop de firmwarechip te zien is: een chip in een rood kader met het bijschrift BIOS chip, een PhoenixBIOS-chip naast het Gigabyte-logo, een ATMEL-chip met al zijn aansluitingen benoemd, een SMSC-chip, en in een ovale uitsnede een CR2032-knoopcel vlak naast zo'n chip">
@@ -28,7 +28,7 @@
             <li>De huidige datum / tijd</li>
         </ul>
 
-        <p>Eén van de eerste taken die die BIOS op zich neemt is controleren als alle nodige hardware aanwezig is en functioneert. Dit wordt ook wel de POST of Power On Self Test genoemd. Als de POST mislukt hoor je vaak een BEEP geluid of zie je een foutboodschap op het scherm.</p>
+        <p>Eén van de eerste taken die die BIOS op zich neemt is controleren of alle nodige hardware aanwezig is en functioneert. Dit wordt ook wel de POST of Power On Self Test genoemd. Als de POST mislukt hoor je vaak een BEEP geluid of zie je een foutboodschap op het scherm.</p>
 
         <p>Volgende apparaten worden gecontroleerd:</p>
 
@@ -39,7 +39,7 @@
             <li>De grafische kaart (de uitvoer)</li>
         </ul>
 
-        <p>Zodra dit is gebeurt gaat de BIOS kijken in zijn intern geheugen om te zien als er bepaalde instellingen moeten worden toegepast op hardware. Deze instellingen blijven, ook als de computer uitstaat, bewaard door middel van de batterij.</p>
+        <p>Zodra dit is gebeurd gaat de BIOS kijken in zijn intern geheugen om te zien of er bepaalde instellingen moeten worden toegepast op hardware. Deze instellingen blijven, ook als de computer uitstaat, bewaard door middel van de batterij.</p>
 
         <p>Deze kunnen bijvoorbeeld zijn:</p>
 
@@ -48,7 +48,7 @@
             <li>Kloksnelheid RAM geheugen (over- of onder klokken)</li>
             <li>USB instellingen</li>
             <li>Tijdsinstellingen</li>
-            <li>…</li>
+            <li>...</li>
         </ul>
 
         <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 157.9mm">
@@ -59,16 +59,16 @@
 
         <ul>
             <li><em>BIOS functionality very much depends on the field of usage for a motherboard. </em></li>
-            <li><strong><em>Commercial applications</em></strong><em> typically require a balance between power dissipation and program load. </em></li>
-            <li><strong><em>Industrial applications</em></strong><em> often </em><em>requires</em><em> </em><strong><em>full CPU availability at any time</em></strong><em>. </em></li>
+            <li><em>Commercial applications</em><em> typically require a balance between power dissipation and program load. </em></li>
+            <li><em>Industrial applications</em><em> often </em><em>requires</em><em> </em><em>full CPU availability at any time</em><em>. </em></li>
             <li><em>Settings for speed stepping and thermal monitoring need to be adapted in the BIOS to reflect the different usage modes.</em></li>
         </ul>
 
-        <p>De processor is één van de meest energie verslindende apparaten in een computer. Om het energieverbruik te beperken wordt er soms aan speed stepping gedaan. Dit betekent dat we de processor op een lagere kloksnelheid laten draaien om energie te besparen. Thermal monitoring betekent dat we de temperatuur van de processor in de gaten zullen houden en als deze te hoog wordt dan wordt de kloksnelheid automatisch verlaagd.</p>
+        <p>De processor is één van de meest energieverslindende apparaten in een computer. Om het energieverbruik te beperken wordt er soms aan speed stepping gedaan. Dit betekent dat we de processor op een lagere kloksnelheid laten draaien om energie te besparen. Thermal monitoring betekent dat we de temperatuur van de processor in de gaten zullen houden en als deze te hoog wordt dan wordt de kloksnelheid automatisch verlaagd.</p>
 
         <p>Het spreekt voor zich dat, als de industriële computer een tijdskritisch proces moet uitvoeren, je niet wil dat de processor ineens trager gaat werken en bijgevolg instructies er langer over zullen doen om uitgevoerd te worden. Om die reden wordt vaak speed stepping uitgezet.</p>
 
-        <p>Als laatste moet de BIOS de controle (= de volgende instructie) overdragen aan een ander apparaat. Dit heeft uiteraard als doel om ons een besturingssysteem op te starten.In de BIOS wordt dus ook de opstartvolgorde bijgehouden. Je kan meestal kiezen tussen deze apparaten:</p>
+        <p>Als laatste moet de BIOS de controle (= de volgende instructie) overdragen aan een ander apparaat. Dit heeft uiteraard als doel om ons een besturingssysteem op te starten. In de BIOS wordt dus ook de opstartvolgorde bijgehouden. Je kan meestal kiezen tussen deze apparaten:</p>
 
         <ul>
             <li>Harde schijf</li>
@@ -77,11 +77,11 @@
             <li>Netwerk</li>
         </ul>
 
-        <p>Eén voor één worden die apparaten overlopen. Als een geldig opstartmedium is gevonden start de computer op vanaf dat apparaat. Om te weten als een opstartmedium geldig is of niet wordt gezocht als er een Master Boot Record aanwezig is.</p>
+        <p>Eén voor één worden die apparaten overlopen. Als een geldig opstartmedium is gevonden start de computer op vanaf dat apparaat. Om te weten of een opstartmedium geldig is of niet, wordt gezocht of er een Master Boot Record aanwezig is.</p>
 
         <p>De Master Boot Record is de eerste sector (= eerste geheugenplaats) op een opslagmedium. Deze geheugenplaats is 512 bytes groot waarvan 440 bytes bestemd zijn voor de Master Boot Code.</p>
 
-        <p>De Master Boot Code bevat in die 440 bytes instructies die verwijzen naar een ander adres op het opslagmedium. Voor een modern besturingssysteem kunnen in die 440 bytes te weinig instructies om het besturingssysteem van op te starten. Vandaar dat we hier gewoon opnieuw verwijzen naar een ander adres. Op dat adres staat de bootloader die het besturingssysteem gaat opstarten.</p>
+        <p>De Master Boot Code bevat in die 440 bytes instructies die verwijzen naar een ander adres op het opslagmedium. Voor een modern besturingssysteem passen in die 440 bytes te weinig instructies om het besturingssysteem van op te starten. Vandaar dat we hier gewoon opnieuw verwijzen naar een ander adres. Op dat adres staat de bootloader die het besturingssysteem gaat opstarten.</p>
 
         <figure class="figure w-100 text-center figure-zoom" style="--figuur-breedte: 160.0mm">
             <img src="../../../../img/syllabus-03-master-boot-record.svg" class="img-fluid" alt="Een schijf getekend als een rij sectoren van elk 512 bytes, waarvan sector 0 het master boot record is. Die ene sector staat eronder uitvergroot en op schaal verdeeld: 440 bytes opstartcode, 4 bytes schijfhandtekening, 2 bytes nullen, 64 bytes partitietabel met vier ingangen van 16 bytes, en 2 bytes handtekening">

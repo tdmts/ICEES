@@ -85,6 +85,25 @@ window.LAB_REFERENCE = {
         name: 'Syllabus',
         categories: [
             {
+                /*
+                 * Het Voorwoord draagt geen nummer, en het is de enige
+                 * categorie hier met genummerd: false. Het staat in de Word
+                 * voor hoofdstuk 1 en in de gedrukte syllabus op de eerste
+                 * bladzijde na het voorwerk.
+                 */
+                name: 'Voorwoord',
+                reeks: 'theorie',
+                topics: [
+                    {
+                        id: 'voorwoord',
+                        name: 'Voorwoord',
+                        blurb: 'Kleiner, sneller, goedkoper als samenvatting van vijftig jaar computerindustrie, en wat er in dit opleidingsonderdeel aan bod komt.',
+                        href: 'Voorwoord.html'
+                    }
+                ],
+                genummerd: false
+            },
+            {
                 name: 'Generaties',
                 reeks: 'theorie',
                 topics: [
@@ -302,7 +321,7 @@ window.LAB_REFERENCE = {
                     {
                         id: 'bestandssystemen-inleiding',
                         name: 'Inleiding',
-                        blurb: 'Drie schijven naast elkaar: een mechanische van 3.5 inch, een SSD van 2.5 inch aan SATA en een SSD van 1.8 inch in een M.2-slot.',
+                        blurb: 'Drie schijven naast elkaar, en het ene begrip dat je verder in dit hoofdstuk nodig hebt: de sector van 512 bytes.',
                         href: 'Bestandssystemen/Inleiding.html'
                     },
                     {
@@ -332,14 +351,8 @@ window.LAB_REFERENCE = {
                     {
                         id: 'bestandssystemen-fragmentatie-schijf',
                         name: 'Fragmentatie bij de klassieke harde schijf',
-                        blurb: 'Elk stuk kost de arm een nieuwe seek time en rotational latency, en daarom heeft FAT er meer last van dan NTFS of ext2.',
+                        blurb: 'Elk stuk kost de arm een nieuwe herpositionering, en daarom heeft FAT er meer last van dan NTFS of ext2.',
                         href: 'Bestandssystemen/FragmentatieBijDeKlassiekeHardeSchijf.html'
-                    },
-                    {
-                        id: 'bestandssystemen-fits',
-                        name: 'First fit, best fit, worst fit',
-                        blurb: 'Drie manieren om een vrij blok te kiezen, en waarom uitgerekend worst fit het minst fragmenteert.',
-                        href: 'Bestandssystemen/FirstFitBestFitWorstFit.html'
                     },
                     {
                         id: 'bestandssystemen-fragmentatie-ssd',
@@ -362,12 +375,12 @@ window.LAB_REFERENCE = {
                     {
                         id: 'bestandssystemen-ntfs',
                         name: 'New Technology File System (NTFS)',
-                        blurb: 'Wat Windows op zijn eigen schijven zet: een grote adresruimte en een journaal, dat eerst sneller schrijft en daarna als logboek dient wanneer de stroom uitvalt.',
+                        blurb: 'Wat Windows op zijn eigen schijven zet: een adresruimte die groot genoeg is voor zeer veel bestanden, die elk ook zeer groot mogen zijn.',
                         href: 'Bestandssystemen/NewTechnologyFileSystemNtfs.html'
                     },
                     {
                         id: 'bestandssystemen-ext',
-                        name: 'Extended File System (EXT)',
+                        name: 'Extended File System (ext)',
                         blurb: 'Het standaardbestandssysteem van de meeste Linux-distributies sinds 2009: gericht op snelheid, met vooraf gereserveerde blokken tegen fragmentatie.',
                         href: 'Bestandssystemen/ExtendedFileSystemExt.html'
                     },
@@ -422,13 +435,19 @@ window.LAB_REFERENCE = {
                     {
                         id: 'besturingssystemen-procesbeheer',
                         name: 'Procesbeheer',
-                        blurb: 'Ready, running en blocked, het verschil tussen cooperative en preemptive multitasking, vijf scheduling algoritmes met hun starvation, en wat een realtime prioriteit kost.',
+                        blurb: 'Ready, running en blocked, wat er bij een context switch bewaard en hersteld wordt, en het verschil tussen cooperative en preemptive multitasking.',
                         href: 'Besturingssystemen/Procesbeheer.html'
+                    },
+                    {
+                        id: 'besturingssystemen-prioriteit-en-realtime',
+                        name: 'Prioriteit en realtime',
+                        blurb: 'Waarom een tijdskritisch proces niet snel maar op tijd moet zijn, wat de klasse Realtime wel en niet belooft, en waarin een real time operating system verschilt.',
+                        href: 'Besturingssystemen/PrioriteitEnRealtime.html'
                     },
                     {
                         id: 'besturingssystemen-test-jezelf',
                         name: 'Test jezelf',
-                        blurb: 'Tien vragen over Windows en Linux, de rechten van een gebruiker, swapping en de process scheduler.',
+                        blurb: 'Tien vragen over Windows en Linux, de rechten van een gebruiker, swapping, de process scheduler en de klasse Realtime.',
                         href: 'Besturingssystemen/TestJezelf.html'
                     }
                 ]
@@ -882,6 +901,12 @@ window.LAB_REFERENCE = {
                         href: 'GraphicsProcessingUnitGpu/ResolutieEnFramerate.html'
                     },
                     {
+                        id: 'gpu-aansluitingen',
+                        name: 'Aansluitingen',
+                        blurb: 'De vier stekkers waarmee het beeld het scherm bereikt, en wat een converter je kost.',
+                        href: 'GraphicsProcessingUnitGpu/Aansluitingen.html'
+                    },
+                    {
                         id: 'gpu-test-jezelf',
                         name: 'Test jezelf',
                         blurb: 'Acht vragen over de plaats van de grafische kern, het parallellisme van een GPU, Full HD en de aansluitingen.',
@@ -904,6 +929,12 @@ window.LAB_REFERENCE = {
                         name: 'De voeding',
                         blurb: 'De spanningen die eruit komen, de connectoren die eraan hangen, en hoe je uitrekent hoeveel Watt je nodig hebt.',
                         href: 'PowerSupplyUnitPsu/DeVoeding.html'
+                    },
+                    {
+                        id: 'psu-industriele-voeding',
+                        name: 'De industriele voeding',
+                        blurb: 'Op een DIN rail, extern en op 24 V, en waarom je het vermogen hier uit de datasheet haalt.',
+                        href: 'PowerSupplyUnitPsu/DeIndustrieleVoeding.html'
                     },
                     {
                         id: 'psu-ps-on',

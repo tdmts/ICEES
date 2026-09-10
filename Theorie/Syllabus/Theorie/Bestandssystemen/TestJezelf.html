@@ -36,6 +36,23 @@
                     <li class="juist">zowel de maximum bestandsgrootte als de maximum partitie grootte</li>
                 </ul>
             </li>
+            <li>Waarom worden sectoren geclusterd?
+                <ul>
+                    <li class="juist">Met dezelfde adresruimte kan een groter deel van de schijf aangesproken worden</li>
+                    <li>Een sector kan er meer dan 512 bytes in kwijt</li>
+                    <li>De inhoudstafel van het bestandssysteem krijgt er plaatsen bij</li>
+                    <li>Kleine bestanden nemen er minder plaats mee in</li>
+                </ul>
+            </li>
+            <li>Je formatteert een schijf met clusters van 64 KiB en slaat er een bestand van 412 bytes op. Hoeveel
+                schijfruimte neemt dat bestand in?
+                <ul>
+                    <li>412 bytes</li>
+                    <li>512 bytes, dus een sector</li>
+                    <li class="juist">64 KiB, dus een volledig cluster</li>
+                    <li>4096 bytes, de standaard clustergrootte</li>
+                </ul>
+            </li>
             <li>In Windows Verkenner zie je zowel C:\ als D:\ staan. Welke bewering is WAAR?
                 <ul>
                     <li class="juist">Je weet zeker dat je twee partities hebt</li>
@@ -53,14 +70,14 @@
             <li>Welk bestandssysteem wordt typisch gebruikt voor een Windows installatie?
                 <ul>
                     <li class="juist">NTFS</li>
-                    <li>EXT4</li>
+                    <li>ext4</li>
                     <li>MACFS</li>
                 </ul>
             </li>
             <li>Welk bestandssysteem wordt typisch gebruikt voor een Linux installatie?
                 <ul>
                     <li>NTFS</li>
-                    <li class="juist">EXT4</li>
+                    <li class="juist">ext4</li>
                     <li>MACFS</li>
                 </ul>
             </li>

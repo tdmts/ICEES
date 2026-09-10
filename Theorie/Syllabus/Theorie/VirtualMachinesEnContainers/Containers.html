@@ -15,9 +15,9 @@
 
         <p>Er zijn heel veel voordelen aan virtuele machines maar er is ook één heel belangrijk nadeel: ze zijn traag.</p>
 
-        <p>Het performantieverlies komt onder andere omdat het besturingssysteem telkens mee gevirtualiseerd wordt. Dit op zich neemt ook al processortijd in beslag... Ook de licentiekost moet telkens in rekening gebracht worden. Voor iedere virtuele machine met Windows heb je een aparte licentie nodig.</p>
+        <p>Het performantieverlies komt onder andere omdat het besturingssysteem telkens mee gevirtualiseerd wordt. Dit op zich neemt ook al processortijd in beslag. Ook de licentiekost moet telkens in rekening gebracht worden. Voor iedere virtuele machine met Windows heb je een aparte licentie nodig.</p>
 
-        <p>Containers doen eigenlijk net hetzelfde als een virtuele machine, ze maken een afgeschermde omgeving voor programma&#x27;s maar met dat verschil dat ze steeds hetzelfde besturingssysteem gebruiken. De overhead is bijgevolg weg, wat maakt dat ze vele malen performanter zijn.</p>
+        <p>Containers doen eigenlijk net hetzelfde als een virtuele machine, ze maken een afgeschermde omgeving voor programma&#x27;s maar met dat verschil dat ze steeds hetzelfde besturingssysteem gebruiken. De overhead is bijgevolg weg, wat maakt dat ze vele malen performanter zijn. Een container start ook in seconden, waar een virtuele machine eerst een volledig besturingssysteem moet opstarten.</p>
 
         <p>Een voorbeeld van container software is Docker. Je kan dit installeren op zowel Windows als Linux en op de website van Docker vind je allerlei software die je in een container kan stoppen.</p>
 
@@ -26,6 +26,8 @@
                 alt="Twee stapels naast elkaar. Links dragen de hardware, het besturingssysteem van de machine en VirtualBox twee guests, die elk een eigen Ubuntu met daarbovenop een programma hebben. Rechts dragen dezelfde hardware, hetzelfde besturingssysteem en Docker drie programma's, met op de plaats van het guest besturingssysteem een gestreepte rode strook met het opschrift geen eigen besturingssysteem">
             <figcaption class="figure-caption">Elke guest draagt een eigen besturingssysteem; de containers ernaast delen dat van de machine</figcaption>
         </figure>
+
+        <p>Wat een container niet kan, is een ander besturingssysteem draaien dan dat van de machine waarop hij staat. Alle containers op die machine delen immers die ene kernel. Heb je op een Windowsmachine toch een Linuxsysteem nodig, dan is een virtuele machine het enige dat dat kan.</p>
     </div>
 
     <script src="../../../../reference.js"></script>

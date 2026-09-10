@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 210" width="720" height="210"
+    font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="titel">
+    <title id="titel">Een opslagmedium verdeeld in genummerde sectoren van 512 bytes, met twee bestanden erin</title>
+    <rect width="720" height="210" fill="#ffffff" />
+
+    <!-- maatlijn boven een enkele sector -->
+    <text x="74" y="30" font-size="13" fill="#222" text-anchor="middle">512 bytes</text>
+    <path d="M40 36 L40 46 M108 36 L108 46 M40 41 L108 41" stroke="#666" stroke-width="1" fill="none" />
+
+    <!-- de sectoren -->
+    <g stroke="#9bb0ac" fill="#f5f7f7">
+        <rect x="40" y="56" width="68" height="40" />
+        <rect x="176" y="56" width="68" height="40" />
+        <rect x="244" y="56" width="68" height="40" />
+        <rect x="516" y="56" width="68" height="40" />
+        <rect x="584" y="56" width="68" height="40" />
+    </g>
+
+    <!-- de sectoren die aan een bestand toebehoren -->
+    <g stroke="#004d40" fill="#f5f7f7">
+        <rect x="108" y="56" width="68" height="40" />
+        <rect x="312" y="56" width="68" height="40" />
+        <rect x="380" y="56" width="68" height="40" />
+        <rect x="448" y="56" width="68" height="40" />
+    </g>
+
+    <!-- wat er van die sectoren effectief gevuld is -->
+    <g stroke="#004d40" fill="#b2dfdb">
+        <rect x="108" y="56" width="39.9" height="40" />
+        <rect x="312" y="56" width="68" height="40" />
+        <rect x="380" y="56" width="68" height="40" />
+        <rect x="448" y="56" width="23.6" height="40" />
+    </g>
+
+    <!-- het medium loopt door -->
+    <g fill="#9bb0ac">
+        <circle cx="662" cy="76" r="2.5" />
+        <circle cx="670" cy="76" r="2.5" />
+        <circle cx="678" cy="76" r="2.5" />
+    </g>
+
+    <!-- de nummers -->
+    <g font-size="13" fill="#555" text-anchor="middle">
+        <text x="74" y="112">0</text>
+        <text x="142" y="112">1</text>
+        <text x="210" y="112">2</text>
+        <text x="278" y="112">3</text>
+        <text x="346" y="112">4</text>
+        <text x="414" y="112">5</text>
+        <text x="482" y="112">6</text>
+        <text x="550" y="112">7</text>
+        <text x="618" y="112">8</text>
+    </g>
+
+    <!-- de twee bestanden -->
+    <path d="M108 122 L108 132 L176 132 L176 122" stroke="#004d40" stroke-width="1" fill="none" />
+    <text x="142" y="150" font-size="13" fill="#222" text-anchor="middle">een bestand van 300 bytes</text>
+
+    <path d="M312 122 L312 132 L516 132 L516 122" stroke="#004d40" stroke-width="1" fill="none" />
+    <text x="414" y="150" font-size="13" fill="#222" text-anchor="middle">een bestand van 1202 bytes</text>
+
+    <text x="40" y="176" font-size="13" fill="#555">De nummering begint bij sector 0 en loopt door tot het einde van
+        het medium.</text>
+    <text x="40" y="196" font-size="13" fill="#555">Een bestand krijgt altijd hele sectoren, ook als het de laatste
+        maar half vult.</text>
+</svg>
