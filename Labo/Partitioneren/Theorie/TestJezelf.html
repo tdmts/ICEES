@@ -126,11 +126,11 @@
 
         <div class="spoiler-container">
             <div class="basic">
-                <p><strong>6. Je formatteert een partitie met clusters van 64 kB en zet er duizend bestanden van elk
+                <p><strong>6. Je formatteert een partitie met clusters van 64 KiB en zet er duizend bestanden van elk
                         ongeveer 500 bytes op. Wat gebeurt er?</strong></p>
                 <ol type="a">
                     <li>De bestanden worden samengevoegd tot ze een cluster vullen</li>
-                    <li>Elk bestand krijgt een volledig cluster, dus er gaat bijna 64 MB aan slack verloren</li>
+                    <li>Elk bestand krijgt een volledig cluster, dus er gaat ruim 62 MiB aan slack verloren</li>
                     <li>De clustergrootte past zich aan de bestanden aan</li>
                     <li>De bestanden passen niet, want een bestand mag niet kleiner zijn dan een cluster</li>
                 </ol>
@@ -213,7 +213,7 @@
                     <li>Een SSD heeft geen bewegende arm, dus verspreide fragmenten kosten geen extra
                         positioneertijd</li>
                     <li>Een SSD gebruikt geen bestandssysteem met een inhoudstafel</li>
-                    <li>Een SSD werkt met sectoren van 4 kB in plaats van 512 bytes</li>
+                    <li>Een SSD werkt met sectoren van 4 KiB in plaats van 512 bytes</li>
                 </ol>
             </div>
             <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>

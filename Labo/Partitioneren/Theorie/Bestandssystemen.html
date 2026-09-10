@@ -36,19 +36,26 @@
             bytes groot. Het bestandssysteem adresseert die sectoren niet stuk voor stuk: het groepeert ze in
             <strong>clusters</strong> en geeft één adres aan zo'n groep.</p>
 
+        <figure class="figure-zoom" style="max-width: 620px">
+            <img src="../../../img/partitioneren-sectoren.svg" class="img-fluid"
+                alt="Een rij van negen genummerde sectoren, van 0 tot 8, waarvan er een 512 bytes meet. Sector 1 draagt een bestand van 300 bytes dat er ruim de helft van vult, en de sectoren 4, 5 en 6 dragen samen een bestand van 1202 bytes, waarvan de derde sector nog voor een derde gevuld is. De rij loopt door tot het einde van het medium">
+            <figcaption class="figure-caption">De sectoren zijn genummerd vanaf 0, en een bestand krijgt er altijd
+                hele van: 300 bytes vullen er een, 1202 bytes drie</figcaption>
+        </figure>
+
         <p>Koppel je acht sectoren aan één adres, dan dekt dezelfde adresruimte acht keer zo veel schijf, en wordt de
             maximale partitiegrootte acht keer groter. De prijs betaal je bij kleine bestanden. Een cluster is de
             kleinste hoeveelheid die aan één bestand toegewezen wordt, dus een bestand van 412 bytes in een cluster
-            van 64 kB laat bijna 64 kB ongebruikt. Die verloren ruimte heet <strong>slack</strong>.</p>
+            van 64 KiB laat bijna 64 KiB ongebruikt. Die verloren ruimte heet <strong>slack</strong>.</p>
 
         <figure class="figure-zoom" style="max-width: 620px">
             <img src="../../../img/partitioneren-cluster-en-slack.svg" class="img-fluid"
-                alt="Acht sectoren van 512 bytes die samen één cluster vormen, en daaronder een bestand van 412 bytes dat een heel cluster inneemt waarvan de rest slack is">
+                alt="Bovenaan zestien genummerde sectoren van 512 bytes, per acht samengenomen tot twee clusters op adres 0 en adres 1. Onderaan een cluster van 4096 bytes waarvan alleen het eerste tiende gevuld is door een bestand van 412 bytes; de rest is gearceerd als slack">
             <figcaption class="figure-caption">Grotere clusters vergroten de partitie die je kan adresseren en
                 vergroten tegelijk de slack</figcaption>
         </figure>
 
-        <p>Bij het formatteren geef je de clustergrootte op. De standaardwaarde is 4096 bytes, ofwel 4 kB. Heb je veel
+        <p>Bij het formatteren geef je de clustergrootte op. De standaardwaarde is 4096 bytes, ofwel 4 KiB. Heb je veel
             kleine bestanden, dan kies je kleiner; heb je vooral grote bestanden, dan kies je groter.</p>
 
         <h2 id="fragmentatie">Fragmentatie</h2>
