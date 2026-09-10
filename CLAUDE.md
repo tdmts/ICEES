@@ -1217,11 +1217,23 @@ vragenlijst in tweeen deelt; die is `<h2>Redeneervragen</h2>` geworden, de vorm 
 syllabuspagina al gebruikt. **Ontvet dus niet blind**: kijk per geval of het vet iets markeert waar
 de tekst ernaast naar verwijst.
 
-**De labotrack is hier niet in meegegaan**, en dat is een open punt en geen beslissing.
-`Labo/Assemblage/Theorie/` draagt 78 stuks, `Labo/LinuxBasis/Theorie/` 45 en
-`Labo/LinuxGeavanceerd/Theorie/` 40. Die bladzijden zijn hier met de hand geschreven, dus daar is het
-vet wel een eigen keuze geweest en de dichtheid is een andere. Tel het uit voor je er iets aan
-verandert, zoals hier gebeurd is, en beslis het dan apart.
+**De labotrack is hier niet in meegegaan, en op 10 september 2026 is beslist dat ze dat ook niet
+doet.** Het vet blijft daar staan zoals het staat, en dit is dus geen open punt meer. Wat de knoop
+doorhakte is dezelfde soort telling als hierboven, en ze valt de andere kant op. `Labo/` draagt 406
+stuks over 80 paginas, waarvan er 139 structureel zijn (de vraagtekst en "Antwoord b." van een
+zelftest, de vorm die DeN's labozelftests al gebruiken). De 267 die overblijven staan op 53 van de 80
+paginas, met een dichtheid van 5,4 per duizend woorden in Linux Basis tot 16,0 in Partitioneren, en de
+verdeling per pagina is vlak. Waar het in de syllabus op tien van de 128 bladzijden stond en tien van
+de zestien hoofdstukken er nul hadden, is het hier dus wel een systeem, en die bladzijden zijn hier
+met de hand geschreven.
+
+Patroon 10 valt er ook niet over: **maar elf stuks beslaan meer dan zes woorden**, en acht daarvan
+citeren een schermtekst (`What do you want to do with Ubuntu:`,
+`Apparaten -> Invoegen Guest Additions CD image`), wat het patroon uitdrukkelijk toelaat. Het enige
+twijfelgeval is "Klik rechtsboven op Volgende om te beginnen." op de zes `Overzicht.html`, en ook dat
+blijft: zes keer dezelfde vetgedrukte zin op zes wortelpaginas is een herkenbaar patroon en geen
+nadruk in een alinea. Tel opnieuw voor je hier iets aan verandert, want een afleiding klopt alleen op
+de dag dat je ze schrijft.
 
 **Code is een `<pre><code>`, en `syllabus.css` was er al op voorbereid.** De importer maakt van
 elke regel code een eigen `<p>`, inspringing en al kwijt, en van een schermafdruk van een listing
