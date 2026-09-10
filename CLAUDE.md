@@ -17,13 +17,21 @@ Six labs, each an independent module: Assemblage + BIOS/UEFI, Virtualiseren, Par
 Basis, Linux Geavanceerd, Embedded Systems. Beside them a theory track (a syllabus the student
 prints) and a lecture track (six hoorcolleges, of which five have a deck).
 
-**Three of the six modules are written.** `Labo/Assemblage/` holds its hub, its three theory pages and
-its three `Opdracht.html`; `Labo/Virtualiseren/` holds its hub, four theory pages, a zelftest, one
-`Opdracht.html` and the three stappenplan pages that hang under it; `Labo/Partitioneren/` holds its
-hub, two theory pages, a spiekblad, a zelftest, one `Opdracht.html` and the four stappenplan pages
-that hang under it; `Algemeen/` holds the four pages that sit beside both tracks. `check-content.py`
-and `check-nav.js` are both green with no warnings. The other three modules are staged in
-`_incoming/`.
+**Five of the six modules are written**, and the sixth is Embedded Systems.
+`Labo/Assemblage/` holds its hub, its three theory pages and its three `Opdracht.html`;
+`Labo/Virtualiseren/` holds its hub, four theory pages, a zelftest, one `Opdracht.html` and the three
+stappenplan pages that hang under it; `Labo/Partitioneren/` holds its hub, two theory pages, a
+spiekblad, a zelftest, one `Opdracht.html` and the four stappenplan pages that hang under it;
+`Labo/LinuxBasis/` and `Labo/LinuxGeavanceerd/` are the two described under their own heading below,
+the second one with five reeksen. `Algemeen/` holds the four pages that sit beside both tracks. The
+syllabus is complete at sixteen chapters. `check-content.py` and `check-nav.js` are both green with no
+warnings.
+
+**Labo Embedded Systems is not started, and that is a decision of 10 September 2026 and not a
+backlog.** Its topics are staged in `_incoming/`, the eleven hand-rewritten pages of `embedded/`
+included, but `Labo 6` on OneDrive is empty, so there is no opgave for its two dropboxes. Writing the
+theory ahead of the opgave means writing towards an assignment nobody has read. It starts when the
+opgave lands.
 
 No build system and no test suite: you edit HTML/CSS/JS directly. `scripts/` holds eight Python
 scripts, of which `check-content.py` and `import-brightspace.py` are stdlib only, plus one Node
@@ -215,10 +223,25 @@ daarover verderop), of de voettekst en het logo nog op elke bladzijde staan, en 
 beschermde afbeeldingen nog op ware grootte in de PDF zitten. Dat laatste lees je met `pypdf` uit
 `/Resources /XObject` en leg je naast de pixelmaten van de bestanden in `img/`.
 
-**De geschiedenis is nog niet opgeschoond.** In `.git` staan nog zestien blobs van de oude, grote
-PDF, samen zo'n 310 MB van de 400. Beslist op 9 september 2026: dat wacht tot de syllabus af is,
-want `git filter-repo` herschrijft elke commit-hash en vraagt een force-push. **Nooit via Git LFS**,
+**De geschiedenis is op 10 september 2026 opgeschoond, en `.git` ging van 492 naar 76 MB.** Er stonden
+27 versies van de PDF in, samen 451 MiB; de 26 oude zijn met `git filter-repo --strip-blobs-with-ids`
+gestript en er is force-gepusht. Er bestaat geen tweede kloon, bevestigd door de lector. De
+reservekopie van voor de ingreep is `../ICEES-backup-20260910.bundle`, een `git bundle --all` van 136
+MB; die is met `git bundle verify` nagekeken voor er iets herschreven werd. **Nooit via Git LFS**,
 want Pages lost LFS-pointers niet op en serveert dan het pointerbestand.
+
+**`--prune-empty never` is daarbij het enige dat je moet onthouden, want zonder die vlag verlies je
+commits en niets meldt het.** `filter-repo` gooit standaard elke commit weg die door het strippen leeg
+wordt, en dat waren hier de twee exportcommits die alleen de PDF droegen. Hun boodschap is precies de
+plaats waar de bladspiegelcontrole van die export staat, dus dat is de duurste soort verlies in deze
+repo. De eerste ronde deed dat, en ze is teruggedraaid uit de bundel en opnieuw gedraaid; 97 commits
+in en 97 commits uit.
+
+Wat je erna nakijkt is niet de grootte maar de inhoud: de tree van HEAD hoort dezelfde hash te houden
+(hier `0d9c7d3d`), en per commit hoort de `ls-tree -r` zonder de PDF-regel gelijk te blijven aan die
+van de bundel. Dat laatste liep hier over alle 97 commits met nul verschillen, en het aantal commits
+dat de PDF draagt ging van 67 naar 1. **Oudere commits dragen de syllabus-PDF dus niet meer**: wie
+een oude staat uitcheckt, exporteert hem opnieuw of haalt hem uit de bundel.
 
 **A handout's filename is an agreement with Orion, so it is fixed.** The lecture track has no
 landing page: its Orion topic links straight at
