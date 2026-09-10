@@ -22,3 +22,10 @@ package-lock.json
 # Bytecode van de scripts onder scripts/. Wordt vanzelf opnieuw gemaakt en
 # Pages serveert alleen wat getrackt is, dus dit hoort er niet bij.
 __pycache__/
+
+# De oplossingen van de labo-opdrachten, en de antwoordbestanden waaruit
+# scripts/export-oplossing.py ze maakt. Alles onder tdmts.github.io is publiek,
+# dus een oplossing die hier in git belandt, staat op het net. De lector laadt
+# ze met de hand op naar Orion. Het script zelf draagt geen antwoorden en zit
+# wel in git.
+_oplossingen/

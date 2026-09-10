@@ -281,7 +281,9 @@ def exacte_hoofdletters(doel):
 # maar het is nog geen pagina van deze site. Ze meetellen zou elke import de
 # volledige check rood maken en de Stop-hook laten roepen bij elke beurt tot de
 # laatste pagina omgezet is, waardoor je de echte fouten niet meer ziet.
-STAGING = {"_incoming", "_export"}
+# _oplossingen/ staat er om een andere reden bij: daar staan de ingevulde
+# oplossingen, die met opzet nooit gepubliceerd worden.
+STAGING = {"_incoming", "_export", "_oplossingen"}
 
 
 def html_paginas():
