@@ -158,9 +158,12 @@ bestaat faalt), en dat is nu weg: staat er een labo in dat niet bestaat, dan val
 
 Oordelen die hierbij gemaakt zijn, en die je mag terugdraaien:
 
-- **Het topic Syllabus is `Theorie/Syllabus/overview.html` en niet de PDF zelf.** DeN zet daar de PDF
-  neer. Hier staat op die pagina ook wat je met de syllabus doet, en die tekst heeft verder geen
-  plaats, dus ze blijft de ingang en de knop erop biedt de PDF aan.
+- **Het topic Syllabus is de PDF zelf, zoals in DeN.** Het was eerst `Theorie/Syllabus/overview.html`,
+  een pagina met een downloadknop en een alinea over wat je met de syllabus doet. Op 16 september
+  2026 teruggedraaid door de lector: het topic wijst nu naar
+  `downloads/Industriele-computers-en-embedded-systems-syllabus.pdf` en de pagina is geschrapt. Die
+  alinea (lees een hoofdstuk voor de les, gebruik de test jezelf achteraf) is daarmee weg, en dat is
+  aanvaard. Het topic houdt zijn ID: de sync wijzigt het doel van een bestaand topic.
 - **`Algemeen/Studiefiche.html` kreeg een topic, en dat is diezelfde dag teruggedraaid.** De
   redenering was dat de pagina door niets in deze repo gelinkt wordt, en dat Orion dus de enige
   plaats is waar ze te bereiken valt; de lector wilde ze daar niet. Het was **het enige topic van de
@@ -1280,9 +1283,9 @@ komt er geen tweede keer:
   Ze komen uit DeN, waar de bestaande syllabus bladzijde per bladzijde opgemeten is; het HOGENT-
   sjabloon is hetzelfde, maar `ICEES Syllabus 20250912.pdf` is er nooit naast gelegd. Wijkt de
   gedrukte PDF af van wat de student gewend is, kijk daar dan eerst.
-- **`Theorie/Syllabus/overview.html`** is de Orion-ingang van de theorietrack, geschreven voor dit
-  vak en niet uit DeN overgenomen. De hub ernaast, `Theorie/Syllabus/Theorie/reference.html`, is met
-  de overstap naar OrionSync geschrapt.
+- **De Orion-ingang van de theorietrack is de PDF zelf**, sinds 16 september 2026. Er stond eerst
+  een `Theorie/Syllabus/overview.html`, en de hub `Theorie/Syllabus/Theorie/reference.html`; allebei
+  zijn geschrapt.
 - **De module `syllabus` staat eerst in `reference.js`**, zoals in DeN. Een categorie is een
   hoofdstuk, een topic een sectie, en het hoofdstuknummer volgt uit de plaats in de lijst.
 
@@ -1303,7 +1306,7 @@ het bestand bij. De bronregel is `Intel Museum, Santa Clara`, want dat is wat na
 NOTITIES.md. Allebei handmatig, dus een herimport gooit ze weg.
 
 **De hoofdstukpagina's krijgen geen topic, en dat is geen vergetelheid.** De theorietrack heeft in
-Orion een enkel menu-item, `Theorie/Syllabus/overview.html`, en dat biedt de PDF aan. De 128
+Orion een enkel menu-item, en dat is de PDF. De 128
 hoofdstukpagina's staan wel op de spiegel, want de repo publiceert ze, maar ze staan niet in
 `orion.json` en er is dus geen weg naartoe. Bevestigd op 7 september 2026: **van de hele syllabus is
 de PDF het enige dat de student te zien krijgt**, precies zoals de motivatie bij regel 13 al zei. De
