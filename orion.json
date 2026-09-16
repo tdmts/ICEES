@@ -46,11 +46,6 @@
           "title": "Theorie",
           "items": [
             {
-              "id": "assemblage-veiligheid",
-              "title": "Veiligheid, orde en netheid",
-              "page": "Labo/Assemblage/Theorie/Veiligheid.html"
-            },
-            {
               "id": "assemblage-componenten",
               "title": "De componenten van een pc",
               "page": "Labo/Assemblage/Theorie/Componenten.html"

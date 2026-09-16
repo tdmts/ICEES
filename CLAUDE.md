@@ -527,7 +527,7 @@ wipes the read-flags of every student who has already been in it.
 
 | Folder | Theory pages | Spiekblad |
 |---|---|---|
-| `Labo/Assemblage/` | Veiligheid, Componenten, BiosUefi, TestJezelf | no |
+| `Labo/Assemblage/` | Componenten, BiosUefi, TestJezelf | no |
 | `Labo/Virtualiseren/` | WatIsVirtualisatie, VirtueleHardware, SchijfEnGeheugen, SoftwareInDeGuest, TestJezelf | no |
 | `Labo/Partitioneren/` | Partitietabellen, Bestandssystemen, Spiekblad, TestJezelf | yes |
 | `Labo/LinuxBasis/` | LinuxEnDistributies, DeTerminal, CommandoEnOpties, DeBestandsboom, GebruikersEnRechten, Spiekblad, TestJezelf | yes |
@@ -742,7 +742,7 @@ the same for the remaining modules.
 **A theory page whose subject is a procedure the recording shows does not survive that move.**
 `Theorie/Demontage.html` and `Theorie/Assemblage.html` were both a numbered list of the same steps
 the opname demonstrates, so they were deleted rather than trimmed, and Assemblage's theory reeks is
-now Veiligheid, Componenten, BiosUefi. `Theorie/BiosUefi.html` stayed: what it carries (BIOS against
+now Componenten, BiosUefi (Veiligheid went on 16 September 2026, see below). `Theorie/BiosUefi.html` stayed: what it carries (BIOS against
 UEFI, the POST, MBR against GPT, and the difference between the opstartvolgorde and the bootmenu) is
 in no recording, and `BiosUefi/Opdracht.html` asks about that last one by name. The test to apply to
 the other five modules is that one, not "did a recording move away from here".
@@ -758,11 +758,15 @@ motherboard. The opgave only ever implied this, in one line of the inventaris do
 en koelvin mag je er op laten"), and this repo had turned that into its opposite: the deleted
 `Theorie/Demontage.html` told the student to take the cooler off and lift the processor out, and
 `Theorie/Veiligheid.html` explained how to hold a loose processor. Corrected on 4 September 2026 by
-the lecturer. It is now a rule in two places, because a student in the Opdracht entry has not
-necessarily read the Theorie entry: an info-box on `Theorie/Veiligheid.html`, where the labo
-afspraken live, and one on `Inventaris/Opdracht.html`, beside the photo of the processor. The two
-reasons are the koelpasta that lifts the processor with the cooler and the AM4 pins that bend under
-a finger; both are in the Veiligheid box.
+the lecturer. It was a rule in two places, an info-box on `Theorie/Veiligheid.html` and one on
+`Inventaris/Opdracht.html`, and **since 16 September 2026 it is only the second**, which by now
+is a line in a list ("De processor en de koeler laat je op het moederbord zitten") and no longer
+carries the two reasons, the koelpasta and the AM4 pins. The lecturer then deleted the page Veiligheid, orde en netheid (topic 79538 with
+it), and the first two questions of `Theorie/TestJezelf.html`, whose answers only that page carried:
+why the power cable stays out while you work inside the case, and touching the metal of the case
+against static charge. The zelftest went from 23 to 21 questions. The rule that the power goes back on
+only after a lector checked the work still stands on `overview.html`; the statische lading is on no
+page any more.
 
 Restored in the same pass: each of the three verslag blocks says again that the photo with the
 studentenkaart is the proof the opdracht was made in the lab. The original docx said so beside
