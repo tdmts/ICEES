@@ -93,11 +93,24 @@ DeN's `CLAUDE.md`, under the same heading. A lab is a module with, in this order
 | Theorie | a submodule: one topic per page under `Labo/<Naam>/Theorie/`, Test jezelf last |
 | Downloads | a submodule, only where the lab has documents of its own (Assemblage, five datasheets) |
 | Opdracht | a submodule with the pages of that reading order, or one topic where there is only one page |
-| Indienen &lt;labo&gt; | a Brightspace dropbox, no page of ours |
+| Verslag &lt;labo&gt; | a Brightspace dropbox, no page of ours; a graded one is named as below |
 
 Assemblage hands in three times, so instead of one Opdracht submodule it has three loose topics,
 each with its dropbox under it. Linux Geavanceerd has five submodules: Theorie, Software installeren,
 and one per submission.
+
+**A dropbox topic carries the dropbox name as its title**, because Brightspace renames the folder to
+the title of the topic that links to it; the header of OrionSync's `src/structure.js` has the
+details. DeN's naming rule holds here too, and it was applied on 16 September 2026: a dropbox that
+gets a score ends its name in ` (!)` and is **named after its grade item**, so the menu, the folder
+and the gradebook all say the same thing, and one without a score is `Verslag <labo>`. In 15211 the
+three Assemblage dropboxes carry a grade item and are therefore `Inventaris (!)`, `BIOS  UEFI (!)`
+and `Installatie OS (!)`; the six others are `Verslag Virtualiseren` to `Verslag chgrp`.
+
+**The double space in `BIOS  UEFI (!)` is not a typo, and it is not right either.** The grade item
+carries it, most likely because a `/` is refused there, and the rule says the folder follows the
+grade item. Brightspace keeps the two spaces on a round trip, so the sync reads it back clean.
+Renaming both takes `npm run grades-rename` for the item and one word in `orion.json` for the folder.
 
 **That menu does not move when the iframe does,** and this is the constraint the navigation is built
 around. A link that swaps the iframe to another page leaves the menu pointing at a topic the student
@@ -149,9 +162,8 @@ Oordelen die hierbij gemaakt zijn, en die je mag terugdraaien:
   plaats, dus ze blijft de ingang en de knop erop biedt de PDF aan.
 - **`Algemeen/Studiefiche.html` krijgt een topic.** De pagina wordt door niets in deze repo gelinkt,
   en Orion is de enige plaats waar ze te bereiken valt.
-- **De dropboxmappen houden hun huidige naam**, dus er wordt niets hernoemd. Ze zijn onderling niet
-  gelijkvormig (`Indienen Inventaris (!)` naast `Opdracht: chmod`); dat rechttrekken hernoemt de map
-  in Brightspace en is dus jouw keuze, niet die van een opruimronde.
+- **De negen dropboxmappen zijn hernoemd naar de regel van DeN**, dezelfde dag nog, nadat de lector
+  ernaar vroeg. Ze heetten `Indienen Inventaris (!)` naast `Opdracht: chmod`; zie de regel hierboven.
 - **De 127 blurbs in `reference.js` zijn geschrapt**, zoals DeN dat al gedaan had. Niets las ze nog,
   en een nieuw hoofdstuk had er weer moeten krijgen voor een veld zonder lezer. Regel 2 eist nu id,
   name en href.

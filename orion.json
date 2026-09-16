@@ -110,7 +110,7 @@
         },
         {
           "id": "assemblage-indienen-inventaris",
-          "dropbox": "Indienen Inventaris (!)"
+          "dropbox": "Inventaris (!)"
         },
         {
           "id": "assemblage-opdracht-biosuefi",
@@ -119,7 +119,7 @@
         },
         {
           "id": "assemblage-indienen-biosuefi",
-          "dropbox": "Indienen BIOS / UEFI (!)"
+          "dropbox": "BIOS  UEFI (!)"
         },
         {
           "id": "assemblage-opdracht-installatieos",
@@ -128,7 +128,7 @@
         },
         {
           "id": "assemblage-indienen-installatieos",
-          "dropbox": "Indienen Installatie OS (!)"
+          "dropbox": "Installatie OS (!)"
         }
       ]
     },
@@ -200,7 +200,7 @@
         },
         {
           "id": "virtualiseren-indienen",
-          "dropbox": "Indienen Virtualiseren"
+          "dropbox": "Verslag Virtualiseren"
         }
       ]
     },
@@ -277,7 +277,7 @@
         },
         {
           "id": "partitioneren-indienen",
-          "dropbox": "Indienen Partitioneren"
+          "dropbox": "Verslag Partitioneren"
         }
       ]
     },
@@ -389,7 +389,7 @@
         },
         {
           "id": "linuxbasis-indienen",
-          "dropbox": "Opdracht: Linux basis"
+          "dropbox": "Verslag Linux Basis"
         }
       ]
     },
@@ -525,7 +525,7 @@
             },
             {
               "id": "linuxgeavanceerd-indienen-chmod",
-              "dropbox": "Opdracht: chmod"
+              "dropbox": "Verslag chmod"
             }
           ]
         },
@@ -550,7 +550,7 @@
             },
             {
               "id": "linuxgeavanceerd-indienen-chown",
-              "dropbox": "Opdracht: chown"
+              "dropbox": "Verslag chown"
             }
           ]
         },
@@ -575,7 +575,7 @@
             },
             {
               "id": "linuxgeavanceerd-indienen-chgrp",
-              "dropbox": "Opdracht: chgrp"
+              "dropbox": "Verslag chgrp"
             }
           ]
         }
