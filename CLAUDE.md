@@ -77,9 +77,10 @@ gelinkt, en dat is geen vergetelheid.** Beslist op 7 september 2026. `Planning.h
 `Evaluatie.html` hangen aan elke hub omdat een labo er iets over te zeggen heeft: wanneer je werkt
 en hoe het meetelt. Die twee andere gaan over het vak in zijn geheel en niet over een labo, dus een
 regel eronder op elke hub is drie kopieen van dezelfde zin en een vierde plaats waar iets kan
-verouderen. Hoe de student ze bereikt ligt in Orion en niet hier; wat deze repo doet is ze
-publiceren. **Voeg er dus geen link naartoe toe vanaf een `overview.html`**, net zomin als bij de
-syllabushub.
+verouderen. Hoe de student ze bereikt ligt in Orion en niet hier. **Voeg er dus geen link naartoe
+toe vanaf een `overview.html`**, net zomin als bij de syllabushub. Van de twee wordt alleen
+`Studiemateriaal.html` nog gepubliceerd: de studiefiche is op 16 september 2026 uit Orion EN uit de
+spiegel gehaald, zie de regel daarover verderop.
 
 ## De indeling in Orion, en waarom niets zijwaarts linkt
 
@@ -160,8 +161,22 @@ Oordelen die hierbij gemaakt zijn, en die je mag terugdraaien:
 - **Het topic Syllabus is `Theorie/Syllabus/overview.html` en niet de PDF zelf.** DeN zet daar de PDF
   neer. Hier staat op die pagina ook wat je met de syllabus doet, en die tekst heeft verder geen
   plaats, dus ze blijft de ingang en de knop erop biedt de PDF aan.
-- **`Algemeen/Studiefiche.html` krijgt een topic.** De pagina wordt door niets in deze repo gelinkt,
-  en Orion is de enige plaats waar ze te bereiken valt.
+- **`Algemeen/Studiefiche.html` kreeg een topic, en dat is diezelfde dag teruggedraaid.** De
+  redenering was dat de pagina door niets in deze repo gelinkt wordt, en dat Orion dus de enige
+  plaats is waar ze te bereiken valt; de lector wilde ze daar niet. Het was **het enige topic van de
+  94 dat de sync zelf verzonnen heeft** in plaats van te adopteren (79535 in 15211): `Planning`,
+  `Studiemateriaal` en `Evaluatie` stonden er al voor de overstap en zijn geadopteerd. De lector
+  heeft het topic met zijn bestand erbij in Content gewist, het item is uit `orion.json` gehaald, en
+  de sync heeft zijn record daarna vanzelf vergeten. Dat laatste is `forget` in OrionSync's
+  `src/structure.js`, en daar is **geen `--prune` voor nodig**: een gewone `--apply` volstaat, want
+  het topic was in Brightspace al weg.
+- **En de pagina wordt sindsdien ook niet meer gespiegeld.** Ze staat in de `exclude` van ICEES in
+  `../OrionSync/courses.json`, want stap 1 van de sync zet een bestand dat in de cursus ontbreekt
+  bij elke run terug ("A file missing from the course is uploaded whatever the state says"), en dat
+  zou de verwijdering van de lector elke keer ongedaan maken. Het is daarmee **de enige pagina die
+  wel in git staat en niet gepubliceerd wordt**; ze is dus ook iets anders dan de 128
+  hoofdstukpagina's van de syllabus, die wel op de spiegel staan en alleen geen topic hebben. Zet er
+  dus geen topic voor terug, en haal ze niet uit de exclude zonder allebei.
 - **De negen dropboxmappen zijn hernoemd naar de regel van DeN**, dezelfde dag nog, nadat de lector
   ernaar vroeg. Ze heetten `Indienen Inventaris (!)` naast `Opdracht: chmod`; zie de regel hierboven.
 - **De 127 blurbs in `reference.js` zijn geschrapt**, zoals DeN dat al gedaan had. Niets las ze nog,
@@ -171,6 +186,16 @@ Oordelen die hierbij gemaakt zijn, en die je mag terugdraaien:
 **Twee topics konden hun ID niet houden**, want een topic verhuist in Brightspace niet naar een
 submodule: Opdracht [71034] van Virtualiseren en Opdracht [71038] van Partitioneren. Al de rest is
 geadopteerd.
+
+**Een zin die zegt WAAR een document staat, verouderde stil bij deze overstap.** De vijf datasheets
+van Assemblage hangen sinds `orion.json` in een eigen submodule Downloads, en twee pagina's bleven
+zeggen dat je ze bij de Theorie vindt: de lead van `Inventaris/Opdracht.html` en een `li` van
+`BiosUefi/Opdracht.html`. De lector heeft de eerste op 16 september 2026 rechtstreeks in Brightspace
+rechtgezet, waar de sync ze als conflict meldde; ze is met `--take` teruggehaald en de tweede is hier
+met de hand meegegaan. **Geen enkele regel van de contentcheck valt hierover**, want de zin noemt een
+menu-item en geen bestand, en hij bleef grammaticaal. Grep na een herindeling dus op "bij de", en
+vergeet daarbij de `<!-- verslag -->` blokken niet: de lead van `Inventaris/Opdracht.html` staat op
+de eerste bladzijde van het verslag, dus regel 6 eist een nieuwe docx zodra je eraan raakt.
 
 **De oude Brightspace-inhoud van labo 6 en 7 blijft staan, en dat is een beslissing.** Labo Linux
 Basis en Linux Geavanceerd zijn nooit in Orion gezet, dus daar staat nog de ingevoerde
