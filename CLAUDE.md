@@ -197,13 +197,26 @@ menu-item en geen bestand, en hij bleef grammaticaal. Grep na een herindeling du
 vergeet daarbij de `<!-- verslag -->` blokken niet: de lead van `Inventaris/Opdracht.html` staat op
 de eerste bladzijde van het verslag, dus regel 6 eist een nieuwe docx zodra je eraan raakt.
 
-**De oude Brightspace-inhoud van labo 6 en 7 blijft staan, en dat is een beslissing.** Labo Linux
-Basis en Linux Geavanceerd zijn nooit in Orion gezet, dus daar staat nog de ingevoerde
-Chamilo-inhoud: 29 en 23 pagina's, een per commando. Die 52 pagina's laden
-`https://tdmts.github.io/OrionCSS/style.css` en houden verify dus op NO-GO; de lector beslist later
-wat ermee gebeurt. Noem ze bij naam in plaats van er werk voor voor te stellen. De twee
-embedded-modules staan om dezelfde reden buiten `orion.json`, en die dragen ons adres niet, dus die
-blokkeren niets.
+**De oude Brightspace-inhoud van labo 6 en 7 gaat weg, met de hand, beslist 16 september 2026.**
+Labo Linux Basis [36869] en Linux Geavanceerd [36870] zijn nooit in Orion gezet, dus bij de overstap
+zijn de modules geadopteerd en de nieuwe topics ERIN gemaakt, naast de ingevoerde Chamilo-inhoud. Wat
+daar niet van de sync is, telt 63 topics, en die zijn niet van een soort:
+
+| Soort | Aantal | Wat ermee gebeurt |
+|---|---|---|
+| Chamilo-pagina's, laden `tdmts.github.io/OrionCSS/style.css` | 52 | gewist |
+| Dropbox-quicklinks, elk een dubbel van een nieuw topic op dezelfde rCode | 4 | gewist; de map blijft |
+| Quiz-quicklinks Test jezelf (36907, 36908) | 2 | gewist; de quiz blijft in Quizzen |
+| Oplossing-pdf's in twee submodules Oplossingen | 4 | nieuw topic op hetzelfde bestand bovenaan de module, zoals labo 3 tot 5 |
+| lti 41255, Test labo Linux basis + geavanceerd | 1 | blijft staan |
+
+**`--prune` raakt hier niets**: die wist alleen wat de sync zelf gemaakt heeft, en deze 63 stonden
+nooit in `orion.json`. Een scriptje op `bs.deleteTopic` kon, maar valt buiten het contract van de
+sync, en de lector koos de hand. **De 52 pagina's waren exact de 52 fouten van verify**, dus
+`npm run verify -- ICEES --course 15211` hoort daarna GO te zeggen, en dat is de toets of het af is.
+De inventaris maak je opnieuw door de toc te lezen en elk ID af te toetsen tegen `structure` in
+`../OrionSync/.sync-state/15211-ICEES.json`. De twee embedded-modules staan ook buiten `orion.json`,
+maar dragen ons adres niet en blokkeren niets.
 
 ## Relation to tdmts/DeN
 
