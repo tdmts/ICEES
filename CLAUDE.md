@@ -5,13 +5,15 @@ Guidance for Claude Code (claude.ai/code) when working in this repository.
 ## What this is
 
 The course site for **Industriële computers en embedded systems** (Dutch, "je"-vorm), one of the
-Orion course repos under `tdmts/`. Static HTML on **GitHub Pages** at
-`https://tdmts.github.io/ICEES/`, iframed into a Brightspace/Orion topic through
-[pasteInOrion.html](pasteInOrion.html) (edit only the iframe `src` per topic).
+Orion course repos under `tdmts/`. Static HTML, committed to the Brightspace course itself by
+**OrionSync** (`../OrionSync`, whose CLAUDE.md covers the sync, verify and adopt). Live course
+**15211**, sandbox 8608.
 
-> **The only file ever uploaded to Orion is [pasteInOrion.html](pasteInOrion.html).** Everything
-> else is served from GitHub Pages. Inside it, the iframe `src` must point at a
-> `https://tdmts.github.io/ICEES/...` URL, not a local file.
+> **Brightspace serves every page, and no page refers to an address of ours outside the course.**
+> That is the rule everything here follows from: `tdmts.github.io` and `github.com/tdmts` appear
+> nowhere in a page, `orion.json` is the menu, and GitHub Pages goes off at the end.
+> [pasteInOrion.html](pasteInOrion.html) is the leftover of the old way and is excluded from the
+> mirror.
 
 Six labs, each an independent module: Assemblage + BIOS/UEFI, Virtualiseren, Partitioneren, Linux
 Basis, Linux Geavanceerd, Embedded Systems. Beside them a theory track (a syllabus the student
@@ -23,9 +25,8 @@ prints) and a lecture track (six hoorcolleges, of which five have a deck).
 stappenplan pages that hang under it; `Labo/Partitioneren/` holds its hub, two theory pages, a
 spiekblad, a zelftest, one `Opdracht.html` and the four stappenplan pages that hang under it;
 `Labo/LinuxBasis/` and `Labo/LinuxGeavanceerd/` are the two described under their own heading below,
-the second one with five reeksen. `Algemeen/` holds the four pages that sit beside both tracks. The
-syllabus is complete at sixteen chapters. `check-content.py` and `check-nav.js` are both green with no
-warnings.
+the second one with five submodules. `Algemeen/` holds the four pages that sit beside both tracks.
+The syllabus is complete at sixteen chapters. `check-content.py` is green with no warnings.
 
 **Labo Embedded Systems is not started, and that is a decision of 10 September 2026 and not a
 backlog.** Its topics are staged in `_incoming/`, the eleven hand-rewritten pages of `embedded/`
@@ -34,8 +35,9 @@ theory ahead of the opgave means writing towards an assignment nobody has read. 
 opgave lands.
 
 No build system and no test suite: you edit HTML/CSS/JS directly. `scripts/` holds eight Python
-scripts, of which `check-content.py` and `import-brightspace.py` are stdlib only, plus one Node
-script, `check-nav.js`, which needs `jsdom` and is the only reason a `node_modules/` may exist here.
+scripts, of which `check-content.py` and `import-brightspace.py` are stdlib only. There is no Node
+script left, so `package.json`, `package-lock.json` and `node_modules/` are dead weight on disk and
+in nobody's way.
 
 ## De studiefiche, en waar ze het laatste woord heeft
 
@@ -81,25 +83,89 @@ syllabushub.
 
 ## De indeling in Orion, en waarom niets zijwaarts linkt
 
-Identical to DeN, whose `CLAUDE.md` carries the full reasoning. Every rule below hangs off this
-table:
+[`orion.json`](orion.json) is the menu, and **every page is its own topic in it**. Its format and
+what the sync does with it are in the header of OrionSync's `src/structure.js`; the reasoning is in
+DeN's `CLAUDE.md`, under the same heading. A lab is a module with, in this order:
 
-| Menu-item | Pagina |
+| Menu-item | Wat |
 |---|---|
 | Inleiding | `Labo/<Naam>/overview.html` |
-| Theorie | `Labo/<Naam>/Theorie/reference.html` |
-| Opdracht | `Labo/<Naam>/Opdracht.html` |
-| Verslag indienen | a Brightspace dropbox, no page of ours |
+| Theorie | a submodule: one topic per page under `Labo/<Naam>/Theorie/`, Test jezelf last |
+| Downloads | a submodule, only where the lab has documents of its own (Assemblage, five datasheets) |
+| Opdracht | a submodule with the pages of that reading order, or one topic where there is only one page |
+| Indienen &lt;labo&gt; | a Brightspace dropbox, no page of ours |
 
-A lab is four Orion topics, not one, and that menu does not move when the iframe does. Navigating
-downward inside an entry is fine: the menu is then coarser than where you are, not wrong.
-Navigating sideways leaves the menu pointing at a page the student is not reading. So **nothing in
-this site links sideways inside the iframe**: you either name the entry and drop the link, or open
-it with `target="_blank"`. Rule 10 of the content check fails a same-frame link between two entries.
+Assemblage hands in three times, so instead of one Opdracht submodule it has three loose topics,
+each with its dropbox under it. Linux Geavanceerd has five submodules: Theorie, Software installeren,
+and one per submission.
 
-`reeks` in [reference.js](reference.js) is the machine-readable version of that table. One reeks is
-one menu entry, and every engine stays inside it. A page at the top of a reeks gets no nav row:
-there is nothing above an Orion entry that this site may send you to.
+**That menu does not move when the iframe does,** and this is the constraint the navigation is built
+around. A link that swaps the iframe to another page leaves the menu pointing at a topic the student
+is not reading. So **no page links to another page inside the iframe.** Two ways to refer to one:
+
+- **Name it and drop the link.** `Algemeen/Evaluatie.html` names the five labs in its table without
+  linking them, and `InstallatieUbuntu.html` names Guest Additions, which is the topic right after it.
+- **`target="_blank"`.** For a page the student needs *while working*: the "Zie ..." links in a Test
+  jezelf. A new tab keeps the iframe, and so the menu, where it was. A PDF gets the same treatment.
+
+**There is no navigation of our own**: no hub page, no nav row, no "Volgende", no read-flags. Orion
+has its own previous and next, and records which topics a student opened. Rule 10 of the content
+check fails a same-frame link from any page in `orion.json`, and rule 2 fails a page under `Labo/`
+that `orion.json` does not list, because such a page has no topic and nobody can reach it.
+
+**`reeks` is the word this repo used for a menu entry before the switch, and it is history.** It
+lived on a category in `reference.js` and tied a reading order to one Orion topic. `orion.json` now
+carries that grouping as a submodule, one for one: where a section below draws "reeks theorie" and
+"reeks opdracht" beside each other, read a submodule Theorie and a submodule Opdracht. The engines
+that hung off it (`back-link.js`, `reference-dashboard.js`) are gone, and so are the five
+`Theorie/reference.html` hubs.
+
+## De overstap naar OrionSync, 16 september 2026
+
+De cursus stond op GitHub Pages en elk labo was vier Orion-topics met een wrapper per topic. Nu
+serveert Brightspace alles zelf en is **elke pagina een eigen topic**, dezelfde vorm die DeN en
+Microcontrollers al hebben. Beslist door de lector op 16 september 2026, met de afweging erbij dat de
+andere vorm (de reeks houden, met de hubs als pagina) minder werk was en drie cursussen met twee
+modellen zou achterlaten.
+
+Wat eruit ging: `back-link.js`, `reference-dashboard.js`, `reference-dashboard.css`, de vijf
+`Labo/<Naam>/Theorie/reference.html` hubs, `Theorie/Syllabus/Theorie/reference.html`, en
+`scripts/check-nav.js`, dat alleen bestond om te meten wat `back-link.js` in het DOM zette. De 208
+pagina's die `reference.js` en `back-link.js` laadden, laden nu niets meer van ons; de twintig
+syllabuspagina's met vragen houden `oplossingen.js`. `scripts/import-syllabus.py` schrijft die twee
+scriptregels ook niet meer in zijn sjabloon, dus een volgende hoofdstukimport brengt ze niet terug.
+
+Wat erin kwam: [`orion.json`](orion.json), 20 modules en 94 topics. Een reeks werd een submodule,
+een voor een. De 68 links die in de iframe naar een andere pagina gingen, kregen
+`target="_blank" rel="noopener"`, op twee na: `InstallatieUbuntu.html` noemt Guest Additions nu
+zonder link, want dat is het topic erna, en `Algemeen/Evaluatie.html` noemt de vijf labo's in zijn
+tabel zonder link. **Die tabel bewaakte zichzelf met regel 1** (een link naar een pagina die nog niet
+bestaat faalt), en dat is nu weg: staat er een labo in dat niet bestaat, dan valt er niets over.
+
+Oordelen die hierbij gemaakt zijn, en die je mag terugdraaien:
+
+- **Het topic Syllabus is `Theorie/Syllabus/overview.html` en niet de PDF zelf.** DeN zet daar de PDF
+  neer. Hier staat op die pagina ook wat je met de syllabus doet, en die tekst heeft verder geen
+  plaats, dus ze blijft de ingang en de knop erop biedt de PDF aan.
+- **`Algemeen/Studiefiche.html` krijgt een topic.** De pagina wordt door niets in deze repo gelinkt,
+  en Orion is de enige plaats waar ze te bereiken valt.
+- **De dropboxmappen houden hun huidige naam**, dus er wordt niets hernoemd. Ze zijn onderling niet
+  gelijkvormig (`Indienen Inventaris (!)` naast `Opdracht: chmod`); dat rechttrekken hernoemt de map
+  in Brightspace en is dus jouw keuze, niet die van een opruimronde.
+- **De blurbs in `reference.js` blijven staan**, 127 stuks, terwijl geen enkele lezer ze nog gebruikt.
+  Regel 2 eist ze, dus ze kunnen niet stil leeglopen. DeN heeft ze geschrapt.
+
+**Twee topics konden hun ID niet houden**, want een topic verhuist in Brightspace niet naar een
+submodule: Opdracht [71034] van Virtualiseren en Opdracht [71038] van Partitioneren. Al de rest is
+geadopteerd.
+
+**De oude Brightspace-inhoud van labo 6 en 7 blijft staan, en dat is een beslissing.** Labo Linux
+Basis en Linux Geavanceerd zijn nooit in Orion gezet, dus daar staat nog de ingevoerde
+Chamilo-inhoud: 29 en 23 pagina's, een per commando. Die 52 pagina's laden
+`https://tdmts.github.io/OrionCSS/style.css` en houden verify dus op NO-GO; de lector beslist later
+wat ermee gebeurt. Noem ze bij naam in plaats van er werk voor voor te stellen. De twee
+embedded-modules staan om dezelfde reden buiten `orion.json`, en die dragen ons adres niet, dus die
+blokkeren niets.
 
 ## Relation to tdmts/DeN
 
@@ -115,11 +181,9 @@ the quote that opens the Voorwoord. Read DeN's
 `CLAUDE.md` for the reasoning behind any shared part; read this section before you copy anything
 across, in either direction.
 
-**Whether the engines should live in a repo of their own is still open.** It gets decided once ICEES
-has its six modules and the three courses lie side by side: today every difference is a rewritten
-string, not a design choice. Two things already argue against a naive merge. `back-link.js` resolves
-its sibling manifest off `document.currentScript.src`, so moving it to a shared origin is a rewrite
-rather than a copy, and a shared engine makes every course's bug every course's bug.
+**Whether the engines should live in a repo of their own is settled by there being no engines left.**
+The three courses each keep `reference.js` for the syllabus order and `oplossingen.js` for the
+answers, and Orion does the rest. What is still shared and still copied is the eight scripts.
 
 | | DeN | ICEES |
 |---|---|---|
@@ -138,43 +202,36 @@ page split gets approved before anything is written.
 
 **A grouped lab gets a `Spiekblad.html`**: every command of that lab in one table, which the student
 keeps beside him while he works through the opdracht. Grouping by subject is right for reading and
-wrong for looking something up, and the spiekblad is what pays for it. It sits in the theory reeks,
-because it belongs to the menu entry Theorie.
+wrong for looking something up, and the spiekblad is what pays for it. It is a topic in the submodule
+Theorie, just before Test jezelf.
 
-**Kept identical on purpose,** so the engines stay mergeable: the `window.LAB_REFERENCE` global, the
-`reference.js` filename, the `reference.html` hub filename, and the
-`msDashboard:{labId}:theory:{topicId}` storage key.
-
-**The copied engines still carry DeN examples in their comments** (`RS485`, `ManagedSwitch`). Those
-are the cases that shaped the code and they are described accurately, but nothing in this repo is
-called that, so each file says so at the top. Replace them with this course's own once the modules
-under `Labo/` exist.
+**Kept identical on purpose**, so the two repos stay comparable: the `window.LAB_REFERENCE` global
+and the `reference.js` filename.
 
 ## Layout
 
 ```
+orion.json             the Orion menu: every module, submodule and topic
 Labo/<Naam>/
-    overview.html      the module hub: doelstellingen, studiemateriaal, evaluatie
+    overview.html      the Inleiding topic: doelstellingen, studiemateriaal, evaluatie
     Opdracht.html      landing page; the assignment itself is in a <!-- verslag --> comment
     Theorie/
-        reference.html the theory hub
         Spiekblad.html every command of this lab in one table
         *.html         one page per subject
 Theorie/Syllabus/      the theory track: the source of the syllabus PDF
 Hoorcollege/           the lecture decks: the source of the handout PDFs
 Algemeen/              studiefiche, planning, evaluatie en studiemateriaal, outside both tracks
 img/  datasheets/  downloads/  scripts/
-reference.js           the manifest of every theory page, per module
-back-link.js  reference-dashboard.js  reference-dashboard.css
-oplossingen.js         the reveal that shows an answer, on every page with questions
+reference.js           the manifest of the syllabus: the order of the printed document
+oplossingen.js         the reveal that shows an answer, on every syllabus page with questions
 ```
 
 **Named folders, not numbered ones.** The six labs are independent modules, so a number would assert
-an order that does not exist, and renaming a folder would break links and wipe `localStorage` flags.
+an order that does not exist, and renaming a folder would break every path in `orion.json`.
 
-**No XP.** A module is one assignment, not a list of small ones to tick off. `dashboard.js`,
-`exercises.js` and `checklist-sync.js` do not exist here, and `back-link.js` was already cut down to
-match in DeN.
+**No XP and no navigation of our own.** A module is one assignment, not a list of small ones to tick
+off. `dashboard.js`, `exercises.js` and `checklist-sync.js` never existed here, and `back-link.js`,
+`reference-dashboard.js` and `reference-dashboard.css` went with the switch to OrionSync.
 
 - `img/` — self-hosted images, descriptive filenames. Never hotlink Brightspace
   (`/content/enforced/...`): those paths break every academic year. Drawn diagrams are `.svg` here
@@ -261,21 +318,17 @@ Never copy or edit them here; a styling bug is reported there. `tdmts/OrionConte
 renders every component with its exact markup: read it before authoring rather than reproducing
 markup from memory.
 
-## The engines
+## The two scripts a page may load
 
-Copies of DeN's, whose `CLAUDE.md` documents each one in full.
+Besides OrionCSS, a page loads at most one script of ours, and only the syllabus does.
 
-- [reference.js](reference.js) → `window.LAB_REFERENCE.<module>` — the single source of truth for
-  every theory list. A page is added here, not in another page's HTML.
-- [reference-dashboard.js](reference-dashboard.js) `initReferenceHub('<module>'[, '<reeks>'])` —
-  renders the hub for one reeks, `theorie` by default.
-- [back-link.js](back-link.js) — self-running, no init. Injects one sticky nav row above the `<h1>`.
-  Everything it offers stays inside the current reeks. **A theory page must load `reference.js`** or
-  the page renders perfectly and only the forward link silently vanishes; rule 3 asserts the include.
 - [oplossingen.js](oplossingen.js) — self-running, syllabus only. Folds the answer of every question
-  on the page into a `spoiler-container`.
+  on the page into a `spoiler-container`. Twenty pages load it.
+- [reference.js](reference.js) — **no page loads it.** It is read by
+  `scripts/export-syllabus.py` for the order and numbering of the printed document, and by rule 2 of
+  the content check. Its header carries the format.
 
-Progress is `localStorage` only, one flag: `msDashboard:{moduleId}:theory:{topicId}`.
+A labo page therefore loads nothing of ours, and Orion tracks what a student opened.
 
 ## The three tracks
 
@@ -317,14 +370,15 @@ same deck with the answers filled in and is not the one to import.
 [`scripts/check-content.py`](scripts/check-content.py) is the single "is this repo publishable"
 check. Run it before finishing any content edit; a `Stop` hook in
 [`.claude/settings.json`](.claude/settings.json) also runs it. Its docstring lists the sixteen rules.
-Two fail *silently* otherwise: **case** (Pages is case-sensitive, Windows is not) and **manifest
-completeness** (a theory page missing from `reference.js` is unreachable from the hub and earns no
-read-flag, and nothing about it looks wrong in a browser).
+Two fail *silently* otherwise: **case** (Brightspace serves the mirror case-sensitively, Windows is
+not) and **completeness** (a page under `Labo/` missing from `orion.json` gets no topic and is
+unreachable, and a syllabus page missing from `reference.js` is not printed; both open fine in a
+browser).
 
-[`scripts/check-nav.js`](scripts/check-nav.js) covers what only exists after `back-link.js` has run.
-It needs `npm install jsdom` and is deliberately **not** in the `Stop` hook: that must keep working
-on a clean checkout with nothing installed. Run it whenever you move a page between folders, rename
-one, or touch `back-link.js` or `reference.js`.
+Beside it stands OrionSync's own `npm run verify -- ICEES --course 15211`, which is read-only and
+says whether everything a student can open comes from the course itself. The two do not overlap:
+verify cannot see a link that a script builds at runtime, and the content check cannot see the
+course.
 
 **One rule was changed on the way over from DeN, and it is the only one.** An empty manifest and a
 broken manifest both parse to zero modules, and DeN failed on both with "geen enkele module
@@ -365,8 +419,8 @@ Labo Assemblage and both `Algemeen/` pages had a full style round on 4 September
 is the reference for what counts as factual here. The examples inside `SCHRIJFSTIJL.md` itself still
 name DeN pages.
 
-Filenames are **PascalCase Dutch nouns**: `Partitietabel.html`, `Opdracht.html`. The exceptions are
-the two hub filenames, `overview.html` and `reference.html`, which the engines match on.
+Filenames are **PascalCase Dutch nouns**: `Partitietabel.html`, `Opdracht.html`. The one exception is
+`overview.html`, the Inleiding of a lab, which `check-content.py` matches on.
 
 ## The six modules
 
@@ -425,11 +479,9 @@ Labo/EmbeddedSystems/InfoRaspberryPi/Opdracht.html
 Labo/EmbeddedSystems/CodesysDemonstratie/Opdracht.html
 ```
 
-Two consequences DeN paid for and this repo inherits, both of which failed silently there: a page is
-matched on its **resolved path** and not on its filename, so two `Opdracht.html` in one module cannot
-answer to each other's manifest entry, and the **manifest decides what is in the reading sequence,
-not the folder**, so a page outside `Theorie/` still gets a forward link and a read-flag when
-`reference.js` lists it. Both are covered by `scripts/check-nav.js` and by nothing else.
+A page is named in `orion.json` by its **path from the repo root**, so two `Opdracht.html` in one
+module cannot answer to each other's entry. And **`orion.json` decides what is in the menu, not the
+folder**, so a page outside `Theorie/` becomes a topic wherever the file puts it.
 
 `InfoRaspberryPi` reads like a page and is a real assignment: the student fills in the hostname,
 the username and the `os-release` of the image he just built, and hands that in. It is a dropbox in
@@ -645,9 +697,10 @@ grijpt op de bestandsnaam `Opdracht.html`: `opdracht_paginas()` in `check-conten
 die naam op de laatste pagina staan en zet je er een pagina onder een ANDERE naam voor, dan verandert
 er aan de scripts niets. Het omgekeerde (de laatste pagina hernoemen naar `ZelfstandigeOefening.html`)
 kost een scriptronde en levert hetzelfde op. `topic_van()` stuurt allebei naar het menu-item Opdracht,
-want ze staan los in de modulemap, dus het blijft een enkel Orion-topic en er verandert niets in
-Orion. `back-link.js` leidt de wortel af uit de eerste manifestregel van de reeks en niet uit de
-naam. Dezelfde vorm die `SoftwareInstalleren/Overzicht.html` al had.
+want ze staan los in de modulemap. Sinds de overstap naar OrionSync is elke pagina een eigen topic
+en bepaalt de volgorde in `orion.json` wat er eerst komt, dus de naam beslist niets meer over de
+volgorde; wat ze nog wel beslist, is welk script erop grijpt. Dezelfde vorm die
+`SoftwareInstalleren/Overzicht.html` al had.
 
 **Wat op zo'n `Overzicht.html` hoort, is wat te laat komt als het achteraan staat.** Concreet de
 materiaalvereisten en de waarschuwingen: welke machine je nodig hebt, welke opdracht je eerst
@@ -662,7 +715,7 @@ eerste bladzijde van het verslag terecht (regel 8), dus ze moet daar op zichzelf
 en Linux Basis dekte een enkele lead allebei de delen en is ze in tweeen geschreven.
 
 **Regel 12 ziet die nieuwe leads niet, en dat is een gat.** `leadpaginas()` kijkt naar
-`overview.html`, `Theorie/reference.html` en elke `Opdracht.html`, dus de vijf leads van een
+`overview.html` en elke `Opdracht.html`, dus de vijf leads van een
 `Overzicht.html` (en die van `SoftwareInstalleren/Overzicht.html`) worden met niets vergeleken. Twee
 introducties van hetzelfde labo mogen elkaar nog altijd niet navertellen; hier bewaakt alleen je
 eigen lezing dat. Zelfde soort stille bewaker als regel 11.
@@ -694,8 +747,8 @@ gebouwd wordt). Those two carry the three questions the verslag asks, so the zel
 theory pages only, and no answer in it links sideways.
 
 ```
-Theorie (reeks theorie)          Opdracht (reeks opdracht)
-  Theorie/reference.html           Opdracht.html          <- root of the reeks
+Submodule Theorie                Submodule Opdracht
+                                   Opdracht.html          <- first in the submodule
   WatIsVirtualisatie                 VirtueleMachineAanmaken.html
   VirtueleHardware                   InstallatieUbuntu.html
   SchijfEnGeheugen                   GuestAdditions.html
@@ -703,13 +756,11 @@ Theorie (reeks theorie)          Opdracht (reeks opdracht)
   TestJezelf
 ```
 
-**The three stappenplan pages sit loose in the module folder, and that is not cosmetic.**
-`topic_van()` in `check-content.py` reads the Orion entry off the *path*: a page in a subfolder
-answers to that folder's name, and what lies loose in the module folder is the opdracht. A folder
-`Opdracht/` beside `Opdracht.html` therefore reads as two different menu entries (`Opdracht` against
-`opdracht`) and rule 10 would fail on any link between them, while they are one entry. DeN's
-`ManagedSwitch/PacketTracer/` escapes that only because its `Opdracht.html` lives *inside* the
-folder, which is what a lab with two submissions needs and this one does not.
+**The three stappenplan pages sit loose in the module folder.** That was load-bearing before the
+switch, because `check-content.py` then read the Orion entry off the path. Since `orion.json` says
+where a page lands, the folder decides nothing about the menu any more, and the four pages are one
+submodule Opdracht whatever folder they sit in. Moving them now would only cost every path in
+`orion.json` and in the report the students already have.
 
 **A stappenplan page links to theory with `target="_blank"`**, which is what rule 10 leaves open and
 what DeN already does for its Packet Tracer exercises: je kijkt het na terwijl je bezig bent. There
@@ -751,8 +802,8 @@ list of steps the student performs in GParted, so they moved to the opdracht ree
 pages. What came off them and stayed behind is the why.
 
 ```
-Theorie (reeks theorie)          Opdracht (reeks opdracht)
-  Theorie/reference.html           Opdracht.html          <- root of the reeks
+Submodule Theorie                Submodule Opdracht
+                                   Opdracht.html          <- first in the submodule
   Partitietabellen                   Oefenmachine.html
   Bestandssystemen                   MbrPartities.html
   Spiekblad                          ExtendedEnLogisch.html
@@ -810,7 +861,7 @@ line or on top of a hatch pattern. Headless Edge is enough and needs no install:
 ```
 
 The same command with `--virtual-time-budget=6000` and a tall window screenshots a whole page,
-OrionCSS and `back-link.js` included.
+OrionCSS included.
 
 **One figure comes out of the syllabus Word**, extracted from `word/media/` and copied to `img/` as
 `partitioneren-schijfbeheer-windows.png` (image47, Schijfbeheer met System Reserved, C: en DATA).
@@ -873,8 +924,8 @@ Embedded Systems, and it is sharper than the one Virtualiseren and Partitioneren
 a numbered list of steps" but "does this page depend on what the previous page left behind".
 
 ```
-Theorie (reeks theorie)          Opdracht (reeks opdracht)
-  Theorie/reference.html           Opdracht.html          <- root of the reeks
+Submodule Theorie                Submodule Opdracht
+                                   Opdracht.html          <- first in the submodule
   LinuxEnDistributies                TerminalOpenen.html
   DeTerminal                         Navigeren.html
   CommandoEnOpties                   MappenEnBestanden.html
@@ -953,8 +1004,8 @@ a whole submodule. The theory reeks holds begrippen, the opdracht reeksen hold t
 this lab adds a third kind of reeks.
 
 ```
-Theorie (reeks theorie)            Software installeren (reeks software)
-  Theorie/reference.html             SoftwareInstalleren/Overzicht.html   <- wortel
+Submodule Theorie                  Submodule Software installeren
+                                     SoftwareInstalleren/Overzicht.html   <- eerste
   GebruikersEnGroepen                  UitDeWinkel
   Rechten                              EigenRepository
   SoftwareUitDeRepository              DebBestand
@@ -1135,8 +1186,9 @@ komt er geen tweede keer:
   Ze komen uit DeN, waar de bestaande syllabus bladzijde per bladzijde opgemeten is; het HOGENT-
   sjabloon is hetzelfde, maar `ICEES Syllabus 20250912.pdf` is er nooit naast gelegd. Wijkt de
   gedrukte PDF af van wat de student gewend is, kijk daar dan eerst.
-- **`Theorie/Syllabus/overview.html` en `Theorie/Syllabus/Theorie/reference.html`** zijn de twee
-  Orion-ingangen van de theorietrack, geschreven voor dit vak en niet uit DeN overgenomen.
+- **`Theorie/Syllabus/overview.html`** is de Orion-ingang van de theorietrack, geschreven voor dit
+  vak en niet uit DeN overgenomen. De hub ernaast, `Theorie/Syllabus/Theorie/reference.html`, is met
+  de overstap naar OrionSync geschrapt.
 - **De module `syllabus` staat eerst in `reference.js`**, zoals in DeN. Een categorie is een
   hoofdstuk, een topic een sectie, en het hoofdstuknummer volgt uit de plaats in de lijst.
 
@@ -1156,22 +1208,21 @@ het bestand bij. De bronregel is `Intel Museum, Santa Clara`, want dat is wat na
 **de toeschrijving aan Gordon Moore die je overal ziet, klopt niet**, en de redenering staat in
 NOTITIES.md. Allebei handmatig, dus een herimport gooit ze weg.
 
-**De syllabushub wordt met opzet door niets gelinkt, en dat is geen vergetelheid.** De
-theorietrack heeft in Orion een enkel menu-item, `Theorie/Syllabus/overview.html`, en dat biedt de
-PDF aan. `Theorie/Syllabus/Theorie/reference.html` en de hoofdstukpagina's eronder zijn op de site
-dus niet bereikbaar. Bevestigd op 7 september 2026: **van de hele syllabus is de PDF het enige dat
-de student te zien krijgt**, precies zoals de motivatie bij regel 13 al zei. De HTML is de bron
-waaruit gedrukt wordt, niet een tweede kanaal ernaast. DeN heeft hetzelfde gat en om dezelfde reden.
+**De hoofdstukpagina's krijgen geen topic, en dat is geen vergetelheid.** De theorietrack heeft in
+Orion een enkel menu-item, `Theorie/Syllabus/overview.html`, en dat biedt de PDF aan. De 128
+hoofdstukpagina's staan wel op de spiegel, want de repo publiceert ze, maar ze staan niet in
+`orion.json` en er is dus geen weg naartoe. Bevestigd op 7 september 2026: **van de hele syllabus is
+de PDF het enige dat de student te zien krijgt**, precies zoals de motivatie bij regel 13 al zei. De
+HTML is de bron waaruit gedrukt wordt, niet een tweede kanaal ernaast. DeN doet hetzelfde en om
+dezelfde reden.
 
-Laat het dus staan, en repareer het niet: een tweede Orion-topic of een link vanaf `overview.html`
-zet een leeskanaal open dat niemand onderhoudt en dat naast de PDF een tweede waarheid wordt.
+Laat het dus staan, en repareer het niet: een topic per hoofdstuk zet een leeskanaal open dat
+niemand onderhoudt en dat naast de PDF een tweede waarheid wordt.
 
-**Het manifest blijft daarom wel nodig, en om een andere reden dan de hub.**
-`scripts/export-syllabus.py` leest `window.LAB_REFERENCE.syllabus` voor de volgorde en de nummering
-van het gedrukte document, en regel 2 van de contentcheck eist dat elke pagina onder een module erin
-staat. `reference.js` is hier dus de inhoudsopgave van de PDF, en de hub is wat er toevallig ook mee
-te tekenen valt. `back-link.js` op een hoofdstukpagina is om dezelfde reden geen fout: hij hoort bij
-het sjabloon van de importer en wordt in de gedrukte bundel niet geladen.
+**Het manifest blijft wel nodig.** `scripts/export-syllabus.py` leest `window.LAB_REFERENCE.syllabus`
+voor de volgorde en de nummering van het gedrukte document, en regel 2 van de contentcheck eist dat
+elke pagina onder `Theorie/Syllabus/Theorie/` erin staat. `reference.js` is hier dus de inhoudsopgave
+van de PDF en verder niets: geen enkele pagina laadt het bestand nog.
 
 **Een sectie Studievragen achteraan een hoofdstuk wordt `TestJezelf.html` met de kop "Test jezelf".**
 In deze Word heet het woord Studievragen twee dingen: vooraan het kader naast Kernpunten (dat samen
@@ -1386,9 +1437,9 @@ is plaats om te schrijven. De ondermarge van een tabel is geen knop om dat mee b
 staat in de gedeelde `table`-regel en geldt voor elk hoofdstuk.
 
 **De importer schrijft een gewone `<ol>` en laadt `oplossingen.js` niet.** Een vragenlijst wordt met
-de hand een `<ol class="vragen">`, en de pagina krijgt met de hand `<script src=".../oplossingen.js">`
-onder `back-link.js`. Zonder het eerste ziet de export geen vragen en drukt ze zwijgend geen
-Oplossingen; het tweede vangt regel 14 wel op.
+de hand een `<ol class="vragen">`, en de pagina krijgt met de hand
+`<script src=".../oplossingen.js">` onderaan de body. Zonder het eerste ziet de export geen vragen en
+drukt ze zwijgend geen Oplossingen; het tweede vangt regel 14 wel op.
 
 **Een studievraag die een imperatief is, krijgt een punt en geen vraagteken.** Deze Word schrijft
 "Geef twee redenen waarom ...?" en "Geef enkele voordelen van UEFI?", en dat staat in het kader

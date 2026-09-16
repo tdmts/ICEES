@@ -38,7 +38,7 @@
                     beschrijvingen van 16 bytes, dus haar grootte ligt vast en antwoord c kan niet. Een extended
                     partitie neemt een van die vier plaatsen in en houdt haar logische partities zelf bij, waardoor
                     het aantal daarbinnen niet beperkt is. Zie
-                    <a href="Partitietabellen.html#primair-extended-logisch">Partitietabellen</a>.</p>
+                    <a href="Partitietabellen.html#primair-extended-logisch" target="_blank" rel="noopener">Partitietabellen</a>.</p>
             </div>
         </div>
 
@@ -58,7 +58,7 @@
                 <p><strong>Antwoord c.</strong> De nummers 1 tot 4 zijn voorbehouden voor de vier tabelplaatsen, ook
                     wanneer er maar twee gebruikt zijn. De logische partities beginnen daarom altijd bij 5.
                     <code>/dev/sdb1</code> zou de eerste partitie op een tweede schijf zijn. Zie
-                    <a href="Partitietabellen.html#schijfnamen">Partitietabellen</a>.</p>
+                    <a href="Partitietabellen.html#schijfnamen" target="_blank" rel="noopener">Partitietabellen</a>.</p>
             </div>
         </div>
 
@@ -79,7 +79,7 @@
                 <p><strong>Antwoord b.</strong> MBR gebruikt 32 bits per sectoradres, en 2<sup>32</sup> sectoren van
                     512 bytes komt neer op ongeveer 2 TB. GPT gebruikt er 64, waardoor die grens wegvalt. Het
                     bestandssysteem legt daarnaast zijn eigen grens op, maar die van NTFS en ext4 liggen een stuk
-                    hoger. Zie <a href="Partitietabellen.html#mbr">Partitietabellen</a>.</p>
+                    hoger. Zie <a href="Partitietabellen.html#mbr" target="_blank" rel="noopener">Partitietabellen</a>.</p>
             </div>
         </div>
 
@@ -98,7 +98,7 @@
             <div class="hidden">
                 <p><strong>Antwoord a.</strong> De omweg met een extended partitie bestaat om vier tabelplaatsen te
                     omzeilen, en GPT heeft er 128. Elke partitie in die lijst is gelijkwaardig, en GParted noemt ze
-                    allemaal primair. Zie <a href="Partitietabellen.html#gpt">Partitietabellen</a>.</p>
+                    allemaal primair. Zie <a href="Partitietabellen.html#gpt" target="_blank" rel="noopener">Partitietabellen</a>.</p>
             </div>
         </div>
 
@@ -120,7 +120,7 @@
                 <p><strong>Antwoord a.</strong> Partitioneren verdeelt de ruimte, formatteren legt de boekhouding aan
                     die bijhoudt waar een bestand staat. Zonder die inhoudstafel weet het besturingssysteem niet waar
                     het iets kan neerzetten of terugvinden. Zie
-                    <a href="Bestandssystemen.html#formatteren">Bestandssystemen</a>.</p>
+                    <a href="Bestandssystemen.html#formatteren" target="_blank" rel="noopener">Bestandssystemen</a>.</p>
             </div>
         </div>
 
@@ -140,7 +140,7 @@
                 <p><strong>Antwoord b.</strong> Een cluster is de kleinste hoeveelheid die aan één bestand toegewezen
                     wordt, dus wat er in dat cluster overblijft is slack. Grote clusters vergroten wel de maximale
                     partitiegrootte, en dat is precies de afweging die je bij het formatteren maakt. Zie
-                    <a href="Bestandssystemen.html#sector-en-cluster">Bestandssystemen</a>.</p>
+                    <a href="Bestandssystemen.html#sector-en-cluster" target="_blank" rel="noopener">Bestandssystemen</a>.</p>
             </div>
         </div>
 
@@ -160,7 +160,7 @@
                 <p><strong>Antwoord d.</strong> FAT32 wordt inderdaad overal gelezen, maar de grens van 4 GB per
                     bestand maakt het hier onbruikbaar. exFAT wordt door dezelfde drie besturingssystemen gelezen en
                     kent die grens niet. ext4 leest Windows niet zonder extra software. Zie
-                    <a href="Bestandssystemen.html#de-bestandssystemen">Bestandssystemen</a>.</p>
+                    <a href="Bestandssystemen.html#de-bestandssystemen" target="_blank" rel="noopener">Bestandssystemen</a>.</p>
             </div>
         </div>
 
@@ -179,7 +179,7 @@
             <div class="hidden">
                 <p><strong>Antwoord b.</strong> Er staan dus geen bestanden in. Windows doet hetzelfde in een bestand
                     op de systeemschijf, <code>pagefile.sys</code>, in plaats van in een aparte partitie. Zie
-                    <a href="Bestandssystemen.html#de-bestandssystemen">Bestandssystemen</a>.</p>
+                    <a href="Bestandssystemen.html#de-bestandssystemen" target="_blank" rel="noopener">Bestandssystemen</a>.</p>
             </div>
         </div>
 
@@ -201,7 +201,7 @@
                 <p><strong>Antwoord c.</strong> Het journaal werkt als een logboek: wat erin staat en nog niet op zijn
                     plaats terechtgekomen is, kan na de stroomonderbreking alsnog geschreven worden. Zijn andere
                     functie is snelheid, want in het journaal staat een schrijfopdracht aaneengesloten. Zie
-                    <a href="Bestandssystemen.html#journaal">Bestandssystemen</a>.</p>
+                    <a href="Bestandssystemen.html#journaal" target="_blank" rel="noopener">Bestandssystemen</a>.</p>
             </div>
         </div>
 
@@ -221,13 +221,11 @@
                 <p><strong>Antwoord b.</strong> Bij een klassieke harde schijf kost elke herpositionering van de arm
                     seek time en rotational latency, en dat is wat fragmentatie traag maakt. Een SSD heeft geen
                     onderdelen die bewegen, dus die kost is er niet. Zie
-                    <a href="Bestandssystemen.html#fragmentatie">Bestandssystemen</a>.</p>
+                    <a href="Bestandssystemen.html#fragmentatie" target="_blank" rel="noopener">Bestandssystemen</a>.</p>
             </div>
         </div>
     </div>
 
-    <script src="../../../reference.js"></script>
-    <script src="../../../back-link.js"></script>
 </body>
 
 </html>

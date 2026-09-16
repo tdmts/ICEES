@@ -902,8 +902,6 @@ SJABLOON = """<!DOCTYPE html>
 {inhoud}
     </div>
 
-    <script src="{root}reference.js"></script>
-    <script src="{root}back-link.js"></script>
 </body>
 
 </html>
@@ -918,9 +916,8 @@ def inspringen(tekst, spaties):
 def schrijf_pagina(pad, titel, blokkenlijst):
     body = "\n\n".join(inspringen(b, 8) for b in blokkenlijst)
     pad.parent.mkdir(parents=True, exist_ok=True)
-    root = "../" * len(pad.parent.relative_to(REPO).parts)
     pad.write_text(SJABLOON.format(titel=html.escape(strip_tags(titel)),
-                                   kop=html.escape(titel), inhoud=body, root=root),
+                                   kop=html.escape(titel), inhoud=body),
                    encoding="utf-8")
     print(f"    {pad.relative_to(REPO)}")
 

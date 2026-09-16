@@ -11,21 +11,18 @@ Draai dit voor je een inhoudelijke wijziging afsluit. Een groene check hoort bij
    een tikfout in de hoofdletters of een niet-toegevoegde afbeelding werkt
    lokaal en geeft 404 in productie. Een asset met de naam TODO-* is een
    waarschuwing, geen fout: dat is tekenwerk dat nog moet komen.
-2. Het manifest klopt met de bestanden. Elke href in reference.js is relatief,
-   bestaat, en heeft een unieke id binnen zijn module; elk veld dat de engines
-   lezen is aanwezig en niet leeg, want een leeg veld geeft een lege kaart in
-   plaats van een fout. En elke theoriepagina onder een module staat in het
-   manifest: een pagina die er niet in staat is onbereikbaar via de hub en
-   krijgt geen gelezen-vinkje.
+2. Het manifest van de syllabus klopt met de bestanden. Elke href in
+   reference.js is relatief, bestaat, en heeft een unieke id; id, name, blurb en
+   href zijn aanwezig en niet leeg. En elke pagina onder
+   Theorie/Syllabus/Theorie/ staat in het manifest: een pagina die er niet in
+   staat, komt niet in de syllabus-PDF, terwijl ze op het scherm gewoon opent.
 
-   Elke categorie zet er ook zijn reeks bij. Een reeks is een menu-item in
-   Orion (zie de kop van reference.js), en reference-dashboard.js toont per hub
-   de categorieen van een reeks. Een categorie zonder reeks hoort dus nergens
-   bij en verdwijnt gewoon van de hub, zonder dat er iets faalt.
-3. De pagina's zijn juist bedraad. Elke pagina linkt de gehoste OrionCSS; elke
-   theoriepagina laadt reference.js en back-link.js, want zonder reference.js
-   rendert de pagina perfect en verdwijnt alleen de volgende-link; reference.html
-   roept initReferenceHub op voor zijn eigen module.
+   En orion.json klopt met de bestanden: elke page en file erin bestaat, met
+   exact dezelfde hoofdletters, en elke pagina onder Labo/ staat erin als page.
+   Het Orion-menu is de enige weg naar een labopagina. Een pagina die er niet in
+   staat, krijgt geen topic en is voor de student onvindbaar, terwijl ze in een
+   browser gewoon opent.
+3. Elke pagina linkt de gehoste OrionCSS, style.css en main.js.
 4. Assethygiëne. Geen Brightspace-hotlinks (/content/enforced/), geen externe
    <img src="http...">, geen externe documentlinks: een URL van een fabrikant
    sterft midden in het semester net zoals een gehotlinkte afbeelding.
@@ -52,7 +49,7 @@ Draai dit voor je een inhoudelijke wijziging afsluit. Een groene check hoort bij
 9. Geen verloop op overview.html. De hub zegt wat het labo is, wat je nodig
    hebt en hoe het meetelt; hij vertelt niet in welke volgorde je te werk gaat.
    Zo'n stappenplan telt op wat elders staat ("zes theoriepagina's", "tien
-   vragen", "zeven schakelingen") en die getallen staan in reference.js en in
+   vragen", "zeven schakelingen") en die getallen staan in orion.json en in
    Opdracht.html, niet hier. Ze lopen dus stil uit de pas zodra daar iets
    bijkomt, en niets faalt. De regel weigert een kop Verloop en de
    steps-container waarin zo'n stappenplan gerenderd wordt.
@@ -77,28 +74,21 @@ Draai dit voor je een inhoudelijke wijziging afsluit. Een groene check hoort bij
    evaluatie (een test gesloten boek, een verslag dat zelf geen punt krijgt) en
    de werkafspraken die eruit volgen.
 
-10. Geen link die in de iframe een ander Orion-menu-item opent. Elk deel van
-   een labo is een eigen item in Orion: Inleiding (overview.html), Theorie
-   (Theorie/), Opdracht (Opdracht.html), en bij ManagedSwitch twee opdrachten
-   in een eigen map. Dat menu staat naast de iframe en verspringt niet mee, dus
-   een link die de iframe naar een ander item stuurt, laat het menu een pagina
-   aanwijzen die de student niet leest: hij zit bij "Inleiding" en heeft de
-   opdracht voor zich.
+10. Geen link die in de iframe een andere pagina opent. Elke page in orion.json
+   is een eigen topic in Orion, met het menu ernaast. Dat menu verspringt niet
+   mee met de iframe, dus een link die de iframe naar een andere pagina stuurt,
+   laat het menu een topic aanwijzen dat de student niet leest: hij zit bij
+   "Inleiding" en heeft de opdracht voor zich.
 
-   Naar beneden navigeren binnen een item mag wel, en gebeurt overal: klik een
-   theoriepagina aan en Orion zegt "Theorie" terwijl je Wat is RS485 leest. Het
-   menu is dan grover dan waar je bent, en niet onwaar.
+   Verwijzen naar een andere pagina mag dus, maar niet in de iframe. Ofwel laat
+   je de link weg en noem je het topic bij naam (dat doet InstallatieUbuntu.html
+   voor Guest Additions, want dat is het topic erna), ofwel open je hem met
+   target="_blank" (dat doet een Test jezelf voor de theoriepagina die je nog
+   eens naleest, want die heb je nodig terwijl je bezig bent). Dezelfde
+   behandeling die een PDF al kreeg.
 
-   Verwijzen naar een ander item mag dus, maar niet in de iframe. Ofwel laat je
-   de link weg en noem je het item bij naam (dat doen de overzichten, want in
-   het menu staan Theorie en Opdracht er vlak onder), ofwel open je hem met
-   target="_blank" (dat doen twee Packet Tracer-oefeningen voor de theoriepagina
-   die erbij hoort, want die kijk je na terwijl je bezig bent). Dezelfde
-   behandeling die een PDF en Algemeen/Planning.html al kregen.
-
-   Deze regel kijkt alleen naar links tussen pagina's onder Labo/. Wat de
-   navigatiebalk doet, staat hier niet in: die bestaat pas als back-link.js
-   gelopen heeft, en scripts/check-nav.js meet dat van het DOM af.
+   De regel kijkt naar elke page in orion.json, en naar elke link van daar naar
+   een andere HTML-pagina van de repo, ook naar een die zelf geen topic is.
 
 11. Het opschrift van de knop noemt één bestand. Op een Opdracht.html staat
    precies één download: de docx die uit die pagina gegenereerd is. Die staat
@@ -109,9 +99,8 @@ Draai dit voor je een inhoudelijke wijziging afsluit. Een groene check hoort bij
    merkt hij bij het indienen, niet bij het downloaden.
 
 12. Twee introducties van hetzelfde labo vertellen niet hetzelfde. Elk labo
-   heeft drie of vier leads, een per menu-item in Orion, en ze hebben elk een
-   eigen taak: overview.html zegt waar het labo over gaat en waarom, de
-   theoriehub zegt wat er in de theorie staat en in welke volgorde,
+   heeft twee of meer leads, een per menu-item in Orion, en ze hebben elk een
+   eigen taak: overview.html zegt waar het labo over gaat en waarom,
    Opdracht.html zegt wat je doet en indient. Die van de opdracht komt
    bovendien op de eerste bladzijde van het verslag terecht (regel 8), dus ze
    moet op zichzelf leesbaar zijn.
@@ -119,15 +108,13 @@ Draai dit voor je een inhoudelijke wijziging afsluit. Een groene check hoort bij
    Samenvoegen tot een enkele tekst kan niet: het zijn aparte items in het
    Orion-menu en er linkt niets zijwaarts (regel 10), dus elke ingang moet
    alleen staan. Wat wel kan, is dat er geen twee dezelfde zin in staat. Die
-   ontstaat vanzelf: je herschrijft er een, en de andere twee blijven de oude
-   versie navertellen. Zo zei de hub van Industrieel netwerk de opdracht bijna
-   woordelijk voor, en begon de theoriehub met "In de opdracht bouw je ...".
+   ontstaat vanzelf: je herschrijft er een, en de andere blijft de oude versie
+   navertellen.
 
    De regel grijpt op een letterlijk gedeelde woordenreeks van zeven woorden of
    meer tussen twee leads van hetzelfde labo. Ze kijkt niet naar betekenis, dus
    een herhaling die herschreven is glipt erdoor, en een feit dat in twee leads
-   thuishoort (de Pi neemt de rol van PLC op) mag gerust, zolang het er niet
-   twee keer hetzelfde staat.
+   thuishoort mag gerust, zolang het er niet twee keer hetzelfde staat.
 
 13. De syllabus-PDF is niet ouder dan de pagina's waaruit ze gegenereerd is.
    Dezelfde regel als 6 voor de verslagsjablonen, en om een scherpere reden: van
@@ -206,6 +193,7 @@ letterlijk overgenomen uit een toestel, en daar mag niets aan geformatteerd
 worden.
 """
 
+import json
 import os
 import re
 import subprocess
@@ -362,17 +350,10 @@ def lees_manifest():
 
 
 def lees_categorieen():
-    """De categorieen per module, met de reeks die ze dragen.
-
-    lees_manifest() haalt het niveau eronder eruit. De reeks staat op de
-    categorie, en die bepaalt bij welk Orion-menu-item ze hoort.
-    """
+    """De namen van de categorieen per module; lees_manifest() leest het niveau eronder."""
     categorieen = {}
     for naam, blok in _moduleblokken():
-        gevonden = []
-        for c in re.finditer(r"name:\s*'([^']*)',\s*(?:reeks:\s*'([^']*)',\s*)?topics:", blok):
-            gevonden.append({"name": c.group(1), "reeks": c.group(2)})
-        categorieen[naam] = gevonden
+        categorieen[naam] = re.findall(r"name:\s*'([^']*)',\s*topics:", blok)
     return categorieen
 
 
@@ -381,9 +362,9 @@ def lees_categorieen():
 # hangt de rest van regel 2 en 3 op aan die parse, dus een stukgelopen regex
 # zou elke controle eronder leeg en dus groen maken; dat blijft een fout. Een
 # reference.js die op zijn plaats staat met een lege LAB_REFERENCE is iets
-# anders: dat is deze repo op dag nul, voor het eerste labo bestaat. Dat is
-# een waarschuwing, want de repo is nog niet publiceerbaar, en ze verdwijnt
-# vanzelf zodra er een module in staat.
+# anders: dat is deze repo op dag nul, voor het eerste hoofdstuk ingevoerd is.
+# Dat is een waarschuwing, want de repo is nog niet publiceerbaar, en ze
+# verdwijnt vanzelf zodra er een hoofdstuk in staat.
 LEEG_MANIFEST_RE = re.compile(r"window\.LAB_REFERENCE\s*=\s*\{\s*\}\s*;")
 
 
@@ -393,23 +374,15 @@ def check_manifest():
         tekst = (REPO / "reference.js").read_text(encoding="utf-8")
         if LEEG_MANIFEST_RE.search(tekst):
             waarschuw("reference.js",
-                      "window.LAB_REFERENCE is leeg; er staat nog geen labo in "
-                      "deze repo. Regel 2 en 3 kijken hierdoor naar niets.")
+                      "window.LAB_REFERENCE is leeg; er staat nog geen hoofdstuk "
+                      "in deze repo. Regel 2 kijkt hierdoor naar niets.")
         else:
             fout("reference.js", "geen enkele module gevonden")
         return modules
 
-    # Een categorie zonder reeks hoort bij geen enkel Orion-menu-item, en
-    # reference-dashboard.js laat ze dan gewoon weg: de hub rendert perfect met
-    # een categorie minder erop.
     for naam, categorieen in lees_categorieen().items():
         if not categorieen:
             fout("reference.js", f"module '{naam}' heeft geen enkele categorie")
-        for categorie in categorieen:
-            if not categorie["reeks"]:
-                fout("reference.js",
-                     f"{naam}: categorie '{categorie['name']}' heeft geen reeks, "
-                     "dus ze valt stil van de hub")
 
     for naam, topics in modules.items():
         theorie = REPO / "Labo" / naam.upper() / "Theorie"
@@ -457,12 +430,61 @@ def check_manifest():
         # hoofdstukken hebben allemaal een Overzicht.html en vijf een
         # Inleiding.html: op naam zou de ene de andere afdekken.
         for pagina in theorie.rglob("*.html"):
-            if pagina.name == "reference.html":
-                continue
             if str(pagina) not in vermeld:
                 fout(pagina.relative_to(REPO),
-                     "staat niet in reference.js, dus onbereikbaar via de hub")
+                     "staat niet in reference.js, dus niet in de syllabus-PDF")
     return modules
+
+
+_orion_doelen = None
+
+
+def orion_doelen():
+    """Elk topic in orion.json dat naar de repo wijst, als (soort, pad).
+
+    Een dropbox wijst naar niets in de repo en telt dus niet mee. Het bestand
+    wordt een keer gelezen: regel 2 en regel 10 gebruiken het allebei, en een
+    kapot bestand hoort maar een keer gemeld te worden.
+    """
+    global _orion_doelen
+    if _orion_doelen is not None:
+        return _orion_doelen
+    _orion_doelen = []
+    try:
+        doc = json.loads((REPO / "orion.json").read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        fout("orion.json", "ontbreekt, dus OrionSync maakt geen enkel topic")
+        return _orion_doelen
+    except json.JSONDecodeError as e:
+        fout("orion.json", f"geen geldige JSON: {e}")
+        return _orion_doelen
+
+    def loop(item):
+        for kind in item.get("items", []):
+            loop(kind)
+        for soort in ("page", "file"):
+            if isinstance(item.get(soort), str):
+                _orion_doelen.append((soort, item[soort]))
+
+    for module in doc.get("modules", []):
+        loop(module)
+    return _orion_doelen
+
+
+def check_orion():
+    paginas = set()
+    for soort, doel in orion_doelen():
+        pad = REPO / doel
+        if not pad.is_file():
+            fout("orion.json", f"{soort} bestaat niet: {doel}")
+        elif not exacte_hoofdletters(pad):
+            fout("orion.json", f"hoofdletters kloppen niet, dit wordt een dode link in Orion: {doel}")
+        elif soort == "page":
+            paginas.add(pad)
+    for pagina in sorted((REPO / "Labo").rglob("*.html")):
+        if pagina not in paginas:
+            fout(pagina.relative_to(REPO),
+                 "staat niet als page in orion.json, dus geen topic en onvindbaar in Orion")
 
 
 # -------------------------------------------------------------- 3. wiring
@@ -479,23 +501,6 @@ def check_wiring():
                 fout(rel, "linkt de gehoste OrionCSS style.css niet")
             if ORION_JS not in tekst:
                 fout(rel, "linkt de gehoste OrionCSS main.js niet")
-
-        in_module = "Labo" in rel.parts or "Theorie" in rel.parts
-        if not in_module:
-            continue
-
-        if pad.name != "overview.html" and "back-link.js" not in tekst:
-            fout(rel, "laadt back-link.js niet, dus geen navigatiebalk")
-
-        if pad.parent.name == "Theorie" or pad.name == "Opdracht.html":
-            if "reference.js" not in tekst:
-                fout(rel, "laadt reference.js niet, dus de volgende-link verdwijnt stil")
-
-        if pad.name == "reference.html":
-            module = pad.parent.parent.name.lower()
-            if f"initReferenceHub('{module}')" not in tekst and \
-               f'initReferenceHub("{module}")' not in tekst:
-                fout(rel, f"roept initReferenceHub('{module}') niet op voor zijn eigen module")
 
 
 # ------------------------------------------------------------ 4. hygiëne
@@ -743,36 +748,20 @@ def check_geen_verloop():
 
 # --------------------------------------------------------- 10. topicgrenzen
 
-def topic_van(pad):
-    """Bij welk Orion-menu-item hoort deze pagina?
-
-    De indeling zit in de mapstructuur, dus we lezen ze daar af.
-    overview.html is Inleiding; alles in een submap hoort bij het item van die
-    map (Theorie, ProCurve, PacketTracer); wat los in de modulemap staat, is de
-    opdracht.
-    """
-    delen = pad.relative_to(REPO).parts
-    if pad.name == "overview.html":
-        return (delen[1], "inleiding")
-    tussen = delen[2:-1]
-    return (delen[1], tussen[0] if tussen else "opdracht")
-
-
 ANKER_RE = re.compile(r"<a\s[^>]*>", re.I | re.S)
 HREF_RE = re.compile(r"""href\s*=\s*["']([^"']+)["']""", re.I)
 BLANK_RE = re.compile(r"""target\s*=\s*["']_blank["']""", re.I)
 
 
 def check_topicgrenzen():
-    for pad in html_paginas():
-        delen = pad.relative_to(REPO).parts
-        if len(delen) < 3 or delen[0] != "Labo":
-            continue
+    topics = sorted({REPO / doel for soort, doel in orion_doelen() if soort == "page"})
+    for pad in topics:
+        if not pad.is_file():
+            continue  # regel 2 meldt dat al
         rel = pad.relative_to(REPO)
         # Het verslagcommentaar staat niet op het scherm. Wat daarin staat komt
         # in de docx terecht, en een document heeft geen iframe om te verwisselen.
         tekst = COMMENTAAR_RE.sub("", pad.read_text(encoding="utf-8"))
-        hier = topic_van(pad)
 
         for anker in ANKER_RE.findall(tekst):
             m = HREF_RE.search(anker)
@@ -782,18 +771,12 @@ def check_topicgrenzen():
             if href.startswith(("http", "#", "mailto:", "/")):
                 continue
             doel = Path(os.path.normpath(pad.parent / unquote(href.split("#")[0])))
-            if doel.suffix.lower() != ".html" or not doel.exists():
+            if doel.suffix.lower() != ".html" or doel == pad or not doel.exists():
                 continue
-            try:
-                doeldelen = doel.relative_to(REPO).parts
-            except ValueError:
+            if BLANK_RE.search(anker):
                 continue
-            if len(doeldelen) < 3 or doeldelen[0] != "Labo":
-                continue
-            if topic_van(doel) == hier or BLANK_RE.search(anker):
-                continue
-            fout(rel, f"linkt in de iframe naar {doel.relative_to(REPO)}, dat is een "
-                      "ander Orion-menu-item: laat de link weg of open hem met "
+            fout(rel, f"linkt in de iframe naar {doel.relative_to(REPO)}, en elke pagina "
+                      "is een eigen Orion-topic: laat de link weg of open hem met "
                       'target="_blank"')
 
 
@@ -852,7 +835,7 @@ def leadwoorden(pagina):
 
 def leadpaginas(module):
     """De pagina's van een module die een introductie dragen, in leesvolgorde."""
-    kandidaten = [module / "overview.html", module / "Theorie" / "reference.html"]
+    kandidaten = [module / "overview.html"]
     kandidaten += sorted(module.glob("Opdracht.html"))
     kandidaten += sorted(module.glob("*/Opdracht.html"))
     return [p for p in kandidaten if p.is_file()]
@@ -899,7 +882,7 @@ def check_syllabus_pdf():
     pdf = REPO / "downloads" / "Industriele-computers-en-embedded-systems-syllabus.pdf"
     if not bron.is_dir():
         return
-    paginas = [p for p in bron.rglob("*.html") if p.name != "reference.html"]
+    paginas = list(bron.rglob("*.html"))
     if not paginas:
         return
     if not pdf.exists():
@@ -1175,6 +1158,7 @@ def main():
 
     check_links(tracked)
     check_manifest()
+    check_orion()
     check_wiring()
     check_assets()
     check_codestijl()

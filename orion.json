@@ -1,0 +1,585 @@
+{
+  "modules": [
+    {
+      "id": "algemeen",
+      "title": "1. Algemeen",
+      "items": [
+        {
+          "id": "algemeen-planning",
+          "title": "Planning",
+          "page": "Algemeen/Planning.html"
+        },
+        {
+          "id": "algemeen-studiemateriaal",
+          "title": "Studiemateriaal",
+          "page": "Algemeen/Studiemateriaal.html"
+        },
+        {
+          "id": "algemeen-evaluatie",
+          "title": "Evaluatie",
+          "page": "Algemeen/Evaluatie.html"
+        },
+        {
+          "id": "algemeen-studiefiche",
+          "title": "Studiefiche",
+          "page": "Algemeen/Studiefiche.html"
+        }
+      ]
+    },
+    {
+      "id": "theorie",
+      "title": "2. Theorie",
+      "items": [
+        {
+          "id": "theorie-syllabus",
+          "title": "Syllabus",
+          "page": "Theorie/Syllabus/overview.html"
+        }
+      ]
+    },
+    {
+      "id": "assemblage",
+      "title": "3. Labo: Assemblage + BIOS/UEFI",
+      "items": [
+        {
+          "id": "assemblage-inleiding",
+          "title": "Inleiding",
+          "page": "Labo/Assemblage/overview.html"
+        },
+        {
+          "id": "assemblage-theorie",
+          "title": "Theorie",
+          "items": [
+            {
+              "id": "assemblage-veiligheid",
+              "title": "Veiligheid, orde en netheid",
+              "page": "Labo/Assemblage/Theorie/Veiligheid.html"
+            },
+            {
+              "id": "assemblage-componenten",
+              "title": "De componenten van een pc",
+              "page": "Labo/Assemblage/Theorie/Componenten.html"
+            },
+            {
+              "id": "assemblage-bios-uefi",
+              "title": "BIOS en UEFI",
+              "page": "Labo/Assemblage/Theorie/BiosUefi.html"
+            },
+            {
+              "id": "assemblage-test-jezelf",
+              "title": "Test jezelf",
+              "page": "Labo/Assemblage/Theorie/TestJezelf.html"
+            }
+          ]
+        },
+        {
+          "id": "assemblage-downloads",
+          "title": "Downloads",
+          "items": [
+            {
+              "id": "assemblage-datasheet-moederbord",
+              "title": "Moederbord",
+              "file": "datasheets/mb-manual-a520m-s2h-e-1301.pdf"
+            },
+            {
+              "id": "assemblage-datasheet-processor",
+              "title": "Processor",
+              "file": "datasheets/amd-ryzen-3-4300g-socket-am4-processor-unlocked-wraith-stealth-boxed.pdf"
+            },
+            {
+              "id": "assemblage-datasheet-geheugen",
+              "title": "Werkgeheugen",
+              "file": "datasheets/gskill-aegis-8gb.pdf"
+            },
+            {
+              "id": "assemblage-datasheet-ssd",
+              "title": "SSD",
+              "file": "datasheets/ssd-intern-25-top.pdf"
+            },
+            {
+              "id": "assemblage-datasheet-voeding",
+              "title": "Voeding",
+              "file": "datasheets/ds-shp-bronze-en-07.pdf"
+            }
+          ]
+        },
+        {
+          "id": "assemblage-opdracht-inventaris",
+          "title": "Opdracht 1/3: Inventaris",
+          "page": "Labo/Assemblage/Inventaris/Opdracht.html"
+        },
+        {
+          "id": "assemblage-indienen-inventaris",
+          "dropbox": "Indienen Inventaris (!)"
+        },
+        {
+          "id": "assemblage-opdracht-biosuefi",
+          "title": "Opdracht 2/3 BIOS/UEFI",
+          "page": "Labo/Assemblage/BiosUefi/Opdracht.html"
+        },
+        {
+          "id": "assemblage-indienen-biosuefi",
+          "dropbox": "Indienen BIOS / UEFI (!)"
+        },
+        {
+          "id": "assemblage-opdracht-installatieos",
+          "title": "Opdracht 3/3 Installatie OS",
+          "page": "Labo/Assemblage/InstallatieOs/Opdracht.html"
+        },
+        {
+          "id": "assemblage-indienen-installatieos",
+          "dropbox": "Indienen Installatie OS (!)"
+        }
+      ]
+    },
+    {
+      "id": "virtualiseren",
+      "title": "4. Labo: Virtualiseren",
+      "items": [
+        {
+          "id": "virtualiseren-inleiding",
+          "title": "Inleiding",
+          "page": "Labo/Virtualiseren/overview.html"
+        },
+        {
+          "id": "virtualiseren-theorie",
+          "title": "Theorie",
+          "items": [
+            {
+              "id": "virtualiseren-wat-is-virtualisatie",
+              "title": "Wat is virtualisatie",
+              "page": "Labo/Virtualiseren/Theorie/WatIsVirtualisatie.html"
+            },
+            {
+              "id": "virtualiseren-virtuele-hardware",
+              "title": "Virtuele hardware",
+              "page": "Labo/Virtualiseren/Theorie/VirtueleHardware.html"
+            },
+            {
+              "id": "virtualiseren-schijf-en-geheugen",
+              "title": "Schijf en geheugen",
+              "page": "Labo/Virtualiseren/Theorie/SchijfEnGeheugen.html"
+            },
+            {
+              "id": "virtualiseren-software-in-de-guest",
+              "title": "Software in de guest",
+              "page": "Labo/Virtualiseren/Theorie/SoftwareInDeGuest.html"
+            },
+            {
+              "id": "virtualiseren-test-jezelf",
+              "title": "Test jezelf",
+              "page": "Labo/Virtualiseren/Theorie/TestJezelf.html"
+            }
+          ]
+        },
+        {
+          "id": "virtualiseren-opdracht",
+          "title": "Opdracht",
+          "items": [
+            {
+              "id": "virtualiseren-de-opdracht",
+              "title": "De opdracht",
+              "page": "Labo/Virtualiseren/Opdracht.html"
+            },
+            {
+              "id": "virtualiseren-virtuele-machine-aanmaken",
+              "title": "Een virtuele machine aanmaken",
+              "page": "Labo/Virtualiseren/VirtueleMachineAanmaken.html"
+            },
+            {
+              "id": "virtualiseren-installatie-ubuntu",
+              "title": "Installatie Ubuntu",
+              "page": "Labo/Virtualiseren/InstallatieUbuntu.html"
+            },
+            {
+              "id": "virtualiseren-guest-additions",
+              "title": "Guest Additions installeren",
+              "page": "Labo/Virtualiseren/GuestAdditions.html"
+            }
+          ]
+        },
+        {
+          "id": "virtualiseren-indienen",
+          "dropbox": "Indienen Virtualiseren"
+        }
+      ]
+    },
+    {
+      "id": "partitioneren",
+      "title": "5. Labo: Partitioneren",
+      "items": [
+        {
+          "id": "partitioneren-inleiding",
+          "title": "Inleiding",
+          "page": "Labo/Partitioneren/overview.html"
+        },
+        {
+          "id": "partitioneren-theorie",
+          "title": "Theorie",
+          "items": [
+            {
+              "id": "partitioneren-partitietabellen",
+              "title": "Partitietabellen",
+              "page": "Labo/Partitioneren/Theorie/Partitietabellen.html"
+            },
+            {
+              "id": "partitioneren-bestandssystemen",
+              "title": "Bestandssystemen",
+              "page": "Labo/Partitioneren/Theorie/Bestandssystemen.html"
+            },
+            {
+              "id": "partitioneren-spiekblad",
+              "title": "Spiekblad",
+              "page": "Labo/Partitioneren/Theorie/Spiekblad.html"
+            },
+            {
+              "id": "partitioneren-test-jezelf",
+              "title": "Test jezelf",
+              "page": "Labo/Partitioneren/Theorie/TestJezelf.html"
+            }
+          ]
+        },
+        {
+          "id": "partitioneren-opdracht",
+          "title": "Opdracht",
+          "items": [
+            {
+              "id": "partitioneren-oefening",
+              "title": "De begeleide oefening",
+              "page": "Labo/Partitioneren/Overzicht.html"
+            },
+            {
+              "id": "partitioneren-oefenmachine",
+              "title": "De oefenmachine opzetten",
+              "page": "Labo/Partitioneren/Oefenmachine.html"
+            },
+            {
+              "id": "partitioneren-mbr-partities",
+              "title": "Primaire partities in een MBR-tabel",
+              "page": "Labo/Partitioneren/MbrPartities.html"
+            },
+            {
+              "id": "partitioneren-extended-en-logisch",
+              "title": "Extended en logische partities",
+              "page": "Labo/Partitioneren/ExtendedEnLogisch.html"
+            },
+            {
+              "id": "partitioneren-gpt-partities",
+              "title": "GPT-partities",
+              "page": "Labo/Partitioneren/GptPartities.html"
+            },
+            {
+              "id": "partitioneren-de-opdracht",
+              "title": "De opdracht",
+              "page": "Labo/Partitioneren/Opdracht.html"
+            }
+          ]
+        },
+        {
+          "id": "partitioneren-indienen",
+          "dropbox": "Indienen Partitioneren"
+        }
+      ]
+    },
+    {
+      "id": "linuxbasis",
+      "title": "6. Labo: Linux Basis",
+      "items": [
+        {
+          "id": "linuxbasis-inleiding",
+          "title": "Inleiding",
+          "page": "Labo/LinuxBasis/overview.html"
+        },
+        {
+          "id": "linuxbasis-theorie",
+          "title": "Theorie",
+          "items": [
+            {
+              "id": "linuxbasis-linux-en-distributies",
+              "title": "Linux en zijn distributies",
+              "page": "Labo/LinuxBasis/Theorie/LinuxEnDistributies.html"
+            },
+            {
+              "id": "linuxbasis-de-terminal",
+              "title": "De terminal",
+              "page": "Labo/LinuxBasis/Theorie/DeTerminal.html"
+            },
+            {
+              "id": "linuxbasis-commando-en-opties",
+              "title": "Een commando en zijn opties",
+              "page": "Labo/LinuxBasis/Theorie/CommandoEnOpties.html"
+            },
+            {
+              "id": "linuxbasis-de-bestandsboom",
+              "title": "De bestandsboom",
+              "page": "Labo/LinuxBasis/Theorie/DeBestandsboom.html"
+            },
+            {
+              "id": "linuxbasis-gebruikers-en-rechten",
+              "title": "Gebruikers en rechten",
+              "page": "Labo/LinuxBasis/Theorie/GebruikersEnRechten.html"
+            },
+            {
+              "id": "linuxbasis-spiekblad",
+              "title": "Spiekblad",
+              "page": "Labo/LinuxBasis/Theorie/Spiekblad.html"
+            },
+            {
+              "id": "linuxbasis-test-jezelf",
+              "title": "Test jezelf",
+              "page": "Labo/LinuxBasis/Theorie/TestJezelf.html"
+            }
+          ]
+        },
+        {
+          "id": "linuxbasis-opdracht",
+          "title": "Opdracht",
+          "items": [
+            {
+              "id": "linuxbasis-oefening",
+              "title": "De begeleide oefening",
+              "page": "Labo/LinuxBasis/Overzicht.html"
+            },
+            {
+              "id": "linuxbasis-terminal-openen",
+              "title": "De terminal openen",
+              "page": "Labo/LinuxBasis/TerminalOpenen.html"
+            },
+            {
+              "id": "linuxbasis-navigeren",
+              "title": "Navigeren tussen mappen",
+              "page": "Labo/LinuxBasis/Navigeren.html"
+            },
+            {
+              "id": "linuxbasis-mappen-en-bestanden",
+              "title": "Mappen en bestanden maken",
+              "page": "Labo/LinuxBasis/MappenEnBestanden.html"
+            },
+            {
+              "id": "linuxbasis-kopieren",
+              "title": "Bestanden en mappen kopiëren",
+              "page": "Labo/LinuxBasis/Kopieren.html"
+            },
+            {
+              "id": "linuxbasis-verplaatsen-en-verwijderen",
+              "title": "Verplaatsen en verwijderen",
+              "page": "Labo/LinuxBasis/VerplaatsenEnVerwijderen.html"
+            },
+            {
+              "id": "linuxbasis-schijfruimte-en-zoeken",
+              "title": "Schijfruimte bekijken en bestanden zoeken",
+              "page": "Labo/LinuxBasis/SchijfruimteEnZoeken.html"
+            },
+            {
+              "id": "linuxbasis-processen-en-uitvoer",
+              "title": "Processen en uitvoer",
+              "page": "Labo/LinuxBasis/ProcessenEnUitvoer.html"
+            },
+            {
+              "id": "linuxbasis-archiveren-en-afsluiten",
+              "title": "Archiveren en afsluiten",
+              "page": "Labo/LinuxBasis/ArchiverenEnAfsluiten.html"
+            },
+            {
+              "id": "linuxbasis-de-opdracht",
+              "title": "De opdracht",
+              "page": "Labo/LinuxBasis/Opdracht.html"
+            }
+          ]
+        },
+        {
+          "id": "linuxbasis-indienen",
+          "dropbox": "Opdracht: Linux basis"
+        }
+      ]
+    },
+    {
+      "id": "linuxgeavanceerd",
+      "title": "7. Labo: Linux Geavanceerd",
+      "items": [
+        {
+          "id": "linuxgeavanceerd-inleiding",
+          "title": "Inleiding",
+          "page": "Labo/LinuxGeavanceerd/overview.html"
+        },
+        {
+          "id": "linuxgeavanceerd-theorie",
+          "title": "Theorie",
+          "items": [
+            {
+              "id": "linuxgeavanceerd-gebruikers-en-groepen",
+              "title": "Gebruikers en groepen",
+              "page": "Labo/LinuxGeavanceerd/Theorie/GebruikersEnGroepen.html"
+            },
+            {
+              "id": "linuxgeavanceerd-rechten",
+              "title": "Rechten op een bestand",
+              "page": "Labo/LinuxGeavanceerd/Theorie/Rechten.html"
+            },
+            {
+              "id": "linuxgeavanceerd-software-uit-de-repository",
+              "title": "Software uit de repository",
+              "page": "Labo/LinuxGeavanceerd/Theorie/SoftwareUitDeRepository.html"
+            },
+            {
+              "id": "linuxgeavanceerd-software-buiten-de-repository",
+              "title": "Software buiten de repository",
+              "page": "Labo/LinuxGeavanceerd/Theorie/SoftwareBuitenDeRepository.html"
+            },
+            {
+              "id": "linuxgeavanceerd-docker",
+              "title": "Docker",
+              "page": "Labo/LinuxGeavanceerd/Theorie/Docker.html"
+            },
+            {
+              "id": "linuxgeavanceerd-spiekblad",
+              "title": "Spiekblad",
+              "page": "Labo/LinuxGeavanceerd/Theorie/Spiekblad.html"
+            },
+            {
+              "id": "linuxgeavanceerd-test-jezelf",
+              "title": "Test jezelf",
+              "page": "Labo/LinuxGeavanceerd/Theorie/TestJezelf.html"
+            }
+          ]
+        },
+        {
+          "id": "linuxgeavanceerd-software",
+          "title": "Software installeren",
+          "items": [
+            {
+              "id": "linuxgeavanceerd-software-overzicht",
+              "title": "Overzicht",
+              "page": "Labo/LinuxGeavanceerd/SoftwareInstalleren/Overzicht.html"
+            },
+            {
+              "id": "linuxgeavanceerd-uit-de-winkel",
+              "title": "Uit de winkel",
+              "page": "Labo/LinuxGeavanceerd/SoftwareInstalleren/UitDeWinkel.html"
+            },
+            {
+              "id": "linuxgeavanceerd-eigen-repository",
+              "title": "Een repository van de leverancier",
+              "page": "Labo/LinuxGeavanceerd/SoftwareInstalleren/EigenRepository.html"
+            },
+            {
+              "id": "linuxgeavanceerd-deb-bestand",
+              "title": "Een deb bestand",
+              "page": "Labo/LinuxGeavanceerd/SoftwareInstalleren/DebBestand.html"
+            },
+            {
+              "id": "linuxgeavanceerd-installer-script",
+              "title": "Een installer script",
+              "page": "Labo/LinuxGeavanceerd/SoftwareInstalleren/InstallerScript.html"
+            },
+            {
+              "id": "linuxgeavanceerd-source-code",
+              "title": "Compileren uit broncode",
+              "page": "Labo/LinuxGeavanceerd/SoftwareInstalleren/SourceCode.html"
+            },
+            {
+              "id": "linuxgeavanceerd-container-met-docker",
+              "title": "Een container met Docker",
+              "page": "Labo/LinuxGeavanceerd/SoftwareInstalleren/ContainerMetDocker.html"
+            },
+            {
+              "id": "linuxgeavanceerd-up-to-date",
+              "title": "Je systeem up to date houden",
+              "page": "Labo/LinuxGeavanceerd/SoftwareInstalleren/UpToDate.html"
+            }
+          ]
+        },
+        {
+          "id": "linuxgeavanceerd-chmod",
+          "title": "Opdracht chmod",
+          "items": [
+            {
+              "id": "linuxgeavanceerd-oefening-chmod",
+              "title": "De begeleide oefening",
+              "page": "Labo/LinuxGeavanceerd/Chmod/Overzicht.html"
+            },
+            {
+              "id": "linuxgeavanceerd-gebruikers-aanmaken",
+              "title": "Gebruikers aanmaken",
+              "page": "Labo/LinuxGeavanceerd/Chmod/GebruikersAanmaken.html"
+            },
+            {
+              "id": "linuxgeavanceerd-sudo-rechten",
+              "title": "Een gebruiker sudo-rechten geven",
+              "page": "Labo/LinuxGeavanceerd/Chmod/SudoRechten.html"
+            },
+            {
+              "id": "linuxgeavanceerd-een-eigen-groep",
+              "title": "Een eigen groep maken",
+              "page": "Labo/LinuxGeavanceerd/Chmod/EenEigenGroep.html"
+            },
+            {
+              "id": "linuxgeavanceerd-opruimen",
+              "title": "Wissen en opruimen",
+              "page": "Labo/LinuxGeavanceerd/Chmod/Opruimen.html"
+            },
+            {
+              "id": "linuxgeavanceerd-opdracht-chmod",
+              "title": "De opdracht",
+              "page": "Labo/LinuxGeavanceerd/Chmod/Opdracht.html"
+            },
+            {
+              "id": "linuxgeavanceerd-indienen-chmod",
+              "dropbox": "Opdracht: chmod"
+            }
+          ]
+        },
+        {
+          "id": "linuxgeavanceerd-chown",
+          "title": "Opdracht chown",
+          "items": [
+            {
+              "id": "linuxgeavanceerd-oefening-chown",
+              "title": "De begeleide oefening",
+              "page": "Labo/LinuxGeavanceerd/Chown/Overzicht.html"
+            },
+            {
+              "id": "linuxgeavanceerd-owner-aanpassen",
+              "title": "De owner aanpassen",
+              "page": "Labo/LinuxGeavanceerd/Chown/OwnerAanpassen.html"
+            },
+            {
+              "id": "linuxgeavanceerd-opdracht-chown",
+              "title": "De opdracht",
+              "page": "Labo/LinuxGeavanceerd/Chown/Opdracht.html"
+            },
+            {
+              "id": "linuxgeavanceerd-indienen-chown",
+              "dropbox": "Opdracht: chown"
+            }
+          ]
+        },
+        {
+          "id": "linuxgeavanceerd-chgrp",
+          "title": "Opdracht chgrp",
+          "items": [
+            {
+              "id": "linuxgeavanceerd-oefening-chgrp",
+              "title": "De begeleide oefening",
+              "page": "Labo/LinuxGeavanceerd/Chgrp/Overzicht.html"
+            },
+            {
+              "id": "linuxgeavanceerd-group-aanpassen",
+              "title": "De group aanpassen",
+              "page": "Labo/LinuxGeavanceerd/Chgrp/GroupAanpassen.html"
+            },
+            {
+              "id": "linuxgeavanceerd-opdracht-chgrp",
+              "title": "De opdracht",
+              "page": "Labo/LinuxGeavanceerd/Chgrp/Opdracht.html"
+            },
+            {
+              "id": "linuxgeavanceerd-indienen-chgrp",
+              "dropbox": "Opdracht: chgrp"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

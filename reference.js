@@ -1,69 +1,30 @@
 /*
- * reference.js -- het manifest van alle theoriepagina's, per module.
+ * reference.js -- het manifest van de syllabus.
  *
- * Dit is de enige plaats waar een theoriepagina wordt opgesomd. Voeg een pagina
- * hier toe, niet in de HTML van een andere pagina: de theoriehub
- * (reference-dashboard.js) en de navigatiebalk (back-link.js) lezen allebei
- * dit bestand.
+ * De syllabus is een PDF die uit HTML-pagina's gegenereerd wordt, door
+ * scripts/export-syllabus.py. Dit bestand bepaalt welke pagina's erin komen en
+ * in welke volgorde. Een categorie is een hoofdstuk, een topic is een sectie.
+ * scripts/check-content.py leest het ook (regel 2) en eist dat elke pagina
+ * onder Theorie/Syllabus/Theorie/ erin staat: een pagina die hier ontbreekt,
+ * wordt niet gedrukt terwijl ze op het scherm gewoon opent.
  *
- * Een module-id is de sleutel hieronder. Het is de mapnaam onder Labo/ in
- * kleine letters, en het staat ook in de localStorage-sleutels, dus hernoemen
- * wist de vinkjes van je studenten.
+ * Een href is relatief ten opzichte van Theorie/Syllabus/Theorie/, nooit een
+ * volledige URL.
  *
- * Een href is een kale bestandsnaam naast reference.html, of een relatief pad
- * naar een document (../../../datasheets/...). Nooit een volledige
- * https://tdmts.github.io/ICEES/-URL: die stuurt elke klik in een lokale
- * preview door naar de live site.
+ * Een hoofdstuk krijgt in de PDF zijn nummer uit zijn plaats in deze lijst, niet
+ * uit een veld: een nummer dat hier staat, is een tweede waarheid naast de
+ * volgorde. Het Voorwoord draagt geen nummer en zegt dat met genummerd: false.
  *
- * REEKS -- welke categorieen samen een Orion-topic vormen
+ * De blurb wordt nergens gedrukt en nergens getoond. Ze beschrijft in een zin
+ * wat een sectie behandelt, voor wie dit bestand leest. Regel 2 eist ze, zodat
+ * ze niet stil leeg kan lopen.
  *
- * Een labo heeft vier menu-items in Orion: Inleiding (overview.html), Theorie
- * (Theorie/reference.html), Opdracht (Opdracht.html) en de dropbox waar de
- * student zijn verslag indient.
+ * De labo's staan hier niet meer. Die navigeert het Orion-menu, en wat erin
+ * staat, beschrijft orion.json.
  *
- * Een reeks is zo'n menu-item. Alles wat dezelfde reeks draagt, hoort bij
- * hetzelfde item: het is een leesvolgorde met een eigen begin, en de hele
- * navigatie blijft erbinnen. back-link.js hangt er zijn "Volgende"-ketting,
- * zijn teller en zijn labomenu aan op, en reference-dashboard.js toont per hub
- * de categorieen van een reeks. Een andere reeks is een ander menu-item, en
- * daar loopt niets naartoe: het Orion-menu verspringt niet mee met de iframe,
- * dus zo'n sprong laat het menu een pagina aanwijzen die de student niet leest.
- *
- * De zelftest van een labo draagt daarom dezelfde reeks als de theorie: hij
- * gaat over de pagina's ervoor en is de laatste stap ervan, dus de student komt
- * er met "Volgende" vanzelf uit. Een eigen reeks zou hem achter een knop
- * verstoppen die niemand aanklikt.
- *
- * De naam die de student op de knop ziet is de naam van de EERSTE categorie
- * van de reeks. Daarom staat er op de zelftest van Assemblage "Theorie 4 / 4"
- * en niet "Zelftest 1 / 1": hij is de vierde stap van de theorie.
- *
- * Een categorie met alleen documenten (Datasheets, Handleidingen, Software)
- * draagt de reeks waar ze bij hoort, en dat is de theorie: die documenten
- * staan op de theoriehub en horen bij dat menu-item. In een ketting komen ze
- * niet terecht, want een PDF kan de navigatiebalk niet dragen, dus zo'n
- * categorie levert nul stappen en verandert niets aan de teller.
- *
- * Elke categorie zet zijn reeks er expliciet bij. Zonder die regel valt ze van
- * de hub, en dat is precies het soort stille fout waar regel 2 van
- * scripts/check-content.py op staat.
- *
- * HET SPIEKBLAD
- *
- * De begeleide stappen van Brightspace worden hier gegroepeerde
- * theoriepagina's: Linux Basis gaat van 25 commandopagina's naar ongeveer zes
- * onderwerpen. Elk labo dat zo gegroepeerd wordt, krijgt daarnaast een
- * Spiekblad.html met alle commando's in een tabel, dat de student ernaast
- * houdt terwijl hij de opdracht maakt. Dat spiekblad staat in de
- * theoriereeks, want het hoort bij het menu-item Theorie.
- *
- * Labo Assemblage en Labo Virtualiseren staan erin. De vier overige mapnamen
- * en hun groepering liggen vast: zie CLAUDE.md, "The six modules". Drie labo's
- * hebben meer dan een indiening, en die hebben dus meer dan een Opdracht.html
- * en meer dan vier reeksen. Bij Assemblage zijn dat Inventaris, BiosUefi en
- * InstallatieOs: elk daarvan is een eigen menu-item met een eigen leesvolgorde
- * van een pagina, en daarom staat geen van de drie hieronder. Wat hier staat is
- * de theoriereeks.
+ * Geen van beide lezers voert JavaScript uit, dus de vorm ligt vast: vier
+ * spaties voor "syllabus:", en per topic id, name, blurb en href tussen enkele
+ * aanhalingstekens. Een apostrof in een van die waarden kapt ze af.
  */
 window.LAB_REFERENCE = {
     /*
@@ -92,7 +53,6 @@ window.LAB_REFERENCE = {
                  * bladzijde na het voorwerk.
                  */
                 name: 'Voorwoord',
-                reeks: 'theorie',
                 topics: [
                     {
                         id: 'voorwoord',
@@ -105,7 +65,6 @@ window.LAB_REFERENCE = {
             },
             {
                 name: 'Generaties',
-                reeks: 'theorie',
                 topics: [
                     {
                         id: 'generaties-overzicht',
@@ -165,7 +124,6 @@ window.LAB_REFERENCE = {
             },
             {
                 name: 'Hardware in een moderne computer',
-                reeks: 'theorie',
                 topics: [
                     {
                         id: 'hardware-overzicht',
@@ -189,7 +147,6 @@ window.LAB_REFERENCE = {
             },
             {
                 name: 'BIOS / UEFI',
-                reeks: 'theorie',
                 topics: [
                     {
                         id: 'bios-uefi-overzicht',
@@ -238,7 +195,6 @@ window.LAB_REFERENCE = {
             ,
             {
                 name: 'Industriële computer vs embedded system',
-                reeks: 'theorie',
                 topics: [
                     {
                         id: 'industriele-computer-overzicht',
@@ -280,7 +236,6 @@ window.LAB_REFERENCE = {
             },
             {
                 name: 'De Von Neumann architectuur',
-                reeks: 'theorie',
                 topics: [
                     {
                         id: 'von-neumann-overzicht',
@@ -310,7 +265,6 @@ window.LAB_REFERENCE = {
             },
             {
                 name: 'Bestandssystemen',
-                reeks: 'theorie',
                 topics: [
                     {
                         id: 'bestandssystemen-overzicht',
@@ -394,7 +348,6 @@ window.LAB_REFERENCE = {
             },
             {
                 name: 'Besturingssystemen',
-                reeks: 'theorie',
                 topics: [
                     {
                         id: 'besturingssystemen-overzicht',
@@ -454,7 +407,6 @@ window.LAB_REFERENCE = {
             },
             {
                 name: 'Virtual machines en containers',
-                reeks: 'theorie',
                 topics: [
                     {
                         id: 'virtual-machines-overzicht',
@@ -496,7 +448,6 @@ window.LAB_REFERENCE = {
             },
             {
                 name: 'Moederbord',
-                reeks: 'theorie',
                 topics: [
                     {
                         id: 'moederbord-overzicht',
@@ -544,7 +495,6 @@ window.LAB_REFERENCE = {
             },
             {
                 name: 'Informatievoorstelling',
-                reeks: 'theorie',
                 topics: [
                     {
                         id: 'informatievoorstelling-overzicht',
@@ -598,7 +548,6 @@ window.LAB_REFERENCE = {
             },
             {
                 name: 'Harde schijf',
-                reeks: 'theorie',
                 topics: [
                     {
                         id: 'harde-schijf-overzicht',
@@ -706,7 +655,6 @@ window.LAB_REFERENCE = {
             },
             {
                 name: 'Central Processing Unit (CPU)',
-                reeks: 'theorie',
                 topics: [
                     {
                         id: 'cpu-overzicht',
@@ -742,7 +690,6 @@ window.LAB_REFERENCE = {
             },
             {
                 name: 'Random Access Memory (RAM)',
-                reeks: 'theorie',
                 topics: [
                     {
                         id: 'ram-overzicht',
@@ -826,7 +773,6 @@ window.LAB_REFERENCE = {
             },
             {
                 name: 'Chipset',
-                reeks: 'theorie',
                 topics: [
                     {
                         id: 'chipset-overzicht',
@@ -880,7 +826,6 @@ window.LAB_REFERENCE = {
             },
             {
                 name: 'Graphics Processing Unit (GPU)',
-                reeks: 'theorie',
                 topics: [
                     {
                         id: 'gpu-overzicht',
@@ -916,7 +861,6 @@ window.LAB_REFERENCE = {
             },
             {
                 name: 'Power Supply Unit (PSU)',
-                reeks: 'theorie',
                 topics: [
                     {
                         id: 'psu-overzicht',
@@ -953,589 +897,6 @@ window.LAB_REFERENCE = {
                         name: 'Test jezelf',
                         blurb: 'Tien vragen over de aankoop van een voeding, het vermogen, de UPS, PS_ON en PWR_OK.',
                         href: 'PowerSupplyUnitPsu/TestJezelf.html'
-                    }
-                ]
-            }
-        ]
-    },
-    assemblage: {
-        name: 'Labo Assemblage + BIOS/UEFI',
-        categories: [
-            {
-                name: 'Theorie',
-                reeks: 'theorie',
-                topics: [
-                    {
-                        id: 'veiligheid',
-                        name: 'Veiligheid, orde en netheid',
-                        blurb: 'Waarom je zonder netspanning werkt, hoe je een printplaat vastneemt, en wat er van je werkplek verwacht wordt.',
-                        href: 'Veiligheid.html'
-                    },
-                    {
-                        id: 'componenten',
-                        name: 'De componenten van een pc',
-                        blurb: 'Vormfactor, socket, geheugengeneratie, opslagprotocol en voedingsrendement: waar je naar kijkt en in welke eenheid het staat.',
-                        href: 'Componenten.html'
-                    },
-                    {
-                        id: 'bios-uefi',
-                        name: 'BIOS en UEFI',
-                        blurb: 'Wat de firmware doet voor er een besturingssysteem is: de POST, de opstartvolgorde en het bootmenu.',
-                        href: 'BiosUefi.html'
-                    }
-                ]
-            },
-            {
-                name: 'Zelftest',
-                reeks: 'theorie',
-                topics: [
-                    {
-                        id: 'test-jezelf-assemblage',
-                        name: 'Test jezelf',
-                        blurb: 'Meerkeuzevragen over de drie pagina\'s hierboven, in dezelfde vorm als de test in Orion. Bij elk antwoord staat waar je het kan nalezen.',
-                        href: 'TestJezelf.html'
-                    }
-                ]
-            },
-            {
-                name: 'Datasheets',
-                reeks: 'theorie',
-                topics: [
-                    {
-                        id: 'datasheet-moederbord',
-                        name: 'Moederbord',
-                        blurb: 'De layout van het bord, de connectoren en de tabellen met sockets, slots en poorten.',
-                        href: '../../../datasheets/mb-manual-a520m-s2h-e-1301.pdf'
-                    },
-                    {
-                        id: 'datasheet-processor',
-                        name: 'Processor',
-                        blurb: 'Modelnummer, aantal cores, kloksnelheid, cachegeheugens en energieverbruik.',
-                        href: '../../../datasheets/amd-ryzen-3-4300g-socket-am4-processor-unlocked-wraith-stealth-boxed.pdf'
-                    },
-                    {
-                        id: 'datasheet-geheugen',
-                        name: 'Werkgeheugen',
-                        blurb: 'Generatie, capaciteit, standaardsnelheid en spanning van de geheugenmodule.',
-                        href: '../../../datasheets/gskill-aegis-8gb.pdf'
-                    },
-                    {
-                        id: 'datasheet-ssd',
-                        name: 'SSD',
-                        blurb: 'Capaciteit, protocol, vormfactor en lees- en schrijfsnelheid.',
-                        href: '../../../datasheets/ssd-intern-25-top.pdf'
-                    },
-                    {
-                        id: 'datasheet-voeding',
-                        name: 'Voeding',
-                        blurb: 'Vermogen, rendement en de uitgangsspanningen die de voeding levert.',
-                        href: '../../../datasheets/ds-shp-bronze-en-07.pdf'
-                    }
-                ]
-            }
-        ]
-    },
-    virtualiseren: {
-        name: 'Labo Virtualiseren',
-        categories: [
-            {
-                name: 'Theorie',
-                reeks: 'theorie',
-                topics: [
-                    {
-                        id: 'wat-is-virtualisatie',
-                        name: 'Wat is virtualisatie',
-                        blurb: 'Host en guest, waarom een bedrijf zijn servers virtualiseert, wat het aan snelheid kost, en waarin een container verschilt van een virtuele machine.',
-                        href: 'WatIsVirtualisatie.html'
-                    },
-                    {
-                        id: 'virtuele-hardware',
-                        name: 'Virtuele hardware',
-                        blurb: 'Wat VirtualBox nabootst en wat je daarvan zelf instelt: de virtualisatie-uitbreiding van je processor, EFI, het ISO-bestand en de drie manieren om de machine te stoppen.',
-                        href: 'VirtueleHardware.html'
-                    },
-                    {
-                        id: 'schijf-en-geheugen',
-                        name: 'Schijf en geheugen',
-                        blurb: 'Statische tegenover dynamische allocatie, en waarom werkgeheugen meer voor de snelheid van je machine doet dan een extra processor.',
-                        href: 'SchijfEnGeheugen.html'
-                    },
-                    {
-                        id: 'software-in-de-guest',
-                        name: 'Software in de guest',
-                        blurb: 'Proprietary software en de afweging om ze mee te installeren, en Guest Additions: wat het oplost en waarom het op je eigen kernel gebouwd wordt.',
-                        href: 'SoftwareInDeGuest.html'
-                    }
-                ]
-            },
-            {
-                name: 'Zelftest',
-                reeks: 'theorie',
-                topics: [
-                    {
-                        id: 'test-jezelf-virtualiseren',
-                        name: 'Test jezelf',
-                        blurb: 'Meerkeuzevragen over de vier pagina\'s hierboven, in dezelfde vorm als de test in Orion. Bij elk antwoord staat waar je het kan nalezen.',
-                        href: 'TestJezelf.html'
-                    }
-                ]
-            },
-            {
-                name: 'Opdracht',
-                reeks: 'opdracht',
-                topics: [
-                    {
-                        id: 'opdracht-virtualiseren',
-                        name: 'De opdracht',
-                        blurb: 'Wat je maakt en indient, en het document waarin je je antwoorden invult.',
-                        href: '../Opdracht.html'
-                    },
-                    {
-                        id: 'virtuele-machine-aanmaken',
-                        name: 'Een virtuele machine aanmaken',
-                        blurb: 'De vier schermen van de wizard, het ISO-bestand waarvan je opstart, het werkgeheugen bijstellen en de machine weer stoppen.',
-                        href: '../VirtueleMachineAanmaken.html'
-                    },
-                    {
-                        id: 'installatie-ubuntu',
-                        name: 'Installatie Ubuntu',
-                        blurb: 'De twaalf schermen van het installatieprogramma, met bij elk de keuze die je in dit labo neemt.',
-                        href: '../InstallatieUbuntu.html'
-                    },
-                    {
-                        id: 'guest-additions',
-                        name: 'Guest Additions installeren',
-                        blurb: 'De installatie in drie pogingen, en de pakketten die je tussendoor bijhaalt om de twee foutmeldingen op te lossen.',
-                        href: '../GuestAdditions.html'
-                    }
-                ]
-            }
-        ]
-    },
-    partitioneren: {
-        name: 'Labo Partitioneren',
-        categories: [
-            {
-                name: 'Theorie',
-                reeks: 'theorie',
-                topics: [
-                    {
-                        id: 'partitietabellen',
-                        name: 'Partitietabellen',
-                        blurb: 'Waarom je een schijf verdeelt, waar die verdeling bijgehouden wordt, en wat MBR met zijn vier tabelplaatsen anders doet dan GPT met zijn honderdachtentwintig.',
-                        href: 'Partitietabellen.html'
-                    },
-                    {
-                        id: 'bestandssystemen',
-                        name: 'Bestandssystemen',
-                        blurb: 'Wat formatteren toevoegt aan partitioneren, hoe sectoren tot clusters gegroepeerd worden, waar een journaal voor dient, en welk bestandssysteem waar past.',
-                        href: 'Bestandssystemen.html'
-                    }
-                ]
-            },
-            {
-                name: 'Spiekblad',
-                reeks: 'theorie',
-                topics: [
-                    {
-                        id: 'spiekblad-partitioneren',
-                        name: 'Spiekblad',
-                        blurb: 'De partitiesoorten, de schijfnamen van Linux en de grenzen van elk bestandssysteem, in vier tabellen om naast je scherm te houden.',
-                        href: 'Spiekblad.html'
-                    }
-                ]
-            },
-            {
-                name: 'Zelftest',
-                reeks: 'theorie',
-                topics: [
-                    {
-                        id: 'test-jezelf-partitioneren',
-                        name: 'Test jezelf',
-                        blurb: 'Meerkeuzevragen over de twee theoriepagina\'s, in dezelfde vorm als de test in Orion. Bij elk antwoord staat waar je het kan nalezen.',
-                        href: 'TestJezelf.html'
-                    }
-                ]
-            },
-            {
-                name: 'Opdracht',
-                reeks: 'opdracht',
-                topics: [
-                    {
-                        id: 'oefening-partitioneren',
-                        name: 'De begeleide oefening',
-                        blurb: 'Waar je oefent en waar je het echte werk doet, en waarom dat twee verschillende virtuele machines zijn.',
-                        href: '../Overzicht.html'
-                    },
-                    {
-                        id: 'oefenmachine',
-                        name: 'De oefenmachine opzetten',
-                        blurb: 'Een virtuele machine met twee lege schijven van 10 GB, die van het GParted-bestand opstart, en wat je in het venster van GParted ziet staan.',
-                        href: '../Oefenmachine.html'
-                    },
-                    {
-                        id: 'mbr-partities',
-                        name: 'Primaire partities in een MBR-tabel',
-                        blurb: 'De tabel aanmaken als msdos, vier primaire partities erin zetten, en de groottes bijstellen wanneer de plaats niet volstaat.',
-                        href: '../MbrPartities.html'
-                    },
-                    {
-                        id: 'extended-en-logisch',
-                        name: 'Extended en logische partities',
-                        blurb: 'Waar GParted stopt bij vier primaire partities, en hoe je de schijf opnieuw indeelt met een uitgebreide partitie en drie logische erin.',
-                        href: '../ExtendedEnLogisch.html'
-                    },
-                    {
-                        id: 'gpt-partities',
-                        name: 'GPT-partities',
-                        blurb: 'Dezelfde oefening op de tweede schijf, met een GPT-partitietabel en vijf partities die allemaal primair zijn.',
-                        href: '../GptPartities.html'
-                    },
-                    {
-                        id: 'opdracht-partitioneren',
-                        name: 'De opdracht',
-                        blurb: 'Wat je maakt en indient, en het document waarin je je antwoorden invult.',
-                        href: '../Opdracht.html'
-                    }
-                ]
-            }
-        ]
-    },
-    linuxbasis: {
-        name: 'Labo Linux Basis',
-        categories: [
-            {
-                name: 'Theorie',
-                reeks: 'theorie',
-                topics: [
-                    {
-                        id: 'linux-en-distributies',
-                        name: 'Linux en zijn distributies',
-                        blurb: 'Waarom Linux een kernel is en geen besturingssysteem, wat een distributie eraan toevoegt, en waarin open-source verschilt van gratis.',
-                        href: 'LinuxEnDistributies.html'
-                    },
-                    {
-                        id: 'de-terminal',
-                        name: 'De terminal',
-                        blurb: 'Wat de vier delen van de prompt je vertellen, en de drie manieren waarop een commando stukloopt op een hoofdletter, een spatie of een streepje.',
-                        href: 'DeTerminal.html'
-                    },
-                    {
-                        id: 'commando-en-opties',
-                        name: 'Een commando en zijn opties',
-                        blurb: 'De opbouw van elk commando, hoe je korte opties combineert, wat recursief betekent, en wat de wildcard en de pipe met je uitvoer doen.',
-                        href: 'CommandoEnOpties.html'
-                    },
-                    {
-                        id: 'de-bestandsboom',
-                        name: 'De bestandsboom',
-                        blurb: 'De boom die bij / begint, de tilde van je eigen map, de mappen van Linux naast die van Windows, en hoe je een regel van ls -alh leest.',
-                        href: 'DeBestandsboom.html'
-                    },
-                    {
-                        id: 'gebruikers-en-rechten',
-                        name: 'Gebruikers en rechten',
-                        blurb: 'Wat de root gebruiker mag, waarom je je niet als root aanmeldt, wat sudo daaraan verandert, en waar Permission denied vandaan komt.',
-                        href: 'GebruikersEnRechten.html'
-                    }
-                ]
-            },
-            {
-                name: 'Spiekblad',
-                reeks: 'theorie',
-                topics: [
-                    {
-                        id: 'spiekblad-linuxbasis',
-                        name: 'Spiekblad',
-                        blurb: 'Elk commando van dit labo met zijn opties, de toetsen van de terminal en van de editors, en de mappen van Linux, in vier tabellen om naast je scherm te houden.',
-                        href: 'Spiekblad.html'
-                    }
-                ]
-            },
-            {
-                name: 'Zelftest',
-                reeks: 'theorie',
-                topics: [
-                    {
-                        id: 'test-jezelf-linuxbasis',
-                        name: 'Test jezelf',
-                        blurb: 'Negen meerkeuzevragen over de theorie van dit labo, in dezelfde vorm als de test in Orion. Bij elk antwoord staat waar je het kan nalezen.',
-                        href: 'TestJezelf.html'
-                    }
-                ]
-            },
-            {
-                name: 'Opdracht',
-                reeks: 'opdracht',
-                topics: [
-                    {
-                        id: 'oefening-linuxbasis',
-                        name: 'De begeleide oefening',
-                        blurb: 'Wat je hierna stap voor stap intypt, waarom de volgorde ervan telt, en wat er daarna zelfstandig van je verwacht wordt.',
-                        href: '../Overzicht.html'
-                    },
-                    {
-                        id: 'terminal-openen',
-                        name: 'De terminal openen',
-                        blurb: 'Aanmelden op de Ubuntu-machine, een terminal starten, met pwd uitzoeken waar je staat, en met history terugkijken wat je ingegeven hebt.',
-                        href: '../TerminalOpenen.html'
-                    },
-                    {
-                        id: 'navigeren',
-                        name: 'Navigeren tussen mappen',
-                        blurb: 'De inhoud van een map tonen met ls en zijn vier opties, en met cd naar een andere map gaan zonder de naam volledig te typen.',
-                        href: '../Navigeren.html'
-                    },
-                    {
-                        id: 'mappen-en-bestanden',
-                        name: 'Mappen en bestanden maken',
-                        blurb: 'De drie mappen aanmaken waar de rest van de oefening mee werkt, en een tekstbestand schrijven met nano en daarna met vi.',
-                        href: '../MappenEnBestanden.html'
-                    },
-                    {
-                        id: 'kopieren',
-                        name: 'Bestanden en mappen kopiëren',
-                        blurb: 'Kopiëren met cp, alle bestanden van een map in één commando met de wildcard, en de foutmelding die je naar de optie -r brengt.',
-                        href: '../Kopieren.html'
-                    },
-                    {
-                        id: 'verplaatsen-en-verwijderen',
-                        name: 'Verplaatsen en verwijderen',
-                        blurb: 'Hernoemen en verplaatsen met hetzelfde commando mv, en wissen met rm, waar een map om -r vraagt en er geen prullenbak is.',
-                        href: '../VerplaatsenEnVerwijderen.html'
-                    },
-                    {
-                        id: 'schijfruimte-en-zoeken',
-                        name: 'Schijfruimte bekijken en bestanden zoeken',
-                        blurb: 'De grootte van een map opvragen met du en bestanden zoeken met find, en zien wat sudo doet met de foutmeldingen die je onderweg krijgt.',
-                        href: '../SchijfruimteEnZoeken.html'
-                    },
-                    {
-                        id: 'processen-en-uitvoer',
-                        name: 'Processen en uitvoer',
-                        blurb: 'De draaiende processen opvragen met ps, en die lijst met een pipe doorgeven aan more zodat ze niet voorbijloopt.',
-                        href: '../ProcessenEnUitvoer.html'
-                    },
-                    {
-                        id: 'archiveren-en-afsluiten',
-                        name: 'Archiveren en afsluiten',
-                        blurb: 'Een map inpakken en weer uitpakken met tar, en de machine heropstarten of uitzetten met shutdown.',
-                        href: '../ArchiverenEnAfsluiten.html'
-                    },
-                    {
-                        id: 'opdracht-linuxbasis',
-                        name: 'De opdracht',
-                        blurb: 'Wat je maakt en indient, en het document waarin je je antwoorden en je screenshots kwijt kan.',
-                        href: '../Opdracht.html'
-                    }
-                ]
-            }
-        ]
-    },
-    linuxgeavanceerd: {
-        name: 'Labo Linux Geavanceerd',
-        categories: [
-            {
-                name: 'Theorie',
-                reeks: 'theorie',
-                topics: [
-                    {
-                        id: 'gebruikers-en-groepen',
-                        name: 'Gebruikers en groepen',
-                        blurb: 'Wat root mag en waarom je je er niet als aanmeldt, wat sudo daaraan verandert, en waarom rechten op een groep staan in plaats van op tien gebruikers.',
-                        href: 'GebruikersEnGroepen.html'
-                    },
-                    {
-                        id: 'rechten',
-                        name: 'Rechten op een bestand',
-                        blurb: 'De drie rechten en de drie klassen, hoe je de tien tekens van ls leest, dezelfde rechten in cijfers, en wat chmod, chown en chgrp elk aanpassen.',
-                        href: 'Rechten.html'
-                    },
-                    {
-                        id: 'software-uit-de-repository',
-                        name: 'Software uit de repository',
-                        blurb: 'Wat een repository is en waarom software eruit bijgewerkt blijft, wat een package manager met dependencies doet, en waarin het Software Center, apt en snap verschillen.',
-                        href: 'SoftwareUitDeRepository.html'
-                    },
-                    {
-                        id: 'software-buiten-de-repository',
-                        name: 'Software buiten de repository',
-                        blurb: 'Een deb bestand, een installer script en broncode die je zelf compileert, en bij elke stap wat je opgeeft aan automatisch bijwerken.',
-                        href: 'SoftwareBuitenDeRepository.html'
-                    },
-                    {
-                        id: 'docker',
-                        name: 'Docker',
-                        blurb: 'Wat een container is naast een virtuele machine, het verschil tussen een image en een container, wat in een Dockerfile staat en wat een poort doorgeven betekent.',
-                        href: 'Docker.html'
-                    }
-                ]
-            },
-            {
-                name: 'Spiekblad',
-                reeks: 'theorie',
-                topics: [
-                    {
-                        id: 'spiekblad-linuxgeavanceerd',
-                        name: 'Spiekblad',
-                        blurb: 'Elk commando van dit labo, de rechtennotatie met haar cijfers en de vijf wegen om software te installeren, in vier tabellen om naast je scherm te houden.',
-                        href: 'Spiekblad.html'
-                    }
-                ]
-            },
-            {
-                name: 'Zelftest',
-                reeks: 'theorie',
-                topics: [
-                    {
-                        id: 'test-jezelf-linuxgeavanceerd',
-                        name: 'Test jezelf',
-                        blurb: 'Negen meerkeuzevragen over de theorie van dit labo, in dezelfde vorm als de test in Orion. Bij elk antwoord staat waar je het kan nalezen.',
-                        href: 'TestJezelf.html'
-                    }
-                ]
-            },
-            {
-                name: 'Software installeren',
-                reeks: 'software',
-                topics: [
-                    {
-                        id: 'software-overzicht',
-                        name: 'Software installeren',
-                        blurb: 'Wat je op de pagina hierna installeert en langs welke weg, en waarom de volgorde van makkelijk naar moeilijk zelf het onderwerp is.',
-                        href: '../SoftwareInstalleren/Overzicht.html'
-                    },
-                    {
-                        id: 'uit-de-winkel',
-                        name: 'Uit de winkel',
-                        blurb: 'Een editor uit het Software Center, ssh met apt en VLC met snap, en de dependencies die er bij het tweede vanzelf bijkomen.',
-                        href: '../SoftwareInstalleren/UitDeWinkel.html'
-                    },
-                    {
-                        id: 'eigen-repository',
-                        name: 'Een repository van de leverancier',
-                        blurb: 'Spotify installeren door de sleutel van de leverancier in etc apt keyrings te zetten en de APT-regel ernaar te laten wijzen met signed-by.',
-                        href: '../SoftwareInstalleren/EigenRepository.html'
-                    },
-                    {
-                        id: 'deb-bestand',
-                        name: 'Een deb bestand',
-                        blurb: 'Google Chrome installeren met dpkg, de dependency-fout lezen die daarop volgt, en ze rechtzetten met apt-get install -f.',
-                        href: '../SoftwareInstalleren/DebBestand.html'
-                    },
-                    {
-                        id: 'installer-script',
-                        name: 'Een installer script',
-                        blurb: 'De Arduino IDE uitpakken uit een tar.xz archief, het installer script herkennen aan zijn rechten en het met sudo uitvoeren.',
-                        href: '../SoftwareInstalleren/InstallerScript.html'
-                    },
-                    {
-                        id: 'source-code',
-                        name: 'Compileren uit broncode',
-                        blurb: 'De no-ip client zelf vertalen met make, de handleiding lezen die bij de broncode zit, en zien welke compiler make aanroept.',
-                        href: '../SoftwareInstalleren/SourceCode.html'
-                    },
-                    {
-                        id: 'container-met-docker',
-                        name: 'Een container met Docker',
-                        blurb: 'De webserver Apache uit Docker Hub halen, er met een Dockerfile je eigen bladzijde in bouwen en de container op poort 8080 draaien.',
-                        href: '../SoftwareInstalleren/ContainerMetDocker.html'
-                    },
-                    {
-                        id: 'up-to-date',
-                        name: 'Je systeem up to date houden',
-                        blurb: 'Bijwerken met de Software Updater en met apt, en nagaan welk van de zeven geinstalleerde programmas daarin meegaat.',
-                        href: '../SoftwareInstalleren/UpToDate.html'
-                    }
-                ]
-            },
-            {
-                name: 'Opdracht chmod',
-                reeks: 'chmod',
-                topics: [
-                    {
-                        id: 'oefening-chmod',
-                        name: 'De begeleide oefening',
-                        blurb: 'Gebruikers en groepen aanmaken in vier stappen die op elkaar voortbouwen, voor je aan het document begint.',
-                        href: '../Chmod/Overzicht.html'
-                    },
-                    {
-                        id: 'gebruikers-aanmaken',
-                        name: 'Gebruikers aanmaken',
-                        blurb: 'Twee gebruikers maken met adduser, zien wat dat commando er allemaal bij aanmaakt, en met su en exit wisselen tussen gebruikers.',
-                        href: '../Chmod/GebruikersAanmaken.html'
-                    },
-                    {
-                        id: 'sudo-rechten',
-                        name: 'Een gebruiker sudo-rechten geven',
-                        blurb: 'De melding die je krijgt zonder dat recht, de gebruiker met usermod in de groep sudo zetten, en met members nakijken wie erin zit.',
-                        href: '../Chmod/SudoRechten.html'
-                    },
-                    {
-                        id: 'een-eigen-groep',
-                        name: 'Een eigen groep maken',
-                        blurb: 'Een groep maken met groupadd, er twee gebruikers in zetten, en zien dat een gebruiker in meer dan een groep tegelijk zit.',
-                        href: '../Chmod/EenEigenGroep.html'
-                    },
-                    {
-                        id: 'opruimen',
-                        name: 'Wissen en opruimen',
-                        blurb: 'Met deluser een gebruiker wissen samen met zijn map, en iemand uit een groep halen zonder hem te wissen.',
-                        href: '../Chmod/Opruimen.html'
-                    },
-                    {
-                        id: 'opdracht-chmod',
-                        name: 'De opdracht',
-                        blurb: 'Twee gebruikers en een bestand maken, en met chmod uitzoeken wie het daarna nog open krijgt.',
-                        href: '../Chmod/Opdracht.html'
-                    }
-                ]
-            },
-            {
-                name: 'Opdracht chown',
-                reeks: 'chown',
-                topics: [
-                    {
-                        id: 'oefening-chown',
-                        name: 'De begeleide oefening',
-                        blurb: 'Waar de owner in de uitvoer van ls staat, en welke opdracht je afgewerkt moet hebben voor je hieraan begint.',
-                        href: '../Chown/Overzicht.html'
-                    },
-                    {
-                        id: 'owner-aanpassen',
-                        name: 'De owner aanpassen',
-                        blurb: 'In welke van de twee naamkolommen van ls de owner staat, en hoe je een map met chown aan een andere gebruiker geeft.',
-                        href: '../Chown/OwnerAanpassen.html'
-                    },
-                    {
-                        id: 'opdracht-chown',
-                        name: 'De opdracht',
-                        blurb: 'Een regel van ls ontleden, het bestand aan een andere eigenaar geven, en software langs drie wegen installeren.',
-                        href: '../Chown/Opdracht.html'
-                    }
-                ]
-            },
-            {
-                name: 'Opdracht chgrp',
-                reeks: 'chgrp',
-                topics: [
-                    {
-                        id: 'oefening-chgrp',
-                        name: 'De begeleide oefening',
-                        blurb: 'Waar de group staat en wat ze aan de toegang verandert, en welke twee opdrachten hieraan voorafgaan.',
-                        href: '../Chgrp/Overzicht.html'
-                    },
-                    {
-                        id: 'group-aanpassen',
-                        name: 'De group aanpassen',
-                        blurb: 'De group van een map wijzigen met chgrp, en zien voor wie de drie letters in het midden daarna gelden.',
-                        href: '../Chgrp/GroupAanpassen.html'
-                    },
-                    {
-                        id: 'opdracht-chgrp',
-                        name: 'De opdracht',
-                        blurb: 'Een bestand waar de eigenaar niet meer bij kan, en een groep die het weer toegankelijk maakt.',
-                        href: '../Chgrp/Opdracht.html'
                     }
                 ]
             }
