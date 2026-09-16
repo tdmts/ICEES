@@ -197,24 +197,67 @@ menu-item en geen bestand, en hij bleef grammaticaal. Grep na een herindeling du
 vergeet daarbij de `<!-- verslag -->` blokken niet: de lead van `Inventaris/Opdracht.html` staat op
 de eerste bladzijde van het verslag, dus regel 6 eist een nieuwe docx zodra je eraan raakt.
 
-**De oude Brightspace-inhoud van labo 6 en 7 gaat weg, met de hand, beslist 16 september 2026.**
+**De oude Brightspace-inhoud van labo 6 en 7 is weg, met de hand, beslist 16 september 2026.**
 Labo Linux Basis [36869] en Linux Geavanceerd [36870] zijn nooit in Orion gezet, dus bij de overstap
 zijn de modules geadopteerd en de nieuwe topics ERIN gemaakt, naast de ingevoerde Chamilo-inhoud. Wat
 daar niet van de sync is, telt 63 topics, en die zijn niet van een soort:
 
 | Soort | Aantal | Wat ermee gebeurt |
 |---|---|---|
-| Chamilo-pagina's, laden `tdmts.github.io/OrionCSS/style.css` | 52 | gewist |
-| Dropbox-quicklinks, elk een dubbel van een nieuw topic op dezelfde rCode | 4 | gewist; de map blijft |
-| Quiz-quicklinks Test jezelf (36907, 36908) | 2 | gewist; de quiz blijft in Quizzen |
-| Oplossing-pdf's in twee submodules Oplossingen | 4 | nieuw topic op hetzelfde bestand bovenaan de module, zoals labo 3 tot 5 |
+| Chamilo-pagina's, laden `tdmts.github.io/OrionCSS/style.css` | 52 | gewist, met hun bestand |
+| Dropbox-quicklinks, elk een dubbel van een nieuw topic op dezelfde rCode | 4 | gewist, **alleen uit Content** |
+| Quiz-quicklinks Test jezelf (36907, 36908) | 2 | gewist, **alleen uit Content** |
+| Oplossing-pdf's van vorig jaar in twee submodules Oplossingen | 4 | vervangen door een nieuwe oplossing, zie hieronder |
 | lti 41255, Test labo Linux basis + geavanceerd | 1 | blijft staan |
 
+**Labo 6 is af sinds 16 september 2026 en blijft voorlopig verborgen**, op vraag van de lector. De
+lector wiste de 29 pagina's, de link en de quiz-link met de hand. Daarna trok een eenmalig script het
+labo gelijk met Virtualiseren en Partitioneren: `Labo-LinuxBasis-oplossing.pdf` in de wortel van de
+cursus, een topic **Oplossing Linux Basis** [79756] los bovenaan de module, submodule Oplossingen
+[36915] weg, en in Verslag Linux Basis [1868] de instructie van Verslag Virtualiseren. De lector
+haalde de SharePoint-link naar de opgave van vorig jaar uit die map en zette de vrijgavevoorwaarde; de
+API kan geen van beide. Daarna schreef hij die instructie zelf om: ze gaat nu over allebei de labo's
+("Als je de opdrachten Linux Basis en Linux Geavanceerd hebt ingediend dan vraag je de lector om dat
+te controleren. Daarna leg je de test over beide labo's af. ...").
+
+**Labo 7 is af sinds diezelfde dag, en is ook verborgen.** Dezelfde weg, in drie stappen met een
+controle van de toc na elke stap: de drie losse pagina's [36900-36902] en de submodules Voor je begint
+[36903] en software installeren [36905] definitief met bestand; dan in submodule 36904 de drie links Verslag
+chmod, chown en chgrp [36996-36998] en de quiz-link [36908] alleen uit Content; en pas daarna 36904
+zelf definitief. De mappen 1863, 1864 en 1865 bleven zo bestaan. Het script zette de drie pdf's in de
+wortel en maakte **Oplossing chmod** [79778], **chown** [79779] en **chgrp** [79780], op vraag van de
+lector **achteraan in hun submodule Opdracht** en niet los in de module zoals bij labo 6, want er zijn
+er drie en elk hoort bij zijn eigen verslag. Submodule Oplossingen [36916] ging via de API weg; de
+oude pdf's van vorig jaar staan nog in de wortel van de cursus, net als die van Linux Basis.
+
+**Wat bij labo 7 nog openstaat, en door de lector geparkeerd is:** de instructie van de drie mappen
+1863-1865 is nog die van vorig jaar ("Vertrek vanaf de opgave die je op deze pagina kan downloaden.
+... Na het indienen krijg je de voorbeeldoplossing."), en elke map draagt als bijlage nog de oude opgave
+(`Opdracht chmod.docx` enzovoort) en geen SharePoint-link. De vraag welke tekst er komt, bleef open
+omdat de gevolgen nog niet duidelijk waren: de tekst van 1868 noemt de test over beide labo's en past
+dus het best bij de laatste map. De bijlage gaat met de hand weg, en de vrijgavevoorwaarde op de drie
+oplossingtopics ook; die topics zijn zelf zichtbaar, dus ze moet er staan voor het labo opengaat.
+
+**"Definitief verwijderen" in Content wist bij een quicklink ook het ding waar hij naar wijst.** Zo
+verdween de dropboxmap Verslag Linux Basis [1868] mee met de submodule waar haar oude link in hing, en
+de lector heeft ze via Opdrachten, Meer acties, Herstellen teruggezet. Een quiz-link gaat dus om
+dezelfde reden alleen uit Content. **Een map heet hier niet naar de volgorde van haar ID**: 1862 is
+de oude map van Partitioneren en die bestond al niet meer, dus zoek een map op haar ActivityId, die op
+dezelfde code eindigt als de `rCode` van de quicklink.
+
+**Een nieuwe oplossing komt uit `scripts/export-oplossing.py`**, niet uit de pdf van vorig jaar,
+want de verslagen vragen sindsdien meer. De antwoordbestanden staan in `_oplossingen/`, buiten git,
+voor Linux Basis en voor Chmod, Chown en Chgrp: de oude oplossing voor de vragen die er al waren, de
+theoriepagina's voor de nieuwe. Vier dingen zijn daarbij afgeweken van de oude oplossing en nog niet
+op een labomachine nagekeken: `sudo` bij `chmod 066` als elm, `sudo cat` waar `sudo tekst.txt`
+stond, `nano` met het volledige pad na `su`, en of een persoonlijke map 750 is (Linux Basis) of 755
+(`Theorie/Rechten.html`).
+
 **`--prune` raakt hier niets**: die wist alleen wat de sync zelf gemaakt heeft, en deze 63 stonden
-nooit in `orion.json`. Een scriptje op `bs.deleteTopic` kon, maar valt buiten het contract van de
-sync, en de lector koos de hand. **De 52 pagina's waren exact de 52 fouten van verify**, dus
-`npm run verify -- ICEES --course 15211` hoort daarna GO te zeggen, en dat is de toets of het af is.
-De inventaris maak je opnieuw door de toc te lezen en elk ID af te toetsen tegen `structure` in
+nooit in `orion.json`. **De 52 pagina's waren exact de 52 fouten van verify**, en na labo 7 meldde
+verify op 16 september 2026 alleen nog `Algemeen/Planning.html`, een niet-gecommitte wijziging van de
+lector die dus nog niet gesynct was. De inventaris maak je
+opnieuw door de toc te lezen en elk ID af te toetsen tegen `structure` in
 `../OrionSync/.sync-state/15211-ICEES.json`. De twee embedded-modules staan ook buiten `orion.json`,
 maar dragen ons adres niet en blokkeren niets.
 
