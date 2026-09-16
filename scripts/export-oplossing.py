@@ -74,6 +74,11 @@ Platte tekst, per opdracht een bestand in `_oplossingen/`:
   staat slaat af, een rij zonder antwoord ook, en tekst NA de rijen ook: dat
   zou onder de tabel belanden. Draagt de vraag geen tabel, dan is een regel met
   een dubbelpunt gewoon een zin.
+* Heeft die tabel meer dan twee kolommen, dan scheidt ` | ` de waarden van de
+  kolommen na het rijlabel: `Rijlabel: kolom 2 | kolom 3`. Een rij met te veel
+  of te weinig waarden slaat af.
+* Het label eindigt op de eerste dubbelpunt MET een spatie erachter, zodat een
+  label als een Windows-pad met `c:` erin heel blijft.
 
 DE PARSER IS EEN KOPIE
 ----------------------
@@ -236,7 +241,7 @@ class Antwoord:
         for i, regel in enumerate(self.regels):
             m = VELD.match(regel.strip())
             if regel.strip() and m:
-                velden.append((m.group(1).strip(), m.group(2).strip()))
+                velden.append((m.group(1).strip(), (m.group(2) or "").strip()))
                 continue
             break
         else:
@@ -259,7 +264,7 @@ ONDER_HET_KADER = (
 
 VRAAGSLEUTEL = re.compile(r"^\s*(\d+)\s*\.\s*$")
 KADERSLEUTEL = re.compile(r"^\s*\[kader\]", re.I)
-VELD = re.compile(r"^([^:]{1,120}):\s*(.*)$")
+VELD = re.compile(r"^(.{1,120}?):(?:\s+(.*))?$")
 
 
 def lees_antwoorden(pad):
@@ -352,7 +357,7 @@ def antwoordblok(antwoord):
 
 
 def ingevulde_tabel(node, velden, waar):
-    """De invultabel met de antwoorden in de tweede kolom.
+    """De invultabel met de antwoorden in de kolommen na het rijlabel.
 
     De rijlabels van de opdracht zijn leidend: staat er een label in het
     antwoordbestand dat de tabel niet heeft, dan is de opdracht gewijzigd en
@@ -379,14 +384,17 @@ def ingevulde_tabel(node, velden, waar):
         uit.append(f"<td>{esc(label)}</td>")
         if sleutel in per_label:
             gebruikt.add(sleutel)
-            uit.append(f'<td class="gevuld">{esc(per_label[sleutel])}</td>')
+            waarden = [per_label[sleutel]]
+            if len(koppen) > 2:
+                waarden = [w.strip() for w in per_label[sleutel].split(" | ")]
+                if len(waarden) != len(koppen) - 1:
+                    sys.exit(f"{waar}: rij '{label}' draagt {len(waarden)} waarden, "
+                             f"de tabel heeft er {len(koppen) - 1} nodig, gescheiden door ' | '")
+            for waarde in waarden:
+                uit.append(f'<td class="gevuld">{esc(waarde)}</td>')
         else:
-            uit.append('<td class="ontbreekt"></td>')
-        # Een tabel met meer dan twee kolommen komt in deze opdrachten niet
-        # voor; mocht ze er komen, blijven de extra kolommen leeg in plaats
-        # van dat de rij scheeftrekt.
-        for _ in range(len(koppen) - 2):
-            uit.append('<td class="ontbreekt"></td>')
+            for _ in range(len(koppen) - 1):
+                uit.append('<td class="ontbreekt"></td>')
         uit.append("</tr>")
     uit.append("</tbody></table>")
 
