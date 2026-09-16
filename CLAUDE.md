@@ -152,8 +152,9 @@ Oordelen die hierbij gemaakt zijn, en die je mag terugdraaien:
 - **De dropboxmappen houden hun huidige naam**, dus er wordt niets hernoemd. Ze zijn onderling niet
   gelijkvormig (`Indienen Inventaris (!)` naast `Opdracht: chmod`); dat rechttrekken hernoemt de map
   in Brightspace en is dus jouw keuze, niet die van een opruimronde.
-- **De blurbs in `reference.js` blijven staan**, 127 stuks, terwijl geen enkele lezer ze nog gebruikt.
-  Regel 2 eist ze, dus ze kunnen niet stil leeglopen. DeN heeft ze geschrapt.
+- **De 127 blurbs in `reference.js` zijn geschrapt**, zoals DeN dat al gedaan had. Niets las ze nog,
+  en een nieuw hoofdstuk had er weer moeten krijgen voor een veld zonder lezer. Regel 2 eist nu id,
+  name en href.
 
 **Twee topics konden hun ID niet houden**, want een topic verhuist in Brightspace niet naar een
 submodule: Opdracht [71034] van Virtualiseren en Opdracht [71038] van Partitioneren. Al de rest is
@@ -981,10 +982,10 @@ pay for it. Same case as `WatIsVirtualisatie.html`.
 the manifest with `name:\s*'([^']*)'`, so an apostrophe inside a single-quoted field truncates the
 value and a double-quoted field is not seen at all. "Commando's en parameters" therefore failed rule
 2 with "veld 'name' ontbreekt of is leeg" while the page was perfectly fine. It is now
-`CommandoEnOpties.html`, "Een commando en zijn opties", and no field in the `linuxbasis` block
-contains an apostrophe. **`partitioneren` still has one**, in the blurb of its zelftest, and it
-passes because a truncated value is not an empty one: the hub silently shows half a sentence. Worth
-fixing when that module is next touched, in the manifest or in the regex.
+`CommandoEnOpties.html`, "Een commando en zijn opties". The trap itself has not gone away: the
+regex still reads the syllabus manifest, and a truncated value is not an empty one, so a `name` with
+an apostrophe in it passes rule 2 and prints half a chapter title in the PDF. Keep every field in
+`reference.js` free of one.
 
 **The Linux chapter of the syllabus was read beside these pages and needed no correction.**
 `Theorie/Syllabus/Theorie/Besturingssystemen/` says the same thing about the kernel, about root
@@ -2352,7 +2353,7 @@ hoofdstuk en in de inhoudstafel. `reference.js` was tot hoofdstuk 4 volledig ASC
 verscheen daardoor als "4 Industriele computer vs embedded system" boven een kader dat drie keer
 "industriële" schrijft. De naam draagt nu het teken zelf, en dat is de enige regel in het bestand
 die niet ASCII is. Dit raakt alleen de `name` van een categorie: een sectietitel komt uit de `<h1>`
-van de pagina, en een blurb wordt nergens gedrukt.
+van de pagina.
 
 **Een zwevende afbeelding heeft dus geen bijschrift meer, en dus ook geen `alt`.** `figuur()` valt
 dan terug op "Afbeelding uit de syllabus", en dat is geen beschrijving. De vijf `alt`-teksten van

@@ -12,8 +12,8 @@ Draai dit voor je een inhoudelijke wijziging afsluit. Een groene check hoort bij
    lokaal en geeft 404 in productie. Een asset met de naam TODO-* is een
    waarschuwing, geen fout: dat is tekenwerk dat nog moet komen.
 2. Het manifest van de syllabus klopt met de bestanden. Elke href in
-   reference.js is relatief, bestaat, en heeft een unieke id; id, name, blurb en
-   href zijn aanwezig en niet leeg. En elke pagina onder
+   reference.js is relatief, bestaat, en heeft een unieke id; id, name en href
+   zijn aanwezig en niet leeg. En elke pagina onder
    Theorie/Syllabus/Theorie/ staat in het manifest: een pagina die er niet in
    staat, komt niet in de syllabus-PDF, terwijl ze op het scherm gewoon opent.
 
@@ -402,7 +402,7 @@ def check_manifest():
         ids = set()
         vermeld = set()
         for topic in topics:
-            for veld in ("id", "name", "blurb", "href"):
+            for veld in ("id", "name", "href"):
                 if not topic.get(veld):
                     fout("reference.js", f"{naam}: veld '{veld}' ontbreekt of is leeg")
             href = topic.get("href", "")
