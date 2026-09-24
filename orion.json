@@ -95,7 +95,7 @@
         },
         {
           "id": "assemblage-opdracht-inventaris",
-          "title": "Opdracht 1/3: Inventaris",
+          "title": "Inventaris van de pc",
           "page": "Labo/Assemblage/Inventaris/Opdracht.html"
         },
         {
@@ -104,7 +104,7 @@
         },
         {
           "id": "assemblage-opdracht-biosuefi",
-          "title": "Opdracht 2/3 BIOS/UEFI",
+          "title": "De BIOS/UEFI verkennen",
           "page": "Labo/Assemblage/BiosUefi/Opdracht.html"
         },
         {
@@ -113,7 +113,7 @@
         },
         {
           "id": "assemblage-opdracht-installatieos",
-          "title": "Opdracht 3/3 Installatie OS",
+          "title": "Het OS installeren",
           "page": "Labo/Assemblage/InstallatieOs/Opdracht.html"
         },
         {

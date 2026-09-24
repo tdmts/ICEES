@@ -4,7 +4,7 @@ Hoe het proza op deze pagina's klinkt. Dit is de enige plek waar die regels staa
 [CLAUDE.md](CLAUDE.md) verwijst hierheen in plaats van de lijst te herhalen.
 
 Het gaat hier **alleen over de vorm van de tekst**. Of een pagina correct aan elkaar hangt is een
-technische vraag en hoort bij [`scripts/check-content.py`](scripts/check-content.py). Of een pagina
+technische vraag en hoort bij de check van OrionTools (`python ../OrionTools/orion.py check`). Of een pagina
 genoeg uitlegt is een didactische vraag, en die heeft in deze repo nog geen eigen protocol.
 
 **Waar het geldt: overal waar een student meeleest.** Lopende tekst, koppen en kadertitels, de
@@ -12,7 +12,7 @@ genoeg uitlegt is een didactische vraag, en die heeft in deze repo nog geen eige
 blurb op een theoriekaart is even goed tekst als een alinea.
 
 **Ook in het verslag.** De opdracht staat in een `<!-- verslag -->` blok in `Opdracht.html` en
-`scripts/export-verslag.py` maakt daar de docx van. Die tekst valt hier volledig onder, ook al leest
+`orion.py export-verslag` maakt daar de docx van. Die tekst valt hier volledig onder, ook al leest
 de student ze in Word.
 
 **Waar het niet geldt: de documentatie van de repo zelf.** Dit bestand en CLAUDE.md zijn
@@ -23,10 +23,13 @@ ontkennend, en dat blijft zo: ze zijn de naam van een regel en worden ook zo gec
 werkwoord: dat is geen stijl. Verzamel ze en leg ze apart voor, zodat de diff van een stijlronde één
 soort wijziging bevat.
 
-**Er is geen script.** `scripts/check-content.py` dwingt één stijlregel af, de em-dash, als onderdeel
-van regel 5. Er is geen `--audit` en geen `--fix`. Alles hieronder is een leesregel, en dat is een
-bewuste keuze: de meeste van deze patronen hebben woorden nodig die ook volkomen legitiem
-voorkomen, en een woordenlijst zou vooral goede zinnen afkeuren.
+**Bijna alles hieronder is een leesregel.** De check dwingt één stijlregel af, de em-dash (regel
+`em-dash`, en `--fix` herstelt ze). `--audit` meldt vrijblijvend wat een woordenlijst kan zien: de
+vaste openingsformule (patroon 9), het verkleinwoord en de Noord-Nederlandse woordkeuze (12), de
+vulwoorden (13), de u-vorm en `LED` in de lopende tekst. De lijsten zelf staan in OrionTools; dit
+document geeft het criterium. Meer automatiseren is een bewuste keuze niet te doen: de andere
+patronen hebben woorden nodig die ook volkomen legitiem voorkomen, en een woordenlijst zou vooral
+goede zinnen afkeuren.
 
 Het document komt uit `tdmts/Microcontrollers` en een deel van de voorbeelden hieronder komt daar
 nog vandaan. De tekst van dít vak had een ander probleem: ze komt uit een Brightspace-export en uit
@@ -200,8 +203,8 @@ Dit geldt ook voor `overview.html` en `reference.html`. Zes labo's met dezelfde 
 precies waar dit patroon over gaat, dus elk overzicht krijgt een `lead` die bij dát labo past.
 
 De `lead` van `Opdracht.html` verdient extra aandacht: die staat ook op de eerste bladzijde van het
-verslag, en is voor veel studenten de eerste zin die ze van het labo lezen. Regel 8 van
-`scripts/check-content.py` eist dat hij bestaat, niet dat hij goed is.
+verslag, en is voor veel studenten de eerste zin die ze van het labo lezen. De regel
+`opdracht-lead` van de check eist dat hij bestaat, niet dat hij goed is.
 
 ### 10. Geen theatrale nadruk
 
@@ -559,17 +562,17 @@ wat een pad en een sleutel kunnen dragen.
 Cisco-configuratie, terminaloutput en wat een toestel terugstuurt, neem je over zoals het is. Geen
 herformattering, geen ingekorte prompts, geen rechtgezette hoofdletters, ook niet wanneer het lelijk
 staat. De student vergelijkt wat op zijn scherm staat met wat op de pagina staat, en elk verschil
-dat wij aanbrengen is er een dat hij moet uitzoeken. `scripts/check-content.py` houdt daarom regel 5
+dat wij aanbrengen is er een dat hij moet uitzoeken. De check houdt daarom de regel `code-style`
 bewust weg van `.terminal-window` en `.config-window`.
 
 Dit geldt niet voor code die de student overtypt. Die volgt wel de huisstijl: Allman-accolades en
-spaties rond de operatoren, afgedwongen door regel 5.
+spaties rond de operatoren, afgedwongen door de regel `code-style`.
 
 ### En, nog steeds: geen em-dashes
 
 Geen `—` en geen `&mdash;`, nergens in de tekst. Gebruik een komma, een dubbele punt, een punt of
-"en"/"maar". Dit is de enige stijlregel die de check afdwingt, als onderdeel van regel 5. Er is geen
-`--fix` in deze repo, dus je repareert ze zelf.
+"en"/"maar". Dit is de enige stijlregel die de check afdwingt (regel `em-dash`), en
+`python ../OrionTools/orion.py check --fix` herstelt ze.
 
 ## De proef
 

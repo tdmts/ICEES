@@ -30,7 +30,7 @@ stappenplan pages that hang under it; `Labo/Partitioneren/` holds its hub, two t
 spiekblad, a zelftest, one `Opdracht.html` and the four stappenplan pages that hang under it;
 `Labo/LinuxBasis/` and `Labo/LinuxGeavanceerd/` are the two described under their own heading below,
 the second one with five submodules. `Algemeen/` holds the four pages that sit beside both tracks.
-The syllabus is complete at sixteen chapters. `check-content.py` is green with no warnings.
+The syllabus is complete at sixteen chapters. `orion.py check` is green.
 
 **Labo Embedded Systems is not started, and that is a decision of 10 September 2026 and not a
 backlog.** Its topics are staged in `_incoming/`, the eleven hand-rewritten pages of `embedded/`
@@ -38,10 +38,11 @@ included, but `Labo 6` on OneDrive is empty, so there is no opgave for its two d
 theory ahead of the opgave means writing towards an assignment nobody has read. It starts when the
 opgave lands.
 
-No build system and no test suite: you edit HTML/CSS/JS directly. `scripts/` holds eight Python
-scripts, of which `check-content.py` and `import-brightspace.py` are stdlib only. There is no Node
-script left, so `package.json`, `package-lock.json` and `node_modules/` are dead weight on disk and
-in nobody's way.
+No build system and no test suite: you edit HTML/CSS/JS directly. The tooling (the content check,
+the imports and the exports) lives in the shared `OrionTools` repo beside this one and is called as
+`python ../OrionTools/orion.py <commando>`; `check` needs nothing but Python, the others need what
+`OrionTools/requirements.txt` lists. [`oriontools.json`](oriontools.json) is all of it that is
+ICEES's own.
 
 ## De studiefiche, en waar ze het laatste woord heeft
 
@@ -127,8 +128,8 @@ is not reading. So **no page links to another page inside the iframe.** Two ways
   jezelf. A new tab keeps the iframe, and so the menu, where it was. A PDF gets the same treatment.
 
 **There is no navigation of our own**: no hub page, no nav row, no "Volgende", no read-flags. Orion
-has its own previous and next, and records which topics a student opened. Rule 10 of the content
-check fails a same-frame link from any page in `orion.json`, and rule 2 fails a page under `Labo/`
+has its own previous and next, and records which topics a student opened. The rule `topic-frame`
+fails a same-frame link from any page in `orion.json`, and `orion-orphan` fails a page under `Labo/`
 that `orion.json` does not list, because such a page has no topic and nobody can reach it.
 
 **`reeks` is the word this repo used for a menu entry before the switch, and it is history.** It
@@ -150,14 +151,14 @@ Wat eruit ging: `back-link.js`, `reference-dashboard.js`, `reference-dashboard.c
 `Labo/<Naam>/Theorie/reference.html` hubs, `Theorie/Syllabus/Theorie/reference.html`, en
 `scripts/check-nav.js`, dat alleen bestond om te meten wat `back-link.js` in het DOM zette. De 208
 pagina's die `reference.js` en `back-link.js` laadden, laden nu niets meer van ons; de twintig
-syllabuspagina's met vragen houden `oplossingen.js`. `scripts/import-syllabus.py` schrijft die twee
+syllabuspagina's met vragen houden `oplossingen.js`. `orion.py import-syllabus` schrijft die twee
 scriptregels ook niet meer in zijn sjabloon, dus een volgende hoofdstukimport brengt ze niet terug.
 
 Wat erin kwam: [`orion.json`](orion.json), 20 modules en 94 topics. Een reeks werd een submodule,
 een voor een. De 68 links die in de iframe naar een andere pagina gingen, kregen
 `target="_blank" rel="noopener"`, op twee na: `InstallatieUbuntu.html` noemt Guest Additions nu
 zonder link, want dat is het topic erna, en `Algemeen/Evaluatie.html` noemt de vijf labo's in zijn
-tabel zonder link. **Die tabel bewaakte zichzelf met regel 1** (een link naar een pagina die nog niet
+tabel zonder link. **Die tabel bewaakte zichzelf met de regel `links`** (een link naar een pagina die nog niet
 bestaat faalt), en dat is nu weg: staat er een labo in dat niet bestaat, dan valt er niets over.
 
 Oordelen die hierbij gemaakt zijn, en die je mag terugdraaien:
@@ -187,8 +188,8 @@ Oordelen die hierbij gemaakt zijn, en die je mag terugdraaien:
 - **De negen dropboxmappen zijn hernoemd naar de regel van DeN**, dezelfde dag nog, nadat de lector
   ernaar vroeg. Ze heetten `Indienen Inventaris (!)` naast `Opdracht: chmod`; zie de regel hierboven.
 - **De 127 blurbs in `reference.js` zijn geschrapt**, zoals DeN dat al gedaan had. Niets las ze nog,
-  en een nieuw hoofdstuk had er weer moeten krijgen voor een veld zonder lezer. Regel 2 eist nu id,
-  name en href.
+  en een nieuw hoofdstuk had er weer moeten krijgen voor een veld zonder lezer. `syllabus-manifest` eist nu
+  id, name en href.
 
 **Twee topics konden hun ID niet houden**, want een topic verhuist in Brightspace niet naar een
 submodule: Opdracht [71034] van Virtualiseren en Opdracht [71038] van Partitioneren. Al de rest is
@@ -202,7 +203,7 @@ rechtgezet, waar de sync ze als conflict meldde; ze is met `--take` teruggehaald
 met de hand meegegaan. **Geen enkele regel van de contentcheck valt hierover**, want de zin noemt een
 menu-item en geen bestand, en hij bleef grammaticaal. Grep na een herindeling dus op "bij de", en
 vergeet daarbij de `<!-- verslag -->` blokken niet: de lead van `Inventaris/Opdracht.html` staat op
-de eerste bladzijde van het verslag, dus regel 6 eist een nieuwe docx zodra je eraan raakt.
+de eerste bladzijde van het verslag, dus `verslag-stale` eist een nieuwe docx zodra je eraan raakt.
 
 **De oude Brightspace-inhoud van labo 6 en 7 is weg, met de hand, beslist 16 september 2026.**
 Labo Linux Basis [36869] en Linux Geavanceerd [36870] zijn nooit in Orion gezet, dus bij de overstap
@@ -252,7 +253,7 @@ dezelfde reden alleen uit Content. **Een map heet hier niet naar de volgorde van
 de oude map van Partitioneren en die bestond al niet meer, dus zoek een map op haar ActivityId, die op
 dezelfde code eindigt als de `rCode` van de quicklink.
 
-**Een nieuwe oplossing komt uit `scripts/export-oplossing.py`**, niet uit de pdf van vorig jaar,
+**Een nieuwe oplossing komt uit `orion.py export-oplossing`**, niet uit de pdf van vorig jaar,
 want de verslagen vragen sindsdien meer. De antwoordbestanden staan in `_oplossingen/`, buiten git,
 voor Linux Basis en voor Chmod, Chown en Chgrp: de oude oplossing voor de vragen die er al waren, de
 theoriepagina's voor de nieuwe. Vier dingen zijn daarbij afgeweken van de oude oplossing en nog niet
@@ -270,13 +271,12 @@ maar dragen ons adres niet en blokkeren niets.
 
 ## Relation to tdmts/DeN
 
-This repo was started from DeN, and everything it shares with it was **copied, not shared**: the
-four engines and the eight scripts started as byte-for-byte copies with the DeN-specific strings
-rewritten. **Two scripts have since diverged for a reason that is not a string**, and both are
-recorded below: `import-brightspace.py` (the `rCode` casing, under "Where the content comes from")
-and `import-syllabus.py` (zwevende afbeeldingen, under "Wat de eerste hoofdstukimport ...").
-`Theorie/Syllabus/syllabus.css` was copied too and has since **gained four rules that DeN does not
-have**, all four under "De syllabus": a `ol.vragen > li` that stays whole, `.vragen-bij-figuur`,
+This repo was started from DeN. The eight scripts it copied from there are **shared now**, through
+`OrionTools` (24 September 2026): the two that had diverged for a reason that is not a string
+(`import-brightspace`, for the `rCode` casing, and `import-syllabus`, for zwevende afbeeldingen and
+diacritics) were merged there with ICEES's side taken, and what differs per course is in
+`oriontools.json`. `Theorie/Syllabus/syllabus.css` is **still a copy**: it has **gained four rules
+that DeN does not have**, all four under "De syllabus": a `ol.vragen > li` that stays whole, `.vragen-bij-figuur`,
 `.tekenkader`, the drawing frame under a question that asks the student to draw, and `blockquote`,
 the quote that opens the Voorwoord. Read DeN's
 `CLAUDE.md` for the reasoning behind any shared part; read this section before you copy anything
@@ -284,7 +284,7 @@ across, in either direction.
 
 **Whether the engines should live in a repo of their own is settled by there being no engines left.**
 The three courses each keep `reference.js` for the syllabus order and `oplossingen.js` for the
-answers, and Orion does the rest. What is still shared and still copied is the eight scripts.
+answers, and Orion does the rest. The scripts live in `OrionTools`.
 
 | | DeN | ICEES |
 |---|---|---|
@@ -322,9 +322,10 @@ Labo/<Naam>/
 Theorie/Syllabus/      the theory track: the source of the syllabus PDF
 Hoorcollege/           the lecture decks: the source of the handout PDFs
 Algemeen/              studiefiche, planning, evaluatie en studiemateriaal, outside both tracks
-img/  datasheets/  downloads/  scripts/
+img/  datasheets/  downloads/
 reference.js           the manifest of the syllabus: the order of the printed document
 oplossingen.js         the reveal that shows an answer, on every syllabus page with questions
+oriontools.json        what ICEES sets differently for OrionTools; not mirrored
 ```
 
 **Named folders, not numbered ones.** The six labs are independent modules, so a number would assert
@@ -342,8 +343,9 @@ off. `dashboard.js`, `exercises.js` and `checklist-sync.js` never existed here, 
   Labo Assemblage (moederbord, processor, geheugen, SSD, voeding). Same reason: a vendor URL dies
   mid-semester.
 - `downloads/` — what the student downloads: the verslag templates (derived from `Opdracht.html` by
-  `export-verslag.py`, kept in step by rule 6), the syllabus PDF (derived by `export-syllabus.py`,
-  rule 13) and one handout PDF per deck (derived by `export-handout.py`). All committed, because
+  `orion.py export-verslag`, kept in step by `verslag-stale`), the syllabus PDF (derived by
+  `orion.py export-syllabus`, `syllabus-stale`) and one handout PDF per deck (derived by
+  `orion.py export-handout`). All committed, because
   Pages serves only tracked files.
 
 **De syllabus-PDF ging op 9 september 2026 van 56,5 naar 11,1 MB, en `skip-worktree` staat sinds
@@ -351,29 +353,16 @@ dan weer uit.** Ze wordt dus gewoon meegecommit en Pages serveert de actuele ver
 8 en 9 september op `skip-worktree` stond was een noodrem; die is opgeheven, en `git ls-files -v
 downloads/` hoort voor dit bestand een `H` te tonen en geen `S`. **Zet hem niet opnieuw aan** zonder
 te beseffen dat `git status` daarna over dat bestand zwijgt ook als het veranderd is: je draait
-`export-syllabus.py`, alles ziet er goed uit, en er gaat niets omhoog.
+`orion.py export-syllabus`, alles ziet er goed uit, en er gaat niets omhoog.
 
-Waar het gewicht vandaan kwam, want allebei de oorzaken zitten in `export-syllabus.py` en allebei
-komen ze terug als je eraan werkt:
-
-- **`stempel()` maakte een canvas per bladzijde**, dus reportlab bedde het HOGENT-logo 148 keer in,
-  telkens op zijn volle 3490 bij 1968 pixels terwijl het op 19,4mm gedrukt wordt. Dat waren 148
-  identieke objecten van 99 kB, samen **14,3 MB**, een derde van het bestand. Het is nu EEN canvas
-  met `showPage()` per bladzijde, want reportlab deelt een afbeelding binnen een canvas, plus een
-  logo dat via `stempellogo()` op 300 dpi voor zijn eigen vakje geschaald wordt. Unieke
-  beeldobjecten gingen van 262 naar 115.
-- **Chrome zet elke afbeelding lossless in de PDF**, dus de 22 MB PNG waar de syllabus naar wijst
-  werd daar ruim 50 MB. `absolute_paden()` wijst een rasterafbeelding nu naar een kopie in de
-  werkmap, geschaald op `KRIMP_DPI` (150) voor de breedte die de figuur zelf opgeeft in
-  `--figuur-breedte`, en opgeslagen als JPEG. **`img/` blijft ongemoeid**, want `figure-zoom` heeft
-  de volle resolutie op de site wel nodig.
-
-**Dat tweede is meteen waarom dit beter uitkomt dan een nabewerking van de PDF achteraf**, met
-Ghostscript of wat dan ook: de doel-dpi volgt PER FIGUUR uit haar gedrukte breedte, dus een foto op
-160mm mag naar 150 dpi terwijl een tabel die een oefening moet kunnen lezen haar volle resolutie
-houdt. Die staan in `ONAANGEROERD` in het script, met per bestand de reden: de ASCII-tabel van 10.3
-en de zes datasheetbladzijden van 9.5. **Zet je er iets bij of haal je er iets af, kijk het dan na
-IN de gedrukte PDF** en niet op het scherm.
+Waar het gewicht vandaan kwam, en waarom het niet terugkomt, staat in OrionTools bij de code van
+`export-syllabus`: een canvas per bladzijde bedde het logo 148 keer in (`stempel()`, 14,3 MB), en
+Chrome zet elke afbeelding lossless in de PDF, dus krimpt de export een kopie per figuur naar haar
+gedrukte breedte (`syllabus.krimp.dpi`, hier 150) terwijl `img/` ongemoeid blijft. Unieke
+beeldobjecten gingen van 262 naar 115. Wat een oefening moet kunnen lezen, blijft op volle
+resolutie: de ASCII-tabel van 10.3 en de zes datasheetbladzijden van 9.5 staan in
+`syllabus.krimp.onaangeroerd` in [`oriontools.json`](oriontools.json). **Zet je er iets bij of haal
+je er iets af, kijk het dan na IN de gedrukte PDF** en niet op het scherm.
 
 Wat er na zo'n ingreep nagekeken hoort te worden, en wat op 9 september groen was: het aantal
 bladzijden, de inhoudstafel rij voor rij tegen de vorige PDF, de schaalfactoren (zie de regel
@@ -426,41 +415,38 @@ Besides OrionCSS, a page loads at most one script of ours, and only the syllabus
 - [oplossingen.js](oplossingen.js) — self-running, syllabus only. Folds the answer of every question
   on the page into a `spoiler-container`. Twenty pages load it.
 - [reference.js](reference.js) — **no page loads it.** It is read by
-  `scripts/export-syllabus.py` for the order and numbering of the printed document, and by rule 2 of
-  the content check. Its header carries the format.
+  `orion.py export-syllabus` for the order and numbering of the printed document, and by the rule
+  `syllabus-manifest` of the content check. Its header carries the format.
 
 A labo page therefore loads nothing of ours, and Orion tracks what a student opened.
 
 ## The three tracks
 
 **A lab produces a verslag.** The whole assignment lives in a `<!-- verslag ... -->` comment in
-`Opdracht.html`; `scripts/export-verslag.py` generates the docx from it, so the template cannot
+`Opdracht.html`; `orion.py export-verslag` generates the docx from it, so the template cannot
 drift from the page. The page is a landing page: what the lab is about and one button reading
-**"Opdracht downloaden"**, which rule 11 asserts literally. The docx is exactly three things: the
+**"Opdracht downloaden"**, which `download-button` asserts literally. The docx is exactly three things: the
 `<h1>`, the `<p class="lead">` and that comment block.
 
 **The syllabus is a PDF that comes out of HTML.** The Word on OneDrive is the origin of the text,
-not its source: after a chapter is imported it is archived, not edited. `import-syllabus.py`
-translates formatting and never words; `export-syllabus.py` bundles the pages into
+not its source: after a chapter is imported it is archived, not edited. `orion.py import-syllabus`
+translates formatting and never words; `orion.py export-syllabus` bundles the pages into
 `downloads/Industriele-computers-en-embedded-systems-syllabus.pdf`. The drift this exists to stop
 has already happened here: the Word is dated 5 June 2026 and the PDF students read on Brightspace
 12 September 2025.
 
 The Word is
 `~/OneDrive - Hogeschool Gent/EDU/2025-2026/Industriële computers en embedded systems/Theorie/Syllabus/Industriële computers en embedded systems_.docx`,
-which is the default in `import-syllabus.py`. **There are two docx in that folder**: the one without
+which is `syllabus.docx` in `oriontools.json`. **There are two docx in that folder**: the one without
 the trailing underscore is dated April 2024 and is the previous version.
 
-**The `AFKORTINGEN` table in `import-syllabus.py` now carries this course's vocabulary**, replaced on
-7 September 2026 before the first chapter went in. Every value in it is the same PascalCase that
-`pascal()` would produce anyway, and that is the point: the table *pins* the spelling rather than
-changing it. This repo writes an abbreviation in a filename as an ordinary word (`BiosUefi.html`,
-`MbrPartities.html`, `GptPartities.html`), not in capitals, and without the table that convention is
-written down nowhere. Put `"bios": "BIOS"` in it and the syllabus page becomes `BIOS...` while the
-labo page stays `Bios...`, a difference you only see when you lay the two side by side.
+**`syllabus.afkortingen` in `oriontools.json` carries this course's vocabulary**, set on 7 September
+2026 before the first chapter went in. Every value pins the PascalCase this repo writes in a
+filename (`BiosUefi.html`, not `BIOSUEFI.html`); why a table that changes nothing is still needed is
+in OrionTools, beside `AFKORTINGEN` in `importers/syllabus.py`.
 
 **A hoorcollege is a deck that becomes a handout.** One `.html` per session under `Hoorcollege/`,
-one `<section class="slide">` per slide; `import-slides.py` converts a pptx once and after that the
+one `<section class="slide">` per slide; `orion.py import-slides` converts a pptx once and after that the
 HTML is the source, so a second run throws away every correction made by hand. The decks are in
 `~/OneDrive - Hogeschool Gent/EDU/2025-2026/Industriële computers en embedded systems/Theorie/Les N/`.
 **There are five, not six**: `Les 6/` is empty. Les 1 also holds an `- oplossing.pptx`, which is the
@@ -468,10 +454,23 @@ same deck with the answers filled in and is not the one to import.
 
 ## The content check
 
-[`scripts/check-content.py`](scripts/check-content.py) is the single "is this repo publishable"
-check. Run it before finishing any content edit; a `Stop` hook in
-[`.claude/settings.json`](.claude/settings.json) also runs it. Its docstring lists the sixteen rules.
-Two fail *silently* otherwise: **case** (Brightspace serves the mirror case-sensitively, Windows is
+The check lives in the shared `OrionTools` repo beside this one: run
+`python ../OrionTools/orion.py check` before finishing any content edit. A `Stop` hook in
+[`.claude/settings.json`](.claude/settings.json) runs it with `--hook`, blocking; a green check is part
+of "done". `--fix` repairs what has one right answer, `--audit` is advisory and never changes the exit
+code. A finding names its rule id (`[topic-frame]`); `check --rules` lists the rules that apply to
+ICEES with the old ICEES number each replaces, and `check --explain <id>` prints why a rule exists.
+That reasoning lives in the rule's docstring in OrionTools, not here. What ICEES sets differently is
+in [`oriontools.json`](oriontools.json); the keys and their defaults are in OrionTools'
+`oriontools/config.py`. [`.github/workflows/check-content.yml`](.github/workflows/check-content.yml)
+runs the same check on a push, with OrionTools checked out beside the course.
+
+**`--audit` looks for a lead only where ICEES puts one**: the Inleiding of a lab, every
+`Opdracht.html` and the `Overzicht.html` that opens a reeks (`check.audit.page_patterns`). A theory
+page and a syllabus page carry none by design. The style lists of `SCHRIJFSTIJL.md` (verkleinwoord,
+vulwoord, `LED`) and the code-block classes are audited everywhere.
+
+Two rules fail *silently* otherwise: **case** (Brightspace serves the mirror case-sensitively, Windows is
 not) and **completeness** (a page under `Labo/` missing from `orion.json` gets no topic and is
 unreachable, and a syllabus page missing from `reference.js` is not printed; both open fine in a
 browser).
@@ -480,12 +479,6 @@ Beside it stands OrionSync's own `npm run verify -- ICEES --course 15211`, which
 says whether everything a student can open comes from the course itself. The two do not overlap:
 verify cannot see a link that a script builds at runtime, and the content check cannot see the
 course.
-
-**One rule was changed on the way over from DeN, and it is the only one.** An empty manifest and a
-broken manifest both parse to zero modules, and DeN failed on both with "geen enkele module
-gevonden". A manifest that does not parse still fails, because rules 2 and 3 hang off that parse and
-a broken regex would make every check under it vacuously green; a `window.LAB_REFERENCE` that is
-literally `{}` is a warning instead. Both branches were verified by putting a broken manifest back.
 
 ## Prose style
 
@@ -521,7 +514,7 @@ is the reference for what counts as factual here. The examples inside `SCHRIJFST
 name DeN pages.
 
 Filenames are **PascalCase Dutch nouns**: `Partitietabel.html`, `Opdracht.html`. The one exception is
-`overview.html`, the Inleiding of a lab, which `check-content.py` matches on.
+`overview.html`, the Inleiding of a lab, which the hub rules of the check match on.
 
 ## The six modules
 
@@ -558,13 +551,13 @@ that is meerkeuze met giscorrectie, so a zelftest in another form prepares for a
 exist. The distractors are the misreadings the theory pages already correct (that the chipset
 decides which processor fits, that dual channel adds the capacities together), so a wrong answer
 sends the student back to a paragraph rather than to the whole page. Each answer therefore ends in
-"Zie &lt;a href&gt;", which is a link inside the same reeks and so allowed by rule 10.
+"Zie &lt;a href&gt;", a link with `target="_blank"`, which `topic-frame` allows.
 
 **The answer letter is written by hand**, in the `spoiler-container` markup DeN's four labo
 zelftests use, and not through `oplossingen.js`. That is a deliberate choice and the trade-off is
 real: `oplossingen.js` counts the letter off the position of `class="juist"`, so reordering two
 options can never produce a wrong answer, while a written "Antwoord c." can. It is also the only
-mechanism the syllabus may use, and rule 14 checks nothing outside `Theorie/Syllabus/`. If you
+mechanism the syllabus may use, and the `vragen-*` rules check nothing outside `Theorie/Syllabus/`. If you
 reorder the options of a labo zelftest, the letter is yours to fix.
 
 **One submission is one folder and one Orion menu entry.** Three of the six labs hand in more than
@@ -589,7 +582,7 @@ the username and the `os-release` of the image he just built, and hands that in.
 Brightspace for exactly that reason.
 
 **`Algemeen/Planning.html` and `Algemeen/Evaluatie.html` both exist**, and they carry four decisions
-taken on 4 September 2026 and three more on 6 September 2026. Rule 9 sends every hub to them, so a hub may name the *form* of an
+taken on 4 September 2026 and three more on 6 September 2026. `no-session-count` and `no-weight` send every hub to them, so a hub may name the *form* of an
 evaluation and never a percentage.
 
 - **The final mark is 40% theory and 60% labs.** That is the denominator; the percentages on
@@ -639,12 +632,12 @@ The table on `Evaluatie.html` links only the labs that exist. Add the link when 
 
 The Brightspace export (`D2LExport_15211_OON-PBAEM-206743-2627_20269402`) holds the current course:
 189 items in `imsmanifest.xml`, 117 pages in `migration/paginas/`, 281 images, 6 documents, 3
-lesopnames. [`scripts/import-brightspace.py`](scripts/import-brightspace.py) stages it into
+lesopnames. `python ../OrionTools/orion.py import-brightspace` stages it into
 `_incoming/`, one raw page per topic, with every image and document pulled out into `img/` and
 `datasheets/`. It reads a `.zip`, so an unpacked export gets zipped first.
 
 ```
-python scripts/import-brightspace.py <export>.zip --fetch-remote
+python ../OrionTools/orion.py import-brightspace <export>.zip --fetch-remote
 ```
 
 That run staged **133 topics** (122 pages and 11 assignment descriptions), 289 image references into
@@ -664,7 +657,7 @@ Four things about this export that DeN's did not have, and every one of them fai
   DeN's `QUICKLINK_RE` was case-sensitive, so it matched 6 of this export's 16 quicklinks, and the
   five dropboxes among the other ten (virtualiseren, Linux basis, chmod, chown, chgrp) were reported
   as "skipped" rather than staged, with one line in the summary saying a link was not understood.
-  The regex now carries `re.I`. This is the one change to the importer beyond rewritten DeN strings.
+  `QUICKLINK_RE` in OrionTools carries `re.I`, with the reason beside it.
 - **The three lesopnames are in the export twice, and the manifest keeps the right copy.**
   `migration/lesopnames/` holds `Demontage`, `Assemblage` and `BIOS`, each a bare Panopto iframe,
   and no `<item>` references any of them. The same three recordings are embedded in the three pages
@@ -796,12 +789,13 @@ dat hij moet invullen en pas daarna de oefening die eraan voorafgaat. Bij Linux 
 echte fout en geen kwestie van smaak: de acht stappenplanpagina's bouwen een toestand op de machine
 op (mappen, bestanden, een archief) en het verslag vertrekt daarvan.
 
-**De wortel heet daarom `Overzicht.html`, en de naam is het hele trucje.** Elk script in deze repo
-grijpt op de bestandsnaam `Opdracht.html`: `opdracht_paginas()` in `check-content.py` (waar regel 6,
-8 en 11 aan hangen) globt erop, en `export-verslag.py` leest `module / "Opdracht.html"` hard. Laat je
+**De wortel heet daarom `Overzicht.html`, en de naam is het hele trucje.** Elk script van OrionTools
+grijpt op de bestandsnaam `Opdracht.html`: `opdracht_paginas()` (waar `verslag-stale`,
+`opdracht-lead` en `download-button` aan hangen) globt erop, en `orion.py export-verslag` leest
+`module / "Opdracht.html"` hard. Laat je
 die naam op de laatste pagina staan en zet je er een pagina onder een ANDERE naam voor, dan verandert
 er aan de scripts niets. Het omgekeerde (de laatste pagina hernoemen naar `ZelfstandigeOefening.html`)
-kost een scriptronde en levert hetzelfde op. `topic_van()` stuurt allebei naar het menu-item Opdracht,
+kost een scriptronde en levert hetzelfde op. `topic_van()` in de check van toen stuurde allebei naar het menu-item Opdracht,
 want ze staan los in de modulemap. Sinds de overstap naar OrionSync is elke pagina een eigen topic
 en bepaalt de volgorde in `orion.json` wat er eerst komt, dus de naam beslist niets meer over de
 volgorde; wat ze nog wel beslist, is welk script erop grijpt. Dezelfde vorm die
@@ -815,24 +809,24 @@ verslagblok, en een waarschuwing die pas NA de opdracht geldt (bij Chmod: laat d
 want chown en chgrp werken erop verder).
 
 **En de lead van `Opdracht.html` beschrijft dan alleen nog het zelfstandige deel.** Ze komt op de
-eerste bladzijde van het verslag terecht (regel 8), dus ze moet daar op zichzelf leesbaar zijn: geen
+eerste bladzijde van het verslag terecht (`opdracht-lead`), dus ze moet daar op zichzelf leesbaar zijn: geen
 "Daarna maak je op diezelfde machine ...", want er staat in het document niets voor. Bij Partitioneren
 en Linux Basis dekte een enkele lead allebei de delen en is ze in tweeen geschreven.
 
-**Regel 12 ziet die nieuwe leads niet, en dat is een gat.** `leadpaginas()` kijkt naar
+**`duplicate-lead` ziet die nieuwe leads niet, en dat is een gat.** De regel kijkt naar
 `overview.html` en elke `Opdracht.html`, dus de vijf leads van een
 `Overzicht.html` (en die van `SoftwareInstalleren/Overzicht.html`) worden met niets vergeleken. Twee
 introducties van hetzelfde labo mogen elkaar nog altijd niet navertellen; hier bewaakt alleen je
-eigen lezing dat. Zelfde soort stille bewaker als regel 11.
+eigen lezing dat. Zelfde soort stille bewaker als `download-button`.
 
 **Een stappenplanpagina die afsluit met "ga terug naar de eerste pagina" liegt na deze wissel.** Drie
 deden dat (`Partitioneren/GptPartities.html`, `LinuxBasis/ArchiverenEnAfsluiten.html`,
 `LinuxGeavanceerd/Chmod/Opruimen.html`) en wijzen nu vooruit. Geen enkele regel valt daarover: de link
-bleef binnen hetzelfde menu-item, dus regel 10 zwijgt, en de zin bleef grammaticaal. Grep na een
+bleef binnen hetzelfde menu-item, dus `topic-frame` zwijgt, en de zin bleef grammaticaal. Grep na een
 herordening op "eerste pagina", "hierboven" en "terug naar".
 
 **Apostrof in een blurb, opnieuw.** `'de acht pagina's hierna'` brak `reference.js` bij het inlezen
-met node en zou regel 2 stil half hebben afgekapt. Twee blurbs zijn erom herschreven. Zie ook de
+met node en zou `syllabus-manifest` stil half hebben afgekapt. Twee blurbs zijn erom herschreven. Zie ook de
 noot bij Labo Linux Basis: geen enkel veld in een manifestblok draagt een apostrof.
 
 ## Labo Virtualiseren, written 4 September 2026
@@ -862,12 +856,12 @@ Submodule Theorie                Submodule Opdracht
 ```
 
 **The three stappenplan pages sit loose in the module folder.** That was load-bearing before the
-switch, because `check-content.py` then read the Orion entry off the path. Since `orion.json` says
+switch, because the content check then read the Orion entry off the path. Since `orion.json` says
 where a page lands, the folder decides nothing about the menu any more, and the four pages are one
 submodule Opdracht whatever folder they sit in. Moving them now would only cost every path in
 `orion.json` and in the report the students already have.
 
-**A stappenplan page links to theory with `target="_blank"`**, which is what rule 10 leaves open and
+**A stappenplan page links to theory with `target="_blank"`**, which is what `topic-frame` leaves open and
 what DeN already does for its Packet Tracer exercises: je kijkt het na terwijl je bezig bent. There
 are five such links and they all point at an `id` on a theory page.
 
@@ -951,7 +945,7 @@ these pages (512 bytes split into 440 + 64, four ingangen of 16 bytes, an extend
 logical ones, the jump from `sda3` to `sda5`, eight sectors under one cluster address, a write
 passing through the journal) had no picture anywhere, so they became SVG files in `img/`, prefixed
 `partitioneren-`. **This is the repo's first SVG**, and it works because `figure-zoom` only needs an
-`<img>`; `check-content.py` does not care about the extension. They use the OrionCSS palette
+`<img>`; the check does not care about the extension. They use the OrionCSS palette
 (`#004d40` primary, `#222` body, `#e0e7e5`/`#b2dfdb` fills) and a `Segoe UI, Helvetica, Arial,
 sans-serif` stack, because an SVG inside an `<img>` is isolated and reaches neither the site's CSS
 nor a webfont. OrionCSS has no dark mode, so they are drawn on white.
@@ -970,7 +964,7 @@ OrionCSS included.
 
 **One figure comes out of the syllabus Word**, extracted from `word/media/` and copied to `img/` as
 `partitioneren-schijfbeheer-windows.png` (image47, Schijfbeheer met System Reserved, C: en DATA).
-When syllabus chapter 6 is imported, `import-syllabus.py` writes its own copy as
+When syllabus chapter 6 is imported, `orion.py import-syllabus` writes its own copy as
 `img/syllabus-06-*.png`, so that picture will be in `img/` twice under two names. That is
 deliberate: the two tracks are independent and a labo page may not depend on a syllabus page
 existing.
@@ -1082,13 +1076,13 @@ The page answers it with a two-by-two table of the four combinations, because th
 the confusion: Acrobat Reader costs nothing and is closed, Red Hat Enterprise Linux is open and you
 pay for it. Same case as `WatIsVirtualisatie.html`.
 
-**One filename does not come from its heading, and the reason is a regex.** `check-content.py` reads
-the manifest with `name:\s*'([^']*)'`, so an apostrophe inside a single-quoted field truncates the
-value and a double-quoted field is not seen at all. "Commando's en parameters" therefore failed rule
-2 with "veld 'name' ontbreekt of is leeg" while the page was perfectly fine. It is now
+**One filename does not come from its heading, and the reason is a regex.** The check reads the
+manifest with single-quoted regexes (`name:\s*'([^']*)'`), so an apostrophe inside a single-quoted
+field truncates the value and a double-quoted field is not seen at all. "Commando's en parameters"
+therefore failed `syllabus-manifest` with "veld 'name' ontbreekt of is leeg" while the page was perfectly fine. It is now
 `CommandoEnOpties.html`, "Een commando en zijn opties". The trap itself has not gone away: the
 regex still reads the syllabus manifest, and a truncated value is not an empty one, so a `name` with
-an apostrophe in it passes rule 2 and prints half a chapter title in the PDF. Keep every field in
+an apostrophe in it passes `syllabus-manifest` and prints half a chapter title in the PDF. Keep every field in
 `reference.js` free of one.
 
 **The Linux chapter of the syllabus was read beside these pages and needed no correction.**
@@ -1141,9 +1135,9 @@ dat is de regel die dit labo toevoegt. In Orion telt dit labo negen items: Inlei
 Software installeren, en per opdracht een pagina plus een dropbox.
 
 De wortel van zo'n reeks is de eerste manifestregel ervan, dus `SoftwareInstalleren/Overzicht.html`.
-Die naam is met opzet niet `overview.html`: `topic_van()` in `check-content.py` stuurt elke
-`overview.html` naar het item Inleiding, ook een in een submap, en dan zou regel 10 over elke link
-binnen deze reeks vallen.
+Die naam is met opzet niet `overview.html`: `topic_van()` in de check van toen stuurde elke
+`overview.html` naar het item Inleiding, ook een in een submap, en dan zou de topicgrensregel over
+elke link binnen deze reeks gevallen zijn.
 
 **De drie opdrachten zijn zelf een keten, en dat staat in geen enkele docx.** De chmod-opgave maakt
 `rechten1`, `rechten2` en `/home/rechten1/tekst.txt`; chown wijzigt de owner van dát bestand; chgrp
@@ -1165,9 +1159,9 @@ eerder nodig) en werden vier stappenplanpagina's.
   verslagvraag in het chmod-verslag. Dat is bijgeschreven tekst die een herimport niet overleeft.
 - **De drie video's van 073 worden drie links op de theoriehub**, met `target="_blank"`, en geen
   `iframe`. Geen enkele andere pagina in deze repo sluit een video in, en de afspraak voor de
-  lesopnames wijst dezelfde kant op. Ze staan onder de hubkaarten, buiten het manifest, want regel 2
-  weigert een absolute URL in een `href`. Regel 4 laat zo'n link toe: `DOCUMENT_RE` grijpt alleen op
-  een documentextensie.
+  lesopnames wijst dezelfde kant op. Ze staan onder de hubkaarten, buiten het manifest, want
+  `syllabus-manifest` weigert een absolute URL in een `href`. `remote-document` laat zo'n link toe:
+  het grijpt alleen op een documentextensie.
 - **De Spotify-route is helemaal herschreven en gebruikt geen `apt-key` meer.** Zie hieronder.
 - **De drie terminals van 092 worden overgetypt met de prompt `elm@elm-VirtualBox`.** In de bron
   staan ze op `tom@tom-VirtualBox`, een andere machine en een oudere Ubuntu, en één prompt door het
@@ -1274,10 +1268,10 @@ sterkere rechten geeft, dat snap en apt hetzelfde doen, dat een `.deb` met een d
 beschadigd is, en dat een container een ander besturingssysteem kan draaien.
 
 **Twee dingen die stil misgaan en hier niet misgegaan zijn.** Geen enkel veld in het
-`linuxgeavanceerd`-blok van `reference.js` draagt een apostrof, want regel 2 leest het manifest met
+`linuxgeavanceerd`-blok van `reference.js` draagt een apostrof, want `syllabus-manifest` leest het manifest met
 `name:\s*'([^']*)'` en kapt de waarde daar af; "zeven programma's" in een blurb werd daarom
-herschreven. En de drie leads van de opdrachten zijn uitdrukkelijk uit elkaar geschreven, want regel
-12 valt over zeven opeenvolgende gedeelde woorden en dit labo heeft vijf leads.
+herschreven. En de drie leads van de opdrachten zijn uitdrukkelijk uit elkaar geschreven, want
+`duplicate-lead` valt over zeven opeenvolgende gedeelde woorden en dit labo heeft vijf leads.
 
 ## De syllabus, hoofdstuk 1 tot 16 ingevoerd 7, 8 en 9 september 2026
 
@@ -1317,15 +1311,15 @@ NOTITIES.md. Allebei handmatig, dus een herimport gooit ze weg.
 Orion een enkel menu-item, en dat is de PDF. De 128
 hoofdstukpagina's staan wel op de spiegel, want de repo publiceert ze, maar ze staan niet in
 `orion.json` en er is dus geen weg naartoe. Bevestigd op 7 september 2026: **van de hele syllabus is
-de PDF het enige dat de student te zien krijgt**, precies zoals de motivatie bij regel 13 al zei. De
+de PDF het enige dat de student te zien krijgt**, precies zoals de motivatie bij `syllabus-stale` al zei. De
 HTML is de bron waaruit gedrukt wordt, niet een tweede kanaal ernaast. DeN doet hetzelfde en om
 dezelfde reden.
 
 Laat het dus staan, en repareer het niet: een topic per hoofdstuk zet een leeskanaal open dat
 niemand onderhoudt en dat naast de PDF een tweede waarheid wordt.
 
-**Het manifest blijft wel nodig.** `scripts/export-syllabus.py` leest `window.LAB_REFERENCE.syllabus`
-voor de volgorde en de nummering van het gedrukte document, en regel 2 van de contentcheck eist dat
+**Het manifest blijft wel nodig.** `orion.py export-syllabus` leest `window.LAB_REFERENCE.syllabus`
+voor de volgorde en de nummering van het gedrukte document, en `syllabus-manifest` eist dat
 elke pagina onder `Theorie/Syllabus/Theorie/` erin staat. `reference.js` is hier dus de inhoudsopgave
 van de PDF en verder niets: geen enkele pagina laadt het bestand nog.
 
@@ -1334,7 +1328,7 @@ In deze Word heet het woord Studievragen twee dingen: vooraan het kader naast Ke
 met de Kernpunten op `Overzicht.html` komt), achteraan de meerkeuzelijst die het hoofdstuk afsluit.
 Elk labo van dit vak noemt zijn zelftest Test jezelf, en zonder deze regel heten twee verschillende
 dingen in hetzelfde hoofdstuk hetzelfde. Een sectie die halverwege "Oefening" heet, houdt haar naam;
-ze krijgt wel dezelfde vragenbehandeling (regel 14). De hernoeming staat per hoofdstuk in
+ze krijgt wel dezelfde vragenbehandeling (de regels `vragen-*`). De hernoeming staat per hoofdstuk in
 `Theorie/Syllabus/NOTITIES.md`.
 
 **Een hoofdstuk mag tekst bijkrijgen, en dat is een beslissing van de lector.**
@@ -1359,10 +1353,10 @@ van `SCHRIJFSTIJL.md` uitdrukkelijk verbiedt, en waar geen enkele regel van de c
 valt. Het scanwerk doen de Kernpunten, de sectiekoppen en Test jezelf, en de syllabus is bovendien
 papier: daar scan je op kop en op kader.
 
-**De schakelaar is `VET_UIT_DE_WORD` in `import-syllabus.py`, en dat is precies waarom dit GEEN
-handmatige correctie is.** Elke andere woordcorrectie hier staat in NOTITIES.md omdat een herimport
-ze weggooit; deze niet, want de importer laat het vet nu zelf vallen. Zet de constante op True en het
-komt hoofdstuk per hoofdstuk terug. De bestaande `ontvet`-parameter (voor een kader dat helemaal vet
+**De schakelaar is `syllabus.vet_uit_de_word` in `oriontools.json` (hier `false`), en dat is precies
+waarom dit GEEN handmatige correctie is.** Elke andere woordcorrectie hier staat in NOTITIES.md omdat
+een herimport ze weggooit; deze niet, want de importer laat het vet nu zelf vallen. Zet de sleutel op
+`true` en het komt hoofdstuk per hoofdstuk terug. De bestaande `ontvet`-parameter (voor een kader dat helemaal vet
 staat) blijft staan en doet er zolang niet toe.
 
 **Twee soorten vet zijn blijven staan, en allebei zijn ze geen nadruk.** De acht `<strong
@@ -1399,10 +1393,10 @@ een figuur. Het stijlblad draagt sinds DeN een regel `code, pre, kbd, samp` van 
 regel de bladspiegel niet kan doen overlopen. Meet toch de langste regel na: 9pt Consolas is
 ongeveer 1,75mm per teken, dus 91 tekens is de grens.
 
-**Een oefening in tabelvorm wordt een `ol.vragen`, en dat is de enige plaats waar regel 14 een gat
-heeft.** 2.1 Hardware herkennen is in de Word geen genummerde lijst maar drie tabellen: een rij
+**Een oefening in tabelvorm wordt een `ol.vragen`, en dat is de enige plaats waar de regels
+`vragen-*` een gat hebben.** 2.1 Hardware herkennen is in de Word geen genummerde lijst maar drie tabellen: een rij
 foto's, daaronder een rij met een nummer en een regeleinde waarop de student de naam schrijft.
-Dertig vragen dus, zonder een `<ol>` in de buurt. De verklikker van regel 14 zoekt naar een `<ol>`
+Dertig vragen dus, zonder een `<ol>` in de buurt. De verklikker `vragen-class` zoekt naar een `<ol>`
 met invulruimte eronder, dus die ziet zo'n tabel niet, en de export ziet er evenmin vragen in: het
 hoofdstuk zou stilzwijgend zonder Oplossingen gedrukt worden. Herken je een oefening, maak er dan
 een `ol.vragen` van voor je verder gaat, ook als de Word er niets genummerds van maakt.
@@ -1411,7 +1405,7 @@ Waar de student schrijft, beslis je daarbij zelf, en je zegt in NOTITIES.md waar
 vindt niets zodra elke kolom tekst draagt, en bij deze drie tabellen droeg elke kolom de nummers.
 
 Loopt de nummering door over een figuur of een tussenzin heen, dan draagt het volgende `<ol>` een
-`start=`; regel 14 kijkt die aansluiting na.
+`start=`; `vragen-numbering` kijkt die aansluiting na.
 
 **Twee bladspiegelregels kwamen daaruit voort, en `syllabus.css` wijkt daarmee als derde bestand van
 DeN af.** Een `ol.vragen > li` breekt niet meer over een bladovergang, want een foto zonder haar
@@ -1497,7 +1491,7 @@ de enige die een claim toont die je met woorden moeilijk hard maakt: zeven balke
 een verticale deadline, waarbij de RTOS-balken gemiddeld LANGER zijn dan de gewone en er toch geen
 enkele over de lijn gaat. Op tijd is iets anders dan snel, en dat is in de figuur na te meten.
 **`img/syllabus-07-preemptive-vs-cooperative.svg` is geschrapt** toen die figuur gesplitst werd,
-want een weesbestand valt over regel 16.
+want een weesbestand valt over `orphan-image`.
 
 **Het kader en de Test jezelf zijn meegegaan.** Studievraag 8 en 9 gingen over de algoritmes en zijn
 vervangen door een vraag over de context switch en een over swapping; het kader blijft op tien. In de
@@ -1519,7 +1513,7 @@ werk daarbinnen, en zet elke vervanging op een `assert count == 1`, zodat ze afs
 te raden.
 
 **Een meerkeuzevraag met meer dan een juist antwoord is een beslissing van de lector, niet van jou.**
-Regel 14 en `export-syllabus.py` eisen per vraag precies een `<li class="juist">`, en bij een enkele
+`vragen-answered` en `orion.py export-syllabus` eisen per vraag precies een `<li class="juist">`, en bij een enkele
 vraag zonder antwoord drukt het hele hoofdstuk geen Oplossingen. Hoofdstuk 3 had er drie op negen:
 een vraag naar de nadelen van de BIOS met vier juiste van de vijf, een vraag naar situaties om de
 instellingen te wijzigen met vier verdedigbare, en een vraag naar de POST waarop de tekst zelf twee
@@ -1544,7 +1538,7 @@ staat in de gedeelde `table`-regel en geldt voor elk hoofdstuk.
 **De importer schrijft een gewone `<ol>` en laadt `oplossingen.js` niet.** Een vragenlijst wordt met
 de hand een `<ol class="vragen">`, en de pagina krijgt met de hand
 `<script src=".../oplossingen.js">` onderaan de body. Zonder het eerste ziet de export geen vragen en
-drukt ze zwijgend geen Oplossingen; het tweede vangt regel 14 wel op.
+drukt ze zwijgend geen Oplossingen; het tweede vangt `oplossingen-script` wel op.
 
 **Een studievraag die een imperatief is, krijgt een punt en geen vraagteken.** Deze Word schrijft
 "Geef twee redenen waarom ...?" en "Geef enkele voordelen van UEFI?", en dat staat in het kader
@@ -1739,8 +1733,8 @@ tot nu toe, en de vier redenen staan per figuur in NOTITIES.md. Drie ervan teken
 onafhankelijk en een eigen kopie per track is de afspraak, precies zoals bij de MBR van hoofdstuk 3.
 
 **Heading 4 bestaat, en hoofdstuk 7 is het enige hoofdstuk dat er een heeft.** Vijf, alle vijf de
-scheduling algoritmes onder Procesbeheer. `import-syllabus.py` rekent de kop om met
-`min(max(niveau - kop_offset + 1, 2), 6)` en `verplaats_koppen()` in `export-syllabus.py` schuift er
+scheduling algoritmes onder Procesbeheer. `orion.py import-syllabus` rekent de kop om met
+`min(max(niveau - kop_offset + 1, 2), 6)` en `verplaats_koppen()` in `export-syllabus` schuift er
 in de bundel nog een niveau overheen, dus een Heading 3 is op de pagina een `h2` en in de PDF een
 `h3` van 11pt, en een Heading 4 een `h3` en dan een `h4` van 10pt. Die tak had nog nooit gedraaid en
 hij klopt, nagemeten in de PDF. **Een Heading 4 is daarmee even groot als de lopende tekst** en
@@ -2006,8 +2000,8 @@ is een echte afmeting in millimeter en geen duimmaat.
 `<!-- verslag -->` blok van `Inventaris/Opdracht.html` luidt nu "Vormfactor (2,5″, 3,5″ of M.2; het
 teken ″ betekent duim)". Een info-box op de theoriepagina helpt daar niet: dat is een ander
 Orion-menu-item, en de docx draagt alleen wat er in dat blok staat. **Vergeet de docx dan ook niet**:
-regel 6 valt over een verslag dat ouder is dan zijn `Opdracht.html`, en het commando staat in de
-foutmelding (`python scripts/export-verslag.py Labo/Assemblage/Inventaris`).
+`verslag-stale` valt over een verslag dat ouder is dan zijn `Opdracht.html`, en het commando staat
+in de foutmelding (`python ../OrionTools/orion.py export-verslag Labo/Assemblage/Inventaris`).
 
 ### Nog te doen: de 37 keer `men` in de syllabus
 
@@ -2107,7 +2101,7 @@ zit een vectortekening in. Netto 0,20 MB erbij.
 Dat is geen fout en het is ook geen reden om iets terug te draaien: 13,41 MB is ruim binnen wat deze
 repo aankan, en de winst van een hertekening zit in de scherpte, de taal en het palet en niet in
 bytes. Maar het is wel de verwachting die je moet bijstellen. **`krimp()` heeft de rasters al op
-`KRIMP_DPI` gezet**, dus je vervangt geen dure foto maar een al gekrompen foto, en een gedetailleerde
+`syllabus.krimp.dpi` gezet**, dus je vervangt geen dure foto maar een al gekrompen foto, en een gedetailleerde
 tekening kost makkelijk meer dan wat ze vervangt. Wil je weten waar een export naartoe is gegaan,
 splits het dan zoals hierboven, in beeldbytes en contentstreams; het totaal alleen zegt niets over
 welke van de twee bewoog.
@@ -2227,7 +2221,7 @@ maar meld het.
 
 **Twee details die elk een mislukte poging kosten.** `--` moet NA `-m` en zijn boodschap staan, want
 anders leest git de `-m` zelf als pad en faalt de commit met "pathspec '-m' did not match any file".
-En wil je alleen `check-content.py` groen krijgen, waar regel 1 valt over een bestand dat nog niet in
+En wil je alleen `orion.py check` groen krijgen, waar `links` valt over een bestand dat nog niet in
 git zit, gebruik dan `git add -N` en geen echte `git add`: intent-to-add zet het pad in de index zonder
 er inhoud in te leggen. **Stagen en dan doorwerken is precies hoe je werk in andermans commit belandt**,
 want het venster tussen je `add` en je `commit` is het venster waarin de ander commit.
@@ -2265,7 +2259,7 @@ het antwoord op de oefening dragen en zeven bestelnummers en toebehoren zijn. Be
 2026: het worden de zes, de bijschriften blijven "Bladzijde 1 van 4" en "Bladzijde 2 van 4" zodat de
 lezer ziet dat de datasheet doorloopt, en de info-box Bron noemt het adres van de volledige versie.
 Dat is iets anders dan het artikel van hoofdstuk 3, waar alle vier de bladzijden bleven staan: dat
-telde er vier en niet dertien. **Schrap de bestanden dan ook uit `img/`**, want regel 1 valt over een
+telde er vier en niet dertien. **Schrap de bestanden dan ook uit `img/`**, want `orphan-image` valt over een
 afbeelding waar geen pagina naar wijst, en noteer het, want een herimport zet ze alle zeven terug.
 
 **Een watermerk zonder naam is iets anders dan een watermerk met een naam.** Hoofdstuk 2 liet twee
@@ -2289,7 +2283,7 @@ de schermafdruk zelf te lezen is, blijft wel zo: een afgedrukte bladzijde wordt 
 **Een lege Heading 2 wordt een pagina zonder titel, en die gooi je weg.** Achteraan hoofdstuk 9
 staat er een, een restant van een bladovergang, en de importer maakt er een volwaardige sectie van
 met een lege `<title>`, een lege `<h1>` en `Pagina.html` als naam, de terugval van `pascal()` op een
-lege kop. Ze hoort niet in `reference.js`, en na een herimport staat ze er weer en faalt regel 2 tot
+lege kop. Ze hoort niet in `reference.js`, en na een herimport staat ze er weer en faalt `syllabus-manifest` tot
 ze opnieuw weg is.
 
 **Een element dat breder is dan de bladspiegel krimpt het HELE gedrukte document, en niets faalt.**
@@ -2341,7 +2335,7 @@ wil je weten.
 hoofdstuk 11 boven, waar de Word er 44 plaatst en `img/` er 38 kreeg. Een afbeelding die aan een
 KOP hangt verdwijnt: bij een Heading 1 of 2 snijdt `verwerk()` die kop eraf voor `renderen()` iets
 ziet, dus het bestand wordt niet eens geschreven, en bij een Heading 3 wordt het wel geschreven maar
-niet geplaatst, waarna regel 16 over het weesbestand valt. En een afbeelding die in een TABELCEL
+niet geplaatst, waarna `orphan-image` over het weesbestand valt. En een afbeelding die in een TABELCEL
 zit verdwijnt zodra `lege_kolommen()` die tabel als invulruimte leest. In hoofdstuk 11 kostte dat de
 QR-code naast de kop van 11.4 en de drie tekeningen waar vraag 5 naar verwijst, en die vraag was
 daarmee onbeantwoordbaar. **De importer is niet aangepast**, dus tel na elke import de afbeeldingen
@@ -2409,50 +2403,26 @@ definitie gaf. **Allebei de hoofdstukken krijgen dan een zin die naar de andere 
 geen van beide verliest een voorbeeld**, anders dan bij hoofdstuk 5 en 8, waar de ene passage
 gewoon fout stond en herschreven werd. Toets welke van de twee het is voor je iets schrapt.
 
-**Kijk een figuur die tekst draagt na in de KRIMP, en niet op haar dpi.** `ONAANGEROERD` in
-`export-syllabus.py` is er voor beeld waarvan een lezer de tekst moet kunnen lezen, en de verleiding
+**Kijk een figuur die tekst draagt na in de KRIMP, en niet op haar dpi.**
+`syllabus.krimp.onaangeroerd` in `oriontools.json` is er voor beeld waarvan een lezer de tekst moet kunnen lezen, en de verleiding
 is om dat op de bron-dpi te beslissen. Dat is de verkeerde maat: wat telt is hoe groot de letters IN
 het beeld zijn. De drie modulefoto's van 13.4, 13.5 en 13.6 staan op 269 en twee keer 220 dpi en
-laten de student PC100-222-620 64MB aflezen; op `KRIMP_DPI` nagebootst met PIL en bekeken, is dat
+laten de student PC100-222-620 64MB aflezen; op `syllabus.krimp.dpi` nagebootst met PIL en bekeken, is dat
 moeiteloos leesbaar, dus er hoefde niets beschermd te worden. Doe die proef, ze kost drie regels
-Python, en zet alleen in `ONAANGEROERD` wat ze niet doorstaat.
+Python, en zet alleen in `onaangeroerd` wat ze niet doorstaat.
 
 ### Wat de eerste hoofdstukimport aan de importer veranderd heeft
 
-**Word plaatst een afbeelding op twee manieren, en `import-syllabus.py` kende er maar een.** Een
-INLINE afbeelding staat in de tekstregel zelf, en dan is de alinea eromheen haar bijschrift: zo zijn
-de meeste figuren in deze Word gemaakt, en daar rekende de importer op. Een ZWEVENDE afbeelding
-(`wp:anchor` met `wrapSquare`) is aan een alinea verankerd en de tekst loopt eromheen; die alinea is
-gewone lopende tekst die toevallig naast het plaatje staat.
-
-Zonder dat onderscheid wordt zo'n alinea een klein gecentreerd onderschrift, en de tekst die de
-student hoort te lezen staat in de opmaak van een bijschrift. In hoofdstuk 1 gebeurde dat vier keer
-op vijf afbeeldingen, waaronder de hele alinea over de ENIAC. `zwevend_van()` en `vast_bijschrift()`
-vangen dat nu op: een zwevende afbeelding krijgt geen bijschrift uit de Word en haar alinea blijft
-een `<p>`. De importer noteert het per geval in `IMPORT.md`.
-
-**Dat raakt DeN ook**, maar minder: daar zijn 9 van de 92 afbeeldingen zo verankerd, hier 21 van de
-132. Wie de scripts ooit samenvoegt, neemt deze kant op en niet de andere.
-
-**`pascal()` brak een woord in twee op elk diakritisch teken.** De regel eronder
-houdt alleen `[a-z0-9]` over, dus "vacuümbuizen" werd `VacuMbuizen` en
-"Industriële computer vs embedded system", de titel van hoofdstuk 4, wordt
-`IndustriLeComputerVsEmbeddedSystem`. Dat laatste is geen gevolg van een
-redactionele keuze: het staat zo in de Word en het hoofdstuk is nog niet ingevoerd.
-`ontdiakritiseer()` normaliseert nu naar NFKD en gooit de combinerende tekens weg,
-zodat de kale letter blijft staan. Dit raakt DeN even hard en is de tweede
-wijziging aan `import-syllabus.py` die geen string is.
-
-**`slug()` brak diezelfde woorden, en dat merk je pas aan een bestandsnaam in `img/`.**
-`ontdiakritiseer()` zat op `pascal()` en niet op `slug()`, dus de map van hoofdstuk 4 heette wel
-`IndustrieleComputerVsEmbeddedSystem` terwijl zijn afbeeldingen
-`syllabus-04-industri-le-computer-vs-embedded-system-01.png` heetten. De twee gaan nu allebei door
-`ontdiakritiseer()`. Dit is de derde wijziging aan `import-syllabus.py` die geen string is, ze raakt
-DeN even hard, en ze raakt de drie hoofdstukken die er al staan niet: geen van hun titels draagt een
-diakritisch teken.
+**Drie wijzigingen aan de importer kwamen uit de eerste hoofdstukken, en ze staan in OrionTools bij
+de code, met de reden erbij.** Een zwevende afbeelding (`wp:anchor`) krijgt geen bijschrift uit de
+Word en haar alinea blijft een `<p>` (`zwevend_van()`, `vast_bijschrift()`); in hoofdstuk 1 werden
+anders vier alinea's op vijf afbeeldingen een onderschrift, waaronder de hele alinea over de ENIAC.
+En `pascal()` en `slug()` gaan door `ontdiakritiseer()`, zodat een trema een woord in een
+bestandsnaam niet meer in twee breekt (`VacuMbuizen`, `industri-le`). De importer noteert een
+zwevende afbeelding per geval in `IMPORT.md`.
 
 **De naam van een categorie in `reference.js` is de gedrukte hoofdstuktitel, en mag dus geen
-diakritisch teken kwijtspelen.** `export-syllabus.py` drukt hem boven de eerste bladzijde van het
+diakritisch teken kwijtspelen.** `orion.py export-syllabus` drukt hem boven de eerste bladzijde van het
 hoofdstuk en in de inhoudstafel. `reference.js` was tot hoofdstuk 4 volledig ASCII, en de titel
 verscheen daardoor als "4 Industriele computer vs embedded system" boven een kader dat drie keer
 "industriële" schrijft. De naam draagt nu het teken zelf, en dat is de enige regel in het bestand

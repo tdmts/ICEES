@@ -110,8 +110,8 @@ nooit meegekomen is.
 **De categorie draagt `genummerd: false` en is de enige in dit manifest.** De
 pagina ligt los in `Theorie/` en niet in een eigen map, want het Voorwoord heeft
 geen enkele Heading 2. Ze heet daarom ook geen `Overzicht.html`: die naam is de
-opening van een GENUMMERD hoofdstuk, en `hoofdstukken()` in `export-syllabus.py`
-neemt die tak alleen als er een nummer is. Zelfde vorm als in DeN, tot en met de
+opening van een GENUMMERD hoofdstuk, en `hoofdstukken()` in
+`oriontools/export/syllabus.py` neemt die tak alleen als er een nummer is. Zelfde vorm als in DeN, tot en met de
 plaats van `genummerd` achter `topics`.
 
 **Geen figuren, geen vragen.** Dus ook geen Test jezelf en geen Oplossingen, en
@@ -325,9 +325,9 @@ een hoort te krijgen, wordt beslist na hoofdstuk 16 en in een keer, niet hier.
 
 In de Word staat 2.1 als drie tabellen: een rij foto's, daaronder een rij met een
 nummer en een regeleinde, en op die lege regel schrijft de student de naam. Dat
-is een vragenlijst in de vorm van een tabel, en regel 14 van de contentcheck
-geldt er onverkort voor. Niets vangt het als je het overslaat: er is geen `<ol>`,
-dus zelfs de verklikker van regel 14, die naar een `<ol>` met invulruimte zoekt,
+is een vragenlijst in de vorm van een tabel, en de regels `vragen-*` van de
+contentcheck gelden er onverkort voor. Niets vangt het als je het overslaat: er is geen `<ol>`,
+dus zelfs de verklikker `vragen-class`, die naar een `<ol>` met invulruimte zoekt,
 ziet niets.
 
 **De drie tabellen zijn dus een `ol.vragen` geworden**, met per nummer de foto,
@@ -338,7 +338,7 @@ vouwt `oplossingen.js` ze weg. Er staat dus geen antwoord in de tekst zelf.
 **De nummering loopt van 1 tot 30 over vier lijsten.** De twee foto's die bij een
 hele reeks nummers horen staan tussen de lijsten in, dus de lijst erna draagt
 `start=`: 10 voor het moederbord en 18 voor de achterkant. De vierde lijst begint
-op 24. Regel 14 kijkt die aansluiting na.
+op 24. De regel `vragen-numbering` kijkt die aansluiting na.
 
 **Waar de student schrijft, is hier beslist en niet uit de Word gelezen.** De
 importer merkt op deze drie tabellen geen invulruimte: `lege_kolommen()` zoekt
@@ -570,7 +570,7 @@ toevoegt, en die zijn er op vraag van de lector weer uit. De bron volstaat.
 De bron is: Redactie TechPulse, *BIOS en UEFI: wat je computer doet voor Windows
 opstart*, 22 april 2022,
 `https://techpulse.be/achtergrond/215297/bios-en-uefi-wat-je-computer-doet-voor-windows-opstart/`.
-De link draagt `target="_blank"`; regel 4 van de contentcheck weigert alleen een
+De link draagt `target="_blank"`; de regel `remote-document` weigert alleen een
 externe **document**link, dus een artikel mag.
 
 **Leesbaarheid is niet het probleem, en dat is nagekeken in de render.** De vier
@@ -708,8 +708,8 @@ schreef `Studievragen.html`.
 **De vijf genummerde items lopen door in een enkele `<ol>`, dus er is nergens een
 `start=`.** De lege alinea's tussen de vraaggroepen staan in de Word in de stijl
 Normal en niet in List Paragraph, dus ze breken de nummering niet. De importer
-laat ze vallen en de lijst blijft heel. Regel 14 heeft hier dus niets aan te
-sluiten.
+laat ze vallen en de lijst blijft heel. `vragen-numbering` heeft hier dus niets
+aan te sluiten.
 
 ### De vijf vragen van Test jezelf, en de vijfde die geen vraag is
 
@@ -862,7 +862,7 @@ Oplossingen drukt de vier letters b, c, b, d en het open antwoord.
 ### De hoofdstuktitel in reference.js draagt een trema, en de rest van het bestand niet
 
 `reference.js` was tot hier volledig ASCII, en de naam van een categorie is wat
-`export-syllabus.py` als **hoofdstuktitel drukt**, boven de eerste bladzijde en in
+`orion.py export-syllabus` als **hoofdstuktitel drukt**, boven de eerste bladzijde en in
 de inhoudstafel. Zonder trema stond er "4 Industriele computer vs embedded
 system" boven een kader dat drie keer "industriële" schrijft. De naam is dus
 `Industriële computer vs embedded system`, met het teken zelf, en dat is de enige
@@ -1193,7 +1193,7 @@ foto's van dat hoofdstuk staan bij 8.1 en de SVG bij 8.4.
 De hernoeming is niet cosmetisch: laat je de naam op `syllabus-05-` staan, dan
 schrijft een herimport van hoofdstuk 5 datzelfde bestand terug en wijst hoofdstuk 8
 stilzwijgend naar een heringevoerde figuur. Onder de nieuwe naam wordt zo een
-herimport een weesbestand waar regel 1 over valt, en dat is een luide fout in
+herimport een weesbestand waar `orphan-image` over valt, en dat is een luide fout in
 plaats van een stille. De figuur kreeg wel een bijschrift, dat ze in de Word niet
 had omdat ze daar zweefde.
 
@@ -1217,7 +1217,7 @@ tot er een tweede marker met `orient="auto-start-reverse"` bij kwam. In het best
 zag dat er niet fout uit.
 
 **Het origineel `img/syllabus-05-de-von-neumann-architectuur-01.png` is geschrapt**,
-want niets verwijst er nog naar en regel 1 van de contentcheck valt anders over een
+want niets verwijst er nog naar en de regel `orphan-image` valt anders over een
 ongebruikte afbeelding. Een herimport zet het terug.
 
 **Wat het schema toont en de kernpunten niet noemen, is de opslag.** Het tweede
@@ -1307,7 +1307,7 @@ Verschillende secties zijn heel kort. 6.8 Fragmentatie bij een solid state drive
 is een enkele zin, 6.9 Defragmentatie twee alinea's, 6.6 Fragmentatie bij de
 klassieke harde schijf twee. Ze zijn niet gegroepeerd, en dat is een keuze.
 
-De reden is de nummering. `export-syllabus.py` leidt het sectienummer af uit de
+De reden is de nummering. `orion.py export-syllabus` leidt het sectienummer af uit de
 plaats in `reference.js`, dus twee secties samennemen laat de gedrukte 6.8 iets
 anders betekenen dan de 6.8 van de Word, en de Word blijft de herkomst waar een
 herimport tegenaan gelegd wordt. De prijs is klein: `syllabus.css` legt geen
@@ -1490,7 +1490,7 @@ staan** en kregen een met de hand geschreven `alt`, dat een herimport weggooit:
 **Vier zijn hertekend**, en ze staan alle vier op 160.0mm. Palet en lettertype zijn
 die van de SVG's van Labo Partitioneren en van hoofdstuk 3, op wit, en alle vier
 zijn ze in Edge gerenderd voor ze vertrouwd werden. De originelen zijn geschrapt,
-want niets verwijst er nog naar en regel 1 van de contentcheck valt over een
+want niets verwijst er nog naar en de regel `orphan-image` valt over een
 ongebruikte afbeelding; een herimport zet ze terug.
 
 - **image51 is `img/syllabus-06-journaal.svg` geworden, en dat was het
@@ -1848,8 +1848,8 @@ kost.
 **6.7 First fit, best fit, worst fit is helemaal geschrapt**, op beslissing van de
 lector: het leidt niet naar een van de drie leerdoelen.
 `FirstFitBestFitWorstFit.html` is weg, het topic `bestandssystemen-fits` is uit
-`reference.js`, en `img/syllabus-06-first-best-worst-fit.svg` is weg omdat regel 1
-over een ongebruikte afbeelding valt. **De labokopie
+`reference.js`, en `img/syllabus-06-first-best-worst-fit.svg` is weg omdat
+`orphan-image` over een ongebruikte afbeelding valt. **De labokopie
 `img/partitioneren-first-best-worst-fit.svg` blijft** en is daarmee geen paar meer;
 CLAUDE.md is daarop rechtgezet.
 
@@ -1975,7 +1975,7 @@ eerst als een enkele `-preemptive-vs-cooperative.svg` met de twee mechanismen bo
 elkaar, en op vraag van de lector is ze `img/syllabus-07-cooperative-multitasking.svg`
 en `img/syllabus-07-preemptive-multitasking.svg` geworden, elk onder de alinea's
 die erbij horen. De oude is geschrapt, want een afbeelding waar geen pagina naar
-wijst valt over regel 16.
+wijst valt over `orphan-image`.
 
 **Die twee delen hun geometrie met opzet, en dat is de reden dat de vergelijking
 overeind blijft** ook al staan ze nu niet meer boven elkaar: allebei `viewBox
@@ -2050,7 +2050,7 @@ kop om met `min(max(niveau - kop_offset + 1, 2), 6)`, dus een Heading 3 wordt ee
 `h2` op de pagina en een Heading 4 een `h3`. Nagekeken in de uitvoer en dat is
 precies wat er gebeurde.
 
-`verplaats_koppen()` in `export-syllabus.py` schuift daar in de bundel nog een
+`verplaats_koppen()` in `oriontools/export/syllabus.py` schuift daar in de bundel nog een
 niveau overheen, dus in de PDF is de rangorde:
 
 | in de Word | op de pagina | in de PDF | grootte |
@@ -2190,8 +2190,8 @@ Alle vier zijn opengedaan voor er iets over geschreven werd. **Een blijft staan:
 **Drie zijn hertekend**, alle drie schema's en alle drie onder de dpi-grens. Ze
 staan op 160.0mm, dragen het palet van de SVG's van Labo Partitioneren en van
 hoofdstuk 3 op wit, en ze zijn alle drie in Edge gerenderd voor ze vertrouwd
-werden. De originelen zijn geschrapt, want niets verwijst er nog naar en regel 1
-van de contentcheck valt over een ongebruikte afbeelding; een herimport zet ze
+werden. De originelen zijn geschrapt, want niets verwijst er nog naar en de regel
+`orphan-image` valt over een ongebruikte afbeelding; een herimport zet ze
 terug.
 
 - **image53 is `img/syllabus-07-processtatussen.svg` geworden.** Het origineel is
@@ -2279,10 +2279,10 @@ gedrukte PDF: 10.1 en 10.2 staan nog altijd samen op een bladzijde, en de inhoud
 ze allebei naar dezelfde. De labels van 12px drukken op 2.6mm, dat is 7.4pt, en dat is de
 maat die de SVG's van hoofdstuk 3, 6, 7 en 11 ook halen.
 
-**De PNG is geschrapt**, want niets verwijst er nog naar en regel 1 van de contentcheck valt
+**De PNG is geschrapt**, want niets verwijst er nog naar en de regel `orphan-image` valt
 over een ongebruikte afbeelding. Dat is het geval van
 `img/syllabus-10-informatievoorstelling-03.png` hierboven. **Een herimport zet ze terug** en
-schrijft de `<img>` van deze pagina weer naar de PNG; dan faalt regel 1 tot ze opnieuw weg
+schrijft de `<img>` van deze pagina weer naar de PNG; dan faalt `orphan-image` tot ze opnieuw weg
 is. De `alt` van de figuur is met de hand geschreven en overleeft een herimport evenmin.
 
 ### De bladspiegel van dit hoofdstuk
@@ -3067,7 +3067,7 @@ een lege kop.
 Dat is een restant van een bladovergang en geen sectie, dus de pagina is
 weggegooid en staat niet in `reference.js`. **Een herimport zet ze terug**, en dan
 verschijnt ze ook weer in de contentcheck, want een pagina onder een module die
-niet in het manifest staat, faalt op regel 2.
+niet in het manifest staat, faalt op `syllabus-manifest`.
 
 ### De kop Raspberry PI is meegegaan met de schrijfwijze van de eigenaar
 
@@ -3218,8 +3218,8 @@ artikel telde er vier en niet dertien.
   hele hoofdstuk geen enkele `<a>`.
 - De zeven geschrapte bladzijden zijn ook uit `img/` verdwenen
   (`syllabus-09-moederbord-18`, `-19`, `-22`, `-23`, `-24`, `-27` en `-28`), want
-  regel 1 van de contentcheck valt over een afbeelding waar geen pagina naar wijst.
-  **Een herimport zet alle zeven terug**, en dan faalt regel 1 tot ze opnieuw weg
+  de regel `orphan-image` valt over een afbeelding waar geen pagina naar wijst.
+  **Een herimport zet alle zeven terug**, en dan faalt `orphan-image` tot ze opnieuw weg
   zijn.
 
 **De drie toestellen zijn van Beckhoff, en dat staat op de bladzijden zelf**: het
@@ -3288,8 +3288,8 @@ die alt-teksten weg.**
   geen bijschrift uit de Word.
 - **image67 staat twee keer in de Word, en de importer maakt er twee bestanden van.**
   Een keer in 9.3 op 160.0mm en een keer bij vraag 4 van Test jezelf op 86.5mm, en dat
-  worden `syllabus-09-moederbord-10.png` en `-29.png`, byte voor byte gelijk. Regel 1
-  van de contentcheck is daar tevreden mee, want elk bestand heeft precies een
+  worden `syllabus-09-moederbord-10.png` en `-29.png`, byte voor byte gelijk. De regel
+  `orphan-image` is daar tevreden mee, want elk bestand heeft precies een
   verwijzing; met een enkel bestand en twee verwijzingen zou ze dat ook zijn. De twee
   zijn zo gelaten, want dat is wat een herimport opnieuw schrijft. **De breedtes lopen
   wel uiteen**: de kopie in 9.3 is naar 132.0mm gegaan om boven de dpi-grens te komen en
@@ -3636,8 +3636,8 @@ goed en zijn niet aangeraakt, en de schrijfwijze van de bron blijft ("1kB" zonde
 De enige plaats in het hoofdstuk waar dat getal stond, gaf 9,09 GB.
 
 **`img/syllabus-10-informatievoorstelling-03.png` is geschrapt**, want niets verwijst er
-nog naar en regel 1 van de contentcheck valt over een ongebruikte afbeelding. **Een
-herimport zet ze terug**, met de fout erin, en dan faalt regel 1 tot ze opnieuw weg is.
+nog naar en de regel `orphan-image` valt over een ongebruikte afbeelding. **Een
+herimport zet ze terug**, met de fout erin, en dan faalt `orphan-image` tot ze opnieuw weg is.
 
 ### De ASCII-tabel blijft een afbeelding
 
@@ -3689,7 +3689,7 @@ vragen in een lijst.
 9 staan in de Word op `ilvl=0`, hetzelfde inspringniveau als de vragen zelf, alleen met een
 eigen `numId` (32 en 33). Nagekeken wat de importer daarvan maakt: hij zet ze als een
 `<ul>` **binnen** de `<li>` van hun vraag, precies zoals bij een echt geneste lijst, dus de
-genummerde lijst loopt gewoon door en er valt niets aan te sluiten. Regel 14 is daar
+genummerde lijst loopt gewoon door en er valt niets aan te sluiten. `vragen-numbering` is daar
 tevreden mee.
 
 | Vraag | Antwoord | Waarop het steunt |
@@ -3931,7 +3931,7 @@ niet in beeld.
 ### De import liet vier afbeeldingen vallen, en meldde er geen enkele
 
 Dit is de zwaarste vondst van dit hoofdstuk en ze is met de hand rechtgezet.
-`import-syllabus.py` schreef 38 bestanden waar de Word er 44 plaatst, en het
+`orion.py import-syllabus` schreef 38 bestanden waar de Word er 44 plaatst, en het
 verschil kwam nergens in `IMPORT.md` terecht. **Een herimport laat ze opnieuw
 vallen**, want de importer is niet aangepast.
 
@@ -3949,12 +3949,12 @@ vallen**, want de importer is niet aangepast.
   `img/syllabus-11-track.png`, `-disk-sector.png` en `-track-sector.png`, naar wat
   ze tonen: een volledige ring, een taartpunt van de as tot de rand, en het vakje
   waar die twee elkaar kruisen. **Zonder hen is vraag 5 onbeantwoordbaar** en er is
-  niets dat het meldt: de bestanden zijn nooit geschreven, dus regel 16 van de
-  contentcheck ziet niets.
+  niets dat het meldt: de bestanden zijn nooit geschreven, dus de regel
+  `orphan-image` ziet niets.
 - **De lintkabel van 11.7 hing aan de Heading 3 Kabels.** Die wordt wel geschreven
   (`syllabus-11-harde-schijf-16.png`) maar niet geplaatst, want `renderen()` maakt
   van een kop een `<h2>` en laat de afbeelding erin vallen. Dat is het enige geval
-  dat de contentcheck wel vangt: regel 16 viel over het weesbestand. Ze staat nu
+  dat de contentcheck wel vangt: `orphan-image` viel over het weesbestand. Ze staat nu
   bovenaan de sectie Kabels.
 
 **Waar je op moet letten is dus een zwevende afbeelding die aan een KOP hangt en
@@ -4163,7 +4163,7 @@ in de gedrukte 11.17 Oplossingen.
 
 **11.4 telt tien vragen, waarvan twee meerkeuze en acht open.** De nummering loopt
 over twee lijsten, want tussen vraag 7 en 8 staat de tussenzin "Redeneervragen:"; de
-tweede lijst draagt dus `start="8"` en regel 14 kijkt die aansluiting na. De keuzes
+tweede lijst draagt dus `start="8"` en `vragen-numbering` kijkt die aansluiting na. De keuzes
 van vraag 4 en 6 staan in de Word op een eigen `numId` (77 en 78) terwijl de vragen
 op 76 staan, en de importer zet ze netjes binnen de `<li>` van hun vraag, precies
 zoals bij hoofdstuk 10; er was daar niets aan te sluiten. In Test jezelf geldt
@@ -4240,7 +4240,7 @@ reden achterhaald. **Tel het dus opnieuw in plaats van het bij te werken**, met
 `ls img/syllabus-11-* | wc -l` naast
 `grep -rho 'img/syllabus-11-[^"]*' Theorie/Syllabus/Theorie/HardeSchijf/*.html | sort -u | wc -l`;
 lopen die twee gelijk, dan wijst elke bladzijde naar een bestaand bestand en ligt er
-geen weesbestand, precies wat regel 1 en 16 van de contentcheck bewaken. **Elk
+geen weesbestand, precies wat de regels `links` en `orphan-image` bewaken. **Elk
 bestand is opengedaan voor het `alt` erbij geschreven werd, en een nieuwe import
 gooit die alt-teksten weg.**
 
@@ -4570,7 +4570,7 @@ met `BLOCK 1` en `DISK1` in kapitalen. Dat is precies de sectie waar de student 
 naast elkaar moet leggen, dus de stijl was daar niet neutraal maar hinderlijk. Ze heten
 nu `img/syllabus-11-raid-0.svg`, `-raid-1.svg`, `-raid-5.svg`, `-raid-6.svg` en
 `-raid-10.svg`, en de vijf PNG's zijn geschrapt. **Een herimport zet die vijf terug en
-laat regel 1 en 16 vallen tot ze opnieuw weg zijn.**
+laat `links` en `orphan-image` vallen tot ze opnieuw weg zijn.**
 
 **Wat een familie duurder maakt is de gedeelde schaal.** Een schijf is in alle vijf
 90 eenheden breed, een blok 34 hoog en de ongebruikte ruimte eronder 50, dus de
@@ -4649,7 +4649,7 @@ elke helft is weggesneden. De inkthoogte is daarmee **2,65 / 3,95 / 2,65 en 2,21
 de orde van de lopende tekst. De acht bestanden heten
 `img/syllabus-11-oefening-N-<product>.png` en staan buiten de nummering van de
 importer; `syllabus-11-harde-schijf-10` tot `-13` zijn geschrapt, en **een herimport
-zet die vier terug en laat regel 1 en 16 falen tot ze opnieuw weg zijn.**
+zet die vier terug en laat `links` en `orphan-image` falen tot ze opnieuw weg zijn.**
 
 De prijs staat in bladzijden: 11.6 gaat van vijf naar elf gedrukte bladzijden, want
 elke helft is op 160mm nog 149 tot 209mm hoog en er passen er dus geen twee op een
@@ -4850,7 +4850,7 @@ herimport draait ze terug.
 ### 1. Vraag 3 had vier juiste antwoorden en is een open vraag geworden
 
 "Uit wat bestaat een processorkern?" met ALU, CU, Registers en Cache heeft er vier
-juist, en regel 14 en `export-syllabus.py` eisen er precies een: zonder ingreep
+juist, en `vragen-answered` en `orion.py export-syllabus` eisen er precies een: zonder ingreep
 drukt het hele hoofdstuk geen Oplossingen. Dat is het geval van de drie vragen van
 hoofdstuk 3, en de twee vormen die daar vastgelegd zijn, zijn allebei voorgelegd.
 
@@ -4954,7 +4954,7 @@ klopt nu ook met de lopende tekst.
   bij de eerste render bleken de twee verticale pijlen te kort: de twee punten liepen
   in elkaar tot een ruit. De verbindingen zijn nu 34px, de maat die het Von
   Neumann-schema al gebruikt. `syllabus-12-central-processing-unit-cpu-01.png` is
-  geschrapt en **een herimport zet ze terug**, waarna regel 1 en 16 falen tot ze
+  geschrapt en **een herimport zet ze terug**, waarna `links` en `orphan-image` falen tot ze
   opnieuw weg is.
 
   **De schikking wijkt sinds 9 september 2026 af van het origineel, en dat is een
@@ -5061,7 +5061,7 @@ herkend wordt. Palet, lijndikte en pijlpunt zijn die van
 pagina staat. **Gerenderd met headless Edge voor ze vertrouwd werd.** De verhouding is
 1,79 tegen 1,81 van de PNG, dus de figuur is op dezelfde 116,4mm even hoog als eerst en
 de bladspiegel schuift niet. `syllabus-12-central-processing-unit-cpu-02.png` is
-geschrapt en **een herimport zet ze terug**, waarna regel 1 en 16 falen tot ze opnieuw
+geschrapt en **een herimport zet ze terug**, waarna `links` en `orphan-image` falen tot ze opnieuw
 weg is.
 
 **`img/syllabus-12-performance-gap.svg`** vervangt de grafiek van de performance gap,

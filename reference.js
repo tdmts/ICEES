@@ -2,9 +2,9 @@
  * reference.js -- het manifest van de syllabus.
  *
  * De syllabus is een PDF die uit HTML-pagina's gegenereerd wordt, door
- * scripts/export-syllabus.py. Dit bestand bepaalt welke pagina's erin komen en
+ * `orion.py export-syllabus` (OrionTools). Dit bestand bepaalt welke pagina's erin komen en
  * in welke volgorde. Een categorie is een hoofdstuk, een topic is een sectie.
- * scripts/check-content.py leest het ook (regel 2) en eist dat elke pagina
+ * `orion.py check` leest het ook (syllabus-manifest) en eist dat elke pagina
  * onder Theorie/Syllabus/Theorie/ erin staat: een pagina die hier ontbreekt,
  * wordt niet gedrukt terwijl ze op het scherm gewoon opent.
  *
@@ -26,7 +26,7 @@ window.LAB_REFERENCE = {
     /*
      * De syllabus is de theorietrack, en ze werkt anders dan een labo: wat de
      * student krijgt is een PDF, en die wordt uit deze pagina's gegenereerd
-     * door scripts/export-syllabus.py. Het manifest bepaalt daarbij de volgorde
+     * door `orion.py export-syllabus`. Het manifest bepaalt daarbij de volgorde
      * van het gedrukte document, precies zoals het hier de volgorde van de hub
      * bepaalt, zodat de twee niet uit elkaar kunnen lopen.
      *

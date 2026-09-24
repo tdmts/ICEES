@@ -5,7 +5,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python scripts/check-content.py",
+            "command": "python \"$CLAUDE_PROJECT_DIR/../OrionTools/orion.py\" check --hook --repo \"$CLAUDE_PROJECT_DIR\"",
+            "shell": "bash",
             "timeout": 60,
             "statusMessage": "Links, manifest, bedrading en stijl nakijken"
           }

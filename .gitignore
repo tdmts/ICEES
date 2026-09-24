@@ -1,31 +1,18 @@
 .claude/settings.local.json
 
-# Ruwe Brightspace-topics, klaargezet door scripts/import-brightspace.py en per
+# Ruwe Brightspace-topics, klaargezet door `orion.py import-brightspace` en per
 # pagina omgezet met orion-convert. Wordt nooit gepubliceerd; de omgezette
 # pagina onder Labo/<Naam>/ wel.
 _incoming/
 
-# PDF-exports van scripts/export-pdf.py. Afgeleid materiaal: de pagina onder
+# PDF-exports van `orion.py export-pdf`. Afgeleid materiaal: de pagina onder
 # Labo/<Naam>/ is het origineel, de PDF maak je opnieuw wanneer je er een
 # nodig hebt.
 _export/
 
-# jsdom, de enige afhankelijkheid in de repo, en alleen nodig als je
-# scripts/check-nav.js draait. Zie de kop van dat bestand. Niets anders hangt
-# ervan af, dus dit blijft een lege map voor wie hem nooit installeert. De twee
-# bestanden die npm install ernaast aanmaakt horen om dezelfde reden niet in
-# git: een clean checkout hoort niets te moeten installeren.
-node_modules/
-package.json
-package-lock.json
-
-# Bytecode van de scripts onder scripts/. Wordt vanzelf opnieuw gemaakt en
-# Pages serveert alleen wat getrackt is, dus dit hoort er niet bij.
-__pycache__/
-
 # De oplossingen van de labo-opdrachten, en de antwoordbestanden waaruit
-# scripts/export-oplossing.py ze maakt. Alles onder tdmts.github.io is publiek,
+# `orion.py export-oplossing` ze maakt. Alles onder tdmts.github.io is publiek,
 # dus een oplossing die hier in git belandt, staat op het net. De lector laadt
 # ze met de hand op naar Orion. Het script zelf draagt geen antwoorden en zit
-# wel in git.
+# in OrionTools.
 _oplossingen/

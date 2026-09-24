@@ -1,0 +1,37 @@
+name: Content check
+
+# Runs the same check as the local Stop hook, but for everyone: any editor,
+# any machine, every push. A red X here means the course would ship broken
+# links, a page missing from orion.json, or a style violation.
+#
+# The check lives in tdmts/OrionTools, which is public, so this private repo
+# checks it out beside itself without a token: the same ../OrionTools layout
+# as on a working machine, and the same command.
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check-content:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: course
+
+      - uses: actions/checkout@v4
+        with:
+          repository: tdmts/OrionTools
+          path: OrionTools
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check links, orion.json, wiring and em-dashes
+        working-directory: course
+        run: python ../OrionTools/orion.py check --ci

@@ -11,7 +11,7 @@
  * <li>, en elke vraag mag een <div class="oplossing"> dragen met het geschreven
  * antwoord of de toelichting erbij. Dat is de hele bron.
  *
- * scripts/export-syllabus.py leest diezelfde twee markeringen en drukt er
+ * `orion.py export-syllabus` leest diezelfde twee markeringen en drukt er
  * achteraan het hoofdstuk een sectie Oplossingen uit. Dit bestand doet er op de
  * site een uitklap van. Twee weergaven van dezelfde inhoud dus, en niet twee
  * plaatsen waar ze staat: er valt niets uit de pas te lopen, want er is maar

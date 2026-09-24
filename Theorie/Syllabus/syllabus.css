@@ -2,13 +2,13 @@
  * syllabus.css -- de huisstijl van de gedrukte syllabus.
  *
  * Dit is de ENIGE plaats waar staat hoe het PDF-document eruitziet.
- * scripts/export-syllabus.py linkt dit bestand en zet zelf geen opmaak meer;
+ * `orion.py export-syllabus` linkt dit bestand en zet zelf geen opmaak meer;
  * staat er hier niets over, dan hoort het hier bij te komen en niet in het
  * script en niet in een style-attribuut op een pagina.
  *
  * Er staat er precies een op de pagina's, --figuur-breedte, en die is geen
  * uitzondering op die regel maar valt erbuiten: het is de breedte die de Word
- * aan een afbeelding geeft, ingelezen door import-syllabus.py zoals een
+ * aan een afbeelding geeft, ingelezen door `orion.py import-syllabus` zoals een
  * rowspan ingelezen wordt. Wat deze bladspiegel ermee doet staat hieronder,
  * bij figure img.
  *

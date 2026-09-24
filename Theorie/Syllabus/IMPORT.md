@@ -1,6 +1,6 @@
 # Wat de import gemeld heeft
 
-Dit bestand wordt door scripts/import-syllabus.py geschreven en bij elke run
+Dit bestand wordt door orion.py import-syllabus geschreven en bij elke run
 overschreven voor de hoofdstukken die hij net gedaan heeft. De andere blijven
 staan. Schrijf er dus niets met de hand in; inhoudelijke bevindingen horen in
 NOTITIES.md ernaast.
