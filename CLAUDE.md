@@ -6,8 +6,12 @@ Guidance for Claude Code (claude.ai/code) when working in this repository.
 
 The course site for **Industriële computers en embedded systems** (Dutch, "je"-vorm), one of the
 Orion course repos under `tdmts/`. Static HTML, committed to the Brightspace course itself by
-**OrionSync** (`../OrionSync`, whose CLAUDE.md covers the sync, verify and adopt). Live course
+**OrionSync** (`../OrionSync`, whose CLAUDE.md covers pull, the sync, verify and adopt). Live course
 **15211**, sandbox 8608.
+
+**A work session starts with `npm run pull -- ICEES --course 15211`**: it brings what a colleague
+changed straight in Brightspace into the working copy and uploads nothing, so you edit from what the
+course says. It wants a clean tree, because `git diff` is the review.
 
 > **Brightspace serves every page, and no page refers to an address of ours outside the course.**
 > That is the rule everything here follows from: `tdmts.github.io` and `github.com/tdmts` appear
