@@ -5,8 +5,8 @@
   },
   "check": {
     "audit": {
-      "_uitleg": "Een lead staat op de Inleiding van een labo, op elke Opdracht.html en op de Overzicht.html die een reeks opent; een theoriepagina en een syllabuspagina dragen er met opzet geen.",
-      "page_patterns": [
+      "_uitleg": "Een lead staat op de Inleiding van een labo, op elke Opdracht.html en op de Overzicht.html die een reeks opent; een theoriepagina en een syllabuspagina dragen er met opzet geen. Een figuur telt op elke pagina, dus figure_patterns blijft op de standaard.",
+      "lead_patterns": [
         "Labo/*overview.html",
         "Labo/*Opdracht.html",
         "Labo/*Overzicht.html"

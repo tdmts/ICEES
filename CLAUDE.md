@@ -466,7 +466,7 @@ in [`oriontools.json`](oriontools.json); the keys and their defaults are in Orio
 runs the same check on a push, with OrionTools checked out beside the course.
 
 **`--audit` looks for a lead only where ICEES puts one**: the Inleiding of a lab, every
-`Opdracht.html` and the `Overzicht.html` that opens a reeks (`check.audit.page_patterns`). A theory
+`Opdracht.html` and the `Overzicht.html` that opens a reeks (`check.audit.lead_patterns`). A theory
 page and a syllabus page carry none by design. The style lists of `SCHRIJFSTIJL.md` (verkleinwoord,
 vulwoord, `LED`) and the code-block classes are audited everywhere.
 
