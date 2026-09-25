@@ -275,10 +275,9 @@ This repo was started from DeN. The eight scripts it copied from there are **sha
 `OrionTools` (24 September 2026): the two that had diverged for a reason that is not a string
 (`import-brightspace`, for the `rCode` casing, and `import-syllabus`, for zwevende afbeeldingen and
 diacritics) were merged there with ICEES's side taken, and what differs per course is in
-`oriontools.json`. `Theorie/Syllabus/syllabus.css` is **still a copy**: it has **gained four rules
-that DeN does not have**, all four under "De syllabus": a `ol.vragen > li` that stays whole, `.vragen-bij-figuur`,
-`.tekenkader`, the drawing frame under a question that asks the student to draw, and `blockquote`,
-the quote that opens the Voorwoord. Read DeN's
+`oriontools.json`. `syllabus.css` is shared as well (25 September 2026): it lives in OrionTools'
+`oriontools/export/stijl/`, with the four rules ICEES had gained over DeN (`ol.vragen > li`,
+`.vragen-bij-figuur`, `.tekenkader`, `blockquote`) now printed in both. Read DeN's
 `CLAUDE.md` for the reasoning behind any shared part; read this section before you copy anything
 across, in either direction.
 
@@ -1260,7 +1259,8 @@ komt er geen tweede keer:
   is; de bundel die naar de PDF gaat laadt alleen het eerste. **De maten erin zijn niet hermeten.**
   Ze komen uit DeN, waar de bestaande syllabus bladzijde per bladzijde opgemeten is; het HOGENT-
   sjabloon is hetzelfde, maar `ICEES Syllabus 20250912.pdf` is er nooit naast gelegd. Wijkt de
-  gedrukte PDF af van wat de student gewend is, kijk daar dan eerst.
+  gedrukte PDF af van wat de student gewend is, kijk daar dan eerst. Het stijlblad staat sinds
+  25 september 2026 in OrionTools, `oriontools/export/stijl/`; het logo is nog van het vak.
 - **De Orion-ingang van de theorietrack is de PDF zelf**, sinds 16 september 2026. Er stond eerst
   een `Theorie/Syllabus/overview.html`, en de hub `Theorie/Syllabus/Theorie/reference.html`; allebei
   zijn geschrapt.
