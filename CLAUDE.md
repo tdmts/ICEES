@@ -477,36 +477,20 @@ course.
 
 ## Prose style
 
-[`SCHRIJFSTIJL.md`](SCHRIJFSTIJL.md), copied from DeN, is the single source of truth for how the
-Dutch reads. All content in Dutch, students addressed with **`je`**. No em-dashes, which is the one
-style rule the check enforces.
+How the Dutch reads is in two files, read in this order: the shared base
+[`../OrionTools/SCHRIJFSTIJL.md`](../OrionTools/SCHRIJFSTIJL.md), and
+[`SCHRIJFSTIJL.md`](SCHRIJFSTIJL.md) here, which holds only what ICEES adds under the number of the
+pattern it adds to (what you may rely on in patroon 17, the Inleiding and patroon 20, the reference
+diff). A new pattern gets its number in the base; `check --explain schrijfstijl-nummers` says why.
+All content in Dutch, students addressed with **`je`**. No em-dashes, which is the one style rule
+the check enforces.
 
-Two patterns carry over exactly and are worth naming: **patroon 17** (a page may not rely on another
-lab, because the labs are independent modules and you do not know which ones a student has done) and
-**patroon 18** (a page never refers to the history of the course material itself, which is precisely
-the kind of sentence you write while migrating).
-
-**Patroon 20 was written here**, out of the first style round: a term is used only after the student
-has met it, the order that counts is the Orion menu, and where the text already has a name for the
-thing, that is the word. It is the kind of sentence you write once the whole module is in your head.
-
-**Patroon 12 gained this course's own vocabulary on 6 September 2026**, confirmed by the lecturer: a
-lesgever is a **lector** and never a docent, a result is a **punt** and never a cijfer, and beside
-those the site already says labo, indienen and test. The list is there because it fails silently:
-`cijfer` stood on `Algemeen/Evaluatie.html` and on `Labo/Assemblage/overview.html` while every other
-page said `punt`, and nothing but a reader catches that. Two of the words keep a second meaning that
-stays (a `toets` on a keyboard, a `cijfer` as a digit), so grep the sense and not the string.
-
-**The list went from 22 patterns to 16** in that same round, by folding six into the pattern each
-already pointed at. No test was lost and the surviving numbers did not move, because a pattern is
-cited by its number here and in DeN and Microcontrollers; `SCHRIJFSTIJL.md` carries the table of
-where the six went. It also gained one rule above the list, in *Wat blijft*: every pattern is
-negative, so a rewrite that drops a fact scores better on all sixteen, and after each rewrite you
-ask which fact is gone.
-
-Labo Assemblage and both `Algemeen/` pages had a full style round on 4 September 2026, and its diff
-is the reference for what counts as factual here. The examples inside `SCHRIJFSTIJL.md` itself still
-name DeN pages.
+Three things in the base were written here, out of the first style round in September 2026:
+**patroon 20** (a term is used only after the student has met it), the vocabulary of the programme
+in **patroon 12** (a **lector** and never a docent, a **punt** and never a cijfer; `cijfer` stood on
+`Algemeen/Evaluatie.html` and on `Labo/Assemblage/overview.html` while every other page said `punt`,
+and nothing but a reader catches that), and the fold **from 22 patterns to 16**, with fixed numbers
+and a table of where the six went.
 
 Filenames are **PascalCase Dutch nouns**: `Partitietabel.html`, `Opdracht.html`. The one exception is
 `overview.html`, the Inleiding of a lab, which the hub rules of the check match on.
