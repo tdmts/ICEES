@@ -4,6 +4,9 @@
     "title": "Industriële computers en embedded systems"
   },
   "check": {
+    "disable": {
+      "spoiler-retired": "De labo-zelftests (Labo/*/Theorie/TestJezelf.html) schrijven de letter nog met de hand in een spoiler-container. Omzetten naar ol.vragen met li.juist en div.oplossing staat gepland; daarna gaat deze uitzondering weg."
+    },
     "audit": {
       "_uitleg": "Een lead staat op de Inleiding van een labo, op elke Opdracht.html en op de Overzicht.html die een reeks opent; een theoriepagina en een syllabuspagina dragen er met opzet geen. Een figuur telt op elke pagina, dus figure_patterns blijft op de standaard.",
       "lead_patterns": [

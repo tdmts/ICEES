@@ -150,8 +150,8 @@ modellen zou achterlaten.
 Wat eruit ging: `back-link.js`, `reference-dashboard.js`, `reference-dashboard.css`, de vijf
 `Labo/<Naam>/Theorie/reference.html` hubs, `Theorie/Syllabus/Theorie/reference.html`, en
 `scripts/check-nav.js`, dat alleen bestond om te meten wat `back-link.js` in het DOM zette. De 208
-pagina's die `reference.js` en `back-link.js` laadden, laden nu niets meer van ons; de twintig
-syllabuspagina's met vragen houden `oplossingen.js`. `orion.py import-syllabus` schrijft die twee
+pagina's die `reference.js` en `back-link.js` laadden, laden nu niets meer van ons, en sinds OrionCSS
+`main.js` de vragenlijst zelf bouwt ook de twintig syllabuspagina's met vragen niet. `orion.py import-syllabus` schrijft die twee
 scriptregels ook niet meer in zijn sjabloon, dus een volgende hoofdstukimport brengt ze niet terug.
 
 Wat erin kwam: [`orion.json`](orion.json), 20 modules en 94 topics. Een reeks werd een submodule,
@@ -283,7 +283,7 @@ the quote that opens the Voorwoord. Read DeN's
 across, in either direction.
 
 **Whether the engines should live in a repo of their own is settled by there being no engines left.**
-The three courses each keep `reference.js` for the syllabus order and `oplossingen.js` for the
+The three courses each keep `reference.js` for the syllabus order, OrionCSS `main.js` reveals the
 answers, and Orion does the rest. The scripts live in `OrionTools`.
 
 | | DeN | ICEES |
@@ -324,7 +324,6 @@ Hoorcollege/           the lecture decks: the source of the handout PDFs
 Algemeen/              studiefiche, planning, evaluatie en studiemateriaal, outside both tracks
 img/  datasheets/  downloads/
 reference.js           the manifest of the syllabus: the order of the printed document
-oplossingen.js         the reveal that shows an answer, on every syllabus page with questions
 oriontools.json        what ICEES sets differently for OrionTools; not mirrored
 ```
 
@@ -408,17 +407,13 @@ Never copy or edit them here; a styling bug is reported there. `tdmts/OrionConte
 renders every component with its exact markup: read it before authoring rather than reproducing
 markup from memory.
 
-## The two scripts a page may load
+## No page loads a script of ours
 
-Besides OrionCSS, a page loads at most one script of ours, and only the syllabus does.
-
-- [oplossingen.js](oplossingen.js) — self-running, syllabus only. Folds the answer of every question
-  on the page into a `spoiler-container`. Twenty pages load it.
-- [reference.js](reference.js) — **no page loads it.** It is read by
-  `orion.py export-syllabus` for the order and numbering of the printed document, and by the rule
-  `syllabus-manifest` of the content check. Its header carries the format.
-
-A labo page therefore loads nothing of ours, and Orion tracks what a student opened.
+Besides OrionCSS, a page loads nothing. The reveal of an answer under an `<ol class="vragen">` is
+built by OrionCSS `main.js` (block "Functionaliteit: Vragenlijst"), and `reveal-script-retired`
+fails a page that still loads `oplossingen.js`.
+[reference.js](reference.js) is read by `orion.py export-syllabus` for the order and numbering of
+the printed document, and by the rule `syllabus-manifest`; its header carries the format.
 
 ## The three tracks
 
@@ -553,12 +548,11 @@ decides which processor fits, that dual channel adds the capacities together), s
 sends the student back to a paragraph rather than to the whole page. Each answer therefore ends in
 "Zie &lt;a href&gt;", a link with `target="_blank"`, which `topic-frame` allows.
 
-**The answer letter is written by hand**, in the `spoiler-container` markup DeN's four labo
-zelftests use, and not through `oplossingen.js`. That is a deliberate choice and the trade-off is
-real: `oplossingen.js` counts the letter off the position of `class="juist"`, so reordering two
-options can never produce a wrong answer, while a written "Antwoord c." can. It is also the only
-mechanism the syllabus may use, and the `vragen-*` rules check nothing outside `Theorie/Syllabus/`. If you
-reorder the options of a labo zelftest, the letter is yours to fix.
+**The answer letter is still written by hand**, in a hand-made `spoiler-container`. That is what
+the pages hold today, not a choice: `main.js` builds the reveal from `ol.vragen` and `li.juist` on
+every page, and converting the labo zelftests to it is planned. Until then `spoiler-retired` is
+switched off in `oriontools.json`, and the `vragen-*` rules still look only under
+`Theorie/Syllabus/`. If you reorder the options of a labo zelftest, the letter is yours to fix.
 
 **One submission is one folder and one Orion menu entry.** Three of the six labs hand in more than
 once, and each dropbox gets its own `Opdracht.html` with its own verslag docx, the way
@@ -1535,10 +1529,9 @@ ze over, dan is dat geen fout, want `ol.vragen > li` houdt elke vraag heel en de
 is plaats om te schrijven. De ondermarge van een tabel is geen knop om dat mee bij te sturen: die
 staat in de gedeelde `table`-regel en geldt voor elk hoofdstuk.
 
-**De importer schrijft een gewone `<ol>` en laadt `oplossingen.js` niet.** Een vragenlijst wordt met
-de hand een `<ol class="vragen">`, en de pagina krijgt met de hand
-`<script src=".../oplossingen.js">` onderaan de body. Zonder het eerste ziet de export geen vragen en
-drukt ze zwijgend geen Oplossingen; het tweede vangt `oplossingen-script` wel op.
+**De importer schrijft een gewone `<ol>`.** Een vragenlijst wordt met de hand een
+`<ol class="vragen">`. Zonder die klasse ziet de export geen vragen en drukt ze zwijgend geen
+Oplossingen, en bouwt `main.js` op de site geen onthulling.
 
 **Een studievraag die een imperatief is, krijgt een punt en geen vraagteken.** Deze Word schrijft
 "Geef twee redenen waarom ...?" en "Geef enkele voordelen van UEFI?", en dat staat in het kader
