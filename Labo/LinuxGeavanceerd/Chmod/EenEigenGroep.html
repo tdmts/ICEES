@@ -31,45 +31,42 @@
                 <p><code>groupadd</code> zegt niets wanneer het gelukt is. Dat is normaal in de terminal: alleen
                     wat misloopt, meldt zich.</p>
             </li>
-        </ol>
 
-        <div class="spoiler-container">
-            <div class="basic">
-                <p><strong>2. Zet labopartner1 en labopartner2 in de groep labopartners. Het commando is hetzelfde
-                        als dat waarmee je ze in de groep sudo gezet hebt.</strong></p>
-            </div>
-            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
-            <div class="hidden">
-                <div class="terminal-window">
-                    <div class="term-line">
-                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
-                        <span class="term-cmd">sudo usermod -aG labopartners labopartner1</span>
-                    </div>
-                    <div class="term-line">
-                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
-                        <span class="term-cmd">sudo usermod -aG labopartners labopartner2</span>
+            <li>
+                <p>Zet labopartner1 en labopartner2 in de groep labopartners. Het commando is hetzelfde als dat waarmee je ze in de groep sudo gezet hebt.</p>
+                <div class="accordion-container">
+                    <div class="accordion-item">
+                        <div class="title">Antwoord</div>
+                        <div class="terminal-window">
+                            <div class="term-line">
+                                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                                <span class="term-cmd">sudo usermod -aG labopartners labopartner1</span>
+                            </div>
+                            <div class="term-line">
+                                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                                <span class="term-cmd">sudo usermod -aG labopartners labopartner2</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </li>
 
-        <div class="spoiler-container">
-            <div class="basic">
-                <p><strong>3. Kijk na welke gebruikers er nu in de groep labopartners zitten.</strong></p>
-            </div>
-            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
-            <div class="hidden">
-                <div class="terminal-window">
-                    <div class="term-line">
-                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
-                        <span class="term-cmd">members labopartners</span>
+            <li>
+                <p>Kijk na welke gebruikers er nu in de groep labopartners zitten.</p>
+                <div class="accordion-container">
+                    <div class="accordion-item">
+                        <div class="title">Antwoord</div>
+                        <div class="terminal-window">
+                            <div class="term-line">
+                                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                                <span class="term-cmd">members labopartners</span>
+                            </div>
+                            <pre class="term-out"><span class="highlight">labopartner1 labopartner2</span></pre>
+                        </div>
                     </div>
-                    <pre class="term-out"><span class="highlight">labopartner1 labopartner2</span></pre>
                 </div>
-            </div>
-        </div>
+            </li>
 
-        <ol start="4">
             <li>
                 <p>Kijk daarna nog eens naar de groep <code>sudo</code>. Die staat er nog altijd zoals hij was: een
                     gebruiker zit in meer dan één groep tegelijk, en de ene komt niet in de plaats van de andere.</p>

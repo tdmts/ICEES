@@ -18,22 +18,22 @@
 
         <h2 id="zonder">Wat er gebeurt zonder dat recht</h2>
 
-        <div class="spoiler-container">
-            <div class="basic">
-                <p><strong>1. Meld je aan als labopartner1.</strong></p>
-            </div>
-            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
-            <div class="hidden">
-                <div class="terminal-window">
-                    <div class="term-line">
-                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
-                        <span class="term-cmd">su labopartner1</span>
+        <ol>
+            <li>
+                <p>Meld je aan als labopartner1.</p>
+                <div class="accordion-container">
+                    <div class="accordion-item">
+                        <div class="title">Antwoord</div>
+                        <div class="terminal-window">
+                            <div class="term-line">
+                                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                                <span class="term-cmd">su labopartner1</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </li>
 
-        <ol start="2">
             <li>
                 <p>Probeer als labopartner1 een derde gebruiker aan te maken.</p>
                 <div class="terminal-window">
@@ -84,25 +84,22 @@
                         ene die je opgeeft, en verliest hij zijn eigen groep.</p>
                 </div>
             </li>
-        </ol>
 
-        <div class="spoiler-container">
-            <div class="basic">
-                <p><strong>5. Meld je opnieuw aan als labopartner1 en maak nu wel de gebruiker labopartner3
-                        aan.</strong></p>
-            </div>
-            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
-            <div class="hidden">
-                <div class="terminal-window">
-                    <div class="term-line">
-                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
-                        <span class="term-cmd">su labopartner1</span>
-                    </div>
-                    <div class="term-line">
-                        <span class="term-prompt">labopartner1@elm-VirtualBox:/home/elm$</span>
-                        <span class="term-cmd">sudo adduser labopartner3</span>
-                    </div>
-                    <pre class="term-out">To run a command as administrator (user "root"), use "sudo &lt;command&gt;".
+            <li>
+                <p>Meld je opnieuw aan als labopartner1 en maak nu wel de gebruiker labopartner3 aan.</p>
+                <div class="accordion-container">
+                    <div class="accordion-item">
+                        <div class="title">Antwoord</div>
+                        <div class="terminal-window">
+                            <div class="term-line">
+                                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                                <span class="term-cmd">su labopartner1</span>
+                            </div>
+                            <div class="term-line">
+                                <span class="term-prompt">labopartner1@elm-VirtualBox:/home/elm$</span>
+                                <span class="term-cmd">sudo adduser labopartner3</span>
+                            </div>
+                            <pre class="term-out">To run a command as administrator (user "root"), use "sudo &lt;command&gt;".
 See "man sudo_root" for details.
 
 [sudo] password for labopartner1:
@@ -111,10 +108,12 @@ Adding new group `labopartner3' (1003) ...
 Adding new user `labopartner3' (1003) with group `labopartner3' ...
 Creating home directory `/home/labopartner3' ...
 Copying files from `/etc/skel' ...</pre>
+                        </div>
+                        <p>Vergeet daarna niet met <code>exit</code> terug te keren naar je eigen gebruiker.</p>
+                    </div>
                 </div>
-                <p>Vergeet daarna niet met <code>exit</code> terug te keren naar je eigen gebruiker.</p>
-            </div>
-        </div>
+            </li>
+        </ol>
 
         <h2 id="members">Nakijken wie in een groep zit</h2>
 

@@ -57,41 +57,43 @@ Enter the new value, or press ENTER for the default
 
         <h2 id="tweede">De tweede gebruiker</h2>
 
-        <div class="spoiler-container">
-            <div class="basic">
-                <p><strong>3. Maak op dezelfde manier de gebruiker labopartner2.</strong></p>
-            </div>
-            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
-            <div class="hidden">
-                <div class="terminal-window">
-                    <div class="term-line">
-                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
-                        <span class="term-cmd">sudo adduser labopartner2</span>
+        <ol start="3">
+            <li>
+                <p>Maak op dezelfde manier de gebruiker labopartner2.</p>
+                <div class="accordion-container">
+                    <div class="accordion-item">
+                        <div class="title">Antwoord</div>
+                        <div class="terminal-window">
+                            <div class="term-line">
+                                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                                <span class="term-cmd">sudo adduser labopartner2</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </li>
 
-        <div class="spoiler-container">
-            <div class="basic">
-                <p><strong>4. Bekijk de inhoud van /home en kijk na of de twee mappen er staan.</strong></p>
-            </div>
-            <div class="button" data-shown="Verberg antwoord">Toon antwoord</div>
-            <div class="hidden">
-                <div class="terminal-window">
-                    <div class="term-line">
-                        <span class="term-prompt">elm@elm-VirtualBox:~$</span>
-                        <span class="term-cmd">ls -alh /home</span>
-                    </div>
-                    <pre class="term-out">total 20K
+            <li>
+                <p>Bekijk de inhoud van /home en kijk na of de twee mappen er staan.</p>
+                <div class="accordion-container">
+                    <div class="accordion-item">
+                        <div class="title">Antwoord</div>
+                        <div class="terminal-window">
+                            <div class="term-line">
+                                <span class="term-prompt">elm@elm-VirtualBox:~$</span>
+                                <span class="term-cmd">ls -alh /home</span>
+                            </div>
+                            <pre class="term-out">total 20K
 drwxr-xr-x  5 root         root         4,0K Apr 12 11:24 .
 drwxr-xr-x 24 root         root         4,0K Apr 12 10:31 ..
 drwxr-xr-x 23 elm          elm          4,0K Apr 14 09:29 elm
 <span class="highlight">drwxr-xr-x  3 labopartner1 labopartner1 4,0K Apr 12 10:57 labopartner1</span>
 <span class="highlight">drwxr-xr-x  2 labopartner2 labopartner2 4,0K Apr 12 10:36 labopartner2</span></pre>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </li>
+        </ol>
 
         <h2 id="su">Wisselen van gebruiker met su</h2>
 

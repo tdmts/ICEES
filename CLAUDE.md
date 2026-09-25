@@ -548,11 +548,9 @@ decides which processor fits, that dual channel adds the capacities together), s
 sends the student back to a paragraph rather than to the whole page. Each answer therefore ends in
 "Zie &lt;a href&gt;", a link with `target="_blank"`, which `topic-frame` allows.
 
-**The answer letter is still written by hand**, in a hand-made `spoiler-container`. That is what
-the pages hold today, not a choice: `main.js` builds the reveal from `ol.vragen` and `li.juist` on
-every page, and converting the labo zelftests to it is planned. Until then `spoiler-retired` is
-switched off in `oriontools.json`, and the `vragen-*` rules still look only under
-`Theorie/Syllabus/`. If you reorder the options of a labo zelftest, the letter is yours to fix.
+**The answer letter is counted, not written.** A zelftest is an `<ol class="vragen">` with
+`li.juist` on the correct option and the explanation in a `<div class="oplossing">`, the markup of
+the syllabus: `main.js` builds the reveal from it, and `vragen-answered` checks it here as well.
 
 **One submission is one folder and one Orion menu entry.** Three of the six labs hand in more than
 once, and each dropbox gets its own `Opdracht.html` with its own verslag docx, the way
