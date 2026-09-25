@@ -474,6 +474,9 @@ says whether everything a student can open comes from the course itself. The two
 verify cannot see a link that a script builds at runtime, and the content check cannot see the
 course.
 
+The skills `orion-check`, `orion-convert`, `orion-review` and `orion-style` in `.claude/skills/`
+add what ICEES does differently to the shared procedures in `../OrionTools/skills/`.
+
 ## Prose style
 
 How the Dutch reads is in two files, read in this order: the shared base
