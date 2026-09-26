@@ -1,6 +1,6 @@
 ---
 name: orion-qti
-description: Write multiple-choice questions on a piece of ICEES course material and export them as a QTI 3.0 zip for the ANS test environment, or export an existing Test jezelf as a practice test. Use whenever the user asks for a toets, a quiz, MC-vragen, a QTI file, an ANS import, or "maak vragen over" a lab, a theory page or a syllabus chapter.
+description: Write multiple-choice questions on a piece of ICEES course material and export them as a QTI 2.1 zip for the ANS test environment, or export an existing Test jezelf as a practice test. Use whenever the user asks for a toets, a quiz, MC-vragen, a QTI file, an ANS import, or "maak vragen over" a lab, a theory page or a syllabus chapter.
 ---
 
 # Multiple-choice questions for ANS, in ICEES
