@@ -25,8 +25,7 @@
                 <ul>
                     <li>Ja, want de schroefgaten van de twee vormfactoren vallen samen</li>
                     <li>Ja, zolang de voeding ook in ATX is</li>
-                    <li class="juist">Nee, want een ATX-moederbord is langer dan de ruimte in een
-                        Micro-ATX-kast</li>
+                    <li class="juist">Nee, want een ATX-moederbord is groter dan de kast</li>
                     <li>Nee, want ATX en Micro-ATX gebruiken een andere socket</li>
                 </ul>
                 <div class="oplossing">Omgekeerd werkt het wel: een kast die voor ATX gemaakt is, neemt ook een
@@ -39,9 +38,9 @@
             <li>Wat lees je af aan de naam A520M S2H van het moederbord van dit labo?
                 <ul>
                     <li class="juist">Een A520-chipset op een moederbord in Micro-ATX</li>
+                    <li>Een A520-chipset op een moederbord in ATX</li>
                     <li>Een A520-socket op een moederbord in Micro-ATX</li>
-                    <li>Een A520-chipset op een moederbord in Mini-ITX</li>
-                    <li>Een A520-processor op een moederbord in ATX</li>
+                    <li>Een A520-socket op een moederbord in ATX</li>
                 </ul>
                 <div class="oplossing">De chipset zit in de naam van het moederbord zelf: een A520M S2H is een
                     A520-moederbord in Micro-ATX, 244 &times; 244 mm. De socket staat niet in de naam; hier is dat
@@ -101,8 +100,7 @@
             <li>Je hebt een netwerkkaart met een x1-aansluiting, en op het moederbord is alleen het x16-slot nog vrij.
                 Past ze daarin?
                 <ul>
-                    <li class="juist">Ja, een kaart past in een slot dat even breed of breder is dan de kaart
-                        zelf</li>
+                    <li class="juist">Ja, een kaart past ook in een breder slot</li>
                     <li>Nee, de kaart en het slot moeten even breed zijn</li>
                     <li>Nee, het x16-slot aanvaardt alleen een grafische kaart</li>
                     <li>Ja, maar alleen zolang er geen grafische kaart in het moederbord zit</li>
@@ -141,7 +139,7 @@
 
             <li>Op een oud scherm zit een aansluiting met vijftien pinnen in drie rijen. Welke aansluiting is het?
                 <ul>
-                    <li>DVI, een digitale aansluiting</li>
+                    <li>HDMI, een analoge aansluiting</li>
                     <li class="juist">VGA, een analoge aansluiting</li>
                     <li>HDMI, een digitale aansluiting</li>
                     <li>VGA, een digitale aansluiting</li>
@@ -155,11 +153,11 @@
                 <ul>
                     <li class="juist">Aan de negen contacten en het blauwe binnenstuk</li>
                     <li>Aan de vier contacten en het zwarte binnenstuk</li>
-                    <li>Aan de zes pinnen in een ronde connector</li>
-                    <li>Aan de kleur van de jack, zoals bij de geluidsaansluitingen</li>
+                    <li>Aan de negen contacten en het zwarte binnenstuk</li>
+                    <li>Aan de vier contacten en het blauwe binnenstuk</li>
                 </ul>
-                <div class="oplossing">Vier contacten en een zwart binnenstuk zijn een USB 2-poort, zes pinnen in
-                    een ronde connector de PS/2-poort voor een toetsenbord of een muis. Het moederbord van dit labo
+                <div class="oplossing">Negen contacten en een blauw binnenstuk zijn een USB 3-poort, vier contacten en een zwart
+                    binnenstuk een USB 2-poort. Het moederbord van dit labo
                     heeft zes USB-poorten aan de achterkant: twee USB 2-poorten bij de PS/2-poort en vier blauwe USB
                     3-poorten. Zie <a href="Componenten.html" target="_blank" rel="noopener">De componenten van een
                     pc</a>.</div>
@@ -180,10 +178,10 @@
 
             <li>In de datasheet van een processor staat: 8 cores, 3 GHz. Wat is juist?
                 <ul>
-                    <li>De processor haalt samen 24 GHz, verdeeld over de cores</li>
-                    <li class="juist">Acht rekenkernen werken naast elkaar, elk aan ongeveer 3 GHz</li>
-                    <li>Elke core haalt 3 GHz gedeeld door acht</li>
-                    <li>Acht cores is veel meer dan in een desktop gebruikelijk is</li>
+                    <li>Acht rekenkernen halen samen 24 GHz</li>
+                    <li class="juist">Acht rekenkernen werken naast elkaar, elk aan 3 GHz</li>
+                    <li>Acht rekenkernen delen samen 3 GHz</li>
+                    <li>Acht rekenkernen werken om beurten, telkens aan 3 GHz</li>
                 </ul>
                 <div class="oplossing">Het aantal cores is het aantal rekenkernen die naast elkaar werken, en vier tot
                     acht is vandaag gebruikelijk in een desktop. De kloksnelheid tel je niet op over de cores en deel
@@ -219,10 +217,9 @@
             <li>Je zet een computer aan. De ventilatoren draaien, maar het scherm blijft zwart. Wat kan de oorzaak zijn?
                 <ul>
                     <li>De knoopcelbatterij is leeg</li>
-                    <li>Het moederbord meet geen toerental op de <code>CPU_FAN</code>-aansluiting</li>
+                    <li>Het moederbord meet geen toerental op de CPU_FAN-aansluiting</li>
                     <li>De twee geheugenmodules staan niet in dual channel</li>
-                    <li class="juist">De processor heeft geen ingebouwde grafische kaart en er zit geen kaart in het
-                        x16-slot</li>
+                    <li class="juist">Er is nergens een grafische kaart, ook niet in de processor</li>
                 </ul>
                 <div class="oplossing">Heeft de processor er wel een, dan komt het beeld van de processor zelf en
                     werkt de beeldaansluiting op het moederbord. De drie andere antwoorden geven een ander symptoom:
@@ -329,13 +326,14 @@
 
             <li>Welke snelheden horen bij een mechanische harde schijf en bij een SATA-SSD, in die volgorde?
                 <ul>
-                    <li>Ongeveer 550 MB/s en ongeveer 3,5 GB/s</li>
-                    <li>Ongeveer 15 MB/s en ongeveer 150 MB/s</li>
-                    <li>Ongeveer 150 MB/s en ongeveer 7 GB/s</li>
+                    <li>Ongeveer 150 MB/s en ongeveer 3,5 GB/s</li>
+                    <li>Ongeveer 15 MB/s en ongeveer 550 MB/s</li>
+                    <li>Ongeveer 15 MB/s en ongeveer 3,5 GB/s</li>
                     <li class="juist">Ongeveer 150 MB/s en ongeveer 550 MB/s</li>
                 </ul>
                 <div class="oplossing">Een mechanische harde schijf haalt 100 tot 200 MB/s, en een SATA-SSD ongeveer 550
-                    MB/s. 3,5 en 7 GB/s haalt een NVMe-SSD. Zie <a href="Componenten.html" target="_blank"
+                    MB/s. 3,5 en 7 GB/s haalt een NVMe-SSD, en 15 MB/s is tien keer te traag voor een harde
+                    schijf. Zie <a href="Componenten.html" target="_blank"
                     rel="noopener">De componenten van een pc</a>.</div>
             </li>
 
@@ -355,7 +353,7 @@
                 <ul>
                     <li>Een harde schijf van 2 TB en een netwerkpoort van 1 Mbps</li>
                     <li>Een harde schijf van 20 GB en een netwerkpoort van 1 Gbps</li>
-                    <li>Een harde schijf van 2 TB en een netwerkpoort van 100 Gbps</li>
+                    <li>Een harde schijf van 20 GB en een netwerkpoort van 1 Mbps</li>
                     <li class="juist">Een harde schijf van 2 TB en een netwerkpoort van 1 Gbps</li>
                 </ul>
                 <div class="oplossing">Een harde schijf in een desktop is 1 tot 4 TB groot, en de netwerkpoort haalt 1
@@ -368,7 +366,7 @@
                     <li class="juist">32 GB werkgeheugen en een voeding van 650 W</li>
                     <li>32 GB werkgeheugen en een voeding van 6500 W</li>
                     <li>3,2 GB werkgeheugen en een voeding van 650 W</li>
-                    <li>320 GB werkgeheugen en een voeding van 650 W</li>
+                    <li>3,2 GB werkgeheugen en een voeding van 6500 W</li>
                 </ul>
                 <div class="oplossing">Een recente desktop heeft 16 tot 32 GB werkgeheugen en een voeding van 400 tot
                     750 W. Zie <a href="Componenten.html" target="_blank" rel="noopener">De componenten van een
@@ -390,14 +388,15 @@
 
             <li>Welke spanningen levert een pc-voeding?
                 <ul>
-                    <li>+1,5 V, +9 V en +24 V</li>
+                    <li>+3,3 V, +5 V, +24 V en &minus;12 V</li>
                     <li class="juist">+3,3 V, +5 V, +12 V en &minus;12 V</li>
-                    <li>+3,3 V, +5 V, +12 V en +24 V</li>
-                    <li>230 V, rechtstreeks van het net</li>
+                    <li>+3,3 V, +5 V, +12 V en +1,5 V</li>
+                    <li>+3,3 V, +5 V, +24 V en +1,5 V</li>
                 </ul>
                 <div class="oplossing">De voeding zet de 230 V van het net om in de gelijkspanningen die de onderdelen
                     nodig hebben: +3,3 V, +5 V en +12 V, en daarnaast een lijn van &minus;12 V en een standby-lijn van
-                    +5 V die blijft staan zolang de stekker in het stopcontact zit. Zie <a href="Componenten.html"
+                    +5 V die blijft staan zolang de stekker in het stopcontact zit. 1,5 V is de spanning van een
+                    DDR3-module en geen lijn van de voeding, en +24 V levert een pc-voeding niet. Zie <a href="Componenten.html"
                     target="_blank" rel="noopener">De componenten van een pc</a>.</div>
             </li>
 
@@ -419,10 +418,11 @@
                 <ul>
                     <li>Het test of de processor en het geheugen reageren</li>
                     <li>Het controleert of de datum en het uur kloppen</li>
-                    <li class="juist">Secure Boot controleert de handtekening van de bootloader</li>
+                    <li class="juist">Het controleert de handtekening van de bootloader</li>
                     <li>Het controleert of de opstartschijf kleiner is dan 2 TB</li>
                 </ul>
-                <div class="oplossing">Het klassieke BIOS doet geen controle op de opstartcode. De POST, die de
+                <div class="oplossing">Die controle heet Secure Boot. Het klassieke BIOS doet geen controle op de
+                    opstartcode. De POST, die de
                     processor en het geheugen test, doen ze allebei. De grens van 2 TB hoort bij het klassieke BIOS,
                     en UEFI gaat daar ruim boven. Zie <a href="BiosUefi.html" target="_blank" rel="noopener">BIOS en
                     UEFI</a>.</div>
@@ -431,7 +431,7 @@
             <li>Waarom geeft een moederbord een reeks pieptonen wanneer de POST vastloopt?
                 <ul>
                     <li>Omdat de fout dan bij de geluidskaart ligt</li>
-                    <li class="juist">Omdat er op dat moment nog geen beeld is om een boodschap op te tonen</li>
+                    <li class="juist">Omdat er dan nog geen beeld is</li>
                     <li>Omdat de ventilatoren nog niet draaien</li>
                     <li>Omdat de knoopcelbatterij leeg is</li>
                 </ul>
@@ -460,7 +460,7 @@
                     <li>Opnieuw van de stick, tot je die eruit haalt</li>
                     <li>Van niets, want het bootmenu verschijnt opnieuw</li>
                     <li>Van de interne schijf, en de opstartvolgorde is gewist</li>
-                    <li class="juist">Van het toestel dat bovenaan de opgeslagen opstartvolgorde staat</li>
+                    <li class="juist">Van het eerste toestel in de opstartvolgorde</li>
                 </ul>
                 <div class="oplossing">Daarin zit het verschil tussen de twee. Het bootmenu roep je met een aparte
                     toets op en je keuze geldt voor die ene start; de opstartvolgorde is de lijst die bewaard
@@ -471,10 +471,9 @@
             <li>Je hebt een opstartbare USB-stick gemaakt, maar hij staat niet in de lijst. Waar kijk je?
                 <ul>
                     <li>Of de stick bovenaan de opstartvolgorde staat</li>
-                    <li>Of de stick in een blauwe USB 3-poort zit</li>
-                    <li>Of het geheugenprofiel in de BIOS aan staat</li>
-                    <li class="juist">Of Secure Boot aan staat en of de compatibiliteitsmodus voor het oude BIOS
-                        ingeschakeld moet zijn</li>
+                    <li>Of de stick in een blauwe USB 3-poort van het moederbord zit</li>
+                    <li>Of het geheugenprofiel van de modules in de BIOS aan staat</li>
+                    <li class="juist">Of Secure Boot en de compatibiliteitsmodus goed staan</li>
                 </ul>
                 <div class="oplossing">De opstartvolgorde helpt niet, want een toestel dat de firmware niet ziet,
                     kan je ook niet in de volgorde zetten. Staat de stick er wel, dan verschijnt hij soms twee keer,
@@ -498,8 +497,7 @@
 
             <li>Waarvoor dient de knoopcelbatterij op het moederbord?
                 <ul>
-                    <li class="juist">Ze voedt het geheugen met de BIOS-instellingen en de klok die de tijd
-                        bijhoudt</li>
+                    <li class="juist">Ze houdt de BIOS-instellingen en de klok in leven</li>
                     <li>Ze houdt het werkgeheugen gevuld terwijl de computer uitstaat</li>
                     <li>Ze levert de standby-lijn van 5 V</li>
                     <li>Ze voedt de ventilator van de processor tijdens de POST</li>
