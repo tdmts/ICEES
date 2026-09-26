@@ -125,6 +125,32 @@
                     rel="noopener">De componenten van een pc</a>.</div>
             </li>
 
+            <li>Een x16-slot van PCI Express 4.0 haalt ongeveer 32 GB/s. Hoeveel haalt een x16-slot van PCI Express 5.0
+                ongeveer?
+                <ul>
+                    <li>Ongeveer 32 GB/s</li>
+                    <li>Ongeveer 40 GB/s</li>
+                    <li>Ongeveer 128 GB/s</li>
+                    <li class="juist">Ongeveer 64 GB/s</li>
+                </ul>
+                <div class="oplossing">Elke versie van PCI Express verdubbelt de snelheid van de vorige: per lane gaat
+                    het van ongeveer 2 GB/s bij 4.0 naar 4 GB/s bij 5.0. Met evenveel lanes verdubbelt dus ook het hele
+                    slot. Het versienummer zelf is geen maat: 5.0 is niet een kwart sneller dan 4.0. Zie <a
+                    href="Componenten.html" target="_blank" rel="noopener">De componenten van een pc</a>.</div>
+            </li>
+
+            <li>Op een oud scherm zit een aansluiting met vijftien pinnen in drie rijen. Welke aansluiting is het?
+                <ul>
+                    <li>DVI, een digitale aansluiting</li>
+                    <li class="juist">VGA, een analoge aansluiting</li>
+                    <li>HDMI, een digitale aansluiting</li>
+                    <li>VGA, een digitale aansluiting</li>
+                </ul>
+                <div class="oplossing">VGA heet ook D-SUB en is de analoge aansluiting van de vier. DVI, DisplayPort en
+                    HDMI zijn digitaal. Het moederbord van dit labo heeft VGA, DVI en HDMI. Zie <a
+                    href="Componenten.html" target="_blank" rel="noopener">De componenten van een pc</a>.</div>
+            </li>
+
             <li>Waaraan herken je een USB 3-poort aan de achterkant van het moederbord?
                 <ul>
                     <li class="juist">Aan de negen contacten en het blauwe binnenstuk</li>
@@ -246,6 +272,21 @@
                     pc</a>.</div>
             </li>
 
+            <li>Het moederbord van dit labo heeft twee DIMM-slots en neemt tot 64 GB op, met hoogstens 32 GB per module.
+                Welk werkgeheugen kan je erop plaatsen?
+                <ul>
+                    <li class="juist">Twee modules van 32 GB</li>
+                    <li>E&eacute;n module van 64 GB</li>
+                    <li>Vier modules van 16 GB</li>
+                    <li>Twee modules van 48 GB</li>
+                </ul>
+                <div class="oplossing">Twee modules van 32 GB vullen de twee slots en komen samen op 64 GB. E&eacute;n
+                    module van 64 GB is groter dan de 32 GB per module, vier modules vragen vier slots, en twee modules
+                    van 48 GB komen samen op 96 GB. In de handleiding lees je dus twee grenzen: die per module en die
+                    voor het totaal. Zie <a href="Componenten.html" target="_blank" rel="noopener">De
+                    componenten van een pc</a>.</div>
+            </li>
+
             <li>Wat levert het op wanneer twee geheugenmodules in dual channel staan?
                 <ul>
                     <li>De capaciteit van beide modules wordt opgeteld</li>
@@ -334,6 +375,32 @@
                     pc</a>.</div>
             </li>
 
+            <li>Een desktop wordt verkocht met 128 GB werkgeheugen. Hoe beoordeel je dat?
+                <ul>
+                    <li>Verouderd, want vandaag is 256 GB gewoon</li>
+                    <li>Gewoon voor een desktop van vandaag</li>
+                    <li class="juist">Ruim meer dan gewoon voor een desktop</li>
+                    <li>Onmogelijk, een desktop neemt hoogstens 64 GB op</li>
+                </ul>
+                <div class="oplossing">Een recente desktop heeft 16 tot 32 GB werkgeheugen, dus 128 GB is vier keer de
+                    bovenkant daarvan. Dat een moederbord hoogstens 64 GB opneemt, geldt voor het moederbord van dit
+                    labo en niet voor elk moederbord. Zie <a href="Componenten.html" target="_blank" rel="noopener">De
+                    componenten van een pc</a>.</div>
+            </li>
+
+            <li>Welke spanningen levert een pc-voeding?
+                <ul>
+                    <li>+1,5 V, +9 V en +24 V</li>
+                    <li class="juist">+3,3 V, +5 V, +12 V en &minus;12 V</li>
+                    <li>+3,3 V, +5 V, +12 V en +24 V</li>
+                    <li>230 V, rechtstreeks van het net</li>
+                </ul>
+                <div class="oplossing">De voeding zet de 230 V van het net om in de gelijkspanningen die de onderdelen
+                    nodig hebben: +3,3 V, +5 V en +12 V, en daarnaast een lijn van &minus;12 V en een standby-lijn van
+                    +5 V die blijft staan zolang de stekker in het stopcontact zit. Zie <a href="Componenten.html"
+                    target="_blank" rel="noopener">De componenten van een pc</a>.</div>
+            </li>
+
             <li>Bij welke belasting werkt een voeding het effici&euml;ntst?
                 <ul>
                     <li>Zo dicht mogelijk bij haar nominale vermogen</li>
@@ -348,6 +415,19 @@
                     rel="noopener">De componenten van een pc</a>.</div>
             </li>
 
+            <li>Welke controle doet UEFI bij het opstarten, en het klassieke BIOS niet?
+                <ul>
+                    <li>Het test of de processor en het geheugen reageren</li>
+                    <li>Het controleert of de datum en het uur kloppen</li>
+                    <li class="juist">Secure Boot controleert de handtekening van de bootloader</li>
+                    <li>Het controleert of de opstartschijf kleiner is dan 2 TB</li>
+                </ul>
+                <div class="oplossing">Het klassieke BIOS doet geen controle op de opstartcode. De POST, die de
+                    processor en het geheugen test, doen ze allebei. De grens van 2 TB hoort bij het klassieke BIOS,
+                    en UEFI gaat daar ruim boven. Zie <a href="BiosUefi.html" target="_blank" rel="noopener">BIOS en
+                    UEFI</a>.</div>
+            </li>
+
             <li>Waarom geeft een moederbord een reeks pieptonen wanneer de POST vastloopt?
                 <ul>
                     <li>Omdat de fout dan bij de geluidskaart ligt</li>
@@ -357,6 +437,20 @@
                 </ul>
                 <div class="oplossing">Wat elke reeks betekent, staat in de handleiding van het moederbord. Sommige
                     moederborden tonen daarnaast een cijfercode op een display op het moederbord zelf. Zie <a
+                    href="BiosUefi.html" target="_blank" rel="noopener">BIOS en UEFI</a>.</div>
+            </li>
+
+            <li>In de opstartvolgorde staat de USB-stick bovenaan en de interne schijf daaronder. Na de installatie
+                heb je de stick uit de computer gehaald. Waarvan start de computer?
+                <ul>
+                    <li class="juist">Van de interne schijf</li>
+                    <li>Van niets, want de firmware wacht op de stick</li>
+                    <li>Van niets, tot je de interne schijf bovenaan zet</li>
+                    <li>Van het bootmenu, waarin je zelf kiest</li>
+                </ul>
+                <div class="oplossing">De firmware loopt de opstartvolgorde af en zoekt op elk toestel naar
+                    opstartbare code. Is de stick er niet, dan gaat ze door naar het volgende toestel in de lijst, hier
+                    de interne schijf. Het bootmenu verschijnt alleen wanneer je er zelf de toets voor indrukt. Zie <a
                     href="BiosUefi.html" target="_blank" rel="noopener">BIOS en UEFI</a>.</div>
             </li>
 

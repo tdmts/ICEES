@@ -817,6 +817,15 @@ dezelfde vorm, andere inhoud. En het antwoord op elke vraag staat in de theorie 
 verslagblok. Een aparte koppellijst tussen de twee is geprobeerd en verworpen: te verwarrend. De zus
 staat meteen in de Test jezelf, en daar wordt ze nagelezen.
 
+**De test is een pool van 41 vragen, waarvan ANS er 21 trekt**, sinds 26 september 2026: per groep
+(de `h2`, die in de titel van elk item komt) evenveel als de eerste versie had, dus 3 uit D1a, 2 uit
+D1b, 5 uit D2, 5 uit D3, 2 uit D4, 2 uit D5 en 2 uit D6. D1a en D1b blijven twee groepen, zodat elke
+student zowel fotovragen als pasvormvragen krijgt. **D6 heeft maar een variant gekregen**, want de
+theorie draagt over Secure Boot en de compatibiliteitsmodus te weinig voor een tweede die een student
+die meer weet niet terecht kan aanvechten; vul ze niet op. De Test jezelf ging daarbij van 29 naar 36.
+**Het id van een item is het vraagnummer**, dus een vraag tussenvoegen hernummert de rest: verwijder
+in ANS de oude items voor je opnieuw importeert.
+
 **Geen vragen over de regels van het labo en geen vragen die gezond verstand oplost.** "Een lector
 controleert je werk voor de stekker erin gaat" en "Rufus wist de stick" zijn door de lector
 afgewezen. Wat een vaardigheid is (demonteren, de firmware bedienen, een stick maken) beoordeelt de
