@@ -525,7 +525,8 @@ and their limits rather than of commands, which is what a student there keeps lo
 2026 and to be written for the other five. It is a category `Zelftest` in the `theorie` reeks, not
 one of its own: the zelftest is the last step of the theory, so the last theory page pages into it
 and the nav row reads "Theorie 4 / 4". A reeks of its own would put it behind a button nobody
-clicks.
+clicks. **Assemblage no longer follows this since 26 September 2026**: its zelftest is the topic
+"Voorbereiding op de test" at the end of the module; see "Labo Assemblage: de ANS-test" below.
 
 **It is multiple choice only, and that is the point.** Every lab is assessed with a Brightspace test
 that is meerkeuze met giscorrectie, so a zelftest in another form prepares for a test that does not
@@ -806,6 +807,45 @@ herordening op "eerste pagina", "hierboven" en "terug naar".
 **Apostrof in een blurb, opnieuw.** `'de acht pagina's hierna'` brak `reference.js` bij het inlezen
 met node en zou `syllabus-manifest` stil half hebben afgekapt. Twee blurbs zijn erom herschreven. Zie ook de
 noot bij Labo Linux Basis: geen enkel veld in een manifestblok draagt een apostrof.
+
+## Labo Assemblage: de ANS-test, 26 september 2026
+
+**Wie de Test jezelf kan oplossen, moet op de test kunnen slagen.** Dat is de eis van de lector, en
+alles hieronder volgt eruit. Elke vraag van de ANS-test (`_toets/LaboAssemblage.html`, 21 vragen,
+buiten git) heeft in de Test jezelf een zus: dezelfde vaardigheid, hetzelfde aantal denkstappen,
+dezelfde vorm, andere inhoud. En het antwoord op elke vraag staat in de theorie of in een
+verslagblok. Een aparte koppellijst tussen de twee is geprobeerd en verworpen: te verwarrend. De zus
+staat meteen in de Test jezelf, en daar wordt ze nagelezen.
+
+**Geen vragen over de regels van het labo en geen vragen die gezond verstand oplost.** "Een lector
+controleert je werk voor de stekker erin gaat" en "Rufus wist de stick" zijn door de lector
+afgewezen. Wat een vaardigheid is (demonteren, de firmware bedienen, een stick maken) beoordeelt de
+lector in het labo en via de verslagen; de test vraagt daar alleen wat je doet als iets misloopt.
+
+**De doelstellingen gingen daarvoor van negen naar zes.** Vier vroegen een richtwaarde per onderdeel
+en dupliceerden het schriftelijk examen over de syllabus; ze zijn samengenomen tot een doelstelling
+over richtwaarden, met een tabel "Richtwaarden voor een recente pc" achteraan
+`Theorie/Componenten.html`. **Die tabel veroudert elk jaar**, en ze is de enige plaats waar de
+getallen samen staan: werk ze daar bij en kijk dan de richtwaardevragen van de test en de Test
+jezelf na. Een vraag erover gaat over orde van grootte en vraagt een stap, geen rekensom met versie
+maal lanes.
+
+**De Test jezelf heet in het menu "Voorbereiding op de test" en staat achteraan de module**, na de
+drie dropboxen, omdat de test pas na de drie indieningen komt en twee vragen uit de verslagen komen.
+Het bestand bleef `Theorie/TestJezelf.html`: de map beslist niets over het menu. De sync kan een
+topic niet naar een andere module verhuizen en meldt het; de lector sleept het in Content, en het
+topic houdt zijn ID. **Alleen Assemblage heeft die vorm**; een ander labo volgt wanneer het zijn
+ANS-test krijgt.
+
+**Een figuurvraag gebruikt een uitsnede van de foto van het moederbord met de opdruk weggewerkt**,
+want de print draagt PCIEX16, M2A_CPU en SATA3 leesbaar. De uitsneden van de test staan in
+`_toets/img/`, die van de Test jezelf (`img/assemblage-dimm-slots.png`, `-x16-slot.png`) op andere
+plaatsen van het moederbord. **Een aansluiting die er uitziet als een andere, vraag je niet op een
+foto**: CPU_FAN is niet te onderscheiden van SYS_FAN zonder zijn label, en de afleider "de kast wordt
+niet gekoeld" werd dan het juiste antwoord. Die vraag is vervangen door het x16-slot.
+
+**Het juiste antwoord staat verspreid over a tot d**, en nooit drie keer na elkaar op dezelfde plaats.
+ANS schudt bij de export, maar de Test jezelf schudt niet.
 
 ## Labo Virtualiseren, written 4 September 2026
 

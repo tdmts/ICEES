@@ -95,9 +95,10 @@
 
         <p>De <strong>DIMM-slots</strong> nemen de geheugenmodules op. Hoeveel er zijn en hoeveel GB het moederbord in
             totaal aankan, staat in de handleiding. Dit moederbord heeft er twee,
-            <code>DDR4_A1</code> en <code>DDR4_B1</code>. De <strong>SATA-poorten</strong> nemen een
-            harde schijf of een 2,5&#x2033; SSD op, en een <strong>M.2-aansluiting</strong> neemt een SSD op die plat
-            op het moederbord ligt. Hier zijn dat vier SATA-poorten aan de rechterrand, <code>SATA3 0</code> tot
+            <code>DDR4_A1</code> en <code>DDR4_B1</code>. De <strong>SATA-poorten</strong> nemen de
+            datakabel van een harde schijf of een 2,5&#x2033; SSD op; de voedingskabel van de schijf komt rechtstreeks
+            van de voeding. Een <strong>M.2-aansluiting</strong> neemt een SSD op die plat op het moederbord
+            ligt. Hier zijn dat vier SATA-poorten aan de rechterrand, <code>SATA3 0</code> tot
             <code>SATA3 3</code>, en één M.2-aansluiting, aangeduid met <code>M2A_CPU</code>.</p>
 
         <h3>De uitbreidingsslots</h3>
@@ -108,6 +109,11 @@
             USB-poorten op. Een kaart past in een slot dat even breed of breder is dan de kaart zelf. Dit moederbord
             heeft één x16-slot, <code>PCIEX16</code>, en twee x1-slots: <code>PCIEX1_1</code> ligt erboven en
             <code>PCIEX1_2</code> eronder.</p>
+
+        <p>Een lane is een eigen verbinding tussen de kaart en het moederbord, en hoe snel ze is, hangt af van de
+            versie van PCI Express. Elke versie verdubbelt de snelheid van de vorige: per lane haalt PCI Express 3.0
+            ongeveer 1 GB/s, 4.0 ongeveer 2 GB/s en 5.0 ongeveer 4 GB/s. Een x16-slot haalt zestien keer zoveel als
+            één lane, bij 4.0 dus ongeveer 32 GB/s. De slots van dit moederbord zijn PCI Express 3.0.</p>
 
         <h3>De aansluitingen aan de achterkant</h3>
 
@@ -164,7 +170,8 @@
                 is vandaag gebruikelijk in een desktop.</li>
             <li>De <strong>kloksnelheid</strong> in GHz, het aantal klokpulsen per seconde. Een moderne
                 desktopprocessor zit rond 3 tot 5 GHz, en het hoogste getal is meestal de boostsnelheid die hij kort
-                haalt.</li>
+                haalt. De kloksnelheid geldt voor elke core apart. Vier cores van 4 GHz werken elk aan 4 GHz naast
+                elkaar, en maken samen geen processor van 16 GHz.</li>
             <li>Het <strong>cachegeheugen</strong>, klein en snel geheugen in de processor zelf. L1 is het kleinste en
                 het snelste en zit per core, L2 is groter, en L3 wordt door alle cores gedeeld.</li>
             <li>Het <strong>energieverbruik</strong> in watt, vaak TDP genoemd. Dat getal zegt hoeveel warmte de
@@ -195,6 +202,9 @@
         <p>De generatie staat als DDR met een cijfer erachter: DDR3, DDR4 of DDR5. Elke generatie heeft een eigen
             inkeping in de contactstrip, dus een DDR4-module past in een DDR5-slot noch omgekeerd. Naast de generatie
             kijk je naar de capaciteit in GB, de snelheid in MT/s en de spanning.</p>
+
+        <p>Een desktop heeft vandaag meestal 16 tot 32 GB werkgeheugen. Hoeveel het moederbord in totaal aankan,
+            staat in de handleiding: dat van dit labo neemt tot 64 GB op, met hoogstens 32 GB per module.</p>
         <figure class="figure-zoom" style="max-width: 320px">
             <img src="../../../img/geheugen-generaties-inkeping.png" class="img-fluid"
                 alt="Vier geheugenmodules onder elkaar, van DDR tot DDR4, met de inkeping telkens elders">
@@ -268,6 +278,10 @@
             wat in de praktijk op ongeveer 550 MB/s neerkomt en waar een SATA-SSD tegenaan loopt. NVMe loopt over PCI
             Express en heeft die grens niet, waardoor een M.2-SSD een veelvoud daarvan haalt.</p>
 
+        <p>Een M.2-aansluiting geeft een NVMe-SSD meestal vier lanes. Op PCI Express 3.0 haalt zo'n SSD daardoor tot
+            ongeveer 3,5 GB/s, en op 4.0 tot ongeveer 7 GB/s. De M.2-aansluiting van dit moederbord is PCI Express 3.0
+            x4. Een SSD in een desktop is vandaag meestal 500 GB tot 2 TB groot.</p>
+
         <div class="table-responsive table-spacer">
             <table class="table table-bordered align-middle">
                 <caption class="table-caption">Vormfactor, protocol en aansluiting</caption>
@@ -323,6 +337,69 @@
             <strong>rendement</strong> zegt hoeveel van het opgenomen vermogen er aan de uitgang overblijft; de rest
             wordt warmte. De keurmerken 80 PLUS Bronze, Silver en Gold leggen daar een ondergrens op, en een voeding
             werkt op zijn effici&euml;ntst rond de helft van zijn nominale belasting.</p>
+
+        <h2 id="richtwaarden">Richtwaarden voor een recente pc</h2>
+
+        <p>De tabel zet de getallen van deze pagina bij elkaar, voor een gewone desktop van vandaag. Het zijn
+            richtwaarden en geen grenzen, en ze schuiven elk jaar op. Wie ze kent, ziet in een datasheet meteen of een
+            onderdeel gewoon, verouderd of uitzonderlijk is.</p>
+
+        <div class="table-responsive table-spacer">
+            <table class="table table-bordered align-middle">
+                <caption class="table-caption">Richtwaarden voor een recente desktop</caption>
+                <thead class="table-header-custom">
+                    <tr>
+                        <th>Onderdeel</th>
+                        <th>Snelheid</th>
+                        <th>Capaciteit of vermogen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Processor</td>
+                        <td>3 tot 5 GHz</td>
+                        <td>4 tot 8 cores</td>
+                    </tr>
+                    <tr>
+                        <td>Werkgeheugen</td>
+                        <td>DDR4 2133 tot 3200 MT/s, DDR5 vanaf 4800 MT/s</td>
+                        <td>16 tot 32 GB</td>
+                    </tr>
+                    <tr>
+                        <td>Mechanische harde schijf</td>
+                        <td>100 tot 200 MB/s</td>
+                        <td>1 tot 4 TB</td>
+                    </tr>
+                    <tr>
+                        <td>SATA-SSD</td>
+                        <td>Ongeveer 550 MB/s</td>
+                        <td>500 GB tot 2 TB</td>
+                    </tr>
+                    <tr>
+                        <td>NVMe-SSD</td>
+                        <td>Ongeveer 3,5 GB/s op PCI Express 3.0, ongeveer 7 GB/s op 4.0</td>
+                        <td>500 GB tot 2 TB</td>
+                    </tr>
+                    <tr>
+                        <td>PCI Express</td>
+                        <td>Gewoon is versie 4.0, en de nieuwste moederborden hebben ook 5.0. Per lane haalt 3.0
+                            ongeveer 1 GB/s, 4.0 ongeveer 2 GB/s en 5.0 ongeveer 4 GB/s; een x16-slot haalt zestien
+                            keer zoveel</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Netwerk</td>
+                        <td>1 tot 2,5 Gbps</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Voeding</td>
+                        <td></td>
+                        <td>400 tot 750 W</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
 </body>

@@ -54,11 +54,6 @@
               "id": "assemblage-bios-uefi",
               "title": "BIOS en UEFI",
               "page": "Labo/Assemblage/Theorie/BiosUefi.html"
-            },
-            {
-              "id": "assemblage-test-jezelf",
-              "title": "Test jezelf",
-              "page": "Labo/Assemblage/Theorie/TestJezelf.html"
             }
           ]
         },
@@ -119,6 +114,11 @@
         {
           "id": "assemblage-indienen-installatieos",
           "dropbox": "Installatie OS (!)"
+        },
+        {
+          "id": "assemblage-test-jezelf",
+          "title": "Voorbereiding op de test",
+          "page": "Labo/Assemblage/Theorie/TestJezelf.html"
         }
       ]
     },

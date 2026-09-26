@@ -4,35 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test jezelf</title>
+    <title>Voorbereiding op de test</title>
     <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
     <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <h1>Test jezelf</h1>
+        <h1>Voorbereiding op de test</h1>
 
-        <p>Beantwoord elke vraag eerst zelf en klap daarna pas het antwoord open. Bij elk antwoord staat op welke
-            theoriepagina het uitgelegd wordt, dus lees die opnieuw wanneer je ernaast zat. Er wordt niets
+        <p>De test van dit labo vraagt naar dezelfde dingen als deze vragen, met andere getallen en andere
+            voorbeelden. Beantwoord elke vraag eerst zelf en klap daarna pas het antwoord open. Bij elk antwoord staat
+            op welke pagina het uitgelegd wordt, dus lees die opnieuw wanneer je ernaast zat. Er wordt niets
             bijgehouden en er staat geen punt op.</p>
 
         <h2 id="vragen">Vragen</h2>
 
         <ol class="vragen">
-            <li>Wat zijn de afmetingen van een Micro-ATX-moederbord?
-                <ul>
-                    <li>305 &times; 244 mm</li>
-                    <li>170 &times; 170 mm</li>
-                    <li>325 &times; 266 mm</li>
-                    <li class="juist">244 &times; 244 mm</li>
-                </ul>
-                <div class="oplossing">Micro-ATX is even breed als ATX en korter, met minder PCI Express-slots. 305
-                    &times; 244 mm is ATX, 170 &times; 170 mm is Mini-ITX en 325 &times; 266 mm is BTX. Het
-                    moederbord van dit labo, de Gigabyte A520M S2H, is een Micro-ATX-moederbord. Zie <a
-                    href="Componenten.html" target="_blank" rel="noopener">De componenten van een pc</a>.</div>
-            </li>
-
             <li>Je hebt een moederbord in ATX en een kast die voor Micro-ATX gemaakt is. Past dat?
                 <ul>
                     <li>Ja, want de schroefgaten van de twee vormfactoren vallen samen</li>
@@ -48,6 +36,19 @@
                     target="_blank" rel="noopener">De componenten van een pc</a>.</div>
             </li>
 
+            <li>Wat lees je af aan de naam A520M S2H van het moederbord van dit labo?
+                <ul>
+                    <li class="juist">Een A520-chipset op een moederbord in Micro-ATX</li>
+                    <li>Een A520-socket op een moederbord in Micro-ATX</li>
+                    <li>Een A520-chipset op een moederbord in Mini-ITX</li>
+                    <li>Een A520-processor op een moederbord in ATX</li>
+                </ul>
+                <div class="oplossing">De chipset zit in de naam van het moederbord zelf: een A520M S2H is een
+                    A520-moederbord in Micro-ATX, 244 &times; 244 mm. De socket staat niet in de naam; hier is dat
+                    Socket AM4, naast de socket op het moederbord gedrukt. Zie <a href="Componenten.html" target="_blank"
+                    rel="noopener">De componenten van een pc</a>.</div>
+            </li>
+
             <li>Wat bepaalt welke processors op een bepaald moederbord passen?
                 <ul>
                     <li>De chipset</li>
@@ -60,6 +61,41 @@
                     processor en de rest van het moederbord, en bepaalt mee hoeveel USB-poorten en SATA-poorten er
                     zijn. Zie <a href="Componenten.html" target="_blank" rel="noopener">De componenten van een
                     pc</a>.</div>
+            </li>
+
+            <li>Wat plaats je in de aansluitingen die in het gele kader staan?
+                <figure class="figure-zoom" style="max-width: 300px">
+                    <img src="../../../img/assemblage-dimm-slots.png" class="img-fluid"
+                        alt="Uitsnede van het moederbord van dit labo, met twee lange aansluitingen in een geel kader">
+                </figure>
+                <ul>
+                    <li>SSD's die plat op het moederbord liggen</li>
+                    <li>Uitbreidingskaarten met een x16-aansluiting</li>
+                    <li class="juist">Geheugenmodules van het type DDR4</li>
+                    <li>De datakabels van een harde schijf</li>
+                </ul>
+                <div class="oplossing">Het zijn de twee DIMM-slots van dit moederbord, DDR4_A1 en DDR4_B1. Een SSD
+                    die plat ligt, gaat in de M.2-aansluiting, een x16-kaart in PCIEX16, en een datakabel in een
+                    SATA-poort. Zie <a href="Componenten.html" target="_blank"
+                    rel="noopener">De componenten van een pc</a>.</div>
+            </li>
+
+            <li>Waarvoor is het slot in het gele kader bedoeld?
+                <figure class="figure-zoom" style="max-width: 480px">
+                    <img src="../../../img/assemblage-x16-slot.png" class="img-fluid"
+                        alt="Uitsnede van het moederbord van dit labo, met een lang slot in een geel kader en een kort slot erboven">
+                </figure>
+                <ul>
+                    <li>Voor een geheugenmodule</li>
+                    <li class="juist">Voor een grafische kaart</li>
+                    <li>Voor een SSD die plat op het moederbord ligt</li>
+                    <li>Voor de datakabel van een harde schijf</li>
+                </ul>
+                <div class="oplossing">Het is het x16-slot, PCIEX16: het langste slot, en bedoeld voor een grafische
+                    kaart. Het korte slot erboven is een x1-slot. Een geheugenmodule gaat in een DIMM-slot, dat ook lang
+                    is maar naast de processor staat, een SSD die plat ligt in de M.2-aansluiting, en een datakabel in
+                    een SATA-poort. Zie <a href="Componenten.html" target="_blank"
+                    rel="noopener">De componenten van een pc</a>.</div>
             </li>
 
             <li>Je hebt een netwerkkaart met een x1-aansluiting, en op het moederbord is alleen het x16-slot nog vrij.
@@ -77,6 +113,18 @@
                     target="_blank" rel="noopener">De componenten van een pc</a>.</div>
             </li>
 
+            <li>Hoeveel haalt een x4-slot van PCI Express 4.0 ongeveer?
+                <ul>
+                    <li>4 GB/s</li>
+                    <li>16 GB/s</li>
+                    <li class="juist">8 GB/s</li>
+                    <li>2 GB/s</li>
+                </ul>
+                <div class="oplossing">Een lane van PCI Express 4.0 haalt ongeveer 2 GB/s, en een x4-slot heeft vier
+                    lanes: ongeveer 8 GB/s. 4 GB/s is hetzelfde slot bij 3.0, en 2 GB/s een enkele lane. Zie <a href="Componenten.html" target="_blank"
+                    rel="noopener">De componenten van een pc</a>.</div>
+            </li>
+
             <li>Waaraan herken je een USB 3-poort aan de achterkant van het moederbord?
                 <ul>
                     <li class="juist">Aan de negen contacten en het blauwe binnenstuk</li>
@@ -91,20 +139,6 @@
                     pc</a>.</div>
             </li>
 
-            <li>Het lampje in de netwerkpoort van dit moederbord brandt groen. Wat krijg je?
-                <ul>
-                    <li>1 Gbps</li>
-                    <li class="juist">100 Mbps</li>
-                    <li>10 Mbps</li>
-                    <li>Een verbinding zonder verkeer erop</li>
-                </ul>
-                <div class="oplossing">Oranje is 1 Gbps, groen is 100 Mbps en uit is 10 Mbps. Dit moederbord haalt 1
-                    Gbps, dus groen betekent dat je minder krijgt dan het moederbord aankan: wat er in de
-                    handleiding staat, is wat het moederbord kan, en wat het lampje zegt, is wat je werkelijk hebt.
-                    Zie <a href="Componenten.html" target="_blank" rel="noopener">De componenten van een
-                    pc</a>.</div>
-            </li>
-
             <li>Wat zegt het TDP van een processor?
                 <ul>
                     <li>Hoeveel klokpulsen hij per seconde haalt</li>
@@ -116,6 +150,31 @@
                     verwarring vandaan: het TDP is een eis aan de koeling en niet aan de voeding. De kloksnelheid
                     staat in GHz. Zie <a href="Componenten.html" target="_blank" rel="noopener">De componenten van
                     een pc</a>.</div>
+            </li>
+
+            <li>In de datasheet van een processor staat: 8 cores, 3 GHz. Wat is juist?
+                <ul>
+                    <li>De processor haalt samen 24 GHz, verdeeld over de cores</li>
+                    <li class="juist">Acht rekenkernen werken naast elkaar, elk aan ongeveer 3 GHz</li>
+                    <li>Elke core haalt 3 GHz gedeeld door acht</li>
+                    <li>Acht cores is veel meer dan in een desktop gebruikelijk is</li>
+                </ul>
+                <div class="oplossing">Het aantal cores is het aantal rekenkernen die naast elkaar werken, en vier tot
+                    acht is vandaag gebruikelijk in een desktop. De kloksnelheid tel je niet op over de cores en deel
+                    je er niet door. Zie <a href="Componenten.html" target="_blank"
+                    rel="noopener">De componenten van een pc</a>.</div>
+            </li>
+
+            <li>In een inventaris staat bij de processor een kloksnelheid van 3800 GHz. Wat is er aan de hand?
+                <ul>
+                    <li class="juist">Het moet 3800 MHz zijn, ofwel 3,8 GHz</li>
+                    <li>Niets, een moderne processor haalt zoveel</li>
+                    <li>Het moet 38 GHz zijn, de boostsnelheid</li>
+                    <li>Het moet 3800 kHz zijn, ofwel 3,8 MHz</li>
+                </ul>
+                <div class="oplossing">Een recente desktopprocessor zit rond 3 tot 5 GHz. 3800 MHz is 3,8 GHz en valt
+                    daarbinnen; 38 GHz en 3,8 MHz vallen er ver buiten. Zie <a href="Componenten.html" target="_blank"
+                    rel="noopener">De componenten van een pc</a>.</div>
             </li>
 
             <li>Welk cachegeheugen wordt door alle cores van de processor gedeeld?
@@ -201,6 +260,19 @@
                     href="Componenten.html" target="_blank" rel="noopener">De componenten van een pc</a>.</div>
             </li>
 
+            <li>In de BIOS zie je dat je werkgeheugen trager loopt dan op de verpakking staat. Wat doe je?
+                <ul>
+                    <li>Je zet de modules in dual channel</li>
+                    <li class="juist">Je zet het geheugenprofiel aan</li>
+                    <li>Je vervangt de knoopcelbatterij</li>
+                    <li>Je zet de fabrieksinstellingen terug</li>
+                </ul>
+                <div class="oplossing">Een module start op aan de standaardsnelheid van haar generatie. De snelheid op
+                    de verpakking zit in een profiel in de module, en dat zet je in de BIOS aan. De
+                    fabrieksinstellingen zetten het profiel juist uit. Zie <a href="Componenten.html" target="_blank"
+                    rel="noopener">De componenten van een pc</a>.</div>
+            </li>
+
             <li>Waarom haalt een SATA-SSD niet meer dan ongeveer 550 MB/s?
                 <ul>
                     <li>Het flashgeheugen zelf kan niet sneller</li>
@@ -212,6 +284,54 @@
                     Express en heeft die grens niet, waardoor een M.2-SSD er een veelvoud van haalt. Een leeskop
                     heeft alleen een mechanische harde schijf, die daardoor rond 100 tot 200 MB/s blijft. Zie <a
                     href="Componenten.html" target="_blank" rel="noopener">De componenten van een pc</a>.</div>
+            </li>
+
+            <li>Welke snelheden horen bij een mechanische harde schijf en bij een SATA-SSD, in die volgorde?
+                <ul>
+                    <li>Ongeveer 550 MB/s en ongeveer 3,5 GB/s</li>
+                    <li>Ongeveer 15 MB/s en ongeveer 150 MB/s</li>
+                    <li>Ongeveer 150 MB/s en ongeveer 7 GB/s</li>
+                    <li class="juist">Ongeveer 150 MB/s en ongeveer 550 MB/s</li>
+                </ul>
+                <div class="oplossing">Een mechanische harde schijf haalt 100 tot 200 MB/s, en een SATA-SSD ongeveer 550
+                    MB/s. 3,5 en 7 GB/s haalt een NVMe-SSD. Zie <a href="Componenten.html" target="_blank"
+                    rel="noopener">De componenten van een pc</a>.</div>
+            </li>
+
+            <li>Op de verpakking van een SSD staat: 1 TB, tot 550 MB/s. Wat voor SSD is het?
+                <ul>
+                    <li>Een NVMe-SSD op PCI Express 3.0</li>
+                    <li class="juist">Een SATA-SSD</li>
+                    <li>Een NVMe-SSD op PCI Express 4.0</li>
+                    <li>Een mechanische harde schijf</li>
+                </ul>
+                <div class="oplossing">550 MB/s is de grens waar een SATA-SSD tegenaan loopt. Een NVMe-SSD haalt
+                    ongeveer 3,5 GB/s op PCI Express 3.0 en 7 GB/s op 4.0, en een harde schijf 100 tot 200 MB/s. Zie <a href="Componenten.html" target="_blank"
+                    rel="noopener">De componenten van een pc</a>.</div>
+            </li>
+
+            <li>Welke uitrusting is vandaag gewoon voor een desktop?
+                <ul>
+                    <li>Een harde schijf van 2 TB en een netwerkpoort van 1 Mbps</li>
+                    <li>Een harde schijf van 20 GB en een netwerkpoort van 1 Gbps</li>
+                    <li>Een harde schijf van 2 TB en een netwerkpoort van 100 Gbps</li>
+                    <li class="juist">Een harde schijf van 2 TB en een netwerkpoort van 1 Gbps</li>
+                </ul>
+                <div class="oplossing">Een harde schijf in een desktop is 1 tot 4 TB groot, en de netwerkpoort haalt 1
+                    tot 2,5 Gbps. Zie <a href="Componenten.html" target="_blank"
+                    rel="noopener">De componenten van een pc</a>.</div>
+            </li>
+
+            <li>Welke combinatie van werkgeheugen en voeding past bij een gewone desktop van vandaag?
+                <ul>
+                    <li class="juist">32 GB werkgeheugen en een voeding van 650 W</li>
+                    <li>32 GB werkgeheugen en een voeding van 6500 W</li>
+                    <li>3,2 GB werkgeheugen en een voeding van 650 W</li>
+                    <li>320 GB werkgeheugen en een voeding van 650 W</li>
+                </ul>
+                <div class="oplossing">Een recente desktop heeft 16 tot 32 GB werkgeheugen en een voeding van 400 tot
+                    750 W. Zie <a href="Componenten.html" target="_blank" rel="noopener">De componenten van een
+                    pc</a>.</div>
             </li>
 
             <li>Bij welke belasting werkt een voeding het effici&euml;ntst?
@@ -226,21 +346,6 @@
                     draait dus permanent onder haar beste punt. De keurmerken 80 PLUS Bronze, Silver en Gold leggen
                     op dat rendement een ondergrens. Zie <a href="Componenten.html" target="_blank"
                     rel="noopener">De componenten van een pc</a>.</div>
-            </li>
-
-            <li>Wat controleert de POST?
-                <ul>
-                    <li class="juist">Of de processor, het geheugen en de verplichte onderdelen aanwezig zijn en
-                        reageren</li>
-                    <li>Of de handtekening van de bootloader klopt</li>
-                    <li>Of de datum en het uur nog kloppen</li>
-                    <li>Of er op elk toestel in de opstartvolgorde opstartbare code staat</li>
-                </ul>
-                <div class="oplossing">POST staat voor Power-On Self-Test en is de eerste stap bij elke start. De
-                    handtekening van de bootloader controleert Secure Boot, dat alleen bij UEFI bestaat, en naar
-                    opstartbare code zoekt de firmware pas daarna, nadat ze haar instellingen uit het CMOS-geheugen
-                    gelezen heeft. Zie <a href="BiosUefi.html" target="_blank" rel="noopener">BIOS en
-                    UEFI</a>.</div>
             </li>
 
             <li>Waarom geeft een moederbord een reeks pieptonen wanneer de POST vastloopt?
@@ -284,16 +389,17 @@
                     rel="noopener">BIOS en UEFI</a>.</div>
             </li>
 
-            <li>Welke partitietabel hoort bij het klassieke BIOS, en tot hoe groot mag de opstartschijf daarmee zijn?
+            <li>Een klasgenoot ziet zijn opstartbare stick twee keer in de lijst van opstarttoestellen staan, eenmaal met
+                het voorvoegsel UEFI: en eenmaal zonder. Hij denkt dat er bij het schrijven iets misging. Klopt dat?
                 <ul>
-                    <li>GPT, tot 2 TB</li>
-                    <li>GPT, ruim boven 2 TB</li>
-                    <li class="juist">MBR, tot 2 TB</li>
-                    <li>MBR, ruim boven 2 TB</li>
+                    <li>Ja, hij schrijft de stick beter opnieuw met Rufus</li>
+                    <li>Nee, de tweede naam is de interne schijf</li>
+                    <li class="juist">Nee, het zijn twee manieren om van dezelfde stick te starten</li>
+                    <li>Ja, er staan nu twee partities op de stick die elkaar storen</li>
                 </ul>
-                <div class="oplossing">UEFI werkt met GPT en komt ruim boven die 2 TB uit; daarnaast kan het via een
-                    compatibiliteitsmodus ook nog met MBR overweg. Zie <a href="BiosUefi.html" target="_blank"
-                    rel="noopener">BIOS en UEFI</a>.</div>
+                <div class="oplossing">Een UEFI-omgeving toont een opstartbare stick soms twee keer, met en zonder het
+                    voorvoegsel UEFI:. Dat zijn twee manieren om van dezelfde stick te starten, en er is niets misgegaan.
+                    Zie <a href="BiosUefi.html" target="_blank" rel="noopener">BIOS en UEFI</a>.</div>
             </li>
 
             <li>Waarvoor dient de knoopcelbatterij op het moederbord?
