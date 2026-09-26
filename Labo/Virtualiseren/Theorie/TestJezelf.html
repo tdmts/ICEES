@@ -49,33 +49,45 @@
                     rel="noopener">Wat is virtualisatie</a>.</div>
             </li>
 
+            <li>Je draait Ubuntu een keer in een virtuele machine op je laptop en een keer rechtstreeks op diezelfde
+                laptop. Wat merk je?
+                <ul>
+                    <li class="juist">In de virtuele machine werkt Ubuntu iets trager</li>
+                    <li>In de virtuele machine werkt Ubuntu sneller</li>
+                    <li>Er is geen verschil, want de guest krijgt de hele laptop voor zich</li>
+                    <li>Buiten de virtuele machine werkt Ubuntu trager</li>
+                </ul>
+                <div class="oplossing">Een virtuele machine deelt de processor, het werkgeheugen en de schijf met de
+                    host, en die draait zelf ook nog. Ze is daardoor trager dan dezelfde hardware zonder
+                    virtualisatie. Zie <a href="WatIsVirtualisatie.html#voordelen" target="_blank"
+                    rel="noopener">Wat is virtualisatie</a>.</div>
+            </li>
+
             <li>Wat is het verschil tussen een container en een virtuele machine?
                 <ul>
                     <li>Een container schermt programma's niet van elkaar af</li>
                     <li>Een container draait op de hardware zelf, zonder besturingssysteem eronder</li>
                     <li class="juist">Alle containers op een machine delen hetzelfde besturingssysteem</li>
-                    <li>Een container kan een ander besturingssysteem draaien dan de machine eronder</li>
+                    <li>Een container kan Windows draaien op een Linux-machine</li>
                 </ul>
-                <div class="oplossing">Daardoor valt de overhead weg en komt er geen extra licentie bij. Een ander
-                    besturingssysteem draaien is net wat een container niet kan: wil je Linux draaien op een
-                    Windows-machine, dan heb je een virtuele machine nodig, en dat is wat je in dit labo doet.
-                    Docker is de bekendste containersoftware. Zie <a href="WatIsVirtualisatie.html" target="_blank"
+                <div class="oplossing">Daardoor valt de overhead weg. Windows draaien op een Linux-machine kan een
+                    container niet, want hij gebruikt het besturingssysteem van de machine zelf. Docker is de bekendste containersoftware. Zie <a href="WatIsVirtualisatie.html" target="_blank"
                     rel="noopener">Wat is virtualisatie</a>.</div>
             </li>
 
-            <li>In de wizard van VirtualBox kan je bij Versie alleen een 32-bitversie van Ubuntu kiezen. Wat is er aan
-                de hand?
+            <li>Je laptop heeft een Intel-processor. Welke instelling moet in de firmware aan staan om in VirtualBox
+                een virtuele machine te kunnen draaien?
                 <ul>
-                    <li>Het gedownloade ISO-bestand is een 32-bitversie</li>
-                    <li>De virtuele harde schijf is te klein voor een 64-bitbesturingssysteem</li>
-                    <li>Het Extension Pack is nog niet geïnstalleerd</li>
-                    <li class="juist">De virtualisatie-uitbreiding van je processor staat uit</li>
+                    <li>AMD-V of SVM</li>
+                    <li>Hyper-V</li>
+                    <li>EFI</li>
+                    <li class="juist">VT-x</li>
                 </ul>
-                <div class="oplossing">Die uitbreiding heet bij Intel VT-x en bij AMD AMD-V of SVM, en ze laat de
-                    guest zijn instructies rechtstreeks uitvoeren in plaats van ze te laten vertalen. Soms moet je
-                    daarnaast in Windows Hyper-V uitzetten, want twee programma's kunnen er niet tegelijk over
-                    beschikken. Zie <a href="VirtueleHardware.html" target="_blank" rel="noopener">Virtuele
-                    hardware</a>.</div>
+                <div class="oplossing">Die uitbreiding laat de guest zijn instructies rechtstreeks op de processor
+                    uitvoeren, en ze kan in de firmware van je laptop uit staan. Bij Intel heet ze VT-x, bij AMD
+                    AMD-V of SVM. Hyper-V is een onderdeel van Windows en geen instelling in de firmware, en EFI is
+                    de firmware van de virtuele machine zelf. Zie <a href="VirtueleHardware.html#virtualisatie"
+                    target="_blank" rel="noopener">Virtuele hardware</a>.</div>
             </li>
 
             <li>Wat doet EFI in een virtuele machine?
@@ -86,8 +98,7 @@
                     <li>Het is de indeling waarin het installatiebestand opgeslagen is</li>
                 </ul>
                 <div class="oplossing">EFI staat voor Extensible Firmware Interface, de firmware van de virtuele machine.
-                    Het is de opvolger van het BIOS, en de gestandaardiseerde versie ervan heet UEFI. Je zet het
-                    vinkje in VirtualBox aan omdat recente Ubuntu-versies ervan uitgaan dat ze op EFI opstarten. Zie
+                    Het is de opvolger van het BIOS, en de gestandaardiseerde versie ervan heet UEFI. In dit labo zet je het vinkje in VirtualBox aan. Zie
                     <a href="VirtueleHardware.html" target="_blank" rel="noopener">Virtuele hardware</a>.</div>
             </li>
 
@@ -119,7 +130,8 @@
             </li>
 
             <li>Je maakt een virtuele harde schijf van 25 GB aan en zet het vinkje "pre-alloceren volledige grootte"
-                uit. Er staat 10 GB aan bestanden op. Hoeveel plaats neemt de schijf in op je laptop?
+                uit. Er staat 10 GB aan bestanden op, en je hebt nog niets
+                gewist. Hoeveel plaats neemt de schijf in op je laptop?
                 <ul>
                     <li>25 GB</li>
                     <li>Ongeveer 15 GB</li>
@@ -132,17 +144,18 @@
                     rel="noopener">Schijf en geheugen</a>.</div>
             </li>
 
-            <li>Waarom reageert een statisch gealloceerde virtuele schijf sneller?
+            <li>Op je laptop is de schijfruimte krap. Waarom kies je dan voor dynamische allocatie?
                 <ul>
-                    <li class="juist">Ze hoeft tijdens het werken geen plaats bij te vragen</li>
-                    <li>Ze slaat kleine bestanden over en schrijft ze pas weg bij het afsluiten</li>
-                    <li>Ze wordt in het werkgeheugen van de host bijgehouden</li>
-                    <li>Ze gebruikt een ander bestandssysteem dan een dynamische schijf</li>
+                    <li class="juist">Het bestand neemt alleen in wat de guest gebruikt</li>
+                    <li>De schijf groeit dan vanzelf voorbij de grootte die je opgaf</li>
+                    <li>De guest comprimeert zijn bestanden voor hij ze wegschrijft</li>
+                    <li>Het bestand staat dan in het werkgeheugen van de host</li>
                 </ul>
-                <div class="oplossing">Bij statische allocatie krijgt het bestand meteen zijn volledige grootte. Een
-                    dynamische schijf moet zichzelf uitbreiden terwijl de machine draait, en komt daardoor verspreid
-                    over de schijf te liggen. Zie <a href="SchijfEnGeheugen.html" target="_blank"
-                    rel="noopener">Schijf en geheugen</a>.</div>
+                <div class="oplossing">Met het vinkje uit begint het bestand klein en groeit het mee met wat de
+                    guest erop schrijft, dus je gebruikt alleen de plaats die je echt nodig hebt. Verder dan de
+                    grootte die je in de wizard opgaf, groeit het niet vanzelf. Zie <a
+                    href="SchijfEnGeheugen.html#allocatie" target="_blank" rel="noopener">Schijf en
+                    geheugen</a>.</div>
             </li>
 
             <li>Je virtuele machine werkt traag. Waarom levert meer werkgeheugen doorgaans meer op dan een extra
@@ -157,6 +170,21 @@
                     moment aan werkt. Is er te weinig van, dan gaat een deel tijdelijk naar de schijf en terug, en
                     een schijf is een veelvoud trager dan geheugen. Zie <a href="SchijfEnGeheugen.html"
                     target="_blank" rel="noopener">Schijf en geheugen</a>.</div>
+            </li>
+
+            <li>Je laptop heeft 32 GB werkgeheugen, en in Taakbeheer zie je dat Windows er zelf 10 GB van gebruikt.
+                Hoeveel basisgeheugen geef je je virtuele machine?
+                <ul>
+                    <li>1 GB</li>
+                    <li class="juist">16 GB</li>
+                    <li>28 GB</li>
+                    <li>32 GB</li>
+                </ul>
+                <div class="oplossing">Geef hoogstens de helft tot drie kwart weg, en laat genoeg over voor wat de
+                    host zelf gebruikt. Met 16 GB houdt Windows er 16 over, ruim meer dan de 10 die het nodig heeft.
+                    Met 28 GB blijven er maar 4 over, en 1 GB is te weinig voor Ubuntu. Zie <a
+                    href="SchijfEnGeheugen.html#werkgeheugen" target="_blank" rel="noopener">Schijf en
+                    geheugen</a>.</div>
             </li>
 
             <li>Wat is proprietary software?

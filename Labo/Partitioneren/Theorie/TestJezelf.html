@@ -21,6 +21,20 @@
         <h2 id="vragen">Vragen</h2>
 
         <ol class="vragen">
+            <li>Waarom kijk je in GParted na op welke schijf je bezig bent, voor je een nieuwe partitietabel
+                aanmaakt?
+                <ul>
+                    <li>Een nieuwe partitietabel werkt alleen op een lege schijf</li>
+                    <li>GParted kan maar één partitietabel per computer aanmaken</li>
+                    <li>Een nieuwe partitietabel wist de firmware van de computer</li>
+                    <li class="juist">Wat er op de schijf stond, is daarna onvindbaar</li>
+                </ul>
+                <div class="oplossing">De partitietabel zegt waar elke partitie begint. Maak je een nieuwe aan, dan
+                    verdwijnt die verwijzing: de gegevens blijven nog even in de sectoren staan, maar niets weet nog
+                    waar een bestand begint of eindigt. Zie <a href="Partitietabellen.html#partitietabel"
+                    target="_blank" rel="noopener">Partitietabellen</a>.</div>
+            </li>
+
             <li>Je hebt een schijf met een MBR-partitietabel en er staan al vier primaire partities op. Je wil er een
                 vijfde partitie bij. Wat doe je?
                 <ul>
@@ -94,7 +108,7 @@
                     target="_blank" rel="noopener">Bestandssystemen</a>.</div>
             </li>
 
-            <li>Je formatteert een partitie met clusters van 64 KiB en zet er duizend bestanden van elk ongeveer 500
+            <li>Je formatteert een partitie in exFAT met clusters van 64 KiB en zet er duizend bestanden van elk ongeveer 500
                 bytes op. Hoeveel schijfruimte nemen ze samen in?
                 <ul>
                     <li>Ongeveer 0,5 MB</li>
@@ -107,6 +121,35 @@
                     daarvan is slack. Grote clusters vergroten wel de maximale partitiegrootte, en dat is precies de
                     afweging die je bij het formatteren maakt. Zie <a href="Bestandssystemen.html#sector-en-cluster"
                     target="_blank" rel="noopener">Bestandssystemen</a>.</div>
+            </li>
+
+            <li>Waarom levert defragmenteren bij een SSD niets op?
+                <ul>
+                    <li>Een SSD fragmenteert niet, want hij schrijft elk bestand aaneengesloten weg</li>
+                    <li>Een SSD gebruikt geen bestandssysteem met een inhoudstafel</li>
+                    <li class="juist">Een SSD heeft geen arm die zich moet verplaatsen</li>
+                    <li>Een SSD werkt met sectoren van 4 KiB in plaats van 512 bytes</li>
+                </ul>
+                <div class="oplossing">Bij een klassieke harde schijf kost elke herpositionering van de arm seek
+                    time en rotational latency, en dat is wat fragmentatie traag maakt. Een SSD heeft geen
+                    onderdelen die bewegen, dus die kost is er niet. Zie <a
+                    href="Bestandssystemen.html#fragmentatie" target="_blank"
+                    rel="noopener">Bestandssystemen</a>.</div>
+            </li>
+
+            <li>Op een schijf zijn er vier vrije blokken: 250 MB, 90 MB, 180 MB en 600 MB, in die volgorde. Er komt
+                een bestand van 150 MB bij. In welk blok zet best fit het?
+                <ul>
+                    <li>In het blok van 250 MB</li>
+                    <li class="juist">In het blok van 180 MB</li>
+                    <li>In het blok van 90 MB</li>
+                    <li>In het blok van 600 MB</li>
+                </ul>
+                <div class="oplossing">Best fit zoekt, onder de blokken die groot genoeg zijn, het blok waar het
+                    minst overblijft: in het blok van 180 MB blijft er 30 MB over. First fit had het blok van 250 MB
+                    genomen, het eerste dat groot genoeg is, en worst fit dat van 600 MB. Het blok van 90 MB is te
+                    klein. Zie <a href="Bestandssystemen.html#fragmentatie" target="_blank"
+                    rel="noopener">Bestandssystemen</a>.</div>
             </li>
 
             <li>Je wil een USB-stick gebruiken om een videobestand van 6 GB uit te wisselen tussen een Windows-laptop,
@@ -138,17 +181,17 @@
                     rel="noopener">Bestandssystemen</a>.</div>
             </li>
 
-            <li>Waarom levert defragmenteren bij een SSD niets op?
+            <li>Een schijf van 3 TB komt in een Linux-server van vandaag, en een Linux-distributie gaat erop. Welke
+                partitietabel en welk bestandssysteem kies je?
                 <ul>
-                    <li>Een SSD fragmenteert niet, want hij schrijft elk bestand aaneengesloten weg</li>
-                    <li>Een SSD gebruikt geen bestandssysteem met een inhoudstafel</li>
-                    <li class="juist">Een SSD heeft geen arm die zich moet verplaatsen</li>
-                    <li>Een SSD werkt met sectoren van 4 KiB in plaats van 512 bytes</li>
+                    <li class="juist">GPT en ext4</li>
+                    <li>MBR en ext4</li>
+                    <li>MBR en FAT32</li>
+                    <li>GPT en FAT32</li>
                 </ul>
-                <div class="oplossing">Bij een klassieke harde schijf kost elke herpositionering van de arm seek
-                    time en rotational latency, en dat is wat fragmentatie traag maakt. Een SSD heeft geen
-                    onderdelen die bewegen, dus die kost is er niet. Zie <a
-                    href="Bestandssystemen.html#fragmentatie" target="_blank"
+                <div class="oplossing">MBR geraakt niet verder dan ongeveer 2 TB, dus een deel van de schijf zou
+                    onbruikbaar blijven. Een Linux-distributie staat op ext4, en FAT32 laat bovendien geen partitie
+                    van meer dan 2 TB toe. Zie <a href="Bestandssystemen.html#kiezen" target="_blank"
                     rel="noopener">Bestandssystemen</a>.</div>
             </li>
         </ol>
