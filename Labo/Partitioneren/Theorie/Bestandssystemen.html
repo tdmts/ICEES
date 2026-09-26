@@ -87,28 +87,6 @@
                 blok terecht, en er blijft elke keer iets anders over</figcaption>
         </figure>
 
-        <h2 id="journaal">Het journaal</h2>
-
-        <p>Een bestandssysteem met een <strong>journaal</strong> houdt een aaneengesloten stuk schijfruimte vrij waar
-            een schrijfopdracht eerst naartoe gaat. Dat heeft twee functies.</p>
-
-        <ul>
-            <li>Het schrijven zelf gaat sneller, want in dat stuk staat alles achter elkaar. Zodra de schijf even niets
-                te doen heeft, kopieert het bestandssysteem de gegevens naar hun uiteindelijke plaats.</li>
-            <li>Het journaal werkt als een logboek. Valt de stroom uit nadat er naar het journaal geschreven is maar
-                voor het bestand bijgewerkt was, dan ziet het bestandssysteem bij het opstarten dat de twee niet
-                overeenkomen en zet het de bewerking alsnog af.</li>
-        </ul>
-
-        <figure class="figure-zoom" style="max-width: 620px">
-            <img src="../../../img/partitioneren-journaal.svg" class="img-fluid"
-                alt="Een schrijfopdracht die van het werkgeheugen naar het journaal gaat en daarna van het journaal naar zijn uiteindelijke plaats op de schijf">
-            <figcaption class="figure-caption">Het bestand passeert twee keer: eerst naar het journaal, daarna naar
-                zijn plaats op de schijf</figcaption>
-        </figure>
-
-        <p>NTFS en ext4 hebben zo'n journaal, FAT32 niet.</p>
-
         <h2 id="de-bestandssystemen">De bestandssystemen die je tegenkomt</h2>
 
         <h3>FAT32</h3>
@@ -122,23 +100,22 @@
         <h3>exFAT</h3>
 
         <p>exFAT is de opvolger van FAT32 voor verwisselbare media. De grens van 4 GB per bestand valt er weg, zodat
-            een filmbestand of een schijfimage er wel op past, en Windows, Linux en macOS gaan er ook mee om. Een
-            journaal heeft het niet.</p>
+            een filmbestand of een schijfimage er wel op past, en Windows, Linux en macOS gaan er ook mee om.</p>
 
         <h3>NTFS</h3>
 
         <p>NTFS staat voor <strong>New Technology File System</strong> en is wat Windows op zijn eigen schijven
             gebruikt. Het heeft een grote adresruimte, waardoor er veel bestanden in passen die elk ook groot mogen
-            zijn, en het heeft een journaal. Een partitie gaat tot 256 TB, of tot 2 TB wanneer de schijf een
+            zijn. Een partitie gaat tot 256 TB, of tot 2 TB wanneer de schijf een
             MBR-partitietabel draagt.</p>
 
         <h3>ext4</h3>
 
         <p>ext4 is sinds 2009 het standaardbestandssysteem van de meeste Linux-distributies. Het legt de bestanden die
             bij het opstarten nodig zijn bij elkaar, het reserveert vooraf grote blokken zodat bestanden kunnen groeien
-            zonder te fragmenteren, en het heeft een journaal. Een partitie gaat tot 1 EiB, of tot 2 TB met een
+            zonder te fragmenteren. Een partitie gaat tot 1 EiB, of tot 2 TB met een
             MBR-partitietabel, en een bestand tot 16 TB. Zijn voorgangers ext2 en ext3 kom je nog tegen op oudere
-            systemen; ext2 heeft geen journaal, ext3 wel.</p>
+            systemen.</p>
 
         <h3>linux-swap</h3>
 

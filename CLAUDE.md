@@ -856,6 +856,26 @@ niet gekoeld" werd dan het juiste antwoord. Die vraag is vervangen door het x16-
 **Het juiste antwoord staat verspreid over a tot d**, en nooit drie keer na elkaar op dezelfde plaats.
 ANS schudt bij de export, maar de Test jezelf schudt niet.
 
+## Labo Virtualiseren en Partitioneren: de ANS-test, vanaf 26 september 2026
+
+De twee labo's krijgen samen een ANS-test in de vorm van Assemblage (hierboven): een pool per
+doelstelling, en een zus voor elke testvraag in de Test jezelf. **Eerst zijn de doelstellingen
+herbekeken**, op 26 september 2026 goedgekeurd door de lector. Virtualiseren ging van zeven naar vier,
+Partitioneren van vijf naar vier, dus de test telt acht groepen, V1 tot V4 en P1 tot P4.
+
+- **Virtualiseren:** de besparing en de voor- en nadelen werden een doelstelling, want het voordeel
+  is de besparing. "Twee programma's opnoemen" viel weg: een naamlijstje draagt geen testvraag die
+  meer toetst dan geheugen. De container kwam erbij, want de theorie besteedt er een sectie aan en
+  geen doelstelling noemde hem. Statisch en dynamisch alloceren ging op in het motiveren van de
+  waarden van de machine.
+- **Partitioneren:** de lijst van zes definities is gesplitst in de partitietabel (P1) en het
+  bestandssysteem (P2). "Harde schijf" viel weg, want geen pagina van dit labo legt dat uit, en het
+  journaal ging uit het hele labo. Fragmentatie en de namen `/dev/sdaN` stonden al in de theorie en
+  kregen nu een doelstelling. Vier bestandssystemen opnoemen ging op in de keuze (P3).
+
+**Wat hieronder bij Virtualiseren en Partitioneren een doelstelling bij nummer noemt, gebruikt de
+oude nummering.** Doelstelling 5 van Virtualiseren is nu V3, doelstelling 4 van Partitioneren nu P3.
+
 ## Labo Virtualiseren, written 4 September 2026
 
 **The theory reeks holds begrippen, the opdracht reeks holds the click-through**, and that split is
@@ -988,6 +1008,12 @@ line or on top of a hatch pattern. Headless Edge is enough and needs no install:
 
 The same command with `--virtual-time-budget=6000` and a tall window screenshots a whole page,
 OrionCSS included.
+
+**Het journaal is op 26 september 2026 uit het labo gehaald**, op vraag van de lector, omdat de
+syllabus het sinds hoofdstuk 6 niet meer behandelt en de helft van de uitleg (het journaal maakt het
+schrijven sneller) niet klopte. Weg zijn de sectie op `Bestandssystemen.html` en haar figuur
+`partitioneren-journaal.svg`, de bijzinnen per bestandssysteem, de kolom op het spiekblad, de vraag
+erover in de Test jezelf en het woord in doelstelling 1.
 
 **One figure comes out of the syllabus Word**, extracted from `word/media/` and copied to `img/` as
 `partitioneren-schijfbeheer-windows.png` (image47, Schijfbeheer met System Reserved, C: en DATA).

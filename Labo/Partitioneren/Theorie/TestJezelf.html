@@ -4,18 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test jezelf</title>
+    <title>Voorbereiding op de test</title>
     <link rel="stylesheet" href="https://tdmts.github.io/OrionCSS/style.css">
     <script type="text/javascript" src="https://tdmts.github.io/OrionCSS/main.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <h1>Test jezelf</h1>
+        <h1>Voorbereiding op de test</h1>
 
-        <p>Beantwoord elke vraag eerst zelf en klap daarna pas het antwoord open. Bij elk antwoord staat op welke
-            theoriepagina het uitgelegd wordt, dus lees die opnieuw wanneer je ernaast zat. Er wordt niets bijgehouden
-            en er staat geen punt op.</p>
+        <p>De test gaat over dit labo en het labo Virtualiseren samen. Over dit labo vraagt ze naar dezelfde dingen
+            als deze vragen, met andere voorbeelden. Beantwoord elke vraag eerst zelf en klap daarna pas het
+            antwoord open. Bij elk antwoord staat op welke pagina het uitgelegd wordt, dus lees die opnieuw wanneer
+            je ernaast zat. Er wordt niets bijgehouden en er staat geen punt op.</p>
 
         <h2 id="vragen">Vragen</h2>
 
@@ -115,17 +116,18 @@
                     rel="noopener">Bestandssystemen</a>.</div>
             </li>
 
-            <li>Je wil een USB-stick gebruiken om een videobestand van 6 GB uit te wisselen tussen een Windows-laptop en
-                een Linux-machine. Welk bestandssysteem kies je?
+            <li>Je wil een USB-stick gebruiken om een videobestand van 6 GB uit te wisselen tussen een Windows-laptop,
+                een Linux-machine en een Mac. Welk bestandssysteem kies je?
                 <ul>
                     <li>FAT32, want dat wordt door alle drie de besturingssystemen gelezen</li>
-                    <li>NTFS, want alleen dat heeft een journaal</li>
+                    <li>NTFS, want dat gebruikt Windows ook voor zijn eigen schijven</li>
                     <li>ext4, want dat heeft de grootste maximale bestandsgrootte</li>
                     <li class="juist">exFAT, want FAT32 laat geen bestand van meer dan 4 GB toe</li>
                 </ul>
                 <div class="oplossing">FAT32 wordt inderdaad overal gelezen, maar de grens van 4 GB per bestand
                     maakt het hier onbruikbaar. exFAT wordt door dezelfde drie besturingssystemen gelezen en kent
-                    die grens niet. ext4 leest Windows niet zonder extra software. Zie <a
+                    die grens niet. NTFS en ext4 zijn elk gemaakt voor één besturingssysteem, en hier moeten er drie
+                    mee overweg kunnen. Zie <a
                     href="Bestandssystemen.html#de-bestandssystemen" target="_blank"
                     rel="noopener">Bestandssystemen</a>.</div>
             </li>
@@ -135,28 +137,13 @@
                     <li>Ze bevat de bestanden van het besturingssysteem die bij het opstarten nodig zijn</li>
                     <li class="juist">Ze is de ruimte waar Linux gegevens neerzet waar geen plaats meer voor is in
                         het werkgeheugen</li>
-                    <li>Ze is het journaal van het ext4-bestandssysteem</li>
+                    <li>Ze is de extended partitie waarin Linux zijn logische partities bijhoudt</li>
                     <li>Ze bevat een reservekopie van de partitietabel</li>
                 </ul>
                 <div class="oplossing">Er staan dus geen bestanden in. Windows doet hetzelfde in een bestand op de
                     systeemschijf, <code>pagefile.sys</code>, in plaats van in een aparte partitie. Zie <a
                     href="Bestandssystemen.html#de-bestandssystemen" target="_blank"
                     rel="noopener">Bestandssystemen</a>.</div>
-            </li>
-
-            <li>Wat doet het journaal van NTFS of ext4 wanneer de stroom uitvalt tijdens het schrijven?
-                <ul>
-                    <li>Het zet de hele partitie terug naar de toestand van de laatste keer dat de computer
-                        opstartte</li>
-                    <li>Het defragmenteert de schijf bij de volgende start</li>
-                    <li class="juist">Het bestandssysteem vergelijkt het journaal met het bestand, ziet dat de
-                        bewerking niet af is en werkt ze alsnog af</li>
-                    <li>Het waarschuwt de gebruiker dat de partitie opnieuw geformatteerd moet worden</li>
-                </ul>
-                <div class="oplossing">Het journaal werkt als een logboek: wat erin staat en nog niet op zijn plaats
-                    terechtgekomen is, kan na de stroomonderbreking alsnog geschreven worden. Zijn andere functie is
-                    snelheid, want in het journaal staat een schrijfopdracht aaneengesloten. Zie <a
-                    href="Bestandssystemen.html#journaal" target="_blank" rel="noopener">Bestandssystemen</a>.</div>
             </li>
 
             <li>Waarom levert defragmenteren bij een SSD niets op?

@@ -1871,7 +1871,8 @@ reden hield om beter te zijn dan FAT32. Weg is weg geworden. Dat kost de zin "Je
 beschikt ook over een journaal", vijf alinea's, en de figuur
 `img/syllabus-06-journaal.svg`, die op 7 september 2026 nog hertekend was om van
 een YouTube-schermafdruk af te raken. **De labokopie
-`img/partitioneren-journaal.svg` blijft.** Wat NTFS overhoudt is de grote
+`img/partitioneren-journaal.svg` blijft.** (Op 26 september 2026 is het journaal ook uit
+het labo gehaald, figuur inbegrepen; zie `CLAUDE.md`, Labo Partitioneren.) Wat NTFS overhoudt is de grote
 adresruimte en de grote bestanden, en dat is genoeg voor de twee studievragen en
 voor vraag 6 van Test jezelf. De blurb in `reference.js` noemde het journaal en is
 herschreven.
