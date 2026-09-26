@@ -44,6 +44,17 @@ the imports and the exports) lives in the shared `OrionTools` repo beside this o
 `OrionTools/requirements.txt` lists. [`oriontools.json`](oriontools.json) is all of it that is
 ICEES's own.
 
+## De inhoud ligt vast tot het einde van dit academiejaar
+
+**Beslist door de lector op 26 september 2026: de syllabus en de labotheorie worden in 2026-2027 niet
+meer inhoudelijk gewijzigd**, ook niet waar ze fout staan. De syllabus is gedrukt, de studenten zijn aan
+de labo's begonnen, en de spelregels veranderen niet terwijl het spel gespeeld wordt. Wat fout,
+verouderd of aanvechtbaar is, gaat in [`CORRECTIES-2027.md`](CORRECTIES-2027.md), met de zin, wat klopt
+en een voorstel; dat bestand is de eerste ronde van volgend jaar. **Tot dan stelt geen enkele test of
+examenvraag een vraag over een punt op die lijst.** Een Test jezelf is oefenmateriaal en geen leertekst:
+een vraag erin waarvan het gemarkeerde antwoord fout is, mag wel rechtgezet worden. Vind je een nieuwe
+fout, zet ze in de lijst en niet in de pagina.
+
 ## De studiefiche, en waar ze het laatste woord heeft
 
 The ECTS fiche is the official description of this course and the yardstick every module is held
