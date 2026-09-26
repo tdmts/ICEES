@@ -56,11 +56,11 @@
             <li>Je koopt een schijf van 4 TB en wil ze in één partitie gebruiken. Welke partitietabel heb je nodig?
                 <ul>
                     <li>MBR, want dat formaat legt geen grens op aan de grootte van een partitie</li>
-                    <li class="juist">GPT, want MBR adresseert met 32 bits en geraakt niet verder dan ongeveer 2
-                        TB</li>
+                    <li>Geen van beide, want een partitie kan nooit groter zijn dan 2 TB</li>
                     <li>Het maakt niet uit: de grens van 2 TB komt van het bestandssysteem en niet van de
                         partitietabel</li>
-                    <li>Geen van beide, want een partitie kan nooit groter zijn dan 2 TB</li>
+                    <li class="juist">GPT, want MBR adresseert met 32 bits en geraakt niet verder dan ongeveer 2
+                        TB</li>
                 </ul>
                 <div class="oplossing">MBR gebruikt 32 bits per sectoradres, en 2<sup>32</sup> sectoren van 512
                     bytes komt neer op ongeveer 2 TB. GPT gebruikt er 64, waardoor die grens wegvalt. Het
@@ -104,9 +104,9 @@
                 bytes op. Wat gebeurt er?
                 <ul>
                     <li>De bestanden worden samengevoegd tot ze een cluster vullen</li>
+                    <li>De clustergrootte past zich aan de bestanden aan</li>
                     <li class="juist">Elk bestand krijgt een volledig cluster, dus er gaat ruim 62 MiB aan slack
                         verloren</li>
-                    <li>De clustergrootte past zich aan de bestanden aan</li>
                     <li>De bestanden passen niet, want een bestand mag niet kleiner zijn dan een cluster</li>
                 </ul>
                 <div class="oplossing">Een cluster is de kleinste hoeveelheid die aan één bestand toegewezen wordt,
@@ -149,9 +149,9 @@
             <li>Waarom levert defragmenteren bij een SSD niets op?
                 <ul>
                     <li>Een SSD fragmenteert niet, want hij schrijft elk bestand aaneengesloten weg</li>
+                    <li>Een SSD gebruikt geen bestandssysteem met een inhoudstafel</li>
                     <li class="juist">Een SSD heeft geen bewegende arm, dus verspreide fragmenten kosten geen extra
                         positioneertijd</li>
-                    <li>Een SSD gebruikt geen bestandssysteem met een inhoudstafel</li>
                     <li>Een SSD werkt met sectoren van 4 KiB in plaats van 512 bytes</li>
                 </ul>
                 <div class="oplossing">Bij een klassieke harde schijf kost elke herpositionering van de arm seek

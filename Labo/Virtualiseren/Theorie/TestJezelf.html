@@ -128,9 +128,9 @@
                 uit. Er staat 10 GB aan bestanden op. Hoeveel plaats neemt de schijf in op je laptop?
                 <ul>
                     <li>25 GB, want die ruimte is gereserveerd</li>
-                    <li class="juist">Ongeveer 10 GB, en het bestand groeit mee tot maximaal 25 GB</li>
-                    <li>Ongeveer 10 GB, en het bestand mag daarna zo groot worden als er plaats vrij is</li>
                     <li>35 GB, want de gereserveerde ruimte komt bij de bestanden</li>
+                    <li>Ongeveer 10 GB, en het bestand mag daarna zo groot worden als er plaats vrij is</li>
+                    <li class="juist">Ongeveer 10 GB, en het bestand groeit mee tot maximaal 25 GB</li>
                 </ul>
                 <div class="oplossing">Met het vinkje uit werkt de schijf dynamisch: het bestand begint klein en
                     groeit mee met wat de guest erop schrijft. De 25 GB uit de wizard blijft wel de bovengrens, ook
@@ -140,10 +140,10 @@
 
             <li>Waarom reageert een statisch gealloceerde virtuele schijf sneller?
                 <ul>
-                    <li>Ze wordt in het werkgeheugen van de host bijgehouden</li>
-                    <li>Ze slaat kleine bestanden over en schrijft ze pas weg bij het afsluiten</li>
                     <li class="juist">Ze hoeft tijdens het werken geen plaats bij te vragen, en het bestand ligt in
                         één stuk op de schijf</li>
+                    <li>Ze slaat kleine bestanden over en schrijft ze pas weg bij het afsluiten</li>
+                    <li>Ze wordt in het werkgeheugen van de host bijgehouden</li>
                     <li>Ze gebruikt een ander bestandssysteem dan een dynamische schijf</li>
                 </ul>
                 <div class="oplossing">Bij statische allocatie krijgt het bestand meteen zijn volledige grootte. Een
@@ -156,10 +156,10 @@
                 processor?
                 <ul>
                     <li>Omdat VirtualBox maar één processor tegelijk kan aanspreken</li>
+                    <li>Omdat elke extra processor evenveel geheugen bij de host wegneemt</li>
+                    <li>Omdat de processor van de guest sneller klokt naarmate er meer geheugen is</li>
                     <li class="juist">Omdat het besturingssysteem bij te weinig geheugen een deel ervan naar de
                         harde schijf schrijft, en de processor dan op die schijf wacht</li>
-                    <li>Omdat de processor van de guest sneller klokt naarmate er meer geheugen is</li>
-                    <li>Omdat elke extra processor evenveel geheugen bij de host wegneemt</li>
                 </ul>
                 <div class="oplossing">Het werkgeheugen bevat de gegevens en de instructies waar de processor op dat
                     moment aan werkt. Is er te weinig van, dan gaat een deel tijdelijk naar de schijf en terug, en
@@ -169,9 +169,9 @@
 
             <li>Wat is proprietary software, en waarom biedt het installatieprogramma van Ubuntu ze apart aan?
                 <ul>
-                    <li>Software die alleen op Ubuntu draait, en die je op een virtuele machine niet nodig hebt</li>
                     <li class="juist">Software waarvan de broncode niet openligt, zoals sommige stuurprogramma's en
                         codecs, en die daarom niet zomaar in een vrije distributie meekomt</li>
+                    <li>Software die alleen op Ubuntu draait, en die je op een virtuele machine niet nodig hebt</li>
                     <li>Software waarvoor je een licentiesleutel moet kopen voor ze werkt</li>
                     <li>Software van Oracle, die bij VirtualBox hoort</li>
                 </ul>
