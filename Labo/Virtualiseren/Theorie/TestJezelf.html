@@ -38,8 +38,7 @@
             <li>Wat is de belangrijkste reden waarom een bedrijf zijn servers virtualiseert?
                 <ul>
                     <li>Een virtuele server draait sneller dan dezelfde server op eigen hardware</li>
-                    <li class="juist">Fysieke servers gebruiken maar een klein deel van hun capaciteit, en op één
-                        machine kan je er zo verschillende laten draaien</li>
+                    <li class="juist">Eén fysieke machine vervangt er zo meerdere die elk weinig te doen hadden</li>
                     <li>Een virtuele server heeft geen licentie nodig voor zijn besturingssysteem</li>
                     <li>Een virtuele server blijft draaien wanneer de hardware eronder stukgaat</li>
                 </ul>
@@ -54,9 +53,8 @@
                 <ul>
                     <li>Een container schermt programma's niet van elkaar af</li>
                     <li>Een container draait op de hardware zelf, zonder besturingssysteem eronder</li>
-                    <li class="juist">Alle containers op een machine delen hetzelfde besturingssysteem, dat dus niet
-                        telkens mee gevirtualiseerd wordt</li>
-                    <li>Een container kan een ander besturingssysteem draaien dan de machine waarop hij staat</li>
+                    <li class="juist">Alle containers op een machine delen hetzelfde besturingssysteem</li>
+                    <li>Een container kan een ander besturingssysteem draaien dan de machine eronder</li>
                 </ul>
                 <div class="oplossing">Daardoor valt de overhead weg en komt er geen extra licentie bij. Een ander
                     besturingssysteem draaien is net wat een container niet kan: wil je Linux draaien op een
@@ -71,8 +69,7 @@
                     <li>Het gedownloade ISO-bestand is een 32-bitversie</li>
                     <li>De virtuele harde schijf is te klein voor een 64-bitbesturingssysteem</li>
                     <li>Het Extension Pack is nog niet geïnstalleerd</li>
-                    <li class="juist">De virtualisatie-uitbreiding van je processor staat uit in de firmware van je
-                        laptop</li>
+                    <li class="juist">De virtualisatie-uitbreiding van je processor staat uit</li>
                 </ul>
                 <div class="oplossing">Die uitbreiding heet bij Intel VT-x en bij AMD AMD-V of SVM, en ze laat de
                     guest zijn instructies rechtstreeks uitvoeren in plaats van ze te laten vertalen. Soms moet je
@@ -81,28 +78,25 @@
                     hardware</a>.</div>
             </li>
 
-            <li>Waarvoor staat de afkorting EFI, en wat doet het?
+            <li>Wat doet EFI in een virtuele machine?
                 <ul>
-                    <li>Extended File Interface, het bestandssysteem van de virtuele harde schijf</li>
-                    <li class="juist">Extensible Firmware Interface, de software die draait voor er een
-                        besturingssysteem is en die zoekt waarvan de machine kan opstarten</li>
-                    <li>Emulated Firmware Instructions, de vertaling van de instructies van de guest naar die van de
-                        host</li>
-                    <li>Extensible Format Image, de indeling waarin het installatiebestand opgeslagen is</li>
+                    <li>Het is het bestandssysteem van de virtuele harde schijf</li>
+                    <li class="juist">Het zoekt waarvan de machine kan opstarten</li>
+                    <li>Het vertaalt de instructies van de guest naar die van de host</li>
+                    <li>Het is de indeling waarin het installatiebestand opgeslagen is</li>
                 </ul>
-                <div class="oplossing">EFI is de opvolger van het BIOS, en de gestandaardiseerde versie ervan heet
-                    UEFI. Je zet het vinkje in VirtualBox aan omdat recente Ubuntu-versies ervan uitgaan dat ze op
-                    EFI opstarten. Zie <a href="VirtueleHardware.html" target="_blank" rel="noopener">Virtuele
-                    hardware</a>.</div>
+                <div class="oplossing">EFI staat voor Extensible Firmware Interface, de firmware van de virtuele machine.
+                    Het is de opvolger van het BIOS, en de gestandaardiseerde versie ervan heet UEFI. Je zet het
+                    vinkje in VirtualBox aan omdat recente Ubuntu-versies ervan uitgaan dat ze op EFI opstarten. Zie
+                    <a href="VirtueleHardware.html" target="_blank" rel="noopener">Virtuele hardware</a>.</div>
             </li>
 
-            <li>Wat is een ISO-bestand, en waarvoor gebruik je het in dit labo?
+            <li>Wat is een ISO-bestand?
                 <ul>
-                    <li class="juist">Een bestand met de volledige inhoud van een cd, dvd of USB-stick, dat hier de
-                        installatiebestanden van Ubuntu bevat</li>
-                    <li>Het bestand waarin de virtuele machine haar harde schijf bewaart</li>
-                    <li>Een reservekopie van de virtuele machine, die je terugzet wanneer ze stuk is</li>
-                    <li>Het bestand waarin VirtualBox de instellingen van een virtuele machine bewaart</li>
+                    <li class="juist">Een bestand met de inhoud van een dvd of een USB-stick</li>
+                    <li>Een bestand met de inhoud van de virtuele harde schijf</li>
+                    <li>Een bestand met een reservekopie van de virtuele machine</li>
+                    <li>Een bestand met de instellingen van de virtuele machine</li>
                 </ul>
                 <div class="oplossing">De naam komt van ISO 9660, de standaard voor het bestandssysteem van een cd.
                     Je koppelt het bestand aan het nagebootste dvd-station, en dat koppelen heet mounten. De machine
@@ -127,21 +121,20 @@
             <li>Je maakt een virtuele harde schijf van 25 GB aan en zet het vinkje "pre-alloceren volledige grootte"
                 uit. Er staat 10 GB aan bestanden op. Hoeveel plaats neemt de schijf in op je laptop?
                 <ul>
-                    <li>25 GB, want die ruimte is gereserveerd</li>
-                    <li>35 GB, want de gereserveerde ruimte komt bij de bestanden</li>
-                    <li>Ongeveer 10 GB, en het bestand mag daarna zo groot worden als er plaats vrij is</li>
-                    <li class="juist">Ongeveer 10 GB, en het bestand groeit mee tot maximaal 25 GB</li>
+                    <li>25 GB</li>
+                    <li>Ongeveer 15 GB</li>
+                    <li>35 GB</li>
+                    <li class="juist">Ongeveer 10 GB</li>
                 </ul>
-                <div class="oplossing">Met het vinkje uit werkt de schijf dynamisch: het bestand begint klein en
-                    groeit mee met wat de guest erop schrijft. De 25 GB uit de wizard blijft wel de bovengrens, ook
-                    bij een dynamische schijf, en die grens ligt vast zodra de machine gemaakt is. Zie <a
-                    href="SchijfEnGeheugen.html" target="_blank" rel="noopener">Schijf en geheugen</a>.</div>
+                <div class="oplossing">Met het vinkje uit werkt de schijf dynamisch: het bestand begint klein en groeit
+                    mee met wat de guest erop schrijft, tot hoogstens de 25 GB uit de wizard. Met het vinkje aan was
+                    er meteen 25 GB weg geweest. Zie <a href="SchijfEnGeheugen.html" target="_blank"
+                    rel="noopener">Schijf en geheugen</a>.</div>
             </li>
 
             <li>Waarom reageert een statisch gealloceerde virtuele schijf sneller?
                 <ul>
-                    <li class="juist">Ze hoeft tijdens het werken geen plaats bij te vragen, en het bestand ligt in
-                        één stuk op de schijf</li>
+                    <li class="juist">Ze hoeft tijdens het werken geen plaats bij te vragen</li>
                     <li>Ze slaat kleine bestanden over en schrijft ze pas weg bij het afsluiten</li>
                     <li>Ze wordt in het werkgeheugen van de host bijgehouden</li>
                     <li>Ze gebruikt een ander bestandssysteem dan een dynamische schijf</li>
@@ -158,8 +151,7 @@
                     <li>Omdat VirtualBox maar één processor tegelijk kan aanspreken</li>
                     <li>Omdat elke extra processor evenveel geheugen bij de host wegneemt</li>
                     <li>Omdat de processor van de guest sneller klokt naarmate er meer geheugen is</li>
-                    <li class="juist">Omdat het besturingssysteem bij te weinig geheugen een deel ervan naar de
-                        harde schijf schrijft, en de processor dan op die schijf wacht</li>
+                    <li class="juist">Omdat de guest bij te weinig geheugen uitwijkt naar de veel tragere schijf</li>
                 </ul>
                 <div class="oplossing">Het werkgeheugen bevat de gegevens en de instructies waar de processor op dat
                     moment aan werkt. Is er te weinig van, dan gaat een deel tijdelijk naar de schijf en terug, en
@@ -167,17 +159,17 @@
                     target="_blank" rel="noopener">Schijf en geheugen</a>.</div>
             </li>
 
-            <li>Wat is proprietary software, en waarom biedt het installatieprogramma van Ubuntu ze apart aan?
+            <li>Wat is proprietary software?
                 <ul>
-                    <li class="juist">Software waarvan de broncode niet openligt, zoals sommige stuurprogramma's en
-                        codecs, en die daarom niet zomaar in een vrije distributie meekomt</li>
-                    <li>Software die alleen op Ubuntu draait, en die je op een virtuele machine niet nodig hebt</li>
-                    <li>Software waarvoor je een licentiesleutel moet kopen voor ze werkt</li>
-                    <li>Software van Oracle, die bij VirtualBox hoort</li>
+                    <li class="juist">Software waarvan de broncode niet openligt</li>
+                    <li>Software die Ubuntu zelf maakt en standaard meelevert</li>
+                    <li>Software waarvoor je een licentie moet kopen</li>
+                    <li>Software die alleen op Ubuntu draait</li>
                 </ul>
-                <div class="oplossing">Zet je het aan, dan werkt je hardware zoals de fabrikant het bedoeld heeft en
-                    spelen je mediabestanden af. Laat je het uit, dan blijft je installatie volledig vrije software,
-                    wat sommige organisaties van hun machines eisen. In dit labo zet je het aan. Zie <a
+                <div class="oplossing">Proprietary gaat over de broncode. Bij een verse Ubuntu gaat het vooral om
+                    stuurprogramma's van fabrikanten en om codecs, en die komen daarom niet zomaar mee in een vrije
+                    distributie: het installatieprogramma vraagt apart of je ze wil. Zet je het aan, dan werkt je
+                    hardware zoals de fabrikant het bedoeld heeft en spelen je mediabestanden af. Zie <a
                     href="SoftwareInDeGuest.html" target="_blank" rel="noopener">Software in de guest</a>.</div>
             </li>
 
@@ -185,8 +177,7 @@
                 programma's nodig?
                 <ul>
                     <li>Ze haalt de stuurprogramma's ermee van het internet</li>
-                    <li class="juist">Ze bouwt er een kernelmodule mee voor precies de kernelversie van jouw
-                        Ubuntu</li>
+                    <li class="juist">Ze bouwt er een kernelmodule mee voor jouw kernel</li>
                     <li>Ze pakt er het ISO-bestand mee uit</li>
                     <li>Ze controleert er het gedeelde klembord mee</li>
                 </ul>
@@ -200,14 +191,14 @@
                 <ul>
                     <li>Een snellere virtuele processor</li>
                     <li>Een grotere virtuele harde schijf</li>
-                    <li class="juist">Een scherm dat meeschaalt met het venster, en een gedeeld klembord tussen host
-                        en guest</li>
+                    <li class="juist">Een scherm dat meeschaalt met het venster</li>
                     <li>Een tweede netwerkkaart in de virtuele machine</li>
                 </ul>
                 <div class="oplossing">Het zijn stuurprogramma's die je in de guest installeert, zodat die de
-                    nagebootste hardware van VirtualBox beter aanspreekt. Ook de muis beweegt daarna vlot van het
-                    ene venster naar het andere, en je kan een map van je host in de guest laten verschijnen. Zie <a
-                    href="SoftwareInDeGuest.html" target="_blank" rel="noopener">Software in de guest</a>.</div>
+                    nagebootste hardware van VirtualBox beter aanspreekt. Daarnaast deel je één klembord tussen host
+                    en guest, beweegt de muis vlot van het ene venster naar het andere, en kan je een map van je host
+                    in de guest laten verschijnen. Zie <a href="SoftwareInDeGuest.html" target="_blank"
+                    rel="noopener">Software in de guest</a>.</div>
             </li>
         </ol>
     </div>
