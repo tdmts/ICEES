@@ -16,3 +16,9 @@ _export/
 # ze met de hand op naar Orion. Het script zelf draagt geen antwoorden en zit
 # in OrionTools.
 _oplossingen/
+
+# Toetsvragen en de QTI-zips van `orion.py export-qti`, voor ANS. Een
+# summatieve toets die getrackt staat, spiegelt OrionSync naar de
+# cursusbestanden, waar elke student ze leest; het commando weigert daarom te
+# schrijven zolang deze regel ontbreekt.
+_toets/
